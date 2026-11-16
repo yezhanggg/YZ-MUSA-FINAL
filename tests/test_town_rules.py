@@ -3154,3 +3154,183 @@ def test_pass14_hold_lifted_for_lot_towns():
     bill = rules.resolve("pa_lehigh_allentown", "state_reform", {**DET, "zoning_district": "N3", "lot_sqft": 3000})
     line = next(r for r in bill["reasons"] if r.startswith("Town lot rules the bill"))
     assert ". Building coverage" in line and ". building coverage" not in line
+
+
+# ------------------------------------------------------------------ pass 15
+
+
+def _bloom(district, scenario="today", **kw):
+    lot = {**DET, "zoning_district": district, "lot_sqft": 9000, **kw}
+    return rules.resolve("pa_columbia_bloomsburg", scenario, lot, extra=True)
+
+
+def test_adus_per_lot_set_by_district():
+    """Bloomsburg 27-605.1A, B: one ADU in R-C and R-S, up to two in R-U (districts.R-U.max_adus)."""
+    ru = _bloom("R-U")
+    assert (
+        ru["max_adus"] == 2
+        and ru["citations"]["max_adus"]["source_file"] == "pa_columbia_bloomsburg#districts.R-U.max_adus"
+    )
+    assert ru["citations"]["max_adus"]["section"] == "27-605.1B"
+    assert _bloom("R-S")["max_adus"] == 1 and _bloom("R-C")["max_adus"] == 1
+    assert "The tool shows one" not in json.dumps(raw("pa_columbia_bloomsburg"))
+
+
+def test_listing_forms_give_internal_unit_its_own_path():
+    """Bloomsburg 'Apartment, Accessory' (forms: internal) is by right in R-S, R-U, C-R, MX-1, MX-3, C-W and BC with no
+    family rule. R-C keeps the family-only special exception, and no listing reaches it."""
+    for d in ("C-R", "MX-1", "MX-3", "C-W", "BC"):
+        out = _bloom(d)
+        assert out["allowed"] and out["approval_path"] == "by_right" and out["types_allowed"] == ["internal"], d
+        assert out["approval_by_type"]["internal"] == "by_right"
+        assert not [c for c in out["conditions"] if c["kind"] in ("family", "occupancy")], d
+        assert any(
+            r.startswith("Internal: by right under another listing in the code, Accessory apartment")
+            for r in out["reasons"]
+        )
+        assert not any(r.startswith("Not allowed as of right here") for r in out["reasons"]), d
+    for d in ("R-S", "R-U"):
+        out = _bloom(d)
+        assert (
+            out["approval_by_type"]["internal"] == "by_right"
+            and out["approval_by_type"]["attached"] == "special_exception"
+        )
+        fam = [c for c in out["conditions"] if c["kind"] in ("family", "occupancy", "adu_status")]
+        assert fam and all("internal" not in c["applies_to"] for c in fam), d
+    rc = _bloom("R-C")
+    assert rc["approval_path"] == "special_exception" and rc["approval_by_type"]["internal"] == "variance"
+    assert rc["adu_status"] == "family_only" and [c for c in rc["conditions"] if c["kind"] == "family"]
+    assert not any("under another listing in the code" in r for r in rc["reasons"])
+    # the bill: every form by right, the listing changes nothing
+    assert _bloom("C-R", "state_reform")["approval_by_type"]["internal"] == "by_right"
+
+
+def test_dispute_on_one_form_does_not_qualify_the_lot():
+    """Bloomsburg 27-503.2B (applies_to detached_new) on an R-S lot with a garage: the other forms are a plain special
+    exception, so the dispute qualifies the new detached unit only."""
+    out = _bloom("R-S", has_accessory_building=True)
+    assert out["approval_qualifier"] is None and out["approval_path"] == "by_right"
+    assert out["reasons"][0].startswith(
+        "For detached new: special exception only if the reading that lets this lot in holds: One accessory building"
+    )
+    assert not any(r.startswith("Special exception only if the reading") for r in out["reasons"])
+
+
+def test_lint_counts_an_overlay_as_scope():
+    """St. Marys FP gate: scoped by its overlay alone, no house type list needed, and lint is clean."""
+    fp = next(g for g in raw("pa_elk_st_marys")["eligibility"]["gates"]["value"] if g.get("overlays") == ["FP"])
+    assert fp["effect"] == "bars" and not fp.get("building_types")
+    assert rules.lint(raw("pa_elk_st_marys")) == []
+    body = {"eligibility": {"gates": {"value": [_gate(overlays=["X"])]}}}
+    assert rules.lint(body) == []
+    lot = {**DET, "zoning_district": "RU", "lot_sqft": 8000, "overlays": ["FP"], "building_type": None}
+    out = rules.resolve("pa_elk_st_marys", "today", lot, extra=True)
+    assert any(c["kind"] == "other" and "Floodplain Overlay Zone" in c["condition"] for c in out["conditions"])
+
+
+def test_accessory_threshold_by_district_and_rule_without_figures(tmp_path, monkeypatch):
+    """St. Marys 202.3A: the 900 sq ft special exception holds in RU only (districts.RU). An accessory_rules_where
+    item with no figures never reads '...: .' and never says the building twice."""
+    ru = rules.resolve("pa_elk_st_marys", "today", {**DET, "zoning_district": "RU", "lot_sqft": 8000}, extra=True)
+    c = next(c for c in ru["conditions"] if c["kind"] == "size" and "900" in c["condition"])
+    assert c["condition"].startswith("An accessory building over 900 sq ft needs a further approval. In RU ")
+    assert c["section"] == "202.3A" and c["applies_to"] == rules.DETACHED_TYPES
+    rs = rules.resolve("pa_elk_st_marys", "today", {**DET, "zoning_district": "RS", "lot_sqft": 8000}, extra=True)
+    assert not any("900" in c["condition"] for c in rs["conditions"])
+    items = [
+        {"where": "a detached accessory building over 600 sq ft: the district's rear yard", "over_sqft": 600},
+        {"where": "side yard: the district side yard for a principal building"},
+        {"where": "in a side yard", "setback_side_ft": 5},
+    ]
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "envelope": {"accessory_rules_where": _leaf([{**it, "section": "9-2"} for it in items], "9-2")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_where_text", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000}, extra=True)
+    texts = [c["condition"] for c in out["conditions"] if c["kind"] == "other"]
+    assert texts == [
+        "A detached accessory building over 600 sq ft: the district's rear yard",
+        "For an accessory building, side yard: the district side yard for a principal building",
+        "An accessory building in a side yard: side 5 ft",
+    ]
+
+
+def test_land_development_for_a_second_building():
+    """St. Marys 112 'Land development': a new detached unit needs land development plan approval as well."""
+    out = rules.resolve("pa_elk_st_marys", "today", {**DET, "zoning_district": "RU", "lot_sqft": 8000}, extra=True)
+    c = next(c for c in out["conditions"] if c["kind"] == "land_development")
+    assert c["applies_to"] == ["detached_new"] and c["section"] == "112 'Land development'"
+    assert c["condition"].startswith("A new detached unit puts a second residential building on the lot")
+
+
+def test_services_row_said_once():
+    """Upper Uwchlan R-3 with neither centralized sewer nor public water: the two rows read alike, said once. Upper
+    Dublin A (a lot town) keeps both until its lot records are rebuilt (PASS15_HOLD_TOWNS)."""
+    lot = {**DET, "zoning_district": "R-3", "lot_sqft": 30000, "public_sewer": False, "public_water": False}
+    out = rules.resolve("pa_chester_upper_uwchlan", "today", lot, extra=True)
+    rows = [c["condition"] for c in out["conditions"] if c["kind"] == "utilities" and c["met"] is True]
+    assert len(rows) == 1 and rows[0].startswith("Without both centralized sewer and public water")
+    assert {
+        "pa_lehigh_allentown",
+        "pa_centre_college",
+        "pa_chester_west_chester",
+        "pa_chester_phoenixville",
+        "pa_chester_west_vincent",
+        "pa_chester_malvern",
+        "pa_chester_east_brandywine",
+        "pa_montgomery_lower_merion",
+        "pa_montgomery_narberth",
+        "pa_montgomery_upper_dublin",
+    } == rules.PASS15_HOLD_TOWNS
+    ud = rules.resolve("pa_montgomery_upper_dublin", "today", {**DET, "zoning_district": "A", "lot_sqft": 30000})
+    rows = [c["condition"] for c in ud["conditions"] if c["kind"] == "utilities"]
+    assert len(rows) == 3 and rows[1] == rows[2]
+    assert (
+        len(rules._utility_conditions(rules.load_rules("pa_montgomery_upper_dublin"), {**DET, "zoning_district": "A"}))
+        == 2
+    )
+
+
+def test_planned_development_skips_below_minimum_line():
+    """New Britain WS 60,000 sq ft in a watershed conservation subdivision: its own lot minimum replaces the
+    district's 80,000, so no 'below the district minimum ... nonconforming' line. The path is by right only if the
+    reading that lets the lot in holds (gate 27-305 H14b.5 disputed by 27-502c, d)."""
+    lot = {**DET, "zoning_district": "WS", "lot_sqft": 60000}
+    pd = rules.resolve("pa_bucks_new_britain", "today", {**lot, "in_planned_development": True}, extra=True)
+    assert not [c for c in pd["conditions"] if c["kind"] == "district_lot_rule"]
+    assert pd["approval_path"] == "by_right" and pd["approval_qualifier"] == "conditional_on_reading"
+    for fact in (None, False):
+        out = rules.resolve("pa_bucks_new_britain", "today", {**lot, "in_planned_development": fact}, extra=True)
+        c = next(c for c in out["conditions"] if c["kind"] == "district_lot_rule")
+        assert c["condition"].startswith("This lot is below the district minimum of 80,000 sq ft")
+        assert out["approval_path"] == "variance"
+
+
+def test_code_term_names_the_use_grant():
+    """Richland 240-100A(9): the code calls the decision a use grant. Never a plain 'special exception'."""
+    out = rules.resolve(
+        "pa_cambria_richland", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000}, extra=True
+    )
+    assert (
+        "may be authorized by a use grant, which the tool reads as a special exception (240-32A(10)"
+        in (out["path_to_ask"]["note"])
+    )
+    assert out["path_to_ask"]["path"] == "special_exception"
+    c = next(
+        c for c in out["conditions"] if c["kind"] == "other" and c["condition"].startswith("The code does not list")
+    )
+    assert "may be approved by a use grant, which the tool reads as a special exception" in c["condition"]
+
+
+def test_docs_row_shows_status_by_form_and_district_counts():
+    import subprocess
+
+    root = Path(__file__).resolve().parents[1]
+    text = subprocess.run(
+        [sys.executable, str(root / "tools" / "gen_rules.py"), "towns"], capture_output=True, text=True, check=True
+    ).stdout
+    nb = next(line for line in text.splitlines() if line.startswith("| New Britain township | Bucks |"))
+    assert "| family only (internal prohibited, attached prohibited) |" in nb
+    bl = next(line for line in text.splitlines() if line.startswith("| Bloomsburg town | Columbia |"))
+    assert "| 1 (2 in R-U) |" in bl and "ADU under another listing, for internal, by right" in bl

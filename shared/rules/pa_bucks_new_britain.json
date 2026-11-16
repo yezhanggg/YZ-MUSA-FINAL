@@ -589,6 +589,14 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "No use may exceed 35 feet (27-2110a)"
+      },
+      "min_lot_replaced_in_planned_development": {
+        "value": true,
+        "section": "27-502c(3)(a), d(3)(a)",
+        "url": "https://ecode360.com/print/NE0937?guid=31575905",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "In a watershed conservation subdivision the lot minimum is 43,560 sq ft for a B1a lot and 25,000 sq ft for a B1b lot, in place of the 80,000 sq ft house lot minimum"
       }
     },
     "SR-1": {

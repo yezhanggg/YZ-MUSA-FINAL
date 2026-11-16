@@ -887,6 +887,21 @@ PASS13_HOLD_TOWNS: set[str] = set()
 # town rules as sentences ("... (660-28D). Building coverage 50%" in place of ". building coverage 50%"). Emptied on
 # Nov 16 with PASS13_HOLD_TOWNS (lot records refreshed). Keep the set for a later pass.
 PASS14_HOLD_TOWNS: set[str] = set()
+# Pass 15 holds its owner-sentence fix that can reach stored lot records, for the ten lot towns: a services row whose
+# sentence is the same as one already said is said once (Upper Dublin A, whose two "public sewer or public water, not
+# both" rows read alike when the services are not given). Lift it at the next lot rebuild.
+PASS15_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
@@ -990,6 +1005,9 @@ BOOKKEEPING = [
 # Pass 14: an area figure in acres at the head of a services row note ("One acre", "Two acres, 150 ft wide").
 ACRES = {"one": 1, "an": 1, "half an": 0.5, "two": 2, "three": 3, "four": 4, "five": 5, "1": 1, "2": 2, "3": 3, "5": 5}
 ACRE_HEAD = re.compile(r"^(one|an|half an|two|three|four|five|1|2|3|5) acres?\b[ ,.]*", re.I)
+# Pass 15: an accessory_rules_where item whose where text names the building itself ("a detached accessory building
+# over 600 sq ft: ...", "any detached accessory structure: ...")
+NAMES_BUILDING = re.compile(r"^(?:an?|any|every|each)\b[^:]*\b(?:building|structure|garage)s?\b", re.I)
 # Pass 14: an overlay whose name ends in "Overlay" said once ("the Historic Resource Overlay overlay").
 OVERLAY_TWICE = re.compile(r"\b(Overlay|overlay|OVERLAY) overlay\b")
 DOUBLE_STOP = re.compile(r"(?<![.\s])\.\.(?!\.)")
@@ -1253,6 +1271,17 @@ def _apply_district_town(
         picked[("envelope", "accessory_structure_max_height_ft")] = (
             acc_cap_h,
             f"{where}.accessory_structure_max_height_ft",
+        )
+    # Pass 15: ADUs per lot set by district (one in R-C and R-S, two in R-U), replacing use.max_adus there
+    n_adus = entry.get("max_adus")
+    if _usable(n_adus) and n_adus.get("value") is not None:
+        picked[("use", "max_adus")] = (n_adus, f"{where}.max_adus")
+    # Pass 15: the size above which an accessory building needs a further approval, set by district
+    thr = entry.get("accessory_structure_threshold_sqft")
+    if _usable(thr) and thr.get("value") is not None:
+        picked[("envelope", "accessory_structure_threshold_sqft")] = (
+            thr,
+            f"{where}.accessory_structure_threshold_sqft",
         )
     # Pass 7: the ADU size cap set by district, or lifted in a district (a null alone never wipes a value)
     cap = entry.get("adu_max_sqft")
@@ -1544,10 +1573,12 @@ def _town_conditions(
     hold: bool = False,
     hold13: bool = False,
     hold14: bool = False,
+    hold15: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
-    hold14: a lot town whose pass 14 sentence fixes wait for its next lot rebuild (PASS14_HOLD_TOWNS)."""
+    hold14: a lot town whose pass 14 sentence fixes wait for its next lot rebuild (PASS14_HOLD_TOWNS).
+    hold15: a lot town whose pass 15 sentence fix waits for its next lot rebuild (PASS15_HOLD_TOWNS)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -1605,7 +1636,7 @@ def _town_conditions(
             _cond(
                 "other",
                 f"The code does not list ADUs. {what} may be approved by "
-                f"{un['value'].replace('_', ' ')}"
+                f"{_path_words(un)}"
                 + (". Whether an ADU is similar is not settled" if similar else "")
                 + f". {un.get('note') or ''}".rstrip(),
                 un,
@@ -1711,6 +1742,8 @@ def _town_conditions(
                     met,
                 )
             )
+        elif met is False and _pd_replaces_min(data, lot, historic):
+            pass  # pass 15: a lot in a planned development whose own lot figures replace the district minimum
         elif met is False:
             out.append(
                 _cond(
@@ -1754,6 +1787,19 @@ def _town_conditions(
                 + (f". {thr[0]['note']}" if thr[0].get("note") else ""),
                 thr[0],
                 applies_to=DETACHED_TYPES,
+            )
+        )
+    land = _leaf(data, ("approval", "land_development_second_building"))
+    if _usable(land) and land.get("value") is True and how not in ("unlisted",):
+        # pass 15: a second residential building on a lot is a land development (St. Marys 112)
+        out.append(
+            _cond(
+                "land_development",
+                "A new detached unit puts a second residential building on the lot, which the code makes a land "
+                "development. It needs land development plan approval as well as the zoning approval"
+                + (f". {land['note']}" if land.get("note") else ""),
+                land,
+                applies_to=["detached_new"],
             )
         )
     tot = picked.get(("envelope", "accessory_floor_area_total_sqft"))
@@ -1811,11 +1857,20 @@ def _town_conditions(
         if item.get("max_share_of_rear_yard") is not None:
             figs.append(f"at most {item['max_share_of_rear_yard']:.0%} of the required rear yard")
         where_txt = item["where"] + (f" (over {item['over_sqft']:,.0f} sq ft)" if item.get("over_sqft") else "")
+        if figs:
+            text = f"An accessory building {where_txt}: {', '.join(figs)}"
+        else:  # pass 15: an item with no figures carries its rule in the where text. Never "...: ." or the noun twice
+            if item.get("over_sqft") and "sq ft" in item["where"]:
+                where_txt = item["where"]
+            text = (
+                where_txt[:1].upper() + where_txt[1:]
+                if NAMES_BUILDING.match(where_txt)
+                else f"For an accessory building, {where_txt}"
+            )
         out.append(
             _cond(
                 "other",
-                f"An accessory building {where_txt}: {', '.join(figs)}"
-                + (f". {item['note']}" if item.get("note") else ""),
+                text + (f". {item['note']}" if item.get("note") else ""),
                 _leaf_from(item, acc_where or {}, None),
                 applies_to=DETACHED_TYPES,
             )
@@ -1976,7 +2031,7 @@ def _town_conditions(
             elif c["test"] and c["met"] is None:
                 c["condition"] += ". Allowed only if this holds. The lot fact is not known"
             out.append(c)
-    out += _utility_conditions(data, lot, hold14)
+    out += _utility_conditions(data, lot, hold14, once=not hold15)
     return out
 
 
@@ -2022,9 +2077,12 @@ def _utility_open(item: dict[str, Any], lot: dict[str, Any], hold: bool = False)
     return base, both[1] if len(keys) == 2 else ROW_FACTS[keys[0]], ", ".join(keys)
 
 
-def _utility_conditions(data: dict[str, Any], lot: dict[str, Any], hold: bool = False) -> list[dict[str, Any]]:
+def _utility_conditions(
+    data: dict[str, Any], lot: dict[str, Any], hold: bool = False, once: bool = True
+) -> list[dict[str, Any]]:
     """districts.<code>.utility_rows: the row shown assumes public sewer and water. Say the others, and that
-    the figures depend on the services when they are not given. hold: a lot town (PASS14_HOLD_TOWNS)."""
+    the figures depend on the services when they are not given. hold: a lot town (PASS14_HOLD_TOWNS).
+    once: pass 15, a row whose sentence was already said is not said again (False for PASS15_HOLD_TOWNS)."""
     code = _match_code(lot.get("zoning_district"), list((data.get("districts") or {}).keys()))
     leaf = (((data.get("districts") or {}).get(code) or {}) if code else {}).get("utility_rows")
     if not (_usable(leaf) and leaf.get("value")):
@@ -2064,6 +2122,8 @@ def _utility_conditions(data: dict[str, Any], lot: dict[str, Any], hold: bool = 
             c["test"] = "public_sewer_water"
             if not hold:  # pass 14: the service that was not given, for depends_on
                 c["fact"] = f"whether the lot has {fact}"
+        if once and any(o["condition"] == c["condition"] for o in out):
+            continue  # pass 15: two rows for "sewer or water missing" read alike on a lot with neither (Upper Uwchlan R-3)
         out.append(c)
     return out
 
@@ -2076,6 +2136,26 @@ def _district_min(data: dict[str, Any], lot: dict[str, Any]) -> tuple[dict[str, 
         return None
     share = (_leaf(data, ("eligibility", "min_lot_share_of_district")) or {}).get("value") or 1
     return leaf, leaf["value"] * share, share
+
+
+def _pd_replaces_min(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> bool:
+    """Pass 15: the lot is in a planned or cluster development whose own lot figures replace the district minimum:
+    districts.<code>.min_lot_replaced_in_planned_development, or a planned-development gate with
+    supersedes_district_figures that reaches the lot."""
+    if lot.get("in_planned_development") is not True:
+        return False
+    _, row = _district_row(data, lot)
+    flag = row.get("min_lot_replaced_in_planned_development")
+    if _usable(flag) and flag.get("value") is True:
+        return True
+    gates = (_leaf(data, ("eligibility", "gates")) or {}).get("value") or []
+    return any(
+        g.get("supersedes_district_figures")
+        and g.get("test") == "in_planned_development"
+        and not g.get("overlays")
+        and _gate_scope(g, lot, historic)
+        for g in gates
+    )
 
 
 def _district_min_binds(data: dict[str, Any]) -> bool:
@@ -2233,6 +2313,59 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
             }
         )
     return out
+
+
+# Pass 15: conditions of the ADU rule on who may live in the unit, the house type and the districts it reaches. A form
+# allowed under another listing (an alternative with adu_listing and forms) is not held to them.
+OCCUPANT_KINDS = {
+    "adu_status",
+    "family",
+    "occupancy",
+    "owner_occupancy",
+    "age",
+    "care",
+    "sponsor",
+    "building_type",
+    "district",
+    "scope",
+}
+
+
+def _listing_forms(
+    alts: list[dict[str, Any]], by_type: dict[str, str], conditions: list[dict[str, Any]]
+) -> tuple[list[str], set[str]]:
+    """Pass 15: approval.alternatives[].forms. An ADU under another listing (adu_listing) that names the forms it
+    covers, and reaches this lot, gives those forms its own path when that path is less demanding (Bloomsburg's
+    'Apartment, Accessory', a unit inside the house, by right in R-S, R-U, C-R, MX-1, MX-3, C-W and BC). The ADU rule's
+    occupancy conditions then do not reach those forms. Returns the sentences that say so and the forms it frees."""
+    lines = []
+    freed: set[str] = set()
+    for a in alts:
+        if not (a.get("adu_listing") and a.get("forms") and a["path"] in OK_PATHS and a["applies"] is True):
+            continue
+        forms = [t for t in ALL_TYPES if t in a["forms"] and PATH_ORDER.index(a["path"]) < PATH_ORDER.index(by_type[t])]
+        if not forms:
+            continue
+        for t in forms:
+            by_type[t] = a["path"]
+        freed.update(forms)
+        names = ", ".join(t.replace("_", " ") for t in forms)
+        lines.append(
+            f"{names[:1].upper()}{names[1:]}: {a['path'].replace('_', ' ')} under another "
+            f"listing in the code, {a['name']} ({a['section']}). That listing has its own path and standards. The ADU "
+            "rule's family, occupancy and house type conditions do not reach it"
+            + ("" if a.get("confidence") == "verified" else ". The reading is not settled. Ask the zoning officer")
+            + ". See the other paths"
+        )
+    if freed:
+        for c in list(conditions):
+            if c["kind"] in OCCUPANT_KINDS:
+                reach = [t for t in (c.get("applies_to") or ALL_TYPES) if t not in freed]
+                if reach:
+                    c["applies_to"] = reach
+                else:
+                    conditions.remove(c)
+    return lines, freed
 
 
 def _adus_by_lot(data: dict[str, Any], lot: dict[str, Any]) -> tuple[int | None, str, dict[str, Any]] | None:
@@ -2675,6 +2808,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         hold,
         place in PASS13_HOLD_TOWNS,
         place in PASS14_HOLD_TOWNS,
+        place in PASS15_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
@@ -2712,6 +2846,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         conditions = live
     else:
         _apply_gates(by_type, conditions, fallback, fails)
+    alts = _alternatives(file_data, lot)
+    listing_line, listed = ([], set()) if state else _listing_forms(alts, by_type, conditions)
     types_allowed = [t for t in ALL_TYPES if by_type[t] in OK_PATHS]
     allowed = bool(types_allowed)
     depends = [] if state else _depends_on(conditions)
@@ -2737,13 +2873,13 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     # No ADU rule here. A hearing path for a use the code does not list is a path to ask for, not an ADU allowed.
     path_to_ask = None
     lead = "The code bars ADUs here" if status == "prohibited" else "The code has no ADU rule here"
-    if no_rule_here and allowed:
+    if no_rule_here and allowed and not set(types_allowed) <= listed:
         ask = picked[("approval", "path")]
         similar = _unlisted_similar(data, lot) if how == "unlisted" else None
         if similar:  # pass 12: the unlisted-use path reaches only uses similar to the listed ones
             note = (
                 f"{lead}. A use similar in nature to a use the district lists may be authorized by "
-                f"{ask[0]['value'].replace('_', ' ')} ({ask[0]['section']})"
+                f"{_path_words(ask[0])} ({ask[0]['section']})"
                 + (f": '{similar['quote']}'" if similar.get("quote") else "")
                 + ". Whether an ADU is similar is not settled, so ask the zoning officer. "
                 "That is a hearing with no set standards for an ADU"
@@ -2751,15 +2887,16 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         elif how == "unlisted":
             note = (
                 f"{lead}. A use that is not listed may be authorized by "
-                f"{ask[0]['value'].replace('_', ' ')} ({ask[0]['section']}). That is a hearing with no set standards for an ADU"
+                f"{_path_words(ask[0])} ({ask[0]['section']}). That is a hearing with no set standards for an ADU"
             )
         else:
             note = (
-                f"{lead}. The rule file gives {ask[0]['value'].replace('_', ' ')} "
+                f"{lead}. The rule file gives {_path_words(ask[0])} "
                 f"({ask[0]['section']}) as the path to ask about. Ask the zoning officer"
             )
         path_to_ask = {"path": ask[0]["value"], "section": ask[0]["section"], "url": ask[0].get("url"), "note": note}
-        allowed, types_allowed = False, []
+        types_allowed = [t for t in types_allowed if t in listed]  # pass 15: a form under another listing stays allowed
+        allowed = bool(types_allowed)
     elif barred:
         quote = barred.get("quote")
         path_to_ask = {
@@ -2853,7 +2990,6 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         )
     if scope["districts"] and scope["in_scope"] is not True:
         head.append(_scope_line(scope, lot, with_section=True))
-    alts = _alternatives(file_data, lot)
     if not state and not allowed and (status in NO_ADU_STATUSES or scope["in_scope"] is False):
         # pass 9: an overlay-keyed ADU listing reaches this lot (or may): said beside "no ADU rule", never hidden
         for a in alts:
@@ -2894,6 +3030,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         + reasons
         + fails
         + doubt_line
+        + listing_line
         + tail
         + _town_type_reasons(_cap_in_scope(data, picked, lot), by_type, place in PASS12_HOLD_TOWNS)
         + checks,
@@ -2989,14 +3126,28 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             ),
         )
     disputed = [c for c in conditions if c.get("disputed_by") and c["met"] is False]
-    if allowed and disputed and not state:  # pass 8: the lot fails a bar whose reading is disputed
+    # pass 15: a dispute on a bar scoped to some forms qualifies those forms only, never the lot's whole answer
+    # while another form takes the same path without it (Bloomsburg 27-503.2B: a new detached unit only)
+    whole = [c for c in disputed if not _form_scoped(c, by_type, types_allowed, approval)]
+    form_disputes = [c for c in disputed if c not in whole]
+    if allowed and whole and not state:  # pass 8: the lot fails a bar whose reading is disputed
         qualifier = qualifier or "conditional_on_reading"
         out["reasons"].insert(
             0,
             ". ".join(
                 f"{approval.replace('_', ' ').capitalize()} only if the reading that lets this lot in holds: "
                 + c["condition"]
-                for c in disputed
+                for c in whole
+            ),
+        )
+    if allowed and form_disputes and not state:
+        out["reasons"].insert(
+            0,
+            ". ".join(
+                f"For {', '.join(t.replace('_', ' ') for t in forms)}: {by_type[forms[0]].replace('_', ' ')} only if "
+                "the reading that lets this lot in holds: " + c["condition"]
+                for c in form_disputes
+                for forms in [[t for t in c["applies_to"] if t in types_allowed]]
             ),
         )
     if allowed and doubt and doubt_line:  # pass 11: in doubt, so the path holds only if the rule reaches the district
@@ -3289,6 +3440,23 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         # The bill overrides the town's status (conditions_overridden says so). Today's status is in the reasons.
         out["adu_status"] = "allowed_by_right"
     return {k: out[k] for k in OUTPUT_KEYS + TOWN_KEYS}
+
+
+def _form_scoped(c: dict[str, Any], by_type: dict[str, str], types_allowed: list[str], approval: str) -> bool:
+    """Pass 15: a disputed condition that reaches only some allowed forms (applies_to), while another allowed form
+    outside it takes the lot's path. Then the dispute qualifies those forms, not the lot's answer."""
+    forms = c.get("applies_to")
+    if not forms or not any(t in types_allowed for t in forms):
+        return False
+    return any(by_type[t] == approval for t in types_allowed if t not in forms)
+
+
+def _path_words(leaf: dict[str, Any]) -> str:
+    """Pass 15: a path in words. A path leaf with code_term (the code's own name for the decision, for example a use
+    grant) names it, and says which path the tool reads it as."""
+    words = str(leaf["value"]).replace("_", " ")
+    term = leaf.get("code_term")
+    return f"a {term}, which the tool reads as a {words}" if term else words
 
 
 def _sup_met(c: dict[str, Any]) -> bool | None:
@@ -4139,6 +4307,7 @@ def lint(data: dict[str, Any]) -> list[str]:
             or g.get("not_districts")
             or g.get("building_types")
             or g.get("when") in ("historic", "not_historic")
+            or g.get("overlays")  # pass 15: as the resolver reads it since pass 12, an overlay is a scope
         )
         if g.get("effect") == "bars" and not scoped:
             out.append(

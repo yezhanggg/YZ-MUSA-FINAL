@@ -276,6 +276,14 @@
       "url": "https://ecode360.com/print/SA2440?guid=15735277",
       "verified_on": "2026-11-16",
       "confidence": "verified"
+    },
+    "land_development_second_building": {
+      "value": true,
+      "section": "112 'Land development'",
+      "url": "https://ecode360.com/print/SA2440?guid=15734801",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Construction of two or more residential buildings on a single lot' is a land development (112). The plan is approved under Chapter 22"
     }
   },
   "eligibility": {
@@ -353,27 +361,11 @@
         },
         {
           "kind": "other",
-          "condition": "'Construction of two or more residential buildings on a single lot' is a land development (112). A new detached unit needs land development plan approval under Chapter 22 as well as the special exception.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new"
-          ],
-          "districts": null,
-          "building_types": null,
-          "section": "112 'Land development'",
-          "url": "https://ecode360.com/print/SA2440?guid=15734801"
-        },
-        {
-          "kind": "other",
           "condition": "In the Floodplain Overlay Zone only the uses listed in 230.6 and 230.7 'and no others' are permitted. No dwelling is listed, and normal accessory uses there exclude enclosed structures (230.6H). 'No special exception shall be granted for any use except those specifically permitted by § 230, Subsection 7'.",
           "effect": "bars",
           "applies_to": null,
           "districts": null,
-          "building_types": [
-            "detached",
-            "semi_detached",
-            "attached"
-          ],
+          "building_types": null,
           "overlays": [
             "FP"
           ],
@@ -385,25 +377,9 @@
             "url": "https://ecode360.com/print/SA2440?guid=15735844",
             "note": "It permits 'Front, side and rear yards and required lot area in any zone' in the overlay. So a lot only partly in the overlay may still take a unit built outside it"
           }
-        },
-        {
-          "kind": "size",
-          "condition": "In RU 'Accessory detached structures exceeding 900 square feet of total floor area' are a special exception of their own. A detached unit in a building over 900 sq ft needs that approval too. The cross reference to 401 points to a reserved section.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "RU"
-          ],
-          "building_types": null,
-          "section": "202.3A",
-          "url": "https://ecode360.com/print/SA2440?guid=15735483"
         }
       ],
-      "section": "402, 230, 202.3A, 112 'Land development'",
+      "section": "402, 230",
       "url": "https://ecode360.com/print/SA2440?guid=15736561",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -592,6 +568,14 @@
         "url": "https://ecode360.com/print/SA2440?guid=15735483",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      },
+      "accessory_structure_threshold_sqft": {
+        "value": 900,
+        "section": "202.3A",
+        "url": "https://ecode360.com/print/SA2440?guid=15735483",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "In RU 'Accessory detached structures exceeding 900 square feet of total floor area' are a special exception of their own. A detached unit in a building over 900 sq ft needs that approval too. The cross reference to 401 points to a reserved section."
       }
     },
     "RF": {

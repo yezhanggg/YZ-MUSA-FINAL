@@ -1023,3 +1023,66 @@ describe('get_rule_text pass 14', () => {
     expect(out.under_hb2186.still_applies).not.toMatch(/\. [a-z]/);
   });
 });
+
+// Pass 15: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 15 section).
+describe('get_rule_text pass 15', () => {
+  it('gives the ADU count a district sets (Bloomsburg R-U two)', async () => {
+    const ru = await town6('pa_columbia_bloomsburg', 'size', 'R-U');
+    expect(ru.forms.adus_in_district).toMatchObject({ value: 2, section: '27-605.1B' });
+    const rs = await town6('pa_columbia_bloomsburg', 'size', 'R-S');
+    expect(rs.forms.adus_in_district).toBeUndefined();
+  });
+
+  it('gives a unit inside the house its own listing path, without the family rule', async () => {
+    for (const d of ['C-R', 'MX-1', 'MX-3', 'C-W', 'BC']) {
+      const out = await town6('pa_columbia_bloomsburg', 'approval', d);
+      expect(out.approval.by_form_today.internal).toBe('by_right');
+      expect(out.approval.under_another_listing[0]).toMatchObject({ forms: ['internal'], path: 'by_right' });
+      expect(out.summary).toContain('Internal: by right under another listing in the code, Accessory apartment');
+      expect(out.path_to_ask).toBeUndefined();
+      expect(out.not_allowed).toBeUndefined();
+    }
+    const rs = await town6('pa_columbia_bloomsburg', 'approval', 'R-S');
+    expect(rs.approval.by_form_today.internal).toBe('by_right');
+    expect(rs.approval.by_form_today.attached).toBe('special_exception');
+    const fam = rs.conditions.find((c: Any6) => c.kind === 'family');
+    expect(fam.applies_to).not.toContain('internal');
+    const rc = await town6('pa_columbia_bloomsburg', 'approval', 'R-C');
+    expect(rc.approval.by_form_today.internal).toBe('variance');
+    expect(rc.approval.under_another_listing).toBeUndefined();
+    expect(rc.conditions.find((c: Any6) => c.kind === 'family').applies_to).toBeUndefined();
+  });
+
+  it('reads an overlay as a scope for a bar (St. Marys FP)', async () => {
+    const out = await town6('pa_elk_st_marys', 'eligibility', 'RU');
+    const fp = out.conditions.find((c: Any6) => Array.isArray(c.overlays) && c.overlays.includes('FP'));
+    expect(fp.building_types).toBeUndefined();
+    expect(fp.warning).toBeUndefined();
+  });
+
+  it('gives the accessory threshold of a district and the land development trigger (St. Marys RU)', async () => {
+    const out = await town6('pa_elk_st_marys', 'eligibility', 'RU');
+    expect(out.conditions.find((c: Any6) => c.kind === 'size' && String(c.condition).includes('900')).condition).toMatch(/^An accessory building over 900 sq ft needs a further approval\. In RU /);
+    const ld = out.conditions.find((c: Any6) => c.kind === 'land_development');
+    expect(ld.applies_to).toEqual(['detached_new']);
+    expect(ld.condition).toMatch(/^A new detached unit puts a second residential building on the lot/);
+  });
+
+  it('says a services row once when two rows read alike (Upper Dublin A)', async () => {
+    const out = await town6('pa_montgomery_upper_dublin', 'eligibility', 'A');
+    const rows = out.conditions.filter((c: Any6) => c.kind === 'utilities').map((c: Any6) => c.condition);
+    expect(rows.length).toBe(2);
+    expect(rows.filter((r: string) => r.startsWith('A: With public sewer or public water, not both')).length).toBe(1);
+  });
+
+  it('says a planned development takes its own lot minimum (New Britain WS)', async () => {
+    const out = await town6('pa_bucks_new_britain', 'eligibility', 'WS');
+    const c = out.conditions.find((x: Any6) => x.kind === 'district_lot_rule');
+    expect(c.condition).toMatch(/A lot in a planned or cluster development takes that development's own lot minimum instead \(27-502c\(3\)\(a\), d\(3\)\(a\)\)$/);
+  });
+
+  it('names the use grant, the code\'s own word for the decision (Richland R-1)', async () => {
+    const out = await town6('pa_cambria_richland', 'approval', 'R-1');
+    expect(out.path_to_ask.note).toContain('may be authorized by a use grant, which the tool reads as a special exception (240-32A(10)');
+  });
+});

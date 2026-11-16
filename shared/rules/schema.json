@@ -215,6 +215,10 @@
         },
         "unlisted_use_scope": {
           "$ref": "#/$defs/leaf_unlisted_use_scope"
+        },
+        "land_development_second_building": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 15: true when the code makes a second residential building on a lot a land development (for example 'Construction of two or more residential buildings on a single lot'). A new detached unit then needs land development plan approval as well as the zoning path. Said as a condition for a new detached unit."
         }
       }
     },
@@ -1100,6 +1104,11 @@
         "hearing_named": {
           "type": "boolean",
           "description": "Pass 12: false when the code names no hearing for this decision (for example the governing body decides on a finding, Adams 167-21.1). The answer then says who decides and that the code names no hearing, never 'after a public hearing'. Leave it out where the code or the MPC gives a hearing."
+        },
+        "code_term": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Pass 15: the code's own name for this decision when the code does not call it by the path's name (for example 'use grant' for a Zoning Hearing Board decision on a use not listed). The path keeps its value for the tool. The sentences name the code's term and the path it is read as."
         }
       }
     },
@@ -1319,6 +1328,18 @@
         "setback_rear_ft_by_type": {
           "$ref": "#/$defs/leaf_num_by_type",
           "description": "Pass 13: the rear yard (ft) by the house type of the lot, keyed by building type, when one district row sets it apart for a house type (for example a twin's own yards). For a lot of a listed type it replaces setback_rear_ft for the house and an attached unit. Otherwise setback_rear_ft applies."
+        },
+        "max_adus": {
+          "$ref": "#/$defs/leaf_int",
+          "description": "Pass 15: ADUs per lot in this district, when the code sets a different count by district (for example one in R-C and R-S, up to two in R-U). It replaces use.max_adus for a lot in the district. use.max_adus keeps the figure for the other districts."
+        },
+        "accessory_structure_threshold_sqft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 15: the size above which an accessory building needs a further approval in this district only (for example a special exception for an accessory structure over 900 sq ft in RU). Not a cap. Like envelope.accessory_structure_threshold_sqft, and it replaces that figure for a lot in the district."
+        },
+        "min_lot_replaced_in_planned_development": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 15: true when a lot in a planned, cluster or conservation development the code names (lot fact in_planned_development) takes that development's own lot minimum in place of min_lot_sqft. On such a lot the line that says the lot is below the district minimum and may be nonconforming is not said."
         }
       }
     },
@@ -2080,6 +2101,22 @@
                     "minLength": 1
                   }
                 }
+              },
+              "forms": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                },
+                "description": "Pass 15: with adu_listing true, the ADU forms this listing covers (for example internal for a unit inside an existing house). Where the listing reaches the lot and its path is less demanding than the ADU rule's path for a form, the form takes the listing's path, and the ADU rule's conditions on who may live in the unit (family, occupancy, owner) do not reach that form. Set it only where the code gives the listing its own path and standards."
               }
             }
           }

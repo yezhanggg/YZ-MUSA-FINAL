@@ -409,6 +409,8 @@ def _conditions_cell(d):
         def alt(a):
             path = NAMES.get(a["path"], a["path"]) + (" with land development" if a.get("land_development") else "")
             tag = "ADU under another listing, " if a.get("adu_listing") else ""
+            if a.get("adu_listing") and a.get("forms"):  # pass 15: the forms the listing covers
+                tag += f"for {', '.join(f.replace('_', ' ') for f in a['forms'])}, "
             return f"{a['name']} ({tag}{path}, {clean(a['section'])})"
 
         label = "other ways" if any(a.get("adu_listing") for a in alts) else "other ways (not ADUs)"
@@ -417,6 +419,16 @@ def _conditions_cell(d):
     if tot:
         out.append(f"{tot} parking spaces in total")
     return ". ".join(out) or "none on file"
+
+
+def _adus_cell(d):
+    """ADUs per lot, with a count set by district (pass 15: Bloomsburg two in R-U)."""
+    extra = [
+        f"{row['max_adus']['value']} in {code}"
+        for code, row in (d.get("districts") or {}).items()
+        if (row.get("max_adus") or {}).get("value") is not None
+    ]
+    return _v(d, "use", "max_adus") + (" (" + ", ".join(extra) + ")" if extra else "")
 
 
 def _status_counts(idx):
@@ -470,9 +482,12 @@ def towns():
             "not set" if t["file"] in ("philadelphia", "pittsburgh") else "none"
         )
         status = val((adu.get("status") or {}).get("value")) if adu.get("status") else ""
+        by_form = (adu.get("status_by_form") or {}).get("value")
+        if by_form:  # pass 15: a status set by form (New Britain: internal and attached prohibited)
+            status += " (" + ", ".join(f"{f.replace('_', ' ')} {val(v)}" for f, v in by_form.items()) + ")"
         out.append(
             f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_path_cell(d)} | {_conditions_cell(d)} | "
-            f"{_size_cell(d)} | {_v(d, 'use', 'owner_occupancy')} | {_v(d, 'use', 'max_adus')} | {d['provenance'].get('verified_on')} |"
+            f"{_size_cell(d)} | {_v(d, 'use', 'owner_occupancy')} | {_adus_cell(d)} | {d['provenance'].get('verified_on')} |"
         )
     out += [
         "",

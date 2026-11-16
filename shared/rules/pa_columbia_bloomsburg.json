@@ -29,7 +29,7 @@
     "checks": [
       "A 'Dwelling, Accessory' (also known as a granny flat) is a special exception in R-C, R-S and R-U (Schedule A, 27-303), under the standards of 27-605.1. The Zoning Hearing Board decides after a hearing",
       "It is a separate unit 'for one or two family members of the occupant(s) of the primary dwelling', attached to or detached from the house (27-1102). The code's 'Family' can include up to three unrelated persons, so the occupant need not be a relative. At most two persons live in it (27-605.1H)",
-      "Only as an accessory use to a single-family detached dwelling. One per lot in R-C and R-S, up to two in R-U (27-605.1A, B). The tool shows one. A house with two accessory dwellings holds three units, and the code's 'Apartment Building(s)' means 'More than two dwelling units on one lot'. Ask the zoning officer",
+      "Only as an accessory use to a single-family detached dwelling. One per lot in R-C and R-S, up to two in R-U (27-605.1A, B). A house with two accessory dwellings holds three units, and the code's 'Apartment Building(s)' means 'More than two dwelling units on one lot'. Ask the zoning officer",
       "Built attached to the house with a separate entrance and no shared interior access, inside an existing lawful accessory structure, or as a new structure that meets every zoning rule (27-605.1C)",
       "No single unit may hold more than 50% of the habitable floor space of the house (27-605.1D)",
       "One parking space with separate access for each bedroom or sleeping area in the unit (27-605.1G). The house needs one space (27-511.2B(3)). MX-1 needs none (27-511.2A)",
@@ -144,6 +144,9 @@
           "section": "27-1102 'Apartment, accessory', 27-303 Schedule A",
           "url": "https://ecode360.com/45548396",
           "adu_listing": true,
+          "forms": [
+            "internal"
+          ],
           "confidence": "secondary",
           "note": "Schedule A gives no specific standards for it. 27-605.1 speaks of 'accessory dwelling' units, and whether its limits (two persons, 50% of the house, parking per bedroom) reach the accessory apartment is not said. In R-U the single-family lot area is 3,000 sq ft per dwelling unit (27-306.2), and in C-R 4,000 sq ft (27-307.2). If the apartment counts as a unit, the lot needs twice that. Ask the zoning officer"
         },
@@ -433,7 +436,7 @@
       "url": "https://ecode360.com/print/BL2204?guid=45548897",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "One in R-C and R-S. In R-U 'no more than two accessory dwellings' (27-605.1B), each at most 50% of the house. The file holds one figure for the town, so the lower one is shown. A house with two accessory dwellings holds three units, which the code's 'Apartment Building(s)' definition ('More than two dwelling units on one lot') may reach. Ask the zoning officer"
+      "note": "One in R-C and R-S. In R-U 'no more than two accessory dwellings' (27-605.1B), each at most 50% of the house. That figure is set for R-U alone. A house with two accessory dwellings holds three units, which the code's 'Apartment Building(s)' definition ('More than two dwelling units on one lot') may reach. Ask the zoning officer"
     }
   },
   "parking": {
@@ -615,6 +618,14 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "All structures. Over 35 ft needs section, elevation and sun-shadow studies for Planning Commission review and a recommendation to Town Council (27-522)"
+      },
+      "max_adus": {
+        "value": 2,
+        "section": "27-605.1B",
+        "url": "https://ecode360.com/print/BL2204?guid=45548897",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "'no more than two accessory dwellings' (27-605.1B), each at most 50% of the house. A house with two accessory dwellings holds three units, which the code's 'Apartment Building(s)' definition ('More than two dwelling units on one lot') may reach. Ask the zoning officer"
       }
     },
     "C-R": {
