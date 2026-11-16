@@ -303,6 +303,10 @@ const testText = (g: Obj): string => {
 /** A condition followed by an "only if" sentence ends its own sentence first (eval ladder-01, Nov 15: York read
  *  "may become the ADU Allowed only if ..."). */
 const endSentence = (c: string, next: string): string => (next && /[\p{L}\p{N})]['"’”]?$/u.test(c.trimEnd()) ? `${c.trimEnd()}.` : c);
+/** Pass 14 (pipeline/rules.py _exempt_caps_words): 'a', 'a or b', 'a, b or c'. */
+const orList = (xs: string[]): string => (xs.length > 1 ? `${xs.slice(0, -1).join(', ')} or ${xs[xs.length - 1]}` : xs.join(''));
+/** Pass 14 (pipeline/rules.py OVERLAY_TWICE): 'the A or B overlay', with a name that ends in "Overlay" said once. */
+const overlayWords = (xs: string[]): string => { const t = xs.join(' or '); return /overlay$/i.test(t) ? t : `${t} overlay`; };
 const num = (v: Json | undefined) => (typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
 const LIMITED: Record<string, string> = {
@@ -359,6 +363,8 @@ const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false): string 
 function conditionsOf(file: Obj, district: string | null): Obj[] {
   const out: Obj[] = [];
   const st = leafAt(file, 'adu', 'status');
+  // Pass 14 (pipeline/rules.py): no ADU rule here (no district or historic path), so a small lot does not change the path.
+  const noRule = !!st && NO_ADU.has(String(st.value)) && !hasDistrictPath(file, district) && !leafAt(file, 'approval', 'historic_path')?.value;
   if (st && st.value && st.value !== 'allowed_by_right') out.push(cond('adu_status', `${LIMITED[st.value as string] ?? label(st.value)}. ${st.note ?? ''}`.trim(), st));
   const occ = leafAt(file, 'use', 'occupancy');
   if (occ && occ.value) out.push(cond('occupancy', String(occ.value), occ));
@@ -428,7 +434,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
           ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
           : // A bare district minimum is a rule for creating lots, not an ADU rule: the bill does not touch it
             // (pipeline/rules.py kind district_lot_rule, not in BILL_OVERRIDES).
-            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft${typeFigs('min_lot_sqft_by_type', 'sq ft')}, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. Ask the zoning officer whether an ADU is allowed on it`, m, { district: code }),
+            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft${typeFigs('min_lot_sqft_by_type', 'sq ft')}, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. ${noRule ? 'The code has no ADU rule here, so the lot size does not change the path' : 'Ask the zoning officer whether an ADU is allowed on it'}`, m, { district: code }),
       );
     }
     // District figures that change with public sewer and water (pipeline/rules.py _utility_conditions, pass 7).
@@ -438,13 +444,27 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
         // Pass 9: density and accessory building figures on such a lot, and rows keyed on a mapped growth area.
         const figs = ['min_lot_sqft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft', 'principal_max_height_ft', 'max_building_coverage', 'lot_area_per_unit_sqft', 'accessory_setback_front_ft', 'accessory_setback_side_ft', 'accessory_setback_rear_ft', 'accessory_max_height_ft', 'accessory_max_stories', 'max_impervious_coverage', 'setback_sides_total_ft']
           .filter((f) => typeof it[f] === 'number')
-          .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' || f === 'max_impervious_coverage' ? `${Math.round((it[f] as number) * 100)}%` : num(it[f])}`)
+          // Pass 14 (pipeline/rules.py _utility_figures): figures with units.
+          .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' || f === 'max_impervious_coverage' ? `${Math.round((it[f] as number) * 100)}%` : `${num(it[f])}${f === 'accessory_max_stories' ? '' : f.endsWith('_sqft') ? ' sq ft' : ' ft'}`}`)
           .join(', ')
           .replace('accessory max stories', 'accessory building stories')
           .replace('accessory max height', 'accessory building height');
         const growth = typeof it.in_growth_area === 'boolean';
-        const tail = growth ? 'Depends on whether the lot is inside the mapped growth area' : 'The district figures are for a lot with public sewer and water';
-        out.push({ kind: 'utilities', condition: ownerText(`${code}: ${it.when}: ${figs}${it.note ? `. ${String(it.note).replace(/\.$/, '')}` : ''}. ${tail}`), section: it.section ?? null, url: it.url ?? ur.url ?? null, checked_on: ur.verified_on ?? null, confidence: ur.confidence ?? null, district: code, test: growth ? 'in_growth_area' : 'public_sewer_water' });
+        // Pass 14: only the services this row names ("Without public sewers": public sewer).
+        const named = (['public_sewer', 'public_water'] as const).filter((f) => typeof it[f] === 'boolean');
+        const base = named.length === 1 ? (named[0] === 'public_sewer' ? 'public sewer' : 'public water') : 'public sewer and water';
+        const tail = growth ? 'Depends on whether the lot is inside the mapped growth area' : `The district figures are for a lot with ${base}`;
+        // Pass 14: a note that opens with the same area in acres goes into the figure ("43,560 sq ft (one acre)").
+        let note = it.note ? String(it.note).replace(/\.$/, '') : '';
+        let figsOut = figs;
+        const acre = /^(one|an|half an|two|three|four|five|1|2|3|5) acres?\b[ ,.]*/i.exec(note);
+        const acres: Record<string, number> = { one: 1, an: 1, 'half an': 0.5, two: 2, three: 3, four: 4, five: 5, '1': 1, '2': 2, '3': 3, '5': 5 };
+        if (acre && typeof it.min_lot_sqft === 'number' && Math.abs(acres[acre[1].toLowerCase()] * 43560 - it.min_lot_sqft) < 1) {
+          figsOut = figs.replace(`min lot ${num(it.min_lot_sqft)} sq ft`, `min lot ${num(it.min_lot_sqft)} sq ft (${acre[0].replace(/[ ,.]+$/, '').toLowerCase()})`);
+          note = note.slice(acre[0].length).replace(/^[ ,.]+/, '');
+          note = note.charAt(0).toUpperCase() + note.slice(1);
+        }
+        out.push({ kind: 'utilities', condition: ownerText(`${code}: ${it.when}: ${figsOut}${note ? `. ${note}` : ''}. ${tail}`), section: it.section ?? null, url: it.url ?? ur.url ?? null, checked_on: ur.verified_on ?? null, confidence: ur.confidence ?? null, district: code, test: growth ? 'in_growth_area' : 'public_sewer_water' });
       }
   }
   const gates = leafAt(file, 'eligibility', 'gates');
@@ -458,7 +478,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     // No lot facts here, so a gate with a lot test is always an "allowed only if".
     // Pass 10 (pipeline/rules.py _gate_scope): an overlay-only gate applies only on a lot in the overlay, never a bar unseen.
     const overlayOnly = Array.isArray(g.overlays) && g.overlays.length && !Array.isArray(g.districts);
-    const ifText = testText(g) + (overlayOnly ? ` Applies only if the lot is in the ${(g.overlays as string[]).join(' or ')} overlay.` : '');
+    const ifText = testText(g) + (overlayOnly ? ` Applies only if the lot is in the ${overlayWords(g.overlays as string[])}.` : '');
     const scoped = !!(g.test || g.districts || g.not_districts || g.building_types || g.when === 'historic' || g.when === 'not_historic');
     if (g.effect === 'bars' && !scoped) {
       scope.effect = 'condition';
@@ -715,7 +735,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     ...(minBy && isObj(minBy.value) ? { min_sqft_by_form: ruleOut('size.min_sqft_by_form', minBy) } : {}),
     ...(hu && typeof hu.value === 'number' ? { share_of_house_and_unit: { ...ruleOut('size.max_share_of_house_and_unit', hu), inside: huRule('inside'), added: huRule('added') } } : {}),
     ...(byLot && Array.isArray(byLot.value) ? { adus_by_lot_size: ruleOut('use.max_adus_by_lot_size', byLot) } : {}),
-    ...(exempt && isObj(exempt.value) ? { exempt_building: { ...ruleOut('size.exempt_building', exempt), note: ownerText(`${String(exempt.value.what ?? 'A qualifying existing building')}: no ${(exempt.value.caps as string[]).map((c) => ({ size: 'floor area cap', height: 'ADU height limit', setbacks: 'setbacks' })[c] ?? c).join(', ')} (${exempt.section ?? ''})`) } } : {}),
+    ...(exempt && isObj(exempt.value) ? { exempt_building: { ...ruleOut('size.exempt_building', exempt), note: ownerText(`${String(exempt.value.what ?? 'A qualifying existing building')}: no ${orList((exempt.value.caps as string[]).map((c) => ({ size: 'floor area cap', height: 'ADU height limit', setbacks: 'setbacks' })[c] ?? c))} (${exempt.section ?? ''})`) } } : {}),
   };
   return {
     ...extra9,
@@ -1007,7 +1027,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft. A form the town bars today would get that floor',
       ...(inDoubtHere ? { district_in_doubt: `${district} would be opened by the bill like any other district where a house is allowed` } : {}),
       conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })),
-      ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.join('. ')}` } : {}),
+      ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.map((k, i) => (i ? k.charAt(0).toUpperCase() + k.slice(1) : k)).join('. ')}` } : {}),
     };
   const alts = leafAt(file, 'approval', 'alternatives');
   if (Array.isArray(alts?.value) && alts!.value.length) {
@@ -1039,7 +1059,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
             : null,
           // Pass 7 (pipeline/rules.py _alternatives): per-district lots, overlays and other tests. Never "applies" unchecked.
           isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
-          Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${a.overlays.join(' or ')} overlay` : null,
+          Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${overlayWords(a.overlays as string[])}` : null,
           Array.isArray(a.requires) && a.requires.length
             ? `Applies only if: ${a.requires.filter(isObj).map((r) => `${r.condition}${r.section ? ` (${r.section})` : ''}`).join('. ')}`
             : null,

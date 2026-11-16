@@ -2155,14 +2155,32 @@
                   "number",
                   "null"
                 ],
-                "minimum": 0
+                "minimum": 0,
+                "description": "At least this lot size (inclusive)."
+              },
+              "min_lot_sqft_over": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Pass 14: more than this lot size (exclusive), for a code's \"more than X\". Put the code's own figure."
               },
               "max_lot_sqft": {
                 "type": [
                   "number",
                   "null"
                 ],
-                "minimum": 0
+                "minimum": 0,
+                "description": "Less than this lot size (exclusive). For a code's \"X or less\" use max_lot_sqft_at_most."
+              },
+              "max_lot_sqft_at_most": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Pass 14: this lot size or less (inclusive), for a code's \"X or less\". Put the code's own figure."
               },
               "applies_to": {
                 "enum": [

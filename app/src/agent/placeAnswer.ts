@@ -320,7 +320,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   const formStatus = unit && rule ? rule.status_by_form[FORM_OF[unit]] : undefined;
   if (formStatus === 'prohibited') return { fits_zoning: 'no', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict(rule!.path_by_form[FORM_OF[unit!]] === 'not_allowed' ? 'not_allowed' : 'variance', 'prohibited', rule!.status_by_form_section)}.`] };
   if (r.status === 'prohibited' || r.status === 'not_addressed') {
-    why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule; a variance or a code change would be needed.');
+    why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule. A variance or a code change would be needed.');
     return { fits_zoning: 'no', why };
   }
   const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;
@@ -334,7 +334,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   const depends: { fact: string; rule: unknown; section: unknown }[] = [];
   if (unit && Array.isArray(r.unit_types) && !r.unit_types.includes(unit)) {
     fits = 'no';
-    why.push(`Zoning here allows only ${r.unit_types.length ? r.unit_types.map((t) => UNIT_TEXT[t]).join(' or ') : 'no ADU form'}; the proposal is ${UNIT_TEXT[unit]}.`);
+    why.push(`Zoning here allows only ${r.unit_types.length ? r.unit_types.map((t) => UNIT_TEXT[t]).join(' or ') : 'no ADU form'}. The proposal is ${UNIT_TEXT[unit]}.`);
   }
   const inside = unit === 'internal' || unit === 'attached';
   const cap = inside ? rule?.max_sqft_inside_or_attached : rule?.max_sqft_accessory_building;
@@ -356,7 +356,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
     else if (greater && shareNum) why.push(`${size} sq ft is over ${capNum} sq ft, but the cap is the greater of ${capNum} sq ft or ${pct} of the house (${share!.section ?? cap!.section ?? 'rule file'}). ${houseDepends(size)}`);
     else {
       fits = 'no';
-      why.push(`The size cap is ${capNum} sq ft (${cap!.section ?? 'rule file'}); the proposal is ${size} sq ft.`);
+      why.push(`The size cap is ${capNum} sq ft (${cap!.section ?? 'rule file'}). The proposal is ${size} sq ft.`);
     }
   } else if (size && shareNum) why.push(`The size cap is a share of the house: at most ${pct} of the house (${share!.section ?? 'rule file'}). ${houseDepends(size)}`);
   else if (size) why.push('No size cap number on file for this form: ask the zoning officer.');
@@ -376,7 +376,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   const minForm = unit && rule?.min_sqft_by_form ? rule.min_sqft_by_form.value[FORM_OF[unit]] : undefined;
   if (size && typeof minForm === 'number' && size < minForm) {
     fits = 'no';
-    why.push(`${UNIT_TEXT[unit!].charAt(0).toUpperCase()}${UNIT_TEXT[unit!].slice(1)} must have at least ${minForm} sq ft (${rule!.min_sqft_by_form!.section ?? 'rule file'}); the proposal is ${size} sq ft.`);
+    why.push(`${UNIT_TEXT[unit!].charAt(0).toUpperCase()}${UNIT_TEXT[unit!].slice(1)} must have at least ${minForm} sq ft (${rule!.min_sqft_by_form!.section ?? 'rule file'}). The proposal is ${size} sq ft.`);
   }
   if (unit && rule)
     for (const d of rule.depends_on)

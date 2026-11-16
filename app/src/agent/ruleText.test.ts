@@ -758,10 +758,10 @@ describe('get_rule_text pass 9', () => {
     const acc = mu.conditions.filter((c: Any6) => /^An accessory building in /.test(c.condition));
     expect(acc.map((c: Any6) => c.districts)).toEqual([]); // no ADU rule: the accessory rows are not ADU rules
     const wm = await town6('pa_montgomery_whitemarsh', 'size', 'AAA');
-    expect(wm.conditions.some((c: Any6) => /accessory setback side 30.*accessory building height 20, accessory building stories 1/.test(c.condition))).toBe(true);
+    expect(wm.conditions.some((c: Any6) => /accessory setback side 30 ft.*accessory building height 20 ft, accessory building stories 1/.test(c.condition))).toBe(true);
     const dv = await town6('pa_york_dover', 'size', 'R-1');
     const g = dv.conditions.find((c: Any6) => c.test === 'in_growth_area');
-    expect(g.condition).toMatch(/Outside the Growth Boundary Area: min lot 65,340, lot area per unit 65,340.*Depends on whether the lot is inside the mapped growth area$/);
+    expect(g.condition).toMatch(/Outside the Growth Boundary Area: min lot 65,340 sq ft, lot area per unit 65,340 sq ft.*Depends on whether the lot is inside the mapped growth area$/);
   });
 
   it('gives the other listings their disputed path, short-term rental and services lot minimum', async () => {
@@ -781,7 +781,7 @@ describe('get_rule_text pass 9', () => {
     expect(wg.forms.share_of_house_and_unit.added).toMatch(/^At most 54% of the existing house/);
     const wm = await town6('pa_montgomery_whitemarsh', 'size', 'AAA');
     expect(wm.forms.adus_by_lot_size.value).toHaveLength(3);
-    expect(wm.forms.exempt_building.note).toMatch(/^an existing historic accessory building more than 75 years old: no floor area cap, ADU height limit, setbacks/);
+    expect(wm.forms.exempt_building.note).toMatch(/^an existing historic accessory building more than 75 years old: no floor area cap, ADU height limit or setbacks/);
     const nt = await town6('pa_bucks_newtown', 'size', 'VC-1');
     expect(nt.forms.inside_or_attached.attached_yards?.side?.sides_total_ft ?? nt.forms.inside_or_attached.attached_yards?.side).toBeTruthy();
   });
@@ -849,7 +849,7 @@ describe('get_rule_text pass 10', () => {
     const co = await town6('pa_delaware_concord', 'height', 'R-PRD-1');
     expect(co.conditions.filter((c: Any6) => /^A garage /.test(c.condition)).map((c: Any6) => c.condition)).toEqual(['A garage wider than 18 ft may be up to 18 ft. One story with a loft', 'A garage on a property over three acres may be up to 18 ft']);
     const wm = await town6('pa_york_west_manchester', 'status', 'R');
-    expect(wm.under_hb2186.still_applies).toMatch(/impervious cover 20%/);
+    expect(wm.under_hb2186.still_applies).toMatch(/Impervious cover 20%/);
   });
 
   it('carries a gate overlay and its own confidence', async () => {
@@ -887,7 +887,7 @@ describe('get_rule_text pass 11', () => {
 
   it('gives a utility row its both-sides total', async () => {
     const r = await town6('pa_york_newberry', 'setbacks', 'R');
-    expect(r.conditions.find((c: Any6) => c.kind === 'utilities').condition).toMatch(/setback side 25, .*setback sides total 225/);
+    expect(r.conditions.find((c: Any6) => c.kind === 'utilities').condition).toMatch(/setback side 25 ft, .*setback sides total 225 ft/);
   });
 });
 
@@ -982,5 +982,44 @@ describe('get_rule_text pass 13', () => {
     expect(c1.approval.district_path.section).toBe('205-66.2A(7), (9)');
     expect(c1.approval.district_path.note).toMatch(/C-1 permits a single-family detached dwelling under the BR figures/);
     expect(c1.approval.district_path.note).not.toMatch(/RR permits|GA, HR/);
+  });
+});
+
+// Pass 14: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 14 section).
+describe('get_rule_text pass 14', () => {
+  it('joins the caps an exempt building is free of with "or"', async () => {
+    const out = JSON.stringify(await town6('pa_crawford_meadville', 'size', 'R'));
+    expect(out).toContain('an existing structure converted without further horizontal encroachment: no setbacks or ADU height limit (1306.10(A)(6))');
+    expect(out).not.toContain('no setbacks, ADU height limit');
+  });
+
+  it('never asks whether an ADU is allowed on a small lot where the code has no ADU rule', async () => {
+    const sp = await town6('pa_allegheny_south_park', 'eligibility', 'R-2');
+    const c = sp.conditions.find((x: Any6) => x.kind === 'district_lot_rule');
+    expect(c.condition).toMatch(/A smaller existing lot may be a nonconforming lot\. The code has no ADU rule here, so the lot size does not change the path$/);
+    const fr = await town6('pa_montgomery_franconia', 'eligibility', 'R-130');
+    const f = fr.conditions.find((x: Any6) => x.kind === 'district_lot_rule');
+    if (f) expect(f.condition).not.toMatch(/no ADU rule here/);
+  });
+
+  it('gives a services row its units, the acre once and only the services it names', async () => {
+    const el = await town6('pa_allegheny_elizabeth', 'eligibility', 'R-1');
+    const c = el.conditions.find((x: Any6) => x.kind === 'utilities');
+    expect(c.condition).toBe('R-1: Without public sewers: min lot 43,560 sq ft (one acre). The district figures are for a lot with public sewer');
+    const nh = await town6('pa_montgomery_new_hanover', 'eligibility', 'R-25');
+    const n = nh.conditions.find((x: Any6) => x.kind === 'utilities');
+    expect(n.condition).toMatch(/min lot 25,000 sq ft, setback front 40 ft, setback side 15 ft, setback rear 40 ft, max building coverage 20%\. Width 100 ft\. The district figures are for a lot with public sewer and water$/);
+  });
+
+  it('says an overlay whose name ends in Overlay once', async () => {
+    const ud = JSON.stringify(await town6('pa_montgomery_upper_dublin', 'approval', 'A'));
+    expect(ud).toContain('the Historic Resource Overlay');
+    expect(ud).not.toContain('Overlay overlay');
+  });
+
+  it('says each town rule the bill keeps as a sentence', async () => {
+    const out = (await town6('pa_montgomery_new_hanover', 'eligibility', 'R-25')) as Any6;
+    expect(out.under_hb2186.still_applies).toMatch(/\)\. Building coverage \d+%/);
+    expect(out.under_hb2186.still_applies).not.toMatch(/\. [a-z]/);
   });
 });

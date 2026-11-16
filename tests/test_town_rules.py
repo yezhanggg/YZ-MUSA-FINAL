@@ -2343,7 +2343,8 @@ def test_district_impervious_cover():
     assert out["citations"]["max_impervious"]["source_file"] == "pa_york_west_manchester#districts.R"
     assert any(r.startswith("Impervious cover for R: at most 20% of the lot") for r in out["reasons"])
     bill = rules.resolve("pa_york_west_manchester", "state_reform", lot, extra=True)
-    assert any("impervious cover 20%" in r for r in bill["reasons"] if r.startswith("Town lot rules the bill"))
+    # pass 14: each kept rule a sentence
+    assert any("Impervious cover 20%" in r for r in bill["reasons"] if r.startswith("Town lot rules the bill"))
 
 
 def test_owner_rule_and_minimum_size_by_form():
@@ -3031,3 +3032,125 @@ def test_services_only_partly_given(tmp_path, monkeypatch):
     assert out["min_lot_sqft"] is None or out["min_lot_sqft"] != 43560
     off = rules.resolve(name, "today", {**lot, "public_sewer": False}, extra=True)
     assert any(c["kind"] == "utilities" and c["met"] is True for c in off["conditions"])
+
+
+# ------------------------------------------------------------------ pass 14
+
+
+def test_exempt_building_caps_joined_with_or():
+    """Meadville garage conversion: 'has no setbacks or ADU height limit', never 'setbacks, ADU height limit'."""
+    lot = {**DET, "zoning_district": "R", "lot_sqft": 9000, "has_accessory_building": True}
+    out = rules.resolve("pa_crawford_meadville", "today", lot, extra=True)
+    line = next(r for r in out["reasons"] if r.startswith("Garage conversion:"))
+    assert "has no setbacks or ADU height limit (1306.10(A)(6))" in line
+    assert rules._exempt_caps_words(["size", "height", "setbacks"]) == "floor area cap, ADU height limit or setbacks"
+    assert rules._exempt_caps_words(["size"]) == "floor area cap"
+
+
+def test_yard_tiers_inclusive_bounds():
+    """New Hanover: '25,000 sq ft or less' and 'more than 25,000' in the code's own figures. 25,000 is the small tier,
+    25,000.5 the large one. min_lot_sqft stays inclusive and max_lot_sqft exclusive for the other files."""
+    tiers = raw("pa_montgomery_new_hanover")["envelope"]["yard_tiers"]["value"]
+    assert tiers[0]["max_lot_sqft_at_most"] == 25000 and tiers[1]["min_lot_sqft_over"] == 25000
+    r2m = raw("pa_montgomery_new_hanover")["districts"]["R-2M"]["yard_tiers"]["value"]
+    assert r2m[0]["max_lot_sqft_at_most"] == 174240 and r2m[1]["min_lot_sqft_over"] == 174240
+
+    def chosen(district, area):
+        out = rules.resolve(
+            "pa_montgomery_new_hanover", "today", {**DET, "zoning_district": district, "lot_sqft": area}, extra=True
+        )
+        return [i for i, x in enumerate(out["yard_tiers"]) if x["chosen"]]
+
+    assert chosen("R-25", 25000) == [0] and chosen("R-25", 25000.5) == [1] and chosen("R-25", 25001) == [1]
+    assert chosen("R-2M", 174240) == [0] and chosen("R-2M", 174240.5) == [1]
+    assert rules._in_tier({"min_lot_sqft": 100, "max_lot_sqft": 200}, 100)
+    assert not rules._in_tier({"min_lot_sqft": 100, "max_lot_sqft": 200}, 200)
+    assert rules._in_tier({"max_lot_sqft_at_most": 200}, 200) and not rules._in_tier({"min_lot_sqft_over": 200}, 200)
+
+
+def test_no_adu_rule_status_said_once():
+    """South Park R-2 and New Hanover R-25: the status with its note is a reason line, not also a condition."""
+    for name, district in (("pa_allegheny_south_park", "R-2"), ("pa_montgomery_new_hanover", "R-25")):
+        out = rules.resolve(name, "today", {**DET, "zoning_district": district, "lot_sqft": 9000}, extra=True)
+        assert any(r.startswith("The code's ADU status is not addressed (") for r in out["reasons"])
+        assert not [c for c in out["conditions"] if c["kind"] == "adu_status"], name
+    # a family-only town keeps the status condition (the reason line has no note there)
+    fam = rules.resolve(
+        "pa_montgomery_franconia", "today", {**DET, "zoning_district": "R-130", "lot_sqft": 45000}, extra=True
+    )
+    assert [c for c in fam["conditions"] if c["kind"] == "adu_status"]
+
+
+def test_below_minimum_with_no_adu_rule():
+    """No ADU rule here: a small lot does not change the path. Never 'whether an ADU is allowed on it'."""
+    out = rules.resolve(
+        "pa_allegheny_south_park", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 9000}, extra=True
+    )
+    c = next(c for c in out["conditions"] if c["kind"] == "district_lot_rule")
+    assert c["condition"] == (
+        "This lot is below the district minimum of 12,000 sq ft. It may be a nonconforming lot. "
+        "The code has no ADU rule here, so the path is the same use variance"
+    )
+    assert out["approval_path"] == "variance"
+
+
+def test_services_row_names_the_missing_service():
+    """Elizabeth R-1, services not given: units, the acre said once, and only public sewer is missing."""
+    out = rules.resolve(
+        "pa_allegheny_elizabeth", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000}, extra=True
+    )
+    c = next(c for c in out["conditions"] if c["kind"] == "utilities")
+    assert c["condition"] == (
+        "Without public sewers: min lot 43,560 sq ft (one acre). The district figures shown are for a lot with public "
+        "sewer. Depends on whether the lot has public sewer (public_sewer), which was not given"
+    )
+    assert out["depends_on"][0]["fact"] == "whether the lot has public sewer"
+    nh = rules.resolve(
+        "pa_montgomery_new_hanover", "today", {**DET, "zoning_district": "R-25", "lot_sqft": 9000}, extra=True
+    )
+    c = next(c for c in nh["conditions"] if c["kind"] == "utilities")
+    assert "min lot 25,000 sq ft, setback front 40 ft, setback side 15 ft" in c["condition"]
+    assert "(public_sewer, public_water), which was not given" in c["condition"]
+    lot = {**DET, "zoning_district": "R-25", "lot_sqft": 9000, "public_sewer": False}
+    part = rules.resolve("pa_montgomery_new_hanover", "today", lot, extra=True)
+    c = next(c for c in part["conditions"] if c["kind"] == "utilities")
+    assert c["condition"].endswith(
+        "The district figures shown are for a lot with public sewer and water. "
+        "Depends on whether the lot has public water (public_water), which was not given"
+    )
+
+
+def test_overlay_name_said_once(tmp_path, monkeypatch):
+    gate = {k: v for k, v in _gate(overlays=["Historic Resource Overlay"]).items()}
+    gate["condition"] = "No detached unit in the historic overlay"
+    gate["applies_to"] = ["detached_new"]
+    body = {
+        "approval": {"path": _leaf("by_right", "1"), "fallback_path": _leaf("variance", "1")},
+        "eligibility": {"gates": _leaf([gate], "9")},
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_overlay_once", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000}, extra=True)
+    text = json.dumps(out)
+    assert "Overlay overlay" not in text and "the Historic Resource Overlay" in text
+    assert out["depends_on"][0]["fact"] == "whether the lot is in the Historic Resource Overlay (overlays)"
+
+
+def test_bill_line_kept_rules_are_sentences():
+    out = rules.resolve(
+        "pa_montgomery_new_hanover", "state_reform", {**DET, "zoning_district": "R-25", "lot_sqft": 9000}
+    )
+    line = next(r for r in out["reasons"] if r.startswith("Town lot rules the bill does not address still apply: "))
+    assert re.search(r"\)\. Building coverage \d+%", line) and not re.search(r"\. [a-z]", line)
+
+
+def test_pass14_holds_for_lot_towns():
+    """The pass 14 sentence fixes that reach stored lot records wait for the lot towns' next rebuild."""
+    assert rules.PASS14_HOLD_TOWNS == LOT_TOWNS
+    lot = {**DET, "zoning_district": "A", "lot_sqft": 30000}
+    held = rules.resolve("pa_montgomery_upper_dublin", "today", lot, extra=True)
+    rows = [c["condition"] for c in held["conditions"] if c["kind"] == "utilities"]
+    assert rows and all("public sewer and water (public_sewer, public_water)" in r for r in rows)
+    assert any("min lot 45,000, setback front 60," in r for r in rows)  # no units while held
+    bill = rules.resolve("pa_lehigh_allentown", "state_reform", {**DET, "zoning_district": "N3", "lot_sqft": 3000})
+    line = next(r for r in bill["reasons"] if r.startswith("Town lot rules the bill"))
+    assert ". building coverage" in line  # the pass 13 wording while held

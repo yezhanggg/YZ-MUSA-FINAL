@@ -358,7 +358,7 @@
     "yard_tiers": {
       "value": [
         {
-          "max_lot_sqft": 25001,
+          "max_lot_sqft_at_most": 25000,
           "applies_to": "accessory",
           "setback_side_ft": 5,
           "setback_rear_ft": 5,
@@ -366,7 +366,7 @@
           "note": "Detached accessory buildings for a house on a lot of 25,000 sq ft or less"
         },
         {
-          "min_lot_sqft": 25001,
+          "min_lot_sqft_over": 25000,
           "applies_to": "accessory",
           "setback_side_ft": 12,
           "setback_rear_ft": 12,
@@ -531,7 +531,7 @@
       "yard_tiers": {
         "value": [
           {
-            "max_lot_sqft": 174241,
+            "max_lot_sqft_at_most": 174240,
             "applies_to": "principal",
             "setback_front_ft": 40,
             "setback_side_ft": 20,
@@ -540,7 +540,7 @@
             "note": "Detached dwelling on an existing tract of four acres or less. The tiers go by the size of the existing tract (a parcel that held a single-family dwelling when the chapter took effect), read here from the lot area"
           },
           {
-            "min_lot_sqft": 174241,
+            "min_lot_sqft_over": 174240,
             "applies_to": "principal",
             "setback_front_ft": 40,
             "setback_side_ft": 30,

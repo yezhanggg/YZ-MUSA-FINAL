@@ -224,7 +224,9 @@ describe('rule text from the resolver', () => {
   it('Penn (York): an elder cottage under 300 sq ft does not fit; the minimum is for that form only', async () => {
     const small = check(await ask7({ place: 'Penn township', county: 'York', unit_type: 'detached', size_sqft: 250 }));
     expect(small.fits_zoning).toBe('no');
-    expect((small.why as string[]).join(' ')).toMatch(/A detached backyard cottage must have at least 300 sq ft \(325-637A\); the proposal is 250 sq ft\./);
+    // Pass 14: no semicolons in an owner sentence.
+    expect((small.why as string[]).join(' ')).toMatch(/A detached backyard cottage must have at least 300 sq ft \(325-637A\)\. The proposal is 250 sq ft\./);
+    expect((small.why as string[]).join(' ')).not.toMatch(/;/);
     const inside = check(await ask7({ place: 'Penn township', county: 'York', unit_type: 'internal', size_sqft: 250 }));
     expect((inside.why as string[]).join(' ')).not.toMatch(/must have at least/);
   });

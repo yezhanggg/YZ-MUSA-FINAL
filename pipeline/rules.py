@@ -891,6 +891,13 @@ PASS13_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 14 holds its owner-sentence fixes that reach stored lot records, for the same ten lot towns: a services row
+# with its figures in units and the missing service named ("min lot 43,560 sq ft ... Depends on whether the lot has
+# public sewer (public_sewer)" in place of "min lot 43,560 ... public sewer and water (public_sewer, public_water)"),
+# an overlay name said once ("the Historic Resource Overlay", not "... Overlay overlay"), and the bill line's kept
+# town rules as sentences ("... (660-28D). Building coverage 50%" in place of ". building coverage 50%"). Lift it at
+# their next lot rebuild, with PASS13_HOLD_TOWNS.
+PASS14_HOLD_TOWNS: set[str] = set(PASS13_HOLD_TOWNS)
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
@@ -991,6 +998,11 @@ BOOKKEEPING = [
     (re.compile(r" read by the reviewer\b"), ""),
 ]
 # Pass 10: a note that ends with a period, joined with ". ", gives "..". Never an ellipsis ("..." stays).
+# Pass 14: an area figure in acres at the head of a services row note ("One acre", "Two acres, 150 ft wide").
+ACRES = {"one": 1, "an": 1, "half an": 0.5, "two": 2, "three": 3, "four": 4, "five": 5, "1": 1, "2": 2, "3": 3, "5": 5}
+ACRE_HEAD = re.compile(r"^(one|an|half an|two|three|four|five|1|2|3|5) acres?\b[ ,.]*", re.I)
+# Pass 14: an overlay whose name ends in "Overlay" said once ("the Historic Resource Overlay overlay").
+OVERLAY_TWICE = re.compile(r"\b(Overlay|overlay|OVERLAY) overlay\b")
 DOUBLE_STOP = re.compile(r"(?<![.\s])\.\.(?!\.)")
 
 
@@ -1542,9 +1554,11 @@ def _town_conditions(
     scope: dict[str, Any],
     hold: bool = False,
     hold13: bool = False,
+    hold14: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
-    hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS)."""
+    hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
+    hold14: a lot town whose pass 14 sentence fixes wait for its next lot rebuild (PASS14_HOLD_TOWNS)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -1556,7 +1570,15 @@ def _town_conditions(
                 scope["in_scope"],
             )
         )
-    if status and status.get("value") and status["value"] != "allowed_by_right":
+    # Pass 14: with no ADU rule here the reasons already give the status with its note (the head line), so the
+    # condition would say it twice
+    said = bool(status and status.get("value") in NO_ADU_STATUSES and how not in ("historic", "district"))
+    if (
+        status
+        and status.get("value")
+        and status["value"] != "allowed_by_right"
+        and not (said and status.get("section"))
+    ):
         words = status["value"].replace("_", " ")
         note = status.get("note") or ""
         if hold13:  # a lot town: the pass 12 wording until its next lot rebuild (PASS13_HOLD_TOWNS)
@@ -1965,13 +1987,55 @@ def _town_conditions(
             elif c["test"] and c["met"] is None:
                 c["condition"] += ". Allowed only if this holds. The lot fact is not known"
             out.append(c)
-    out += _utility_conditions(data, lot)
+    out += _utility_conditions(data, lot, hold14)
     return out
 
 
-def _utility_conditions(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, Any]]:
+def _utility_figures(item: dict[str, Any], hold: bool = False) -> str:
+    """A services row's figures. Pass 14: with units, and an acre restatement at the head of the note folded into
+    the area ("min lot 43,560 sq ft (one acre)", never "min lot 43,560. One acre"). hold: the pass 13 wording."""
+    parts = []
+    for f in UTILITY_FIELDS:
+        v = item.get(f)
+        if v is None:
+            continue
+        name = f.replace("_ft", "").replace("_sqft", "").replace("_", " ")
+        if f in ("max_building_coverage", "max_impervious_coverage"):
+            parts.append(f"{name} {v:.0%}")
+        elif hold or f == "accessory_max_stories":
+            parts.append(f"{name} {v:,.0f}")
+        else:
+            parts.append(f"{name} {v:,.0f} {'sq ft' if f.endswith('_sqft') else 'ft'}")
+    figs = ", ".join(parts).replace("accessory max stories", "accessory building stories")
+    figs = figs.replace("accessory max height", "accessory building height")
+    note = (item.get("note") or "").rstrip(".")
+    acre = None if hold else ACRE_HEAD.match(note)
+    if acre and item.get("min_lot_sqft") and abs(ACRES[acre.group(1).lower()] * 43560 - item["min_lot_sqft"]) < 1:
+        figs = figs.replace(
+            f"min lot {item['min_lot_sqft']:,.0f} sq ft",
+            f"min lot {item['min_lot_sqft']:,.0f} sq ft ({acre.group(0).strip(' ,.').lower()})",
+            1,
+        )
+        note = note[acre.end() :].lstrip(" ,.")
+        note = note[:1].upper() + note[1:]
+    return figs + (f". {note}" if note else "")
+
+
+def _utility_open(item: dict[str, Any], lot: dict[str, Any], hold: bool = False) -> tuple[str, str, str]:
+    """Pass 14: (the services the figures shown are for, the missing fact in words, its lot keys) for a row whose
+    services were not given. Only the services the row names and the lot does not give. hold: the pass 13 wording."""
+    named = [f for f in ("public_sewer", "public_water") if item.get(f) is not None]
+    keys = [f for f in named if lot.get(f) is None]
+    both = "public sewer and water", "public sewer and water", "public_sewer, public_water"
+    if hold or not keys:
+        return both
+    base = both[0] if len(named) == 2 else ROW_FACTS[named[0]]
+    return base, both[1] if len(keys) == 2 else ROW_FACTS[keys[0]], ", ".join(keys)
+
+
+def _utility_conditions(data: dict[str, Any], lot: dict[str, Any], hold: bool = False) -> list[dict[str, Any]]:
     """districts.<code>.utility_rows: the row shown assumes public sewer and water. Say the others, and that
-    the figures depend on the services when they are not given."""
+    the figures depend on the services when they are not given. hold: a lot town (PASS14_HOLD_TOWNS)."""
     code = _match_code(lot.get("zoning_district"), list((data.get("districts") or {}).keys()))
     leaf = (((data.get("districts") or {}).get(code) or {}) if code else {}).get("utility_rows")
     if not (_usable(leaf) and leaf.get("value")):
@@ -1995,21 +2059,7 @@ def _utility_conditions(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[
         met = _utility_match(item, lot)
         if met is False:
             continue
-        figs = ", ".join(
-            f"{f.replace('_ft', '').replace('_sqft', '').replace('_', ' ')} "
-            + (f"{item[f]:.0%}" if f in ("max_building_coverage", "max_impervious_coverage") else f"{item[f]:,.0f}")
-            for f in UTILITY_FIELDS
-            if item.get(f) is not None
-        )
-        figs = figs.replace("accessory max stories", "accessory building stories").replace(
-            "accessory max height", "accessory building height"
-        )
-        c = _cond(
-            "utilities",
-            f"{item['when']}: {figs}" + (f". {item['note'].rstrip('.')}" if item.get("note") else ""),
-            _leaf_from(item, leaf, None),
-            met,
-        )
+        c = _cond("utilities", f"{item['when']}: {_utility_figures(item, hold)}", _leaf_from(item, leaf, None), met)
         if met is None and item.get("in_growth_area") is not None and lot.get("in_growth_area") is None:
             # pass 9: a row keyed on a mapped growth area
             c["condition"] += (
@@ -2017,11 +2067,14 @@ def _utility_conditions(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[
             )
             c["test"] = "in_growth_area"
         elif met is None:
+            base, fact, keys = _utility_open(item, lot, hold)
             c["condition"] += (
-                ". The district figures shown are for a lot with public sewer and water. "
-                "Depends on whether the lot has public sewer and water (public_sewer, public_water), which was not given"
+                f". The district figures shown are for a lot with {base}. "
+                f"Depends on whether the lot has {fact} ({keys}), which was not given"
             )
             c["test"] = "public_sewer_water"
+            if not hold:  # pass 14: the service that was not given, for depends_on
+                c["fact"] = f"whether the lot has {fact}"
         out.append(c)
     return out
 
@@ -2332,6 +2385,13 @@ def _exempt_frees(data: dict[str, Any], form: str, lot: dict[str, Any], cap: str
     return form in ex["forms"] and cap in ex["caps"] and _exempt_met(ex, form, lot)[0] is True
 
 
+def _exempt_caps_words(caps: list[str]) -> str:
+    """Pass 14: the caps an exempt building is free of, joined with "or" ("setbacks or ADU height limit")."""
+    words = {"size": "floor area cap", "height": "ADU height limit", "setbacks": "setbacks"}
+    named = [words.get(c, c.replace("_", " ")) for c in caps]
+    return named[0] if len(named) == 1 else ", ".join(named[:-1]) + " or " + named[-1]
+
+
 def _exempt_building(
     data: dict[str, Any],
     lot: dict[str, Any],
@@ -2350,7 +2410,8 @@ def _exempt_building(
     ex = leaf["value"]
     what = ex.get("what") or "a qualifying existing building"
     caps = ex["caps"]
-    words = {"size": "floor area cap", "height": "ADU height limit", "setbacks": "setbacks"}
+    # pass 14: "no setbacks or ADU height limit", never "no setbacks, ADU height limit"
+    none_of = _exempt_caps_words(caps)
     lines = []
     for t in ex["forms"]:
         if by_type.get(t) not in OK_PATHS:
@@ -2366,12 +2427,10 @@ def _exempt_building(
                 heights[t] = None
             if "setbacks" in caps:
                 setbacks[t] = {k: None for k in YARDS}
-            lines.append(
-                f"{t.replace('_', ' ').capitalize()}: {what} has no {', '.join(words[c] for c in caps)} ({leaf['section']})"
-            )
+            lines.append(f"{t.replace('_', ' ').capitalize()}: {what} has no {none_of} ({leaf['section']})")
         else:
             lines.append(
-                f"{t.replace('_', ' ').capitalize()}: {what} has no {', '.join(words[c] for c in caps)} "
+                f"{t.replace('_', ' ').capitalize()}: {what} has no {none_of} "
                 f"({leaf['section']}). The caps shown hold unless the building qualifies. Depends on "
                 f"{' and '.join(open_facts)}, which {'was' if len(open_facts) == 1 else 'were'} not given"
             )
@@ -2399,7 +2458,12 @@ def _depends_on(conditions: list[dict[str, Any]]) -> list[dict[str, Any]]:
             continue
         if not test or c["met"] is not None or (c["effect"] != "bars" and c["kind"] != "utilities"):
             continue
-        fact = HOUSE_TESTS.get(test) or LOT_TESTS.get(test) or "whether the lot has public sewer and water"
+        fact = (
+            HOUSE_TESTS.get(test)
+            or LOT_TESTS.get(test)
+            or c.get("fact")
+            or "whether the lot has public sewer and water"
+        )
         out.append(
             {
                 "fact": fact,
@@ -2613,7 +2677,15 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             + (f". {nn['note']}" if nn.get("note") else "")
         )
     conditions = _town_conditions(
-        data, today if state else picked, lot, historic, how, scope, hold, place in PASS13_HOLD_TOWNS
+        data,
+        today if state else picked,
+        lot,
+        historic,
+        how,
+        scope,
+        hold,
+        place in PASS13_HOLD_TOWNS,
+        place in PASS14_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
@@ -2645,6 +2717,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             )
         kept = _bill_keeps(picked, data, lot)
         if kept:
+            if place not in PASS14_HOLD_TOWNS:  # pass 14: each kept rule its own sentence, capitalised
+                kept = kept[:1] + [k[:1].upper() + k[1:] for k in kept[1:]]
             reasons.append("Town lot rules the bill does not address still apply: " + ". ".join(kept))
         conditions = live
     else:
@@ -2659,6 +2733,18 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             if by_type[t] == "variance":
                 by_type[t] = "not_allowed"
     approval = min(by_type.values(), key=PATH_ORDER.index)
+    if no_rule_here:  # pass 14: below the district minimum with no ADU rule, never "whether an ADU is allowed on it"
+        for c in conditions:
+            if c["kind"] == "district_lot_rule" and c["met"] is False:
+                c["condition"] = c["condition"].replace(
+                    "Ask the zoning officer whether an ADU is allowed on it",
+                    "The code has no ADU rule here, so "
+                    + (
+                        "the path is the same use variance"
+                        if approval == "variance"
+                        else "the lot size does not change the path"
+                    ),
+                )
     # No ADU rule here. A hearing path for a use the code does not list is a path to ask for, not an ADU allowed.
     path_to_ask = None
     lead = "The code bars ADUs here" if status == "prohibited" else "The code has no ADU rule here"
@@ -3198,7 +3284,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     )
     if allowed or state:
         out["reasons"] += _house_type_cases(data, lot, out)
-    _clean_owner_text(out, stops=place not in LOT_RECORD_TOWNS)
+    _clean_owner_text(out, stops=place not in LOT_RECORD_TOWNS, once=place not in PASS14_HOLD_TOWNS)
     dp_path = dp[0]["value"] if dp else None
     if not state and status in BOARDS and dp_path and PATH_ORDER.index(dp_path) < PATH_ORDER.index(status):
         out["adu_status"] = "allowed_by_right" if dp_path == "by_right" else dp_path  # pass 8: the district leads
@@ -3302,9 +3388,10 @@ def _planned_development_yards(
     ]
 
 
-def _owner_text(text: Any, stops: bool = True) -> Any:
+def _owner_text(text: Any, stops: bool = True, once: bool = True) -> Any:
     """Pass 8: a sentence for the owner, without the author's bookkeeping (dates added, second checks).
-    Pass 10: and without a doubled full stop (stops=False keeps the pass 9 text for a held lot town)."""
+    Pass 10: and without a doubled full stop (stops=False keeps the pass 9 text for a held lot town).
+    Pass 14: and an overlay named once (once=False keeps the pass 13 text for a held lot town)."""
     if not isinstance(text, str):
         return text
     out = text
@@ -3312,23 +3399,26 @@ def _owner_text(text: Any, stops: bool = True) -> Any:
         out = pat.sub(rep, out)
     if stops:
         out = DOUBLE_STOP.sub(".", out)
+    if once:
+        out = OVERLAY_TWICE.sub(r"\1", out)
     return out.strip() if out != text else text
 
 
-def _clean_owner_text(out: dict[str, Any], stops: bool = True) -> None:
+def _clean_owner_text(out: dict[str, Any], stops: bool = True, once: bool = True) -> None:
     """Pass 8: every owner sentence built from a note goes through _owner_text."""
-    out["reasons"] = [_owner_text(r, stops) for r in out["reasons"]]
+    out["reasons"] = [_owner_text(r, stops, once) for r in out["reasons"]]
     for c in out.get("conditions") or []:
-        c["condition"] = _owner_text(c["condition"], stops)
+        c["condition"] = _owner_text(c["condition"], stops, once)
     for c in out.get("depends_on") or []:
-        c["condition"] = _owner_text(c["condition"], stops)
+        c["condition"] = _owner_text(c["condition"], stops, once)
+        c["fact"] = _owner_text(c.get("fact"), stops, once)
     for a in out.get("alternatives") or []:
-        a["note"] = _owner_text(a.get("note"), stops)
+        a["note"] = _owner_text(a.get("note"), stops, once)
         if a.get("conditions"):
-            a["conditions"] = _owner_text(a["conditions"], stops)
+            a["conditions"] = _owner_text(a["conditions"], stops, once)
     for key in ("path_to_ask", "fallback"):
         if out.get(key) and out[key].get("note"):
-            out[key]["note"] = _owner_text(out[key]["note"], stops)
+            out[key]["note"] = _owner_text(out[key]["note"], stops, once)
 
 
 def _house_type_cases(data: dict[str, Any], lot: dict[str, Any], out: dict[str, Any]) -> list[str]:
@@ -3634,6 +3724,18 @@ def _town_stories(
     return out, notes
 
 
+def _in_tier(tier: dict[str, Any], area: float) -> bool:
+    """A yard tier's lot size range. min_lot_sqft is inclusive (at least) and max_lot_sqft exclusive (less than).
+    Pass 14: min_lot_sqft_over (more than) and max_lot_sqft_at_most (X or less) carry a code's own figures."""
+    if tier.get("min_lot_sqft") is not None and area < tier["min_lot_sqft"]:
+        return False
+    if tier.get("min_lot_sqft_over") is not None and area <= tier["min_lot_sqft_over"]:
+        return False
+    if tier.get("max_lot_sqft") is not None and area >= tier["max_lot_sqft"]:
+        return False
+    return not (tier.get("max_lot_sqft_at_most") is not None and area > tier["max_lot_sqft_at_most"])
+
+
 def _apply_yard_tiers(
     data: dict[str, Any],
     picked: Picked,
@@ -3651,9 +3753,7 @@ def _apply_yard_tiers(
     area = lot.get("lot_sqft")
     pick = None
     if area is not None:
-        pick = next(
-            (x for x in tiers if (x.get("min_lot_sqft") or 0) <= area < (x.get("max_lot_sqft") or float("inf"))), None
-        )
+        pick = next((x for x in tiers if _in_tier(x, area)), None)
     for x in tiers:
         if pick is not None and x is not pick:
             continue

@@ -123,7 +123,7 @@ Other rules:
 | `envelope.accessory_structure_threshold_sqft` | A size above which an accessory building needs a further approval. Not a cap | Norristown 320-232A(2), 600 |
 | `envelope.accessory_structure_max_sqft` | Only a hard cap. Leave the leaf out when there is no number | |
 | `districts.<code>.accessory_setback_front_ft`, `_side_ft`, `_rear_ft` | Accessory yards that differ by district. They win for a detached unit | Radnor AC 20, R-4 3. Cranberry RMU 2 |
-| `envelope.yard_tiers`, `districts.<code>.yard_tiers` | Yards that depend on lot size: `{min_lot_sqft, max_lot_sqft, applies_to (principal or accessory), setback_*_ft, section}` | Lower Makefield R-1 and R-2 |
+| `envelope.yard_tiers`, `districts.<code>.yard_tiers` | Yards that depend on lot size: `{min_lot_sqft, max_lot_sqft, min_lot_sqft_over, max_lot_sqft_at_most, applies_to (principal or accessory), setback_*_ft, section}`. `min_lot_sqft` is at least (inclusive), `max_lot_sqft` less than (exclusive). For a code's "X or less" and "more than X" use `max_lot_sqft_at_most` and `min_lot_sqft_over` with the code's own X | Lower Makefield R-1 and R-2, New Hanover |
 | `form.labels` | A display name per form | Cranberry: `detached_new` is the unit joined by a breezeway |
 | gate `bill_overrides: true` | A condition HB 2186 would remove that is not a family, owner or lot rule | Cranberry breezeway, employee-only units |
 | `envelope.unit_within_building_envelope` | The unit must sit inside the building envelope, so no alley rear default | Warminster 27-1793 |
@@ -296,6 +296,16 @@ How the resolver reads a file now (pass 7):
 - The ADU status condition is a sentence: "The code's ADU status is not addressed. ..." in place of "not addressed. ...". Held for the ten lot towns (`PASS13_HOLD_TOWNS` in `pipeline/rules.py`), whose lot records keep that condition as a reason line, until their next lot rebuild.
 - Services rows that name only one service (Elizabeth R-2: "Without public sewers") no longer read "the code gives no figures" for a lot with public sewer and public water not given: the district figures are the ones for a lot with the services the rows name, and only a lot that lacks one of them by a fact given reads that the code gives no figure for its services.
 - Not done: a third `unlisted_use_scope` for "uses not specifically or adequately identified within this chapter" (Amity 32-949). Amity leaves the path out, which reads true, since the chapter identifies family member suites. Relief for a substandard lot of record (Greensburg 265-48I) has no lot fact and stays a note. Plumstead cluster lots keep `except_planned_development` unset until the code is confirmed.
+
+## More fields (pass 14)
+
+- `yard_tiers` items take `max_lot_sqft_at_most` (this lot size or less, inclusive) and `min_lot_sqft_over` (more than this lot size, exclusive). `min_lot_sqft` stays inclusive and `max_lot_sqft` exclusive, so the other files read as before. Write the code's own figure, never X+1: New Hanover 27-1908.3 reads `max_lot_sqft_at_most: 25000` and `min_lot_sqft_over: 25000` ("25,000 sq ft or less", "more than 25,000"), R-2M 27-503.2 reads 174,240 (four acres). Moved: New Hanover.
+- A building in `size.exempt_building` reads "has no setbacks or ADU height limit", the caps joined with "or" (Meadville garage conversion). Nothing to change in the file.
+- A town with no ADU rule says its status once: the reason line gives it with its note, and the `adu_status` condition is left out (South Park, New Hanover). A historic or district path keeps both, since they say different things.
+- A lot below the district minimum in a town with no ADU rule reads "It may be a nonconforming lot. The code has no ADU rule here, so the path is the same use variance" (or "the lot size does not change the path" when the path is a hearing for a use not listed, or not allowed). Never "Ask the zoning officer whether an ADU is allowed on it".
+- A `utility_rows` row reads its figures with units, and a note that opens with the same area in acres goes into the figure: "Without public sewers: min lot 43,560 sq ft (one acre)". With the services not given, it names only the services the row names: "The district figures shown are for a lot with public sewer. Depends on whether the lot has public sewer (public_sewer), which was not given" (Elizabeth R-1). Nothing to change in the file.
+- Wording: an overlay whose name ends in "Overlay" is said once ("the Historic Resource Overlay"), and the bill line's kept town rules are each a sentence ("... (660-28D). Building coverage 50% ...").
+- Held for the ten lot towns (`PASS14_HOLD_TOWNS` in `pipeline/rules.py`) until their next lot rebuild: the services row wording, the overlay said once and the bill line sentences. Their lot records keep those lines.
 
 ## A town where the code does not mention ADUs
 
