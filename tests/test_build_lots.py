@@ -636,3 +636,30 @@ def test_site_facts_reach_the_resolver() -> None:
     }
     bl.add_site_lines(town, ctx)  # a town file has no site rows: nothing changes
     assert town["rules"]["today"]["reasons"] == ["x"]
+
+
+def test_record_keeps_the_qualifier_and_share_caps() -> None:
+    """Rules pass 17: a town lot's record keeps the resolver's approval_qualifier and max_share_by_type, so the app
+    needs no "only if" parsing. A lot town held until its next rebuild (PASS17_HOLD_TOWNS) keeps the old record.
+    Both keys are optional in lot_schema.json, so records built before stay valid."""
+    import jsonschema
+
+    from pipeline import rules as rulesmod
+
+    lot = {"zoning_district": "MU", "building_type": "detached", "lot_sqft": 8000, "house_year_built": 1950}
+    raw = rulesmod.resolve("pa_lancaster_elizabethtown", "today", {**lot, "overlays": None}, extra=True)
+    assert raw["approval_qualifier"] == "depends_on_lot_facts"
+    kept = bl.town_extras_to_reasons(raw)
+    assert kept["approval_qualifier"] == "depends_on_lot_facts"
+    assert set(kept["max_share_by_type"]) == set(rulesmod.ALL_TYPES)
+    assert not ({"conditions", "path_to_ask"} & set(kept))
+    held = bl.town_extras_to_reasons(raw, keep=False)
+    assert "approval_qualifier" not in held and "max_share_by_type" not in held
+    schema = lotmod.schema()
+    rule_schema = {**schema["$defs"]["rules"], "$defs": schema["$defs"]}
+    filled, _ = bl.fill_rules(kept, "MU")
+    jsonschema.validate(filled, rule_schema)
+    jsonschema.validate(bl.fill_rules(held, "MU")[0], rule_schema)
+    with pytest.raises(jsonschema.ValidationError):
+        jsonschema.validate({**filled, "approval_qualifier": "maybe"}, rule_schema)
+    assert "pa_chester_phoenixville" in rulesmod.PASS17_HOLD_TOWNS

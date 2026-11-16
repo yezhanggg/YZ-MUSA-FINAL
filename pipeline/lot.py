@@ -151,6 +151,9 @@ class RulesRec(TypedDict, total=False):
     rule_path_by_type: dict[str, Approval]  # path from the rules alone, before the lot's facts
     lot_conditions_by_type: dict[str, str]  # lot fact that changes a type's path
     citations_by_type: dict[str, Citation | None]  # section behind each type's path
+    # rules pass 17, town lots. Records built before it lack them
+    approval_qualifier: str | None  # conditional_on_reading, depends_on_lot_facts, or None when plain
+    max_share_by_type: dict[str, float | None] | None  # the unit's cap as a share of the house, per ADU type
 
 
 class Facts(TypedDict, total=False):

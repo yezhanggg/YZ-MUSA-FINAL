@@ -843,14 +843,23 @@ def fill_rules(
     return r, notes
 
 
-def town_extras_to_reasons(rules: dict[str, Any]) -> dict[str, Any]:
+# Rules pass 17: town keys the lot record keeps (lot_schema.json rules), so the app reads the path's qualifier and the
+# per-form house share caps without parsing the reasons.
+RECORD_TOWN_KEYS = ("approval_qualifier", "max_share_by_type")
+
+
+def town_extras_to_reasons(rules: dict[str, Any], keep: bool = True) -> dict[str, Any]:
     """A town file resolves with extra keys (rulesmod.TOWN_KEYS) that the lot record has no place
     for yet. They are dropped. Its conditions (owner occupancy, floor area, design) are kept as
-    reason lines, so the record still says them. City results carry none of these keys."""
+    reason lines, so the record still says them. City results carry none of these keys.
+    keep: the record keeps RECORD_TOWN_KEYS (pass 17). False for a lot town held until its next
+    lot rebuild (rulesmod.PASS17_HOLD_TOWNS)."""
     extra = [k for k in rulesmod.TOWN_KEYS if k in rules]
     if not extra:
         return rules
     out = {k: v for k, v in rules.items() if k not in rulesmod.TOWN_KEYS}
+    if keep:
+        out.update({k: rules[k] for k in RECORD_TOWN_KEYS if k in rules})
     reasons = list(out.get("reasons") or [])
     for c in rules.get("conditions") or []:
         # Only conditions this lot was not tested against. Met gates (house type, district) are noise.
@@ -1303,12 +1312,14 @@ def build_lot(
     cache: dict[str, tuple[Any, Any, Any]] = {}
     for s in SCENARIOS:
         raw = rulesmod.resolve(rule_place, s, rlot, extra=True)
-        resolved = town_extras_to_reasons(raw)
+        keep = rulesmod._place_file(rule_place) not in rulesmod.PASS17_HOLD_TOWNS  # pass 17: held lot towns
+        resolved = town_extras_to_reasons(raw, keep=keep)
         filled, fill_notes = fill_rules(resolved, rlot["zoning_district"], ctx_front, ctx.not_checked, front_mode)
         notes += [n for n in fill_notes if n not in notes]
-        fit_in = filled
+        # the record keeps the qualifier and the per-form shares (pass 17). The fit reads the shares from SIZE_BY_TYPE
+        fit_in = {k: v for k, v in filled.items() if k not in RECORD_TOWN_KEYS}
         if not ctx.share_cap_from_footprint and filled.get("max_share_of_house") is not None and not shape.living_sqft:
-            fit_in = {**filled, "max_share_of_house": None}  # the record keeps the cap, the fit skips it
+            fit_in = {**fit_in, "max_share_of_house": None}  # the record keeps the cap, the fit skips it
             note = "share-of-house size cap not checked: no living area on file for this house"
             if note not in notes:
                 notes.append(note)

@@ -48,7 +48,6 @@
       "A use neither permitted nor prohibited may be allowed by the Zoning Hearing Board as a special exception if it is of the same general character as the district's permitted uses (27-306)",
       "27-2008 sets the usual variance findings of the state planning code and does not bar a use variance",
       "Floodplains (Chapter 8): in the Floodway District 'All structures are prohibited except' dams, culverts, bridges and open space (8-303.1). The Flood-Fringe District is the A District and the land between the floodway and the 500-year floodplain boundary (8-301.4). Its permitted uses must not need buildings, and 'Uses not listed as a permitted use or a special use are expressly not permitted' (8-304.1, 304.3). An existing single-family house in the Flood-Fringe District may grow by at most 50% of its ground-level area at the date of Chapter 8 (8-402.1A)",
-      "In MU 'The minimum height requirement of a building shall be 35 feet' (27-12A12). Read literally it would keep out a detached ADU, which must be lower than the house and at most 15 ft. Ask the zoning officer",
       "A conversion apartment (R-3) keeps the building's look as a single-family dwelling, with no exterior evidence of change except as building codes require (27-1304B, J)"
     ],
     "notes": "Zoning office: Borough of Elizabethtown, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: Chapter 8 (Floodplains) in full on the print page, 27-1304 (conversion apartments), Part 12A (MU) in full, 27-201 (the ADU, accessory building, apartment, conversion apartment, dwelling, dwelling unit, single-family, two-family and impervious coverage definitions), 27-306, Parts 6, 7, 8 and 9, 27-1302, 27-1333, 27-1602A, 27-2008 and the New Laws page. Not read: Parts 1, 4 (OS&C), 5 (INS), 10 (G-C), 11 (LI), 12 (G-I), 27-1301, 27-1303 and 27-1305 to 27-1332 (27-1318 on access and principal structures included), 27-1334, Parts 14, 15 and 17 to 21 (27-2008 aside). A code search for single-family detached dwellings, dwelling units, caretaker, watchman, in-law, family member, ECHO and temporary dwelling found dwelling listings only in R-1, R-2, R-3, MU and CBD. The ADU text sets no floor area cap, only two bedrooms at most for a unit in the house or the basement or attic. Chapter 22 (subdivision and land development) was not read."
@@ -293,7 +292,8 @@
           ],
           "section": "8-301.4, 8-303.1, 8-304.1, 8-304.3",
           "url": "https://ecode360.com/print/EL0331?guid=27482011",
-          "confidence": "secondary"
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8"
         }
       ],
       "section": "27-1333, 27-12A02, 27-12A06, Chapter 8",
@@ -350,7 +350,7 @@
       "url": "https://ecode360.com/print/EL0331?guid=27499095",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "A building accessory to a residential use 'shall be located within the rear yard of the principal building'"
+      "note": "A residential accessory building is not in a required front yard. In R-1, R-2 and R-3 it 'shall be located within the rear yard of the principal building' (27-1302.2(2))"
     },
     "accessory_rear_yard_only": {
       "value": true,
@@ -359,6 +359,18 @@
       "verified_on": "2026-11-16",
       "confidence": "verified",
       "note": "'any building or structure accessory to a residential use shall be located within the rear yard of the principal building'"
+    },
+    "accessory_rear_yard_only_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "27-1302.2(2), (4)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The rear yard rule is read for the residential districts R-1, R-2 and R-3, as the 27-1302.2(2) alley row is. In MU accessory setbacks are those of the principal building type (27-1302.2(4)), and ADUs are not permitted in the CBD (27-1333.8)"
     },
     "height_capped_at_house": {
       "value": true,
@@ -375,6 +387,18 @@
       "verified_on": "2026-11-16",
       "confidence": "verified",
       "note": "'The maximum height of any accessory structure within a residential zone is 15 feet.'"
+    },
+    "accessory_height_cap_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "27-1302.2(6)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'The maximum height of any accessory structure within a residential zone is 15 feet.' R-1, R-2 and R-3 are read as the residential zones. MU is a mixed use district"
     },
     "accessory_cap_binds_adu": {
       "value": true,
@@ -674,6 +698,24 @@
         "verified_on": "2026-11-16",
         "confidence": "secondary",
         "note": "New construction of residential units meets the coverage rules of 27-807.2, 50% (27-12A06.3). 27-12A15 says lot coverage 'for all uses in the district shall not exceed 65%'. The lower figure is shown"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "max_impervious_coverage": 0.65
+        },
+        "section": "27-12A15",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "New construction of residential units meets the coverage rules of 27-807.2, 50% (27-12A06.3). 27-12A15 says lot coverage 'for all uses in the district shall not exceed 65%'"
+      },
+      "min_height_ft": {
+        "value": 35,
+        "section": "27-12A12",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'The minimum height requirement of a building shall be 35 feet'"
       }
     }
   }

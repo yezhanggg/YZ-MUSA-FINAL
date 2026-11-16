@@ -196,7 +196,15 @@ export interface Rules {
   lot_conditions_by_type?: Partial<Record<RuleType, string>>;
   /** The rule section behind each type's path. */
   citations_by_type?: Partial<Record<RuleType, Citation | null>>;
+  // Added in rules pass 17 (town lots). Records built before it lack them: read the "only if" reasons then.
+  /** The path holds only under one reading of the code, or only if a lot fact that was not given holds. Null when plain. */
+  approval_qualifier?: ApprovalQualifier | null;
+  /** The unit's cap as a share of the house (0 to 1), per unit type. Null for a type with no share cap. */
+  max_share_by_type?: Partial<Record<RuleType, number | null>> | null;
 }
+
+/** Why a town lot's path is qualified (rules.<scenario>.approval_qualifier). */
+export type ApprovalQualifier = 'conditional_on_reading' | 'depends_on_lot_facts';
 
 export interface Buildable {
   /** Where a new building may go, keeping sheds and trees. */
@@ -384,7 +392,7 @@ export const LOT_KEYS = {
     'setback_rear_alley_ft', 'separation_ft', 'max_building_coverage', 'max_impervious', 'owner_occupancy',
     'parking_spaces', 'citations', 'assumed', 'approval_by_type', 'max_height_by_type', 'setback_rear_effective_ft',
     'rear_setback_rule', 'state_limits', 'fire_separation', 'historic_path', 'rule_path_by_type',
-    'lot_conditions_by_type', 'citations_by_type',
+    'lot_conditions_by_type', 'citations_by_type', 'approval_qualifier', 'max_share_by_type',
   ]),
   buildable: keysOf<Buildable>()(['keep', 'keep_sqft', 'clear', 'clear_sqft', 'front_sqft']),
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),

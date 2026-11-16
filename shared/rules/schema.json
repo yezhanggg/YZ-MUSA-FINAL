@@ -481,6 +481,14 @@
         "accessory_yards_inside_rear_yard": {
           "$ref": "#/$defs/leaf_bool",
           "description": "Pass 13: true when the accessory side and rear yards (envelope setback_side_ft, setback_rear_ft) hold only for a building inside the rear yard, and elsewhere the building stays in the buildable area and meets the district yards (for example 'permitted in the general buildable area and inside the rear yards as long as they are at least five feet from any property line'). A detached unit then shows the district yards, none where the file has no district row, and a condition says the rear yard figures."
+        },
+        "accessory_height_cap_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Pass 17: districts where accessory_structure_max_height_ft applies, when the code limits it (Elizabethtown 27-1302.2(6): 'within a residential zone'). Elsewhere the town's accessory height cap is not shown or used. A district's own cap is not affected."
+        },
+        "accessory_rear_yard_only_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Pass 17: districts where accessory_rear_yard_only applies, when the code limits it. Elsewhere front_yard_barred, if set, is the bar said."
         }
       }
     },
@@ -1348,6 +1356,10 @@
         "figures_in_dispute": {
           "$ref": "#/$defs/leaf_figures_in_dispute",
           "description": "Pass 16: the row's figures that another reading of the code puts at other values (for example a district that permits another district's uses 'as regulated therein' while its own chapter sets other yards and heights). value maps a row field to the other reading's figure. The row keeps the figure the file shows. Both are said and the row is qualified as not settled."
+        },
+        "min_height_ft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 17: the minimum height of every building in the district (Elizabethtown MU 27-12A12, 35 ft). Where a detached unit's height cap is lower, its path holds only if the minimum does not reach an ADU, and a line says so."
         }
       }
     },
@@ -1767,6 +1779,24 @@
                   "variance"
                 ],
                 "description": "Pass 16: the approval the forms in applies_to (every form when null) need on a lot the gate reaches, when it is more demanding than the ADU path (for example a special exception for any new building in a floodplain overlay). Applied only when the lot is known to be in the gate's overlay or district and its test is met. Otherwise the condition is said and the path stays. Use effect condition. Not applied under a state bill."
+              },
+              "outside_zoning_chapter": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Pass 17: the chapter of the code the gate comes from when it is not the zoning chapter (for example 'Chapter 8' for a floodplain chapter). A lot that fails only such bars reads that relief follows that chapter's own appeal rules, and the zoning chapter's variance section (approval.fallback_path) is not cited as the path."
+              },
+              "supersedes_figures": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "yards",
+                    "building_coverage",
+                    "impervious_coverage"
+                  ]
+                },
+                "description": "Pass 17: with supersedes_district_figures, the district figures the gate replaces. Others stay those of the district. Without it every district figure is replaced (Lower Pottsgrove Sanatoga Village overlay 250-125B: yards only, impervious cover stays the base district's)."
               }
             }
           }

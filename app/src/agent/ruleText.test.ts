@@ -1130,3 +1130,27 @@ describe('get_rule_text pass 16', () => {
     expect(el.conditions.find((c: Any6) => c.path === 'special_exception').applies_to).toEqual(['detached_new']);
   });
 });
+
+// Pass 17: the same cases pipeline/rules.py now says (tests/test_town_rules.py, pass 17 section).
+describe('get_rule_text pass 17', () => {
+  it('limits the accessory height cap and the rear yard rule by district (Elizabethtown R-1 vs MU)', async () => {
+    const r1 = await town6('pa_lancaster_elizabethtown', 'height', 'R-1');
+    expect(r1.forms.accessory_building.max_height_ft).toMatchObject({ value: 15, section: '27-1302.2(6)' });
+    const mu = await town6('pa_lancaster_elizabethtown', 'height', 'MU');
+    expect(mu.forms.accessory_building.max_height_ft).toBe('No height number on file. Ask the zoning officer');
+    const rear = /^An accessory building may stand only in the rear yard/;
+    const elR1 = await town6('pa_lancaster_elizabethtown', 'eligibility', 'R-1');
+    expect(elR1.conditions.some((c: Any6) => rear.test(c.condition))).toBe(true);
+    const elMu = await town6('pa_lancaster_elizabethtown', 'eligibility', 'MU');
+    expect(elMu.conditions.some((c: Any6) => rear.test(c.condition))).toBe(false);
+    expect(elMu.conditions.some((c: Any6) => /^An accessory building may not stand in the front yard/.test(c.condition))).toBe(true);
+  });
+
+  it('puts the figures after the first sentence of an accessory where text (Elizabethtown MU, Warwick)', async () => {
+    const mu = await town6('pa_lancaster_elizabethtown', 'eligibility', 'MU');
+    const acc = mu.conditions.find((c: Any6) => /^An accessory building in MU/.test(c.condition));
+    expect(acc.condition).toMatch(/^An accessory building in MU, where accessory setbacks are those of the principal building type: side 8 ft, rear 25 ft\. The ADU section's 6 ft/);
+    const wa = await town6('pa_bucks_warwick', 'eligibility');
+    expect(wa.conditions.some((c: Any6) => /^An accessory building on a lot under 3 acres: only in a side or rear yard, .* on the lot\. Figures: side 7 ft, rear 7 ft/.test(c.condition))).toBe(true);
+  });
+});

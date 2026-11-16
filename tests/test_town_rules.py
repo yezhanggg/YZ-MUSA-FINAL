@@ -3484,3 +3484,136 @@ def test_docs_row_shows_gate_path_and_disputed_figures():
     assert "| by right (special exception for detached new in Floodplain Overlay) |" in nb
     lg = next(line for line in text.splitlines() if line.startswith("| Lower Gwynedd township | Montgomery |"))
     assert "district figures not settled in E-1, E-2 (1269.02(a)" in lg
+
+
+# ------------------------------------------------------------------ pass 17
+
+
+def _el(district, scenario="today", **kw):
+    lot = {**DET, "zoning_district": district, "lot_sqft": 8000, "house_year_built": 1950, "overlays": [], **kw}
+    return rules.resolve("pa_lancaster_elizabethtown", scenario, lot, extra=True)
+
+
+def test_accessory_height_cap_and_rear_yard_only_by_district():
+    """Elizabethtown 27-1302.2(2), (6): the 15 ft cap 'within a residential zone' and the rear yard rule reach R-1, R-2
+    and R-3 (envelope.accessory_height_cap_districts, accessory_rear_yard_only_districts). MU gets neither."""
+    rear = "An accessory building may stand only in the rear yard"
+    for d in ("R-1", "R-2", "R-3"):
+        out = _el(d)
+        assert out["max_height_by_type"]["detached_new"] == 15, d
+        assert any(r.startswith("Accessory structures are capped at 15 ft (27-1302.2(6))") for r in out["reasons"])
+        assert any(c["condition"].startswith(rear) for c in out["conditions"]), d
+    mu = _el("MU")
+    assert mu["max_height_by_type"]["detached_new"] is None
+    assert not any("capped at 15 ft" in r for r in mu["reasons"])
+    assert not any(c["condition"].startswith(rear) for c in mu["conditions"])
+    assert any(
+        c["condition"].startswith("An accessory building may not stand in the front yard") for c in mu["conditions"]
+    )
+
+
+def test_disputed_district_coverage_elizabethtown():
+    """Elizabethtown MU: 50% under 27-807.2 (27-12A06.3) against 65% 'for all uses in the district' (27-12A15)."""
+    mu = _el("MU")
+    assert mu["max_impervious"] == 0.5
+    assert any(
+        r.startswith("Figures for MU are not settled (27-12A15)")
+        and "Shown: impervious cover 50%. The other reading: impervious cover 65%" in r
+        for r in mu["reasons"]
+    )
+
+
+def test_district_minimum_building_height():
+    """Elizabethtown MU 27-12A12: every building at least 35 ft (districts.MU.min_height_ft). A detached unit lower
+    than the house holds only if that does not reach an ADU. Never said where no detached form is allowed."""
+    mu = _el("MU", house_height_ft=25)
+    line = next(r for r in mu["reasons"] if "minimum building height" in r)
+    assert line.startswith(
+        "For detached new, garage conversion, over garage: by right only if the district's minimum building height"
+    )
+    assert "In MU a building must be at least 35 ft tall (27-12A12), and the unit may be at most 25 ft" in line
+    assert not any("minimum building height" in r for r in _el("R-1")["reasons"])
+    assert not any(
+        c.startswith("In MU 'The minimum height") for c in raw("pa_lancaster_elizabethtown")["provenance"]["checks"]
+    )
+
+
+def test_bar_from_another_chapter_names_its_own_relief():
+    """Elizabethtown Chapter 8 (gates[].outside_zoning_chapter): a lot in the Floodway is barred by Chapter 8, so the
+    path never cites the zoning chapter's variance section (27-2008) or MPC 910.2 as its own."""
+    out = _el("R-1", lot_sqft=12000, overlays=["Floodway"])
+    assert out["approval_path"] == "variance" and not out["allowed"]
+    assert out["citations"]["approval_path"]["section"] == "8-301.4, 8-303.1, 8-304.1, 8-304.3"
+    assert out["fallback"]["section"] == "8-301.4, 8-303.1, 8-304.1, 8-304.3"
+    assert not any("Path: variance (27-2008" in r for r in out["reasons"])
+    assert (
+        "Not allowed as of right here. Path: variance (8-301.4, 8-303.1, 8-304.1, 8-304.3). Relief under Chapter 8, "
+        "not the zoning chapter's variance section (27-2008). Ask the zoning officer"
+    ) in out["reasons"]
+    assert any(r.endswith("Relief from it follows Chapter 8's own appeal rules") for r in out["reasons"])
+    # a lot outside the floodplain: the zoning chapter's variance stays the fallback
+    assert _el("R-1", lot_sqft=12000)["fallback"]["section"] == "27-2008"
+
+
+def test_accessory_where_figures_never_name_the_building_twice():
+    """An accessory_rules_where item with figures: no "An accessory building" before a where text that names the
+    building or leads itself, and the figures after the first sentence (Elizabethtown MU, Lower Salford)."""
+    f = rules._acc_where_figs
+    assert f("An accessory building of at most 100 sq ft and 9 ft tall", ["side 5 ft"]) == (
+        "An accessory building of at most 100 sq ft and 9 ft tall: side 5 ft"
+    )
+    assert f("In a rear yard: 'shall not be erected closer than 10 feet'", ["side 10 ft"]) == (
+        "In a rear yard: 'shall not be erected closer than 10 feet'. Figures: side 10 ft"
+    )
+    assert f("garages and carports: in a side or rear yard only", ["rear 10 ft"]).startswith("Garages and carports")
+    assert f("in R-1", ["side 5 ft"]) == "An accessory building in R-1: side 5 ft"
+    mu = next(
+        c["condition"] for c in _el("MU")["conditions"] if c["condition"].startswith("An accessory building in MU")
+    )
+    assert mu.startswith(
+        "An accessory building in MU, where accessory setbacks are those of the principal building type: side 8 ft, "
+        "rear 25 ft. The ADU section's 6 ft"
+    )
+    wa = rules.resolve("pa_bucks_warwick", "today", {**DET, "lot_sqft": 20000})
+    assert any(
+        c["condition"].startswith("An accessory building on a lot under 3 acres: only in a side or rear yard")
+        and " on the lot. Figures: side 7 ft, rear 7 ft" in c["condition"]
+        for c in wa["conditions"]
+    )
+
+
+def test_superseding_gate_replaces_only_its_figures():
+    """Lower Pottsgrove Sanatoga Village overlay (250-125B, gates[].supersedes_figures ["yards"]): on a lot in SV the
+    base yards give way, the base impervious cover stays."""
+    sv = _lp("R-2", lot_sqft=12000, overlays=["SV"], in_planned_development=False)
+    assert sv["max_impervious"] == 0.3 and sv["setback_side_ft"] is None
+    yards = next(r for r in sv["reasons"] if r.startswith("Yards for R-2"))
+    assert "(side 20 ft, rear 20 ft)" in yards and "impervious" not in yards
+    assert any(r.startswith("Impervious cover for R-2: at most 30% of the lot") for r in sv["reasons"])
+
+
+def test_no_district_asks_qualified(monkeypatch):
+    """A lot with no zoning district where the ADU rule reaches only some districts: the path to ask, qualified
+    (depends_on_lot_facts), never a variance with "zoned unknown". Held for the ten lot towns (PASS17_HOLD_TOWNS)."""
+    lot = {**DET, "zoning_district": None, "lot_sqft": 6000}
+    out = rules.resolve("pa_lancaster_elizabethtown", "today", lot)
+    assert out["allowed"] and out["approval_path"] == "by_right"
+    assert out["approval_qualifier"] == "depends_on_lot_facts"
+    assert out["reasons"][0].startswith(
+        "By right only if the lot is in R-1, R-2, R-3 or MU, where the ADU rule reaches"
+    )
+    assert out["reasons"][0].endswith("The lot's zoning district is not known. Ask the zoning officer")
+    assert not any("zoned unknown" in r for r in out["reasons"])
+    assert out["path_to_ask"]["kind"] == "district_unknown"
+    held = rules.resolve("pa_chester_phoenixville", "today", lot)
+    assert held["approval_path"] == "variance" and "pa_chester_phoenixville" in rules.PASS17_HOLD_TOWNS
+    assert len(rules.PASS17_HOLD_TOWNS) == 10
+    monkeypatch.setattr(rules, "PASS17_HOLD_TOWNS", set())
+    phx = rules.resolve("pa_chester_phoenixville", "today", lot)
+    assert phx["approval_path"] == "special_exception" and phx["approval_qualifier"] == "depends_on_lot_facts"
+    assert phx["reasons"][0].startswith("Special exception only if the lot is in RI, MI, NC, CD or MG")
+    # a district is given: unchanged
+    assert rules.resolve("pa_chester_phoenixville", "today", {**lot, "zoning_district": "TC"})["approval_path"] in (
+        "variance",
+        "not_allowed",
+    )

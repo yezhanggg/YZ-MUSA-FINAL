@@ -574,7 +574,10 @@
           ],
           "section": "250-125B, 250-127, 250-130, 250-131, 250-132A",
           "url": "https://ecode360.com/print/LO2382?guid=13283599",
-          "supersedes_district_figures": true
+          "supersedes_district_figures": true,
+          "supersedes_figures": [
+            "yards"
+          ]
         },
         {
           "kind": "other",

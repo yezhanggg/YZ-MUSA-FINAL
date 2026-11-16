@@ -313,6 +313,25 @@ const NO_ADU = new Set(['not_addressed', 'prohibited']);
 const LISTING_FREE = new Set(['adu_status', 'family', 'occupancy', 'owner_occupancy', 'age', 'care', 'sponsor', 'building_type', 'district', 'scope']);
 // Pass 15 (pipeline/rules.py NAMES_BUILDING): a where text that names the accessory building itself.
 const NAMES_BUILDING = /^(?:an?|any|every|each)\b[^:]*\b(?:building|structure|garage)s?\b/i;
+// Pass 17 (pipeline/rules.py LEADS_ITSELF, _acc_where_figs): a where text that opens with the buildings it covers or its
+// own heading takes no "An accessory building" before it, and the figures follow its first sentence.
+const LEADS_ITSELF = /^(?:[A-Z]|(?:private )?(?:garages?|sheds?|carports?|storage|accessory)\b)/;
+function accWhereFigs(whereTxt: string, figs: string[]): string {
+  const w = whereTxt.trim().replace(/\.+$/, '');
+  const own = NAMES_BUILDING.test(w) || LEADS_ITSELF.test(w);
+  const lead = own ? `${w.charAt(0).toUpperCase()}${w.slice(1)}` : `An accessory building ${w}`;
+  const m = /\.\s+(?=[A-Z'])/.exec(lead);
+  const first = m ? lead.slice(0, m.index) : lead;
+  const rest = m ? lead.slice(m.index + m[0].length) : '';
+  if (first.includes(':')) return `${lead}. Figures: ${figs.join(', ')}`;
+  return `${first}: ${figs.join(', ')}${rest ? `. ${rest}` : ''}`;
+}
+/** Pass 17 (pipeline/rules.py): a town rule limited to some districts by a districts list leaf. False when it leaves out the district. */
+function inDistricts(file: Obj, key: string, district: string | null): boolean {
+  const l = leafAt(file, 'envelope', key);
+  const list = Array.isArray(l?.value) ? (l!.value as Json[]).filter((d): d is string => typeof d === 'string') : null;
+  return !(list && list.length && district && !districtIn(list, district));
+}
 const LIMITED: Record<string, string> = {
   family_only: 'Limited: family members only',
   conversion_only: 'Limited: only inside an existing building',
@@ -497,7 +516,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (want && Array.isArray(g.districts) && !g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     if (want && Array.isArray(g.not_districts) && g.not_districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     const scope: Obj = {};
-    for (const k of ['applies_to', 'districts', 'not_districts', 'overlays', 'building_types', 'when', 'effect', 'test', 'value', 'value_date', 'only_below_lot_sqft', 'supersedes_district_figures', 'path']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
+    for (const k of ['applies_to', 'districts', 'not_districts', 'overlays', 'building_types', 'when', 'effect', 'test', 'value', 'value_date', 'only_below_lot_sqft', 'supersedes_district_figures', 'supersedes_figures', 'outside_zoning_chapter', 'path']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
     // No lot facts here, so a gate with a lot test is always an "allowed only if".
     // Pass 10 (pipeline/rules.py _gate_scope): an overlay-only gate applies only on a lot in the overlay, never a bar unseen.
     const overlayOnly = Array.isArray(g.overlays) && g.overlays.length && !Array.isArray(g.districts);
@@ -545,7 +564,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
       // Pass 15 (pipeline/rules.py): an item with no figures carries its rule in the where text. Never "...: .".
       const whereOnly = typeof it.over_sqft === 'number' && String(it.where).includes('sq ft') ? String(it.where) : whereTxt;
       const accText = figs.length
-        ? `An accessory building ${whereTxt}: ${figs.join(', ')}`
+        ? accWhereFigs(whereTxt, figs)
         : NAMES_BUILDING.test(whereOnly)
           ? `${whereOnly.charAt(0).toUpperCase()}${whereOnly.slice(1)}`
           : `For an accessory building, ${whereOnly}`;
@@ -570,7 +589,8 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     out.push(cond('parking', `${perRes.value} off-street space per resident of the unit. The count depends on how many people live there${perRes.note ? `. ${perRes.note}` : ''}`, perRes, { bill_overrides: true }));
   const bar = leafAt(file, 'envelope', 'front_yard_barred');
   // Pass 8: rear yard only rules out the side yards too (pipeline/rules.py accessory_rear_yard_only).
-  const rearOnly = leafAt(file, 'envelope', 'accessory_rear_yard_only');
+  // Pass 17: envelope.accessory_rear_yard_only_districts limits it by district.
+  const rearOnly = inDistricts(file, 'accessory_rear_yard_only_districts', district) ? leafAt(file, 'envelope', 'accessory_rear_yard_only') : null;
   if (rearOnly && rearOnly.value === true)
     out.push(cond('front_yard', `An accessory building may stand only in the rear yard: not in the front yard and not in a side yard. It is a bar, not a setback number${rearOnly.note ? `. ${rearOnly.note}` : ''}`, rearOnly, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
   else if (bar && bar.value === true)
@@ -641,7 +661,8 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   // height on file, never "no height number".
   const capBinds = leafAt(file, 'envelope', 'accessory_cap_binds_adu');
   const capRow = fromRow('accessory_structure_max_height_ft');
-  const capLeaf = leafAt(file, 'envelope', 'accessory_structure_max_height_ft');
+  // Pass 17: envelope.accessory_height_cap_districts limits the town's cap by district (a district's own cap stays).
+  const capLeaf = inDistricts(file, 'accessory_height_cap_districts', district) ? leafAt(file, 'envelope', 'accessory_structure_max_height_ft') : null;
   const capH = capRow && isObj(capRow) && typeof capRow.value === 'number' ? capRow : capLeaf && typeof capLeaf.value === 'number' ? ruleOut('envelope.accessory_structure_max_height_ft', capLeaf) : null;
   const capBinding = capBinds && capBinds.value === true && capH && isObj(capH) ? capH : null;
   const detachedHeight = noAdu
@@ -668,7 +689,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const gatesLeaf = leafAt(file, 'eligibility', 'gates');
   // Pass 16 (pipeline/rules.py _planned_development_yards): every such gate is named, an overlay by its name.
   const plannedAll = rowKey
-    ? (Array.isArray(gatesLeaf?.value) ? gatesLeaf!.value.filter(isObj) : []).filter((g) => g.supersedes_district_figures === true && (!Array.isArray(g.districts) || g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(rowKey))))
+    ? (Array.isArray(gatesLeaf?.value) ? gatesLeaf!.value.filter(isObj) : []).filter((g) => g.supersedes_district_figures === true && (!Array.isArray(g.supersedes_figures) || g.supersedes_figures.includes('yards')) && (!Array.isArray(g.districts) || g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(rowKey))))
     : [];
   const supOverlay = (g: Obj): string[] | null => (Array.isArray(g.overlays) && g.overlays.length && !g.test ? (g.overlays as string[]) : null);
   const supWhere = (g: Obj): string => { const o = supOverlay(g); return o ? `the ${overlayWords(o)}` : 'a planned or cluster development'; };
@@ -713,7 +734,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const accessory = !list || list.some((x) => x === 'detached_new' || x === 'garage_conversion' || x === 'over_garage');
   const labels = leafAt(file, 'form', 'labels');
   const bar = leafAt(file, 'envelope', 'front_yard_barred');
-  const rearOnly = leafAt(file, 'envelope', 'accessory_rear_yard_only');
+  const rearOnly = inDistricts(file, 'accessory_rear_yard_only_districts', district) ? leafAt(file, 'envelope', 'accessory_rear_yard_only') : null;
   const frontBar =
     rearOnly && rearOnly.value === true
       ? { ...ruleOut('envelope.accessory_rear_yard_only', rearOnly), note: ownerText(`Rear yard only: not in the front yard and not in a side yard. A bar, not a setback number${rearOnly.note ? `. ${rearOnly.note}` : ''}`) }
@@ -723,7 +744,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   // General accessory structure caps beside the ADU's own (pipeline/rules.py _acc_cap).
   const accSqft = leafAt(file, 'envelope', 'accessory_structure_max_sqft');
   const accShare = leafAt(file, 'envelope', 'accessory_structure_max_share');
-  const accH = leafAt(file, 'envelope', 'accessory_structure_max_height_ft');
+  const accH = inDistricts(file, 'accessory_height_cap_districts', district) ? leafAt(file, 'envelope', 'accessory_structure_max_height_ft') : null;
   const binds = leafAt(file, 'envelope', 'accessory_cap_binds_adu');
   const general =
     accSqft && typeof accSqft.value === 'number'
