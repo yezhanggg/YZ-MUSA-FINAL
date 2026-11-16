@@ -1391,6 +1391,27 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": "2023-01-30",
         "note": "Zoning: Chapter 240 Zoning (Ord. No. 276, 4-20-2001, as amended). No ADU text. 'No accessory structure shall be used for dwelling purposes unless expressly authorized by this chapter' (240-32A(9)(l)). Similar type uses not listed by Zoning Hearing Board approval in R-1 and R-2 (240-32A(10), 240-38A(3), 240-100A(9)). Two-family dwellings by right in R-2 (15,000 sq ft), R-3 (11,000 sq ft) and R-4 (4,350 sq ft per unit). Each district article sets its uses and figures in text. New Laws: Ord. No. 348 (intergovernmental) and Ord. No. 349 (zoning map), not code material. Read in the browser on eCode360 (RI1755).",
     },
+    "4209145072": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/13282057",
+        "plain_fetch": False,
+        "current_through": "2026-08-03",
+        "note": "Zoning: Chapter 250 Zoning (Ord. No. 127 of 6-4-1973, reenacted 5-20-2010 by Ord. No. 294, as amended through Ord. No. 373 of 11-3-2025). ADU text: 'Temporary living quarters for relatives or household employees' (250-21B(4)), a use accessory to a dwelling, by special exception, in the house or in an approved accessory building, at most two persons, owner-occupied house, deed restriction against sale as two units, annual permit renewal, a detached modular unit removed when no longer used. Conversion of a single-family dwelling into two or more units by special exception in every district (250-27: neighbor petition, large dwelling of little economic use, 75% of the district lot area per family). Two-family dwellings by right in R-3 (8,712 sq ft per unit, public sewer), LCO and LC. Floodplain overlay permits no enclosed structures (250-40). The only attachments are the zoning map and sign types. New Laws: none. Read in the browser on eCode360 (LO2382).",
+    },
+    "4209144920": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/13469743",
+        "plain_fetch": False,
+        "current_through": "2026-06-23",
+        "note": "Zoning: Part Twelve, Title Six Zoning, Chapters 1250 to 1299 (Ord. 223 of 12-10-1985, as amended through Ord. No. 556 of 6-23-2026). No ADU listing. The family definition lets the Zoning Hearing Board, by special exception, count related persons as two housekeeping units with separate cooking when one unit holds a single person 60 or older or physically handicapped, with a recorded removal agreement (1250.04(a)(27)B). Caretaker's quarters by special exception on a single-family lot of four acres, in an existing structure from before 1985, at most 1,200 sq ft (1298.03(b)(5)). Each residential district permits one single-family detached dwelling only. District chapters set uses and figures in text. New Laws: Ord. No. 557 (7-28-2026), zoning map amendment. Read in the browser on eCode360 (LO1651).",
+    },
+    "4204586968": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/11892117",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 300 Zoning (Borough of Yeadon Zoning Ordinance of 1984, Ord. No. 1115, codified by Ord. No. 1245 of 12-7-1995, as amended). No ADU text. A permits single-family detached dwellings and municipal uses only, with private garages and parking as accessory uses (300-33A, B). Conversion of an existing single-family structure with more than 3,600 sq ft of net floor area into a multifamily use (up to four units) by special exception in A only (300-33C(2)). B adds semidetached dwellings, C townhouse and garden apartment developments, NC residences above the first floor. No attachments. New Laws: 41 uncodified items since 2018, one a 2024 zoning amendment (smoke shops). Read in the browser on eCode360 (YE2061).",
+    },
 }
 
 # Smaller towns whose zoning code has ADU text (confirmed in the code text on 2026-11-11), and towns
@@ -1423,6 +1444,7 @@ FIXED_BATCH.update({g: 31 for g in ("4201910464", "4201102328", "4209127280")})
 FIXED_BATCH.update({g: 32 for g in ("4203948360", "4200323000", "4209153664")})
 FIXED_BATCH.update({g: 33 for g in ("4204767344", "4203707128", "4201344328")})
 FIXED_BATCH.update({g: 34 for g in ("4201753304", "4202979352", "4202164544")})
+FIXED_BATCH.update({g: 35 for g in ("4209145072", "4209144920", "4204586968")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1578,6 +1600,12 @@ EXTRAS = {
     "4201753304": "Code 27-305 H14 accessory dwelling for relatives, tenant farmers or farm or estate employees (C/R, WS)",
     "4202979352": "Code 200-62B(1) quarters for guests and for servants or tenants employed on the premises",
     "4202164544": "batch 34 by population. Code Chapter 240 has no ADU text",
+    # Batch 35 (2026-11-16): the next towns by population without a rule file. New Kensington (Westmoreland) was
+    # skipped (Schedule I use regulations and Schedule II lot, yard and building sizes only in PDF attachments) and
+    # Somerset township (Somerset) (no municipal zoning; some areas fall under the Somerset County Zoning Commission).
+    "4209145072": "Code 250-21B(4) temporary living quarters for relatives or household employees",
+    "4209144920": "Code 1250.04(a)(27)B family definition, two housekeeping units for a relative 60 or older or handicapped",
+    "4204586968": "batch 35 by population. Code Chapter 300 has no ADU text (300-33C(2) conversion of a large house in A)",
 }
 
 if __name__ == "__main__":

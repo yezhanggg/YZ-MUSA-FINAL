@@ -1,0 +1,1341 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Gwynedd township",
+    "instrument": "Lower Gwynedd Township Zoning Ordinance (Codified Ordinances Part Twelve, Title Six Zoning, Chapters 1250 to 1299, Ord. 223 of 12-10-1985, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 LO1651, Township of Lower Gwynedd, Montgomery County (the code names the Montgomery County Department of Health and the Montgomery County FIRM). The Zoning Code is Ord. 223 of 12-10-1985 as amended, most recently by Ord. No. 554 (2-10-2026) and Ord. No. 556 (6-23-2026), which are folded into the text. New Laws: Ord. No. 557 (7-28-2026), a zoning map amendment, not codified. Each district has its own chapter with its uses and figures in text. No PDF use or dimension tables",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/LO1651",
+      "https://ecode360.com/13469743",
+      "https://ecode360.com/LO1651/laws",
+      "https://ecode360.com/LO1651/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22family%20member%22%20OR%20%22living%20quarters%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20caretaker%20OR%20conversion%20OR%20%22second%20dwelling%22%20OR%20%22carriage%20house%22%20OR%20granny%20OR%20%22accessory%20suite%22%20OR%20relative%20OR%20servant%20OR%20quarters&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/LO1651?guid=13447825",
+      "https://ecode360.com/print/LO1651?guid=13447951",
+      "https://ecode360.com/print/LO1651?guid=13447999",
+      "https://ecode360.com/print/LO1651?guid=13448034",
+      "https://ecode360.com/print/LO1651?guid=13450000",
+      "https://ecode360.com/print/LO1651?guid=13449907",
+      "https://ecode360.com/print/LO1651?guid=13449849",
+      "https://ecode360.com/print/LO1651?guid=13449816",
+      "https://ecode360.com/print/LO1651?guid=13449592",
+      "https://ecode360.com/print/LO1651?guid=13449622",
+      "https://ecode360.com/print/LO1651?guid=13449660",
+      "https://ecode360.com/print/LO1651?guid=13447675",
+      "https://ecode360.com/print/LO1651?guid=13449775",
+      "https://ecode360.com/print/LO1651?guid=13449354",
+      "https://ecode360.com/print/LO1651?guid=13449322",
+      "https://ecode360.com/print/LO1651?guid=13448627",
+      "https://ecode360.com/print/LO1651?guid=13448247",
+      "https://ecode360.com/print/LO1651?guid=13449190",
+      "https://ecode360.com/print/LO1651?guid=13449387",
+      "https://ecode360.com/print/LO1651?guid=13448699"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209144920",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13469743",
+    "code_current_through": "2026-06-23",
+    "code_current_through_note": "eCode360 shows the code version date 2026-06-23, and 1250.04 lists Ord. No. 556 of 6-23-2026. New Laws: Ord. No. 557 (7-28-2026), zoning map amendment",
+    "checks": [
+      "The code has no accessory dwelling unit listing. Its family definition lets the Zoning Hearing Board, by special exception, treat related persons as 'two nonprofit housekeeping units and doing separate cooking on the premises' when one unit holds only one person who is at least 60 or physically handicapped (1250.04(a)(27)B)",
+      "For that unit the owner records an agreement with the Township to remove the separate cooking facilities as soon as the person for whom they were installed no longer uses them, and the building code rules for multifamily dwellings must be met (1250.04(a)(27)B)",
+      "Every residential district permits 'One single-family detached dwelling' and no other dwelling, and a single-family detached dwelling is 'occupied exclusively as a residence for only one family' (1250.04(a)(25)A, 1255.02 and the other district chapters). A building with two dwelling units is a 'multifamily dwelling' (1250.04(a)(25)B)",
+      "Caretaker's quarters with their own kitchen are a special exception on a single-family detached lot of at least four acres, only in an existing structure proven to have existed before 1985, at most 1,200 sq ft, inside the building envelope, for at most two people who maintain or secure the property or care for an occupant, with public sewer or a proven septic capacity, no separate road opening and a recorded deed restriction (1298.03(b)(5))",
+      "Accessory buildings stay inside the buildable area and not in front of the house, or in the rear yard at least 10 ft behind the house with 10 ft side and rear setbacks (5 ft in C), doubled for a building over 500 sq ft or over 15 ft tall. Several districts set their own accessory yards (1298.03(b)(1), 1255.04(c) and the other district chapters)",
+      "A building accessory to a dwelling may be 15 ft and one story (1298.16), but AA, AA-1, C, CD and CD-1 still say 14 ft and one story (1255.06(b), 1256.06(b), 1262.06(b), 1264.06(b), 1266.06(b)). In CD and CD-1 a detached private garage is not an accessory use building (1264.04(c), 1266.04(c))",
+      "On a lot that abuts Bethlehem Pike, Route 202, Sumneytown Pike, Pennlyn Pike, Norristown Road or Route 63 the yard on that side is doubled in single-family districts (1298.12)",
+      "Building and impervious coverage are measured on the developable area of the lot, which leaves out floodplains, wetlands, wetland buffers, water, road rights-of-way and overhead utility easements (1250.04(a)(13), (22), (35))",
+      "In the Floodplain Conservation District, an overlay on every district, only the listed uses are allowed and freestanding structures and buildings are prohibited. An accessory structure there may not be used for human habitation (1290.03(c), 1290.12, 1290.13(a), 1290.24(d))",
+      "A property on the Township Historic Resources Map (owners opt in) may get a new use, or smaller lot and yard figures, by special exception (1298.19(c), (d))",
+      "Each district asks two all-weather parking spaces for each dwelling unit (1255.07(a) and the other district chapters)",
+      "The E district permits the uses of the MF-1 Multifamily district, and the MR district allows twin duplex and other dwellings, both as planned developments of many units (1268.02, Chapter 1267). The MF-1 chapter was not read",
+      "No section read bars a use variance. Variances follow 1252.03(b)"
+    ],
+    "notes": "Zoning office: Lower Gwynedd Township, Code Official. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 1250.04 (definitions), Chapter 1252, the AA, AA-1, A, A-1, B, C, CD, CD-1 and E chapters in full, the A-2, E-1 and E-2 use lists and the A-2 standards (through the page's text tree), Chapter 1290, Chapter 1298 through 1298.19(h), and the New Laws page. Searched the MR, MD, D and 1296 chapters for dwelling uses and lot rules. Not read: the MF-1, MF-3, MF-3-A, MF-3-B, D-1 to D-4, F, F-1, PO and PO-2 chapters, the Lower Pike and MT overlays, Chapters 1254, 1292, 1294, 1295, 1299 and the rest of 1298. The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant and quarters. Height is measured to the highest point of the building (1250.04(a)(16))."
+  },
+  "adu": {
+    "term": {
+      "value": "two nonprofit housekeeping units (family definition)",
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The code has no ADU term. Its family definition lets the Zoning Hearing Board, by special exception, count two housekeeping units with separate cooking as one family when one unit holds a single related person who is 60 or older or physically handicapped"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "A special exception for a single related person who is at least 60 years old or physically handicapped, living as a second housekeeping unit with the family"
+    },
+    "scope_by_use": {
+      "value": {
+        "use": "single-family detached dwelling",
+        "permitted_in": [
+          "AA",
+          "AA-1",
+          "A",
+          "A-1",
+          "A-2",
+          "B",
+          "C",
+          "CD",
+          "CD-1",
+          "E",
+          "E-1",
+          "E-2",
+          "MR"
+        ],
+        "not_permitted_in": [
+          "MD",
+          "D"
+        ]
+      },
+      "section": "1255.02, 1256.02, 1257.02, 1258.02, 1259.02, 1260.02, 1262.02, 1264.02, 1266.02, 1267, 1268.02, 1269.02, 1269A.02",
+      "url": "https://ecode360.com/print/LO1651?guid=13447999",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The family definition reaches a dwelling. Each residential district permits one single-family detached dwelling, E, E-1 and E-2 through the A district uses, MR within its development plan. MD and D list no dwelling. The other nonresidential and multifamily districts were not read"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "1250.04(a)(27)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Where no single-family dwelling is permitted the family rule has no house to apply to"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "1250.04(a)(27)B, 1252.02(b), 1252.03(a)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board, on the special exception criteria of 1252.03(a)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1252.02(c), 1252.03(b)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447951",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board. No section read bars a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Caretaker's quarters",
+          "path": "special_exception",
+          "districts": [
+            "AA",
+            "AA-1",
+            "A",
+            "A-1",
+            "A-2",
+            "B",
+            "C",
+            "CD",
+            "CD-1",
+            "E",
+            "E-1",
+            "E-2",
+            "MR"
+          ],
+          "conditions": "'Caretaker's quarters, including a kitchen separate and apart from the kitchen serving the primary residence' on a single-family detached lot, by special exception. Lot at least four acres. Only in an existing structure proven to have existed before 1985 and suitable for conversion. At most 1,200 sq ft, inside the lot's building envelope, at most two people responsible for maintenance or security of the house or lot or the care of an occupant. Public sewer, or septic capacity shown to the Township or the Montgomery County Department of Health. No separate road opening. A recorded deed restriction, and the quarters are removed if the conditions are no longer met (1298.03(b)(5))",
+          "adu_listing": true,
+          "min_lot_sqft": 174240,
+          "requires": [
+            {
+              "test": "accessory_building_built_before",
+              "value_date": "1985-01-01",
+              "condition": "The quarters use an existing structure proven to have existed before 1985",
+              "section": "1298.03(b)(5)B"
+            },
+            {
+              "test": null,
+              "condition": "The occupants, at most two, maintain or secure the house or lot or care for an occupant of the house",
+              "section": "1298.03(b)(5)E"
+            }
+          ],
+          "section": "1298.03(b)(5)",
+          "url": "https://ecode360.com/print/LO1651?guid=13448699",
+          "confidence": "verified",
+          "note": "Four acres is 174,240 sq ft. The existing structure may be an outbuilding. Whether part of the house itself can serve is not settled"
+        }
+      ],
+      "section": "1298.03(b)(5)",
+      "url": "https://ecode360.com/print/LO1651?guid=13448699",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "1298.19",
+      "url": "https://ecode360.com/print/LO1651?guid=13448699",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic ADU path. A new use of a mapped historic resource is a special exception (1298.19(c)(1)B)"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "All occupants are related by blood, marriage or legal adoption. The second housekeeping unit holds only one person, who is at least 60 or physically handicapped so that independent living depends on the family next door.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1250.04(a)(27)B",
+          "url": "https://ecode360.com/print/LO1651?guid=13447825"
+        },
+        {
+          "kind": "other",
+          "condition": "The owner records an agreement with the Township to remove the separate cooking facilities as soon as the person for whom they were installed no longer uses them. The building code rules for multifamily dwellings apply.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "1250.04(a)(27)B",
+          "url": "https://ecode360.com/print/LO1651?guid=13447825"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District only the listed uses are allowed, freestanding structures and buildings are prohibited, and an existing structure may be enlarged only within the flood rules (no rise in the floodway, at most one foot in an AE area without floodway).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP",
+            "Floodplain Conservation District"
+          ],
+          "section": "1290.03(c), 1290.12, 1290.13(a), 1290.17",
+          "url": "https://ecode360.com/print/LO1651?guid=13449190"
+        },
+        {
+          "kind": "other",
+          "condition": "On a lot abutting Bethlehem Pike, Route 202, Sumneytown Pike, Pennlyn Pike, Norristown Road or Route 63 the yard on that side is doubled.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": [
+            "AA",
+            "AA-1",
+            "A",
+            "A-1",
+            "A-2",
+            "B",
+            "C",
+            "CD",
+            "CD-1",
+            "E",
+            "E-1",
+            "E-2",
+            "MR"
+          ],
+          "building_types": null,
+          "section": "1298.12",
+          "url": "https://ecode360.com/print/LO1651?guid=13448699"
+        },
+        {
+          "kind": "other",
+          "condition": "A lot in an approved cluster development follows that plan's figures (AA-1 cluster lots of 50,000 sq ft, A-1 cluster lots of 23,000 sq ft, A-2 development lots of 20,000 or 9,500 sq ft).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AA-1",
+            "A-1",
+            "A-2"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "1256.10, 1258.10, 1259.04, 1259.04.1",
+          "url": "https://ecode360.com/print/LO1651?guid=13449907"
+        }
+      ],
+      "section": "1250.04(a)(27)B, 1290, 1298.12",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Related persons 'living together' as two housekeeping units, so within the single-family dwelling"
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "1250.04(a)(27)B, 1298.03(b)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The family rule speaks of individuals living together. It does not name a separate building. Caretaker's quarters in an existing pre-1985 structure are a separate listing"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "No size cap. The second unit holds one person"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "One person related to the family, at least 60 years old or physically handicapped, in the second housekeeping unit.",
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The owner signs the removal agreement. The text does not require the owner to live there"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "1250.04(a)(27)B",
+      "url": "https://ecode360.com/print/LO1651?guid=13447825",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'two nonprofit housekeeping units'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1255.07(a)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447999",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified"
+    },
+    "reading": {
+      "value": "Each district asks two spaces for each dwelling unit. The family rule keeps one family, so 2 in total. If the second housekeeping unit counts as a dwelling unit, 4.",
+      "section": "1255.07(a), 1257.07(a), 1250.04(a)(26)",
+      "url": "https://ecode360.com/print/LO1651?guid=13447999",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "1298.03(b)(1)C",
+      "url": "https://ecode360.com/print/LO1651?guid=13448699",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'In no circumstances can an accessory structure be located in a front yard.'"
+    }
+  },
+  "districts": {
+    "AA": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "1255.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 275 ft"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "1255.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 65,
+        "section": "1255.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 100,
+        "section": "1255.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "1255.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "1255.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1255.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1255.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13447999",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "AA-1": {
+      "min_lot_sqft": {
+        "value": 70000,
+        "section": "1256.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 225 ft. Density at most 0.45 units per developable acre over the tract (1256.03(b))"
+      },
+      "setback_front_ft": {
+        "value": 80,
+        "section": "1256.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 55,
+        "section": "1256.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "1256.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "1256.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1256.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1256.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1256.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13448034",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "1257.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 200 ft. With public sewer and public water, connection required"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "1257.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "1257.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "1257.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1257.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1257.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1257.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1257.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "A-1": {
+      "min_lot_sqft": {
+        "value": 35000,
+        "section": "1258.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 175 ft. With public sewer and public water, connection required. Density at most 0.90 units per developable acre over the tract (1258.03(b))"
+      },
+      "setback_front_ft": {
+        "value": 65,
+        "section": "1258.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "1258.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 65,
+        "section": "1258.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1258.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1258.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1258.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1258.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1258.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1258.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1258.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1258.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "A-2": {
+      "min_lot_sqft": {
+        "value": 35000,
+        "section": "1259.02(a), 1258.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown. Width 175 ft. With public sewer and public water, connection required. Density at most 0.90 units per developable acre over the tract (1258.03(b))"
+      },
+      "setback_front_ft": {
+        "value": 65,
+        "section": "1259.02(a), 1258.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown."
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "1259.02(a), 1258.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown. Each side"
+      },
+      "setback_rear_ft": {
+        "value": 65,
+        "section": "1259.02(a), 1258.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1259.02(a), 1258.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown. 20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1259.02(a), 1258.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown. Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1259.02(a), 1258.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1259.02(a), 1258.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1258.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1258.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1258.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1259.02(a), 1258.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449907",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in A-2 follows the A or the A-1 rules (1259.02(a)). The A-1 figures are shown."
+      }
+    },
+    "B": {
+      "min_lot_sqft": {
+        "value": 18000,
+        "section": "1260.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 120 ft. With public sewer and public water, connection required"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "1260.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "1260.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 65,
+        "section": "1260.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1260.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "1260.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1260.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1260.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "1260.03(a)(1)"
+          }
+        ],
+        "section": "1260.03(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449816",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The code gives no figure for a lot with only one of the services"
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "1262.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Width 60 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1262.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1262.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "1262.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "1262.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "1262.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1262.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1262.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449592",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "CD": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "1264.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "At most 20,000 sq ft, width 60 ft. Front yard 25 ft on a cul-de-sac"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1264.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "1264.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1264.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1264.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.55,
+        "section": "1264.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1264.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1264.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449622",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "CD-1": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "1266.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "At most 20,000 sq ft, width 60 ft. Front yard 25 ft on a cul-de-sac"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1266.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "1266.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1266.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1266.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Building area over the developable area of the lot (1250.04(a)(13))"
+      },
+      "max_impervious_coverage": {
+        "value": 0.55,
+        "section": "1266.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1266.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1266.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13449660",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "E": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "1268.02(a), 1257.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Width 200 ft. With public sewer and public water, connection required"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "1268.02(a), 1257.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "1268.02(a), 1257.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Each side"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "1268.02(a), 1257.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1268.02(a), 1257.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. 20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1268.02(a), 1257.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1268.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1268.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1257.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1268.02(a), 1257.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      }
+    },
+    "E-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "1269.02(a), 1257.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Width 200 ft. With public sewer and public water, connection required"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "1269.02(a), 1257.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "1269.02(a), 1257.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Each side"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "1269.02(a), 1257.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1269.02(a), 1257.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. 20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1269.02(a), 1257.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1269.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1269.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1257.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1269.02(a), 1257.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-1 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      }
+    },
+    "E-2": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "1269A.02(a), 1257.03",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Width 200 ft. With public sewer and public water, connection required"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "1269A.02(a), 1257.04(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "1269A.02(a), 1257.04(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Each side"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "1269A.02(a), 1257.04(c)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "1269A.02(a), 1257.05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. 20% with public sewer and water, 15% with one, 10% with neither. Over the developable area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "1269A.02(a), 1257.05(b)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures. Over the developable area of the lot (1250.04(a)(35))"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1269A.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "1269A.02(a), 1257.06(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 60000,
+            "max_building_coverage": 0.15,
+            "section": "1257.03(a)(2), .05(a)(2)"
+          },
+          {
+            "when": "With neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.1,
+            "section": "1257.03(a)(1), .05(a)(1)"
+          }
+        ],
+        "section": "1269A.02(a), 1257.03(a), .05(a)",
+        "url": "https://ecode360.com/print/LO1651?guid=13450000",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "E-2 permits the A district uses 'as regulated therein', so a single-family detached dwelling takes the A figures."
+      }
+    }
+  }
+}

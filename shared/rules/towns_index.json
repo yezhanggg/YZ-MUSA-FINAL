@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 155,
-      "population": 5978126,
-      "share_of_pa": 0.4598
+      "towns_beyond_the_two_cities": 158,
+      "population": 6014473,
+      "share_of_pa": 0.4626
     }
   ],
   "towns": [
@@ -3818,6 +3818,78 @@
         "added as batch 34 by population. Code Chapter 240 has no ADU text"
       ],
       "status_note": "Later checks: Chapter 138 floodplain, Article XVII special exceptions, the U district, and the code current-through date (eCode360 shows 01-30-2023). The similar-use decision (240-100A(9), B) is called a use grant in the code and is shown as a special exception hearing."
+    },
+    {
+      "geoid": "4209145072",
+      "geoid_aliases": [],
+      "name": "Lower Pottsgrove township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 12217,
+      "population_with_aliases": 12217,
+      "housing_units": 4790,
+      "pop_rank": 206,
+      "file": "pa_montgomery_lower_pottsgrove",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13282057",
+      "plain_fetch": false,
+      "code_current_through": "2026-08-03",
+      "code_note": "Zoning: Chapter 250 Zoning (Ord. No. 127 of 6-4-1973, reenacted 5-20-2010 by Ord. No. 294, as amended through Ord. No. 373 of 11-3-2025). ADU text: 'Temporary living quarters for relatives or household employees' (250-21B(4)), a use accessory to a dwelling, by special exception, in the house or in an approved accessory building, at most two persons, owner-occupied house, deed restriction against sale as two units, annual permit renewal, a detached modular unit removed when no longer used. Conversion of a single-family dwelling into two or more units by special exception in every district (250-27: neighbor petition, large dwelling of little economic use, 75% of the district lot area per family). Two-family dwellings by right in R-3 (8,712 sq ft per unit, public sewer), LCO and LC. Floodplain overlay permits no enclosed structures (250-40). The only attachments are the zoning map and sign types. New Laws: none. Read in the browser on eCode360 (LO2382).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 250-21B(4) temporary living quarters for relatives or household employees)"
+      ],
+      "status_note": "Open: whether the quarters count as a dwelling unit for the R-2 lot area per unit and density (250-59A, 250-21B(4)(d)) and for parking (Table 250-202). Whether a twin qualifies (250-21B(4)(i)). Whether R-4 keeps twins (250-66A). Impervious tiers by lot size stored as 25%. Q, airport overlay and parts of Art IV not read."
+    },
+    {
+      "geoid": "4209144920",
+      "geoid_aliases": [],
+      "name": "Lower Gwynedd township",
+      "county": "Montgomery",
+      "type": "township",
+      "population": 12076,
+      "population_with_aliases": 12076,
+      "housing_units": 4981,
+      "pop_rank": 209,
+      "file": "pa_montgomery_lower_gwynedd",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13469743",
+      "plain_fetch": false,
+      "code_current_through": "2026-06-23",
+      "code_note": "Zoning: Part Twelve, Title Six Zoning, Chapters 1250 to 1299 (Ord. 223 of 12-10-1985, as amended through Ord. No. 556 of 6-23-2026). No ADU listing. The family definition lets the Zoning Hearing Board, by special exception, count related persons as two housekeeping units with separate cooking when one unit holds a single person 60 or older or physically handicapped, with a recorded removal agreement (1250.04(a)(27)B). Caretaker's quarters by special exception on a single-family lot of four acres, in an existing structure from before 1985, at most 1,200 sq ft (1298.03(b)(5)). Each residential district permits one single-family detached dwelling only. District chapters set uses and figures in text. New Laws: Ord. No. 557 (7-28-2026), zoning map amendment. Read in the browser on eCode360 (LO1651).",
+      "why": [
+        "named as a town with an ADU ordinance (Code 1250.04(a)(27)B family definition, two housekeeping units for a relative 60 or older or handicapped)"
+      ],
+      "status_note": "Open: the main path is the family definition (1250.04(a)(27)B), not an ADU listing. Also whether it reaches a separate building, and whether the second unit counts as a dwelling unit for parking and density. Caretaker's quarters may use the house itself (1298.03(b)(5)B). MF-1, MF-3s, D-1 to D-4, F, F-1, PO, PO-2, overlays and Ch 1294 not read."
+    },
+    {
+      "geoid": "4204586968",
+      "geoid_aliases": [],
+      "name": "Yeadon borough",
+      "county": "Delaware",
+      "type": "borough",
+      "population": 12054,
+      "population_with_aliases": 12054,
+      "housing_units": 4932,
+      "pop_rank": 210,
+      "file": "pa_delaware_yeadon",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11892117",
+      "plain_fetch": false,
+      "code_current_through": null,
+      "code_note": "Zoning: Chapter 300 Zoning (Borough of Yeadon Zoning Ordinance of 1984, Ord. No. 1115, codified by Ord. No. 1245 of 12-7-1995, as amended). No ADU text. A permits single-family detached dwellings and municipal uses only, with private garages and parking as accessory uses (300-33A, B). Conversion of an existing single-family structure with more than 3,600 sq ft of net floor area into a multifamily use (up to four units) by special exception in A only (300-33C(2)). B adds semidetached dwellings, C townhouse and garden apartment developments, NC residences above the first floor. No attachments. New Laws: 41 uncodified items since 2018, one a 2024 zoning amendment (smoke shops). Read in the browser on eCode360 (YE2061).",
+      "why": [
+        "added as batch 35 by population. Code Chapter 300 has no ADU text (300-33C(2) conversion of a large house in A)"
+      ],
+      "status_note": "Open: whether a two-unit conversion is a 'multifamily use' when the code defines multifamily as three or more families but includes duplexes (300-5B, 300-33C(2)). 41 uncodified New Laws incl. a 2024 zoning amendment not read. INS, RC, IND, ROS, Art XVII and Ch 164 floodplain not read."
     }
   ]
 }
