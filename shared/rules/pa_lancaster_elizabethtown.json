@@ -21,7 +21,11 @@
       "https://ecode360.com/print/EL0331?guid=27498756",
       "https://ecode360.com/print/EL0331?guid=27498967",
       "https://ecode360.com/print/EL0331?guid=27499095",
-      "https://ecode360.com/print/EL0331?guid=27499773"
+      "https://ecode360.com/print/EL0331?guid=27499773",
+      "https://ecode360.com/27482011",
+      "https://ecode360.com/print/EL0331?guid=27482011",
+      "https://ecode360.com/print/EL0331?guid=27499227",
+      "https://ecode360.com/print/EL0331?guid=27500064"
     ],
     "verified_on": "2026-11-16",
     "county": "Lancaster",
@@ -42,9 +46,12 @@
       "In R-2 and R-3 the lot area and width 'are established for each dwelling unit' (27-707.1, 27-807.1). Whether an ADU needs its own lot share is not settled",
       "In R-2 a single-family detached dwelling may not be converted into a semidetached dwelling (27-702.2)",
       "A use neither permitted nor prohibited may be allowed by the Zoning Hearing Board as a special exception if it is of the same general character as the district's permitted uses (27-306)",
-      "No section read bars a use variance. 27-2008 (Variances) was not read"
+      "27-2008 sets the usual variance findings of the state planning code and does not bar a use variance",
+      "Floodplains (Chapter 8): in the Floodway District 'All structures are prohibited except' dams, culverts, bridges and open space (8-303.1). The Flood-Fringe District is the A District and the land between the floodway and the 500-year floodplain boundary (8-301.4). Its permitted uses must not need buildings, and 'Uses not listed as a permitted use or a special use are expressly not permitted' (8-304.1, 304.3). An existing single-family house in the Flood-Fringe District may grow by at most 50% of its ground-level area at the date of Chapter 8 (8-402.1A)",
+      "In MU 'The minimum height requirement of a building shall be 35 feet' (27-12A12). Read literally it would keep out a detached ADU, which must be lower than the house and at most 15 ft. Ask the zoning officer",
+      "A conversion apartment (R-3) keeps the building's look as a single-family dwelling, with no exterior evidence of change except as building codes require (27-1304B, J)"
     ],
-    "notes": "Zoning office: Borough of Elizabethtown, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 27-201 (the ADU, accessory building, apartment, conversion apartment, dwelling, dwelling unit, single-family, two-family and impervious coverage definitions), 27-306, Parts 6, 7, 8 and 9, 27-1302, 27-1333, 27-1602A, the MU permitted uses through H, 27-12A12 to 27-12A14 and the New Laws page. Not read: Parts 1, 4 (OS&C), 5 (INS), 10 (G-C), 11 (LI), 12 (G-I), the rest of Part 12A, 27-1301 and 27-1303 to 27-1332, 27-1334, Parts 14, 15 and 17 to 21, and Chapter 8 (Floodplains). A code search for single-family detached dwellings, dwelling units, caretaker, watchman, in-law, family member, ECHO and temporary dwelling found dwelling listings only in R-1, R-2, R-3, MU and CBD. The ADU text sets no floor area cap, only two bedrooms at most for a unit in the house or the basement or attic. Floodplain rules are in Chapter 8, not read."
+    "notes": "Zoning office: Borough of Elizabethtown, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: Chapter 8 (Floodplains) in full on the print page, 27-1304 (conversion apartments), Part 12A (MU) in full, 27-201 (the ADU, accessory building, apartment, conversion apartment, dwelling, dwelling unit, single-family, two-family and impervious coverage definitions), 27-306, Parts 6, 7, 8 and 9, 27-1302, 27-1333, 27-1602A, 27-2008 and the New Laws page. Not read: Parts 1, 4 (OS&C), 5 (INS), 10 (G-C), 11 (LI), 12 (G-I), 27-1301, 27-1303 and 27-1305 to 27-1332 (27-1318 on access and principal structures included), 27-1334, Parts 14, 15 and 17 to 21 (27-2008 aside). A code search for single-family detached dwellings, dwelling units, caretaker, watchman, in-law, family member, ECHO and temporary dwelling found dwelling listings only in R-1, R-2, R-3, MU and CBD. The ADU text sets no floor area cap, only two bedrooms at most for a unit in the house or the basement or attic. Chapter 22 (subdivision and land development) was not read."
   },
   "adu": {
     "term": {
@@ -113,10 +120,10 @@
     "fallback_path": {
       "value": "variance",
       "section": "27-2008",
-      "url": "https://ecode360.com/27498291",
+      "url": "https://ecode360.com/print/EL0331?guid=27500064",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Zoning Hearing Board. 27-2008 was not read"
+      "confidence": "verified",
+      "note": "Zoning Hearing Board. 27-2008 sets the usual findings and does not bar a use variance"
     },
     "alternatives": {
       "value": [
@@ -139,19 +146,25 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "'Conversion apartments' are a permitted use in R-3 (27-802.5): 'An existing dwelling unit that is or was converted to a dwelling for more than one family' (27-201). Lot 4,000 sq ft, width 45 ft at the street, 50 ft at the setback line, depth 100 ft (27-807.1). Supplementary rules in 27-1304 apply",
+          "conditions": "'Conversion apartments' are a permitted use in R-3 (27-802.5). 'Any building existing at the effective date of this chapter may be converted to a dwelling for more than one family' (27-1304). Lot 4,000 sq ft, width 45 ft at the street, 50 ft at the setback line, depth 100 ft (27-807.1). No unit under 300 sq ft of habitable floor area (27-1304A). 'There is no exterior evidence of change in the building' except as building codes require, and the building keeps its street entrance, porch and look as a single-family dwelling (27-1304B, J). At most 3 bedrooms per unit, at most three dwelling units per building, at most 3 stories, and no unit in the basement or below ground (27-1304E, G, H, I). One parking space more than Part 16 asks for a unit with more than 2 bedrooms (27-1304D). Adequate street frontage under 27-1318 (27-1304F)",
           "min_lot_sqft": 4000,
           "requires": [
             {
+              "test": "house_built_before",
+              "value_date": "1996-05-16",
+              "condition": "The building existed when Chapter 27 took effect (Ord. 766 of 5-16-1996)",
+              "section": "27-1304"
+            },
+            {
               "test": "house_exists",
               "condition": "The dwelling already exists",
-              "section": "27-201 'Apartment, conversion'"
+              "section": "27-201 'Apartment, conversion', 27-1304"
             }
           ],
           "section": "27-802.5, 27-807.1, 27-1304, 27-201",
-          "url": "https://ecode360.com/print/EL0331?guid=27498720",
-          "confidence": "secondary",
-          "note": "27-1304 (Apartments, Conversion) was not read, so its added standards are not shown. Ask the zoning officer"
+          "url": "https://ecode360.com/print/EL0331?guid=27499227",
+          "confidence": "verified",
+          "note": "An existing building divided into more units, not an accessory unit. Only a building that stood on 5-16-1996 qualifies"
         },
         {
           "name": "Dwelling units above a nonresidential use (CBD)",
@@ -177,6 +190,14 @@
       "url": "https://ecode360.com/print/EL0331?guid=27498720",
       "verified_on": "2026-11-16",
       "confidence": "verified"
+    },
+    "land_development_second_building": {
+      "value": true,
+      "section": "27-201 'Land development'",
+      "url": "https://ecode360.com/print/EL0331?guid=27498300",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Land development includes 'A group of two or more residential or nonresidential buildings' on a lot. A new detached ADU is a second residential building. Chapter 22 (subdivision and land development) was not read, so ask whether a plan is needed"
     }
   },
   "eligibility": {
@@ -226,18 +247,56 @@
         },
         {
           "kind": "district",
-          "condition": "In MU a single-family detached dwelling is itself a conditional use, so the house the ADU serves needs that approval first.",
+          "condition": "In MU a house that existed when the MU rules took effect (Ord. 876 of 8-17-2006) is a permitted residential use (27-12A02.O). New construction of residential buildings is a conditional use (27-12A04.H, 27-12A06.1), so a newer house needed that approval.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
             "MU"
           ],
           "building_types": null,
-          "section": "27-12A06",
+          "test": "house_built_before",
+          "value_date": "2006-08-17",
+          "section": "27-12A02.O, 27-12A04.H, 27-12A06.1",
           "url": "https://ecode360.com/print/EL0331?guid=27498967"
+        },
+        {
+          "kind": "district",
+          "condition": "In MU 'New construction of residential buildings' is a conditional use before Borough Council (27-12A04.H, 27-12A06.1). A new detached ADU building may count as one.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "over_garage"
+          ],
+          "districts": [
+            "MU"
+          ],
+          "building_types": null,
+          "section": "27-12A04.H, 27-12A06.1",
+          "url": "https://ecode360.com/print/EL0331?guid=27498967",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "27-12A02.V, 27-12A06.1A to E",
+            "url": "https://ecode360.com/print/EL0331?guid=27498967",
+            "note": "The MU use list permits an 'Accessory dwelling unit in accordance with § 1333' by right, and the list of new residential buildings in 27-12A06.1 does not name an ADU"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodway District 'All structures are prohibited except' dams, culverts, bridges and open space (8-303.1). In the Flood-Fringe District permitted uses must not need buildings, and 'Uses not listed as a permitted use or a special use are expressly not permitted' (8-304.1, 304.3). A dwelling unit is not listed in either district, so no form of ADU is allowed there. Part 4 lets an existing house stay and grow within limits (8-401, 8-402.1A), but an ADU is a new dwelling unit",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway",
+            "Flood-Fringe"
+          ],
+          "section": "8-301.4, 8-303.1, 8-304.1, 8-304.3",
+          "url": "https://ecode360.com/print/EL0331?guid=27482011",
+          "confidence": "secondary"
         }
       ],
-      "section": "27-1333, 27-12A06",
+      "section": "27-1333, 27-12A02, 27-12A06, Chapter 8",
       "url": "https://ecode360.com/print/EL0331?guid=32991890",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -318,12 +377,42 @@
       "note": "'The maximum height of any accessory structure within a residential zone is 15 feet.'"
     },
     "accessory_cap_binds_adu": {
-      "value": null,
+      "value": true,
       "section": "27-1302.2(6), 27-1333.11",
       "url": "https://ecode360.com/print/EL0331?guid=27499095",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "27-1333 sets only 'smaller in ... height than the principal building'. 27-1333.11 makes the ADU comply with all other provisions, so the 15 ft accessory height may also bind. Not settled"
+      "note": "A detached ADU is a dwelling unit 'converted from an existing or newly constructed accessory structure' (27-201), and an ADU must 'comply with all other applicable provisions' (27-1333.11). So the 15 ft accessory height in a residential zone binds it, along with 'smaller in ... height than the principal building'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building along an alley stays at least 5 ft from the alley and outside the 14 ft alley right-of-way. A private garage with its entrance on an alley stays at least 10 ft from any lot line and outside that right-of-way",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "section": "27-1302.2(2)",
+          "url": "https://ecode360.com/print/EL0331?guid=27499095",
+          "note": null
+        },
+        {
+          "where": "in MU, where accessory setbacks are those of the principal building type. The ADU section's 6 ft for a detached unit is the more specific rule, so ask which governs",
+          "districts": [
+            "MU"
+          ],
+          "setback_side_ft": 8,
+          "setback_rear_ft": 25,
+          "section": "27-1302.2(4), 27-12A14.1B(3), C, 27-1333.9",
+          "url": "https://ecode360.com/print/EL0331?guid=27499095",
+          "note": null
+        }
+      ],
+      "section": "27-1302.2(2), (4)",
+      "url": "https://ecode360.com/print/EL0331?guid=27499095",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
     }
   },
   "use": {
@@ -556,11 +645,35 @@
     "MU": {
       "min_lot_sqft": {
         "value": 6000,
-        "section": "27-12A13.1A, 27-807",
+        "section": "27-12A06.3, 27-12A13.1A, 27-807",
         "url": "https://ecode360.com/print/EL0331?guid=27498967",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "Residential uses in MU take the R-3 lot area, width and depth of 27-807. A single-family detached dwelling in MU is a conditional use (27-12A06)"
+        "note": "Residential uses in MU take the R-3 lot area, width and depth of 27-807 (27-12A06.3, 27-12A13.1A). A house that existed in 2006 is permitted. New residential construction is a conditional use (27-12A04.H, 27-12A06.1)"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-12A14.1B(3)",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'A residential use must maintain a side-yard setback of eight feet on both sides.'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-12A14.1C",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Rear yard: 25 feet.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-12A06.3, 27-807.2, 27-12A15",
+        "url": "https://ecode360.com/print/EL0331?guid=27498967",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "New construction of residential units meets the coverage rules of 27-807.2, 50% (27-12A06.3). 27-12A15 says lot coverage 'for all uses in the district shall not exceed 65%'. The lower figure is shown"
       }
     }
   }

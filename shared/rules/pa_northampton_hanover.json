@@ -36,7 +36,7 @@
       "The zoning code has no accessory dwelling unit, in-law suite, accessory apartment or similar listing",
       "Each district permits 'Only the following' uses or building types. R1-R, R1-S, R1-U, A, MCPD, PHR, LBD and PORR permit a detached single-family house. R1 accessory uses are a private garage or parking, a pool, a temporary sign and 'Other customary accessory uses found in a single-family detached home residential areas, as approved by the Zoning Administrator' (185-23, 185-24, 185-26, 185-28, 185-36D(5), 185-37B)",
       "A single-family dwelling unit 'occupies the structure from ground to roof with independent access, services, and use of land'. A dwelling unit has 'provisions for living, cooking, sanitary and sleeping facilities arranged for the use of one family' (185-12)",
-      "The Zoning Hearing Board may not grant a variance that would 'permit the establishment within a district of any use which is not permitted in that district', and any variance 'must be for uses permissible under the terms of this chapter for the district involved' (185-52D(2), (8)). So a use variance for a second unit is not available",
+      "The Zoning Hearing Board may not grant a variance that would 'permit the establishment within a district of any use which is not permitted in that district', and any variance 'must be for uses permissible under the terms of this chapter for the district involved' (185-52D(2), (8)). Nor may it rest a variance on a use being permitted in another district (185-52D(9)). So a use variance for a second unit is not available",
       "Special permits are heard only where 'specifically authorized by the terms of this chapter' (185-51A). No section read gives a path for a use the chapter does not list",
       "An accessory building may not stand nearer the street than the house or in a required front yard, and it 'shall be considered to be part of the main dwelling in applying front, side, and rear yard regulations' (185-22A(1), 185-25C(1), (2))",
       "Townhouses and single-family attached dwellings may have no accessory buildings except under an approved plan (185-25H)",
@@ -46,9 +46,13 @@
       "PHR permits single-family semidetached houses on 6,000 sq ft lots with public water and sewer (185-28A(5), F, G(2)). R-2 permits townhouses, garden apartments and semidetached houses only as an 8 acre development (185-27)",
       "Woodland over 25% of a property raises the residential lot size and width by 1.5 or 2 times (185-22F)",
       "In the floodway and flood fringe of the Special Conservation District any structure not specifically permitted is prohibited (185-39D(4)(a))",
-      "No structure over 100 years old may be removed or substantially altered without Board of Supervisors approval in site plan review (185-22H)"
+      "No structure over 100 years old may be removed or substantially altered without Board of Supervisors approval in site plan review (185-22H)",
+      "Lot area does not count land in permanent drainage easements or in a floodway or flood fringe (185-12)",
+      "A lot or yard needed for one structure may not be counted for a second structure 'except as may be approved by the Board of Supervisors' (185-14A(1))",
+      "A zoning permit on a property with woodlands needs site plan review by the Shade Tree Commission and the Planning Commission and approval by the Board of Supervisors (185-22F(1))",
+      "Front setbacks may be averaged with the neighboring houses (185-25E)"
     ],
-    "notes": "Zoning office: Hanover Township (Northampton County), Zoning Administrator. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 185-7, 185-12, 185-14, 185-17 (residential rows), 185-22, Articles IV to VII, the use lists of Article VIII (OI, PIBD, PORR, LBD, AFHBD by search on the page), 185-39 (floodway and flood fringe), Article XIV through 185-54A and the New Laws page. Not read: 185-1 to 185-6, 185-8 to 185-11, 185-13, 185-15, 185-16, 185-18 to 185-21, 185-22.1, the area tables of Article VIII, 185-40 (Aircraft Flight Path District), Article XI (185-41 nonconforming uses), Articles XII, XIII and XV, and 185-54B to E. The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant, quarters, watchman, housekeeping unit and cottage. Its zoning hits were the family, farmhouse and accessory use definitions. A family is persons living as a single housekeeping unit (185-12). In the R1-U cluster option 'Only one single-family detached dwelling unit shall be permitted on a single lot' (185-26F(3) note 3c). R1-A permits an age restricted community or the R1 uses, and bars home occupations (185-28.1). R1 side yards are '10% of lot width', so no fixed side figure is stored."
+    "notes": "Zoning office: Hanover Township (Northampton County), Zoning Administrator. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 185-7, 185-12, 185-14, 185-17 (residential rows), 185-22, Articles IV to VII, the use lists of Article VIII (OI, PIBD, PORR, LBD, AFHBD by search on the page), 185-39 (lot rules, site plan review, floodway and flood fringe), Article XIV through 185-54A and the New Laws page. Not read: 185-1 to 185-6, 185-8 to 185-11, 185-13, 185-15, 185-16, 185-18 to 185-21, 185-22.1, the area tables of Article VIII, 185-40 (Aircraft Flight Path District), Article XI (185-41 nonconforming uses), Articles XII, XIII and XV, and 185-54B to E. The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite, relative, servant, quarters, watchman, housekeeping unit and cottage. Its zoning hits were the family, farmhouse and accessory use definitions. A family is persons living as a single housekeeping unit (185-12). In the R1-U cluster option 'Only one single-family detached dwelling unit shall be permitted on a single lot' (185-26F(3) note 3c). R1-A permits an age restricted community or the R1 uses, and bars home occupations (185-28.1). R1 side yards are '10% of lot width', so no fixed side figure is stored."
   },
   "adu": {
     "term": {
@@ -65,7 +69,7 @@
       "url": "https://ecode360.com/print/HA1762?guid=6766972",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "Each district permits 'Only the following' uses, and none lists a second dwelling unit on a house lot. The code bars a use variance for a use the district does not permit (185-52D(2), (8))"
+      "note": "Each district permits 'Only the following' uses, and none lists a second dwelling unit on a house lot. The code bars a use variance for a use the district does not permit (185-52D(2), (8), (9))"
     }
   },
   "approval": {
@@ -75,7 +79,7 @@
       "url": "https://ecode360.com/print/HA1762?guid=6767857",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "A second unit on a single-family lot is not a listed use. The code bars a use variance for a use the district does not permit (185-52D(2), (8)), so the route left is a zoning amendment"
+      "note": "A second unit on a single-family lot is not a listed use. The code bars a use variance for a use the district does not permit (185-52D(2), (8), (9)), so the route left is a zoning amendment"
     },
     "fallback_path": {
       "value": "variance",
@@ -86,7 +90,7 @@
     },
     "use_variance_barred": {
       "value": true,
-      "section": "185-52D(2), (8)",
+      "section": "185-52D(2), (8), (9)",
       "url": "https://ecode360.com/print/HA1762?guid=6767857",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
@@ -207,9 +211,22 @@
           "building_types": null,
           "section": "185-22F(2)",
           "url": "https://ecode360.com/print/HA1762?guid=6766829"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "Where more than 25% of a lot is in the Special Conservation District, the minimum lot area goes up by 50% and lot coverage is reduced by a factor of 60%. A lot in the district or within 100 ft of it needs site plan approval.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "SCD"
+          ],
+          "section": "185-39B(3), C(1)",
+          "url": "https://ecode360.com/print/HA1762?guid=6767697"
         }
       ],
-      "section": "185-22F, 185-39D",
+      "section": "185-22F, 185-39B, C, D",
       "url": "https://ecode360.com/print/HA1762?guid=6767697",
       "verified_on": "2026-11-16",
       "confidence": "secondary"

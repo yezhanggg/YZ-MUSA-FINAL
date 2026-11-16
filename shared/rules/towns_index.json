@@ -3913,7 +3913,7 @@
       "why": [
         "added as batch 36 by population. Code Chapter 27 has no ADU text (27-602 two-family and conversion in R-2, 27-1208 second principal structure)"
       ],
-      "status_note": "Open: whether 27-1208 (more than one principal structure on a lot) lets a second single-family house share a lot, since 27-102 defines a single-family dwelling as one 'on an individual lot'. The unlisted-use special exception (27-204.1E) is left out because its test (b) fails where R-2 permits two-family dwellings. Whether two units count as 'apartments' under 27-602.5 and which parking row applies. Not read: Parts 13, 15, 18, 19, 21 to 23, most of Parts 11 and 24, 27-1231 and 27-1232."
+      "status_note": "Open: whether 27-204.1E(1)(b) ('Is not permitted in any other zoning district') shuts out an ADU because R-2 permits two-family dwellings. It decides between a special exception and a use variance on every lot. A detached unit is not a two-family dwelling, an internal unit may be. Also open: whether two units count as 'apartments' under 27-602.5 and which parking row applies. Not read: the IA figures in 27-3A03.1G beyond the A reference, the PRD rules of 27-1702 in full, the C and MR/I use lists in detail, Parts 13, 15, 18, 19, 21 to 23, most of Parts 11 and 24, 27-1231 and 27-1232."
     },
     {
       "geoid": "4209532432",
@@ -3927,7 +3927,7 @@
       "pop_rank": 217,
       "file": "pa_northampton_hanover",
       "batch": 36,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6766315",
@@ -3937,7 +3937,7 @@
       "why": [
         "added as batch 36 by population. Code Chapter 185 has no ADU text (use variance barred, 185-52D(2))"
       ],
-      "status_note": "Open: whether a farm tenant house is a customary farm use in A (185-12 'Farm', 'Farmhouse', 185-23D(3)). R1 side yards are 10% of lot width, so no fixed side figure is stored. Use variance read as barred by 185-52D(2), (8). Not read: 185-1 to 185-6, 185-8 to 185-11, 185-13, 185-15, 185-16, 185-18 to 185-21, 185-22.1, the Article VIII area tables, 185-40 (AFD), Article XI (nonconforming uses), Articles XII, XIII and XV, 185-54B to E."
+      "status_note": "For a later check: the use lists of OI, PIBD, PORR, LBD, AFHBD, C1, C2 and C2R were read by search on the page only. Not read: 185-1 to 185-6, 185-8 to 185-11, 185-13, 185-15, 185-16, 185-18 to 185-21, 185-22.1, the Article VIII area tables, 185-40 (AFD), Article XI (185-41, nonconforming uses), Articles XII, XIII and XV, 185-54B to E. Whether a farm tenant house is a customary farm use in A (185-12, 185-23D(3)) is for the zoning officer."
     },
     {
       "geoid": "4207123016",
@@ -3961,7 +3961,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU)"
       ],
-      "status_note": "Open: whether the R-2 and R-3 lot area 'for each dwelling unit' (27-707.1, 27-807.1) reaches the ADU, how 27-1602A(4) '1 per bedroom plus 2 for the dwelling unit' is counted, and whether the 15 ft accessory height (27-1302.2(6)) binds a detached ADU. Not read: 27-1304 (conversion apartments), 27-2008 (variances), Parts 4, 5, 10, 11, 12, the rest of 12A, 14, 15, 17 to 21, and Chapter 8 floodplains."
+      "status_note": "Open: whether the R-2 and R-3 lot area 'established for each dwelling unit' (27-707.1, 27-807.1) reaches the ADU, since R-1 has no such sentence and Ord. 983 put ADUs in all three. Whether a new detached ADU in MU is 'new construction of residential buildings' needing a conditional use (27-12A04.H, 27-12A06.1). The MU and CBD minimum building height of 35 ft (27-12A12, 27-908) read literally would keep out a detached ADU. Whether the MU accessory setbacks (27-1302.2(4)) or the ADU's 6 ft (27-1333.9) govern. Not read: Parts 4, 5, 10, 11, 12, 14, 15, 17 to 21 (27-2008 aside), 27-1318, and Chapter 22 (land development)."
     }
   ]
 }
