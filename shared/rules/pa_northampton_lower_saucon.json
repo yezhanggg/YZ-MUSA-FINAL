@@ -50,22 +50,25 @@
       "One apartment per single-family detached dwelling or lot. 'Accessory apartments may not be permitted as a separate structure' (180-137A(2))",
       "The lot area and dimensions of the house and the apartment together must meet the district minimums, and the applicant submits a plan showing it (180-137A(3), (4))",
       "The apartment uses the house's sewer, water and other utilities. No separate systems or connections. On an on-lot septic system or well, the applicant shows the systems can serve everyone, and the Sewage Enforcement Officer reviews any connection or expansion (180-137A(5)). A sewer permit from the Sewage Enforcement Officer is needed for any conversion or expansion of use (180-94A(4))",
-      "One more all-weather off-street space for the apartment, on top of the house's own parking (180-137A(6)). A single-family dwelling needs '1 per 0.33 dwelling unit' (180-98C(1)(b)), read as three spaces",
+      "One more all-weather off-street space for the apartment, on top of the house's own parking (180-137A(6)). A single-family dwelling needs '1 per 0.33 dwelling unit' (180-98C(1)(b)). Under the fraction rule, 'only the fraction shall be counted as one' (180-98C(2)(h)), 1 / 0.33 = 3.03 rounds up to four spaces for the house, so five in total. Read as three for the house, the total is four. No parking in required yards, except that one space for each single-family detached home may be within the front yard setback (180-98C(2)(g))",
       "Except for an exterior stairway, the house may not be altered so that it no longer looks like a single-family detached dwelling (180-137A(7))",
       "Only relatives of the occupants of the house may live in the apartment. Its use ends within three months after no qualified person lives there (180-137A(8))",
       "Outside RA, R80, R40, R20, R12, UR and VC the apartment is not listed. 'No other use shall be permitted unless the Township's elected officials approve an amendment to this chapter' (180-13C). 180-12D lets the Zoning Hearing Board permit a use the chapter does not mention, but the accessory relative apartment is mentioned, so that route is not read as reaching it",
       "Single-family detached dwellings are permitted in RA, R80, R40, R20, R12, MH, UR and VC. GB, LI, LM and O&L list no single-family dwelling (180-67, 180-79, 180-83.2, 180-85). In O&L an existing lot under 50 acres may be used for a single-family residential use (180-89.2)",
       "Conversion: 'The conversion of a single-family detached dwelling to a two-family detached, single-family attached or multifamily dwelling, limited to three dwelling units, provided that the owner resides on the premises' (180-5B). It is a conditional use in R12, UR and VC and permitted by right with site plan approval in GB and LM (180-44A, 180-56B, 180-62B, 180-67A(10), 180-83.2A(8))",
-      "Floodplain: 'No structures, filling, piping or regrading shall be permitted within any floodplain' (180-95B(3)(b)), and Chapter 90 says 'Within any identified floodplain area any new construction or substantial improvements except permitted uses listed above shall be prohibited' (90-26, 90-27). A variance under Chapter 90 Article VIII (not read) is the only route",
+      "Floodplain: 'No structures, filling, piping or regrading shall be permitted within any floodplain' (180-95B(3)(b)), but 180-95B(3)(b)[1] allows a building in a floodplain 'in compliance with Chapter 90'. Chapter 90 prohibits new construction and substantial improvements in any identified floodplain area (90-26, 90-27), and 'No variance shall be granted for any of the prohibited uses or activities in § 90-26' (90-35B). Improvements to an existing structure follow 90-33: none in the floodway (90-33A), no enlargement that would raise the base flood elevation (90-33B), and an improvement under 50% of market value is 'elevated and/or floodproofed to the greatest extent possible' (90-33K). So an addition that is not a substantial improvement may be allowed, and one that is cannot get a variance",
       "Carbonate Geology Areas: no habitable dwelling within 100 ft of the rim of a sinkhole or closed depression, or of ghost lakes, lineaments, fracture traces or disappearing streams, unless a licensed geologist's study and mitigation satisfy the township (180-95B(17)(c)[4])",
       "Natural resources: floodplain soils, wetlands, lakes and ponds may not be built on, and buffers, steep slopes and woodlands have protection rates of 60% to 85% (180-95B). A site plan reviewed by the Zoning Officer is needed for a single-family detached dwelling and its accessory uses (180-95A(4))",
       "Only one building housing a principal use per lot (180-91D)",
       "A nonconforming lot lawful when created and held in separate ownership may be built on if the yards are met (180-99B(2)). 180-137A(3) still asks that the lot meet the district minimum lot area",
-      "On-lot sewage: 40,000 sq ft per equivalent dwelling unit with a standard on-lot system, two acres per dwelling unit where the soils need another system, and 30,000 sq ft per equivalent dwelling unit with public sewer and an on-lot well (180-94A)",
+      "On-lot sewage: 40,000 sq ft per equivalent dwelling unit with a standard on-lot system (180-94A(1)), and 'A two-acre minimum lot size shall be required per dwelling unit or per equivalent dwelling unit' where the soils need another system (180-94A(2)), and 30,000 sq ft per equivalent dwelling unit with public sewer and an on-lot well (180-94A(3)). The apartment is 'An additional dwelling unit' (180-5B), so on a lot that needs another system the house and the apartment likely need four acres. These figures apply in every district and the most restrictive rule applies, so in R20 and smaller districts they, not the district table, set the lot minimum without public sewer",
       "Impervious cover for single-family detached lots follows the chart in 180-127.3A. A lot of record with a house on it on 3-31-2011 keeps the percentages in effect on that date (180-127.3C), which the online code does not show",
-      "Variances: 180-11C sets the usual findings and does not bar a use variance"
+      "Variances: 180-11C sets the usual findings and does not bar a use variance",
+      "No accessory building, structure or use may be over a septic tank or a primary or backup drainfield area (180-128D)",
+      "In the WP overlay, an on-lot sewage system is inspected by the Sewage Enforcement Officer before an 'expansion or conversion of the land use served' (180-95B(18)(e)[2][d][ii])",
+      "In VC a building may have at most 6,000 sq ft of floor area on all floors, the house and the apartment together (180-64E)"
     ],
-    "notes": "Zoning office: Lower Saucon Township Zoning Department. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (180-1 to 180-5, definitions A to N in full and 'Principal building structure or use'), Article II (180-6 to 180-12.2), Article III, every district article (IV to XV, 180-18 to 180-89.2), 180-91 to 180-95 (to 180-95B(18)(e)), 180-98C, 180-99, 180-115, 180-127.3, Article XVIII (180-128 to 180-137), Chapter 90 Article VI (90-24 to 90-31), the New Laws page and the township's recently adopted ordinances page. The code search for ADU terms found 180-137 and the 'Conversion' and 'Accessory relative apartment' definitions. Not read: definitions after 'Nontower commercial communications facility' except 'Principal building', 180-95B(18)(f) onward, 180-96, 180-97, 180-98A, B and D onward, 180-100.1 to 180-100.13 (signs), 180-101 to 180-114, 180-116 to 180-127.2, 180-127.4, Chapter 90 Articles I to V, VII and VIII, Chapter 145, and the PDF attachments (Appendix B Accessory Land Uses, Appendix D Lot Area and Bulk Chart)."
+    "notes": "Zoning office: Lower Saucon Township Zoning Department. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (180-1 to 180-5, definitions A to N in full and 'Principal building structure or use'), Article II (180-6 to 180-12.2), Article III, every district article (IV to XV, 180-18 to 180-89.2), 180-91 to 180-95 (to 180-95B(18)(e)), 180-98C, 180-99, 180-115, 180-127.3, Article XVIII (180-128 to 180-137), Chapter 90 Article VI (90-24 to 90-31) and the parts of Article VII and 90-35B quoted here, the New Laws page and the township's recently adopted ordinances page. The code search for ADU terms found 180-137 and the 'Conversion' and 'Accessory relative apartment' definitions. Not read: definitions after 'Nontower commercial communications facility' except 'Principal building', 180-95B(18)(f) onward, 180-96, 180-97, 180-98A, B and D onward, 180-100.1 to 180-100.13 (signs), 180-101 to 180-114, 180-116 to 180-127.2, 180-127.4, Chapter 90 Articles I to V and the rest of Articles VII and VIII, Chapter 145, and the PDF attachments (Appendix B Accessory Land Uses, Appendix D Lot Area and Bulk Chart)."
   },
   "adu": {
     "term": {
@@ -281,7 +284,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain district, no structure may be built and Chapter 90 prohibits new construction or substantial improvement in any identified floodplain area. An addition needs a floodplain variance under Chapter 90 Article VIII.",
+          "condition": "In the Floodplain district, a building is allowed only in compliance with Chapter 90. Chapter 90 prohibits new construction and any substantial improvement in an identified floodplain area, and no variance may be granted for them.",
           "effect": "bars",
           "applies_to": [
             "attached"
@@ -291,12 +294,19 @@
           "overlays": [
             "FP"
           ],
-          "section": "180-95B(3)(b), 90-26, 90-27",
-          "url": "https://ecode360.com/print/LO1675?guid=6773122"
+          "section": "180-95B(3)(b), 90-26, 90-27, 90-35B",
+          "url": "https://ecode360.com/print/LO1675?guid=6773122",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "180-95B(3)(b)[1], 90-33A, B, K",
+            "url": "https://ecode360.com/print/LO1675?guid=6773122",
+            "note": "Chapter 90 Article VII lets an existing structure be improved. 'No expansion or enlargement of an existing structure shall be allowed within any identified floodplain area that would cause any increase in BFE' (90-33B), none in the floodway (90-33A), and an improvement under 50% of market value is 'elevated and/or floodproofed to the greatest extent possible' (90-33K). So an addition that is not a substantial improvement may be allowed"
+          },
+          "outside_zoning_chapter": "Chapter 90"
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain district, work inside the house that is a substantial improvement is prohibited by Chapter 90, and a habitable building's adjacent ground must be at least 1.5 ft above the 100-year flood level.",
+          "condition": "In the Floodplain district, work inside the house that is a substantial improvement is prohibited by Chapter 90, and no variance may be granted for it. A smaller improvement is elevated or floodproofed to the greatest extent possible, and none is allowed in the floodway. A habitable building's adjacent ground must be at least 1.5 ft above the 100-year flood level.",
           "effect": "condition",
           "applies_to": [
             "internal"
@@ -306,7 +316,7 @@
           "overlays": [
             "FP"
           ],
-          "section": "180-95B(3)(c), 90-26, 90-27",
+          "section": "180-95B(3)(c), 90-26, 90-27, 90-33A, K, 90-35B",
           "url": "https://ecode360.com/print/LO1675?guid=6773122"
         },
         {
@@ -326,13 +336,53 @@
         },
         {
           "kind": "lot_size",
-          "condition": "Without public sewer, 180-94A sets 40,000 sq ft per equivalent dwelling unit for a standard on-lot system and two acres per dwelling unit where the soils need another system, and 30,000 sq ft with public sewer and an on-lot well. Whether the apartment counts as a second unit is not settled.",
+          "condition": "Without public sewer, 180-94A sets 40,000 sq ft per equivalent dwelling unit for a standard on-lot system, and 'A two-acre minimum lot size shall be required per dwelling unit or per equivalent dwelling unit' where the soils need another system. With public sewer and an on-lot well it sets 30,000 sq ft per equivalent dwelling unit. The apartment is 'An additional dwelling unit', so on a lot that needs another system the house and the apartment likely need four acres. Whether the standard system figure counts the apartment is not settled.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "180-94A",
+          "section": "180-94A, 180-5B",
           "url": "https://ecode360.com/print/LO1675?guid=6777153"
+        },
+        {
+          "kind": "utilities",
+          "condition": "The addition may not be built over a septic tank or a primary or backup drainfield area.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "180-128D",
+          "url": "https://ecode360.com/print/LO1675?guid=6778525"
+        },
+        {
+          "kind": "utilities",
+          "condition": "In the WP overlay, the Sewage Enforcement Officer inspects an on-lot sewage system before an expansion or conversion of the land use it serves.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "WP"
+          ],
+          "section": "180-95B(18)(e)[2][d][ii]",
+          "url": "https://ecode360.com/print/LO1675?guid=6777153"
+        },
+        {
+          "kind": "size",
+          "condition": "In VC a building may have at most 6,000 sq ft of floor area on all floors. The house and the apartment together count.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "VC"
+          ],
+          "building_types": null,
+          "section": "180-64E",
+          "url": "https://ecode360.com/print/LO1675?guid=6776714"
         },
         {
           "kind": "other",
@@ -345,7 +395,7 @@
           "url": "https://ecode360.com/print/LO1675?guid=6778499"
         }
       ],
-      "section": "180-137A, 180-95B, 180-94A, 180-127.3C",
+      "section": "180-137A, 180-95B, 180-94A, 180-128D, 180-64E, 180-127.3C, Chapter 90",
       "url": "https://ecode360.com/print/LO1675?guid=45119732",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -433,11 +483,19 @@
       "note": "'A minimum of one all-weather off-street parking space, with unrestricted ingress and egress to the street, shall be provided for the accessory apartment, in addition to that required for the principal dwelling.'"
     },
     "reading": {
-      "value": "One more space for the apartment, on top of the house's own. The parking table asks '1 per 0.33 dwelling unit' for a single-family dwelling, read as three spaces, so four in total. If the fraction rule (a fraction counts as one) is applied to 3.03, the house needs four and the total is five.",
-      "section": "180-137A(6), 180-98C(1)(b), 180-98C(2)(h)",
+      "value": "Five in all on the literal rule: the table asks '1 per 0.33 dwelling unit' for a single-family dwelling, 3.03 spaces, and a fraction counts as one, so four for the house and one more for the apartment. Read as three for the house, the total is four. No parking in required yards, except one space for a single-family detached home may be in the front yard setback (180-98C(2)(g)).",
+      "section": "180-137A(6), 180-98C(1)(b), 180-98C(2)(g), (h)",
       "url": "https://ecode360.com/print/LO1675?guid=6777606",
       "verified_on": "2026-11-16",
       "confidence": "secondary"
+    },
+    "total_on_site": {
+      "value": 5,
+      "section": "180-137A(6), 180-98C(1)(b), 180-98C(2)(h)",
+      "url": "https://ecode360.com/print/LO1675?guid=6777606",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'1 per 0.33 dwelling unit' for the house is 3.03 spaces, and 'only the fraction shall be counted as one', so four for the house and one for the apartment"
     }
   },
   "districts": {
@@ -485,6 +543,33 @@
         "url": "https://ecode360.com/print/LO1675?guid=6776386",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "lot_area_per_unit_sqft": 40000,
+            "section": "180-94A(1), (2)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "The RA district minimum is larger than 40,000 sq ft and holds. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "lot_area_per_unit_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-22",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "R80": {
@@ -531,6 +616,33 @@
         "url": "https://ecode360.com/print/LO1675?guid=6776445",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "lot_area_per_unit_sqft": 40000,
+            "section": "180-94A(1), (2)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "The R80 district minimum is larger than 40,000 sq ft and holds. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "lot_area_per_unit_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-28",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "R40": {
@@ -585,6 +697,33 @@
         "url": "https://ecode360.com/print/LO1675?guid=6776482",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Standard on-lot sewage disposal (trench, seepage bed or sand filter)",
+            "public_sewer": false,
+            "public_water": null,
+            "lot_area_per_unit_sqft": 40000,
+            "section": "180-94A(1), (2)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "The 40,000 sq ft equals the R40 district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres"
+          },
+          {
+            "when": "Public sewer with an on-lot well",
+            "public_sewer": true,
+            "public_water": false,
+            "lot_area_per_unit_sqft": 30000,
+            "section": "180-94A(3)",
+            "url": "https://ecode360.com/print/LO1675?guid=6777153",
+            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+          }
+        ],
+        "section": "180-94A, 180-34",
+        "url": "https://ecode360.com/print/LO1675?guid=6777153",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "R20": {
@@ -647,9 +786,10 @@
             "public_sewer": false,
             "public_water": null,
             "min_lot_sqft": 40000,
-            "section": "180-94A(1)",
+            "section": "180-94A(1), (2)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+            "note": "The 40,000 sq ft lot minimum comes from 180-94A, not the district table, and it is larger than the district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres",
+            "lot_area_per_unit_sqft": 40000
           },
           {
             "when": "Public sewer with an on-lot well",
@@ -658,14 +798,15 @@
             "min_lot_sqft": 30000,
             "section": "180-94A(3)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+            "note": "The 30,000 sq ft lot minimum comes from 180-94A, not the district table. 'area shall be 30,000 square feet per equivalent dwelling unit'",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "180-94A, 180-40",
         "url": "https://ecode360.com/print/LO1675?guid=6777153",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "R12": {
@@ -729,9 +870,10 @@
             "public_sewer": false,
             "public_water": null,
             "min_lot_sqft": 40000,
-            "section": "180-94A(1)",
+            "section": "180-94A(1), (2)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+            "note": "The 40,000 sq ft lot minimum comes from 180-94A, not the district table, and it is larger than the district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres",
+            "lot_area_per_unit_sqft": 40000
           },
           {
             "when": "Public sewer with an on-lot well",
@@ -740,14 +882,15 @@
             "min_lot_sqft": 30000,
             "section": "180-94A(3)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+            "note": "The 30,000 sq ft lot minimum comes from 180-94A, not the district table. 'area shall be 30,000 square feet per equivalent dwelling unit'",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "180-94A, 180-46",
         "url": "https://ecode360.com/print/LO1675?guid=6777153",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "MH": {
@@ -810,9 +953,10 @@
             "public_sewer": false,
             "public_water": null,
             "min_lot_sqft": 40000,
-            "section": "180-94A(1)",
+            "section": "180-94A(1), (2)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+            "note": "The 40,000 sq ft lot minimum comes from 180-94A, not the district table, and it is larger than the district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres",
+            "lot_area_per_unit_sqft": 40000
           },
           {
             "when": "Public sewer with an on-lot well",
@@ -821,14 +965,15 @@
             "min_lot_sqft": 30000,
             "section": "180-94A(3)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+            "note": "The 30,000 sq ft lot minimum comes from 180-94A, not the district table. 'area shall be 30,000 square feet per equivalent dwelling unit'",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "180-94A, 180-52",
         "url": "https://ecode360.com/print/LO1675?guid=6777153",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "UR": {
@@ -900,9 +1045,10 @@
             "public_sewer": false,
             "public_water": null,
             "min_lot_sqft": 40000,
-            "section": "180-94A(1)",
+            "section": "180-94A(1), (2)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+            "note": "The 40,000 sq ft lot minimum comes from 180-94A, not the district table, and it is larger than the district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres",
+            "lot_area_per_unit_sqft": 40000
           },
           {
             "when": "Public sewer with an on-lot well",
@@ -911,14 +1057,15 @@
             "min_lot_sqft": 30000,
             "section": "180-94A(3)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+            "note": "The 30,000 sq ft lot minimum comes from 180-94A, not the district table. 'area shall be 30,000 square feet per equivalent dwelling unit'",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "180-94A, 180-58",
         "url": "https://ecode360.com/print/LO1675?guid=6777153",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "VC": {
@@ -990,9 +1137,10 @@
             "public_sewer": false,
             "public_water": null,
             "min_lot_sqft": 40000,
-            "section": "180-94A(1)",
+            "section": "180-94A(1), (2)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, two acres per dwelling unit (180-94A(2))"
+            "note": "The 40,000 sq ft lot minimum comes from 180-94A, not the district table, and it is larger than the district minimum. 'area shall be 40,000 square feet per equivalent dwelling unit'. Where the soils need another on-lot system, 'A two-acre minimum lot size shall be required per dwelling unit' (180-94A(2)), so the house and the apartment likely need four acres",
+            "lot_area_per_unit_sqft": 40000
           },
           {
             "when": "Public sewer with an on-lot well",
@@ -1001,14 +1149,15 @@
             "min_lot_sqft": 30000,
             "section": "180-94A(3)",
             "url": "https://ecode360.com/print/LO1675?guid=6777153",
-            "note": "'area shall be 30,000 square feet per equivalent dwelling unit'"
+            "note": "The 30,000 sq ft lot minimum comes from 180-94A, not the district table. 'area shall be 30,000 square feet per equivalent dwelling unit'",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "180-94A, 180-64",
         "url": "https://ecode360.com/print/LO1675?guid=6777153",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether an accessory relative apartment needs a second share is not settled"
+        "note": "180-94A sets 'the minimum lot area requirements applicable to all districts if public water and/or public sanitary sewer is not provided', and the most restrictive rule applies. The per unit figures are 'per equivalent dwelling unit', a term 180-5 defines for nonresidential uses, so whether the apartment needs a second share is not settled and they are shown as a reading only"
       }
     },
     "GB": {

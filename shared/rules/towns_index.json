@@ -4057,7 +4057,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 180-137 accessory relative apartments by right in RA, R80, R40, R20, R12, UR and VC)"
       ],
-      "status_note": "Open: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart) are PDF attachments and were not opened, so whether they list accessory relative apartments or set other figures is not checked. Also open: whether 180-94A's per equivalent dwelling unit lot areas count the apartment on a lot without public sewer, the pre-2011 impervious percentages that 180-127.3C keeps for existing lots, and the floodplain variance in Chapter 90 Article VIII (not read)."
+      "status_note": "Open: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart) are PDF attachments and were not opened, so whether they list or limit accessory relative apartments is not checked. Also open: whether an addition in the Floodplain district is an improvement Chapter 90 allows (90-33) or a substantial improvement it bars with no variance (90-26, 90-27, 90-35B), shown as disputed. Whether 180-94A's on-lot sewage figures count the apartment as a second unit, so a lot that needs an alternate system may need four acres. The parking total, five on the literal fraction rule of 180-98C(2)(h) or four on the plain reading. The pre-2011 impervious percentages that 180-127.3C keeps for existing lots."
     },
     {
       "geoid": "4207151664",
@@ -4081,7 +4081,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 135-225 echo housing by special exception, family only)"
       ],
-      "status_note": "Open: 135-32 defines echo housing to include conversion of an existing dwelling while 135-225C and D allow only an addition or a manufactured home (internal form shown as in conflict). Also open: whether R-1 lot area per dwelling unit (135-95B) counts the echo unit, whether the 20 ft accessory height binds an echo manufactured home, and whether 135-295 lets a second house stand as a second principal use. 135-216, 135-262, 135-351, 135-353, 135-301 to 135-327 and Chapter 70 beyond 70-41 and 70-51 were not read."
+      "status_note": "Open: 135-32 defines echo housing to include conversion of an existing dwelling while 135-225C and D allow only an addition or a manufactured home (internal form shown as in conflict). Also open: whether an addition in the floodplain is an improvement 70-62 allows or is barred by 70-42 and the 135-306 riparian corridor (shown as disputed, while a detached echo unit is barred there). Whether R-1 lot area per dwelling unit (135-95B) counts the echo unit. Whether the 20 ft accessory height binds an echo manufactured home. Whether 135-295 lets a second house stand as a second principal use. The Village Design Option accessory apartment (135-353E(2)(e)) is cited from quoted text, and the rest of 135-353 and of Chapter 70 was not read."
     },
     {
       "geoid": "4207952584",
@@ -4105,7 +4105,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025))"
       ],
-      "status_note": "Open: 500-802.12 bars converting an existing single-family dwelling into two or more units in R-1, against the 2025 ADU rule that names a unit in an expanded or remodeled dwelling (shown as disputed for internal and attached units in R-1). Also open: whether the R-1, R-2 and R-3 density per dwelling unit counts the ADU, the height of a detached ADU outside R zones (500-302B sets none), and Chapter 267 floodplain text, found by search and not read in full."
+      "status_note": "Open: 500-802.12 bars converting an existing single-family dwelling into two or more units in R-1, against the 2025 ADU rule that names a unit in an expanded or remodeled dwelling (shown as disputed for internal and attached units in R-1). Also open: whether 500-308 lets a detached ADU stand on an existing house lot in C-2, C-3, I-1 and S-1, where the house is a nonconforming use (shown as in doubt, with internal and attached barred by 500-906E). Whether the R-1, R-2 and R-3 density per dwelling unit counts the ADU. The tension between the 500-203 single-family detached definition (one dwelling unit) and a unit inside or added onto the house. The 70% size cap is strictly less than 70%. Chapter 267 beyond 267-19 was not read in full."
     }
   ]
 }
