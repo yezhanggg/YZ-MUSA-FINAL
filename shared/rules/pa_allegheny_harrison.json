@@ -17,7 +17,9 @@
       "https://ecode360.com/print/HA2349?guid=15102053",
       "https://ecode360.com/print/HA2349?guid=15102781",
       "https://ecode360.com/print/HA2349?guid=14985678",
-      "https://ecode360.com/print/HA2349?guid=14985740"
+      "https://ecode360.com/print/HA2349?guid=14985740",
+      "https://ecode360.com/print/HA2349?guid=15102149",
+      "https://ecode360.com/print/HA2349?guid=15102878"
     ],
     "verified_on": "2026-11-16",
     "county": "Allegheny",
@@ -28,35 +30,40 @@
     "code_current_through": "2025-12-22",
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 12-22-2025.' New Laws: Ord. No. 2027 (3-25-2026, emergency medical services authority) and Ord. No. 2028 (8-24-2026, Chapter 21 sidewalks and curbs)",
     "checks": [
-      "The code has no accessory dwelling unit. The nearest listing is a special exception in R-1, R-2, R-3, S-1 and V for 'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building' (27-303.1). The Zoning Hearing Board decides under the Part 4 standards (27-510.5)",
+      "The code's accessory unit is a 'Dwelling Unit in Accessory Garage' (27-408.20). It is a special exception in R-1, R-2, R-3, S-1 and V: 'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building' (27-303.1). The Zoning Hearing Board decides under the Part 4 standards (27-510.5)",
+      "27-408.20: at least 500 sq ft of habitable floor area. No unit in a garage basement. A separate entrance that does not pass through an office, a shop or another dwelling unit. 'Accessory dwellings may be authorized only in the residential districts when the applicant can demonstrate a need to house domestic employees of the residents of the principal building.' The unit may not be conveyed unless a subdivision creating a separate lot for it is recorded. Two off-street parking spaces for each dwelling unit",
+      "27-408.20D says 'only in the residential districts', while 27-303.1 names S-1 (Special) and V (Village) too. Whether the unit reaches S-1 and V is not settled",
       "'In all zoning districts, no single-family house, two-family house or multifamily house may be converted to contain a greater number of dwelling units.' Converting means remodeling, altering or adding to an existing structure so it has more units. Tearing down a building and replacing it with a new one with more units is not a conversion (27-315)",
       "Up to two nontransient roomers may live in a single-family house by special exception in R-1, R-2, R-3, S-1 and V (27-303.2)",
       "Two-family houses are permitted in R-2, R-3 and V, multifamily houses in R-3 and V, and three- or four-family houses are a conditional use in R-2 (27-205). Lot area per family: 2,500 sq ft in R-2, 2,000 sq ft in R-3 and V (27-206)",
-      "A use not named in Table 205 but 'substantially similar to a use listed' may be allowed by conditional use in the district where the listed use is. Other unlisted uses are conditional uses only in M-2 (27-204)",
+      "A use not named in Table 205 but 'substantially similar to a use listed' may be allowed by conditional use in the district where the listed use is. Other unlisted uses are conditional uses only in M-2, 'except in those cases where such use is determined by the Zoning Officer to constitute an accessory use at the lot in question' (27-204)",
       "Lot and yards (27-206): R-1 8,000 sq ft, 60 ft wide, front 25, side 10, rear 20. R-2 5,000 sq ft, front 20, side 8, rear 20. R-3 and V houses 4,000 sq ft, front 15, side 3, rear 20. No structure, attached or not, may project into a minimum yard (27-206.1B). Height 45 ft unless the Zoning Hearing Board approves more (27-207)",
       "A lot of record held in separate ownership when the chapter took effect may be built on for a permitted use even if smaller or narrower than the minimum (27-206.1C)",
-      "Parking: two spaces per dwelling unit for a single-family or two-family house (27-305)",
+      "Parking: two off-street spaces for the garage unit (27-408.20F) and two for the house (27-305), four in all",
       "Floodplain (Chapter 8): in a floodway, no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels and a DEP permit is obtained. In an AE area without a floodway, no more than one foot of rise, and no new construction within 50 ft of the top of bank without a DEP permit (8-402A, B)",
-      "Variances: 27-510.4. No bar on a use variance"
+      "Variances: 27-510.4. No bar on a use variance",
+      "The minimum gross floor area of a single-family home is 800 sq ft (27-208). It is a rule for the house, not for the garage unit, whose minimum is 500 sq ft (27-408.20A)",
+      "A single-family house is 'A detached residential building that is the only principal structure on the lot ... containing one dwelling unit' (27-602). A family includes 'domestic servants or gratuitous guests thereof' (27-602 'Family')",
+      "Modular homes, manufactured homes and vacation cottages are a special exception in C-1 (27-303.3). They are principal dwellings, not a second unit on a lot"
     ],
-    "notes": "Zoning office: Harrison Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Part 2 (27-201 to 27-209, Table 205 and Table 206), 27-301 to 27-309 in Part 3, 27-315, 27-510, Chapter 8 sections 402 and 601, the New Laws page and code searches (ADU terms, floodplain). Table 205 prints its permitted and conditional columns interleaved, so each use was placed by its section reference: the conditional uses cite Part 4. Not read: Part 1, Part 4 (conditional use and special exception standards, including 27-408.43 single-family houses in C-1), Part 6 definitions (seen only in search results), 27-310 to 27-317 except 27-315, the rest of Part 5, Part 7 and the rest of Chapter 8."
+    "notes": "Zoning office: Harrison Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Part 2 (27-201 to 27-209, Table 205 and Table 206), 27-301 to 27-309 in Part 3, 27-315, 27-408 (with 27-408.20), 27-510, Part 6 (27-601, 27-602), Chapter 8 sections 402 and 601, the New Laws page and code searches (ADU terms, 'Dwelling Unit in Accessory Garage', floodplain). Table 205 prints its permitted and conditional columns interleaved, so each use was placed by its section reference: the conditional uses cite Part 4. Not read: Part 1, Part 4 outside 27-408, 27-310 to 27-317 except 27-315, the rest of Part 5, Part 7 and the rest of Chapter 8."
   },
   "adu": {
     "term": {
-      "value": "living quarters in an accessory garage for domestic employees",
-      "section": "27-303.1",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "value": "dwelling unit in accessory garage",
+      "section": "27-408.20, 27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building.' Not called an accessory dwelling unit. Searched the code for accessory dwelling, in-law, accessory apartment, quarters, relative, ECHO, caretaker, guest house and second dwelling"
+      "confidence": "verified",
+      "note": "'Dwelling Unit in Accessory Garage' (27-408.20). 27-303.1 lists it as 'living quarters in an accessory garage as an accessory use to a single-family house to accommodate domestic employees of the residents of the principal building'. A dwelling unit is 'One or more rooms for living purposes, together with separate cooking and sanitary facilities, used or intended to be used by one family' (27-602)"
     },
     "status": {
-      "value": "family_only",
-      "section": "27-303.1, 27-510.5",
+      "value": "special_exception",
+      "section": "27-303.1, 27-408.20, 27-510.5",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Only for domestic employees of the residents of the house, by special exception from the Zoning Hearing Board"
+      "confidence": "verified",
+      "note": "A special exception from the Zoning Hearing Board, under the 27-303.1 listing and the 27-408.20 standards"
     },
     "scope_districts": {
       "value": [
@@ -66,7 +73,7 @@
         "S-1",
         "V"
       ],
-      "section": "27-303.1",
+      "section": "27-303.1, 27-408.20D",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
       "confidence": "verified"
@@ -77,7 +84,7 @@
       "url": "https://ecode360.com/print/HA2349?guid=15101654",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "C-1, B-1, M-1 and M-2 do not list the quarters. C-1 allows a single-family house only by conditional use"
+      "note": "C-1, B-1, M-1 and M-2 do not list the garage unit. C-1 allows a single-family house only by conditional use"
     },
     "status_by_form": {
       "value": {
@@ -94,11 +101,11 @@
   "approval": {
     "path": {
       "value": "special_exception",
-      "section": "27-303.1, 27-510.5",
+      "section": "27-303.1, 27-408.20, 27-510.5",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "'The following uses may be authorized with such conditions as are deemed appropriate by the Zoning Hearing Board.' The Board applies the Part 4 standards"
+      "note": "'The following uses may be authorized with such conditions as are deemed appropriate by the Zoning Hearing Board' (27-303). The Board applies the Part 4 standards, including 27-408.20"
     },
     "fallback_path": {
       "value": "variance",
@@ -114,7 +121,7 @@
       "url": "https://ecode360.com/print/HA2349?guid=15101654",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "Board of Township Commissioners. 'Any use unnamed in Table 205 of this Chapter but substantially similar to a use listed in Table 205 shall be available in the same district as such listed use by way of a conditional use.' Other unlisted uses are conditional uses only in M-2"
+      "note": "Board of Township Commissioners. 'Any use unnamed in Table 205 of this Chapter but substantially similar to a use listed in Table 205 shall be available in the same district as such listed use by way of a conditional use.' Other unlisted uses are conditional uses only in M-2, unless the Zoning Officer finds the use is an accessory use at the lot"
     },
     "unlisted_use_scope": {
       "value": "similar_only",
@@ -165,33 +172,54 @@
       "value": [
         "detached"
       ],
-      "section": "27-303.1",
+      "section": "27-303.1, 27-602 'Single-family house'",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "An accessory use 'to a single-family house'"
+      "confidence": "verified",
+      "note": "An accessory use 'to a single-family house', which is a detached building (27-602)"
     },
     "gates": {
       "value": [
         {
-          "kind": "family",
-          "condition": "The quarters may house only domestic employees of the residents of the house.",
+          "kind": "occupancy",
+          "condition": "The unit may house only domestic employees of the residents of the house, and the applicant must show a need to house them.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "27-303.1",
-          "url": "https://ecode360.com/print/HA2349?guid=15101674"
+          "bill_overrides": true,
+          "section": "27-303.1, 27-408.20D",
+          "url": "https://ecode360.com/print/HA2349?guid=15102149"
         },
         {
           "kind": "existing_structure",
-          "condition": "The quarters are in an accessory garage on a lot with a single-family house.",
+          "condition": "The unit is in an accessory garage on a lot with a single-family house. The garage may be existing or new. A unit in a garage basement is not permitted. A free-standing cottage that is not a garage is not this use.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "27-303.1",
-          "url": "https://ecode360.com/print/HA2349?guid=15101674"
+          "section": "27-303.1, 27-408.20B",
+          "url": "https://ecode360.com/print/HA2349?guid=15102149"
+        },
+        {
+          "kind": "design",
+          "condition": "The unit needs a separate entrance that does not pass through an office, a shop or another dwelling unit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-408.20C",
+          "url": "https://ecode360.com/print/HA2349?guid=15102149"
+        },
+        {
+          "kind": "other",
+          "condition": "The unit may not be sold or conveyed apart from the house unless a subdivision creating a separate lot for it is recorded under this chapter and the subdivision ordinance.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-408.20E",
+          "url": "https://ecode360.com/print/HA2349?guid=15102149"
         },
         {
           "kind": "other",
@@ -209,10 +237,10 @@
           "outside_zoning_chapter": "Chapter 8"
         }
       ],
-      "section": "27-303.1, 8-402",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "section": "27-303.1, 27-408.20, 8-402",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "confidence": "verified"
     },
     "districts_read_no_listing": {
       "value": [
@@ -226,29 +254,56 @@
       "verified_on": "2026-11-16",
       "confidence": "verified",
       "note": "Table 205 lists no living quarters or ADU for these districts"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "S-1",
+        "V"
+      ],
+      "section": "27-408.20D, 27-303.1, 27-202",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "27-303.1 names S-1 and V, but 27-408.20D allows the unit 'only in the residential districts'. 27-202 calls S-1 'Special' and V 'Village', not residential",
+      "named_by": {
+        "S-1": "reach",
+        "V": "reach"
+      }
     }
   },
   "form": {
     "types_allowed": {
       "value": [
+        "detached_new",
         "garage_conversion",
         "over_garage"
       ],
-      "section": "27-303.1",
+      "section": "27-303.1, 27-408.20",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "'living quarters in an accessory garage'"
+      "note": "'Dwelling Unit in Accessory Garage' (27-408.20), 'living quarters in an accessory garage' (27-303.1). The code does not require the garage to exist already, so a new accessory garage built with the unit in it is read as allowed. Detached new here means only that"
     },
-    "types_not_addressed": {
-      "value": [
-        "detached_new"
-      ],
-      "section": "27-303.1",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+    "labels": {
+      "value": {
+        "detached_new": "Dwelling unit in a new accessory garage",
+        "garage_conversion": "Dwelling unit in an existing accessory garage",
+        "over_garage": "Dwelling unit above the parking floor of an accessory garage"
+      },
+      "section": "27-408.20, 27-303.1",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "The listing names only quarters in an accessory garage"
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 500,
+      "section": "27-408.20A",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Dwelling units shall have a minimum habitable floor area of 500 square feet.' The 800 sq ft minimum in 27-208 is for a single-family home, not this unit"
     }
   },
   "envelope": {
@@ -271,44 +326,45 @@
   },
   "use": {
     "family_only": {
-      "value": true,
-      "section": "27-303.1",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "value": false,
+      "section": "27-303.1, 27-408.20D",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Domestic employees of the residents only"
+      "confidence": "verified",
+      "note": "No family rule. The unit is for domestic employees of the residents, which is an occupancy rule"
     },
     "occupancy": {
-      "value": "Domestic employees of the residents of the house",
-      "section": "27-303.1",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "value": "Domestic employees of the residents of the house, where the applicant shows a need to house them",
+      "section": "27-303.1, 27-408.20D",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
       "confidence": "verified"
     },
     "owner_occupancy": {
       "value": false,
-      "section": "27-303.1",
+      "section": "27-303.1, 27-408.20",
       "url": "https://ecode360.com/print/HA2349?guid=15101674",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
+      "confidence": "verified",
       "note": "No owner rule"
     }
   },
   "parking": {
     "spaces_required": {
-      "value": null,
-      "section": "27-305",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+      "value": 2,
+      "section": "27-408.20F",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "'Single-family house, two-family house, townhouse: 2 per dwelling unit'"
+      "confidence": "verified",
+      "note": "'Two off-street parking spaces shall be provided for each dwelling unit.'"
     },
-    "reading": {
-      "value": "The table asks two spaces per dwelling unit. If the quarters count as a dwelling unit, they need two more, four in all with the house. If not, the house's two are enough",
-      "section": "27-305",
-      "url": "https://ecode360.com/print/HA2349?guid=15101674",
+    "total_on_site": {
+      "value": 4,
+      "section": "27-408.20F, 27-305",
+      "url": "https://ecode360.com/print/HA2349?guid=15102149",
       "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "confidence": "verified",
+      "note": "Two for the house ('Single-family house ... 2 per dwelling unit', 27-305) and two for the garage unit"
     }
   },
   "districts": {
@@ -327,7 +383,7 @@
         "url": "https://ecode360.com/print/HA2349?guid=15101654",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+        "note": "The table's 'Area/Family'. The garage unit is a dwelling unit (27-408.20), but a family includes its domestic servants (27-602), so whether the unit needs its own area per family is not settled"
       },
       "setback_front_ft": {
         "value": 25,
@@ -375,7 +431,7 @@
         "url": "https://ecode360.com/print/HA2349?guid=15101654",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+        "note": "The table's 'Area/Family'. The garage unit is a dwelling unit (27-408.20), but a family includes its domestic servants (27-602), so whether the unit needs its own area per family is not settled"
       },
       "setback_front_ft": {
         "value": 20,
@@ -423,7 +479,7 @@
         "url": "https://ecode360.com/print/HA2349?guid=15101654",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+        "note": "The table's 'Area/Family'. The garage unit is a dwelling unit (27-408.20), but a family includes its domestic servants (27-602), so whether the unit needs its own area per family is not settled"
       },
       "setback_front_ft": {
         "value": 15,
@@ -471,7 +527,7 @@
         "url": "https://ecode360.com/print/HA2349?guid=15101654",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+        "note": "The table's 'Area/Family'. The garage unit is a dwelling unit (27-408.20), but a family includes its domestic servants (27-602), so whether the unit needs its own area per family is not settled"
       },
       "setback_front_ft": {
         "value": 30,
@@ -519,7 +575,7 @@
         "url": "https://ecode360.com/print/HA2349?guid=15101654",
         "verified_on": "2026-11-16",
         "confidence": "secondary",
-        "note": "The table's 'Area/Family'. Whether domestic employee quarters count as a family is not settled"
+        "note": "The table's 'Area/Family'. The garage unit is a dwelling unit (27-408.20), but a family includes its domestic servants (27-602), so whether the unit needs its own area per family is not settled"
       },
       "setback_front_ft": {
         "value": 15,

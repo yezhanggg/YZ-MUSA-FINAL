@@ -42,24 +42,24 @@
     "code_current_through": "2026-03-16",
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 03-16-2026.' New Laws: 'There are currently no known new laws for this Code.'",
     "checks": [
-      "Use A-16 Accessory Dwelling Unit 'is only permitted upon special exception approval by the Zoning Hearing Board in the R-A, R-1, and R-2 Districts' (265-41A(16)). The district lists put it among accessory uses 'permitted by right ... upon the issuance of a zoning permit' (265-43D(11), 265-46C(11), 265-49C(11)). Where use regulations and other rules conflict 'the more restrictive regulation shall apply' (265-38C), so the special exception is the path",
+      "Use A-16 Accessory Dwelling Unit 'is only permitted upon special exception approval by the Zoning Hearing Board in the R-A, R-1, and R-2 Districts' (265-41A(16)). The district lists put it among accessory uses 'permitted by right ... upon the issuance of a zoning permit' (265-43D(11), 265-46C(11), 265-49C(11)). Where use regulations and other rules conflict 'the more restrictive regulation shall apply' (265-38C). That settles it: the path is a special exception",
       "One ADU per lot where a single-family detached dwelling (Use C-2) is the principal use (265-41A(16)(a))",
       "The use permit lasts only while the owner of record lives in the house or the ADU. The ADU may be occupied only by the owner of record or an immediate family member related to the owner by blood, marriage or adoption. No more than three people may live in it. A separate EDU (sewer equivalent dwelling unit) is required (265-41A(16)(b))",
-      "'All ADUs shall be attached to the principal building or within the principal building.' The ADU needs its own entrance, which may not be part of the house's front facade (265-41A(16)(c)[2])",
+      "'All ADUs shall be attached to the principal building or within the principal building.' The ADU needs its own entrance, which may not be part of the house's front facade (265-41A(16)(c)[2]). But 265-32A says 'All dwelling units must have at least one primary entrance in the front facade.' The two rules conflict for an ADU. Ask the zoning officer which one governs the entrance",
       "Size: 'the lesser of 40% of the living area of the primary residence or 1,200 square feet' (265-41A(16)(c)[3]). Every dwelling unit must have at least 600 sq ft of habitable floor area (265-15)",
       "An attached ADU may not be taller than the existing house. ADUs meet the setback and coverage rules for principal structures (265-41A(16)(c)[1], [4])",
       "Parking: 1.5 spaces for the ADU (265-230C(7)), and fractions are rounded up (265-229C), so 2. The house needs two spaces, and the first garage space does not count (265-230C(1)(a)). ADU parking shares the house's driveway (265-41A(16)(c)[5])",
       "The ADU must match the house's exterior materials, windows, trim, roofing and roof pitch, its windows offset from neighbors, and it may not be a mobile home, motor home or trailer (265-41A(16)(c)[6], [7])",
       "Building coverage counts only the principal building. Impervious cover counts all buildings and paving (265-44, 265-47, 265-50 notes)",
-      "Floodplain (Chapter 122, by 265-128): 'No new construction, alteration, or improvement of buildings and any other type of permanent structure ... shall be permitted in the floodway or the 100-year floodplain' (122-15A). An existing structure may be enlarged if it causes no rise in the base flood elevation in a floodway, no more than one foot in an AE area, and not toward the stream bank. Work of 50% or more of market value is a substantial improvement (122-16, 122-17)",
-      "Riparian Corridor Conservation District: it applies to a building permit for an expansion of an existing structure within 100 ft of the bank of a mapped stream. The corridor (two zones, at least 25 ft each, or the 100-year floodplain) bars permanent structures except those its uses need (265-187, 265-189G)",
+      "Floodplain (Chapter 122, by 265-128): 'No new construction, alteration, or improvement of buildings and any other type of permanent structure ... shall be permitted in the floodway or the 100-year floodplain' (122-15A). Roads and driveways other than permitted crossings, parking lots and subsurface sewage disposal areas are also barred there (122-15F, H, I). Up to half of a required yard on a residential lot may extend into the district (122-14A). An existing structure may be enlarged if it causes no rise in the base flood elevation in a floodway, no more than one foot in an AE area, and not toward the stream bank. Work of 50% or more of market value is a substantial improvement (122-16, 122-17). 122-16 also sends improvements to 'Article XXIX, Nonconforming Uses, Premises, Structures and Lots' of Chapter 265. The nonconforming rules are now Article XXVI (265-234 to 265-240)",
+      "Riparian Corridor Conservation District: it applies to a building permit for a new structure or an expansion of an existing structure within 100 ft of the bank of a mapped stream (265-187A(2)(b), (3)). Zone 1 is 25 ft from the stream edge. Zone 2 is a further 25 ft, or the 100-year floodplain, or 25 ft beyond a wetland, whichever is greater ('total minimum width of Zones 1 and 2 = 100 feet plus the width of the stream') (265-187B). A property under one acre may reduce Zone 1 to 10 ft and Zone 2 to 25 ft more, 35 ft in all (265-187D(1)). Where a structure that legally existed when the article passed lies within 100 ft of the stream edge, Zone 2 does not apply, only Zone 1: 10 ft under one acre, 25 ft over one acre (265-187D(2)). No permanent structure in the corridor except those its permitted uses need (265-189G). Zone 2 allows a residential accessory structure of 225 sq ft or less (265-188B(4))",
       "A lot in a Residential Cluster Development (tracts of 20 acres or more near sewer, 265-68) lists the ADU too and has its own lot figures (265-69B(9), 265-72B)",
-      "A building may be built on a lot nonconforming only in area when the Zoning Officer authorizes it. A special exception is needed where yards cannot be met (265-238A(2), (3))",
+      "A building may be built on a lot nonconforming only in area when the Zoning Officer authorizes it. A special exception is needed where yards cannot be met, but not if the R-1 setbacks are met (265-238A(2), (3)). An addition to an existing building must meet the district's area and bulk rules, and a nonconforming structure may be enlarged by special exception (265-237A(2), (3))",
       "'Any use not listed in the district in question is not permitted' (265-39E). A use not permitted may be allowed only by a variance from the Zoning Hearing Board (265-39F)",
-      "Twins and duplexes are by right in R-3 and R-4 and in LC. R-3 and R-4 development needs a tract of 5 and 10 acres (265-53, 265-54, 265-61, 265-62, 265-89)",
+      "Twins and duplexes are by right in R-3 and R-4 and in LC. R-3 development needs a tract of five acres, a mix of at least two housing types (three on 10 acres or more), at most four units an acre, central sewer and water and 15% open space (265-54, 265-55, 265-57, 265-58). R-4 development needs a tract of 10 acres (265-61, 265-62). So a single twin or duplex on a small R-3 lot is not a path",
       "Special exceptions expire after 12 months unless begun (265-254A). Standards: 265-254B"
     ],
-    "notes": "Zoning office: Douglass Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I, 265-35 definitions from Access strip to Public utility, Article III through 265-41C (265-41D to H not read), Articles IV to XII, XV, XXII, XXV, XXVI and XXVII, Chapter 122 Article IV, the New Laws page and code searches (ADU terms, 'A-16', 'C-2: Single-Family Detached', floodplain, variance). Not read: Articles XIII (M-1), XIV (M-2), XVI (MU), XVII, XVIII (Active Adult Community Overlay), XIX (LOR), XX (Route 100 Corridor), XXI (Neighborhood Mixed-Use Overlay), XXIII (Airport Hazard Area), XXIV (signs), the rest of 265-35 and Chapter 122 outside Article IV. The searches show Use A-16 only in 265-41, 265-43, 265-46, 265-49, 265-69 and 265-230, and Use C-2 only in R-A, R-1, R-2, R-3, R-4 and the RCD, AAC and NMU overlays."
+    "notes": "Zoning office: Douglass Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (with 265-30 to 265-33), 265-35 definitions from Access strip to Public utility, Article III through 265-41C (265-41D to H not read), Articles IV to XII, XV, XXII, XXV, XXVI and XXVII, Chapter 122 Article IV, the New Laws page and code searches (ADU terms, 'A-16', 'C-2: Single-Family Detached', floodplain, variance). Not read: Articles XIII (M-1), XIV (M-2), XVI (MU), XVII, XVIII (Active Adult Community Overlay), XIX (LOR), XX (Route 100 Corridor), XXI (Neighborhood Mixed-Use Overlay), XXIII (Airport Hazard Area), XXIV (signs), the rest of 265-35 and Chapter 122 outside Article IV. The searches show Use A-16 only in 265-41, 265-43, 265-46, 265-49, 265-69 and 265-230, and Use C-2 only in R-A, R-1, R-2, R-3, R-4 and the RCD, AAC and NMU overlays."
   },
   "adu": {
     "term": {
@@ -131,17 +131,19 @@
     "alternatives": {
       "value": [
         {
-          "name": "Twin or duplex (R-3)",
+          "name": "Twin or duplex in an R-3 development",
           "path": "by_right",
           "districts": [
             "R-3"
           ],
-          "conditions": "Use C-4 twin and Use C-5 duplex are by right in R-3 (265-53A). Lot 4,500 sq ft per dwelling unit, width 30 ft (twin, per unit) or 70 ft (duplex). The minimum tract for R-3 development proposals is five acres, with a mix of housing types and 15% open space (265-54, 265-55, 265-58). Central sewer and water (265-57). Two spaces per unit (265-230C(1))",
-          "min_lot_sqft": 9000,
-          "section": "265-53A, 265-54, 265-56A, 265-57",
+          "conditions": "Use C-4 twin and Use C-5 duplex are by right in R-3 (265-53A). 'The minimum tract size for R-3 development proposals shall be five acres' (265-54). A tract under 10 acres must have at least two housing types, each at least 25% of the units, and a tract of 10 acres or more at least three, each at least 15% (265-55A, B). At most four dwelling units an acre (265-55D). Lot 4,500 sq ft per dwelling unit, width 30 ft (twin, per unit) or 70 ft (duplex) (265-56A). Central sewer and water (265-57). 15% of the tract kept as open space (265-58). The tract is developed under a subdivision or land development plan (265-33). Two spaces per unit (265-230C(1))",
+          "min_lot_sqft": 217800,
+          "section": "265-33, 265-53A, 265-54, 265-55, 265-56A, 265-57, 265-58",
           "url": "https://ecode360.com/print/DO2583?guid=47595412",
           "confidence": "secondary",
-          "note": "A building of two units, not a unit added to a house. 9,000 sq ft is 4,500 sq ft for each of two units. Whether a single existing lot can use it without a five acre development is not settled"
+          "note": "A mixed development on a tract of five acres or more, not a unit added to a house. A twin or duplex on its own lot is one housing type, so it cannot meet the mix by itself",
+          "min_lot_is_tract": true,
+          "land_development": true
         },
         {
           "name": "Twin, duplex or multifamily (R-4)",
@@ -287,17 +289,17 @@
         },
         {
           "kind": "design",
-          "condition": "The ADU needs its own entrance, which may not be part of the front facade of the house. Its design must match the house (wall materials, windows, trim, roofing, roof pitch), its windows must be offset from neighboring homes, and it may not be a mobile home, motor home or trailer.",
+          "condition": "The ADU needs its own entrance, which may not be part of the front facade of the house. 265-32A asks every dwelling unit to have a primary entrance in the front facade, so the two rules conflict on the entrance. Ask the zoning officer. The ADU's design must match the house (wall materials, windows, trim, roofing, roof pitch), its windows must be offset from neighboring homes, and it may not be a mobile home, motor home or trailer.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
-          "section": "265-41A(16)(c)[2], [6], [7]",
+          "section": "265-41A(16)(c)[2], [6], [7], 265-32A",
           "url": "https://ecode360.com/print/DO2583?guid=47594677"
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain Conservation District (the floodway and the 100-year floodplain), Chapter 122 bars new construction, alteration or improvement of buildings. An existing structure may be enlarged only if it raises the base flood elevation not at all in a floodway and by no more than one foot in an AE area, and not toward the stream bank.",
+          "condition": "In the Floodplain Conservation District (the floodway and the 100-year floodplain), Chapter 122 bars new construction, alteration or improvement of buildings, and also driveways other than permitted crossings, parking lots and subsurface sewage disposal areas. An existing structure may be enlarged only if it raises the base flood elevation not at all in a floodway and by no more than one foot in an AE area, and not toward the stream bank. Up to half of a required yard may extend into the district.",
           "effect": "bars",
           "applies_to": [
             "attached"
@@ -307,7 +309,7 @@
           "overlays": [
             "Floodplain Conservation District"
           ],
-          "section": "122-15A, 265-128",
+          "section": "122-14A, 122-15A, F, H, I, 265-128",
           "url": "https://ecode360.com/print/DO2583?guid=39409586",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 122",
@@ -319,7 +321,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain Conservation District, Chapter 122 bars 'alteration, or improvement of buildings'. Work of 50% or more of the house's market value is a substantial improvement that must fully comply with Chapter 122.",
+          "condition": "In the Floodplain Conservation District, Chapter 122 bars 'alteration, or improvement of buildings', parking lots and subsurface sewage disposal areas. Work of 50% or more of the house's market value is a substantial improvement that must fully comply with Chapter 122.",
           "effect": "condition",
           "applies_to": [
             "internal"
@@ -329,15 +331,15 @@
           "overlays": [
             "Floodplain Conservation District"
           ],
-          "section": "122-15A, 122-17D",
+          "section": "122-15A, H, I, 122-17D",
           "url": "https://ecode360.com/print/DO2583?guid=39409586",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 122"
         },
         {
           "kind": "other",
-          "condition": "In the Riparian Corridor Conservation District (at least 25 ft plus 25 ft from a stream bank, or the 100-year floodplain, 35 ft in all on lots under one acre), no permanent structure is permitted except those its permitted uses need. The district applies to a building permit for an expansion within 100 ft of the bank of a mapped stream.",
-          "effect": "bars",
+          "condition": "A building permit for an addition within 100 ft of the bank of a mapped stream brings in the Riparian Corridor rules. No permanent structure may stand in the corridor. The corridor is Zone 1, 25 ft from the stream edge, and Zone 2, a further 25 ft or the 100-year floodplain or 25 ft beyond a wetland, whichever is greater. On a property under one acre the zones may be 10 ft and 25 ft. Where the house or another structure that legally existed when the article passed lies within 100 ft of the stream edge, only Zone 1 applies: 10 ft on a property under one acre, 25 ft on one over one acre. The addition must stay out of the corridor.",
+          "effect": "condition",
           "applies_to": [
             "attached"
           ],
@@ -346,7 +348,7 @@
           "overlays": [
             "Riparian Corridor Conservation District"
           ],
-          "section": "265-187A(2)(b), D, 265-189G",
+          "section": "265-187A(2)(b), (3), B, D(1), (2), 265-189G",
           "url": "https://ecode360.com/print/DO2583?guid=47596816",
           "confidence": "secondary"
         },
@@ -409,11 +411,8 @@
       "confidence": "verified",
       "note": "'the lesser of 40% of the living area of the primary residence or 1,200 square feet'"
     },
-    "max_share_of_part": {
-      "value": {
-        "share": 0.4,
-        "part": "living area"
-      },
+    "max_share_of_house": {
+      "value": 0.4,
       "section": "265-41A(16)(c)[3]",
       "url": "https://ecode360.com/print/DO2583?guid=47594677",
       "verified_on": "2026-11-16",
