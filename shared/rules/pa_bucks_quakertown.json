@@ -24,7 +24,13 @@
       "https://ecode360.com/print/QU2431?guid=14362647",
       "https://ecode360.com/print/QU2431?guid=14362900",
       "https://ecode360.com/print/QU2431?guid=14363030",
-      "https://ecode360.com/print/QU2431?guid=14359503"
+      "https://ecode360.com/print/QU2431?guid=14359503",
+      "https://ecode360.com/print/QU2431?guid=14362075",
+      "https://ecode360.com/print/QU2431?guid=14362142",
+      "https://ecode360.com/print/QU2431?guid=14362208",
+      "https://ecode360.com/print/QU2431?guid=27355583",
+      "https://ecode360.com/print/QU2431?guid=14362591",
+      "https://ecode360.com/print/QU2431?guid=15733858"
     ],
     "verified_on": "2026-11-16",
     "county": "Bucks",
@@ -36,18 +42,20 @@
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 01-05-2026.'",
     "checks": [
       "The code has no accessory dwelling unit. No district lists a second unit on a single-family lot, and the residential accessory uses are garages, fences and freestanding structures such as bathhouses, greenhouses and sheds (318.3O)",
-      "'No more than one principal use shall be permitted on a lot', except in the Pedestrian-Oriented, Mixed-Use Overlay (401). A building with two or more dwelling units is a multiple-family dwelling (201)",
+      "'No more than one principal use shall be permitted on a lot', except in the Pedestrian-Oriented, Mixed-Use Overlay (401). A building with two or more dwelling units is a multiple-family dwelling (201). Two or more principal buildings on one lot must be set apart by twice the side yard and meet the land development standards (402.2)",
       "Use variances are barred: 'A variance shall not be granted for any use which is not permitted in the zoning district where the request is being made' (704.6C(2)(d), also 201 'Variance'). The routes left are the listed two-unit uses or a zoning amendment",
-      "Duplexes are permitted by right in HR (2,500 sq ft per unit, 50 ft wide) and TC (4,500 sq ft per unit). Building conversion into two or more dwelling units is a special exception only in TC. The units must then meet the garden apartment, townhouse or low-rise apartment rules, and the building's outside may not change except for safety (309.3F, 315.3C)",
-      "Up to two apartments on the second or third floor above a nonresidential first floor are permitted by right in TC (309.2FF)",
-      "A family is related persons or up to five unrelated persons with one kitchen. Domestic servants are 'an adjunct to the term family' (201)",
+      "Duplexes are permitted by right in HR (2,500 sq ft per unit, 50 ft wide) and TC (4,500 sq ft per unit). The lot width footnote reads 'Per dwelling unit', so a duplex lot may need to be 100 ft wide. HR also caps density at 'eight units per acre for all uses except multiple apartment dwellings' (308.8), which would make a duplex lot 10,890 sq ft. Building conversion into two or more dwelling units is a special exception only in TC. The units must then meet the garden apartment, townhouse or low-rise apartment rules, and the building's outside may not change except for safety (309.3F, 315.3C)",
+      "Up to two apartments on the second or third floor above a nonresidential first floor are permitted by right in TC and NC (309.2FF, 310.2CC). Live-work units and mixed residential and nonresidential uses are conditional uses in TC and NC (309.4, 310.4K, L), and live-work units in OB (312.4D)",
+      "A family is related persons or up to five unrelated persons with one kitchen. Domestic servants are 'an adjunct to the term family' (201). A dwelling unit has sanitary facilities, kitchen facilities and outside access, and kitchen facilities mean all of a sink with piped water, a permanent cook stove and a refrigerator. Rooms that lack any of these are not a separate dwelling unit, so a family suite without a stove stays part of the house. Rooms for one family without kitchen or sanitary facilities are a 'rental unit', a term the boardinghouse rules use (201, 315.3B)",
       "Freestanding accessory structures: at most 15 ft tall, not in front of the principal building, 10 ft from it and 5 ft from side and rear lines (318.3O(3))",
-      "Lot figures for a single-family house: LR 10,000 sq ft, MR 7,500 sq ft, HR and TC 5,000 sq ft (306.6, 307.6, 308.6, 309.6)",
-      "A building may go on a nonconforming lot if the yards are met (406.2B)",
-      "Parking counts are in Table 6.1, a PDF attachment that was not read. A fraction of 0.25 or more counts as one space (601.1D)",
-      "Floodplain rules are in Chapter 8 (8-402)"
+      "Lot figures for a single-family house: LR 10,000 sq ft, MR 7,500 sq ft, HR and TC 5,000 sq ft (306.6, 307.6, 308.6, 309.6). NC 3,000 sq ft, HC 12,000 sq ft and OB 15,000 sq ft for any use (310.6, 311.6, 312.6). LR caps density at four units an acre (306.8) and HR at eight (308.8), which on one lot would read as 10,890 and 5,445 sq ft",
+      "A building may go on a nonconforming lot if the yards are met (406.2B). Contiguous vacant nonconforming lots in one ownership merge. A lawful nonconforming use may grow by up to 50% of its volume or floor area on the same lot (406.2C)",
+      "Parking counts are in Table 6.1, a PDF attachment that was not read. A fraction of 0.25 or more counts as one space (601.1D). A change of use that raises the need by 10% or more needs the added spaces (602.2). Off-site spaces within 500 ft may count in TC, NC and H (602.5). A single-family house may use a driveway and garage with stacked spaces (603.C)",
+      "Floodplain rules are in Chapter 8 (8-402, 8-501, 8-502). Within any identified floodplain area nothing new may be built within 50 ft of the top of bank of any watercourse unless DEP's regional office issues a permit (8-501.4). An accessory structure in the floodplain that is not elevated may not be used for human habitation (8-502.5A)",
+      "Pedestrian-Oriented, Mixed-Use Overlay (POMU, 314.1) covers all of TC and NC and parts of LI, by the parcel list in Appendix A. Where the base district permits a use in another way, the base district's rule governs. It lets more than one principal use stand on a lot (401). Its own figures are 3,000 sq ft, 30 ft wide, 80% building and 95% impervious cover, 42 ft, 12 units an acre, a front yard of the average of the two closest buildings up to 20 ft, 12 ft between buildings and no rear yard. Its design rules apply to all new work along the street",
+      "Historic preservation (319) creates an overlay of inventory buildings and regulates only their demolition, by conditional use. 'All regulations of the underlying zoning districts shall remain in full effect'"
     ],
-    "notes": "Zoning office: Quakertown Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: 201 definitions, 306, 307, 308, 309, 315 (on the Part 3 page), 316, 318, Part 4 (401 to 409), 601, 704, Chapter 8 section 402, the New Laws page and code searches. NC and HC were seen only in search snippets (both list single-family houses). Not read: Part 1, 301 to 305, 310 to 314.1 in full, 317, 319 historic preservation, 320, Part 5, 602 to 604, the rest of Part 7, Part 8, Table 3.1 and Table 6.1 (PDFs) and the rest of Chapter 8."
+    "notes": "Zoning office: Quakertown Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: 201 definitions, 306 to 312, 314.1, 315 (on the Part 3 page), 316, 318, 319, Part 4 (401 to 409), 601 to 603, 704, Chapter 8 sections 402 and 501 to 507, the New Laws page and code searches. Not read: Part 1, 301 to 305, 313 H, 314 LI, 317, 320, Part 5, 604, the rest of Part 7, Part 8, Table 3.1 and Table 6.1 (PDFs) and the rest of Chapter 8."
   },
   "adu": {
     "term": {
@@ -56,11 +64,11 @@
       "url": "https://ecode360.com/QU2431/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20caretaker%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22&scope=all&sortOrder=relevance",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "Searched for in-law, accessory apartment, accessory dwelling, second dwelling, ECHO, caretaker, living quarters, guest house and conversion, and read the LR, MR, HR and TC use lists and 318. No ADU use"
+      "note": "Searched for in-law, accessory apartment, accessory dwelling, second dwelling, ECHO, caretaker, living quarters, guest house, carriage house, garage apartment, two-family and conversion, and read the use lists of LR, MR, HR, TC, NC, HC and OB and 318. No ADU use"
     },
     "status": {
       "value": "not_addressed",
-      "section": "306.2, 307.2, 308.2, 309.2, 318",
+      "section": "306.2 to 312.2, 318",
       "url": "https://ecode360.com/print/QU2431?guid=14361901",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
@@ -89,7 +97,7 @@
       "section": "704.6C(2)(d), 201 'Variance'",
       "url": "https://ecode360.com/print/QU2431?guid=14363030",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
+      "confidence": "verified",
       "quote": "A variance shall not be granted for any use which is not permitted in the zoning district where the request is being made",
       "districts": null
     },
@@ -102,15 +110,15 @@
             "HR",
             "TC"
           ],
-          "conditions": "A detached building with two dwelling units (315.3D). HR: 2,500 sq ft per unit, 50 ft wide, side yards 12 ft and 24 ft together. TC: 4,500 sq ft per unit, 50 ft wide, side yards 6 ft and 12 ft together",
+          "conditions": "A detached building with two dwelling units (315.3D). HR: 2,500 sq ft per unit, 50 ft wide, side yards 12 ft and 24 ft together. TC: 4,500 sq ft per unit, 50 ft wide, side yards 6 ft and 12 ft together. The width footnote reads 'Per dwelling unit', which may make the lot 100 ft wide. In HR the density cap of eight units an acre (308.8) would make a duplex lot 10,890 sq ft",
           "min_lot_by_district": {
             "HR": 5000,
             "TC": 9000
           },
-          "section": "308.2B, 308.6, 309.2D, 309.6, 315.3D",
+          "section": "308.2B, 308.6, 308.8, 309.2D, 309.6, 315.3D",
           "url": "https://ecode360.com/print/QU2431?guid=14361961",
           "confidence": "secondary",
-          "note": "A two-unit building, not a unit added to a house. The lot figures are the per-unit figure times two"
+          "note": "A two-unit building, not a unit added to a house. The lot figures are the per-unit figure times two. The HR figure is not settled: 5,000 sq ft by 308.6, or 10,890 sq ft by the 308.8 density cap"
         },
         {
           "name": "Building conversion into two or more dwelling units (TC)",
@@ -121,23 +129,24 @@
           "conditions": "Lot area per unit not below the district figure. Yards, building area and parking not reduced. No structural change to the outside except for sanitation or safety. Each unit then meets the garden apartment, townhouse or low-rise apartment rules, including lot area, width, yards, coverage and parking. Units in an existing multiple-family dwelling cannot be split further",
           "section": "309.3F, 315.3C",
           "url": "https://ecode360.com/print/QU2431?guid=14362005",
-          "confidence": "secondary",
+          "confidence": "verified",
           "note": "The lot area per unit for garden and low-rise apartments in TC is 1,500 sq ft and for townhouses 2,000 sq ft (309.6)"
         },
         {
-          "name": "Up to two apartments above a nonresidential use (TC)",
+          "name": "Up to two apartments above a nonresidential use (TC, NC)",
           "path": "by_right",
           "districts": [
-            "TC"
+            "TC",
+            "NC"
           ],
-          "conditions": "On the second or third floor above a nonresidential first floor (309.2FF, 315.6JJ)",
-          "section": "309.2FF, 315.6JJ",
+          "conditions": "On the second or third floor above a nonresidential first floor (309.2FF, 310.2CC, 315.6JJ)",
+          "section": "309.2FF, 310.2CC, 315.6JJ",
           "url": "https://ecode360.com/print/QU2431?guid=14362005",
-          "confidence": "secondary",
+          "confidence": "verified",
           "note": "Only above a nonresidential use, not over a house"
         }
       ],
-      "section": "308.2, 309.2, 309.3F, 315.3C",
+      "section": "308.2, 309.2, 309.3F, 310.2CC, 315.3C",
       "url": "https://ecode360.com/print/QU2431?guid=14362005",
       "verified_on": "2026-11-16",
       "confidence": "secondary"
@@ -146,24 +155,27 @@
   "eligibility": {
     "historic_bypass": {
       "value": false,
-      "section": "Chapter 27",
-      "url": "https://ecode360.com/14361599",
+      "section": "319",
+      "url": "https://ecode360.com/print/QU2431?guid=14362591",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "No historic ADU path found. 319 Historic Preservation was not read"
+      "confidence": "verified",
+      "note": "No historic ADU path. 319 regulates only the demolition of inventory buildings, and the underlying district rules stay in full effect"
     },
     "districts_read_no_listing": {
       "value": [
         "LR",
         "MR",
         "HR",
-        "TC"
+        "TC",
+        "NC",
+        "HC",
+        "OB"
       ],
-      "section": "306.2 to 306.5, 307.2 to 307.5, 308.2 to 308.5, 309.2 to 309.5",
+      "section": "306.2 to 306.5, 307.2 to 307.5, 308.2 to 308.5, 309.2 to 309.5, 310.2 to 310.5, 311.2 to 311.5, 312.2 to 312.5",
       "url": "https://ecode360.com/print/QU2431?guid=14361901",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "None lists a second unit on a single-family lot. HR and TC permit duplexes and TC permits building conversion by special exception (see the alternatives)"
+      "note": "None lists a second unit on a single-family lot. HR and TC permit duplexes, TC permits building conversion by special exception, and TC and NC permit up to two apartments above a nonresidential use (see the alternatives). HC and OB list no residential accessory structure"
     },
     "gates": {
       "value": [
@@ -181,9 +193,39 @@
           "url": "https://ecode360.com/print/QU2431?guid=14359503",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the Department of Environmental Protection's regional office.' An accessory structure in the floodplain that is not elevated may not be used for human habitation.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-501.4, 8-502.5A",
+          "url": "https://ecode360.com/print/QU2431?guid=15733858",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "Pedestrian-Oriented, Mixed-Use Overlay: where the base district permits a use in another way, the base district's rule governs. The overlay's own figures are 3,000 sq ft, 30 ft wide, 80% building and 95% impervious cover, 42 ft, a front yard of the average of the two closest buildings up to 20 ft, 12 ft between buildings and no rear yard. Which figures govern a house the base district also permits is not settled. Its design rules apply to all new work along the street.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "POMU",
+            "Pedestrian-Oriented, Mixed-Use Overlay"
+          ],
+          "section": "314.1.2A, 314.1.5, 314.1.6, 314.1.7",
+          "url": "https://ecode360.com/print/QU2431?guid=27355583",
+          "confidence": "secondary"
         }
       ],
-      "section": "8-402",
+      "section": "8-402, 8-501.4, 314.1",
       "url": "https://ecode360.com/print/QU2431?guid=14359503",
       "verified_on": "2026-11-16",
       "confidence": "secondary"
@@ -321,6 +363,16 @@
         "url": "https://ecode360.com/print/QU2431?guid=14361901",
         "verified_on": "2026-11-16",
         "confidence": "verified"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "min_lot_sqft": 10890
+        },
+        "section": "306.8",
+        "url": "https://ecode360.com/print/QU2431?guid=14361901",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "LR caps density at four units an acre for all uses except multiple apartment dwellings. On one lot that would mean 10,890 sq ft for a house. The code does not say whether density is counted on one lot or on a tract, so the 306.6 figure is shown"
       }
     },
     "MR": {
@@ -487,6 +539,16 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "The one side yard of a semidetached dwelling"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "min_lot_sqft": 5445
+        },
+        "section": "308.8",
+        "url": "https://ecode360.com/print/QU2431?guid=14361961",
+        "verified_on": "2026-11-16",
+        "confidence": "secondary",
+        "note": "HR caps density at eight units an acre for all uses except multiple apartment dwellings. On one lot that would mean 5,445 sq ft for a house and 10,890 sq ft for a duplex. The code does not say whether density is counted on one lot or on a tract, so the 308.6 figure is shown"
       }
     },
     "TC": {
@@ -570,6 +632,195 @@
         "verified_on": "2026-11-16",
         "confidence": "verified",
         "note": "The one side yard of a semidetached dwelling"
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "310.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Any use. Lot width 30 ft, 'Per dwelling unit for residential uses'"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "310.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "310.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One side yard"
+      },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "310.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "310.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.8,
+        "section": "310.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Buildings'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.9,
+        "section": "310.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Total Impervious Cover'"
+      },
+      "principal_max_height_ft": {
+        "value": 42,
+        "section": "310.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362075",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "HC": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "311.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Any use, 'Per dwelling unit for residential use'. Lot width 80 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "311.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "311.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One side yard"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "311.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "311.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "311.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Buildings'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.9,
+        "section": "311.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Total Impervious Cover'"
+      },
+      "principal_max_height_ft": {
+        "value": 42,
+        "section": "311.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362142",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "OB": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "312.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Any use. Lot width 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "312.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "312.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One side yard"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "312.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "312.7",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "312.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Buildings'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "312.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'By Total Impervious Cover'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "312.6",
+        "url": "https://ecode360.com/print/QU2431?guid=14362208",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
       }
     }
   }

@@ -14,6 +14,7 @@
       "https://ecode360.com/WA2487/search?query=floodway&scope=all&sortOrder=relevance",
       "https://ecode360.com/print/WA2487?guid=45785821",
       "https://ecode360.com/print/WA2487?guid=45785865",
+      "https://ecode360.com/print/WA2487?guid=45785909",
       "https://ecode360.com/print/WA2487?guid=45786016",
       "https://ecode360.com/print/WA2487?guid=45786390",
       "https://ecode360.com/print/WA2487?guid=45786466",
@@ -27,22 +28,23 @@
     "geoid": "4212381000",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/16083925",
-    "code_current_through": "2025-10-20",
-    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 10-20-2025' (as shown in the search listing). The zoning chapter shows no new laws",
+    "code_current_through": "2026-08-17",
+    "code_current_through_note": "eCode360 chapter page, Version Information: 'Includes legislation through 08-17-2026.' New Laws: 'There are currently no known new laws for this Code.'",
     "checks": [
       "'Accessory dwelling unit' is a permitted (P) accessory use in R-1, R-2, R-3 and MU in the 470-16 use table. The chapter does not define it and gives it no standards: no size cap, no owner or family rule and no count per lot",
-      "A unit inside or attached to the house may instead be read as turning it into a multifamily dwelling ('a building having two or more dwelling units'), which R-1 does not permit and which needs a one acre lot in R-2, R-3 and MU (470-90, 470-34). Ask the zoning officer which reading applies",
+      "A unit inside or attached to the house may instead be read as turning it into a multifamily dwelling ('a building having two or more dwelling units'), which R-1 does not permit (470-90, 470-16). Multifamily dwellings are permitted by right in R-2, R-3 and MU, so there that reading changes nothing. Ask the zoning officer which reading applies in R-1",
+      "The 470-34 multifamily standards (one acre, 12 units an acre, 50 ft from a lot line next to a single-family house) apply only where multifamily is a special exception or conditional use: 'The following regulations apply when the use is allowed by special exception or conditional use' (470-23.1). That is C-1 and Pres, not R-2, R-3 or MU",
       "Only one principal structure is allowed on a lot, except in planned residential developments and for multifamily dwellings (470-20A). A unit in a separate building is an accessory structure",
-      "Residential districts: new lots 5,000 sq ft and 40 ft wide. Existing lots of 4,000 sq ft may be used. Front yard is the average of the block. Side and rear yards at least 5 ft. No building less than 10 ft from an adjoining building. Building cover 50%, 45% or 35% by lot size (470-15A)",
+      "Residential districts: new lots 5,000 sq ft and 40 ft wide. Existing lots of 4,000 sq ft may be used. Front yard is the average of the block. Side and rear yards at least 5 ft. No building less than 10 ft from an adjoining building. Building cover 50%, 45% or 35% by lot size (470-15A). Exactly 10,000 sq ft falls in no tier. On a corner lot the front yard is the addressed side, and structures, fences included, may be built up to 50% of the side yard",
       "On a lot less than 60 ft wide an accessory building needs 3 ft side and rear yards and may be one story, up to 20 ft (470-15A). No accessory height is given for wider lots, and no principal building height was found in 470-15",
-      "Minimum dwelling size: 500 sq ft for a single-family dwelling and 400 sq ft for a one-bedroom apartment in 470-15A, but 800 sq ft per single-family unit and 550 sq ft per multifamily unit in the 470-90 'Floor area' definition",
-      "Parking: one space for each dwelling unit (470-69A(1)). No parking in the front yard in residential districts except on lots with two frontages or narrow side and rear yards (470-70A(2))",
+      "Minimum dwelling size: 500 sq ft for a single-family dwelling and 400 sq ft for a one-bedroom apartment in 470-15A, but 800 sq ft per single-family unit and 550 sq ft per multifamily unit in the 470-90 'Floor area' definition. Which minimum reaches the accessory unit itself is not settled",
+      "Parking: one space for each dwelling unit (470-69A(1)). No parking in the front yard in residential districts except on lots with two frontages or narrow side and rear yards (470-70A(2)). A residential parking area may be at most 440 sq ft, may not cover more than half the front of the house, and a driveway may be at most 18 ft wide, 30 ft combined (470-70A(4)). When an existing property is converted to more residential units and the lot lacks room, half of the on-site parking is waived (470-71). Spaces within 500 ft off the lot may count (470-72)",
       "A family is related persons or up to four unrelated persons living as one housekeeping unit (470-90)",
-      "Nonconforming lot of record in separate ownership: a single-family house and customary accessory buildings may be built if the yards are met (470-77A)",
-      "Variances: the Zoning Hearing Board under MPC 910.2 (470-83C(4)). No bar on a use variance. Uses called 'customary' or 'similar' are decided by the Zoning Officer (470-18A)",
-      "Floodplain rules are in Chapter 260 (260-21)"
+      "Nonconforming lot of record in separate ownership: a single-family house and customary accessory buildings may be built if the yards are met (470-77A). Contiguous lots in the same ownership merge (470-77B). Enlarging a nonconforming structure in a way that adds to the nonconformity needs a variance (470-76A)",
+      "Variances: the Zoning Hearing Board under MPC 910.2 (470-83C(4)). No bar on a use variance. Uses called 'customary' or 'similar' are decided by the Zoning Officer (470-18A). A special exception lapses if no permit is taken out within 6 months (470-87A)",
+      "Floodplain rules are in Chapter 260 (260-21). Manufactured homes are barred in the floodway and within 50 ft of the top of bank in the floodplain (260-30). In Pres, the Planning Commission reviews any development (470-15D)"
     ],
-    "notes": "Zoning office: City of Warren Department of Codes and Planning. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: the chapter page, Article IV (470-14 to 470-17, the use table by screen view), Article V, 470-34, Article VIII, Article IX, Article XI, Article XIII through the letter V, Chapter 260 section 21 and code searches. Searches on this code returned to the prior page more than once, so the ADU search was read from its result list once. Not read: Articles I to III, the rest of Article VI (adaptive reuse, PRD), Article VII, Article X, Article XII, definitions from W on (yards), historic district rules and the rest of Chapter 260."
+    "notes": "Zoning office: City of Warren Department of Codes and Planning. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: the chapter page and its Version Information, Article IV (470-14 to 470-17, the use table by screen view), Article V, Article VI (470-23.1, 470-34, 470-36, 470-50, 470-54), Article VIII, Article IX, Article XI, Article XIII, Chapter 260 sections 21 and 30 and code searches. The code has no historic preservation chapter. 'Historic District' appears only in 470-90, 470-57 and 470-60 and in 310-2. Not read: Articles I to III, Article VII, Article X, Article XII and the rest of Chapter 260."
   },
   "adu": {
     "term": {
@@ -109,12 +111,11 @@
             "R-3",
             "MU"
           ],
-          "conditions": "A building with two or more dwelling units. Lot of one acre, at most 12 units per acre, 50 ft from a property line next to a single-family dwelling, buffers and screening (470-34). Special exception in C-1 and Pres",
-          "min_lot_sqft": 43560,
-          "section": "470-16, 470-34, 470-90",
-          "url": "https://ecode360.com/print/WA2487?guid=45786016",
-          "confidence": "secondary",
-          "note": "A house turned into two units would be this use if the unit is not read as an accessory dwelling unit"
+          "conditions": "A building with two or more dwelling units (470-90). Permitted by right in R-2, R-3 and MU on the district lot: 5,000 sq ft for a new lot, an existing lot of 4,000 sq ft, 5 ft side and rear yards, building cover by lot size (470-15A). It is one of the cases where more than one principal structure may stand on a lot (470-20A). The one acre and 12 units an acre of 470-34 apply only where multifamily is a special exception, in C-1 and Pres (470-23.1)",
+          "section": "470-16, 470-15A, 470-23.1, 470-90",
+          "url": "https://ecode360.com/print/WA2487?guid=45785909",
+          "confidence": "verified",
+          "note": "A house turned into two units is this use if the unit is not read as an accessory dwelling unit. Not permitted in R-1"
         },
         {
           "name": "Apartment, second story and above",
@@ -126,14 +127,14 @@
           "conditions": "A dwelling above a nonresidential use in a mixed building (470-90). Also permitted in C-1 and C-2",
           "section": "470-16, 470-90",
           "url": "https://ecode360.com/print/WA2487?guid=45785821",
-          "confidence": "secondary",
+          "confidence": "verified",
           "note": "Only above a nonresidential use, not over a house"
         }
       ],
-      "section": "470-16",
+      "section": "470-16, 470-23.1",
       "url": "https://ecode360.com/print/WA2487?guid=45785821",
       "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "confidence": "verified"
     }
   },
   "eligibility": {
@@ -154,8 +155,8 @@
       "section": "Chapter 470",
       "url": "https://ecode360.com/16083925",
       "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "No historic path in the zoning chapter. The Historic District is defined in 470-90, its rules were not read"
+      "confidence": "verified",
+      "note": "The code has no historic preservation chapter and no historic path. 'Historic District' is defined in 470-90 and used only in the sign and wireless rules (470-60, 470-57)"
     },
     "gates": {
       "value": [
@@ -178,31 +179,6 @@
           },
           "section": "470-90 'Dwelling, multifamily', 'Dwelling, single-family detached', 470-16",
           "url": "https://ecode360.com/print/WA2487?guid=45786564",
-          "confidence": "secondary"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "A unit inside or attached to the house may make it a multifamily dwelling, which needs a lot of one acre and at most 12 units per acre.",
-          "effect": "bars",
-          "applies_to": [
-            "internal",
-            "attached"
-          ],
-          "districts": [
-            "R-2",
-            "R-3",
-            "MU"
-          ],
-          "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 43560,
-          "disputed_by": {
-            "section": "470-16",
-            "url": "https://ecode360.com/print/WA2487?guid=45785821",
-            "note": "The use table lists 'Accessory dwelling unit' as a permitted accessory use in R-1, R-2, R-3 and MU, so a unit inside or attached to the house may be read as that accessory use and not as a multifamily dwelling."
-          },
-          "section": "470-90 'Dwelling, multifamily', 470-34A",
-          "url": "https://ecode360.com/print/WA2487?guid=45786016",
           "confidence": "secondary"
         },
         {
@@ -235,7 +211,7 @@
           "outside_zoning_chapter": "Chapter 260"
         }
       ],
-      "section": "470-90, 470-34, 470-20A, 260-21",
+      "section": "470-90, 470-16, 470-20A, 260-21",
       "url": "https://ecode360.com/print/WA2487?guid=45785821",
       "verified_on": "2026-11-16",
       "confidence": "secondary"
@@ -276,7 +252,7 @@
       "url": "https://ecode360.com/print/WA2487?guid=45785821",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "'Side and rear yard: Minimum of 5 feet'. 3 ft for an accessory building on a lot less than 60 ft wide"
+      "note": "'Side and rear yard: Minimum of 5 feet'. On a lot less than 60 ft wide an accessory building may be 3 ft from the line"
     },
     "setback_rear_ft": {
       "value": 5,
@@ -284,18 +260,14 @@
       "url": "https://ecode360.com/print/WA2487?guid=45785821",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "3 ft for an accessory building on a lot less than 60 ft wide"
+      "note": "On a lot less than 60 ft wide an accessory building may be 3 ft from the line"
     },
     "accessory_rules_where": {
       "value": [
         {
-          "where": "An accessory building on a lot less than 60 ft wide",
-          "setback_side_ft": 3,
-          "setback_rear_ft": 3,
-          "max_height_ft": 20,
+          "where": "An accessory building on a lot less than 60 ft wide may be 3 ft from the side and rear lines and may be one story, up to 20 ft. This does not apply on a lot 60 ft wide or more, where the 5 ft yards hold and no accessory height is given",
           "section": "470-15A",
-          "url": "https://ecode360.com/print/WA2487?guid=45785821",
-          "note": "One story, not over 20 ft"
+          "url": "https://ecode360.com/print/WA2487?guid=45785821"
         }
       ],
       "section": "470-15A",
