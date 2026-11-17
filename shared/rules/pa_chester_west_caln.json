@@ -1,0 +1,952 @@
+{
+  "provenance": {
+    "jurisdiction": "West Caln township",
+    "instrument": "West Caln Township Zoning Ordinance (Chapter 350 Zoning, Ord. No. 2026-01 of 6-17-2026), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 WE4254, Township of West Caln, Chester County (350-200E: 'The word \"Township\" shall mean West Caln Township, Chester County, Pennsylvania'). Ord. No. 2026-01 replaced the 2006 zoning chapter. District use lists and lot, yard and height figures are text in Articles IV to IX. The attachments are a road map, model timber harvesting rules, a plant list and the zoning map. Floodplain, steep slope and riparian buffer rules are in Article X of the zoning chapter. New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/WE4254/laws",
+      "https://ecode360.com/38019890",
+      "https://ecode360.com/print/WE4254?guid=38019890",
+      "https://ecode360.com/print/WE4254?guid=51040097",
+      "https://ecode360.com/print/WE4254?guid=51040331",
+      "https://ecode360.com/print/WE4254?guid=51040442",
+      "https://ecode360.com/print/WE4254?guid=51040632",
+      "https://ecode360.com/print/WE4254?guid=51040729",
+      "https://ecode360.com/print/WE4254?guid=51040811",
+      "https://ecode360.com/print/WE4254?guid=51040936",
+      "https://ecode360.com/print/WE4254?guid=51041052",
+      "https://ecode360.com/print/WE4254?guid=51041144",
+      "https://ecode360.com/print/WE4254?guid=51041233",
+      "https://ecode360.com/print/WE4254?guid=51041501",
+      "https://ecode360.com/print/WE4254?guid=51041507",
+      "https://ecode360.com/print/WE4254?guid=51041587",
+      "https://ecode360.com/print/WE4254?guid=51041613",
+      "https://ecode360.com/print/WE4254?guid=51041720",
+      "https://ecode360.com/print/WE4254?guid=51042505",
+      "https://ecode360.com/print/WE4254?guid=51042843",
+      "https://ecode360.com/print/WE4254?guid=51043239",
+      "https://ecode360.com/print/WE4254?guid=51043498",
+      "https://ecode360.com/print/WE4254?guid=51043683",
+      "https://ecode360.com/print/WE4254?guid=51043813",
+      "https://ecode360.com/WE4254/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22farm%20employee%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE4254/search?query=%22lot%20coverage%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22riparian%20forest%20buffer%22%20OR%20%22short-term%20rental%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202982664",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/38019890",
+    "code_current_through": "2026-06-17",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 06-17-2026.' New Laws: none",
+    "checks": [
+      "Supplemental dwelling unit: 'a smaller secondary dwelling unit within an existing single-family detached dwelling or within a new or existing accessory building on the same lot as the principal single-family detached dwelling' (350-1101C(13)). By right in AP (350-401A(13)), a special exception in V (350-701A(2)(g), 350-701B(2)(g)), a conditional use in SRR, RR and RC (350-501C(5), 350-601C(4), 350-801C(1)). MP lists no house and no supplemental dwelling unit",
+      "Standards: it stays accessory and secondary to the house. The district's area and bulk regulations apply to the lot. One per lot, two on a lot over 10 acres. Either the house or the unit must be occupied by the owner. At most 25% of the house's total floor area and at least 400 sq ft. Two off-street spaces beyond the house's own (350-1101C(13)(a) to (h)). Floor area leaves out garages, attics without floors, porches and cellars (350-201 'Floor area')",
+      "Where it may go: inside the existing house, which may include an attached garage or upper story, keeping the look of a single-family house, with entrances on the rear or side; or in a new or existing accessory building on the lot. Additions must meet the district's area and bulk rules (350-1101C(13)(e))",
+      "Accessory buildings: rear or side yard only, no further forward than the front line of the house except garages, at least 10 ft from lot lines and 15 ft for a building over 200 sq ft, and at most 15 ft tall unless the chapter says otherwise (350-1101A(2) to (4)). On a corner lot accessory buildings stay behind the setback lines of both streets (350-1201D)",
+      "Agricultural accessory dwelling unit and other additional farm-related dwellings: a conditional use in AP for family members or farm workers of the farm, one on a parent agricultural tract of 10 to 25 acres and up to two on a larger tract. An agricultural accessory dwelling unit expands an existing house, may use an attached garage or upper story, may add up to 100% of the house's gross floor area or 2,000 sq ft, whichever is less, and needs an owner-occupant. A conversion of an existing structure on the farm may hold one farm-related unit under 350-1132. Each counts toward the parent tract's lot and unit limit (350-1101B(9), 350-401C(2), 350-402C(1))",
+      "Residential conversion of a single-family detached dwelling into two or three units: a conditional use in AP and a special exception in V. It must keep the look of a single house with one front entrance, have no major structural change, meet the single-family lot and bulk figures, and give each unit at least 450 sq ft (efficiency), 550 (one bedroom), 700 (two) or 800 (three, the most) (350-401C(6), 350-701A(2)(b), 350-1132)",
+      "Historic resources: a structure on the West Caln Township Historic Resources Survey may be converted into a single-family detached dwelling, a twin or a townhouse, or under 350-1132, by conditional use, as an additional principal use on a lot that already has one 'without requiring additional variance relief' (350-2007). The Board may also modify lot, density, coverage, yard, height and parking figures for it (350-2008). New construction on a property with a historic resource needs Historical Commission review before a permit (350-2005A)",
+      "V and RC permit a twin and a two-family detached dwelling (duplex, two units one over the other) by right as new buildings (350-701A(1), 350-801A(2), (3))",
+      "Parking: off-street demand follows ITE Parking Generation, and 'a fraction of 1/2 or more shall be rounded up, and a fraction of less than 1/2 rounded down' (350-1303A, D). Parking may take up no more than half of a required front yard (350-1302D)",
+      "Floodplain (Article X): within the Identified Floodplain Area 'any new construction or substantial improvements shall be prohibited' except listed uses, and modifications to existing structures and adaptive reuse of an existing building are special exceptions (350-1002A(4)(a)[4][b], (4)(b)). An accessory structure there 'shall not be designed or used for human habitation' (350-1002A(4)(b)[5][a]). In an AE area without a floodway no new construction within 50 ft landward of the top of bank unless DEP issues a permit (350-1002A(3)(b)[2][b][ii]). Fill is prohibited unless a variance is granted",
+      "Riparian forest buffer: Zone One runs at least 35 ft from the top of the stream bank and allows no vegetation or land disturbance beyond listed activities. Zone Two adds 65 ft, of which at most 20% may be disturbed. The buffer may never be cut below 75 ft (350-201 'Riparian forest buffer', 350-1002C)",
+      "Steep slopes: at most 30% of moderately steep slopes (15% to 25%) and 15% of very steep slopes (25% or more) may be disturbed, and on very steep slopes only for timber, a needed road or driveway, or utilities (350-1002B)",
+      "Density: RR allows 0.5 dwelling units per acre of net tract area under the conventional option and 0.75 under the cluster option, and RC 4, 1.25 or 1 by services. AP limits the lots or dwelling units from a parent tract (one for 10 to 14.99 acres up to seven at 150 acres). Whether a supplemental dwelling unit counts as a dwelling unit there is not settled (350-602, 350-802B, 350-402C)",
+      "Variances: the Zoning Hearing Board on the hardship findings of 350-1707. No bar on a use variance was found. A lot nonconforming only in area may be built on if the yards are met; otherwise a special exception (350-1504A)"
+    ],
+    "notes": "Zoning office: West Caln Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles IV to IX in full, 350-1101, 350-1132, 350-1201, Article XIII, Article XV, 350-1707, Article XX, 350-201 from 'Abandonment' to 'Invasive' plus 'Lot coverage' and 'Riparian forest buffer', 350-1002A to C (floodplain, steep slopes, riparian buffers), the New Laws page, the table of contents and two code searches. Not read: 350-1002D onward (woodlands, wetlands and other resources) and 350-1003, 350-1102 to 350-1131 and 350-1133 to 350-1143, Article XII after 350-1201, Articles XIV, XVI (except as cited), XVIII and XIX, 350-1610 (conditional use process) and 350-1708 (special exception criteria), the rest of 350-201 and Chapter 262 (short-term rentals)."
+  },
+  "adu": {
+    "term": {
+      "value": "supplemental dwelling unit",
+      "section": "350-1101C(13)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'This accessory use, not related to agricultural uses, allows a smaller secondary dwelling unit within an existing single-family detached dwelling or within a new or existing accessory building on the same lot.' A separate 'agricultural accessory dwelling unit' is a farm-related dwelling in AP (350-1101B(9))"
+    },
+    "status": {
+      "value": "conditional_use",
+      "section": "350-401A(13), 350-501C(5), 350-601C(4), 350-701A(2)(g), 350-801C(1)",
+      "url": "https://ecode360.com/print/WE4254?guid=51040729",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "By right in AP, a special exception in V and a conditional use in SRR, RR and RC. The most demanding path is shown here, and the district paths give each district its own"
+    },
+    "scope_districts": {
+      "value": [
+        "AP",
+        "SRR",
+        "RR",
+        "V",
+        "RC"
+      ],
+      "section": "350-401A(13), 350-501C(5), 350-601C(4), 350-701A(2)(g), 350-701B(2)(g), 350-801C(1)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "350-901",
+      "url": "https://ecode360.com/print/WE4254?guid=51041144",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "MP permits no single-family dwelling, only a farm owner's or operator's dwelling as part of a farm, and does not list a supplemental dwelling unit"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "350-501C(5), 350-601C(4), 350-801C(1)",
+      "url": "https://ecode360.com/print/WE4254?guid=51040729",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Board of Supervisors after a hearing, in SRR, RR and RC"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "350-1707",
+      "url": "https://ecode360.com/print/WE4254?guid=51043683",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 350-1707A(1) to (5). No bar on a use variance"
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "AP"
+          ],
+          "path": "by_right",
+          "section": "350-401A(13)",
+          "url": "https://ecode360.com/print/WE4254?guid=51040632",
+          "note": "'Residential accessory use, as per 350-1101C, with the exception of 350-1101C(12)'"
+        },
+        {
+          "districts": [
+            "V"
+          ],
+          "path": "special_exception",
+          "section": "350-701A(2)(g), 350-701B(2)(g)",
+          "url": "https://ecode360.com/print/WE4254?guid=51040936",
+          "note": "Zoning Hearing Board, in Compass, Wagontown and Martin's Corner"
+        },
+        {
+          "districts": [
+            "SRR",
+            "RR",
+            "RC"
+          ],
+          "path": "conditional_use",
+          "section": "350-501C(5), 350-601C(4), 350-801C(1)",
+          "url": "https://ecode360.com/print/WE4254?guid=51040729",
+          "note": "Board of Supervisors. Their by-right residential accessory uses leave out 350-1101C(13)"
+        }
+      ],
+      "section": "350-401, 350-501, 350-601, 350-701, 350-801",
+      "url": "https://ecode360.com/print/WE4254?guid=51040632",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Agricultural accessory dwelling unit or other additional farm-related dwelling (AP)",
+          "path": "conditional_use",
+          "districts": [
+            "AP"
+          ],
+          "conditions": "Only for family members or farm workers of the farm on the parent agricultural tract. One on a parent tract of 10 to 25 acres, up to two on a larger tract, and each counts toward the tract's lot and unit limit. An agricultural accessory dwelling unit expands an existing single-family house, may use an attached garage or upper story, keeps the look of one house, may add up to 100% of the house's gross floor area or 2,000 sq ft, whichever is less, and needs an owner-occupant of the house or the unit. Other options are one unit in a converted farm structure under 350-1132 or another house under Article IV. Additional dwellings are set back at least 25 ft from all lot lines",
+          "requires": [
+            {
+              "test": "tract_sqft_at_least",
+              "value": 435600,
+              "condition": "A parent agricultural tract of at least 10 acres",
+              "section": "350-1101B(9)(c)"
+            },
+            {
+              "test": null,
+              "condition": "The lot is in agricultural use and the unit is for family members or farm workers of that use",
+              "section": "350-1101B(9)(a), 350-201 'Agricultural accessory dwelling unit'"
+            }
+          ],
+          "adu_listing": true,
+          "forms": [
+            "internal",
+            "attached"
+          ],
+          "section": "350-401C(2), 350-1101B(9), 350-402C(1)",
+          "url": "https://ecode360.com/print/WE4254?guid=51041720",
+          "confidence": "verified",
+          "note": "The code calls it an agricultural accessory dwelling unit. In AP a supplemental dwelling unit is by right, so this listing matters only for a farm unit that does not meet the supplemental unit's standards"
+        },
+        {
+          "name": "Residential conversion into two or three units (AP)",
+          "path": "conditional_use",
+          "districts": [
+            "AP"
+          ],
+          "conditions": "A single-family detached dwelling divided into a two or three family dwelling. It keeps the look of one house with one front entrance, other entrances on the side or rear, no major structural change, the single-family lot and bulk figures, separate kitchens and baths, and at least 450 sq ft for an efficiency, 550 for one bedroom, 700 for two and 800 for three (the most). Parking per Article XIII",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "350-1132A"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "350-401C(6), 350-1132",
+          "url": "https://ecode360.com/print/WE4254?guid=51042505",
+          "confidence": "verified",
+          "note": "A house divided into units, not a unit added to it"
+        },
+        {
+          "name": "Residential conversion (V)",
+          "path": "special_exception",
+          "districts": [
+            "V"
+          ],
+          "conditions": "A single-family detached dwelling divided into two or more units. It keeps the look of one house with one front entrance, other entrances on the side or rear, no major structural change, the single-family lot and bulk figures, separate kitchens and baths, and at least 450 sq ft for an efficiency, 550 for one bedroom, 700 for two and 800 for three (the most). Parking per Article XIII",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "350-1132A"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "350-701A(2)(b), 350-701B(2)(b), 350-1132",
+          "url": "https://ecode360.com/print/WE4254?guid=51042505",
+          "confidence": "verified",
+          "note": "A house divided into units, not a unit added to it"
+        },
+        {
+          "name": "Twin or two-family detached dwelling (V, RC)",
+          "path": "by_right",
+          "districts": [
+            "V",
+            "RC"
+          ],
+          "conditions": "A single-family semidetached dwelling (twin) or a two-family detached dwelling (duplex, two units separated by a horizontal party wall). In V the lot is 20,000 sq ft to one acre. In RC the lot and density follow the services: 10,000 sq ft and 4 units per net acre with public or community water and sewer, 25,000 sq ft and 1.25 units per acre with one of them, 30,000 sq ft and 1 unit per acre with neither",
+          "min_lot_by_district": {
+            "V": 20000,
+            "RC": 10000
+          },
+          "section": "350-701A(1), 350-701B(1), 350-702A, 350-801A(2), (3), 350-802B",
+          "url": "https://ecode360.com/print/WE4254?guid=51041052",
+          "confidence": "secondary",
+          "note": "A new two-unit building, not a unit added to an existing house. RC's figure is for a lot with public water and sewer"
+        },
+        {
+          "name": "Adaptive reuse of a historic resource as a dwelling",
+          "path": "conditional_use",
+          "districts": null,
+          "conditions": "A structure on the West Caln Township Historic Resources Survey, such as an old barn or outbuilding, may be converted into a single-family detached dwelling, a twin or a townhouse, or under 350-1132, by conditional use. Where the property already has a principal permitted use, the reuse 'may be permitted as an additional principal use by conditional use and without requiring additional variance relief'. The Board may modify lot area, density, coverage, yard, setback, height and parking figures. Changes must meet the Secretary of the Interior's Standards and Historical Commission review",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The structure is a historic resource on the West Caln Township Historic Resources Survey",
+              "section": "350-2003, 350-2007A"
+            }
+          ],
+          "builds": [
+            "garage_conversion"
+          ],
+          "section": "350-2007, 350-2008, 350-2005, 350-2006",
+          "url": "https://ecode360.com/print/WE4254?guid=51043813",
+          "confidence": "secondary",
+          "note": "A second dwelling in an existing historic outbuilding on a house lot, which is an ADU in all but name. The code makes it a second principal use, not an accessory unit, and none of the supplemental dwelling unit's caps apply"
+        }
+      ],
+      "section": "350-401C, 350-701, 350-801, 350-1132, 350-2007",
+      "url": "https://ecode360.com/print/WE4254?guid=51040632",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "AP",
+        "SRR",
+        "RR",
+        "V",
+        "RC"
+      ],
+      "section": "350-401A(13), 350-501C(5), 350-601C(4), 350-701A(2)(g), 350-801C(1)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "350-1101C(13)(a)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'within single-family detached dwellings or within a new or existing accessory building on the same lot as the principal single-family detached dwelling'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "350-2007",
+      "url": "https://ecode360.com/print/WE4254?guid=51043813",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic path for a supplemental dwelling unit. A historic resource may become an additional dwelling by conditional use (see the other paths)"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "MP"
+      ],
+      "section": "350-901",
+      "url": "https://ecode360.com/print/WE4254?guid=51041144",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "MP permits no single-family dwelling, only a farm dwelling as part of a farm. Its by-right agricultural accessory uses (350-1101B) leave nothing out"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "A unit inside the house keeps the look of a single-family detached dwelling, and 'Entrances to the supplemental dwelling unit shall be located to the rear or side of the building.' Additions must meet the district's area and bulk requirements.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "350-1101C(13)(e)[1], [3]",
+          "url": "https://ecode360.com/print/WE4254?guid=51041720",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "'The area and bulk regulations of the zoning district shall apply to the lot on which the supplemental dwelling unit is located.' A lot in an RR cluster development takes the cluster figures. Whether an existing lot below the district minimum may hold a unit, or relies on the nonconforming lot rules of 350-1504, is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "350-1101C(13)(c), 350-1504",
+          "url": "https://ecode360.com/print/WE4254?guid=51041720",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "Cluster residential development option in RR, with public sewer and water: lots of 20,000 sq ft, 60 ft wide, front 25 ft, side yards 25 ft together and 10 ft on one side, rear 25 ft, building coverage 25%, impervious cover 40%, 35 ft.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RR"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "350-602A(2), 350-603B",
+          "url": "https://ecode360.com/print/WE4254?guid=51040811",
+          "confidence": "verified"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "AP limits the lots or dwelling units from a parent tract of record (one for 10 to 14.99 acres, two to 34.99, three to 59.99, four to 89.99, five to 119.99, six to 149.99, and seven at 150 acres plus one per 30 acres more), and RR caps density at 0.5 dwelling units per acre of net tract area (0.75 in a cluster), RC at 4, 1.25 or 1 by services. Whether a supplemental dwelling unit counts as a dwelling unit there is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "AP",
+            "RR",
+            "RC"
+          ],
+          "building_types": null,
+          "section": "350-402C(1), 350-602A(2)(a), B(1)(a), 350-802B(1)",
+          "url": "https://ecode360.com/print/WE4254?guid=51040632",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "Residential dwellings must stand at least 100 ft from any adjacent agricultural use, CAO, CAFO or mushroom facility in AP, and in SRR and RR at least 100 ft from a CAO, CAFO or mushroom facility and 50 ft from adjacent agricultural uses.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "AP",
+            "SRR",
+            "RR"
+          ],
+          "building_types": null,
+          "section": "350-402C(4)(k), 350-502A(1)(j), (k), 350-602B(1)(k), (l)",
+          "url": "https://ecode360.com/print/WE4254?guid=51040729",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "Within the Identified Floodplain Area 'any new construction or substantial improvements shall be prohibited' except the listed uses, and an accessory structure there 'shall not be designed or used for human habitation'. A variance may allow new construction, with the lowest floor at or above the regulatory flood elevation.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "350-1002A(4)(b), (4)(b)[5][a]",
+          "url": "https://ecode360.com/print/WE4254?guid=51041233",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Identified Floodplain Area 'Modifications to structures existing as of the date of adoption of this chapter' are a special exception from the Zoning Hearing Board. No expansion may raise flood levels in a floodway or more than one foot in an AE area without a floodway, and work costing 50% or more of the building's market value must fully comply, with the lowest floor at or above the regulatory flood elevation.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "path": "special_exception",
+          "section": "350-1002A(4)(a)[4][b][v], 350-1002A(6)",
+          "url": "https://ecode360.com/print/WE4254?guid=51041233",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "350-1002A(3)(b)[2][b][ii], 350-1002A(6)(b)[6]",
+          "url": "https://ecode360.com/print/WE4254?guid=51041233",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Zone One of the riparian forest buffer runs at least 35 ft from the top of the stream bank of any watercourse, farther where very steep slopes lie within it, and 'no vegetation disturbance or other land disturbance shall be permitted' there beyond listed activities such as trails and permitted crossings.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 35,
+          "section": "350-1002C(2)(a), 350-201 'Riparian forest buffer'",
+          "url": "https://ecode360.com/print/WE4254?guid=51041613",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Zone Two of the riparian forest buffer adds 65 ft beyond Zone One, and no more than 20% of it may be regraded, built upon or otherwise disturbed. The buffer may never be reduced below 75 ft from the top of the stream bank.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "350-1002C(2)(b), 350-201 'Riparian forest buffer'",
+          "url": "https://ecode360.com/print/WE4254?guid=51041613",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "No more than 30% of moderately steep slopes (15% to 25%) and 15% of very steep slopes (25% or more) may be disturbed, and on very steep slopes only for timber, a needed road or driveway, or utilities.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "350-1002B(2)",
+          "url": "https://ecode360.com/print/WE4254?guid=51041587",
+          "confidence": "verified"
+        },
+        {
+          "kind": "historic",
+          "condition": "On a property with a structure on the West Caln Township Historic Resources Survey, new additions and new construction need Historical Commission review against the Secretary of the Interior's Standards before a permit is issued.",
+          "effect": "condition",
+          "applies_to": [
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "350-2005A, 350-2006",
+          "url": "https://ecode360.com/print/WE4254?guid=51043813",
+          "confidence": "verified"
+        }
+      ],
+      "section": "350-1101C(13), 350-402C, 350-602, 350-1002, 350-2005",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "350-1101C(13)(a), (e)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Inside the existing house, including an attached garage or upper story, with additions meeting the district's area and bulk rules, or 'Contained within a new or an existing accessory building on the same lot'"
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.25,
+      "section": "350-1101C(13)(g)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'no more than 25% of the principal dwelling's total floor area'. Floor area leaves out garages, carports, attics without floors, open porches and cellars (350-201 'Floor area')"
+    },
+    "min_sqft": {
+      "value": 400,
+      "section": "350-1101C(13)(g)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'shall have a minimum floor area of 400 square feet'. A house needs at least 1,600 sq ft of floor area for 25% to reach 400 sq ft"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": true,
+      "section": "350-1101C(13)(f)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Either the principal single-family dwelling or the supplemental dwelling unit shall be occupied by the bona fide owner of the property'"
+    },
+    "family_only": {
+      "value": false,
+      "section": "350-1101C(13)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No family rule for the supplemental dwelling unit. The agricultural accessory dwelling unit is for family members or farm workers (350-1101B(9)(a))"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "350-1101C(13)(d)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'No more than one supplemental dwelling unit shall be allowed on each lot. If the lot is greater than 10 acres, two supplemental dwellings units are allowed.'"
+    },
+    "max_adus_by_lot_size": {
+      "value": [
+        {
+          "lot_sqft_over": 435600,
+          "max_adus": 2
+        }
+      ],
+      "section": "350-1101C(13)(d)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Two on a lot greater than 10 acres"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 15,
+      "section": "350-1101A(4)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Accessory uses in 350-1101C, including their buildings, have 'A maximum height of 15 feet, except as otherwise expressly permitted in this chapter'. Read for a unit in an accessory building"
+    },
+    "setback_side_ft": {
+      "value": 15,
+      "section": "350-1101A(3)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'for accessory buildings larger than 200 square feet, a minimum setback of not less than 15 feet from lot lines'. A unit of at least 400 sq ft is in a building over 200 sq ft"
+    },
+    "setback_rear_ft": {
+      "value": 15,
+      "section": "350-1101A(3)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Same 15 ft rule for an accessory building over 200 sq ft"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "350-1101A(2)(b), (c)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Located in the rear or side yard of the lot' and 'no further forward on the tract or lot than the front line of the principal building, except for garages'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "350-1101C(13)(h)",
+      "url": "https://ecode360.com/print/WE4254?guid=51041720",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Two off street parking spaces shall be provided for a supplemental dwelling unit in addition to the parking requirements for the principal use'"
+    },
+    "fraction_rounding": {
+      "value": "half_or_more_counts",
+      "section": "350-1303A, D",
+      "url": "https://ecode360.com/print/WE4254?guid=51043239",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'a fraction of 1/2 or more shall be rounded up, and a fraction of less than 1/2 rounded down'"
+    }
+  },
+  "districts": {
+    "AP": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "350-402C(4)(a)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "A lot subdivided from a parent tract of 10 acres or more: one acre minimum and two acres maximum, 100 ft wide. A lot subdivided from a tract under 10 acres needs four acres and 200 ft of width (350-402D(1)). A farm needs 10 acres (350-402A)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "350-402C(4)(e)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "350-402C(4)(f)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "350-402C(4)(g)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "350-402C(4)(h)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "350-402C(4)(i), 350-201 'Lot coverage'",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage: 20%'. Lot coverage is the share of the lot 'covered by any and all impervious materials'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "350-402C(4)(j)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040632",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "SRR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "350-502A(1)(a)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling: two acres, 150 ft wide at the building line and 115 ft at the street"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "350-502A(1)(f)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "350-502A(1)(g)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "350-502A(1)(h)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "350-502A(1)(e)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "350-502A(1)(d)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage (impervious): 15%'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "350-502A(1)(i)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040729",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "350-602B(1)(b)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Conventional development option: two acres, 100 ft wide at the building line and 75 ft at the street, 0.5 dwelling units per acre of net tract area. A cluster lot is 20,000 sq ft (350-602A)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "350-602B(1)(g)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "350-602B(1)(h)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "350-602B(1)(i)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "350-602B(1)(f)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "350-602B(1)(e)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage (impervious): 15%'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "350-602B(1)(j)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "min_lot_replaced_in_planned_development": {
+        "value": true,
+        "section": "350-602A(2)(b)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040811",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A lot in a cluster residential development takes the cluster figures: 20,000 sq ft, 60 ft wide"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "350-702A(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Minimum lot area shall be 20,000 square feet, and the maximum lot area shall be one acre', 75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "350-702A(4)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "The average of the adjacent buildings' front setbacks, at least 10 ft and at most 30 ft from the street line. The averaged figure may be larger than 10 ft"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "350-702A(5)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "20 ft on each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "350-702A(6)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "350-702A(7), 350-201 'Lot coverage'",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage: 25% for residential uses'. Lot coverage counts all impervious materials. The district sets no separate building coverage"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "350-702A(8)",
+        "url": "https://ecode360.com/print/WE4254?guid=51040936",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "RC": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Facility Option 1, community or public water and sewer: 10,000 sq ft, 75 ft wide at the building line, density 4 dwelling units per acre of net tract area"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "350-802B(1), 350-201 'Lot coverage'",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', which counts all impervious materials"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "350-802B(1)",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Facility Option 2: public or community water with an on-lot sewage system",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 25000,
+            "section": "350-802A(2), 350-802B(1)",
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.25,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "Facility Option 3: individual water supply with public or community sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 25000,
+            "section": "350-802A(3), 350-802B(1)",
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.25,
+            "principal_max_height_ft": 35
+          },
+          {
+            "when": "Facility Option 4: individual water supply and on-lot sewage system",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "350-802A(4), 350-802B(1)",
+            "setback_front_ft": 40,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "principal_max_height_ft": 35
+          }
+        ],
+        "section": "350-802A, B",
+        "url": "https://ecode360.com/print/WE4254?guid=51041052",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Options 2 and 3: 1.25 dwelling units per net acre, 100 ft wide. Option 4: 1 unit per net acre, 100 ft wide"
+      }
+    }
+  }
+}

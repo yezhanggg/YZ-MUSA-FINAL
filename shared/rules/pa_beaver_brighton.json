@@ -1,0 +1,617 @@
+{
+  "provenance": {
+    "jurisdiction": "Brighton township",
+    "instrument": "Township of Brighton Zoning Ordinance (Chapter 195 Zoning, Ord. No. 96 of 10-14-1996, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 BR1789, Township of Brighton, Beaver County (195-10 'Governing body': 'The Board of Township Supervisors, of the Township of Brighton, Beaver County, Pennsylvania'). District use lists and lot, yard and height figures are text in Articles V to XII. The attachments are a sign illustration and buffer yard exhibits only. Floodplain rules are in Chapter 100. New Laws: Ord. No. 252 of 2026-08-10 (Fire Prevention Code), not on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/BR1789",
+      "https://ecode360.com/BR1789/laws",
+      "https://ecode360.com/9489984",
+      "https://ecode360.com/print/BR1789?guid=9489984",
+      "https://ecode360.com/print/BR1789?guid=9490327",
+      "https://ecode360.com/print/BR1789?guid=9490391",
+      "https://ecode360.com/print/BR1789?guid=9490463",
+      "https://ecode360.com/print/BR1789?guid=9490806",
+      "https://ecode360.com/print/BR1789?guid=9490859",
+      "https://ecode360.com/print/BR1789?guid=9490929",
+      "https://ecode360.com/print/BR1789?guid=9491005",
+      "https://ecode360.com/print/BR1789?guid=9491078",
+      "https://ecode360.com/print/BR1789?guid=9491277",
+      "https://ecode360.com/print/BR1789?guid=9491976",
+      "https://ecode360.com/print/BR1789?guid=9492072",
+      "https://ecode360.com/print/BR1789?guid=9492187",
+      "https://ecode360.com/print/BR1789?guid=9487264",
+      "https://ecode360.com/BR1789/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22conversion%20apartment%22%20OR%20%22residential%20conversion%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22mobile%20home%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Beaver",
+    "municipality_type": "township",
+    "geoid": "4200708680",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9489984",
+    "code_current_through": "2026-01-12",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 01-12-2026.' New Laws: one, Ord. No. 252 of 2026-08-10 (Fire Prevention Code)",
+    "checks": [
+      "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, household employee, conversion apartment, residential conversion, temporary dwelling, apartment addition, habitation, living quarters, caretaker, mobile home) find only the definitions of a conversion apartment unit and a residential conversion unit (195-10) and the mobile home rules (195-134)",
+      "R-1, R-2, UD and SC-1 each permit 'One single-family detached dwelling per lot' (195-16A(1), 195-24A(4), 195-32A(1), 195-80A(2)). No district lists a second unit on a house lot. A second unit is a use variance from the Zoning Hearing Board (195-157). No bar on a use variance was found",
+      "A use not listed in any district is referred to the Zoning Hearing Board and 'shall be reviewed as a request for a special exception in the C-2 Mixed Use District' (195-4B). C-2 permits no single-family dwelling, so this does not open a path on a house lot. A conversion apartment unit is listed (R-1), so a unit made inside a house is not an unlisted use",
+      "Conversion apartment unit: a conditional use in R-1 only, before the Board of Supervisors after a hearing and Planning Commission review (195-17A, 195-163, 195-164). It is 'The remodeling of a single-family dwelling unit into two or more separate living units each having a minimum of 500 square feet of habitable area, exclusive of basement and/or cellar dwellings; one bathroom and three habitable rooms; separate and private water, sanitary, cooking and dining facilities; and a minimum of two off-street parking spaces per living unit' (195-10). A conversion must stay inside the existing structural shell. Extending the sides or height is not a conversion and must meet the district's provisions for that use (195-10 'Dwelling type' A)",
+      "In R-1 the yards for a conditional use are larger than for a permitted use: front 50 ft from a collector or arterial and 40 ft from a local street, and 30 ft on each side (195-20B, D). Rear 40 ft for both. Whether an existing house converted under 195-17A must meet the conditional use yards is not settled",
+      "Duplex: R-1 permits a duplex, 'either side by side or over and under', by right with public sewer and public water, on 8,000 sq ft per dwelling unit, 125 ft wide, coverage 35% (195-16A(2), 195-19B). UD permits a single-family semidetached dwelling (duplex) by right with public sewer and water, on 7,500 sq ft per duplex unit and 100 ft of width for each unit, coverage 35% (195-32A(2), 195-35B). A duplex is two units side by side with a party wall, or one over the other with two side yards (195-10 'Dwelling type' C)",
+      "Accessory uses may not occupy more than 15% of the lot, and 'in no event shall the square feet of an accessory use structure exceed the total square feet of the principal use structure' (195-10 'Accessory use'). Required yards stay open 'except for accessory buildings in the rear yard and fences' (195-120A). Accessory side and rear yards: R-1 and UD 5 ft for a structure of 720 sq ft or less and 10 ft above that, R-2 and SC-1 10 ft (195-20F, 195-36A(4), 195-28F, 195-83). SC-1 accessory height 20 ft (195-85B)",
+      "Parking: 'Residential units: 2 off-street parking spaces per dwelling unit' (195-105B, 195-22, 195-30, 195-86). No rule for a fraction of a space was found",
+      "SC-1 opens with 'A lot or parcel may be used and a building or structure may be erected and used for any of the following purposes, subject to the granting of a use by the Township of Brighton Board of Supervisors' (195-80), and all building permits there are reviewed by the Township (195-81A)",
+      "Nonconforming lot: a single-family detached dwelling and customary accessory structures may be built on a single nonconforming lot in separate ownership. Yard relief needs a variance (195-140A, 195-125). Abutting nonconforming lots in one ownership must be combined (195-140B)",
+      "Mobile or modular homes 'shall be temporarily parked and stored or permanently parked and stored in mobile or modular home parks only' (195-124A), while R-2 permits mobile homes on individual lots under 195-134 as the one dwelling on the lot (195-24A(5))",
+      "Floodplain (Chapter 100): a permit is needed for any construction or development in the township (100-8). In an AE area without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection's regional office', and no development may raise the base flood elevation at any point (100-18A(2)(b), 100-31E). New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation (100-23A). Fill is prohibited with no variance (100-24A). An accessory structure in the floodplain 'shall not be designed or used for human habitation' and may be at most 200 sq ft (100-23E). The Zoning Hearing Board hears floodplain appeals (100-16, 195-155F)"
+    ],
+    "notes": "Zoning office: Brighton Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles I to III (195-10 from 'Accessory building' to 'Hospital', plus the conversion, dwelling type and mobile home definitions through the code search), Articles V, VI, VII, IX, X, XI, XII, XIII, XVI, XVIII and XX, Article XV from 195-118 to 195-135B(12), Chapter 100 Articles I to VIII, the New Laws page, the table of contents and a code search. Not read: Article VIII (planned residential development, 195-39 to 195-70), Article XIV (signs), Article XV from 195-135B(13) to 195-137.20 (home occupations, boardinghouses, senior housing and other specific uses), Article XVII, XIX and XXI to XXIII, the rest of 195-10 after 'Hospital', and Chapter 180."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 195",
+      "url": "https://ecode360.com/BR1789/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22conversion%20apartment%22%20OR%20%22residential%20conversion%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22mobile%20home%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, household employee, conversion apartment, residential conversion, temporary dwelling, apartment addition, habitation, living quarters, caretaker and mobile home, and read the use lists of R-1, R-2, UD, HC-1, SC-1, C-1 and C-2. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "195-16, 195-24, 195-32, 195-80",
+      "url": "https://ecode360.com/print/BR1789?guid=9490327",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. R-1, R-2, UD and SC-1 permit one single-family detached dwelling per lot. In R-1 a house may be converted into two or more units by conditional use (195-17A)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "195-157",
+      "url": "https://ecode360.com/print/BR1789?guid=9492072",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). The review of a use not listed anywhere as a special exception reaches only the C-2 District (195-4B). In R-1 a house may instead be converted by conditional use, and a duplex may be built where the district permits one (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "195-157E",
+      "url": "https://ecode360.com/print/BR1789?guid=9492072",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 195-157E(1) to (5). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment unit (R-1)",
+          "path": "conditional_use",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "The remodeling of a single-family dwelling into two or more separate living units, each with at least 500 sq ft of habitable area not counting a basement or cellar, one bathroom and three habitable rooms, separate and private water, sanitary, cooking and dining facilities, and at least two off-street parking spaces per unit. The work must stay inside the existing structural shell. The Board of Supervisors decides after a public hearing and Planning Commission review, and may attach conditions. In R-1 the yards for a conditional use are front 40 ft from a local street (50 ft from a collector or arterial), 30 ft on each side and 40 ft in the rear. The code gives no lot area for a conversion apartment unit",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling to remodel",
+              "section": "195-10 'Conversion apartment unit'"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "195-17A, 195-10 'Conversion apartment unit', 'Dwelling type' A, 195-20B, D, 195-163, 195-164",
+          "url": "https://ecode360.com/print/BR1789?guid=9490327",
+          "confidence": "secondary",
+          "note": "A house divided into units, not a unit added to it. Whether the conditional use yards of 195-20B and D reach an existing house converted inside its shell is not settled"
+        },
+        {
+          "name": "Duplex (R-1)",
+          "path": "by_right",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "A duplex, 'either side by side or over and under', with public sanitary sewerage and public water service. Lot 8,000 sq ft per dwelling unit (16,000 sq ft for two), 125 ft wide at the building line, coverage with accessory structures at most 35%. Front 30 ft from a local street (40 ft from a collector or arterial), 10 ft on each side, rear 40 ft. Two parking spaces per unit. An addition that extends the sides or height of a house to make a second unit is not a conversion and must meet the district's provisions for that use",
+          "min_lot_sqft": 16000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sanitary sewerage",
+              "section": "195-16A(2)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water service",
+              "section": "195-16A(2)"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "195-16A(2), 195-19B, 195-20, 195-22, 195-10 'Dwelling type' A, C",
+          "url": "https://ecode360.com/print/BR1789?guid=9490327",
+          "confidence": "secondary",
+          "note": "A two-unit building. Read for a house enlarged into a duplex, since 195-10 sends an extension of an existing structure to the district's provisions for the use it becomes"
+        },
+        {
+          "name": "Single-family semidetached dwelling, duplex (UD)",
+          "path": "by_right",
+          "districts": [
+            "UD"
+          ],
+          "conditions": "A single-family semidetached dwelling (duplex) with public sanitary sewage and public water. Lot 7,500 sq ft per duplex unit (15,000 sq ft for two), 100 ft wide at the building line for each duplex unit, coverage with accessory structures at most 35%. Front 30 ft from a local street (40 ft from a collector or arterial), 10 ft on each side, rear 40 ft. A duplex is two units side by side with a party wall, or one over the other with two side yards",
+          "min_lot_sqft": 15000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sanitary sewage",
+              "section": "195-32A(2)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "195-32A(2)"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "195-32A(2), 195-35B, 195-36A, 195-10 'Dwelling type' A, C",
+          "url": "https://ecode360.com/print/BR1789?guid=9490463",
+          "confidence": "secondary",
+          "note": "A two-unit building. UD lists no conversion apartment unit, so whether a house divided inside its shell counts as a duplex there is not settled. The 100 ft of width 'for each duplex unit' may mean 200 ft for the pair"
+        }
+      ],
+      "section": "195-17A, 195-16A(2), 195-32A(2)",
+      "url": "https://ecode360.com/print/BR1789?guid=9490327",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 195",
+      "url": "https://ecode360.com/9489984",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in the parts read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "UD",
+        "SC-1",
+        "HC-1",
+        "C-1",
+        "C-2"
+      ],
+      "section": "195-16, 195-24, 195-32, 195-72, 195-80, 195-89, 195-98",
+      "url": "https://ecode360.com/print/BR1789?guid=9490327",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. HC-1, C-1 and C-2 permit no single-family dwelling. C-1 and C-2 allow homes only above the first floor of a mixed-use building, and C-2 residential uses only within a mixed-use development"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "R-1, R-2, UD and SC-1 permit 'One single-family detached dwelling per lot'. A second house on the lot is not a permitted use.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "UD",
+            "SC-1"
+          ],
+          "building_types": null,
+          "section": "195-16A(1), 195-24A(4), 195-32A(1), 195-80A(2)",
+          "url": "https://ecode360.com/print/BR1789?guid=9490327",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory structure in an identified floodplain area 'shall not be designed or used for human habitation but shall be limited to the parking of vehicles or to the storage of tools, material, and equipment', with at most 200 sq ft of floor area and no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "100-23E",
+          "url": "https://ecode360.com/print/BR1789?guid=9487264",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 100"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection's regional office'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "100-18A(2)(b)[2], 100-31E",
+          "url": "https://ecode360.com/print/BR1789?guid=9487264",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 100"
+        },
+        {
+          "kind": "other",
+          "condition": "In a floodway no encroachment, new construction or substantial improvement unless an analysis shows no rise in flood levels, and no new construction without a DEP permit. In an AE area without a floodway no development may raise the base flood elevation at any point. New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation. Fill is prohibited, with no variance. Work costing 50% or more of the building's market value is a substantial improvement.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "100-18A, 100-23A, 100-24A, 100-31",
+          "url": "https://ecode360.com/print/BR1789?guid=9487264",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 100"
+        }
+      ],
+      "section": "195-16A(1), 100-18, 100-23, 100-24, 100-31",
+      "url": "https://ecode360.com/print/BR1789?guid=9490327",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "195-16, 195-24, 195-32, 195-80",
+      "url": "https://ecode360.com/print/BR1789?guid=9490327",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "195-105B",
+      "url": "https://ecode360.com/print/BR1789?guid=9491078",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "No ADU use. 'Residential units: 2 off-street parking spaces per dwelling unit'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "195-105B, 195-10 'Conversion apartment unit'",
+      "url": "https://ecode360.com/print/BR1789?guid=9491078",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two spaces for each of two dwelling units, and at least two per living unit in a conversion apartment unit"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "195-19A(2)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with public sanitary sewer (or a private treatment plant) and public water: 12,500 sq ft, 90 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "195-20A(2)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "From the right-of-way of a local street. 40 ft from a collector or arterial roadway. A conditional use needs 40 ft and 50 ft"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "195-20C(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard, for a permitted use. 20 ft on the street side of a corner lot. 30 ft each side for a conditional use"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "195-20E",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "195-19A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage including accessory structures shall not exceed 30%'. A duplex may cover 35%"
+      },
+      "principal_max_height_ft": {
+        "value": 36,
+        "section": "195-21A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'a minimum of one story and a maximum of three stories or 36 feet, whichever is less'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "195-21A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With on-lot septic disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "195-19A(1)"
+          },
+          {
+            "when": "With public sewer and a private well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "195-19A(1)"
+          }
+        ],
+        "section": "195-19A(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490327",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'With on-lot septic disposal and/or private well': one acre, 125 ft wide, coverage 30%"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "195-27A(2)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with public sanitary sewer (or a private treatment plant) and public water: half an acre, 100 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "195-28A(2)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "From the right-of-way of a local street. 50 ft from a collector or arterial roadway"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "195-28C(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side, for a permitted use. 20 ft on the street side of a corner lot. 30 ft each side for a conditional use"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "195-28E",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "195-27A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage including accessory structures shall not exceed 30%'"
+      },
+      "principal_max_height_ft": {
+        "value": 36,
+        "section": "195-29A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'a minimum of one story and a maximum of three stories or 36 feet, whichever is less'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "195-29A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With on-lot septic disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "195-27A(1)"
+          },
+          {
+            "when": "With public sewer and a private well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "195-27A(1)"
+          }
+        ],
+        "section": "195-27A(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490391",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'With on-lot septic disposal and/or private well': one acre, 125 ft wide, coverage 30%"
+      }
+    },
+    "UD": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "195-35B(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling with public sanitary sewer (or a private treatment plant) and public water: 10,000 sq ft, 80 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "195-36A(1)(b)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "From the right-of-way of a local street. 40 ft from a collector or arterial roadway"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "195-36A(2)(a)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side. 20 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "195-36A(3)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "195-35B(3)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage including accessory structures shall not exceed 35%', with public sewer and water. 30% with on-lot septic or a private well"
+      },
+      "principal_max_height_ft": {
+        "value": 36,
+        "section": "195-37",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'a maximum of three stories or 36 feet, whichever is less'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "195-37",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With on-lot septic disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "max_building_coverage": 0.3,
+            "section": "195-35A"
+          },
+          {
+            "when": "With public sewer and a private well",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "max_building_coverage": 0.3,
+            "section": "195-35A"
+          }
+        ],
+        "section": "195-35A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490463",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling 'with on-lot septic disposal and/or private well': one acre, 125 ft wide, coverage 30%"
+      }
+    },
+    "SC-1": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "195-82A(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Permitted uses: two acres per dwelling unit'. A single-family detached dwelling lot is 200 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "195-83A(1)(b)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "From the right-of-way line of a local street. 40 ft from a collector or arterial roadway"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "195-83B(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Permitted residential dwelling: 20 feet per side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "195-83C(1)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "195-84",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'The total area of all buildings, including accessory buildings, shall not cover more than 20% of the total lot area'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "195-85A",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "195-83B(3)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "195-83C(3)",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "195-85B",
+        "url": "https://ecode360.com/print/BR1789?guid=9490859",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Accessory uses: 20 feet'"
+      }
+    }
+  }
+}

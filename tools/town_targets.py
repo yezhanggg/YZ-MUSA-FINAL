@@ -1474,6 +1474,7 @@ FIXED_BATCH.update({g: 41 for g in ("4204506024", "4212381000", "4201763048")})
 FIXED_BATCH.update({g: 42 for g in ("4207537392", "4200356384", "4209115848")})
 FIXED_BATCH.update({g: 43 for g in ("4204518160", "4201146680", "4201759384")})
 FIXED_BATCH.update({g: 44 for g in ("4200722264", "4213383440", "4202921624")})
+FIXED_BATCH.update({g: 45 for g in ("4202982664", "4204515232", "4200708680")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1730,6 +1731,19 @@ EXTRAS = {
     "4200722264": "batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment defined but not listed)",
     "4213383440": "Code 270-109A ECHO housing by conditional use, family only (Residential, Suburban Residential, Farming)",
     "4202921624": "Code 27-1602.1C(7) temporary home for family members (mobile home), family only",
+    # Batch 45 (2026-11-17): the next towns by population without a rule file. Benner (Centre) was skipped (zoning
+    # ordinance only as a PDF on the township website, no codified zoning found as web pages), Perkiomen (Montgomery)
+    # (eCode360 code through 8-2-2022, and Ord. No. 246 of 5-6-2025, a Chapter 310 zoning amendment, not yet codified),
+    # West Donegal (Lancaster) (district design requirements tables only in PDF attachments), Collier (Allegheny) (Ord.
+    # No. 741 of 8-10-2026 and a zoning ordinance of 10-12-2026, Chapter 27 amendments, not yet codified), Upper Leacock
+    # (Lancaster) (zoning ordinance only as a PDF on the township website), North Londonderry (Lebanon) (Chapter 150
+    # zoning only as a PDF on the township website), Upper Makefield (Bucks) (zoned by the Newtown Area Joint Municipal
+    # Zoning Ordinance, whose eCode360 code has Ord. No. 2026-01 and No. 2026-03 amending Article VIII not yet
+    # codified), Carbondale (Lackawanna) (zoning only as a PDF on the city website) and London Grove (Chester) (Ord. No.
+    # 213 of 2026, a replacement zoning ordinance, not yet codified).
+    "4202982664": "Code 350-1101C(13) supplemental dwelling unit by right in AP, special exception in V, conditional use in SRR, RR and RC",
+    "4204515232": "batch 45 by population. Code Chapter 610 has no ADU text (610-27B bars a rear dwelling and 610-34C(5) garage habitation, 610-28C conversion by special exception in A)",
+    "4200708680": "batch 45 by population. Code Chapter 195 has no ADU text (195-17A conversion apartment unit by conditional use in R-1, duplex by right in R-1 and UD)",
 }
 
 if __name__ == "__main__":

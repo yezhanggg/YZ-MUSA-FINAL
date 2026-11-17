@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 185,
-      "population": 6287928,
-      "share_of_pa": 0.4836
+      "towns_beyond_the_two_cities": 188,
+      "population": 6314536,
+      "share_of_pa": 0.4856
     }
   ],
   "towns": [
@@ -4538,6 +4538,78 @@
         "named as a town with an ADU ordinance (Code 27-1602.1C(7) temporary home for family members (mobile home), family only)"
       ],
       "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether the temporary home for family members (27-1602.1C(7), a mobile home on 'any lot') is a by-right accessory use in every district that permits customary residential accessory uses, and whether it reaches C-1 and C-2. Whether any family member qualifies or only parents or grandparents (27-503.1A(3)(c)). Whether the accessory structure heights of 27-1602.1B(1) reach the mobile home. Not read: Part 2 definitions, Part 13, 27-1604, Parts 20, 21 and 25, C-2 area and bulk (27-1003), Chapter 8 floodplain management."
+    },
+    {
+      "geoid": "4202982664",
+      "geoid_aliases": [],
+      "name": "West Caln township",
+      "county": "Chester",
+      "type": "township",
+      "population": 8910,
+      "population_with_aliases": 8910,
+      "housing_units": 3422,
+      "pop_rank": 306,
+      "file": "pa_chester_west_caln",
+      "batch": 45,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/38019890",
+      "plain_fetch": null,
+      "code_current_through": "2026-06-17",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 350-1101C(13) supplemental dwelling unit by right in AP, special exception in V, conditional use in SRR, RR and RC)"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: whether the farm accessory uses of 350-1101B(6), by right in AP, SRR and RR, and MP's by-right 350-1101B with no exception let a supplemental unit or farm dwelling in without a hearing. Whether a supplemental unit counts toward the AP lot limit and the RR and RC density caps. 350-1610, 350-1708 and 350-1002D onward were not read."
+    },
+    {
+      "geoid": "4204515232",
+      "geoid_aliases": [],
+      "name": "Collingdale borough",
+      "county": "Delaware",
+      "type": "borough",
+      "population": 8908,
+      "population_with_aliases": 8908,
+      "housing_units": 3515,
+      "pop_rank": 307,
+      "file": "pa_delaware_collingdale",
+      "batch": 45,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/29755627",
+      "plain_fetch": null,
+      "code_current_through": "2023-09-05",
+      "code_note": null,
+      "why": [
+        "added as batch 45 by population. Code Chapter 610 has no ADU text (610-27B bars a rear dwelling and 610-34C(5) garage habitation, 610-28C conversion by special exception in A)"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: Ord. No. 199 (short-term rentals, 12-30-2024) is not codified and was not read. Whether the 5,000 sq ft of 610-19B counts each unit of a 610-28C conversion. Which figures bind a house in C (610-22 or 610-20). The Chapter 247 variance article and Chapter 506 were not read."
+    },
+    {
+      "geoid": "4200708680",
+      "geoid_aliases": [],
+      "name": "Brighton township",
+      "county": "Beaver",
+      "type": "township",
+      "population": 8790,
+      "population_with_aliases": 8790,
+      "housing_units": 3364,
+      "pop_rank": 311,
+      "file": "pa_beaver_brighton",
+      "batch": 45,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/9489984",
+      "plain_fetch": null,
+      "code_current_through": "2026-01-12",
+      "code_note": null,
+      "why": [
+        "added as batch 45 by population. Code Chapter 195 has no ADU text (195-17A conversion apartment unit by conditional use in R-1, duplex by right in R-1 and UD)"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: whether a 195-17A conversion apartment unit must meet the R-1 conditional use yards (195-20B, D). Whether an R-1 or UD duplex may be made by enlarging a house. Article VIII (planned residential development) and 195-135B(13) to 195-137.20 were not read."
     }
   ]
 }
