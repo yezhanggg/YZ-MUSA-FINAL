@@ -4633,7 +4633,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 370-229C accessory dwelling unit by right on an Option 2 conservancy lot of 10 acres or more (FR, R-1))"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether the ADU belongs to Option 2 (370-229C) or Option 3 (370-7 'Conservancy lot', 370-229B(3)), whether R-2 reaches the conservation options through 370-25A, and whether the ADU's yards are the 370-17 and 370-21 district figures or the 370-230 option tables. 370-143 and Chapter 320 were not read."
+      "status_note": "Drafted 2026-11-17, fix round done. Open: whether a conservancy lot in an Option 3 subdivision can hold the ADU (370-7 'Conservancy lot', 370-229B(3)), though the weight of the text is Option 2, whether R-2 and APO I reach the conservation options through 370-25A and 370-31A(1), whether the ADU's yards are the 370-17 and 370-21 district figures or the 370-230 option tables, and the size cap for a unit in the house or in an existing building that is not historic (370-229C(3)). The 370-230B impervious cap on an Option 2 lot is only in a note. 370-143, the APO II lot minimum and Chapter 320 were not read."
     },
     {
       "geoid": "4207121032",
@@ -4647,7 +4647,7 @@
       "pop_rank": 318,
       "file": "pa_lancaster_east_donegal",
       "batch": 46,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO",
@@ -4657,7 +4657,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 52-268 elder cottage by conditional use, family only (A, R-2, R-3, R-4))"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether 52-183(a) asks two spaces for the elder cottage, whether the cottage counts as an added use under the A district limits (52-114(c)(1)), and whether 52-62 reaches an ADU in districts that do not list the elder cottage. The variance section 52-352, the R-4 front yards and the AC use list were not read."
+      "status_note": "Verified 2026-11-17 after the fix round. For a later check: whether 52-268(8) means the principal or the accessory side and rear yards (the larger is shown), whether 52-183(a) asks two spaces for the cottage, whether the cottage counts as an added use under 52-114(c)(1), and whether 52-149 needs the district lot area for each dwelling (twice the minimum is shown). The AC use list was read only at 52-123(b)(1)j."
     },
     {
       "geoid": "4205571912",
@@ -4671,7 +4671,7 @@
       "pop_rank": 323,
       "file": "pa_franklin_southampton",
       "batch": 46,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
@@ -4681,7 +4681,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 39-321 ECHO housing by right, family only (A, R-1, R-2))"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether a unit over an existing garage is the conversion of an existing accessory structure, which services the R-2 'On-Lot Water' column means, and whether the 25 ft accessory height binds an ECHO unit. Part 4, the Part 6 variance section and Chapter 10 Parts 1 to 3 were not read."
+      "status_note": "Verified 2026-11-17 after the fix round. For a later check: whether the 39-903B lot area per dwelling unit counts an ECHO unit (shown as an if), whether a unit over an existing garage is the conversion of an existing accessory structure, which services the R-2 'On-Lot Water' column means, whether the 25 ft accessory height binds an ECHO unit, and whether 39-312 farm housing reaches districts other than A. A new ECHO unit is read as barred in the whole identified floodplain (10-407.3A against the ECHO definition)."
     },
     {
       "geoid": "4207182824",

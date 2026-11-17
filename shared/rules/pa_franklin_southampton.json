@@ -19,7 +19,7 @@
     "code_host": "municode",
     "code_url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
     "code_current_through": "2024-12-23",
-    "code_current_through_note": "Municode version 'Dec 23, 2024 (Current)'. The latest zoning history note seen is Ord. No. 2024-002 of 10-22-2024",
+    "code_current_through_note": "Municode version 'Dec 23, 2024 (Current)': 'Codified through Ordinance No. 2024-002, enacted October 22, 2024. (Supp. No. 3)'",
     "checks": [
       "ECHO housing (Elder Cottage Housing Opportunities), 'also known as granny flat or elder cottage housing': accessory to the house, one or two bedrooms, connected to the house's utilities, and either transportable manufactured housing without a permanent foundation or the residential conversion of an existing accessory structure (Part 14 'ECHO Housing'). Permitted by right in A, R-1 and R-2 (39-321A)",
       "ECHO standards: at most two stories and 900 sq ft of total floor area, one per lot, combined building coverage within the district maximum, occupied by an elderly, handicapped or disabled person related to the occupants of the house by blood, marriage or adoption, at most two people, connected to the house's utilities, no added parking when the house meets its own, not in the required front yard and within the side and rear yards for principal uses, an open covered walkway to the house allowed. The right to occupy ends on the death or relocation of the family member or the sale of the property, and the unit is removed (or a converted accessory structure restored) within 90 days. A letter of determination from the Zoning Officer comes before the land use and building permits (39-321A(1) to (12))",
@@ -28,10 +28,15 @@
       "During construction of a single-family house one mobile home or travel trailer may be lived in for six months, once extendable for six more (39-306A)",
       "Accessory buildings: at most 25 ft tall, they meet the yard rules (a nonpermanent one of 200 sq ft or less and one story may be 5 ft from side and rear lines), together cover at most 30% of the required rear or side yard, and stand no nearer the street than the house's setback (39-300)",
       "An existing small lot may be used if it meets all district rules other than lot area, width and side yards, with side yards of 8 ft and rear yards of 10 ft (39-302D)",
-      "Floodplain (Chapter 10): new construction or substantial improvement of a residential structure in the identified floodplain must have its lowest floor 1.5 ft above the 100-year flood elevation, and manufactured homes are prohibited in the floodway (10-404.1, 10-407.1)",
-      "Parking: at least two spaces for each dwelling unit, three where more than two unrelated persons live in it. A garage or carport counts, and a front-yard driveway of a one- or two-family house counts as up to two (39-304A, B)"
+      "Floodplain (Chapter 10): new construction or substantial improvement of a residential structure in the identified floodplain must have its lowest floor 1.5 ft above the 100-year flood elevation. Manufactured homes are prohibited in the floodway and within 50 ft landward of the top of bank in the other floodplain areas, and where permitted in any floodplain area they must be placed on a permanent foundation. Other new construction within 50 ft landward of the top of bank needs a permit from the Department of Environmental Protection. An accessory structure skips the elevation rule only if it is not used for human habitation (10-402.3B, 4B, 10-404.1, 10-404.4, 10-407.1 to 10-407.3)",
+      "Parking: at least two spaces for each dwelling unit, three where more than two unrelated persons live in it. A garage or carport counts, and a front-yard driveway of a one- or two-family house counts as up to two (39-304A, B)",
+      "Commercial district: a single apartment combined with a permitted commercial use in a multiple use building, and conversion apartments combined with a commercial use, are conditional uses (39-1002D, E)",
+      "C-I permits as accessory uses 'dwellings for bona fide caretakers or watchmen only' (39-1101S)",
+      "Buildings for seasonal laborers and similar farm employees and their families are permitted as an accessory use to agricultural operations, with a land use permit, and group quarters stand at least 500 ft from property lines (39-312)",
+      "Variances: the Zoning Hearing Board on the findings of 39-603C(a) to (e). No bar on a use variance was found. A nonconforming use may not be enlarged by more than 50% without the Board's approval (39-400C)",
+      "The R-2 table heads its lot figures 'Minimum required for single-family detached dwellings (minimum required for each dwelling unit)'. If an ECHO unit counts as a dwelling unit, a lot with public water and sewer needs 17,000 sq ft for the house and the unit (39-903B)"
     ],
-    "notes": "Read in a browser on Municode on 2026-11-17, by text and screenshots. Read: Parts 1 to 3 to 39-309 (39-310 to 39-320 not read except 39-320's heading), 39-321, Parts 7 to 10 use lists and minimum area tables, the C-I use list start (39-1101), Part 14 from 'Dwelling' to 'Garden apartment', 39-600 and 39-601, and Chapter 10 sections 10-404 to 10-407. Not read: Part 4 (nonconforming uses), Part 5, Part 6 after 39-601 (including the variance and special exception sections), Parts 12, 13 and 15, the C-I lot figures, the rest of Part 14 (lot coverage not found), and Chapter 10 Parts 1 to 3 and 5 to 7. No section on uses not listed was found."
+    "notes": "Read in a browser on Municode on 2026-11-17, by text and screenshots. Read: Parts 1 to 3 to 39-309 (39-310 to 39-320 not read except 39-320's heading), 39-321, Parts 7 to 10 use lists and minimum area tables, the C-I use list start (39-1101), Part 14 from 'Dwelling' to 'Garden apartment', 39-600 and 39-601, and Chapter 10 sections 10-404 to 10-407. Not read: most of Part 4, Part 5, Part 6 after 39-601 other than 39-603C, Parts 12, 13 and 15, the C-I lot figures, the rest of Part 14 (lot coverage not found), and Chapter 10 Parts 1 to 3 and 5 to 7. No section on uses not listed was found. A later check read Part 14 'Dwelling, Single-Family, Semi-Detached', 'Dwelling, Single-Family, Attached (Row)' and 'Family', 39-312, 39-400C, 39-603C, 39-1002D and E, 39-1101S and W, and Chapter 10 sections 10-301, 10-402, 10-404.4 and 10-407."
   },
   "adu": {
     "term": {
@@ -81,11 +86,11 @@
     },
     "fallback_path": {
       "value": "variance",
-      "section": "Part 6",
+      "section": "39-603C",
       "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
       "verified_on": "2026-11-17",
-      "confidence": "secondary",
-      "note": "Zoning Hearing Board. The variance section of Part 6 was not read, so whether it bars a use variance is not known"
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 39-603C(a) to (e). No bar on a use variance was found"
     },
     "alternatives": {
       "value": [
@@ -169,9 +174,50 @@
           "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
           "confidence": "secondary",
           "note": "A new two-unit building, not a unit added to a house. The figures are for a lot with centralized water and sewer"
+        },
+        {
+          "name": "Dwelling for a caretaker or watchman (C-I)",
+          "path": "by_right",
+          "districts": [
+            "C-I"
+          ],
+          "conditions": "An accessory use customarily incidental to a permitted C-I use, for bona fide caretakers or watchmen only",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot holds a permitted C-I use and the dwelling houses its bona fide caretaker or watchman",
+              "section": "39-1101S"
+            }
+          ],
+          "section": "39-1101S",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "verified",
+          "note": "Housing for a caretaker or watchman of a business, not a general ADU"
+        },
+        {
+          "name": "Housing for seasonal and farm employees (A)",
+          "path": "by_right",
+          "districts": [
+            "A"
+          ],
+          "conditions": "Buildings for seasonal laborers and similar farm employees and their families, as an accessory use to an agricultural operation, with a land use permit and federal and state approvals. Group quarters stand at least 500 ft from property lines",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is an agricultural operation and the occupants work on it",
+              "section": "39-312"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "39-312",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "secondary",
+          "note": "Housing for farm workers on a farm, not a general ADU. 39-312 reaches agricultural operations in any district that permits them. Only A was checked"
         }
       ],
-      "section": "39-901, 39-1001, 39-1002",
+      "section": "39-312, 39-901, 39-1001, 39-1002, 39-1101S",
       "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
       "verified_on": "2026-11-17",
       "confidence": "secondary"
@@ -190,14 +236,12 @@
       "confidence": "verified"
     },
     "building_types": {
-      "value": [
-        "detached"
-      ],
-      "section": "39-321A, Part 14 'ECHO Housing'",
+      "value": null,
+      "section": "39-321A, Part 14 'Dwelling, Single-Family, Semi-Detached', 'Dwelling, Single-Family, Attached (Row)'",
       "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
       "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "'as an accessory use to a principal single-family residence'"
+      "note": "'as an accessory use to a principal single-family residence'. Part 14 names semi-detached and row houses single-family dwellings, so a twin or row house is read to qualify. The lot must still hold the unit within the yards and coverage"
     },
     "districts_read_no_listing": {
       "value": [
@@ -207,7 +251,8 @@
       "section": "39-1001, 39-1002, 39-1101",
       "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
       "verified_on": "2026-11-17",
-      "confidence": "verified"
+      "confidence": "verified",
+      "note": "Neither lists ECHO housing. C-I permits dwellings for bona fide caretakers or watchmen only (39-1101S)"
     },
     "gates": {
       "value": [
@@ -246,7 +291,7 @@
         },
         {
           "kind": "other",
-          "condition": "Within any FW (floodway area), manufactured homes shall be prohibited.",
+          "condition": "Where permitted within any floodplain area, all manufactured homes and any improvements to them must be placed on a permanent foundation, and manufactured homes are prohibited in the floodway. A new ECHO unit must be transportable manufactured housing used without a permanent foundation, so it cannot meet both rules anywhere in the identified floodplain.",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -254,16 +299,35 @@
           "districts": null,
           "building_types": null,
           "overlays": [
-            "Floodway (FW)"
+            "Identified floodplain area"
           ],
           "outside_zoning_chapter": "Chapter 10",
-          "section": "10-407.1",
+          "section": "10-407.1, 10-407.3A, 10-301, Part 14 'ECHO Housing'",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "In the general and special floodplain areas manufactured homes are prohibited within 50 ft landward of the top of bank of any watercourse. Other new construction or development there needs a permit from the Department of Environmental Protection.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "outside_zoning_chapter": "Chapter 10",
+          "section": "10-407.2, 10-402.3B, 10-402.4B",
           "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
           "confidence": "verified"
         },
         {
           "kind": "other",
-          "condition": "Within any identified floodplain area, new construction or substantial improvement of a residential structure must have the lowest floor, including the basement, 1.5 ft above the 100-year flood elevation.",
+          "condition": "Within any identified floodplain area, new construction or substantial improvement of a residential structure must have the lowest floor, including the basement, 1.5 ft above the 100-year flood elevation. An accessory structure skips this only if it is not used for human habitation, so a converted accessory structure used as an ECHO unit must be elevated when the work is a substantial improvement.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -272,12 +336,12 @@
             "Identified floodplain area"
           ],
           "outside_zoning_chapter": "Chapter 10",
-          "section": "10-404.1",
+          "section": "10-404.1, 10-404.4",
           "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
           "confidence": "verified"
         }
       ],
-      "section": "39-321, 10-404, 10-407",
+      "section": "39-321, 10-402, 10-404, 10-407",
       "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
       "verified_on": "2026-11-17",
       "confidence": "verified"
@@ -610,7 +674,8 @@
             "setback_rear_ft": 25,
             "max_building_coverage": 0.5,
             "principal_max_height_ft": 40,
-            "section": "39-903B"
+            "section": "39-903B",
+            "lot_area_per_unit_sqft": 15000
           },
           {
             "when": "On-lot water and sewer",
@@ -622,7 +687,8 @@
             "setback_rear_ft": 25,
             "max_building_coverage": 0.5,
             "principal_max_height_ft": 40,
-            "section": "39-903B"
+            "section": "39-903B",
+            "lot_area_per_unit_sqft": 30000
           }
         ],
         "section": "39-903B",
@@ -630,6 +696,14 @@
         "verified_on": "2026-11-17",
         "confidence": "secondary",
         "note": "The 'On-Lot Water' column is read as on-lot water with public sewer. The table gives no column for public water with on-lot sewer"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 8500,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The table heads its figures 'Minimum required for single-family detached dwellings (minimum required for each dwelling unit)'. Whether an ECHO unit counts as a dwelling unit is not settled"
       }
     }
   }
