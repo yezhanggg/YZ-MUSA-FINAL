@@ -145,17 +145,17 @@
    },
    {
     "tier": "verified",
-    "places": 124,
-    "pop": 4806747,
-    "pop_share": 0.3681,
-    "housing_units": 2076693
+    "places": 126,
+    "pop": 4823719,
+    "pop_share": 0.3694,
+    "housing_units": 2083550
    },
    {
     "tier": "drafted",
-    "places": 76,
-    "pop": 1617590,
-    "pop_share": 0.1239,
-    "housing_units": 661461
+    "places": 74,
+    "pop": 1600618,
+    "pop_share": 0.1226,
+    "housing_units": 654604
    },
    {
     "tier": "reported",
@@ -262,14 +262,14 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 53,
-    "pop": 992364
+    "places": 52,
+    "pop": 983661
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 17,
-    "pop": 385104
+    "places": 16,
+    "pop": 376835
    },
    {
     "tier": "reported",
@@ -310,14 +310,14 @@
    {
     "tier": "verified",
     "status": "limited",
-    "places": 59,
-    "pop": 2933869
+    "places": 60,
+    "pop": 2942572
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 60,
-    "pop": 1359079
+    "places": 61,
+    "pop": 1367348
    },
    {
     "tier": "verified",
@@ -391,6 +391,14 @@
    "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
    "other": "the inventory lists this use in its ADU column",
    "note": "Decided: Accessory Mobile Home on 2 acres is a second dwelling accessory to the house, so it is kept. Accessory Mobile Home (min. 2 acres) special exception (A-1, GC, RR) (inventory dated 2024-09)"
+  },
+  {
+   "geoid": "4213321464",
+   "name": "East Manchester township",
+   "kind": "rule_file_vs_inventory_detail",
+   "kept": "verified limited, class family_only (pa_york_east_manchester)",
+   "other": "limited, class discretionary (ycpc_senior_housing_2024, 2024-09)",
+   "note": "ADU conditional use (A, AO, CO, R-1, R-2, R-3, V) (inventory dated 2024-09)"
   },
   {
    "geoid": "4213325584",

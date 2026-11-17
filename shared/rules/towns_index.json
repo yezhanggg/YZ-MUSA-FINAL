@@ -4767,7 +4767,7 @@
       "pop_rank": 332,
       "file": "pa_york_east_manchester",
       "batch": 48,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13287498",
@@ -4777,7 +4777,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 255-21D accessory dwelling unit by right, family only (CO, A, R-1, R-2, R-3, AO, V))"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the 900 sq ft minimum livable floor area for every dwelling unit (255-42) reaches an ADU capped at 900 sq ft or 30% of the house (255-21D(1)), whether the CO and A dwelling unit limits and 'Each dwelling unit shall be located on an individual lot' (255-9E, 255-10E) bar an ADU there, and whether the 30% share counts the unit. A unit in a separate building is not named (255-90)."
+      "status_note": "Verified 2026-11-17 (fix round). Open for a later check: which minimum unit size applies to an ADU, 255-42 (900 sq ft) against the 255-21D(1) cap, shown as a condition and never a bar, whether the CO and A dwelling unit limits and 'Each dwelling unit shall be located on an individual lot' (255-9E, 255-10E) bar an ADU there (a disputed bar), whether the 30% share counts the unit, and whether 255-19 lets the Zoning Hearing Board hear a unit in a detached building as a similar use. 255-48 and 199-5 were not reopened."
     },
     {
       "geoid": "4209585592",
@@ -4801,7 +4801,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 170-83H(9) in-law suite by special exception (R-1, R-2, TC))"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the code's accessory dwelling unit definition (800 sq ft, two people, owner occupancy, 170-23 'Dwelling' H) binds an H-9 in-law suite, whether the Board will require relatives (170-83H(9) states only an intent), and whether the suite counts toward the average lot area per dwelling unit (170-32B, 170-37A(2)). The house's parking count is in Table 2, a PDF not opened."
+      "status_note": "Drafted 2026-11-17 (fix round). Open: setbacks by form: the tool shows the district 8/25 ft for a garage conversion, the code gives 4 ft (170-83H(3)(d)), until the engine holds setbacks by form. Also open: whether the code's accessory dwelling unit definition (170-23 'Dwelling' H: 800 sq ft, two people, owner occupancy) binds an H-9 in-law suite (not applied), whether the Board will require relatives (170-83H(9) states only an intent), whether the suite counts toward the average lot area per dwelling unit (not applied), and whether an addition in the floodplain is a barred new structure with no variance (170-86A(5)(c), (8)(b)[2]) or an improvement (170-86A(6)(d)[1]). The Table of Use Regulations and Table 2 parking are PDFs read only as search snippets, so 'prohibited' outside R-1, R-2 and TC rests on 170-79, 170-80D and the snippet."
     },
     {
       "geoid": "4212511176",
@@ -4815,7 +4815,7 @@
       "pop_rank": 346,
       "file": "pa_washington_canton",
       "batch": 48,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30860010",
@@ -4825,7 +4825,7 @@
       "why": [
         "added as batch 48 by population. Code Chapter 27 has no ADU text (27-2301.1.8 single-family conversion to two or three units in A-1, R-1, R-2, R-3)"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether a single-family conversion in R-1 and R-2 is by right (27-304.1) or a conditional use (27-401.1 lists 'Conversion apartment' as conditional), what the '0' acre single-family lot in A-1 and R-1 means, whether lot coverage counts only buildings, and the duplex rows of 27-401.1 that the Land Use Table does not list. 27-2809 special exceptions not read."
+      "status_note": "Verified 2026-11-17 (fix round). Open for a later check: whether a single-family conversion in R-1 and R-2 is by right (27-304.1, 27-105, MPC 603.1) or a conditional use (27-401.1, 27-2803(1)), shown as disputed, what the '0' acre single-family lot in A-1 and R-1 means, whether lot coverage counts only buildings, and the net developable area behind the on-lot sewage density (27-305(2)), said as a condition on the conversion paths since the tool cannot test it by the lot's services."
     }
   ]
 }

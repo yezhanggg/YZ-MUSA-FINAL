@@ -35,18 +35,19 @@
     "checks": [
       "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, ECHO, elder cottage, second dwelling, living quarters, caretaker, conversion, temporary dwelling, extended family) find only the single-family conversion use (27-203, 27-2301.1.8, 27-304.1), conversion rows in the area and bulk tables (27-401.1) and unrelated uses",
       "Single-family conversion: 'A change in residential use form one single-family dwelling to two or three dwelling units in the same building' (27-203). The Land Use Table marks it P (permitted) in A-1, R-1, R-2 and R-3 (27-304.1, row 8). It needs at most three units in the building, two means of egress from each floor, one parking space on the lot for each apartment unit, no front-yard parking except in a driveway, and Township review of the floor plans under the building code (27-2301.1.8)",
-      "The district area and bulk tables list 'Conversion apartment' in R-1 and 'Conversion apartments' in R-2 among the conditional uses, and 'Multifamily conversion' among the permitted uses in R-3 (27-401.1(2)B, (3)B, (4)A). They give no figures of their own ('#: Standards for principal use apply'). Where the language is in doubt the code says it 'shall be interpreted ... in favor of the property owner' (27-105). Ask the zoning officer whether a conversion in R-1 or R-2 is by right or a conditional use before the Board of Supervisors",
+      "The district area and bulk tables list 'Conversion apartment' in R-1 and 'Conversion apartments' in R-2 among the conditional uses, and 'Multifamily conversion' among the permitted uses in R-3 (27-401.1(2)B, (3)B, (4)A). They give no figures of their own ('#: Standards for principal use apply'). Where requirements of the chapter differ, 'the most restrictive or that imposing the higher standards shall govern' (27-2803(1)), which points to the conditional use. Where the language is in doubt it 'shall be interpreted ... in favor of the property owner' (27-105, 27-2803(2), MPC 603.1), and the R-1 and R-2 rows name a conversion apartment, not a single-family conversion. Ask the zoning officer whether a conversion in R-1 or R-2 is by right or a conditional use before the Board of Supervisors",
       "No district lists a second dwelling on a house lot. A new detached unit is not a listed use, so it is a use variance from the Zoning Hearing Board (27-2807.9). No bar on a use variance was found",
       "The area and bulk tables list 'Duplex housing' as permitted in R-2 (32,000 sq ft) and R-3 (12,000 sq ft), while the Land Use Table lists single-family semidetached and attached dwellings, not duplexes (27-401.1(3)A, (4)A, 27-304.1)",
-      "On-lot sewage: 'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres' (27-305(2)). Where public water or sewer is at or near the lot, the owner must connect (27-501.2(4)B)",
+      "On-lot sewage: 'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres' (27-305(2)). A conversion or duplex on such a lot is a new residential use, so two units need about four net developable acres and three units six. Net developable area leaves out constrained land (27-203), so the tool's gross figures are a floor. Where public water or sewer is at or near the lot, the owner must connect (27-501.2(4)B), and sewage facilities need permits from the Washington County Sewage Council (27-501.2(4)D)",
       "A-1 and R-1 single-family lots: '0' acres, 120 ft wide, side 20 ft, rear 30 ft, height 35 ft. The R-1 front yard is 40 ft on a local street, 50 ft on a collector and 60 ft on an arterial street (27-401.1(1)A, (2)A)",
       "Sensitive environmental areas 'shall not be physically disturbed or used for any use other than agricultural uses, natural conservation areas' and conservation: natural slopes over 25%, wetlands, and quarries, streams, lakes, dams or ponds and all areas within 50 ft of them (27-501.2(1))",
-      "Floodplain (Chapter 8): a permit is needed for any construction or development in the township (8-202, 8-302). 'Within any identified floodplain area, any new construction shall be prohibited' unless the Township grants a variance, and then basements are prohibited and the lowest floor must be at or above the regulatory flood elevation (8-502(1), C(1), 8-801). An accessory structure there 'shall not be designed or used for human habitation' (8-502(1)E). Fill and manufactured homes are prohibited with no variance (8-503(1)A, 8-506). Work of 50% or more of market value on an existing structure is a substantial improvement (8-702)",
-      "A nonconforming use may be expanded by 25% or less of its floor or land area (27-2402). No relief for a small lot of record was found in the parts read",
+      "Floodplain (Chapter 8): a permit is needed for any construction or development in the township (8-202, 8-302). The floodplain includes the FIRM areas of 9-30-2015 and community-identified flood hazard areas (8-401(1)A, B). 'Within any identified floodplain area, any new construction shall be prohibited' unless the Township grants a variance, and then basements are prohibited and the lowest floor must be at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft (8-502(1), C(1), 8-801, 8-902). New construction means structures started on or after September 30, 2015, with any later improvements to them (8-902). An addition to a house built before then is an expansion of an existing structure: it may not raise the base flood elevation, work of 50% or more of market value must fully comply, and smaller work must be elevated or floodproofed to the greatest extent possible (8-702A, B, D). An accessory structure there 'shall not be designed or used for human habitation' (8-502(1)E). Fill and manufactured homes are prohibited with no variance (8-503(1)A, 8-506), and an on-site sewage system may be there only in strict compliance with state and local rules (8-503(1)C(3)). The Township, not the Zoning Hearing Board, grants floodplain variances (8-801). 27-501.2(2)B still cites the repealed Ord. No. 1-2013",
+      "A nonconforming use may be expanded by 25% or less of its floor or land area (27-2402(1)). A nonconforming building that encroaches on a yard may be expanded by an attached addition along the same line, up to 75% of the length of the encroaching wall, without worsening the encroachment (27-2402(4)). No relief for a small lot of record was found in Part 24",
       "Accessory structures are permitted in every district (27-304.1, row 83) and 'must be owned by the same person(s) as the property owner' (27-203). No accessory building yards or height were found in the parts read",
-      "Conditional uses go to the Board of Supervisors after Planning Committee review and a public hearing (27-2808.1). Variances: 27-2807.9"
+      "Conditional uses go to the Board of Supervisors after Planning Committee review and a public hearing, and the Board may not grant variances while granting one (27-2808.1). Special exceptions are only those the chapter states, and no section opens a special exception for a use not listed (27-2809, 27-2809.1). Variances: 27-2807.9",
+      "Airport Safety Zone Overlay: parts of the township are in the airport hazard area of the Washington County Airport, with height controls on structures (27-501.2(3))"
     ],
-    "notes": "Zoning office: Canton Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 27-105, 27-203, 27-304.1, 27-305, 27-401.1, Part 5, Part 8, 27-2301.1.8, Part 24, 27-2807.9, 27-2808.1, Chapter 8 from 8-101 to the start of 8-902, and code searches. Not read: 27-101 to 27-104, 27-106, 27-201, 27-202, 27-301 to 27-304, 27-401, 27-402, Parts 6, 7 and 9 to 22, Part 23 except 27-2301.1.8, Parts 25 to 27, Part 28 except 27-2807.9 and 27-2808.1 (so 27-2809 and 27-2809.1 on special exceptions were not read), and the rest of the Chapter 8 definitions. Open points: whether a single-family conversion in R-1 and R-2 is by right (27-304.1) or a conditional use (27-401.1), what the '0' acre minimum for a single-family lot in A-1 and R-1 means, and whether lot coverage counts only buildings."
+    "notes": "Zoning office: Canton Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 27-105, 27-203, 27-304.1, 27-305, 27-401.1, Part 5, Part 8, 27-2301.1.8, Part 24, 27-2807.9, 27-2808.1, Chapter 8 from 8-101 to the start of 8-902, and code searches. Not read: 27-101 to 27-104, 27-106, 27-201, 27-202, 27-301 to 27-304, 27-401, 27-402, Parts 6, 7 and 9 to 22, Part 23 except 27-2301.1.8, Parts 25 to 27, Part 28 except 27-2801, 27-2803, 27-2807.9, 27-2808.1, 27-2809 and 27-2809.1, and the rest of the Chapter 8 definitions. Also read: 27-2801, 27-2803, 27-2809, 27-2809.1 and the Chapter 8 definitions of new construction and the regulatory flood elevation (8-902). Open points: whether a single-family conversion in R-1 and R-2 is by right (27-304.1) or a conditional use (27-401.1, 27-2803(1)), what the '0' acre minimum for a single-family lot in A-1 and R-1 means, whether lot coverage counts only buildings, and the net developable area behind the on-lot sewage density."
   },
   "adu": {
     "term": {
@@ -92,12 +93,17 @@
             "A-1",
             "R-3"
           ],
-          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule",
+          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule. With an on-lot sewage system the conversion is a new use at one dwelling unit per two net developable acres, so two units need about four acres (174,240 sq ft) and three units six (27-305(2))",
           "requires": [
             {
               "test": "house_exists",
               "condition": "An existing single-family dwelling to convert",
               "section": "27-203 'Dwelling single-family conversion'"
+            },
+            {
+              "test": null,
+              "condition": "On a lot with an on-lot sewage system, one dwelling unit per two net developable acres, so about four acres (174,240 sq ft) for two units and six for three",
+              "section": "27-305(2)"
             }
           ],
           "covers_forms": [
@@ -106,7 +112,7 @@
           "builds": [
             "internal"
           ],
-          "section": "27-304.1 (row 8), 27-2301.1.8, 27-203 'Dwelling single-family conversion'",
+          "section": "27-304.1 (row 8), 27-2301.1.8, 27-203 'Dwelling single-family conversion', 27-305(2)",
           "url": "https://ecode360.com/print/CA2579?guid=44235754",
           "confidence": "secondary",
           "note": "A house divided into units, not an ADU. In R-3 the area and bulk table also lists a 'Multifamily conversion' as permitted"
@@ -118,12 +124,17 @@
             "R-1",
             "R-2"
           ],
-          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule",
+          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule. With an on-lot sewage system the conversion is a new use at one dwelling unit per two net developable acres, so two units need about four acres (174,240 sq ft) and three units six (27-305(2))",
           "requires": [
             {
               "test": "house_exists",
               "condition": "An existing single-family dwelling to convert",
               "section": "27-203 'Dwelling single-family conversion'"
+            },
+            {
+              "test": null,
+              "condition": "On a lot with an on-lot sewage system, one dwelling unit per two net developable acres, so about four acres (174,240 sq ft) for two units and six for three",
+              "section": "27-305(2)"
             }
           ],
           "covers_forms": [
@@ -134,11 +145,11 @@
           ],
           "disputed_path": {
             "path": "conditional_use",
-            "section": "27-401.1(2)B, (3)B",
+            "section": "27-401.1(2)B, (3)B, 27-2803(1)",
             "url": "https://ecode360.com/print/CA2579?guid=44235439",
-            "note": "The R-1 and R-2 area and bulk tables list 'Conversion apartment' under 'Minimum Requirements; Conditional Use', which would send it to the Board of Supervisors after a hearing. The Land Use Table marks single-family conversion P, and doubtful language is read in favor of the owner (27-105)"
+            "note": "The R-1 and R-2 area and bulk tables list 'Conversion apartment' under 'Minimum Requirements; Conditional Use', which would send it to the Board of Supervisors after a hearing. Where requirements differ 'the most restrictive or that imposing the higher standards shall govern' (27-2803(1)). The Land Use Table marks single-family conversion P, and doubtful language is read in favor of the owner (27-105, 27-2803(2), MPC 603.1)"
           },
-          "section": "27-304.1 (row 8), 27-2301.1.8, 27-105",
+          "section": "27-304.1 (row 8), 27-2301.1.8, 27-105, 27-305(2)",
           "url": "https://ecode360.com/print/CA2579?guid=44235388",
           "confidence": "secondary",
           "note": "A house divided into units, not an ADU"
@@ -150,7 +161,7 @@
             "R-2",
             "R-3"
           ],
-          "conditions": "Listed in the area and bulk tables as permitted. R-2: 32,000 sq ft, 120 ft wide, front 40 ft, side 30 ft, rear 35 ft, height 30 ft, lot coverage 35%. R-3: 12,000 sq ft, 85 ft wide, front 35 ft, side 15 ft, rear 35 ft, height 30 ft, lot coverage 35%",
+          "conditions": "Listed in the area and bulk tables as permitted. R-2: 32,000 sq ft, 120 ft wide, front 40 ft, side 30 ft, rear 35 ft, height 30 ft, lot coverage 35%. R-3: 12,000 sq ft, 85 ft wide, front 35 ft, side 15 ft, rear 35 ft, height 30 ft, lot coverage 35%. With an on-lot sewage system two units need about four net developable acres (174,240 sq ft) under 27-305(2)",
           "min_lot_by_district": {
             "R-2": 32000,
             "R-3": 12000
@@ -158,7 +169,7 @@
           "builds": [
             "attached"
           ],
-          "section": "27-401.1(3)A, (4)A",
+          "section": "27-401.1(3)A, (4)A, 27-305(2)",
           "url": "https://ecode360.com/print/CA2579?guid=44235439",
           "confidence": "secondary",
           "note": "The Land Use Table does not list a duplex. It lists single-family semidetached dwellings, permitted in A-1, R-1, R-2 and R-3. Whether an existing house may be enlarged into a duplex is not said"
@@ -220,7 +231,6 @@
           "condition": "'Within any identified floodplain area, any new construction shall be prohibited', unless the Township grants a variance. Basements are then prohibited and the lowest floor must be at or above the regulatory flood elevation.",
           "effect": "bars",
           "applies_to": [
-            "attached",
             "detached_new"
           ],
           "districts": null,
@@ -231,6 +241,26 @@
           "section": "8-502(1), C(1), 8-801",
           "url": "https://ecode360.com/print/CA2579?guid=32086374",
           "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "New construction is prohibited in the floodplain unless the Township grants a variance, and new construction means structures started on or after September 30, 2015, with any later improvements to them. An addition to or other work on a house built before then is an expansion or improvement of an existing structure, allowed if it does not raise the base flood elevation, with full compliance at 50% or more of market value and otherwise elevated or floodproofed to the greatest extent possible. Work on a house built on or after that date is barred unless the Township grants a variance.",
+          "effect": "bars",
+          "applies_to": [
+            "attached",
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_built_before",
+          "value_date": "2015-09-30",
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-502(1), 8-702A, B, D, 8-801, 8-902 'New construction'",
+          "url": "https://ecode360.com/print/CA2579?guid=32086374",
+          "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 8"
         },
         {
@@ -253,7 +283,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the floodplain a permit is needed for any construction or development. No expansion of an existing structure may raise the base flood elevation, and work of 50% or more of its market value must fully meet Chapter 8.",
+          "condition": "In the floodplain a permit is needed for any construction or development. No expansion of an existing structure may raise the base flood elevation, work of 50% or more of its market value must fully meet Chapter 8, and smaller work must be elevated or floodproofed to the greatest extent possible.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -261,13 +291,13 @@
           "overlays": [
             "Floodplain"
           ],
-          "section": "8-302, 8-702",
+          "section": "8-302, 8-702A, B, D",
           "url": "https://ecode360.com/print/CA2579?guid=32086374",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
         }
       ],
-      "section": "27-501.2, 8-502",
+      "section": "27-501.2, 8-502, 8-702, 8-902",
       "url": "https://ecode360.com/print/CA2579?guid=44235476",
       "verified_on": "2026-11-17",
       "confidence": "secondary"
@@ -331,8 +361,8 @@
         "section": "27-305(2)",
         "url": "https://ecode360.com/print/CA2579?guid=44235389",
         "verified_on": "2026-11-17",
-        "confidence": "verified",
-        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+        "confidence": "secondary",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'. The density is per net developable acre, land net of constraints (27-203), so 87,120 sq ft of gross lot per unit is a floor"
       }
     },
     "R-1": {
@@ -379,8 +409,8 @@
         "section": "27-305(2)",
         "url": "https://ecode360.com/print/CA2579?guid=44235389",
         "verified_on": "2026-11-17",
-        "confidence": "verified",
-        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+        "confidence": "secondary",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'. The density is per net developable acre, land net of constraints (27-203), so 87,120 sq ft of gross lot per unit is a floor"
       }
     },
     "R-2": {
@@ -443,8 +473,8 @@
         "section": "27-305(2)",
         "url": "https://ecode360.com/print/CA2579?guid=44235389",
         "verified_on": "2026-11-17",
-        "confidence": "verified",
-        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+        "confidence": "secondary",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'. The density is per net developable acre, land net of constraints (27-203), so 87,120 sq ft of gross lot per unit is a floor"
       }
     },
     "R-3": {
@@ -507,8 +537,8 @@
         "section": "27-305(2)",
         "url": "https://ecode360.com/print/CA2579?guid=44235389",
         "verified_on": "2026-11-17",
-        "confidence": "verified",
-        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+        "confidence": "secondary",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'. The density is per net developable acre, land net of constraints (27-203), so 87,120 sq ft of gross lot per unit is a floor"
       }
     }
   }
