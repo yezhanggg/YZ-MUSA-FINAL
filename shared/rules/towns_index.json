@@ -4479,17 +4479,17 @@
       "pop_rank": 296,
       "file": "pa_beaver_economy",
       "batch": 44,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8159919",
       "plain_fetch": null,
       "code_current_through": "2024-05-28",
       "code_note": null,
       "why": [
-        "added as batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment defined but not listed)"
+        "added as batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment only through R-2 transitional development, 180-66MM)"
       ],
-      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether 'conversion apartment' (180-7, a unit created within an existing single-family dwelling) is a use any district allows, since no district lists it and no standards were found. Whether an ADU on an R-A lot is a use 'of the same general character' as a listed use under 180-11B and 180-66M. Whether 92-32B(4) (DEP permit relief near the top of bank for existing structures in an AE area without a floodway) reaches an addition despite 92-23D. Not read: most of 180-7, 180-66O to RR, 180-67 to 69, 180-71 to 80, Article XVII, Chapters 99, 155 and 163."
+      "status_note": "Batch 44 fix round. Points for a later check. A conversion apartment inside an existing house is a conditional use only on an R-2 lot that fronts an arterial or collector street within 1,000 ft of C-1 (180-27B(1)(i), 180-66MM), which the tool cannot test, and the form line still shows a use variance for an internal unit. Whether such a conversion needs one acre (180-28A(2) against 180-66MM(3)) is read in the owner's favor under 180-3C. Whether an ADU on an R-A lot is a use 'of the same general character' as a listed use (180-11B, 180-66M). Whether 92-32B(4) DEP permit relief near the top of bank reaches work on the house. Not read: most of 180-7, 180-66O to KK and NN to RR, 180-67 to 69, 180-71 to 80, Article XVII, the Chapter 92 definition of new construction, Chapters 99, 155 and 163."
     },
     {
       "geoid": "4213383440",
@@ -4503,8 +4503,8 @@
       "pop_rank": 297,
       "file": "pa_york_west_manheim",
       "batch": 44,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/28513605",
       "plain_fetch": null,
@@ -4513,7 +4513,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 270-109A ECHO housing by conditional use, family only (Residential, Suburban Residential, Farming))"
       ],
-      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether ECHO housing reaches the TND district through 270-31A(2) (customary R accessory uses). Whether the 20 ft accessory building height (270-90E) and the 10 ft separation (270-90D) bind an ECHO unit that meets principal setbacks (270-109A(8)). Whether an ECHO unit is a manufactured home for the floodway bar (141-27A). Farming yards grow with lot size (270-46) but the tool shows the one acre yards for a detached unit. Not read: rest of 270-13 (lot coverage), 270-131, Article XVIII, Parts 8 to 11 except 270-197 (conditional use procedure, 270-220B), 270-233, Article XIII."
+      "status_note": "Batch 44 fix round. Points for a later check. Whether ECHO housing reaches TND through 270-31A(2), where the tool shows the general 5 ft side and rear yards. Farming yards grow with lot size (270-46) but the tool shows the one acre yards for a detached unit on a larger lot. Whether the 20 ft accessory height and 10 ft separation (270-90D, E) bind an ECHO unit. Whether an ECHO unit is a manufactured home for the floodway bar (141-27A). Whether 270-7 reaches ECHO housing outside its three districts. The Chapter 141 definition of development was not read, so the top of bank rule is read to reach every form. Not read: 270-86, Article XVIII, the conditional use procedure, 270-233, Article XIII."
     },
     {
       "geoid": "4202921624",
@@ -4528,7 +4528,7 @@
       "file": "pa_chester_east_nottingham",
       "batch": 44,
       "status": "drafted",
-      "checked_on": "2026-11-16",
+      "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30831666",
       "plain_fetch": null,
@@ -4537,7 +4537,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1602.1C(7) temporary home for family members (mobile home), family only)"
       ],
-      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether the temporary home for family members (27-1602.1C(7), a mobile home on 'any lot') is a by-right accessory use in every district that permits customary residential accessory uses, and whether it reaches C-1 and C-2. Whether any family member qualifies or only parents or grandparents (27-503.1A(3)(c)). Whether the accessory structure heights of 27-1602.1B(1) reach the mobile home. Not read: Part 2 definitions, Part 13, 27-1604, Parts 20, 21 and 25, C-2 area and bulk (27-1003), Chapter 8 floodplain management."
+      "status_note": "Batch 44 fix round. Open points the code text does not settle. Who may live in the temporary home: any family member (27-1602.1C(7)), parents or grandparents (27-503.1A(3)(c)), or the immediate family list of 27-1602.1C(1)(b)3). Whether the temporary home is a by-right accessory use under 27-1602 in every district that permits customary residential accessory uses, and whether it reaches C-1 and C-2. Whether 27-803.1E gives one acre to a two-family dwelling without public sewage and water. Whether the accessory structure heights of 27-1602.1B(1) reach the mobile home. The online code runs only to 09-21-2024. Not read: Part 2 definitions, Part 13, 27-1604, Parts 20, 21 and 25, Chapter 8."
     },
     {
       "geoid": "4202982664",

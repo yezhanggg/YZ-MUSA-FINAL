@@ -28,9 +28,11 @@
       "https://ecode360.com/print/EC0999?guid=7256409",
       "https://ecode360.com/print/EC0999?guid=8160157",
       "https://ecode360.com/EC0999/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20caretaker%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22%20OR%20%22garage%20apartment%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20servant%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/EC0999/search?query=%22lot%20coverage%22%20OR%20riparian%20OR%20%22steep%20slope%22%20OR%20%22accessory%20building%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/EC0999/search?query=%22lot%20coverage%22%20OR%20riparian%20OR%20%22steep%20slope%22%20OR%20%22accessory%20building%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/EC0999?guid=8161634",
+      "https://ecode360.com/print/EC0999?guid=8161615"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-17",
     "county": "Beaver",
     "municipality_type": "borough",
     "geoid": "4200722264",
@@ -39,36 +41,40 @@
     "code_current_through": "2024-05-28",
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-28-2024.' New Laws: one, Ord. No. 490 of 2025-12-18 (Police Pension Fund, Chapter 31). A web search found no later zoning amendment",
     "checks": [
-      "The code has no accessory dwelling unit, in-law, ECHO or similar use. No district lists one. In R-1, R-2 and R-3 'any use not specifically listed as an authorized use in the zoning district shall not be permitted' (180-11A)",
+      "The code has no accessory dwelling unit, in-law, ECHO or similar use. In R-1, R-2 and R-3 'any use not specifically listed as an authorized use in the zoning district shall not be permitted' (180-11A)",
       "In R-A, C-1 and I-1 a use not listed may be allowed by the Zoning Hearing Board as a special exception if it is 'of the same general character' as a listed use and its impact is equal or less (180-11B, 180-66M). Of these, only R-A permits single-family dwellings",
       "Where single-family or two-family dwellings are allowed, 'the single-family dwelling or two-family dwelling shall be the only principal structure on the lot', except in an approved planned residential development (180-11C)",
-      "'Conversion apartment' is defined as 'A dwelling unit created within an existing single-family dwelling in accordance with all applicable requirements of this chapter' (180-7), but no district lists it and a code search found no standards for it. Ask the zoning officer how the borough reads it",
+      "'Conversion apartment' is 'A dwelling unit created within an existing single-family dwelling in accordance with all applicable requirements of this chapter' (180-7). R-2 lists 'Transitional development, subject to § 180-66MM' as a conditional use (180-27B(1)(i)). On an R-2 lot that fronts an arterial or collector street and has a lot line within 1,000 ft of a C-1 zoned property, measured along that street, conversion apartments may be set up in an existing single-family dwelling. Each unit needs at least 800 sq ft of habitable floor area, no unit may be in a basement or an accessory garage, accessory structures may not be converted, and each unit needs two parking spaces (180-66MM(1)(f), (4), (5)(b), (6))",
       "No district lists a two-family dwelling outside a planned residential development. A PRD in R-2 needs 25 contiguous acres and Borough Council's approval, and may include two-family dwellings (180-56A, C(1))",
       "Accessory structures over 15 ft are a special exception in R-A, R-1, R-2 and R-3 and need a one acre lot. 'No apartment or other residential occupancy shall be permitted in the accessory structure' (180-66SS)",
       "Detached garages and storage structures may not stand in the minimum required front yard. In R-A they must be 7 1/2 ft from side and rear lines. Elsewhere 10 ft for 500 sq ft or less and 15 ft above that (180-70C(8)(a)). They must be 10 ft from the house unless joined to it (180-70C(10))",
       "In R-1, R-2 and R-3 a detached garage or storage structure may have at most 500 sq ft on a lot up to 21,780 sq ft, 1,000 sq ft on 21,780 to 43,560 sq ft and 1,500 sq ft over 43,560 sq ft (180-70C(8)(b))",
-      "Floodplain (Chapter 92): 'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited' unless a variance is granted under Chapter 92, Article VIII (92-24). No new construction or development within 50 ft landward of the top of bank of a watercourse in an identified floodplain area (92-23D). Accessory structures there may not be used for human habitation (92-24E)",
+      "Floodplain (Chapter 92): 'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited' unless a variance is granted under Chapter 92, Article VIII (92-24). An improvement to an existing structure below 50% of its market value is not barred but must be elevated or floodproofed to the greatest extent possible (92-31, 92-32B(5)). No new construction or development within 50 ft landward of the top of bank of a watercourse in an identified floodplain area (92-23D). Every accessory structure there 'shall not be designed or used for human habitation' (92-24E(1))",
       "Nonconforming lot of record: a conforming structure may be built without a lot area or width variance if the yards, height and coverage are met (180-93A). A conforming use may not be added to a lot that holds a nonconforming use until that use ends (180-91C(3))",
-      "No use variance bar was found. The Zoning Hearing Board decides variances on the findings of 180-100A to E"
+      "No use variance bar was found. The Zoning Hearing Board decides variances on the findings of 180-100A to E",
+      "Temporary uses or structures are a special exception in R-A, C-1 and I-1, but 'The proposed temporary use or structure shall be limited to those uses or structures otherwise authorized in the zoning district' (180-66LL(2)). They are not a path to a second dwelling",
+      "C-1 permits multifamily dwellings by right (180-41A(1)(nn)). That is a building of three or more units, not a unit added to a house lot. C-1 and I-1 permit no single-family dwelling",
+      "An accessory structure over 15 ft adds one foot of side and rear setback for each foot over 15 ft (180-66SS(2)). An accessory structure may not be built until the principal structure it serves exists on the lot (180-11F)",
+      "Where doubt exists about the meaning of a restriction, it is read 'in favor of the property owner and against any implied extension of the restriction' (180-3C)"
     ],
-    "notes": "Zoning office: Economy Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I, 180-7 from 'A-frame sign' to 'Health club' and the definitions of conversion apartment and lot coverage, Articles III to X, 180-63 to 180-66N and 180-66SS, 180-70, 180-81, Articles XV and XVI, Chapter 92 to 92-36 'Base flood elevation', New Laws and code searches. Not read: the rest of 180-7, 180-66O to 180-66RR, 180-67 to 180-69, 180-71 to 180-80, 180-82 to 180-89, Article XVII, Chapters 99, 155 and 163."
+    "notes": "Zoning office: Economy Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16 and 2026-11-17. Read: Article I, 180-7 from 'A-frame sign' to 'Health club' and the definitions of conversion apartment and lot coverage, Articles III to X, 180-63 to 180-66N, 180-66LL, 180-66MM and 180-66SS, 180-70, 180-81, Articles XV and XVI, Chapter 92 to 92-36 'Base flood elevation', New Laws and code searches. Not read: the rest of 180-7, 180-66O to 180-66KK, 180-66NN to 180-66RR, 180-67 to 180-69, 180-71 to 180-80, 180-82 to 180-89, Article XVII, the Chapter 92 definition of new construction, Chapters 99, 155 and 163."
   },
   "adu": {
     "term": {
       "value": null,
       "section": "Chapter 180",
       "url": "https://ecode360.com/8159919",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-17",
       "confidence": "verified",
-      "note": "Searched for in-law, accessory apartment, accessory dwelling, second dwelling, ECHO, caretaker, living quarters, guest house, garage apartment, extended family, household employee, conversion, servant and two-family, and read the use lists of every district. No ADU use. 'Conversion apartment' is defined but not listed in any district (180-7)"
+      "note": "Searched for in-law, accessory apartment, accessory dwelling, second dwelling, ECHO, caretaker, living quarters, guest house, garage apartment, extended family, household employee, conversion, servant and two-family, and read the use lists of every district. No ADU use. 'Conversion apartment' (180-7) is listed only through transitional development in R-2, a conditional use on lots near C-1 (180-27B(1)(i), 180-66MM(1)(f))"
     },
     "status": {
       "value": "not_addressed",
-      "section": "180-11A, B, 180-13, 180-20, 180-27, 180-34",
+      "section": "180-11A, B, 180-13, 180-20, 180-27, 180-34, 180-66MM",
       "url": "https://ecode360.com/print/EC0999?guid=8160370",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "No district lists an accessory dwelling unit. R-1, R-2 and R-3 bar any use not listed. R-A, C-1 and I-1 allow a similar unlisted use by special exception"
+      "note": "No district lists an accessory dwelling unit. R-1, R-2 and R-3 bar any use not listed. R-A, C-1 and I-1 allow a similar unlisted use by special exception. On some R-2 lots a conversion apartment inside an existing house is a conditional use (see the other paths)"
     }
   },
   "approval": {
@@ -94,7 +100,7 @@
       "url": "https://ecode360.com/print/EC0999?guid=8160370",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "'any use not specifically listed in the authorized uses for the zoning district shall not be permitted in that zoning district, unless such use is authorized by the Zoning Hearing Board as a use by special exception' under 180-66M. Only R-A of these districts permits a single-family dwelling. None of R-A, C-1 and I-1 lists a two-family dwelling. Two-family dwellings are listed only inside a planned residential development in R-2, so a second unit on an R-A lot is an unlisted use"
+      "note": "'any use not specifically listed in the authorized uses for the zoning district shall not be permitted in that zoning district, unless such use is authorized by the Zoning Hearing Board as a use by special exception' under 180-66M. Only R-A of these districts permits a single-family dwelling. None of R-A, C-1 and I-1 lists a two-family dwelling or a conversion apartment, so a second unit on an R-A lot is an unlisted use"
     },
     "unlisted_use_districts": {
       "value": [
@@ -119,6 +125,31 @@
     "alternatives": {
       "value": [
         {
+          "name": "Conversion apartment (R-2 transitional development)",
+          "path": "conditional_use",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A conversion apartment is a dwelling unit created within an existing single-family dwelling. Each dwelling unit has at least 800 sq ft of habitable floor area. 'Dwelling units in basements or accessory garages shall not be permitted.' 'No conversion of accessory structures to house a principal use shall be permitted.' Two parking spaces for each dwelling unit, none in a minimum side yard, and no shared parking with a business. Whether the lot needs one acre is not settled. 180-28A(2) gives 'All other principal uses' one acre, while 180-66MM(3) asks one acre only to construct a new building and 180-28 yields to the standards of Article XI. Doubt is read in favor of the owner (180-3C), so the tool does not hold an existing house to one acre. Borough Council decides after review by the Planning Commission and a public hearing (180-3C, 180-7, 180-28A(2), 180-64A, 180-66MM(3), (4), (5)(b), (6), (7))",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot fronts an arterial or collector street and has at least one lot line within 1,000 ft of the boundary of a C-1 zoned property, measured along the right-of-way of that street",
+              "section": "180-66MM(1)"
+            },
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling on the lot",
+              "section": "180-66MM(4)"
+            }
+          ],
+          "parking_spaces": 2,
+          "section": "180-27B(1)(i), 180-66MM(1)(f), (4), (5)(b), (6)",
+          "url": "https://ecode360.com/print/EC0999?guid=8161634",
+          "confidence": "verified",
+          "note": "A unit inside the existing house only, not tied to relatives. Units in a basement, a garage or an accessory building are barred. In an identified floodplain area the work also meets Chapter 92, including no development within 50 ft of the top of bank of a watercourse (92-23D)"
+        },
+        {
           "name": "Planned residential development with two-family dwellings (R-2)",
           "path": "conditional_use",
           "districts": [
@@ -134,9 +165,9 @@
           "note": "A development of many units on a large tract, not a unit added to one house lot"
         }
       ],
-      "section": "180-27B(1)(g), 180-56",
+      "section": "180-27B(1)(g), (i), 180-56, 180-66MM",
       "url": "https://ecode360.com/print/EC0999?guid=8160909",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-17",
       "confidence": "verified"
     }
   },
@@ -162,7 +193,7 @@
       "url": "https://ecode360.com/print/EC0999?guid=8160370",
       "verified_on": "2026-11-16",
       "confidence": "verified",
-      "note": "None lists an accessory dwelling unit. C-1 and I-1 permit no single-family dwelling, and a dwelling there is a nonconforming use (180-41A(2)(c), 180-48A(2)(c))"
+      "note": "None lists an accessory dwelling unit. R-2 lists a conversion apartment only through transitional development (180-66MM). C-1 and I-1 permit no single-family dwelling, and a dwelling there is a nonconforming use (180-41A(2)(c), 180-48A(2)(c))"
     },
     "gates": {
       "value": [
@@ -181,7 +212,7 @@
         },
         {
           "kind": "other",
-          "condition": "An accessory structure taller than 15 ft is a special exception, needs a lot of at least one acre and may not be taller than the house or 35 ft. 'No apartment or other residential occupancy shall be permitted' in it.",
+          "condition": "An accessory structure taller than 15 ft is a special exception, needs a lot of at least one acre, adds one foot of side and rear setback for each foot over 15 ft and may not be taller than the house or 35 ft. 'No apartment or other residential occupancy shall be permitted' in it.",
           "effect": "condition",
           "applies_to": [
             "detached_new",
@@ -204,8 +235,7 @@
           "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited.' A variance under Chapter 92, Article VIII may allow it, with the lowest floor at or above the regulatory flood elevation.",
           "effect": "bars",
           "applies_to": [
-            "detached_new",
-            "attached"
+            "detached_new"
           ],
           "districts": null,
           "building_types": null,
@@ -219,12 +249,31 @@
         },
         {
           "kind": "other",
-          "condition": "In an identified floodplain area 'no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse'. 92-23D names no permit that lifts this.",
+          "condition": "An addition is barred in an identified floodplain area when it is a substantial improvement, work worth 50% or more of the building's market value, unless a variance is granted under Chapter 92, Article VIII (92-24).",
           "effect": "bars",
           "applies_to": [
-            "detached_new",
             "attached"
           ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "disputed_by": {
+            "section": "92-31, 92-32B(5)",
+            "url": "https://ecode360.com/print/EC0999?guid=7256409",
+            "note": "An improvement worth less than 50% of the building's market value is not a substantial improvement. It is not barred but 'shall be elevated and/or floodproofed to the greatest extent possible'. The tool cannot tell the cost of the work against the building's value"
+          },
+          "section": "92-24, 92-31, 92-32",
+          "url": "https://ecode360.com/print/EC0999?guid=7256409",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 92"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area 'no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse'. Development includes the renovation or alteration of a building (92-36). 92-23D names no permit that lifts this.",
+          "effect": "bars",
+          "applies_to": null,
           "districts": null,
           "building_types": null,
           "test": "top_of_bank_ft_over",
@@ -235,20 +284,36 @@
           "disputed_by": {
             "section": "92-32B(4)",
             "url": "https://ecode360.com/print/EC0999?guid=7256409",
-            "note": "For improvements to an existing structure in an AE area without a floodway, 92-32B(4) allows new construction within 50 ft of the top of bank when DEP's regional office issues a permit. Whether that reaches an addition to the house is not settled"
+            "note": "For improvements to an existing structure in an AE area without a floodway, 92-32B(4) allows new construction or development within 50 ft of the top of bank when DEP's regional office issues a permit. Whether that reaches work on the house is not settled"
           },
-          "section": "92-23D",
+          "section": "92-23D, 92-36",
           "url": "https://ecode360.com/print/EC0999?guid=7256409",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 92"
         },
         {
           "kind": "other",
-          "condition": "In an identified floodplain area an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', may have at most 200 sq ft and may have no sanitary facilities. Work on an existing building worth 50% or more of its market value must meet the chapter in full.",
-          "effect": "condition",
+          "condition": "In an identified floodplain area every accessory structure 'shall not be designed or used for human habitation', may have at most 200 sq ft and may have no sanitary facilities. Work worth 50% or more of a building's market value is a substantial improvement, which is prohibited without a variance under Article VIII. Smaller work must be elevated or floodproofed to the greatest extent possible.",
+          "effect": "bars",
           "applies_to": [
             "garage_conversion",
-            "over_garage",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "92-24, 92-24E, 92-32B(5)",
+          "url": "https://ecode360.com/print/EC0999?guid=7256409",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 92"
+        },
+        {
+          "kind": "other",
+          "condition": "A unit made inside the house in an identified floodplain area: work worth 50% or more of the building's market value is a substantial improvement, which is prohibited without a variance under Article VIII. Smaller work must be elevated or floodproofed to the greatest extent possible.",
+          "effect": "condition",
+          "applies_to": [
             "internal"
           ],
           "districts": null,
@@ -256,7 +321,7 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "92-24E, 92-32",
+          "section": "92-24, 92-31, 92-32B(5)",
           "url": "https://ecode360.com/print/EC0999?guid=7256409",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 92"
@@ -264,18 +329,18 @@
       ],
       "section": "180-11C, 180-66SS, Chapter 92",
       "url": "https://ecode360.com/print/EC0999?guid=8160370",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-17",
       "confidence": "secondary"
     }
   },
   "form": {
     "types_allowed": {
       "value": [],
-      "section": "180-11A, B",
+      "section": "180-11A, B, 180-66MM",
       "url": "https://ecode360.com/print/EC0999?guid=8160370",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "No ADU use. 'Conversion apartment' is defined but not listed. A second dwelling may be part of a planned residential development in R-2"
+      "note": "No ADU use. A conversion apartment inside an existing house is a conditional use on some R-2 lots through transitional development (180-66MM). A second dwelling may be part of a planned residential development in R-2"
     }
   },
   "envelope": {
@@ -346,7 +411,7 @@
       "url": "https://ecode360.com/print/EC0999?guid=8161966",
       "verified_on": "2026-11-16",
       "confidence": "unverified",
-      "note": "No ADU use. A single-family or two-family dwelling needs '2 spaces per dwelling unit'"
+      "note": "No ADU use. A single-family or two-family dwelling needs '2 spaces per dwelling unit'. A conversion apartment needs two spaces for each dwelling unit (180-66MM(6))"
     },
     "fraction_rounding": {
       "value": "any_fraction_counts",
@@ -573,12 +638,21 @@
             "section": "180-28A(1)(a)",
             "url": "https://ecode360.com/print/EC0999?guid=8160553",
             "note": "One acre"
+          },
+          {
+            "when": "Public water but no public sewers",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "180-28A(1)(a)",
+            "url": "https://ecode360.com/print/EC0999?guid=8160553",
+            "note": "One acre. The code gives 25,000 and 20,000 sq ft only with public sewers, so a lot without them is read under the one acre row"
           }
         ],
         "section": "180-28A(1)",
         "url": "https://ecode360.com/print/EC0999?guid=8160553",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
+        "verified_on": "2026-11-17",
+        "confidence": "secondary"
       }
     },
     "R-3": {
@@ -664,12 +738,21 @@
             "section": "180-35A(1)(a)",
             "url": "https://ecode360.com/print/EC0999?guid=8160625",
             "note": "One acre"
+          },
+          {
+            "when": "Public water but no public sewers",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "180-35A(1)(a)",
+            "url": "https://ecode360.com/print/EC0999?guid=8160625",
+            "note": "One acre. The code gives 25,000 and 20,000 sq ft only with public sewers, so a lot without them is read under the one acre row"
           }
         ],
         "section": "180-35A(1)",
         "url": "https://ecode360.com/print/EC0999?guid=8160625",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
+        "verified_on": "2026-11-17",
+        "confidence": "secondary"
       }
     }
   }

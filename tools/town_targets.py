@@ -1728,7 +1728,7 @@ EXTRAS = {
     # Batch 44 (2026-11-16): the next towns by population without a rule file. Dallas (Luzerne) was skipped (95-45
     # puts the schedule of area, bulk, density and height regulations only in a PDF attachment) and Beaver Falls (Beaver)
     # (no zoning text found as web pages; eCode360 BE2264 is Beaver borough, and ZoningPoint finds no online code).
-    "4200722264": "batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment defined but not listed)",
+    "4200722264": "batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment only through R-2 transitional development, 180-66MM)",
     "4213383440": "Code 270-109A ECHO housing by conditional use, family only (Residential, Suburban Residential, Farming)",
     "4202921624": "Code 27-1602.1C(7) temporary home for family members (mobile home), family only",
     # Batch 45 (2026-11-17): the next towns by population without a rule file. Benner (Centre) was skipped (zoning
