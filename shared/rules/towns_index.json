@@ -4561,7 +4561,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 350-1101C(13) supplemental dwelling unit by right in AP, special exception in V, conditional use in SRR, RR and RC)"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether the farm accessory uses of 350-1101B(6), by right in AP, SRR and RR, and MP's by-right 350-1101B with no exception let a supplemental unit or farm dwelling in without a hearing. Whether a supplemental unit counts toward the AP lot limit and the RR and RC density caps. 350-1610, 350-1708 and 350-1002D onward were not read."
+      "status_note": "Fix round 2026-11-17. MP now reads by right for a unit on a farm lot (350-901A(2), 350-1101B(6), B(9)), with a conditional use for a similar use off a farm (350-901C(35)). Open: on a farm lot in SRR and RR a unit may be by right as an agricultural accessory use (350-501A(6), 350-601A(7), 350-1101B(6)) or a conditional use (350-501C(5), 350-601C(4)). The height of a unit in an accessory building on a farm (district height under the 350-1101B lead, or 15 ft under 350-1101A(4)). Whether an existing lot below the district minimum may hold a unit (350-1504, read as yes for a unit inside the house)."
     },
     {
       "geoid": "4204515232",
@@ -4575,7 +4575,7 @@
       "pop_rank": 307,
       "file": "pa_delaware_collingdale",
       "batch": 45,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/29755627",
@@ -4585,7 +4585,7 @@
       "why": [
         "added as batch 45 by population. Code Chapter 610 has no ADU text (610-27B bars a rear dwelling and 610-34C(5) garage habitation, 610-28C conversion by special exception in A)"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: Ord. No. 199 (short-term rentals, 12-30-2024) is not codified and was not read. Whether the 5,000 sq ft of 610-19B counts each unit of a 610-28C conversion. Which figures bind a house in C (610-22 or 610-20). The Chapter 247 variance article and Chapter 506 were not read."
+      "status_note": "Fix round 2026-11-17. Steep slope bar (506-4D) added. For a later check: Ord. No. 199 (short-term rentals, 12-30-2024) is not yet in the online code. Whether the 5,000 sq ft of 610-19B counts each unit of a 610-28C conversion (5,000 read as stronger, 10,000 shown as the other reading). Which figures bind a house in C (610-22 or 610-20). Who grants floodplain variances (610-49A(5) against 247-35, 247-36)."
     },
     {
       "geoid": "4200708680",
@@ -4599,7 +4599,7 @@
       "pop_rank": 311,
       "file": "pa_beaver_brighton",
       "batch": 45,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9489984",
@@ -4609,7 +4609,7 @@
       "why": [
         "added as batch 45 by population. Code Chapter 195 has no ADU text (195-17A conversion apartment unit by conditional use in R-1, duplex by right in R-1 and UD)"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether a 195-17A conversion apartment unit must meet the R-1 conditional use yards (195-20B, D). Whether an R-1 or UD duplex may be made by enlarging a house. Article VIII (planned residential development) and 195-135B(13) to 195-137.20 were not read."
+      "status_note": "Fix round 2026-11-17. HC-1 read, no house. For a later check: the R-1 conditional use yards read as binding a 195-17A conversion (195-20). The UD duplex width of 100 ft 'for each duplex unit' may mean 200 ft for the pair (195-35B(2)). Front yards are stored for a local street. A collector or arterial lot needs 40 ft (50 ft in R-2)."
     }
   ]
 }
