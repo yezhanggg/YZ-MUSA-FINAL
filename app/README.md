@@ -86,9 +86,9 @@ These come from the earlier course build: a raster fit on land cover for pilot l
 | File | Still read by | What it holds |
 |---|---|---|
 | `public/data/lots/<tract>.json` (357 tracts, mostly Philadelphia and Cumberland) | Projecting mode lot lookup (nearest lot within 40 m), the `get_site`, `test_adu`, `compare_sizes` and `find_lots` tools | Older lot results: `fits`, `fits_keep_trees`, `max_fit_sqft`, and for Philadelphia `rule_lot` (conversion only or variance) and `rule_why`. `rule_lot` is the older reading of the Philadelphia code, not the lot record's rules |
-| `public/data/parcels.pmtiles` | Projecting mode. Testing mode hides it when the Philadelphia lot tiles are there | Parcels of Philadelphia and Cumberland County with the older fit colours |
-| `public/data/lot_detail.pmtiles` | The map, for the selected lot when its id is in the file | Older open ground, tree and unit box per pilot lot |
 | `public/data/fit_curves.json` | Projecting mode, "lots with room" | Share of lots with room by footprint and area type, from the older fit |
+
+The older `parcels.pmtiles` and `lot_detail.pmtiles` (pilot parcels and open ground) were removed on Nov 16. The app has read each place's tiles from the lot data host since Nov 12. `build_tiles.py` and `build_detail_tiles.py` can still rebuild them.
 
 ## The Ask assistant
 

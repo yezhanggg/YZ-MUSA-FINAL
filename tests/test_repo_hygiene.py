@@ -19,10 +19,7 @@ from pipeline import rules
 ROOT = Path(__file__).resolve().parents[1]
 MAX_BYTES = 5 * 1024 * 1024
 # Files that were committed before the 5 MB rule. Each needs a plan, not a quiet pass.
-KNOWN_LARGE = {
-    "app/public/data/parcels.pmtiles": "map tiles, committed on main (c7e3dba), to move to the data host",
-    "app/public/data/lot_detail.pmtiles": "map tiles, committed on main (c7e3dba), to move to the data host",
-}
+KNOWN_LARGE: dict[str, str] = {}
 SKIP_DIRS = {
     ".git",
     "node_modules",

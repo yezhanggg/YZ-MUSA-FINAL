@@ -1,10 +1,18 @@
-"""Checks the parcel vector tiles the tool draws (app/public/data/parcels.pmtiles). Runs on GitHub with only pytest."""
+"""Checks the older pilot parcel tiles (app/public/data/parcels.pmtiles) when app/build_tiles.py has built them.
+
+The app reads each place's tiles from the lot data host since Nov 12, and the committed copy was removed on Nov 16.
+Runs on GitHub with only pytest.
+"""
 
 import struct
 from pathlib import Path
 
+import pytest
+
 TILES = Path(__file__).resolve().parents[1] / "app" / "public" / "data" / "parcels.pmtiles"
 PA = (-80.6, 39.6, -74.6, 42.4)  # lon / lat box around Pennsylvania, with a small margin
+
+pytestmark = pytest.mark.skipif(not TILES.exists(), reason="pilot parcels.pmtiles not built (app/build_tiles.py)")
 
 
 def header():
