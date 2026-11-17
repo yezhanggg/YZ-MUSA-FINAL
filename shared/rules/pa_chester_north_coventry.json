@@ -1,0 +1,1173 @@
+{
+  "provenance": {
+    "jurisdiction": "North Coventry township",
+    "instrument": "North Coventry Zoning Ordinance (Chapter 370 Zoning, Ord. No. 30 of 12-9-1968, amended in its entirety 6-23-2003, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 NO2136, Township of North Coventry (370-9 'Board of Supervisors': 'The Board of Supervisors of the Township of North Coventry, Chester County, Pennsylvania'). District use lists and lot, yard and height figures are text in Articles IV to VIII and XIV. The attachments are a plant list, a summary Table of Uses (Appendix B), a sample density calculation, a summary of development options (Appendix D), well head, stream, airport and TND maps, design guidelines and the zoning map. Floodplain rules are an overlay in the zoning chapter (370-28). New Laws: none listed",
+    "effective_date": "2007-02-26",
+    "source_urls": [
+      "https://ecode360.com/11562582",
+      "https://ecode360.com/NO2136/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22accessory%20residential%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/NO2136?guid=11562642",
+      "https://ecode360.com/print/NO2136?guid=11563075",
+      "https://ecode360.com/print/NO2136?guid=11563201",
+      "https://ecode360.com/print/NO2136?guid=11563255",
+      "https://ecode360.com/print/NO2136?guid=11563407",
+      "https://ecode360.com/print/NO2136?guid=11563558",
+      "https://ecode360.com/print/NO2136?guid=11563821",
+      "https://ecode360.com/print/NO2136?guid=11563909",
+      "https://ecode360.com/print/NO2136?guid=11564124",
+      "https://ecode360.com/print/NO2136?guid=11564449",
+      "https://ecode360.com/print/NO2136?guid=11564823",
+      "https://ecode360.com/print/NO2136?guid=11564887",
+      "https://ecode360.com/print/NO2136?guid=11565263",
+      "https://ecode360.com/print/NO2136?guid=11565659",
+      "https://ecode360.com/print/NO2136?guid=11565943",
+      "https://ecode360.com/print/NO2136?guid=11566050",
+      "https://ecode360.com/print/NO2136?guid=11566186"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202954936",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11562582",
+    "code_current_through": "2026-05-11",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 05-11-2026.' New Laws (0)",
+    "checks": [
+      "An ADU is allowed only on a lot of 10 acres of gross lot area or more in a subdivision under the RC-2 Country Properties Option (RC) or the RR-2 Rural Lots Option (RR): 'One accessory dwelling unit (including an elder cottage or tenant house) shall be permitted on lots of 10 acres of gross lot area or larger within the RC-2 or RR-2 Options subject to the provisions of § 370-64, Residential conversions' (370-114B(7)). Houses under those options are by right (370-14B(1)(c), 370-15B(1)(c)). A house on an older tract of 10 acres or less (370-14B(1)(d), 370-15B(1)(d)) or in an RC-1 or RR-1 conservation design is not under these options",
+      "The unit may be 'in the principal residence or in new or existing traditional outbuildings (such as barns, carriage houses, or spring houses)'. New outbuildings must 'harmonize with the vernacular rural buildings of the Township's historic landscape'. A separate building may hold up to 2,000 sq ft of floor area. An existing accessory building more than 75 years old may exceed the floor space limits and setbacks 'through the special exception process' before the Board of Supervisors (370-114B(7)(a), (c), (d))",
+      "The ADU is 'subject to the provisions of § 370-64, Residential conversions': the district lot and bulk rules must be met, no conversion on a nonconforming lot or in a nonconforming structure, the house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, no major structural change to the exterior, separate cooking and sanitary facilities with Chester County Health Department approval, and at most 0.33 dwelling units per acre in RC and 0.5 in RR after the conversion (370-64A to I). A property with an RC-2 or RR-2 ADU may not add a unit by residential conversion (370-64G). RC and RR list residential conversions as special exceptions (370-14B(2)(a), 370-15B(2)(a)), so whether a unit inside the house needs that special exception is not settled",
+      "Residential conversion of a single-family detached dwelling (370-64) is a special exception in RC, RR, R-1, V-2, TC-1 and TC-2, and in V-1 only within a Class I, II or III historic resource, where one conversion may be in an existing accessory structure to the rear of the house (370-17B(2)(b)[1]). Density after conversion: RC 0.33, RR 0.5, R-1 and V-1 2.0, V-2, TC-1 and TC-2 3.0 dwelling units per acre (370-64F). Fractions of a dwelling unit are rounded down (370-8B). In TC-1 every special exception use needs 40,000 sq ft of net lot area (370-19C(1)(b))",
+      "Accessory buildings 'shall be located, erected and maintained in side or rear yard areas only, and shall never be located in front yards'. A building with a ground floor over 500 sq ft must meet the setbacks for the principal structure. Smaller buildings for passive uses stand 25 ft from side and rear lines in RC and RR and 10 ft elsewhere. Accessory buildings may cover at most 20% of a side or rear yard (370-37)",
+      "Parking: 2.0 spaces per dwelling unit for single-family dwellings and for residential conversions (370-87A). An ADU is not listed, so the most comparable use applies (370-87G)",
+      "Flood Plain Conservation District (370-28, FEMA maps of 9-29-2017): only the listed uses are allowed, accessory uses only where 'no structures are erected', and 'Any construction or development not listed in § 370-28D, E or H above shall be prohibited except by variance' (370-28D, I). Modifications to structures existing when the chapter was adopted and adaptive reuse of an existing building are special exceptions (370-28E(3), (4)). Mobile homes are prohibited with no variance (370-28H(5)). New construction must stay 50 ft landward of the top of bank unless a DEP permit is obtained (370-28I(2)). Work of 50% or more of a structure's market value is a substantial improvement (370-28F(2))",
+      "Natural Resource Conservation Overlay (370-29), township-wide: no disturbance in the Zone One riparian buffer, 35 ft from the top of each streambank. At most 10% of the Zone Two buffer (65 ft more) may be disturbed, and the whole buffer is never under 75 ft. Precautionary slopes (15% to 25%) at most 20% disturbed and 5% impervious, prohibitive slopes (25% and over) at most 10% disturbed and only for a driveway, utilities or timber harvest, and 2% impervious. Wetlands may not be disturbed without state and federal permits, and at most 10% of a wetland margin (50 to 100 ft). At most 25% of woodlands may be disturbed for residential uses, and tree removal needs a permit",
+      "Historic resources on the Historic Resources List and Map (Class I, II and III): no permit for the rehabilitation, enlargement or structural alteration of a historic resource before Historical Commission review (370-32K). The Board of Supervisors may modify lot area, width and yards by conditional use to preserve a historic resource (370-32G(1)(b))",
+      "Building coverage is 'The ratio of the total ground floor area of all buildings on a lot to the total area of the lot'. Impervious surface includes roofs and buildings, paving and compacted stone parking (370-9). RC-2 and RR-2 lots set impervious cover by lot size and no building coverage (370-114A(4), B(6)). On a lot of 10 acres or more, where an ADU may go, the cap is 6.8% at 10.00 to 10.99 acres, 6.6% at 11, 6.4% at 12, 6.2% at 13 and 6.0% at 14 to 14.99 acres, and 38,000 sq ft of impervious surface at 15 acres or more",
+      "Variances: Zoning Hearing Board on the findings of 370-148D(1) to (6). No bar on a use variance was found. A special exception or variance expires within six months unless acted on (370-150)",
+      "Nonconforming structures may be altered or enlarged without adding floor area as it stood when the structure became nonconforming and without increasing a nonconformity (370-122A). A building may go on a lot of record nonconforming only in area with the Zoning Officer's approval, and a special exception is needed where the yards cannot be met (370-123A)",
+      "C-1, C-2, C-3, C-4, I-1 and I-2 permit no house. Home occupations there need an existing nonconforming residential use (370-21B(1)(m), 370-25B(1)(i))"
+    ],
+    "notes": "Zoning office: North Coventry Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles IV to VIII, XIV, XV, 370-28, 370-29B(1) to (7)(e), 370-32, 370-36, 370-37, 370-64, 370-87, 370-148 and the Article II definitions from A to K, the table of contents, the version information and code searches. Not read: the 370-9 definitions from L to Z, 370-29C onward, the other overlays (370-30, 370-31, 370-33, 370-34 to 370-34.4), Articles X (except 370-36, 370-37, 370-64), XI, XII (except 370-87), XIII, XVI and XVIII, and 370-149. Open points: whether an ADU inside the house needs the residential conversion special exception (RC, RR), whether a conservancy lot of 10 acres or more in an RC-1 or RR-1 conservation design, which conforms 'to the standards for Option RC-2', may hold the ADU, and whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "370-114B(7)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'One accessory dwelling unit (including an elder cottage or tenant house)'. The code gives no separate definition"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "370-114B(7), 370-14B(1)(c), 370-15B(1)(c)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Houses under the RC-2 and RR-2 options are by right, and the ADU 'shall be permitted' on such a lot of 10 acres or more"
+    },
+    "scope_districts": {
+      "value": [
+        "RC",
+        "RR"
+      ],
+      "section": "370-114B(7), 370-14C(2), 370-15C(2)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The RC-2 Country Properties Option is in RC and the RR-2 Rural Lots Option in RR"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "370-16B, 370-17B, 370-18B, 370-19B, 370-20B",
+      "url": "https://ecode360.com/print/NO2136?guid=11563075",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No other district lists an ADU. A house may be converted into two units by special exception in R-1, V-2, TC-1 and TC-2, and in V-1 within a historic resource (see the other paths)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "370-114B(7), 370-14B(1)(c), 370-15B(1)(c)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The ADU 'shall be permitted' on an RC-2 or RR-2 lot of 10 acres or more, and houses under those options are by right. The ADU is 'subject to the provisions of § 370-64', and RC and RR list a residential conversion as a special exception, so whether a unit inside the house needs a special exception is not settled. The subdivision itself goes through Chapter 320"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "370-148",
+      "url": "https://ecode360.com/print/NO2136?guid=11566186",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 370-148D(1) to (6). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of a single-family detached dwelling (370-64)",
+          "path": "special_exception",
+          "districts": [
+            "RC",
+            "RR",
+            "R-1",
+            "V-2",
+            "TC-1",
+            "TC-2"
+          ],
+          "conditions": "An existing single-family detached dwelling divided into two units. The district lot and bulk rules must be met, and no conversion on a nonconforming lot or in a nonconforming structure. The house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, and no major structural change to the exterior. Separate cooking and sanitary facilities with Chester County Health Department approval. At most one added unit in RC, RR and R-1 and two in V-2, TC-1 and TC-2. Density after conversion at most 0.33 dwelling units per acre in RC, 0.5 in RR, 2.0 in R-1 and 3.0 in V-2, TC-1 and TC-2, with fractions rounded down. In TC-1 a special exception use needs 40,000 sq ft of net lot area. Two parking spaces per unit, to the side or rear of the house. A property with an RC-2 or RR-2 ADU may not add a unit this way",
+          "min_lot_by_district": {
+            "RC": 261360,
+            "RR": 174240,
+            "R-1": 43560,
+            "V-2": 29040,
+            "TC-1": 40000,
+            "TC-2": 29040
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling to convert",
+              "section": "370-9 'Conversion, residential'"
+            },
+            {
+              "test": null,
+              "condition": "The lot and the house are not nonconforming",
+              "section": "370-64A"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "370-64, 370-14B(2)(a), 370-15B(2)(a), 370-16B(2)(a), 370-18B(2)(c), 370-19B(2)(a), C(1)(b), 370-20B(2)(a), 370-87A",
+          "url": "https://ecode360.com/print/NO2136?guid=11565263",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU. The lot figures are read from the density after conversion for two units (one unit per three acres in RC by the table note, so six acres for two)"
+        },
+        {
+          "name": "Residential conversion within a historic resource (V-1)",
+          "path": "special_exception",
+          "districts": [
+            "V-1"
+          ],
+          "conditions": "In V-1 a residential conversion is allowed only within a Class I, II or III historic resource, and 'One of the permitted residential conversions may be permitted in an existing accessory structure where such structure is located to the rear of the principal residential structure'. The 370-64 conversion standards, the adaptive reuse rules of 370-38 and the historic rules of 370-32 apply. At most one added unit and 2.0 dwelling units per acre after conversion. Lot at least 20,000 sq ft with public water and sewer, 35,000 sq ft without",
+          "min_lot_sqft": 43560,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "370-17B(2)(b)[1]"
+            },
+            {
+              "test": null,
+              "condition": "The house or building is a Class I, II or III historic resource on the Historic Resources List and Map",
+              "section": "370-17B(2)(b), 370-32C"
+            }
+          ],
+          "covers_forms": [
+            "internal",
+            "garage_conversion"
+          ],
+          "builds": [
+            "internal",
+            "garage_conversion"
+          ],
+          "section": "370-17B(2)(b)[1], 370-64, 370-32C",
+          "url": "https://ecode360.com/print/NO2136?guid=11563255",
+          "confidence": "secondary",
+          "note": "A conversion, not an ADU, though a unit in an existing rear accessory structure is an ADU in all but name. The 43,560 sq ft figure is the 2.0 units per acre density for two units. 370-38 was not read"
+        },
+        {
+          "name": "Single-family semidetached (twin) dwelling (V-2, TC-1, TC-2)",
+          "path": "by_right",
+          "districts": [
+            "V-2",
+            "TC-1",
+            "TC-2"
+          ],
+          "conditions": "Two dwelling units separated by a vertical party wall, with public water and sewer. Net lot area per unit 10,000 sq ft and at most 4 units per acre in V-2, 8,000 sq ft per unit in TC-1, 7,000 sq ft per unit and at most 6 units per acre in TC-2. In V-1 a twin is a special exception on 12,000 sq ft per unit",
+          "min_lot_by_district": {
+            "V-2": 20000,
+            "TC-1": 16000,
+            "TC-2": 14000
+          },
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "370-18B(5), 370-19B(5), 370-20B(5)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "370-18B(5), 370-19B(5), 370-20B(5)"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "370-18B(1)(b), C(2)(b), 370-19B(1)(b), C(1)(a), 370-20B(1)(b), C(2)(b), 370-17B(2)(a)",
+          "url": "https://ecode360.com/print/NO2136?guid=11563407",
+          "confidence": "secondary",
+          "note": "A two-unit building, not an ADU. The figures are per dwelling unit, so a twin is often split onto two lots. Whether an addition to a house can make a twin on one lot is for the zoning officer"
+        }
+      ],
+      "section": "370-64, 370-17B(2)(b), 370-18B(1)(b)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565263",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "RC",
+        "RR"
+      ],
+      "section": "370-114B(7)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "370-14B(1)(c), 370-15B(1)(c)",
+      "url": "https://ecode360.com/print/NO2136?guid=11563075",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The options permit single-family detached dwellings"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "370-32",
+      "url": "https://ecode360.com/print/NO2136?guid=11564449",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic ADU path. Historic resources get Historical Commission review"
+    },
+    "historic_test": {
+      "value": "on the Township's Historic Resources List and Map (Class I, II or III)",
+      "section": "370-32B, C",
+      "url": "https://ecode360.com/print/NO2136?guid=11564449",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "V-1",
+        "V-2",
+        "TC-1",
+        "TC-2",
+        "C-1",
+        "C-2",
+        "C-3",
+        "C-4",
+        "I-1",
+        "I-2"
+      ],
+      "section": "370-16 to 370-26",
+      "url": "https://ecode360.com/print/NO2136?guid=11563075",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. C-1 to C-4, I-1 and I-2 permit no house"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "An ADU is allowed only on a lot in a subdivision under the RC-2 Country Properties Option (RC) or the RR-2 Rural Lots Option (RR). A lot built under the older-tract rule, in an RC-1 or RR-1 conservation design or in any other district does not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "in_planned_development",
+          "planned_development_kinds": [
+            "RC-2 Country Properties Option",
+            "RR-2 Rural Lots Option"
+          ],
+          "disputed_by": {
+            "section": "370-114A(2)(a)[2], (b)[2]",
+            "url": "https://ecode360.com/print/NO2136?guid=11565943",
+            "note": "An RC-1 or RR-1 conservation design may include conservancy lots of at least 10 acres 'conforming to the standards for Option RC-2', so whether the ADU rule reaches such a conservancy lot is not settled"
+          },
+          "section": "370-114B(7), 370-14B(1)(c), 370-15B(1)(c)",
+          "url": "https://ecode360.com/print/NO2136?guid=11565943",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "'One accessory dwelling unit ... shall be permitted on lots of 10 acres of gross lot area or larger'.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 435600,
+          "section": "370-114B(7)",
+          "url": "https://ecode360.com/print/NO2136?guid=11565943",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The ADU follows the residential conversion standards: the district lot and bulk rules met, not on a nonconforming lot or in a nonconforming structure, a single front entrance and no major structural change to the outside of the house, separate cooking and sanitary facilities approved by the Chester County Health Department, and at most 0.33 dwelling units per acre in RC and 0.5 in RR. RC and RR list a residential conversion as a special exception, and whether a unit inside the house needs it is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "RC",
+            "RR"
+          ],
+          "building_types": null,
+          "section": "370-114B(7), 370-64, 370-14B(2)(a), 370-15B(2)(a)",
+          "url": "https://ecode360.com/print/NO2136?guid=11565263",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "design",
+          "condition": "A new outbuilding for the unit must be a traditional outbuilding (such as a barn, carriage house or spring house) designed 'to harmonize with the vernacular rural buildings of the Township's historic landscape'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "370-114B(7)(a)",
+          "url": "https://ecode360.com/print/NO2136?guid=11565943",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Flood Plain Conservation District only the listed uses are allowed, accessory uses only where 'no structures are erected', and 'Any construction or development not listed in § 370-28D, E or H above shall be prohibited except by variance'.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Flood Plain Conservation District"
+          ],
+          "section": "370-28D, 370-28I",
+          "url": "https://ecode360.com/print/NO2136?guid=11563909",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Flood Plain Conservation District, 'Modifications to structures existing as of the date of adoption of this chapter' and the adaptive reuse of an existing building are special exceptions, with the lowest floor of a substantially improved residential structure 1 1/2 ft or more above the base flood elevation.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Flood Plain Conservation District"
+          ],
+          "path": "special_exception",
+          "section": "370-28E(3), (4), 370-28I(4)",
+          "url": "https://ecode360.com/print/NO2136?guid=11563909",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Flood Plain Conservation District 'no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank ... of any watercourse, unless a permit is obtained from the Department of Environmental Protection'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Flood Plain Conservation District"
+          ],
+          "section": "370-28I(2), 370-28B(4)(a)[2][b][ii]",
+          "url": "https://ecode360.com/print/NO2136?guid=11563909",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The Zone One riparian buffer runs 35 ft from the top of each streambank, farther over prohibitive slopes, and no woodland or other land disturbance is permitted there beyond permitted crossings, trails, hazard removal and conservation work.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 35,
+          "section": "370-29B(4)(a), (b)[2]",
+          "url": "https://ecode360.com/print/NO2136?guid=11564124",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "At most 10% of the Zone Two riparian buffer (65 ft beyond Zone One) may be disturbed. Precautionary slopes (15% to 25%) may be at most 20% disturbed and 5% impervious, prohibitive slopes (25% and over) at most 10% disturbed, for a driveway, utilities or timber harvest only, and 2% impervious. Wetland margins at most 10% disturbed, and woodlands at most 25% for residential uses.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "370-29B(3), (4)(b)[3], (6), (7)",
+          "url": "https://ecode360.com/print/NO2136?guid=11564124",
+          "confidence": "verified"
+        },
+        {
+          "kind": "historic",
+          "condition": "No permit for the rehabilitation, enlargement or structural alteration of a historic resource is issued before the Historical Commission reviews the plans, for up to 20 days, against the Secretary of the Interior's standards for a Class I resource.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "370-32K",
+          "url": "https://ecode360.com/print/NO2136?guid=11564449",
+          "confidence": "verified"
+        }
+      ],
+      "section": "370-114B(7), 370-64, 370-28, 370-29, 370-32",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "370-114B(7)(a), (c)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit shall be permitted in the principal residence or in new or existing traditional outbuildings (such as barns, carriage houses, or spring houses)'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "attached",
+        "over_garage"
+      ],
+      "section": "370-114B(7)(a), 370-64D",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The rule names the house and traditional outbuildings, not an addition or a unit built over a garage. The conversion standards bar a major structural change to the outside of the house"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "a new traditional outbuilding (barn, carriage house or spring house style)",
+        "garage_conversion": "an existing traditional outbuilding (barn, carriage house or spring house)"
+      },
+      "section": "370-114B(7)(a)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft_by_form": {
+      "value": {
+        "detached_new": 2000,
+        "garage_conversion": 2000
+      },
+      "section": "370-114B(7)(c)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The accessory dwelling unit may take the form of a separate building containing up to 2,000 square feet of floor area.' No figure is given for a unit inside the house"
+    },
+    "exempt_building": {
+      "value": {
+        "forms": [
+          "garage_conversion"
+        ],
+        "caps": [
+          "size",
+          "setbacks"
+        ],
+        "older_than_years": 75,
+        "what": "an existing accessory building more than 75 years old, by special exception from the Board of Supervisors"
+      },
+      "section": "370-114B(7)(d)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Existing accessory buildings more than 75 years old ... may be permitted by the Board of Supervisors to exceed the floor space limits and dimensional setbacks of this chapter through the special exception process'"
+    }
+  },
+  "use": {
+    "owner_occupancy": {
+      "value": false,
+      "section": "370-114B(7), 370-64",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No owner rule"
+    },
+    "family_only": {
+      "value": false,
+      "section": "370-114B(7)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No family or occupant rule. The unit may be an elder cottage or tenant house, but that is not a requirement"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "370-114B(7)(b)",
+      "url": "https://ecode360.com/print/NO2136?guid=11565943",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'There shall be a maximum of one accessory dwelling unit on any legal building lot in an RC-2 or RR-2 subdivision'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 35,
+      "section": "370-14C(5), 370-15C(5)",
+      "url": "https://ecode360.com/print/NO2136?guid=11563075",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'No building or structure shall exceed 35 feet in height.' No separate height for an accessory building was found"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "370-37A",
+      "url": "https://ecode360.com/print/NO2136?guid=11564887",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Accessory buildings and structures shall be located, erected and maintained in side or rear yard areas only, and shall never be located in front yards'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "370-37A(4), 370-114B(5)(d)",
+      "url": "https://ecode360.com/print/NO2136?guid=11564887",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'Any accessory building with a ground floor area exceeding 500 square feet, whether used for active or passive uses, shall conform to the setback requirements for the principal structure.' A unit in a building with a smaller ground floor may take the 25 ft accessory setbacks of 370-37A(2)"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building with a ground floor of 500 sq ft or less, for passive uses such as storage, in RC and RR",
+          "districts": [
+            "RC",
+            "RR"
+          ],
+          "setback_side_ft": 25,
+          "setback_rear_ft": 25,
+          "section": "370-37A(2)",
+          "url": "https://ecode360.com/print/NO2136?guid=11564887",
+          "note": "Whether a dwelling unit is a passive use is not settled"
+        },
+        {
+          "where": "An accessory building or structure may cover at most 20% of the side yard or of the rear yard, counting all of them together.",
+          "section": "370-37B",
+          "url": "https://ecode360.com/print/NO2136?guid=11564887"
+        }
+      ],
+      "section": "370-37",
+      "url": "https://ecode360.com/print/NO2136?guid=11564887",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "370-87A, G",
+      "url": "https://ecode360.com/print/NO2136?guid=11565659",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "An ADU is not listed. Single-family dwellings and residential conversions need '2.0 spaces per dwelling unit', the most comparable use"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "370-87A",
+      "url": "https://ecode360.com/print/NO2136?guid=11565659",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two for the house and two for the ADU"
+    }
+  },
+  "districts": {
+    "RC": {
+      "min_lot_sqft": {
+        "value": 130680,
+        "section": "370-14C(2)(b), 370-114B(2)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563075",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Net lot area under the RC-2 option. An ADU needs a lot of 10 acres of gross lot area or more (370-114B(7))"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "370-114B(5)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'75 feet from the right-of-way of existing Township roads and 40 feet from the right-of-way of new subdivision streets, country lanes, or common driveways'. Lots under 370-14C(3) on tracts of 10 acres or less that existed on 12-23-2002 have the same 75 ft front and rear and 50 ft side yards, building coverage 5% and impervious cover 10%"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "370-114B(5)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "370-114B(5)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'75 feet minimum for principal buildings'"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.14,
+            "lot_sqft_at_least": 87120,
+            "lot_sqft_below": 130680
+          },
+          {
+            "max_impervious": 0.13,
+            "lot_sqft_at_least": 130680,
+            "lot_sqft_below": 174240
+          },
+          {
+            "max_impervious": 0.12,
+            "lot_sqft_at_least": 174240,
+            "lot_sqft_below": 217800
+          },
+          {
+            "max_impervious": 0.11,
+            "lot_sqft_at_least": 217800,
+            "lot_sqft_below": 261360
+          },
+          {
+            "max_impervious": 0.1,
+            "lot_sqft_at_least": 261360,
+            "lot_sqft_below": 304920
+          },
+          {
+            "max_impervious": 0.09,
+            "lot_sqft_at_least": 304920,
+            "lot_sqft_below": 348480
+          },
+          {
+            "max_impervious": 0.08,
+            "lot_sqft_at_least": 348480,
+            "lot_sqft_below": 392040
+          },
+          {
+            "max_impervious": 0.07,
+            "lot_sqft_at_least": 392040,
+            "lot_sqft_below": 435600
+          }
+        ],
+        "section": "370-114A(4), 370-114B(6)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "370-114A(4) table: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres. From 10 acres the table goes on in fractions of a percent: 6.8% at 10.00 to 10.99 acres, 6.6%, 6.4%, 6.2% and 6.0% at 14.00 to 14.99 acres, and at most 38,000 sq ft of impervious surface at 15 acres or more. Those are not stored as tiers. Lots under 2 acres are left out here"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-14C(5)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563075",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'No building or structure shall exceed 35 feet in height.' Barns and silos may be taller with added setback"
+      }
+    },
+    "RR": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "370-15C(2)(b), 370-114B(2)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563075",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Net lot area under the RR-2 option. An ADU needs a lot of 10 acres of gross lot area or more (370-114B(7))"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "370-114B(5)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'75 feet from the right-of-way of existing Township roads and 40 feet from the right-of-way of new subdivision streets, country lanes, or common driveways'. Lots under 370-15C(3) on tracts of 10 acres or less that existed on 12-23-2002 have 60 ft front and rear and 40 ft side yards, building coverage 10% and impervious cover 15%"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "370-114B(5)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "370-114B(5)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'75 feet minimum for principal buildings'"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.14,
+            "lot_sqft_at_least": 87120,
+            "lot_sqft_below": 130680
+          },
+          {
+            "max_impervious": 0.13,
+            "lot_sqft_at_least": 130680,
+            "lot_sqft_below": 174240
+          },
+          {
+            "max_impervious": 0.12,
+            "lot_sqft_at_least": 174240,
+            "lot_sqft_below": 217800
+          },
+          {
+            "max_impervious": 0.11,
+            "lot_sqft_at_least": 217800,
+            "lot_sqft_below": 261360
+          },
+          {
+            "max_impervious": 0.1,
+            "lot_sqft_at_least": 261360,
+            "lot_sqft_below": 304920
+          },
+          {
+            "max_impervious": 0.09,
+            "lot_sqft_at_least": 304920,
+            "lot_sqft_below": 348480
+          },
+          {
+            "max_impervious": 0.08,
+            "lot_sqft_at_least": 348480,
+            "lot_sqft_below": 392040
+          },
+          {
+            "max_impervious": 0.07,
+            "lot_sqft_at_least": 392040,
+            "lot_sqft_below": 435600
+          }
+        ],
+        "section": "370-114A(4), 370-114B(6)",
+        "url": "https://ecode360.com/print/NO2136?guid=11565943",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "370-114A(4) table: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres. From 10 acres the table goes on in fractions of a percent: 6.8% at 10.00 to 10.99 acres, 6.6%, 6.4%, 6.2% and 6.0% at 14.00 to 14.99 acres, and at most 38,000 sq ft of impervious surface at 15 acres or more. Those are not stored as tiers. Lots under 2 acres are left out here"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-15C(5)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563075",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'No building or structure shall exceed 35 feet in height.' Barns and silos may be taller with added setback"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "370-16B(1)(b), C(3)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "One house on a lot of 30,000 sq ft or more of gross lot area that existed on or before July 2003. R1-2 conventional lots are 30,000 sq ft of net lot area. Lot width 125 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-16C(3)(d)[1]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "370-16C(3)(d)[3]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "370-16C(3)(d)[2]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "370-16C(3)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "10% where the gross lot area is one acre or more"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.15,
+            "lot_sqft_below": 43560
+          },
+          {
+            "max_building_coverage": 0.1,
+            "lot_sqft_at_least": 43560
+          }
+        ],
+        "section": "370-16C(3)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "370-16C(3)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Buildings, paving and other impervious cover. 15% where the gross lot area is one acre or more"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.2,
+            "lot_sqft_below": 43560
+          },
+          {
+            "max_impervious": 0.15,
+            "lot_sqft_at_least": 43560
+          }
+        ],
+        "section": "370-16C(3)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-16C(5)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563201",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "V-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "370-17C(1)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Net lot area with public water and public sewer. 35,000 sq ft where they are not feasible. Lot width 90 ft (60 ft under 20,000 sq ft)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-17C(5)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "370-17C(5)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "370-17C(5)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "370-17C(3)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots of 20,000 sq ft or less. 10% on larger lots"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.2,
+            "lot_sqft_at_most": 20000
+          },
+          {
+            "max_building_coverage": 0.1,
+            "lot_sqft_over": 20000
+          }
+        ],
+        "section": "370-17C(3)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "370-17C(4)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots of 20,000 sq ft or less. 15% on larger lots"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.25,
+            "lot_sqft_at_most": 20000
+          },
+          {
+            "max_impervious": 0.15,
+            "lot_sqft_over": 20000
+          }
+        ],
+        "section": "370-17C(4)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-17C(6)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Where public water and public sewer are not feasible",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 35000,
+            "section": "370-17C(1)(a)"
+          }
+        ],
+        "section": "370-17C(1)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "V-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "370-18C(2)(a)[1]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling, net lot area. All uses need public water and sewer. Lot width 90 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-18C(2)(a)[5][a]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "370-18C(2)(a)[5][c]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "370-18C(2)(a)[5][b]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "370-18C(2)(a)[3]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "370-18C(2)(a)[4]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-18C(2)(a)[6]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563255",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "TC-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "370-19C(1)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Net lot area for by-right uses. A twin needs 8,000 sq ft per dwelling unit. A special exception or conditional use needs 40,000 sq ft. All uses need public water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-19C(5)(a)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "370-19C(5)(c)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "370-19C(5)(b)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "370-19C(3)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots under 40,000 sq ft. 10% at 40,000 sq ft or more"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.2,
+            "lot_sqft_below": 40000
+          },
+          {
+            "max_building_coverage": 0.1,
+            "lot_sqft_at_least": 40000
+          }
+        ],
+        "section": "370-19C(3)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "370-19C(4)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots under 40,000 sq ft. 15% at 40,000 sq ft or more"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.25,
+            "lot_sqft_below": 40000
+          },
+          {
+            "max_impervious": 0.15,
+            "lot_sqft_at_least": 40000
+          }
+        ],
+        "section": "370-19C(4)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-19C(6)",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "TC-2": {
+      "min_lot_sqft": {
+        "value": 11000,
+        "section": "370-20C(2)(a)[1]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling, net lot area where municipal water serves the lot. All uses need public water and sewer. Lot width 70 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "370-20C(2)(a)[5][a]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "370-20C(2)(a)[5][c]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "370-20C(2)(a)[5][b]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "370-20C(2)(a)[3]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "370-20C(2)(a)[4]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-20C(2)(a)[6]",
+        "url": "https://ecode360.com/print/NO2136?guid=11563407",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    }
+  }
+}

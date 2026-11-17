@@ -1476,6 +1476,7 @@ FIXED_BATCH.update({g: 43 for g in ("4204518160", "4201146680", "4201759384")})
 FIXED_BATCH.update({g: 44 for g in ("4200722264", "4213383440", "4202921624")})
 FIXED_BATCH.update({g: 45 for g in ("4202982664", "4204515232", "4200708680")})
 FIXED_BATCH.update({g: 46 for g in ("4202968288", "4207121032", "4205571912")})
+FIXED_BATCH.update({g: 47 for g in ("4207182824", "4200361328", "4202954936")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1759,6 +1760,14 @@ EXTRAS = {
     "4202968288": "Code 370-229C accessory dwelling unit by right on an Option 2 conservancy lot of 10 acres or more (FR, R-1)",
     "4207121032": "Code 52-268 elder cottage by conditional use, family only (A, R-2, R-3, R-4)",
     "4205571912": "Code 39-321 ECHO housing by right, family only (A, R-1, R-2)",
+    # Batch 47 (2026-11-17): the next towns by population without a rule file. Conewago (York) was skipped (zoning
+    # ordinance No. 322 and its amendments only as PDFs on the township website, no codified zoning found as web pages),
+    # Old Forge (Lackawanna) (lot, yard and height figures and the residential, commercial and industrial use schedules
+    # only in PDF attachments, 350-22F), North Cornwall (Lebanon) (zoning ordinance only as a PDF on the township
+    # website) and Bushkill (Northampton) (zoning ordinance only as a PDF on the township website).
+    "4207182824": "batch 47 by population. Code Chapter 184 has no ADU text (184-31 conversion of an existing house to two units, two-family by right in R-2)",
+    "4200361328": "batch 47 by population. Code Chapter 374 has no ADU text (two-family by right in R-2, one kitchen per single-family dwelling)",
+    "4202954936": "Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR)",
 }
 
 if __name__ == "__main__":

@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 191,
-      "population": 6340566,
-      "share_of_pa": 0.4876
+      "towns_beyond_the_two_cities": 194,
+      "population": 6366071,
+      "share_of_pa": 0.4896
     }
   ],
   "towns": [
@@ -4682,6 +4682,78 @@
         "named as a town with an ADU ordinance (Code 39-321 ECHO housing by right, family only (A, R-1, R-2))"
       ],
       "status_note": "Drafted 2026-11-17, first reading. Open: whether a unit over an existing garage is the conversion of an existing accessory structure, which services the R-2 'On-Lot Water' column means, and whether the 25 ft accessory height binds an ECHO unit. Part 4, the Part 6 variance section and Chapter 10 Parts 1 to 3 were not read."
+    },
+    {
+      "geoid": "4207182824",
+      "geoid_aliases": [],
+      "name": "West Earl township",
+      "county": "Lancaster",
+      "type": "township",
+      "population": 8560,
+      "population_with_aliases": 8560,
+      "housing_units": 2969,
+      "pop_rank": 324,
+      "file": "pa_lancaster_west_earl",
+      "batch": 47,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/12452988",
+      "plain_fetch": null,
+      "code_current_through": "2025-09-22",
+      "code_note": null,
+      "why": [
+        "added as batch 47 by population. Code Chapter 184 has no ADU text (184-31 conversion of an existing house to two units, two-family by right in R-2)"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: whether a 184-31 conversion is by right ('permitted in any district') or a special exception (R-2 list, 184-13C(1)), and whether it reaches A and R-1, whose use lists do not name it. Whether a second unit in A counts against the one-per-50-acres quota of 184-11E. 184-43.3 (Traditional Residential Development Option), 184-38 to 184-43.1 and Articles VII and IX were not read."
+    },
+    {
+      "geoid": "4200361328",
+      "geoid_aliases": [],
+      "name": "Pleasant Hills borough",
+      "county": "Allegheny",
+      "type": "borough",
+      "population": 8504,
+      "population_with_aliases": 8504,
+      "housing_units": 3659,
+      "pop_rank": 326,
+      "file": "pa_allegheny_pleasant_hills",
+      "batch": 47,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10786091",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-18",
+      "code_note": null,
+      "why": [
+        "added as batch 47 by population. Code Chapter 374 has no ADU text (two-family by right in R-2, one kitchen per single-family dwelling)"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), and whether 374-104B ('but in no other case') limits use variances. Article III, Article XIVA (airport overlay), Articles XV, XVI, XXII to XXIV and Chapters 222 and 323 were not read."
+    },
+    {
+      "geoid": "4202954936",
+      "geoid_aliases": [],
+      "name": "North Coventry township",
+      "county": "Chester",
+      "type": "township",
+      "population": 8441,
+      "population_with_aliases": 8441,
+      "housing_units": 3415,
+      "pop_rank": 330,
+      "file": "pa_chester_north_coventry",
+      "batch": 47,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11562582",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-11",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR))"
+      ],
+      "status_note": "Drafted 2026-11-17, first reading. Open: whether an ADU inside the house needs the residential conversion special exception of 370-14B(2)(a) and 370-15B(2)(a), whether a 10 acre conservancy lot of an RC-1 or RR-1 design ('conforming to the standards for Option RC-2', 370-114A(2)) may hold one, and whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)). 370-38, 370-149, the 370-9 definitions L to Z and the other overlays were not read."
     }
   ]
 }

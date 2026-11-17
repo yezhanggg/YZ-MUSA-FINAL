@@ -1,0 +1,492 @@
+{
+  "provenance": {
+    "jurisdiction": "Pleasant Hills borough",
+    "instrument": "Zoning Ordinance of the Borough of Pleasant Hills (Chapter 374 Zoning, Ord. No. 391 of 6-12-1967, amended in its entirety by Ord. No. 818 of 7-21-2003, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 PL1849, Borough of Pleasant Hills, Allegheny County (374-3 incorporates the Allegheny County Airport Zoning Regulations, 374-110B sends appeals to the Allegheny County Court of Common Pleas). District use lists and lot, yard and height figures are text in Articles IV to XIV. The only attachment is Appendix A, Fence Location. Floodplain rules are in Chapter 216. New Laws: none listed",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/10786091",
+      "https://ecode360.com/PL1849/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PL1849/search?query=%22not%20specifically%22%20OR%20%22not%20provided%22%20OR%20%22steep%20slope%22%20OR%20landslide%20OR%20riparian%20OR%20%22top%20of%20bank%22%20OR%20%22top-of-bank%22%20OR%20%22one%20principal%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/PL1849?guid=10786093",
+      "https://ecode360.com/print/PL1849?guid=10786117",
+      "https://ecode360.com/print/PL1849?guid=10786245",
+      "https://ecode360.com/print/PL1849?guid=10786269",
+      "https://ecode360.com/print/PL1849?guid=10786350",
+      "https://ecode360.com/print/PL1849?guid=10786391",
+      "https://ecode360.com/print/PL1849?guid=10786446",
+      "https://ecode360.com/print/PL1849?guid=10786474",
+      "https://ecode360.com/print/PL1849?guid=10786523",
+      "https://ecode360.com/print/PL1849?guid=10786537",
+      "https://ecode360.com/print/PL1849?guid=10786614",
+      "https://ecode360.com/print/PL1849?guid=10786650",
+      "https://ecode360.com/print/PL1849?guid=10786717",
+      "https://ecode360.com/print/PL1849?guid=10786900",
+      "https://ecode360.com/print/PL1849?guid=10786963",
+      "https://ecode360.com/print/PL1849?guid=10787006",
+      "https://ecode360.com/print/PL1849?guid=10787040",
+      "https://ecode360.com/print/PL1849?guid=10787059",
+      "https://ecode360.com/print/PL1849?guid=10783998"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Allegheny",
+    "municipality_type": "borough",
+    "geoid": "4200361328",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10786091",
+    "code_current_through": "2026-05-18",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 05-18-2026.' New Laws (0). The last zoning amendment shown is Ord. No. 1060 of 5-19-2025 (374-71)",
+    "checks": [
+      "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, elder cottage, extended family, household employee, conversion, temporary dwelling, apartment addition, supplemental dwelling, habitation, living quarters, caretaker) find only living quarters for a watchman or janitor in an office building and for a motel manager (374-7) and the floodplain rule on accessory structures (216-23E)",
+      "Each district lists its uses 'and no other'. R-1 permits a 'Single-family detached dwelling' (374-11A). R-2 permits single-family dwellings and 'Two-family dwellings' by right (374-15A). C-1 permits 'A use permitted in Residence District R-1' (374-33A). R-3 and R-4 permit only multifamily dwellings by conditional use, and P-1, O-1, C-2, C-3, C-4 and M-1 permit no house",
+      "'No single-family dwelling shall contain more than one kitchen, dining room, living room or breakfast room' (374-7 'Dwelling, single-family'). A two-family dwelling is 'A building containing only two noncommunicating dwelling units, each for exclusive use by one family and each with its own separate exterior entrance door' (374-7)",
+      "R-1 needs 'a minimum area of 7,800 square feet per family' for every building 'erected, altered or used in whole or in part as a dwelling' (374-12A). A house on a smaller lot of record needs a variance from the Zoning Hearing Board (374-12A)",
+      "No path for a use the code does not list was found. A second unit on a house lot is a use variance from the Zoning Hearing Board. The Board may vary the chapter 'in the case of an exceptionally irregular, narrow, shallow or steep lot or other exceptional physical condition not provided for in the district regulations or as a special exception ... but in no other case' (374-104B), while 374-104 keeps every power the state law gives the Board. No express bar on a use variance was found",
+      "Accessory structures: 'No accessory structure shall exceed one story or 15 feet above ground level. The accessory structure shall not be less than 240 square feet and no more than 650 square feet' (374-82I). In R-1 and R-2 only one accessory building to store the residents' personal property is allowed, at most 100 sq ft (144 sq ft on an R-1 lot over 10,000 sq ft), 15 ft long and 9 1/2 ft tall, in the rear yard, 10 ft from the rear line and 5 ft from the side line (374-14.1, 374-17.1). Accessory structures in R-1 need a 20 ft rear yard and 5 ft side yards (374-12C, D)",
+      "Parking: 'Single-family dwelling: 2 parking stalls per dwelling unit, 1 of which must be in an enclosed garage', and the same for each unit of a two-family dwelling (374-88E). 'Any fraction shall be counted as one parking stall' (374-88A)",
+      "Height: a single-family or two-family dwelling at most 2 1/2 stories or 30 ft, and every dwelling at least 14 ft tall (374-82A, H)",
+      "In R-2 the front yard is 35 ft from the property line and at least 65 ft from the center line of a state or county road or 60 ft from the center line of a Borough street (374-16A(6), B(5))",
+      "Floodplain (Chapter 216, the A zones on the FEMA maps of 9-26-2014): a permit is needed for any construction or development in the Borough (216-3, 216-8). New construction and substantial improvement need the lowest floor at or above the regulatory flood elevation (216-23A). An accessory structure 'shall not be designed or used for human habitation', at most 200 sq ft with no sanitary facilities (216-23E). No enlargement may raise the base flood elevation, and work of 50% or more of a building's market value is a substantial improvement (216-31). Manufactured homes are prohibited in the floodplain (216-27). Floodplain variances are granted by the Borough (216-32, 216-33)",
+      "Nonconforming structures may not be enlarged or altered in a way that increases their nonconformity, except when the Zoning Hearing Board finds undue hardship (374-94A)",
+      "Lot coverage is 'That percentage of the lot covered by the principal building, accessory buildings and structures' (374-7). No impervious cover figure was found in the zoning chapter"
+    ],
+    "notes": "Zoning office: Borough of Pleasant Hills Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles I (374-4 only), II, IV to XIV, XVII to XXI and Chapter 216 up to its definitions, the table of contents, the version information and code searches. Not read: Article III (district list and map), Article XIVA (Airport District Overlay), Articles XV, XVI, XVIIIA, XXII to XXIV, the rest of the 216-35 definitions, and Chapters 222 (grading, landslide-prone soils), 322 and 323 (riparian buffer easements in subdivisions and land developments). Open points: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), and whether 374-104B limits use variances."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 374",
+      "url": "https://ecode360.com/PL1849/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, elder cottage, extended family, household employee, conversion, temporary dwelling, apartment addition, supplemental dwelling, habitation, living quarters and caretaker, and read the use lists of every district. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "374-11, 374-15, 374-33",
+      "url": "https://ecode360.com/print/PL1849?guid=10786245",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot, and a single-family dwelling may have only one kitchen. R-2 permits two-family dwellings by right"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "374-104B",
+      "url": "https://ecode360.com/print/PL1849?guid=10787059",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and each district permits its listed uses 'and no other', so the path is a use variance from the Zoning Hearing Board (MPC 910.2). In R-2 a house may instead become a two-family dwelling by right (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "374-104B",
+      "url": "https://ecode360.com/print/PL1849?guid=10787059",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 374-104B(1) to (3). The section names physical conditions of the lot 'but in no other case'. No express bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A building with only two noncommunicating units, each for one family and each with its own exterior entrance door. Lot at least 14,500 sq ft and 80 ft wide, at most 6 dwelling units per acre, lot coverage at most 35%. Front yard 35 ft from the property line (65 ft from the center line of a state or county road, 60 ft from the center line of a Borough street), side yards 15 ft each and rear yard 30 ft for the building, 10 ft rear for accessory structures. Height at most 2 1/2 stories or 30 ft. Two parking stalls for each unit, one of them in an enclosed garage",
+          "min_lot_sqft": 14500,
+          "disputed_min_lot": {
+            "districts": [
+              "R-2"
+            ],
+            "min_lot_sqft": 14520,
+            "section": "374-16B(1)",
+            "note": "The density cap of 6 dwelling units per acre needs 14,520 sq ft for two units, a little more than the 14,500 sq ft lot minimum"
+          },
+          "requires": [
+            {
+              "test": "lot_width_at_least",
+              "value": 80,
+              "condition": "A lot at least 80 ft wide",
+              "section": "374-16B(3)"
+            }
+          ],
+          "covers_forms": [
+            "internal",
+            "attached"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "374-15A(2), 374-16B, 374-7 'Dwelling, two-family', 374-82A, 374-88E",
+          "url": "https://ecode360.com/print/PL1849?guid=10786269",
+          "confidence": "secondary",
+          "note": "A two-unit building, not an ADU. A house converted or enlarged into two units must meet the two-family figures, which are larger than the single-family ones (7,800 sq ft, 60 ft wide, 5 ft side yards)"
+        }
+      ],
+      "section": "374-15A(2), 374-16B",
+      "url": "https://ecode360.com/print/PL1849?guid=10786269",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 374",
+      "url": "https://ecode360.com/10786091",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in the parts read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "P-1",
+        "O-1",
+        "C-1",
+        "C-2",
+        "C-3",
+        "C-4",
+        "M-1"
+      ],
+      "section": "374-11, 374-15, 374-18, 374-21, 374-24, 374-29, 374-33, 374-36, 374-40, 374-45, 374-52",
+      "url": "https://ecode360.com/print/PL1849?guid=10786245",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-3 and R-4 permit only multifamily dwellings by conditional use. P-1, O-1, C-2, C-3, C-4 and M-1 permit no house"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'No single-family dwelling shall contain more than one kitchen, dining room, living room or breakfast room.' A second kitchen in a house makes it more than a single-family dwelling.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "C-1"
+          ],
+          "building_types": null,
+          "section": "374-7 'Dwelling, single-family'",
+          "url": "https://ecode360.com/print/PL1849?guid=10786117",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain area an accessory structure 'shall not be designed or used for human habitation but shall be limited to the parking of vehicles, or to the storage of tools, material, and equipment related to the principal use or activity', with at most 200 sq ft of floor area and no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "216-23E",
+          "url": "https://ecode360.com/print/PL1849?guid=10783998",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 216"
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain area new construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation. No enlargement may raise the base flood elevation. Work of 50% or more of a building's market value is a substantial improvement.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "216-23A, 216-31",
+          "url": "https://ecode360.com/print/PL1849?guid=10783998",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 216"
+        }
+      ],
+      "section": "374-7, 216-23, 216-31",
+      "url": "https://ecode360.com/print/PL1849?guid=10786117",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "374-11, 374-15, 374-33",
+      "url": "https://ecode360.com/print/PL1849?guid=10786245",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "374-82I",
+      "url": "https://ecode360.com/print/PL1849?guid=10786963",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'No accessory structure shall exceed one story or 15 feet above ground level'"
+    },
+    "accessory_structure_max_sqft": {
+      "value": 650,
+      "section": "374-82I",
+      "url": "https://ecode360.com/print/PL1849?guid=10786963",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The accessory structure shall not be less than 240 square feet and no more than 650 square feet.' A storage building in R-1 or R-2 is held to 100 sq ft (144 sq ft on an R-1 lot over 10,000 sq ft) by 374-14.1 and 374-17.1"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "374-88E",
+      "url": "https://ecode360.com/print/PL1849?guid=10787006",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "No ADU use. '2 parking stalls per dwelling unit, 1 of which must be in an enclosed garage'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "374-88E",
+      "url": "https://ecode360.com/print/PL1849?guid=10787006",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two stalls for each of two dwelling units, one of each pair in an enclosed garage"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7800,
+        "section": "374-12A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'a minimum area of 7,800 square feet per family'. Lot width 60 ft"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7800,
+        "section": "374-12A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'7,800 square feet per family' for every building 'erected, altered or used in whole or in part as a dwelling'"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "374-12B",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A deeper front yard already established on the street continues"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "374-12C",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'no side yard of a dwelling or accessory structure shall be less than five feet wide at any point'"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "374-12C",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'the composite minimum width for both side yards shall be not less than 15 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "374-12D",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "For dwellings. 20 ft for accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "374-12D",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "374-12C",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "374-12F",
+        "url": "https://ecode360.com/print/PL1849?guid=10786245",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'No more than 35% of the area of any lot shall be occupied by the dwelling and all accessory structures.' Front yard coverage at most 50% of the required front yard"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7800,
+        "section": "374-16A(2)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family dwelling. Lot width 60 ft, at most 5.6 units per acre. A two-family dwelling needs 14,500 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "374-16A(6)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "From the property line, and at least 65 ft from the center line of a state or county road or 60 ft from the center line of a Borough street"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "374-16A(8)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'two yards totaling 15 feet, neither less than five feet', for principal and accessory structures"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "374-16A(8)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "374-16A(7)(a)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Principal structures. 20 ft for accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "374-16A(7)(b)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "374-16A(8)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "374-16A(4)",
+        "url": "https://ecode360.com/print/PL1849?guid=10786269",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Front yard coverage at most 50%"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "C-1": {
+      "setback_front_ft": {
+        "value": 35,
+        "section": "374-34A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786523",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "374-34B",
+        "url": "https://ecode360.com/print/PL1849?guid=10786523",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'two side yards totaling not less than 15 feet and neither yard being less than five feet'"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "374-34B",
+        "url": "https://ecode360.com/print/PL1849?guid=10786523",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "374-34E",
+        "url": "https://ecode360.com/print/PL1849?guid=10786523",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "374-34F",
+        "url": "https://ecode360.com/print/PL1849?guid=10786523",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "For a single-family dwelling"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "374-82A",
+        "url": "https://ecode360.com/print/PL1849?guid=10786963",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    }
+  }
+}

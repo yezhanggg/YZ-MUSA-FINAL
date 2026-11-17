@@ -1,0 +1,663 @@
+{
+  "provenance": {
+    "jurisdiction": "West Earl township",
+    "instrument": "West Earl Township Zoning Ordinance (Chapter 184 Zoning, Ord. No. 24 of 11-3-1970, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 WE1370, Township of West Earl (184-7 'Municipality': 'West Earl Township, Lancaster County, Pennsylvania'). District use lists and lot, yard and height figures are text in Article IV. The only attachment is the zoning map. Floodplain rules are in the zoning chapter (184-37). New Laws: none listed",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/12452988",
+      "https://ecode360.com/WE1370/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1370/search?query=%22steep%20slope%22%20OR%20riparian%20OR%20%22two-family%22%20OR%20duplex%20OR%20%22mobile%20home%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/WE1370?guid=12453004",
+      "https://ecode360.com/print/WE1370?guid=12453148",
+      "https://ecode360.com/print/WE1370?guid=12453158",
+      "https://ecode360.com/print/WE1370?guid=12453444",
+      "https://ecode360.com/print/WE1370?guid=12453653",
+      "https://ecode360.com/print/WE1370?guid=12453945",
+      "https://ecode360.com/print/WE1370?guid=47740776",
+      "https://ecode360.com/print/WE1370?guid=12453946",
+      "https://ecode360.com/print/WE1370?guid=12454017"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207182824",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/12452988",
+    "code_current_through": "2025-09-22",
+    "code_current_through_note": "eCode360 version information: 'Includes legislation through 09-22-2025.' New Laws (0). The last zoning amendment shown is Ord. No. 283 of 9-22-2025",
+    "checks": [
+      "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, elder cottage, extended family, household employee, conversion, temporary dwelling, apartment addition, supplemental dwelling, habitation, living quarters, caretaker, steep slope, riparian, two-family, duplex, mobile home) find only the multifamily conversion rules (184-31), the two-family dwelling definition (184-7), a watchman or caretaker dwelling as an accessory use in C-2, I and MUE (184-15B(1), 184-16B(1), 184-16.1B(4)(a)) and the mobile home rules",
+      "A permits 'Single-family detached dwellings' (184-11B(7)) and R-1 the same (184-12A(1)). R-2 permits single-family detached and semidetached dwellings and 'Two-family detached dwellings' by right (184-13A). No district lists a second unit on a house lot",
+      "A use 'neither specifically permitted nor prohibited' may be authorized by the Zoning Hearing Board as a special exception if it 'is of the same general character as the enumerated permitted uses in the zoning district', fits the district's purpose, is compatible with its permitted uses and 'is not permitted in any other zoning district by this chapter' (184-43.2). Whether a second unit on a house lot is such a use is not settled, since the code lists two-family dwellings and multifamily conversions",
+      "Multifamily conversion: 'The conversion of a single-family detached dwelling existing on the effective date of this section to a dwelling containing two, three or four dwelling units shall be permitted in any district' under 184-31 (added 7-22-1996 by Ord. No. 118). Each unit at least 600 sq ft. 10,000 sq ft of lot per unit where public sewer is available, one acre per unit with on-lot sewage. A two-unit conversion may add up to 25% of the original floor area, with no change to the house's residential appearance. Two off-street parking spaces per unit. R-2 lists 'Multifamily dwellings in accordance with § 184-31' as a special exception (184-13C(1)), while A and R-1 do not list it",
+      "A Agricultural: 'For each 50 acres of contiguous land (the \"parent tract\") under single ownership existing on December 14, 1986, one dwelling unit may be constructed on the parent tract, or one lot may be subdivided from the parent tract' (184-11E(1)). The lot area is at least 30,000 sq ft and at most one acre 'per dwelling unit' (184-11F). Dwellings that existed when the chapter or a rezoning to A took effect do not count (184-11E(4))",
+      "More than one building with a permitted principal use may stand on one lot if each meets the yard 'and other requirements of this chapter' as though on its own lot and a plan is recorded under Chapter 155 (184-19)",
+      "I Industrial prohibits 'Residential development or the construction of dwellings on existing lots or portions of lots zoned industrial' (184-16D(1)). C-1, C-2 and MUE permit no house. C-2, I and MUE allow 'A dwelling for a watchman or caretaker' as an accessory use to a business",
+      "No general yard, height or size figure for accessory buildings was found, except utility sheds: 4 ft side and rear yards, at most 12 by 24 ft and 8 ft tall (184-28). Required yards are defined as 'open, unoccupied space, open to the sky' (184-7). Accessory uses not named are allowed where 'clearly accessory to the principal permitted use' (184-30E). The A district's permitted accessory uses do not include a general class of customary accessory uses (184-11C), while R-1 and R-2 permit 'customary accessory uses and buildings' (184-12B(3), 184-13B(3))",
+      "Parking: 'Residential dwellings: two parking spaces for each dwelling unit' (184-36A(1)(a)[1]). A fraction under one-half may be disregarded and a fraction over one-half counts as a full space. The code is silent on exactly one-half (184-36A(3))",
+      "Floodplain Conservation District (184-37, an overlay from the FEMA maps of 4-5-2016): 'All structures, buildings and mobile homes, with the exception of those specifically allowed by this section' are prohibited (184-37J(2)(e)[1]), and 'All new and substantially improved structures are prohibited in the identified floodplain unless a variance is granted' (184-37N, O). In AE and A zones 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the DEP regional office and the Township' (184-37J(2)(b)[1], J(3)(b)[1]). Work of 50% or more of a building's market value is a substantial improvement (184-37U(3)). 'Development' includes renovation and alteration of buildings (184-37W). The Zoning Hearing Board hears floodplain variances (184-37V)",
+      "Lot coverage is 'A percentage of lot area which may be covered by buildings and structures' (184-7). Impervious coverage is a separate figure, set only in A and the business districts",
+      "Variances: Zoning Hearing Board on the findings of 184-66D(1) to (8). No bar on a use variance was found. Special exceptions go to the Planning Commission for review first (184-66E(2))",
+      "Nonconforming structures: a house in the required front yard may expand if no nearer the street and the side and rear yards are met, and a house in the required side yard may add one story of at most 16 ft and 25% of its first floor area (184-46A(2), (3)). A single-family detached dwelling may be built on a lot of record in A that is below the lot size or width (184-11E(2))",
+      "Adaptive reuse of an agricultural building (184-44, Ord. No. 283) allows offices, studios, a museum, small retail, storage or an event venue in a pre-2015 farm building. No dwelling"
+    ],
+    "notes": "Zoning office: West Earl Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles II, III, IV, VI and VIII, Article V from 184-17 to 184-36A(5), 184-37 in full up to its 'Development' definition, 184-43.2 and 184-44, the table of contents, the version information and code searches. Not read: 184-36A(6) to 184-36B, 184-38 to 184-43.1 (adult uses, bed-and-breakfast, lighting, airport safety zones, retirement homes, multifamily and townhouse development, towers), 184-43.3 Traditional Residential Development Option (R-2 conditional use), 184-43.4, 184-43.5, the rest of the 184-37W definitions, Articles I, VII and IX, and Chapters 118 and 155. Open points: whether 184-31 conversions are by right ('permitted in any district') or a special exception (R-2 list), and whether they reach A and R-1, whose use lists do not name them. Whether a second unit in A counts against the 184-11E dwelling quota."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 184",
+      "url": "https://ecode360.com/WE1370/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20habitation%20OR%20%22living%20quarters%22%20OR%20caretaker&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, elder cottage, extended family, household employee, conversion, temporary dwelling, apartment addition, supplemental dwelling, habitation, living quarters and caretaker, and read the use lists of A, R-1, R-2, C-1, C-2, I and MUE. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "184-11B, 184-12A, 184-13A",
+      "url": "https://ecode360.com/print/WE1370?guid=12453158",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. A house may be converted into two to four units under 184-31, and R-2 permits two-family dwellings by right"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "184-66D",
+      "url": "https://ecode360.com/print/WE1370?guid=12454017",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2), or a special exception for a use not provided for if the Board finds it of the same general character as the district's permitted uses (184-43.2). R-2 permits a two-family dwelling by right, and 184-31 lets an existing house be converted (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "184-66D",
+      "url": "https://ecode360.com/print/WE1370?guid=12454017",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 184-66D(1) to (8). No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "184-43.2",
+      "url": "https://ecode360.com/print/WE1370?guid=12453945",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'If a use is neither specifically permitted nor prohibited under this chapter', the Zoning Hearing Board may permit it by special exception. Whether a second unit is such a use is not settled, since the code lists two-family dwellings and multifamily conversions"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "A",
+        "R-1",
+        "R-2"
+      ],
+      "section": "184-43.2, 184-16D(1)",
+      "url": "https://ecode360.com/print/WE1370?guid=12453945",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The districts that permit a house. I prohibits dwellings (184-16D(1)), and C-1, C-2 and MUE permit no house"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "184-43.2",
+      "url": "https://ecode360.com/print/WE1370?guid=12453945",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "quote": "The use may be permitted if it is of the same general character as the enumerated permitted uses in the zoning district, is in accordance with the intended purpose of the zoning district, is compatible with the permitted uses in the zoning district and is not permitted in any other zoning district by this chapter"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A detached building for two families living independently and doing their own cooking, side by side or over and under, both on one lot. Lot at least 8,000 sq ft with public water and public sewer, one acre with on-lot sewage. Lot width 80 ft. Front yard 20 ft, each side 15 ft, rear 25 ft. Building coverage with accessory structures at most 25%. Height 35 ft and two and one-half stories. Two parking spaces for each unit. The code gives no lot figure for a lot with public sewer and no public water",
+          "min_lot_sqft": 8000,
+          "min_lot_by_utility": [
+            {
+              "when": "With public water and public sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 8000,
+              "section": "184-13E(2)(a)"
+            },
+            {
+              "when": "With on-lot sewage disposal",
+              "public_sewer": false,
+              "public_water": null,
+              "min_lot_sqft": 43560,
+              "section": "184-13E(2)(b)"
+            }
+          ],
+          "requires": [
+            {
+              "test": "lot_width_at_least",
+              "value": 80,
+              "condition": "A lot at least 80 ft wide",
+              "section": "184-13E(1)(a)"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "184-13A(3), E, F, G, 184-7 'Dwelling' D, 184-36A(1)(a)[1]",
+          "url": "https://ecode360.com/print/WE1370?guid=12453158",
+          "confidence": "secondary",
+          "note": "A two-unit building, not an ADU. Whether a house with a unit added inside or onto it counts as a two-family dwelling is for the zoning officer. R-2 also lists conversions of an existing house under 184-31 as a special exception"
+        },
+        {
+          "name": "Multifamily conversion to two units (184-31)",
+          "path": "by_right",
+          "districts": [
+            "A",
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "An existing single-family detached dwelling converted into two units. Each unit at least 600 sq ft. 10,000 sq ft of lot per unit where public sewer is available (20,000 sq ft for two), one acre per unit with on-lot sewage. Proof of water and sewage capacity for the new unit. An addition of up to 25% of the original floor area is allowed for a two-unit conversion, and the house must keep its residential appearance. Two off-street parking spaces per unit. Units above grade need a direct way out to the ground",
+          "min_lot_sqft": 20000,
+          "min_lot_by_utility": [
+            {
+              "when": "Where public sewer is available",
+              "public_sewer": true,
+              "public_water": null,
+              "min_lot_sqft": 20000,
+              "section": "184-31B"
+            },
+            {
+              "when": "With on-lot sewage disposal",
+              "public_sewer": false,
+              "public_water": null,
+              "min_lot_sqft": 87120,
+              "section": "184-31B"
+            }
+          ],
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling to convert",
+              "section": "184-31"
+            },
+            {
+              "test": "house_built_before",
+              "value_date": "1996-07-22",
+              "condition": "The house existed on the effective date of 184-31 (added 7-22-1996 by Ord. No. 118)",
+              "section": "184-31"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "disputed_path": {
+            "path": "special_exception",
+            "section": "184-13C(1)",
+            "url": "https://ecode360.com/print/WE1370?guid=12453158",
+            "note": "184-31 says a conversion 'shall be permitted in any district', which reads as by right. The R-2 use list names 'Multifamily dwellings in accordance with § 184-31' among its special exceptions"
+          },
+          "disputed_districts": {
+            "districts": [
+              "A",
+              "R-1"
+            ],
+            "section": "184-11, 184-12, 184-31",
+            "url": "https://ecode360.com/print/WE1370?guid=12453158",
+            "note": "184-31 reaches 'any district', but the A and R-1 use lists do not name a conversion. In A a new dwelling unit may also count against the quota of one dwelling unit for each 50 acres of the parent tract (184-11E(1))"
+          },
+          "section": "184-31, 184-36A(1)(a)[1]",
+          "url": "https://ecode360.com/print/WE1370?guid=12453444",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU. The code names no owner or family rule for it"
+        },
+        {
+          "name": "Second principal dwelling on the lot (184-19)",
+          "path": "by_right",
+          "districts": [
+            "A",
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "A second building with a permitted principal use, here a single-family detached dwelling, if each building meets the yard and other requirements of the chapter as though it stood on its own lot, and a plan is recorded under Chapter 155, Subdivision and Land Development. The lot then needs the district lot area for each house. In A each new dwelling unit counts against the quota of one for each 50 acres of the parent tract as it stood on 12-14-1986, and the lot area is at most one acre per dwelling unit",
+          "min_lot_by_district": {
+            "A": 60000,
+            "R-1": 20000,
+            "R-2": 16000
+          },
+          "land_development": true,
+          "builds": [
+            "detached_new"
+          ],
+          "section": "184-19, 184-11E, F, 184-12D, 184-13E",
+          "url": "https://ecode360.com/print/WE1370?guid=12453444",
+          "confidence": "secondary",
+          "note": "Read as twice the district lot area with public sewer and water. R-1 needs 30,000 sq ft per house with public sewer and on-lot water and one acre with on-lot sewage, R-2 one acre with on-lot sewage, so a lot without those services needs more"
+        }
+      ],
+      "section": "184-13A(3), 184-31, 184-19",
+      "url": "https://ecode360.com/print/WE1370?guid=12453158",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 184",
+      "url": "https://ecode360.com/12452988",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in the parts read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "A",
+        "R-1",
+        "R-2",
+        "C-1",
+        "C-2",
+        "I",
+        "MUE"
+      ],
+      "section": "184-11 to 184-16.1",
+      "url": "https://ecode360.com/print/WE1370?guid=12453158",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. C-1, C-2 and MUE permit no house. C-2, I and MUE allow a dwelling for a watchman or caretaker as an accessory use to a business. I prohibits dwellings"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District 'All structures, buildings and mobile homes, with the exception of those specifically allowed by this section' are prohibited, and all new and substantially improved structures are prohibited unless the Zoning Hearing Board grants a variance.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Conservation District"
+          ],
+          "section": "184-37J(2)(e)[1], 184-37N, 184-37O",
+          "url": "https://ecode360.com/print/WE1370?guid=12453653",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District, work on an existing building of 50% or more of its market value is a substantial improvement, which is prohibited unless a variance is granted. Smaller work must be elevated or floodproofed to the greatest extent possible, and no enlargement may raise the base flood elevation.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Conservation District"
+          ],
+          "section": "184-37N, 184-37U",
+          "url": "https://ecode360.com/print/WE1370?guid=12453653",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In AE and A flood zones 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the DEP regional office and the Township'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Floodplain Conservation District"
+          ],
+          "section": "184-37J(2)(b)[1], 184-37J(3)(b)[1]",
+          "url": "https://ecode360.com/print/WE1370?guid=12453653",
+          "confidence": "verified"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "In A one dwelling unit may be built, or one lot subdivided, for each 50 acres of the parent tract held in one ownership on 12-14-1986. The lot area is at least 30,000 sq ft and at most one acre per dwelling unit. Dwellings that stood when the chapter or a rezoning to A took effect do not count.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "A"
+          ],
+          "building_types": null,
+          "section": "184-11E, 184-11F",
+          "url": "https://ecode360.com/print/WE1370?guid=12453158",
+          "confidence": "verified"
+        },
+        {
+          "kind": "district",
+          "condition": "I prohibits 'Residential development or the construction of dwellings on existing lots or portions of lots zoned industrial'.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "I"
+          ],
+          "building_types": null,
+          "section": "184-16D(1)",
+          "url": "https://ecode360.com/print/WE1370?guid=12453158",
+          "confidence": "verified"
+        }
+      ],
+      "section": "184-37, 184-11E, 184-16D",
+      "url": "https://ecode360.com/print/WE1370?guid=12453653",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "184-11, 184-12, 184-13",
+      "url": "https://ecode360.com/print/WE1370?guid=12453158",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "184-36A(1)(a)[1]",
+      "url": "https://ecode360.com/print/WE1370?guid=12453444",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "No ADU use. 'Residential dwellings: two parking spaces for each dwelling unit'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "184-36A(1)(a)[1], 184-31E",
+      "url": "https://ecode360.com/print/WE1370?guid=12453444",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two spaces for each of two dwelling units"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "184-11F(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'The minimum lot area per dwelling unit or other principal use shall be 30,000 square feet.' The lot area per dwelling unit is at most one acre (184-11F(2)). Lot width 90 ft"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 30000,
+        "section": "184-11F(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "Per dwelling unit, so a second unit reads as needing 60,000 sq ft. A new unit also counts against the 184-11E quota"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "184-11G(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "184-11G(2)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "184-11G(3)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "184-11H(1)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots less than five acres. 10% on lots five acres or greater"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.25,
+            "lot_sqft_below": 217800
+          },
+          {
+            "max_building_coverage": 0.1,
+            "lot_sqft_at_least": 217800
+          }
+        ],
+        "section": "184-11H(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Lots five acres or greater: 10%.' 'Lots less than five acres: 25%.'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "184-11H(2)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Lots less than five acres. 15% on lots five acres or greater"
+      },
+      "max_impervious_by_lot_size": {
+        "value": [
+          {
+            "max_impervious": 0.3,
+            "lot_sqft_below": 217800
+          },
+          {
+            "max_impervious": 0.15,
+            "lot_sqft_at_least": 217800
+          }
+        ],
+        "section": "184-11H(2)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Lots five acres or greater: 15%.' 'Lots less than five acres: 30%.'"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "184-11H(3)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'In feet: 50 (excluding silos)'"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "184-11H(3)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "184-12D(1)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "With public water and public sanitary sewer service. Lot width 90 ft"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "184-12E(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "184-12E(2)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "184-12E(3)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "184-12F(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-12F(2)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "184-12F(2)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With on-lot water and public sanitary sewer service",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "section": "184-12D(1)(b)"
+          },
+          {
+            "when": "With on-lot sanitary sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "184-12D(1)(c)",
+            "note": "One acre"
+          }
+        ],
+        "section": "184-12D(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "184-13E(2)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Detached dwellings with both public water and public sewer service. Lot width 80 ft"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 4000
+        },
+        "section": "184-13E(3)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Semidetached dwellings with both public water and public sewer service. Lot width 40 ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "184-13F(1)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "184-13F(1)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_side_semi_ft": {
+        "value": 15,
+        "section": "184-13F(2)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "One side yard for a semidetached dwelling"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "184-13F(1)(c)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "184-13G(1)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum building coverage, including accessory structures: 25%'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "184-13G(2)(a)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 2.5,
+        "section": "184-13G(2)(b)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With on-lot sewage disposal",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "section": "184-13E(2)(b)",
+            "note": "One acre"
+          }
+        ],
+        "section": "184-13E(2)",
+        "url": "https://ecode360.com/print/WE1370?guid=12453158",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "The code gives no figure for a lot with public sewer and on-lot water"
+      }
+    }
+  }
+}
