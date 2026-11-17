@@ -8,8 +8,10 @@ Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
 
 - Batch 44 checked: Economy (Beaver) and West Manheim (York) verified. Economy has a conversion apartment by conditional use in R-2 near C-1. West Manheim coverage is impervious cover. East Nottingham (Chester) stays drafted: who may live in the temporary family home is not settled.
 - Batch 45: West Caln (Chester), Collingdale (Delaware), Brighton (Beaver). Collingdale and Brighton verified. West Caln stays drafted: on a farm lot in SRR and RR the code reads both by right and conditional use.
-- Batch 46 (first readings): Schuylkill (Chester), East Donegal (Lancaster), Southampton (Franklin).
-- Now 193 places with a rule file: 120 verified, 73 drafted. 74 of the 191 town codes have no ADU text.
+- Batch 46: Schuylkill (Chester), East Donegal (Lancaster), Southampton (Franklin). East Donegal and Southampton verified. Schuylkill stays drafted: the code names Option 2 and Option 3 for the ADU lot.
+- Batch 47: West Earl (Lancaster), Pleasant Hills (Allegheny), North Coventry (Chester), all verified. North Coventry was verified after pass 23, once its impervious tiers printed with one decimal.
+- Batch 48: East Manchester (York) and Canton (Washington) verified. Wilson (Northampton) stays drafted: the tool cannot yet show garage conversion yards by form.
+- Now 199 places with a rule file: 127 verified, 72 drafted. 77 of the 197 town codes have no ADU text.
 
 ### Rules engine pass 22
 
@@ -17,6 +19,13 @@ Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
 - A disputed bar gives its section before the overlay line. The top-of-bank line names the work it reaches. Equal sewer and water rows are said once.
 - A disputed two-family lot minimum can differ by sewer and water (Maidencreek). A use that is not an ADU listing but covers the work (Perkasie residential conversion) is named on the by-form line.
 - No stored lot record changes (all ten lot towns reproduce byte for byte, grid hashes hold).
+
+### Rules engine pass 23
+
+- A share that is not a whole percent prints with one decimal (6.8%, not 7%). Franconia's row reads 28.6%.
+- A lot under every size tier of a units-by-lot-size table gets none from the table, not "the lot size was not given".
+- A development that replaces only coverage keeps the district yards (Schuylkill). An outbuilding height line no longer contradicts itself when the ADU has no height of its own.
+- No stored lot record changes.
 
 ### Assistant eval
 
