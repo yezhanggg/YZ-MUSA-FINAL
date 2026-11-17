@@ -4695,7 +4695,7 @@
       "pop_rank": 324,
       "file": "pa_lancaster_west_earl",
       "batch": 47,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/12452988",
@@ -4705,7 +4705,7 @@
       "why": [
         "added as batch 47 by population. Code Chapter 184 has no ADU text (184-31 conversion of an existing house to two units, two-family by right in R-2)"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether a 184-31 conversion is by right ('permitted in any district') or a special exception (R-2 list, 184-13C(1)), and whether it reaches A and R-1, whose use lists do not name it. Whether a second unit in A counts against the one-per-50-acres quota of 184-11E. 184-43.3 (Traditional Residential Development Option), 184-38 to 184-43.1 and Articles VII and IX were not read."
+      "status_note": "Verified 2026-11-17 after the fix round. For a later check: whether a 184-31 conversion is by right ('permitted in any district') or a special exception (R-2 list, 184-13C(1)), whether it reaches A and R-1, and the effective date of 184-31 (its history note reads 'Amended 7-22-1996', and that date is used). A second dwelling in A under 184-19 needs an unused 184-11E quota right, shown as applies only if. Whether 184-43.2 reaches a second unit, given its 'not permitted in any other zoning district' test. 184-38 to 184-41 and Articles VII and IX were not read."
     },
     {
       "geoid": "4200361328",
@@ -4719,7 +4719,7 @@
       "pop_rank": 326,
       "file": "pa_allegheny_pleasant_hills",
       "batch": 47,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10786091",
@@ -4729,7 +4729,7 @@
       "why": [
         "added as batch 47 by population. Code Chapter 374 has no ADU text (two-family by right in R-2, one kitchen per single-family dwelling)"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), and whether 374-104B ('but in no other case') limits use variances. Article III, Article XIVA (airport overlay), Articles XV, XVI, XXII to XXIV and Chapters 222 and 323 were not read."
+      "status_note": "Verified 2026-11-17 after the fix round. For a later check: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), whether the 216-23E accessory structure rule bars a detached unit built and elevated as a residential structure in the floodplain (read as a bar), and whether 374-104B ('but in no other case') limits use variances (read as not, since 374-104 keeps the Board's powers under state law). Chapters 222 and 323 were searched, not read in full."
     },
     {
       "geoid": "4202954936",
@@ -4753,7 +4753,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR))"
       ],
-      "status_note": "Drafted 2026-11-17, first reading. Open: whether an ADU inside the house needs the residential conversion special exception of 370-14B(2)(a) and 370-15B(2)(a), whether a 10 acre conservancy lot of an RC-1 or RR-1 design ('conforming to the standards for Option RC-2', 370-114A(2)) may hold one, and whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)). 370-38, 370-149, the 370-9 definitions L to Z and the other overlays were not read."
+      "status_note": "Drafted 2026-11-17 after the fix round. Open: the tool shows the 10 acre and up impervious tiers rounded to whole percents until the engine prints decimals (6.6% reads as 7%, 6.4% as 6%, 370-114A(4)). Also open: whether an ADU inside the house needs the residential conversion special exception (370-14B(2)(a), 370-15B(2)(a)), whether a 10 acre conservancy lot of an RC-1 or RR-1 design may hold one (370-114A(2)), whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)), whether the twin density per net tract area reaches a single lot (V-2 21,780 sq ft, TC-2 14,520 sq ft), which body hears the 75 year exemption of 370-114B(7)(d), and whether the ADU counts against the RC-2 or RR-2 unit cap (370-114B(1)). The Scenic Preservation Overlay bars a new building or addition (370-31E(1)). At 15 acres or more the impervious cap is a fixed 38,000 sq ft that is not tested."
     }
   ]
 }

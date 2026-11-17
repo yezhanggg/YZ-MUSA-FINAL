@@ -31,9 +31,9 @@
     "checks": [
       "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, elder cottage, extended family, household employee, conversion, temporary dwelling, apartment addition, supplemental dwelling, habitation, living quarters, caretaker, steep slope, riparian, two-family, duplex, mobile home) find only the multifamily conversion rules (184-31), the two-family dwelling definition (184-7), a watchman or caretaker dwelling as an accessory use in C-2, I and MUE (184-15B(1), 184-16B(1), 184-16.1B(4)(a)) and the mobile home rules",
       "A permits 'Single-family detached dwellings' (184-11B(7)) and R-1 the same (184-12A(1)). R-2 permits single-family detached and semidetached dwellings and 'Two-family detached dwellings' by right (184-13A). No district lists a second unit on a house lot",
-      "A use 'neither specifically permitted nor prohibited' may be authorized by the Zoning Hearing Board as a special exception if it 'is of the same general character as the enumerated permitted uses in the zoning district', fits the district's purpose, is compatible with its permitted uses and 'is not permitted in any other zoning district by this chapter' (184-43.2). Whether a second unit on a house lot is such a use is not settled, since the code lists two-family dwellings and multifamily conversions",
-      "Multifamily conversion: 'The conversion of a single-family detached dwelling existing on the effective date of this section to a dwelling containing two, three or four dwelling units shall be permitted in any district' under 184-31 (added 7-22-1996 by Ord. No. 118). Each unit at least 600 sq ft. 10,000 sq ft of lot per unit where public sewer is available, one acre per unit with on-lot sewage. A two-unit conversion may add up to 25% of the original floor area, with no change to the house's residential appearance. Two off-street parking spaces per unit. R-2 lists 'Multifamily dwellings in accordance with § 184-31' as a special exception (184-13C(1)), while A and R-1 do not list it",
-      "A Agricultural: 'For each 50 acres of contiguous land (the \"parent tract\") under single ownership existing on December 14, 1986, one dwelling unit may be constructed on the parent tract, or one lot may be subdivided from the parent tract' (184-11E(1)). The lot area is at least 30,000 sq ft and at most one acre 'per dwelling unit' (184-11F). Dwellings that existed when the chapter or a rezoning to A took effect do not count (184-11E(4))",
+      "A use 'neither specifically permitted nor prohibited' may be authorized by the Zoning Hearing Board as a special exception if it 'is of the same general character as the enumerated permitted uses in the zoning district', fits the district's purpose, is compatible with its permitted uses and 'is not permitted in any other zoning district by this chapter' (184-43.2). Whether a second unit on a house lot is such a use is not settled. The code lists two-family dwellings (R-2) and conversions of a house into two to four units, which 184-31 permits 'in any district', so the Board may find the use permitted elsewhere",
+      "Multifamily conversion: 'The conversion of a single-family detached dwelling existing on the effective date of this section to a dwelling containing two, three or four dwelling units shall be permitted in any district' under 184-31. Its history note reads 'Amended 7-22-1996 by Ord. No. 118', so the section's effective date may be earlier than 7-22-1996 and is not certain. Each unit at least 600 sq ft. 10,000 sq ft of lot per unit where public sewer is available, one acre per unit with on-lot sewage. A two-unit conversion may add up to 25% of the original floor area, with no change to the house's residential appearance. Two off-street parking spaces per unit. R-2 lists 'Multifamily dwellings in accordance with § 184-31' as a special exception (184-13C(1)), while A and R-1 do not list it",
+      "A Agricultural: 'For each 50 acres of contiguous land (the \"parent tract\") under single ownership existing on December 14, 1986, one dwelling unit may be constructed on the parent tract, or one lot may be subdivided from the parent tract' (184-11E(1)). The lot area is at least 30,000 sq ft and at most one acre 'per dwelling unit' (184-11F). Dwellings that existed when the chapter or a rezoning to A took effect do not count (184-11E(4)). The part of a lot used with a single-family dwelling, at most one acre, is shown on the plan, 'and the remainder of said lot shall not be used for residential purposes' (184-11E(5))",
       "More than one building with a permitted principal use may stand on one lot if each meets the yard 'and other requirements of this chapter' as though on its own lot and a plan is recorded under Chapter 155 (184-19)",
       "I Industrial prohibits 'Residential development or the construction of dwellings on existing lots or portions of lots zoned industrial' (184-16D(1)). C-1, C-2 and MUE permit no house. C-2, I and MUE allow 'A dwelling for a watchman or caretaker' as an accessory use to a business",
       "No general yard, height or size figure for accessory buildings was found, except utility sheds: 4 ft side and rear yards, at most 12 by 24 ft and 8 ft tall (184-28). Required yards are defined as 'open, unoccupied space, open to the sky' (184-7). Accessory uses not named are allowed where 'clearly accessory to the principal permitted use' (184-30E). The A district's permitted accessory uses do not include a general class of customary accessory uses (184-11C), while R-1 and R-2 permit 'customary accessory uses and buildings' (184-12B(3), 184-13B(3))",
@@ -42,9 +42,13 @@
       "Lot coverage is 'A percentage of lot area which may be covered by buildings and structures' (184-7). Impervious coverage is a separate figure, set only in A and the business districts",
       "Variances: Zoning Hearing Board on the findings of 184-66D(1) to (8). No bar on a use variance was found. Special exceptions go to the Planning Commission for review first (184-66E(2))",
       "Nonconforming structures: a house in the required front yard may expand if no nearer the street and the side and rear yards are met, and a house in the required side yard may add one story of at most 16 ft and 25% of its first floor area (184-46A(2), (3)). A single-family detached dwelling may be built on a lot of record in A that is below the lot size or width (184-11E(2))",
-      "Adaptive reuse of an agricultural building (184-44, Ord. No. 283) allows offices, studios, a museum, small retail, storage or an event venue in a pre-2015 farm building. No dwelling"
+      "Adaptive reuse of an agricultural building (184-44, Ord. No. 283, listed in A as 'subject to all requirements of § 184-43.6', read as 184-44) allows offices, studios, a museum, small retail, storage or an event venue in a pre-2015 farm building. No dwelling",
+      "A dwelling needs a permanent foundation under the 184-7 definitions, and a mobile home is not a dwelling. Mobile homes go only in a mobile home park (R-2 special exception, 184-34), so a manufactured or mobile home cannot serve as a second unit on a house lot",
+      "A short-term rental unit 'may not be located in a structure which contains a dwelling unit in addition to the short-term rental unit' (184-43.5). It is a special exception in A and by right in C-2, and it is not a path to a second unit",
+      "In the floodway 'No new construction or development shall be allowed, unless a permit is obtained from the DEP regional office and the Township' (184-37J(1)(b)[2]). 'Within a floodplain area, approximate floodplain or special flood hazard areas, manufactured homes shall be prohibited' (184-37R(2))",
+      "A variance or special exception expires if no zoning permit is obtained within 12 months (184-66C)"
     ],
-    "notes": "Zoning office: West Earl Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles II, III, IV, VI and VIII, Article V from 184-17 to 184-36A(5), 184-37 in full up to its 'Development' definition, 184-43.2 and 184-44, the table of contents, the version information and code searches. Not read: 184-36A(6) to 184-36B, 184-38 to 184-43.1 (adult uses, bed-and-breakfast, lighting, airport safety zones, retirement homes, multifamily and townhouse development, towers), 184-43.3 Traditional Residential Development Option (R-2 conditional use), 184-43.4, 184-43.5, the rest of the 184-37W definitions, Articles I, VII and IX, and Chapters 118 and 155. Open points: whether 184-31 conversions are by right ('permitted in any district') or a special exception (R-2 list), and whether they reach A and R-1, whose use lists do not name them. Whether a second unit in A counts against the 184-11E dwelling quota."
+    "notes": "Zoning office: West Earl Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles II, III, IV, VI and VIII, Article V from 184-17 to 184-36A(5), 184-37 in full up to its 'Development' definition, 184-43.2 and 184-44, the table of contents, the version information and code searches. Also read: 184-42, 184-43, 184-43.3 Traditional Residential Development Option (R-2 conditional use, no accessory unit) and 184-43.5. Not read: 184-36B, 184-38 to 184-41 (adult uses, bed-and-breakfast, lighting, airport safety zones), 184-43.1, 184-43.4, the rest of the 184-37W definitions, Articles I, VII and IX, and Chapters 118 and 155. Open points: whether 184-31 conversions are by right ('permitted in any district') or a special exception (R-2 list), whether they reach A and R-1, whose use lists do not name them, and the effective date of 184-31 (the history note says 'Amended 7-22-1996'). A second dwelling in A needs an unused 184-11E quota right. Whether 184-43.2 reaches a second unit, given its 'not permitted in any other zoning district' test."
   },
   "adu": {
     "term": {
@@ -71,7 +75,7 @@
       "url": "https://ecode360.com/print/WE1370?guid=12454017",
       "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2), or a special exception for a use not provided for if the Board finds it of the same general character as the district's permitted uses (184-43.2). R-2 permits a two-family dwelling by right, and 184-31 lets an existing house be converted (see the other paths)"
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2), or a special exception for a use not provided for if the Board finds it of the same general character as the district's permitted uses and not permitted in any other district (184-43.2). R-2 permits a two-family dwelling by right, and 184-31 lets an existing house be converted (see the other paths)"
     },
     "fallback_path": {
       "value": "variance",
@@ -87,7 +91,7 @@
       "url": "https://ecode360.com/print/WE1370?guid=12453945",
       "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "'If a use is neither specifically permitted nor prohibited under this chapter', the Zoning Hearing Board may permit it by special exception. Whether a second unit is such a use is not settled, since the code lists two-family dwellings and multifamily conversions"
+      "note": "The use must not be permitted in any other district. Two-family dwellings are permitted in R-2 and 184-31 permits conversions 'in any district', so a second unit may fail that test"
     },
     "unlisted_use_districts": {
       "value": [
@@ -144,15 +148,17 @@
             }
           ],
           "covers_forms": [
-            "internal"
+            "internal",
+            "attached"
           ],
           "builds": [
-            "internal"
+            "internal",
+            "attached"
           ],
           "section": "184-13A(3), E, F, G, 184-7 'Dwelling' D, 184-36A(1)(a)[1]",
           "url": "https://ecode360.com/print/WE1370?guid=12453158",
           "confidence": "secondary",
-          "note": "A two-unit building, not an ADU. Whether a house with a unit added inside or onto it counts as a two-family dwelling is for the zoning officer. R-2 also lists conversions of an existing house under 184-31 as a special exception"
+          "note": "A two-unit building, not an ADU. A house with a unit added inside it or as an addition joined to it is still one detached building, but whether it counts as a two-family dwelling is for the zoning officer. R-2 also lists conversions of an existing house under 184-31 as a special exception"
         },
         {
           "name": "Multifamily conversion to two units (184-31)",
@@ -189,7 +195,7 @@
             {
               "test": "house_built_before",
               "value_date": "1996-07-22",
-              "condition": "The house existed on the effective date of 184-31 (added 7-22-1996 by Ord. No. 118)",
+              "condition": "The house existed on the effective date of 184-31. The history note reads 'Amended 7-22-1996 by Ord. No. 118', so that date is used here, but the section may be older and its effective date earlier",
               "section": "184-31"
             }
           ],
@@ -220,16 +226,38 @@
           "note": "A house divided into units, not an ADU. The code names no owner or family rule for it"
         },
         {
-          "name": "Second principal dwelling on the lot (184-19)",
+          "name": "Second principal dwelling on the lot (184-19, A)",
           "path": "by_right",
           "districts": [
-            "A",
+            "A"
+          ],
+          "conditions": "A second building with a permitted principal use, here a single-family detached dwelling, if each building meets the yard and other requirements of the chapter as though it stood on its own lot, and a plan is recorded under Chapter 155, Subdivision and Land Development. The lot then needs at least 30,000 sq ft for each house. In A a new dwelling unit uses one of the dwelling rights of the parent tract, one for each 50 acres held in one ownership on 12-14-1986. The part of the lot used with each house is at most one acre, and the rest of the lot may not be used for residential purposes",
+          "land_development": true,
+          "builds": [
+            "detached_new"
+          ],
+          "section": "184-19, 184-11E, F",
+          "url": "https://ecode360.com/print/WE1370?guid=12453444",
+          "confidence": "secondary",
+          "note": "Read as twice the 30,000 sq ft lot area per dwelling unit. Whether the lot has an unused dwelling right depends on the parent tract's history, which the tool does not know",
+          "min_lot_sqft": 60000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "An unused dwelling right under the 184-11E quota for the parent tract",
+              "section": "184-11E(1), (3), (5)"
+            }
+          ]
+        },
+        {
+          "name": "Second principal dwelling on the lot (184-19, R-1 and R-2)",
+          "path": "by_right",
+          "districts": [
             "R-1",
             "R-2"
           ],
-          "conditions": "A second building with a permitted principal use, here a single-family detached dwelling, if each building meets the yard and other requirements of the chapter as though it stood on its own lot, and a plan is recorded under Chapter 155, Subdivision and Land Development. The lot then needs the district lot area for each house. In A each new dwelling unit counts against the quota of one for each 50 acres of the parent tract as it stood on 12-14-1986, and the lot area is at most one acre per dwelling unit",
+          "conditions": "A second building with a permitted principal use, here a single-family detached dwelling, if each building meets the yard and other requirements of the chapter as though it stood on its own lot, and a plan is recorded under Chapter 155, Subdivision and Land Development. The lot then needs the district lot area for each house",
           "min_lot_by_district": {
-            "A": 60000,
             "R-1": 20000,
             "R-2": 16000
           },
@@ -237,7 +265,7 @@
           "builds": [
             "detached_new"
           ],
-          "section": "184-19, 184-11E, F, 184-12D, 184-13E",
+          "section": "184-19, 184-12D, 184-13E",
           "url": "https://ecode360.com/print/WE1370?guid=12453444",
           "confidence": "secondary",
           "note": "Read as twice the district lot area with public sewer and water. R-1 needs 30,000 sq ft per house with public sewer and on-lot water and one acre with on-lot sewage, R-2 one acre with on-lot sewage, so a lot without those services needs more"

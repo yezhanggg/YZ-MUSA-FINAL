@@ -145,17 +145,17 @@
    },
    {
     "tier": "verified",
-    "places": 122,
-    "pop": 4790128,
-    "pop_share": 0.3668,
-    "housing_units": 2070065
+    "places": 124,
+    "pop": 4806747,
+    "pop_share": 0.3681,
+    "housing_units": 2076693
    },
    {
     "tier": "drafted",
-    "places": 75,
-    "pop": 1609078,
-    "pop_share": 0.1232,
-    "housing_units": 657797
+    "places": 73,
+    "pop": 1592459,
+    "pop_share": 0.1219,
+    "housing_units": 651169
    },
    {
     "tier": "reported",
@@ -268,8 +268,8 @@
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 18,
-    "pop": 393454
+    "places": 16,
+    "pop": 376835
    },
    {
     "tier": "reported",
@@ -316,8 +316,8 @@
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 58,
-    "pop": 1342460
+    "places": 60,
+    "pop": 1359079
    },
    {
     "tier": "verified",

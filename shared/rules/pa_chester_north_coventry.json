@@ -8,6 +8,7 @@
     "effective_date": "2007-02-26",
     "source_urls": [
       "https://ecode360.com/11562582",
+      "https://ecode360.com/print/NO2136?guid=11562582",
       "https://ecode360.com/NO2136/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22tenant%20house%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22accessory%20residential%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/print/NO2136?guid=11562642",
       "https://ecode360.com/print/NO2136?guid=11563075",
@@ -37,20 +38,24 @@
     "code_current_through_note": "eCode360 version information: 'Includes legislation through 05-11-2026.' New Laws (0)",
     "checks": [
       "An ADU is allowed only on a lot of 10 acres of gross lot area or more in a subdivision under the RC-2 Country Properties Option (RC) or the RR-2 Rural Lots Option (RR): 'One accessory dwelling unit (including an elder cottage or tenant house) shall be permitted on lots of 10 acres of gross lot area or larger within the RC-2 or RR-2 Options subject to the provisions of § 370-64, Residential conversions' (370-114B(7)). Houses under those options are by right (370-14B(1)(c), 370-15B(1)(c)). A house on an older tract of 10 acres or less (370-14B(1)(d), 370-15B(1)(d)) or in an RC-1 or RR-1 conservation design is not under these options",
-      "The unit may be 'in the principal residence or in new or existing traditional outbuildings (such as barns, carriage houses, or spring houses)'. New outbuildings must 'harmonize with the vernacular rural buildings of the Township's historic landscape'. A separate building may hold up to 2,000 sq ft of floor area. An existing accessory building more than 75 years old may exceed the floor space limits and setbacks 'through the special exception process' before the Board of Supervisors (370-114B(7)(a), (c), (d))",
-      "The ADU is 'subject to the provisions of § 370-64, Residential conversions': the district lot and bulk rules must be met, no conversion on a nonconforming lot or in a nonconforming structure, the house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, no major structural change to the exterior, separate cooking and sanitary facilities with Chester County Health Department approval, and at most 0.33 dwelling units per acre in RC and 0.5 in RR after the conversion (370-64A to I). A property with an RC-2 or RR-2 ADU may not add a unit by residential conversion (370-64G). RC and RR list residential conversions as special exceptions (370-14B(2)(a), 370-15B(2)(a)), so whether a unit inside the house needs that special exception is not settled",
-      "Residential conversion of a single-family detached dwelling (370-64) is a special exception in RC, RR, R-1, V-2, TC-1 and TC-2, and in V-1 only within a Class I, II or III historic resource, where one conversion may be in an existing accessory structure to the rear of the house (370-17B(2)(b)[1]). Density after conversion: RC 0.33, RR 0.5, R-1 and V-1 2.0, V-2, TC-1 and TC-2 3.0 dwelling units per acre (370-64F). Fractions of a dwelling unit are rounded down (370-8B). In TC-1 every special exception use needs 40,000 sq ft of net lot area (370-19C(1)(b))",
+      "The unit may be 'in the principal residence or in new or existing traditional outbuildings (such as barns, carriage houses, or spring houses)'. New outbuildings must 'harmonize with the vernacular rural buildings of the Township's historic landscape'. A separate building may hold up to 2,000 sq ft of floor area. An existing accessory building more than 75 years old may exceed the floor space limits and setbacks 'through the special exception process' (370-114B(7)(a), (c), (d)). The text names the Board of Supervisors, while a special exception is otherwise heard by the Zoning Hearing Board, so which body hears it is not clear",
+      "The ADU is 'subject to the provisions of § 370-64, Residential conversions': the district lot and bulk rules must be met, no conversion on a nonconforming lot or in a nonconforming structure, the house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, no major structural change to the exterior, separate cooking and sanitary facilities with Chester County Health Department approval, and at most 0.33 dwelling units per acre in RC and 0.5 in RR after the conversion (370-64A to I). A property with an RC-2 or RR-2 ADU may not add a unit by residential conversion (370-64G, which cites 370-114B(6), read as 370-114B(7)). RC and RR list residential conversions as special exceptions (370-14B(2)(a), 370-15B(2)(a)), so whether a unit inside the house needs that special exception is not settled",
+      "Residential conversion of a single-family detached dwelling (370-64) is a special exception in RC, RR, R-1, V-2, TC-1 and TC-2, and in V-1 only within a Class I, II or III historic resource, where one conversion may be in an existing accessory structure to the rear of the house (370-17B(2)(b)[1]). Density after conversion: RC 0.33, RR 0.5, R-1 and V-1 2.0, V-2, TC-1 and TC-2 3.0 dwelling units per acre (370-64F). Fractions of a dwelling unit are rounded down (370-8B). In V-1, V-2, TC-1 and TC-2, 25% of the lot must be common open space for the residents, at least 25 ft in any direction (370-64K). In TC-1 every special exception use needs 40,000 sq ft of net lot area (370-19C(1)(b))",
       "Accessory buildings 'shall be located, erected and maintained in side or rear yard areas only, and shall never be located in front yards'. A building with a ground floor over 500 sq ft must meet the setbacks for the principal structure. Smaller buildings for passive uses stand 25 ft from side and rear lines in RC and RR and 10 ft elsewhere. Accessory buildings may cover at most 20% of a side or rear yard (370-37)",
       "Parking: 2.0 spaces per dwelling unit for single-family dwellings and for residential conversions (370-87A). An ADU is not listed, so the most comparable use applies (370-87G)",
       "Flood Plain Conservation District (370-28, FEMA maps of 9-29-2017): only the listed uses are allowed, accessory uses only where 'no structures are erected', and 'Any construction or development not listed in § 370-28D, E or H above shall be prohibited except by variance' (370-28D, I). Modifications to structures existing when the chapter was adopted and adaptive reuse of an existing building are special exceptions (370-28E(3), (4)). Mobile homes are prohibited with no variance (370-28H(5)). New construction must stay 50 ft landward of the top of bank unless a DEP permit is obtained (370-28I(2)). Work of 50% or more of a structure's market value is a substantial improvement (370-28F(2))",
       "Natural Resource Conservation Overlay (370-29), township-wide: no disturbance in the Zone One riparian buffer, 35 ft from the top of each streambank. At most 10% of the Zone Two buffer (65 ft more) may be disturbed, and the whole buffer is never under 75 ft. Precautionary slopes (15% to 25%) at most 20% disturbed and 5% impervious, prohibitive slopes (25% and over) at most 10% disturbed and only for a driveway, utilities or timber harvest, and 2% impervious. Wetlands may not be disturbed without state and federal permits, and at most 10% of a wetland margin (50 to 100 ft). At most 25% of woodlands may be disturbed for residential uses, and tree removal needs a permit",
-      "Historic resources on the Historic Resources List and Map (Class I, II and III): no permit for the rehabilitation, enlargement or structural alteration of a historic resource before Historical Commission review (370-32K). The Board of Supervisors may modify lot area, width and yards by conditional use to preserve a historic resource (370-32G(1)(b))",
-      "Building coverage is 'The ratio of the total ground floor area of all buildings on a lot to the total area of the lot'. Impervious surface includes roofs and buildings, paving and compacted stone parking (370-9). RC-2 and RR-2 lots set impervious cover by lot size and no building coverage (370-114A(4), B(6)). On a lot of 10 acres or more, where an ADU may go, the cap is 6.8% at 10.00 to 10.99 acres, 6.6% at 11, 6.4% at 12, 6.2% at 13 and 6.0% at 14 to 14.99 acres, and 38,000 sq ft of impervious surface at 15 acres or more",
+      "Historic resources on the Historic Resources List and Map (Class I, II and III): no permit for the rehabilitation, enlargement or structural alteration of a historic resource is issued before the Historical Commission reviews the plans, within 20 days, for compliance with the Secretary of the Interior's Standards. The review is advisory. If the plans are not in compliance the permit still issues once 30 days have passed from the application (370-32K(1) to (5)). The Board of Supervisors may modify lot area, width and yards by conditional use to preserve a historic resource (370-32G(1)(b))",
+      "Scenic Preservation Overlay (370-31), two corridors along Route 724 (400 ft north and 600 ft south of its center line, at the eastern and western approaches): by-right uses are adaptive reuse of an existing structure under 370-38, conservation, nonintensive agriculture, public uses and open space of a residential development 'and no other' (370-31C(1)). 'There shall be no new construction in the overlay district except that related to approved adaptive reuse projects, to the repair of existing structures, or as permitted in Article XV of this chapter' (370-31E(1)). The overlay aims 'To permit interior changes to the historic structures within the district' while keeping their appearance (370-31A(3)). Area and bulk rules are those of the base district (370-31D)",
+      "Ridgeline Protection Overlay (370-33), on the Protected Ridgeline Map: a new principal or accessory structure, or a raised roofline, must have its highest point 'sited entirely below the elevation measured at the nearest ground point on the nearest ridgeline or high ground', or use the mitigation of 370-33C(2) (backdrop vegetation, siting, screening). No woodland may be disturbed within 35 vertical feet of the ridge top, and at most 25% of woodlands on the site (370-33E)",
+      "Building coverage is 'The ratio of the total ground floor area of all buildings on a lot to the total area of the lot'. Impervious surface includes roofs and buildings, paving and compacted stone parking (370-9). RC-2 and RR-2 lots set impervious cover by gross lot area and no building coverage (370-114A(4), B(6)). On a lot of 10 acres or more, where an ADU may go, the cap is 6.8% at 10.00 to 10.99 acres, 6.6% at 11, 6.4% at 12, 6.2% at 13 and 6.0% at 14 to 14.99 acres. At 15 acres or more the cap is 'Not to exceed 38,000 square feet' of impervious surface, a fixed area the tool does not test",
       "Variances: Zoning Hearing Board on the findings of 370-148D(1) to (6). No bar on a use variance was found. A special exception or variance expires within six months unless acted on (370-150)",
       "Nonconforming structures may be altered or enlarged without adding floor area as it stood when the structure became nonconforming and without increasing a nonconformity (370-122A). A building may go on a lot of record nonconforming only in area with the Zoning Officer's approval, and a special exception is needed where the yards cannot be met (370-123A)",
-      "C-1, C-2, C-3, C-4, I-1 and I-2 permit no house. Home occupations there need an existing nonconforming residential use (370-21B(1)(m), 370-25B(1)(i))"
+      "C-1, C-2, C-3, C-4, I-1 and I-2 permit no house. Home occupations there need an existing nonconforming residential use (370-21B(1)(m), 370-25B(1)(i))",
+      "Temporary housing for residents displaced from the house by damage that made it uninhabitable is a permitted temporary use while the house is repaired. The temporary use and occupancy permit runs at most six months, renewable, and the structure is removed within 30 days after the permit expires (370-68A(5), B). It is not a second unit",
+      "RC-2 and RR-2 subdivisions have a unit cap: 0.10 dwelling units per acre of gross tract area under RC-2 and 0.20 under RR-2 (370-114B(1)). Whether the ADU counts against that cap is not addressed. The conversion density of 370-64F (0.33 in RC, 0.5 in RR) is met on a 10 acre lot either way"
     ],
-    "notes": "Zoning office: North Coventry Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles IV to VIII, XIV, XV, 370-28, 370-29B(1) to (7)(e), 370-32, 370-36, 370-37, 370-64, 370-87, 370-148 and the Article II definitions from A to K, the table of contents, the version information and code searches. Not read: the 370-9 definitions from L to Z, 370-29C onward, the other overlays (370-30, 370-31, 370-33, 370-34 to 370-34.4), Articles X (except 370-36, 370-37, 370-64), XI, XII (except 370-87), XIII, XVI and XVIII, and 370-149. Open points: whether an ADU inside the house needs the residential conversion special exception (RC, RR), whether a conservancy lot of 10 acres or more in an RC-1 or RR-1 conservation design, which conforms 'to the standards for Option RC-2', may hold the ADU, and whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks."
+    "notes": "Zoning office: North Coventry Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: the whole of Chapter 370 in its print view, including Articles IV to IX (370-28 to 370-34.4), X, XII, XIV and XV, 370-64, 370-68, 370-87, 370-148 to 370-150 and the Article II definitions, the table of contents, the version information and code searches. Open points: whether an ADU inside the house needs the residential conversion special exception (RC, RR), whether a conservancy lot of 10 acres or more in an RC-1 or RR-1 conservation design, which conforms 'to the standards for Option RC-2', may hold the ADU, whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks, whether the twin density per net tract area (four units per acre in V-2, six in TC-2) applies to a single lot, which body hears the 75 year exemption of 370-114B(7)(d), and whether the ADU counts against the RC-2 or RR-2 unit cap (370-114B(1))."
   },
   "adu": {
     "term": {
@@ -119,7 +124,7 @@
             "TC-1",
             "TC-2"
           ],
-          "conditions": "An existing single-family detached dwelling divided into two units. The district lot and bulk rules must be met, and no conversion on a nonconforming lot or in a nonconforming structure. The house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, and no major structural change to the exterior. Separate cooking and sanitary facilities with Chester County Health Department approval. At most one added unit in RC, RR and R-1 and two in V-2, TC-1 and TC-2. Density after conversion at most 0.33 dwelling units per acre in RC, 0.5 in RR, 2.0 in R-1 and 3.0 in V-2, TC-1 and TC-2, with fractions rounded down. In TC-1 a special exception use needs 40,000 sq ft of net lot area. Two parking spaces per unit, to the side or rear of the house. A property with an RC-2 or RR-2 ADU may not add a unit this way",
+          "conditions": "An existing single-family detached dwelling divided into two units. The district lot and bulk rules must be met, and no conversion on a nonconforming lot or in a nonconforming structure. The house keeps the look of a detached dwelling with a single front entrance, added entrances go on the side or rear, and no major structural change to the exterior. Separate cooking and sanitary facilities with Chester County Health Department approval. At most one added unit in RC, RR and R-1 and two in V-2, TC-1 and TC-2. Density after conversion at most 0.33 dwelling units per acre in RC, 0.5 in RR, 2.0 in R-1 and 3.0 in V-2, TC-1 and TC-2, with fractions rounded down. In V-2, TC-1 and TC-2, 25% of the lot must be common open space for the residents, at least 25 ft in any direction. In TC-1 a special exception use needs 40,000 sq ft of net lot area. Two parking spaces per unit, to the side or rear of the house. A property with an RC-2 or RR-2 ADU may not add a unit this way",
           "min_lot_by_district": {
             "RC": 261360,
             "RR": 174240,
@@ -146,7 +151,7 @@
           "builds": [
             "internal"
           ],
-          "section": "370-64, 370-14B(2)(a), 370-15B(2)(a), 370-16B(2)(a), 370-18B(2)(c), 370-19B(2)(a), C(1)(b), 370-20B(2)(a), 370-87A",
+          "section": "370-64, 370-64K, 370-14B(2)(a), 370-15B(2)(a), 370-16B(2)(a), 370-18B(2)(c), 370-19B(2)(a), C(1)(b), 370-20B(2)(a), 370-87A",
           "url": "https://ecode360.com/print/NO2136?guid=11565263",
           "confidence": "secondary",
           "note": "A house divided into units, not an ADU. The lot figures are read from the density after conversion for two units (one unit per three acres in RC by the table note, so six acres for two)"
@@ -157,7 +162,7 @@
           "districts": [
             "V-1"
           ],
-          "conditions": "In V-1 a residential conversion is allowed only within a Class I, II or III historic resource, and 'One of the permitted residential conversions may be permitted in an existing accessory structure where such structure is located to the rear of the principal residential structure'. The 370-64 conversion standards, the adaptive reuse rules of 370-38 and the historic rules of 370-32 apply. At most one added unit and 2.0 dwelling units per acre after conversion. Lot at least 20,000 sq ft with public water and sewer, 35,000 sq ft without",
+          "conditions": "In V-1 a residential conversion is allowed only within a Class I, II or III historic resource, and 'One of the permitted residential conversions may be permitted in an existing accessory structure where such structure is located to the rear of the principal residential structure'. The 370-64 conversion standards, the adaptive reuse rules of 370-38 and the historic rules of 370-32 apply. At most one added unit and 2.0 dwelling units per acre after conversion. 25% of the lot must be common open space for the residents, at least 25 ft in any direction (370-64K). Lot at least 20,000 sq ft with public water and sewer, 35,000 sq ft without",
           "min_lot_sqft": 43560,
           "requires": [
             {
@@ -185,18 +190,16 @@
           "note": "A conversion, not an ADU, though a unit in an existing rear accessory structure is an ADU in all but name. The 43,560 sq ft figure is the 2.0 units per acre density for two units. 370-38 was not read"
         },
         {
-          "name": "Single-family semidetached (twin) dwelling (V-2, TC-1, TC-2)",
+          "name": "Single-family semidetached (twin) dwelling (V-2, TC-1)",
           "path": "by_right",
           "districts": [
             "V-2",
-            "TC-1",
-            "TC-2"
+            "TC-1"
           ],
-          "conditions": "Two dwelling units separated by a vertical party wall, with public water and sewer. Net lot area per unit 10,000 sq ft and at most 4 units per acre in V-2, 8,000 sq ft per unit in TC-1, 7,000 sq ft per unit and at most 6 units per acre in TC-2. In V-1 a twin is a special exception on 12,000 sq ft per unit",
+          "conditions": "Two dwelling units separated by a vertical party wall, with public water and sewer. Net lot area per unit 10,000 sq ft and at most four units per acre of net tract area in V-2, 8,000 sq ft per unit in TC-1. In V-1 a twin is a special exception on 12,000 sq ft per unit",
           "min_lot_by_district": {
             "V-2": 20000,
-            "TC-1": 16000,
-            "TC-2": 14000
+            "TC-1": 16000
           },
           "requires": [
             {
@@ -213,10 +216,54 @@
           "builds": [
             "attached"
           ],
-          "section": "370-18B(1)(b), C(2)(b), 370-19B(1)(b), C(1)(a), 370-20B(1)(b), C(2)(b), 370-17B(2)(a)",
+          "section": "370-18B(1)(b), C(2)(b), 370-19B(1)(b), C(1)(a), 370-17B(2)(a)",
           "url": "https://ecode360.com/print/NO2136?guid=11563407",
           "confidence": "secondary",
-          "note": "A two-unit building, not an ADU. The figures are per dwelling unit, so a twin is often split onto two lots. Whether an addition to a house can make a twin on one lot is for the zoning officer"
+          "note": "A two-unit building, not an ADU. The figures are per dwelling unit, so a twin is often split onto two lots. Whether an addition to a house can make a twin on one lot is for the zoning officer",
+          "disputed_min_lot": {
+            "districts": [
+              "V-2"
+            ],
+            "min_lot_sqft": 21780,
+            "section": "370-18C(2)(b)[2]",
+            "note": "'Maximum density per net tract area: four units per acre.' Read on one lot, two units need 21,780 sq ft, more than the 20,000 sq ft from the per-unit figure. Whether the density applies to a single lot or to a whole development is not settled"
+          }
+        },
+        {
+          "name": "Single-family semidetached (twin) dwelling (TC-2)",
+          "path": "by_right",
+          "districts": [
+            "TC-2"
+          ],
+          "conditions": "Two dwelling units separated by a vertical party wall, with public water and sewer. Net lot area per unit 7,000 sq ft and at most six units per acre of net tract area",
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "370-18B(5), 370-19B(5), 370-20B(5)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "370-18B(5), 370-19B(5), 370-20B(5)"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "370-20B(1)(b), C(2)(b)",
+          "url": "https://ecode360.com/print/NO2136?guid=11563407",
+          "confidence": "secondary",
+          "note": "A two-unit building, not an ADU. The figures are per dwelling unit, so a twin is often split onto two lots. Whether an addition to a house can make a twin on one lot is for the zoning officer",
+          "min_lot_sqft": 14000,
+          "disputed_min_lot": {
+            "districts": [
+              "TC-2"
+            ],
+            "min_lot_sqft": 14520,
+            "section": "370-20C(2)(b)[2]",
+            "note": "'Maximum density per net tract area: six units per acre.' Read on one lot, two units need 14,520 sq ft, more than the 14,000 sq ft from the per-unit figure. Whether the density applies to a single lot or to a whole development is not settled"
+          }
         }
       ],
       "section": "370-64, 370-17B(2)(b), 370-18B(1)(b)",
@@ -364,7 +411,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the Flood Plain Conservation District, 'Modifications to structures existing as of the date of adoption of this chapter' and the adaptive reuse of an existing building are special exceptions, with the lowest floor of a substantially improved residential structure 1 1/2 ft or more above the base flood elevation.",
+          "condition": "In the Flood Plain Conservation District, 'Modifications to structures existing as of the date of adoption of this chapter' and the adaptive reuse of an existing building are special exceptions, with the lowest floor of a substantially improved residential structure 1 1/2 ft or more above the base flood elevation. Work under 50% of the market value is elevated or floodproofed to the greatest extent possible.",
           "effect": "condition",
           "applies_to": [
             "internal",
@@ -376,7 +423,7 @@
             "Flood Plain Conservation District"
           ],
           "path": "special_exception",
-          "section": "370-28E(3), (4), 370-28I(4)",
+          "section": "370-28E(3), (4), 370-28F(3), 370-28I(4)",
           "url": "https://ecode360.com/print/NO2136?guid=11563909",
           "confidence": "secondary"
         },
@@ -394,6 +441,59 @@
           ],
           "section": "370-28I(2), 370-28B(4)(a)[2][b][ii]",
           "url": "https://ecode360.com/print/NO2136?guid=11563909",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Scenic Preservation Overlay 'There shall be no new construction in the overlay district except that related to approved adaptive reuse projects, to the repair of existing structures, or as permitted in Article XV of this chapter'. A new building or an addition for the unit is not one of these.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Scenic Preservation Overlay District"
+          ],
+          "section": "370-31C(1), 370-31E(1)",
+          "url": "https://ecode360.com/print/NO2136?guid=11562582",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Scenic Preservation Overlay the base district's area and bulk rules apply, and the overlay aims to permit interior changes to historic structures while keeping their current appearance. Its by-right use list names adaptive reuse of an existing structure under 370-38 'and no other', and no house, so ask the zoning officer how a unit inside an existing building there is treated.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Scenic Preservation Overlay District"
+          ],
+          "section": "370-31A(3), 370-31C(1), 370-31D",
+          "url": "https://ecode360.com/print/NO2136?guid=11562582",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Ridgeline Protection Overlay a new principal or accessory structure must have its highest point sited entirely below the elevation of the nearest ground point on the nearest ridgeline or high ground, or use the mitigation the Township accepts (backdrop vegetation, siting, screening). No woodland may be disturbed within 35 vertical feet of the ridge top, and at most 25% of the site's woodlands.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Ridgeline Protection Overlay District"
+          ],
+          "section": "370-33A, 370-33C(1), (2), 370-33E",
+          "url": "https://ecode360.com/print/NO2136?guid=11562582",
           "confidence": "verified"
         },
         {
@@ -428,18 +528,18 @@
         },
         {
           "kind": "historic",
-          "condition": "No permit for the rehabilitation, enlargement or structural alteration of a historic resource is issued before the Historical Commission reviews the plans, for up to 20 days, against the Secretary of the Interior's standards for a Class I resource.",
+          "condition": "No permit for the rehabilitation, enlargement or structural alteration of a historic resource is issued before the Historical Commission reviews the plans, within 20 days, for compliance with the Secretary of the Interior's Standards. The review is advisory, and the permit issues on a report of compliance or once 30 days have passed from the application.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "when": "historic",
-          "section": "370-32K",
+          "section": "370-32K(1) to (5)",
           "url": "https://ecode360.com/print/NO2136?guid=11564449",
           "confidence": "verified"
         }
       ],
-      "section": "370-114B(7), 370-64, 370-28, 370-29, 370-32",
+      "section": "370-114B(7), 370-64, 370-28, 370-29, 370-31, 370-32, 370-33",
       "url": "https://ecode360.com/print/NO2136?guid=11565943",
       "verified_on": "2026-11-17",
       "confidence": "verified"
@@ -502,13 +602,13 @@
           "setbacks"
         ],
         "older_than_years": 75,
-        "what": "an existing accessory building more than 75 years old, by special exception from the Board of Supervisors"
+        "what": "an existing accessory building more than 75 years old that is granted the special exception of 370-114B(7)(d)"
       },
       "section": "370-114B(7)(d)",
       "url": "https://ecode360.com/print/NO2136?guid=11565943",
       "verified_on": "2026-11-17",
       "confidence": "verified",
-      "note": "'Existing accessory buildings more than 75 years old ... may be permitted by the Board of Supervisors to exceed the floor space limits and dimensional setbacks of this chapter through the special exception process'"
+      "note": "'Existing accessory buildings more than 75 years old ... may be permitted by the Board of Supervisors to exceed the floor space limits and dimensional setbacks of this chapter through the special exception process'. A special exception is otherwise heard by the Zoning Hearing Board and the Board of Supervisors hears conditional uses, so which body decides is not clear"
     }
   },
   "use": {
@@ -534,7 +634,7 @@
       "url": "https://ecode360.com/print/NO2136?guid=11565943",
       "verified_on": "2026-11-17",
       "confidence": "verified",
-      "note": "'There shall be a maximum of one accessory dwelling unit on any legal building lot in an RC-2 or RR-2 subdivision'"
+      "note": "'There shall be a maximum of one accessory dwelling unit on any legal building lot in an RC-2 or RR-2 subdivision'. Whether the ADU counts against the subdivision's unit cap (0.10 or 0.20 dwelling units per acre of gross tract area, 370-114B(1)) is not addressed"
     }
   },
   "envelope": {
@@ -680,13 +780,38 @@
             "max_impervious": 0.07,
             "lot_sqft_at_least": 392040,
             "lot_sqft_below": 435600
+          },
+          {
+            "max_impervious": 0.068,
+            "lot_sqft_at_least": 435600,
+            "lot_sqft_below": 479160
+          },
+          {
+            "max_impervious": 0.066,
+            "lot_sqft_at_least": 479160,
+            "lot_sqft_below": 522720
+          },
+          {
+            "max_impervious": 0.064,
+            "lot_sqft_at_least": 522720,
+            "lot_sqft_below": 566280
+          },
+          {
+            "max_impervious": 0.062,
+            "lot_sqft_at_least": 566280,
+            "lot_sqft_below": 609840
+          },
+          {
+            "max_impervious": 0.06,
+            "lot_sqft_at_least": 609840,
+            "lot_sqft_below": 653400
           }
         ],
         "section": "370-114A(4), 370-114B(6)",
         "url": "https://ecode360.com/print/NO2136?guid=11565943",
         "verified_on": "2026-11-17",
         "confidence": "verified",
-        "note": "370-114A(4) table: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres. From 10 acres the table goes on in fractions of a percent: 6.8% at 10.00 to 10.99 acres, 6.6%, 6.4%, 6.2% and 6.0% at 14.00 to 14.99 acres, and at most 38,000 sq ft of impervious surface at 15 acres or more. Those are not stored as tiers. Lots under 2 acres are left out here"
+        "note": "370-114A(4) table, by gross lot area: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres, then 6.8% at 10.00 to 10.99 acres, 6.6% at 11, 6.4% at 12, 6.2% at 13 and 6.0% at 14.00 to 14.99 acres. At 15 acres or more the code sets 'Not to exceed 38,000 square feet' of impervious surface, a fixed area that is not stored as a tier, so no share is shown there. Lots under 2 acres are left out here"
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -770,13 +895,38 @@
             "max_impervious": 0.07,
             "lot_sqft_at_least": 392040,
             "lot_sqft_below": 435600
+          },
+          {
+            "max_impervious": 0.068,
+            "lot_sqft_at_least": 435600,
+            "lot_sqft_below": 479160
+          },
+          {
+            "max_impervious": 0.066,
+            "lot_sqft_at_least": 479160,
+            "lot_sqft_below": 522720
+          },
+          {
+            "max_impervious": 0.064,
+            "lot_sqft_at_least": 522720,
+            "lot_sqft_below": 566280
+          },
+          {
+            "max_impervious": 0.062,
+            "lot_sqft_at_least": 566280,
+            "lot_sqft_below": 609840
+          },
+          {
+            "max_impervious": 0.06,
+            "lot_sqft_at_least": 609840,
+            "lot_sqft_below": 653400
           }
         ],
         "section": "370-114A(4), 370-114B(6)",
         "url": "https://ecode360.com/print/NO2136?guid=11565943",
         "verified_on": "2026-11-17",
         "confidence": "verified",
-        "note": "370-114A(4) table: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres. From 10 acres the table goes on in fractions of a percent: 6.8% at 10.00 to 10.99 acres, 6.6%, 6.4%, 6.2% and 6.0% at 14.00 to 14.99 acres, and at most 38,000 sq ft of impervious surface at 15 acres or more. Those are not stored as tiers. Lots under 2 acres are left out here"
+        "note": "370-114A(4) table, by gross lot area: from 14% at 2.00 to 2.99 acres down to 7% at 9.00 to 9.99 acres, then 6.8% at 10.00 to 10.99 acres, 6.6% at 11, 6.4% at 12, 6.2% at 13 and 6.0% at 14.00 to 14.99 acres. At 15 acres or more the code sets 'Not to exceed 38,000 square feet' of impervious surface, a fixed area that is not stored as a tier, so no share is shown there. Lots under 2 acres are left out here"
       },
       "principal_max_height_ft": {
         "value": 35,

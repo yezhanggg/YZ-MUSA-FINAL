@@ -48,11 +48,15 @@
       "Parking: 'Single-family dwelling: 2 parking stalls per dwelling unit, 1 of which must be in an enclosed garage', and the same for each unit of a two-family dwelling (374-88E). 'Any fraction shall be counted as one parking stall' (374-88A)",
       "Height: a single-family or two-family dwelling at most 2 1/2 stories or 30 ft, and every dwelling at least 14 ft tall (374-82A, H)",
       "In R-2 the front yard is 35 ft from the property line and at least 65 ft from the center line of a state or county road or 60 ft from the center line of a Borough street (374-16A(6), B(5))",
-      "Floodplain (Chapter 216, the A zones on the FEMA maps of 9-26-2014): a permit is needed for any construction or development in the Borough (216-3, 216-8). New construction and substantial improvement need the lowest floor at or above the regulatory flood elevation (216-23A). An accessory structure 'shall not be designed or used for human habitation', at most 200 sq ft with no sanitary facilities (216-23E). No enlargement may raise the base flood elevation, and work of 50% or more of a building's market value is a substantial improvement (216-31). Manufactured homes are prohibited in the floodplain (216-27). Floodplain variances are granted by the Borough (216-32, 216-33)",
+      "Floodplain (Chapter 216, the A zones on the FEMA maps of 9-26-2014): a permit is needed for any construction or development in the Borough (216-3, 216-8). New construction and substantial improvement need the lowest floor at or above the regulatory flood elevation (216-23A). An accessory structure 'shall not be designed or used for human habitation', at most 200 sq ft with no sanitary facilities (216-23E). No enlargement may raise the base flood elevation, and work of 50% or more of a building's market value is a substantial improvement (216-31). Manufactured homes are prohibited in the floodplain (216-27). Floodplain variance requests go to the Zoning Hearing Board under the appeal procedure of 216-16 (216-32, 216-33A), and the Board hears 'Applications for variances from the terms of this chapter and flood hazard ordinance' (374-104A(5)). No variance may raise the base flood elevation (216-33A(1)). An enlargement or improvement under 50% of the market value is elevated or floodproofed to the greatest extent possible (216-31D)",
       "Nonconforming structures may not be enlarged or altered in a way that increases their nonconformity, except when the Zoning Hearing Board finds undue hardship (374-94A)",
-      "Lot coverage is 'That percentage of the lot covered by the principal building, accessory buildings and structures' (374-7). No impervious cover figure was found in the zoning chapter"
+      "Lot coverage is 'That percentage of the lot covered by the principal building, accessory buildings and structures' (374-7). No impervious cover figure was found in the zoning chapter",
+      "'In any district, no lot area shall be used for the parking and placing, either permanently or temporarily, of mobile homes, cap trailers, truck trailers, office trailers, house trailers or storage trailers' (374-88C). A mobile home or trailer cannot serve as a second unit anywhere in the Borough",
+      "Airport District Overlay: anyone who plans 'to erect a new structure, to add to an existing structure' in the vicinity of the airport first files PennDOT Form AV-57 with the Bureau of Aviation for an obstruction review, at least 30 days before work starts. If the review finds a penetration of airspace the permit is denied, and a variance may be sought under 374-55.6 (374-55.5)",
+      "C-2 permits multifamily housing for the elderly on the same site as a nursing home (374-36). It is not a house and not a path to a second unit on a house lot",
+      "Grading on landslide-prone soils needs a grading permit with engineered review under Chapter 222 (222-6, 222-20, 222-22, not read in full). A riparian buffer easement applies only within a subdivision or land development (323-18)"
     ],
-    "notes": "Zoning office: Borough of Pleasant Hills Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles I (374-4 only), II, IV to XIV, XVII to XXI and Chapter 216 up to its definitions, the table of contents, the version information and code searches. Not read: Article III (district list and map), Article XIVA (Airport District Overlay), Articles XV, XVI, XVIIIA, XXII to XXIV, the rest of the 216-35 definitions, and Chapters 222 (grading, landslide-prone soils), 322 and 323 (riparian buffer easements in subdivisions and land developments). Open points: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), and whether 374-104B limits use variances."
+    "notes": "Zoning office: Borough of Pleasant Hills Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: Articles I (374-4 only), II, IV to XIV, XVII to XXI and Chapter 216 up to its definitions, the table of contents, the version information and code searches. Also read: Article XIVA (Airport District Overlay, 374-55.5), 374-88C and 374-104A. Not read: Article III (district list and map), Articles XV, XVI, XVIIIA, XXII to XXIV, the rest of the 216-35 definitions, and Chapters 222 (grading, landslide-prone soils, searched only), 322 and 323 (searched only). Open points: whether a two-family lot in R-2 needs 14,500 sq ft (374-16B(2)) or 14,520 sq ft for 6 units per acre (374-16B(1)), whether 374-104B limits use variances (374-104 keeps every power the state law gives the Board, so none is read as barred), and whether the 216-23E accessory structure rule bars a detached unit in the floodplain that is built and elevated as a residential structure under 216-23A."
   },
   "adu": {
     "term": {
@@ -186,7 +190,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the identified floodplain area an accessory structure 'shall not be designed or used for human habitation but shall be limited to the parking of vehicles, or to the storage of tools, material, and equipment related to the principal use or activity', with at most 200 sq ft of floor area and no sanitary facilities.",
+          "condition": "In the identified floodplain area an accessory structure 'shall not be designed or used for human habitation but shall be limited to the parking of vehicles, or to the storage of tools, material, and equipment related to the principal use or activity', with at most 200 sq ft of floor area and no sanitary facilities. This is read as barring a unit in an accessory building in the floodplain. The rule is framed as relief for accessory structures that are not elevated, so a detached unit built and elevated as a residential structure under 216-23A may be another reading.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
@@ -200,12 +204,12 @@
           ],
           "section": "216-23E",
           "url": "https://ecode360.com/print/PL1849?guid=10783998",
-          "confidence": "verified",
+          "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 216"
         },
         {
           "kind": "other",
-          "condition": "In the identified floodplain area new construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation. No enlargement may raise the base flood elevation. Work of 50% or more of a building's market value is a substantial improvement.",
+          "condition": "In the identified floodplain area new construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation. No enlargement may raise the base flood elevation. Work of 50% or more of a building's market value is a substantial improvement, and smaller work is elevated or floodproofed to the greatest extent possible. Floodplain variances go to the Zoning Hearing Board, and none may raise the base flood elevation.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -213,7 +217,7 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "216-23A, 216-31",
+          "section": "216-23A, 216-31, 216-33A, 374-104A(5)",
           "url": "https://ecode360.com/print/PL1849?guid=10783998",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 216"
