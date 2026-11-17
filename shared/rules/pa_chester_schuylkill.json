@@ -1,0 +1,803 @@
+{
+  "provenance": {
+    "jurisdiction": "Schuylkill township",
+    "instrument": "Schuylkill Township Zoning Ordinance of 1955, as amended (Chapter 370 Zoning, amended in its entirety 3-19-1997), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 SC2895, Township of Schuylkill, Chester County (370-7 'Board of Supervisors': 'The governing or legislative body of Schuylkill Township, Chester County, Pennsylvania'). District use lists and lot, yard and height figures are text in Articles III to XVII and XXIX. Attachments 1 and 2 are only summary tables of uses and bulk figures. Floodplain rules are in Article XI of the zoning chapter and in Chapter 186. New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/SC2895",
+      "https://ecode360.com/SC2895/laws",
+      "https://ecode360.com/13604405",
+      "https://ecode360.com/print/SC2895?guid=13604405",
+      "https://ecode360.com/print/SC2895?guid=13604448",
+      "https://ecode360.com/print/SC2895?guid=13604637",
+      "https://ecode360.com/print/SC2895?guid=13604657",
+      "https://ecode360.com/print/SC2895?guid=13604680",
+      "https://ecode360.com/print/SC2895?guid=13604695",
+      "https://ecode360.com/print/SC2895?guid=13604727",
+      "https://ecode360.com/print/SC2895?guid=13604761",
+      "https://ecode360.com/print/SC2895?guid=13604790",
+      "https://ecode360.com/print/SC2895?guid=13604804",
+      "https://ecode360.com/print/SC2895?guid=13605014",
+      "https://ecode360.com/print/SC2895?guid=13605035",
+      "https://ecode360.com/print/SC2895?guid=13605193",
+      "https://ecode360.com/print/SC2895?guid=13605221",
+      "https://ecode360.com/print/SC2895?guid=13605253",
+      "https://ecode360.com/print/SC2895?guid=13605294",
+      "https://ecode360.com/print/SC2895?guid=13605324",
+      "https://ecode360.com/print/SC2895?guid=13605331",
+      "https://ecode360.com/print/SC2895?guid=13605390",
+      "https://ecode360.com/print/SC2895?guid=13605509",
+      "https://ecode360.com/print/SC2895?guid=13606138",
+      "https://ecode360.com/print/SC2895?guid=13606144",
+      "https://ecode360.com/print/SC2895?guid=13606574",
+      "https://ecode360.com/print/SC2895?guid=13606613",
+      "https://ecode360.com/print/SC2895?guid=13606687",
+      "https://ecode360.com/print/SC2895?guid=26814842",
+      "https://ecode360.com/print/SC2895?guid=34988725",
+      "https://ecode360.com/print/SC2895?guid=13601788",
+      "https://ecode360.com/SC2895/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22servants%22%20OR%20%22domestic%20employees%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/SC2895/search?query=%22370-149%22%20OR%20%22two-family%22%20OR%20conversion&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202968288",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13604405",
+    "code_current_through": "2026-08-10",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 08-10-2026.' New Laws: none",
+    "checks": [
+      "Accessory dwelling unit: 'A dwelling unit on the same lot with and of a nature customarily incidental and subordinate to the principal use or structure' (370-7, Ord. No. 2019-05). The code allows one only in a conservation subdivision under Option 2, country properties, of the Conservation Overlay District, on a conservancy lot of 10 or more acres (370-229C)",
+      "The Conservation Overlay District lies over FR and R-1. It applies in FR to tracts of seven acres of developable area or more with more than three dwelling units, and in R-1 to tracts of five acres or more with more than five units (370-226C). Option 2 allows one dwelling unit per 10 acres of gross tract area, plus the ADUs (370-229A, D(3))",
+      "ADU standards: it harmonizes with the look of the house. It sits inside the house or in existing or new outbuildings such as barns, stables, carriage houses, garages and springhouses. At most 1,200 sq ft of gross floor area in a new outbuilding or an addition. In an existing historic dwelling or structure it may be larger, up to 50% of the house. It meets the setbacks of the underlying FR or R-1 district, except a historic structure on the Historic Properties Map reused as an ADU (370-229C(1) to (5))",
+      "Option 2 lots: at least 60,000 sq ft, 140 ft wide, 50 ft of street frontage, front yard 100 ft, rear 50 ft, side 20 ft, accessory buildings 10 ft, height 35 ft. Impervious cover falls from 50% on lots under 10,000 sq ft to 20% at 20,000 to 43,560 sq ft, then by 1.5% an acre, with at most 20,000 sq ft. New dwelling units stand 100 ft from external road rights-of-way, 50 ft from other tract lines, 100 ft from cropland or pasture and 300 ft from livestock buildings (370-230A to C)",
+      "Accessory buildings: over 150 sq ft they meet the district height and yards. All accessory structures are limited to 20 ft in height and a footprint of 750 sq ft. In R-1 and R-2 an accessory building may be erected in the rear yard (370-132E, J, K, 370-22, 370-27)",
+      "Floodplain: the F Flood Hazard and Wetlands District covers land within 50 ft of the banks of perennial streams and ponds of an acre or more, and the 100-year floodplain. Only listed uses are allowed there and accessory structures are prohibited. No structure may stand within 50 ft of the district's boundary (370-71A, 370-73A(4), D(7)). Chapter 186 prohibits new construction and substantial improvements in the identified floodplain unless a variance is granted (186-23)",
+      "Riparian buffer: the inner buffer runs at least 50 ft from the top of each streambank, farther where steep slopes or the FEMA floodplain reach beyond it, and no earth disturbance is allowed there. The outer buffer adds 50 ft, of which at most 10% may be disturbed. No buildings on steep slopes over 15% (370-7, 370-223C, D)",
+      "Two units otherwise: APO I lists two-family dwellings in a development by special exception (370-31A(2)), and APO I and APO II list the conversion of a single-family dwelling by special exception under 370-149 (two or more units, each with at least 800 sq ft of habitable floor area). NC and C allow dwelling units above a ground-floor business by special exception (370-78B, 370-86G(11)). A Class I or II historic property may add listed uses by conditional use, including multifamily dwellings in FR and R-1 (370-58)",
+      "Parking: two all-weather spaces per dwelling (370-181A)",
+      "Variances: the Zoning Hearing Board on the findings of 370-209. No bar on a use variance was found. A lot held in single and separate ownership at the chapter's effective date that is below the minimum area or width may be built on, with a special exception where the yards cannot be met (370-187)"
+    ],
+    "notes": "Read in a browser on eCode360 (print view) on 2026-11-17, one page at a time. Read: Articles III to XVII use lists and figures, Article XI, Article IX, Article XXIII, Article XXVIII, Article XXIX, 370-8, 370-123, 370-132, 370-148, 370-149, 370-181, 370-209, most of 370-7 (to 'Nonconforming use' and from 'Rehabilitation' to 'Street' by screenshot), Chapter 186 to 186-29, the table of contents, New Laws and two code searches. Not read: 370-139 to 370-147 and 370-150 to 370-174 (except as cited), Article XVIII, 370-124 to 370-131 and 370-133 to 370-138, 370-182 to 370-184, Articles XXI, XXIV, XXVI and XXVII, 370-198 to 370-208 and 370-210 to 370-211, the middle of 370-7, 186-30 onward, and Chapter 320 (subdivision and land development, including 320-40.1)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "370-7 'Accessory dwelling unit (ADU)', 370-229C",
+      "url": "https://ecode360.com/print/SC2895?guid=13604448",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A dwelling unit on the same lot with and of a nature customarily incidental and subordinate to the principal use or structure.' The only rule for one is in the Conservation Overlay District"
+    },
+    "status": {
+      "value": "allowed_by_right",
+      "section": "370-226B(2), 370-229C, 370-16B(1)(b), 370-20C(1)(b)",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Option 2, country properties, is permitted by right, with 'the opportunity for accessory dwelling units on the lots'. One ADU is permitted on a conservancy lot of 10 or more acres"
+    },
+    "scope_districts": {
+      "value": [
+        "FR",
+        "R-1"
+      ],
+      "section": "370-226C, 370-16B(1), 370-20C(1)",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The Conservation Overlay District is an overlay on FR and R-1"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "370-25, 370-31, 370-38, 370-45, 370-66, 370-77, 370-86, 370-92, 370-103, 370-109, 370-115",
+      "url": "https://ecode360.com/print/SC2895?guid=13604695",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The other districts' use lists name no ADU and end 'and no other'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "370-226B, 370-229C",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'the following development options are permitted by right'. The conservation subdivision itself also goes through subdivision approval under Chapter 320"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "370-209",
+      "url": "https://ecode360.com/print/SC2895?guid=13606687",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 370-209A(1) to (5). No bar on a use variance was found"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling into two or more units (APO I, APO II)",
+          "path": "special_exception",
+          "districts": [
+            "APO I",
+            "APO II"
+          ],
+          "conditions": "A single-family detached dwelling that existed before the chapter took effect may be converted into a two-family or multifamily dwelling. The lot area must be at least the district minimum times the number of families, each dwelling needs at least 800 sq ft of habitable floor area, and there may be no external alteration except for safety. Parking per 370-181",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "370-149A"
+            },
+            {
+              "test": null,
+              "condition": "The house existed before the effective date of the chapter",
+              "section": "370-149A"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "370-31A(7), 370-38A(6), 370-149",
+          "url": "https://ecode360.com/print/SC2895?guid=13606144",
+          "confidence": "secondary",
+          "note": "A house divided into units, not a unit added to it. APO I and APO II need public water and sewer for land development (370-36, 370-43)"
+        },
+        {
+          "name": "Two-family dwellings in a development (APO I)",
+          "path": "special_exception",
+          "districts": [
+            "APO I"
+          ],
+          "conditions": "Multifamily housing, townhouses, semidetached, quadraplex and two-family dwellings under 370-143. At least 5 acres of developable area, buildings on individual lots under Chapter 320, net density of at most five units per acre of developable area, front yard 40 ft, rear 30 ft, side yards 10 ft each and 25 ft together for two-family dwellings, and public water and sewer",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "land_development": true,
+          "section": "370-31A(2), 370-32, 370-33B, 370-36",
+          "url": "https://ecode360.com/print/SC2895?guid=13604727",
+          "confidence": "secondary",
+          "note": "A new development, not a unit added to a house. 370-143 was not read"
+        }
+      ],
+      "section": "370-31, 370-38, 370-149",
+      "url": "https://ecode360.com/print/SC2895?guid=13604727",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "FR",
+        "R-1"
+      ],
+      "section": "370-226C",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "370-228A",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The Conservation Overlay District permits single-family detached dwellings"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-2",
+        "APO I",
+        "APO II",
+        "NO",
+        "A-R",
+        "NC",
+        "C",
+        "LI",
+        "I",
+        "I/LI",
+        "PFZ"
+      ],
+      "section": "370-25, 370-31, 370-38, 370-45, 370-66, 370-77, 370-86, 370-92, 370-103, 370-109, 370-115",
+      "url": "https://ecode360.com/print/SC2895?guid=13604695",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None of these use lists names an accessory dwelling unit"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "R-2"
+      ],
+      "named_by": {
+        "R-2": "reach"
+      },
+      "section": "370-25A, 370-20C, 370-226C",
+      "url": "https://ecode360.com/print/SC2895?guid=13604695",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "R-2 permits 'Any use permitted in Article IV, 370-20', which includes single-family dwellings in Option 2 conservation subdivisions, but 370-226C makes the Conservation Overlay District an overlay on FR and R-1 only"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "An ADU is allowed only on a conservancy lot in a conservation subdivision under Option 2, country properties: a tract in the Conservation Overlay District (FR, seven acres of developable area or more, R-1, five acres or more), at one dwelling unit per 10 acres of gross tract area. A lot in an Option 1 or Option 3 subdivision, or a conventional lot, does not qualify.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "in_planned_development",
+          "planned_development_kinds": [
+            "Option 2"
+          ],
+          "disputed_by": {
+            "section": "370-7 'Conservancy lot', 370-229B(3)",
+            "url": "https://ecode360.com/print/SC2895?guid=13604448",
+            "note": "The definition says a conservancy lot is 'created under Option 3 of the Conservation Overlay District', while 370-229C allows the ADU 'In Option 2', and 370-229B(3) speaks of 'Option 3, country properties'. Which option the ADU belongs to is not settled"
+          },
+          "section": "370-229C, 370-226B, C, 370-7 'Conservancy lot'",
+          "url": "https://ecode360.com/print/SC2895?guid=34988725",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "lot_size",
+          "condition": "'one ADU is permitted on a conservancy lot of 10 or more acres'. A conservancy lot is privately owned, holds an existing dwelling, agricultural structure or historic structure, and is part of the required conservation land under a conservation easement.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 435600,
+          "section": "370-229C, 370-7 'Conservancy lot', 370-233A(4)",
+          "url": "https://ecode360.com/print/SC2895?guid=34988725",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Option 2 lot figures: at least 60,000 sq ft, 140 ft wide, front yard 100 ft, rear 50 ft, side 20 ft, accessory buildings 10 ft, height 35 ft, and impervious cover by lot size (at most 20,000 sq ft on lots over an acre). New dwelling units stand 100 ft from external road rights-of-way, 50 ft from other tract lines, 100 ft from cropland or pasture and 300 ft from livestock buildings. The ADU must meet 'all the setback standards in the applicable underlying FR or R-1 Zoning District', so whether these figures or the district figures shown govern its yards is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "FR",
+            "R-1"
+          ],
+          "building_types": null,
+          "section": "370-230A to C, 370-229C(4)",
+          "url": "https://ecode360.com/print/SC2895?guid=34988725",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "design",
+          "condition": "The ADU must harmonize with the appearance of the principal dwelling and is in addition to the tract's dwelling unit limit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "370-229C(1), (5)",
+          "url": "https://ecode360.com/print/SC2895?guid=34988725",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the F Flood Hazard and Wetlands District only the listed uses are allowed, 'all uses not allowed as permitted uses or authorized by grant of variance or by special exception shall be prohibited', and accessory structures are prohibited.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "F Flood Hazard and Wetlands District"
+          ],
+          "section": "370-73, 370-73D(7), 370-71F",
+          "url": "https://ecode360.com/print/SC2895?guid=13605035",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the F Flood Hazard and Wetlands District 'Any modification, alteration, reconstruction, removal, replacement or improvement of any kind to an existing structure shall constitute a substantial improvement' and must fully comply, elevated or floodproofed.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "F Flood Hazard and Wetlands District"
+          ],
+          "section": "370-74B, C",
+          "url": "https://ecode360.com/print/SC2895?guid=13605035",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "'no structure shall be placed less than 50 feet from the boundary of any Flood Hazard and Wetlands District'. The district reaches at least 50 ft from the banks of perennial streams and ponds of an acre or more, and farther where the 100-year floodplain reaches.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "370-73A(4), 370-71A",
+          "url": "https://ecode360.com/print/SC2895?guid=13605035",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Within any identified floodplain area 'any new construction or substantial improvements shall be prohibited'. A variance under Chapter 186 Article VIII and Article XI of the zoning chapter may allow them, with the lowest floor at or above the regulatory flood elevation.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "outside_zoning_chapter": "Chapter 186",
+          "section": "186-23, 186-17",
+          "url": "https://ecode360.com/print/SC2895?guid=13601788",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The inner riparian buffer runs at least 50 ft from the top of each streambank, farther where steep slopes or the FEMA 100-year floodplain extend beyond it, and 'No woodland disturbance or other earth disturbance shall be permitted' there beyond trails, hazard removal and conservation work.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "section": "370-223D(3)(b), 370-7 'Riparian buffer, inner'",
+          "url": "https://ecode360.com/print/SC2895?guid=26814842",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The outer riparian buffer adds 50 ft beyond the inner buffer and at most 10% of it may be disturbed. 'There shall be no erection of buildings or streets on steep slopes' (slopes over 15%), and woodland disturbance on a lot is capped at 25%.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "370-223C(2), D(3)(c), 370-225A",
+          "url": "https://ecode360.com/print/SC2895?guid=26814842",
+          "confidence": "verified"
+        },
+        {
+          "kind": "historic",
+          "condition": "On a property with a Class I historic resource, a new principal or accessory structure needs a historic resource impact study reviewed by the Historical Commission, and exterior changes to a Class I or II resource need the Commission's review before a building permit.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "370-57A, 370-60A",
+          "url": "https://ecode360.com/print/SC2895?guid=13604804",
+          "confidence": "verified"
+        }
+      ],
+      "section": "370-229C, 370-73, 370-223, 186-23",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "370-229C(2), (3)",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'located within the principal dwelling unit or in existing or new outbuildings (such as barns, stables, carriage houses, garages and springhouses)'. 370-229C(3) also names 'an addition to a principal dwelling'"
+    }
+  },
+  "size": {
+    "max_sqft_by_form": {
+      "value": {
+        "detached_new": 1200,
+        "attached": 1200
+      },
+      "section": "370-229C(3)",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The gross floor area of the ADU shall not exceed 1,200 square feet when located in new outbuildings or in an addition to a principal dwelling.' No figure is given for a unit inside the house or in an existing outbuilding"
+    },
+    "exempt_building": {
+      "value": {
+        "forms": [
+          "garage_conversion",
+          "over_garage"
+        ],
+        "caps": [
+          "setbacks"
+        ],
+        "historic": true,
+        "what": "a historic structure on the Schuylkill Township Historic Properties Map reused as an ADU"
+      },
+      "section": "370-229C(3), (4)",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Exempt from the district setbacks. An ADU in an existing historic dwelling or structure may exceed 1,200 sq ft, up to 50% of the gross floor area of the house"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": false,
+      "section": "370-229C",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No family or occupant rule"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "370-229C",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No owner rule"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "370-229C",
+      "url": "https://ecode360.com/print/SC2895?guid=34988725",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'one ADU is permitted on a conservancy lot of 10 or more acres'"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "370-132J, 370-132E(3)",
+      "url": "https://ecode360.com/print/SC2895?guid=13605509",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'All accessory structures as identified in this chapter shall be limited to a height of 20 feet.' Read for a unit in an outbuilding. 370-132E(3) sends a building over 150 sq ft to the district height (35 ft), so the lower figure is the safe reading"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "370-132E(3)",
+      "url": "https://ecode360.com/print/SC2895?guid=13605509",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'An accessory building or structure which exceeds 150 square feet shall meet the height and yard regulations of the district in which it is located.' 370-229C(4) also ties the ADU to the district setbacks"
+    },
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "370-22, 370-27",
+      "url": "https://ecode360.com/print/SC2895?guid=13604680",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'An accessory use building or other structure may be erected in the rear yard in accordance with Article XIX, 370-132'"
+    },
+    "accessory_rear_yard_only_districts": {
+      "value": [
+        "R-1"
+      ],
+      "section": "370-22",
+      "url": "https://ecode360.com/print/SC2895?guid=13604680",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "FR has no such section"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "Every accessory building or structure is limited to a footprint of 750 sq ft. A unit in a new outbuilding over that footprint would need a second story or relief.",
+          "section": "370-132K",
+          "url": "https://ecode360.com/print/SC2895?guid=13605509"
+        }
+      ],
+      "section": "370-132K",
+      "url": "https://ecode360.com/print/SC2895?guid=13605509",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "370-181A",
+      "url": "https://ecode360.com/print/SC2895?guid=13606574",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'Two all-weather parking spaces per dwelling'. An ADU is a dwelling unit, so it is read to need its own two"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "370-181A",
+      "url": "https://ecode360.com/print/SC2895?guid=13606574",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two for the house and two for the ADU"
+    }
+  },
+  "districts": {
+    "FR": {
+      "min_lot_sqft": {
+        "value": 100000,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Residential use. At least 43,560 sq ft of developable area per lot. Option 2 conservation lots follow 370-230A instead"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Side yard abutting a street 100 ft"
+      },
+      "setback_sides_total_ft": {
+        "value": 125,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 100,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Building coverage is measured against the developable area of the lot (370-7)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "370-17, 370-7 'Lot coverage'",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage 20%'. Lot coverage is the share of the developable area 'covered by any and all impervious materials'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-17",
+        "url": "https://ecode360.com/print/SC2895?guid=13604657",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum height (all structures)'"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 35000,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "With public sewer and water. Option 2 conservation lots follow 370-230B to D instead"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Side yard abutting a street 50 ft"
+      },
+      "setback_sides_total_ft": {
+        "value": 50,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "370-21, 370-7 'Lot coverage'",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', which counts impervious materials"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer is available, no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 50000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 30,
+            "setback_sides_total_ft": 70,
+            "setback_rear_ft": 60,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.25,
+            "principal_max_height_ft": 35,
+            "section": "370-21"
+          },
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 60000,
+            "setback_front_ft": 60,
+            "setback_side_ft": 40,
+            "setback_sides_total_ft": 90,
+            "setback_rear_ft": 60,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.25,
+            "principal_max_height_ft": 35,
+            "section": "370-21"
+          }
+        ],
+        "section": "370-21",
+        "url": "https://ecode360.com/print/SC2895?guid=13604680",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Developable area per lot 43,560 sq ft in both rows"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "With public sewer and water"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Side yard abutting a street 40 ft"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "370-26, 370-7 'Lot coverage'",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public sewer is available, no public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 20,
+            "setback_sides_total_ft": 40,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.2,
+            "max_impervious_coverage": 0.3,
+            "principal_max_height_ft": 35,
+            "section": "370-26"
+          },
+          {
+            "when": "No public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 40000,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_sides_total_ft": 60,
+            "setback_rear_ft": 50,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.25,
+            "principal_max_height_ft": 35,
+            "section": "370-26"
+          }
+        ],
+        "section": "370-26",
+        "url": "https://ecode360.com/print/SC2895?guid=13604695",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    }
+  }
+}

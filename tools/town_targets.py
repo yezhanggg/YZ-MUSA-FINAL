@@ -1475,6 +1475,7 @@ FIXED_BATCH.update({g: 42 for g in ("4207537392", "4200356384", "4209115848")})
 FIXED_BATCH.update({g: 43 for g in ("4204518160", "4201146680", "4201759384")})
 FIXED_BATCH.update({g: 44 for g in ("4200722264", "4213383440", "4202921624")})
 FIXED_BATCH.update({g: 45 for g in ("4202982664", "4204515232", "4200708680")})
+FIXED_BATCH.update({g: 46 for g in ("4202968288", "4207121032", "4205571912")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1744,6 +1745,20 @@ EXTRAS = {
     "4202982664": "Code 350-1101C(13) supplemental dwelling unit by right in AP, special exception in V, conditional use in SRR, RR and RC",
     "4204515232": "batch 45 by population. Code Chapter 610 has no ADU text (610-27B bars a rear dwelling and 610-34C(5) garage habitation, 610-28C conversion by special exception in A)",
     "4200708680": "batch 45 by population. Code Chapter 195 has no ADU text (195-17A conversion apartment unit by conditional use in R-1, duplex by right in R-1 and UD)",
+    # Batch 46 (2026-11-17): the next towns by population without a rule file. Jeannette (Westmoreland) was skipped
+    # (zoning only as PDFs on the city website, Chapter 550 and Ord. No. 23-03 and 25-01), South Londonderry (Lebanon)
+    # (zoning ordinance only as a PDF on the township website), Jackson (York) (eCode360 code through 2-7-2023, and Ord.
+    # No. 231-2024 amending the zoning rules on keeping chickens, 133-127.1, and Ord. No. 228-2023 and 230-2023 amending the
+    # zoning map, not yet codified), Solebury (Bucks) (Ord. No. 2026-004 and 2026-006 of 8-18-2026, Chapter 27 zoning
+    # amendments, not yet codified), Kennedy (Allegheny) (zoning ordinance No. 478 only as a PDF on the township website),
+    # Chartiers (Washington) (no zoning text found as web pages, copies sold at the township office), Swissvale
+    # (Allegheny) (codified ordinances and the 2017 zoning ordinance only as PDFs on the borough website), Hamilton
+    # (Monroe) (2026 zoning ordinance only as a document on the township website, no codified zoning found as web pages)
+    # and Lewistown (Mifflin) (eCode360 code through 5-10-2023, and Ord. No. 2025-6 of 6-16-2025 with a Chapter 240
+    # zoning amendment not yet codified).
+    "4202968288": "Code 370-229C accessory dwelling unit by right on an Option 2 conservancy lot of 10 acres or more (FR, R-1)",
+    "4207121032": "Code 52-268 elder cottage by conditional use, family only (A, R-2, R-3, R-4)",
+    "4205571912": "Code 39-321 ECHO housing by right, family only (A, R-1, R-2)",
 }
 
 if __name__ == "__main__":

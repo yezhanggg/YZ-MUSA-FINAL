@@ -1,0 +1,675 @@
+{
+  "provenance": {
+    "jurisdiction": "East Donegal township",
+    "instrument": "East Donegal Township Zoning Ordinance (Chapter 52 Zoning, Ord. No. 2001-1, as amended), as published on Municode",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode Library, East Donegal Township, Lancaster County (the Village Center District is Maytown, 52-118(a)). District use lists and lot, yard and height tables are text in Article V. Floodplain rules are in Chapter 14, Floodplain Management. The Municode Ordinances tab lists 0 uncodified ordinances",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances",
+      "https://library.municode.com/pa/east_donegal_township/ordinances/code_of_ordinances",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIDE_S52-27DE",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIICLZODI_S52-62NECUS",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIVNO",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIGERE",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIIPALOST",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH14FLMA",
+      "https://eastdonegaltwp.com/departments/planningzoning/",
+      "https://eastdonegaltwp.com/departments/planningzoning/downloadable-forms/"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Lancaster",
+    "municipality_type": "township",
+    "geoid": "4207121032",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO",
+    "code_current_through": "2025-05-08",
+    "code_current_through_note": "Municode version 'May 8, 2025 (Current)'. Article V history notes run through Ord. No. 2024-3 of 5-2-2024. Municode lists no uncodified ordinances",
+    "checks": [
+      "Elder cottage: 'a small manufactured or modular, free-standing housing unit specifically designed for elderly disabled or handicapped persons', designed to be moved and installed on the same lot as an existing principal dwelling (52-27). A conditional use from the Board of Supervisors in A, R-2, R-3 and R-4 (52-114(b)(2)j, 52-116(b)(2)c, 52-117(b)(2)d, 52-118(b)(2)b). C, R-1, R-5, GC, PC, I and AC do not list it",
+      "Elder cottage standards: one per lot, at most 900 sq ft of floor area, combined lot coverage within the district maximum, occupied by an elderly (60 or over), handicapped or disabled person related to the occupants of the house by blood, marriage or adoption, at most two people, connected to the house's utilities with no separate systems, one parking space beyond the house's, only to the side or rear of the house and within the side and rear yard setbacks, a site plan, an affidavit that the owner of the house lives in one of the two units and that the cottage is removed within 90 days after it is no longer used by a qualifying person, and a temporary use and occupancy certificate renewed every 12 months (52-268(1) to (11))",
+      "Residential conversion of an existing building into more units: a conditional use in R-3 and R-4. At least 800 sq ft per unit, 3,000 sq ft of lot area per unit plus 500 sq ft per added bedroom, a building that existed before the chapter, no extension or outside change except for access or safety, frontage on a public street and rear frontage on an alley, public sewer and water, parking behind the front building line (52-117(b)(2)a, 52-118(b)(2)a, 52-291)",
+      "More than one principal structure: 'more than one structure housing a permitted or permissible principal use may be erected on a single lot, provided that yard and other requirements of this chapter shall be met for each structure as though it were on an individual lot' (52-149). In C and A the number of uses and lots from a 1975 tract is limited (52-113(c)(1), 52-114(c)(1))",
+      "A permits single-family semi-detached dwellings, R-3 and R-4 semi-detached dwellings, R-4 and R-5 townhouses, and R-5 multifamily dwellings, each as new buildings (52-114(b)(1)i, 52-117(b)(1)b, 52-118(b)(1), 52-119(b)(1))",
+      "Manufactured home for agricultural uses: a special exception in A for one manufactured home per farm, permanently occupied by someone who works at least 240 hours a year on the farm, set back 100 ft from the street, 12 ft from side lines and 25 ft from rear lines (52-114(b)(3)c, 52-277)",
+      "Adaptive reuse of a historic resource on the historic resource map: a conditional use in all districts for a mix of residential and nonresidential uses, including multifamily dwellings, on a lot of two acres or more (52-124(o))",
+      "Front yards depend on the street class: on a local street 60 ft from the centerline or 35 ft from the right-of-way in C, A and R-1, and 50 ft from the centerline or 25 ft from the right-of-way in R-2 and R-3, whichever is greater, and more on collector and arterial streets and PA Route 441 (52-113(d) to 52-117(d))",
+      "Accessory buildings meet the front yard of the house and stand at least 10 ft from side and rear lines (2 and 3 ft for rear-yard garages in the Village Center District), and together may cover at most 25% of the required rear yard (52-147(a), (d)). Accessory buildings may be 30 ft tall in C and A, 25 ft in R-1 to R-5",
+      "R-1, R-2 and R-3: no dwelling unit within 50 ft of land in the Agricultural District (52-115(d)(3), 52-116(d)(3), 52-117(d)(3))",
+      "Floodplain (Chapter 14): any new construction or substantial improvement in the identified floodplain is prohibited unless a variance is granted, and no new construction or development within 50 ft landward of the top of bank of any watercourse in the floodplain (14-124(d), 14-125)",
+      "A use neither permitted nor denied is prohibited unless the Zoning Hearing Board finds by special exception that it is of the same general character as the district's permitted uses (52-62). A nonconforming lot may be used for any use permitted in its district if yards, height and open space are met (52-89(a))"
+    ],
+    "notes": "Read in a browser on Municode on 2026-11-17, one page at a time, by text and screenshots. Read: Article V (52-113 to 52-119 in full, the use lists of 52-120 to 52-122, 52-124(o)), Article IV, 52-61, 52-62, 52-147, 52-149, 52-150, 52-183, 52-267, 52-268, 52-277, 52-291, parts of 52-27 (dwelling types, elder cottage, elderly, lot coverage) and Chapter 14 to 14-125. Not read: R-4 setbacks after 52-118(c)(5), 52-120 to 52-123 lot figures, the AC use list, the rest of 52-124, 52-148, 52-151 to 52-156, 52-181, 52-182, 52-184 to 52-187, Article VIII, the rest of Article IX, Articles X to XIII (including the variance section 52-352 and conditional use procedure 52-354), most of 52-27 (family not found), Chapter 14 after 14-125 and Chapter 42 (subdivision and land development)."
+  },
+  "adu": {
+    "term": {
+      "value": "elder cottage",
+      "section": "52-27 'Elder cottage', 52-268",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIDE_S52-27DE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'a small manufactured or modular, free-standing housing unit specifically designed for elderly disabled or handicapped persons. This unit is designed to be transported and moved and to be installed on the same lot as an existing principal dwelling'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "52-268(4), 52-114(b)(2)j, 52-116(b)(2)c, 52-117(b)(2)d, 52-118(b)(2)b",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "A conditional use from the Board of Supervisors. Only an elderly, handicapped or disabled relative of the occupants of the house"
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "52-114(b)(2)j, 52-116(b)(2)c, 52-117(b)(2)d, 52-118(b)(2)b",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Elder cottage is a listed conditional use in these four districts"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "52-113(b), 52-115(b), 52-119(b), 52-120(b), 52-121(b), 52-122(b)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "C, R-1, R-5, GC, PC and I do not list an elder cottage. AC was not read in full"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "52-268, 52-114(b)(2)j, 52-116(b)(2)c, 52-117(b)(2)d, 52-118(b)(2)b",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Within a zoning district in which an elder cottage is permitted by conditional use, the board of supervisors may approve such a use'"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "52-352",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board. 52-352 was not read, so whether it bars a use variance is not known"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "52-62",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIICLZODI_S52-62NECUS",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Where a use is neither specifically permitted nor denied, it shall be assumed to be prohibited, unless and until approved by the zoning hearing board'"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "quote": "the proposed use shall be of the same general character as the uses permitted in the specific zoning district",
+      "section": "52-62",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIICLZODI_S52-62NECUS",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The elder cottage is listed in other districts, so whether it is 'neither specifically permitted nor denied' in these districts is not settled"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C",
+        "R-1",
+        "R-5",
+        "GC",
+        "PC",
+        "I",
+        "AC"
+      ],
+      "section": "52-62",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIICLZODI_S52-62NECUS",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion (R-3, R-4)",
+          "path": "conditional_use",
+          "districts": [
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "An existing building converted into more dwelling units. Each unit at least 800 sq ft, 3,000 sq ft of lot area per unit plus 500 sq ft for each added bedroom, district yards not reduced, no extension or outside change except for access or safety, frontage on a public street and rear frontage on an alley, public sewer and water, and parking behind the front building line",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building",
+              "section": "52-291(4)"
+            },
+            {
+              "test": null,
+              "condition": "The building existed before the date of the ordinance from which the chapter is derived",
+              "section": "52-291(4)"
+            },
+            {
+              "test": "has_alley",
+              "condition": "The lot has rear yard frontage on an alley",
+              "section": "52-291(6)"
+            },
+            {
+              "test": "public_sewer",
+              "condition": "Public sanitary sewer",
+              "section": "52-291(7)"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "52-291(7)"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "52-117(b)(2)a, 52-118(b)(2)a, 52-291",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+          "confidence": "verified",
+          "note": "A building divided into units, not a unit added to a house"
+        },
+        {
+          "name": "Second principal dwelling on the lot",
+          "path": "by_right",
+          "districts": [
+            "C",
+            "A",
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4",
+            "R-5"
+          ],
+          "conditions": "More than one structure housing a permitted principal use may stand on a lot if the yard and other requirements of the chapter are met for each structure as though it were on its own lot. In C and A the number of uses from a tract of record in 1975 is limited",
+          "builds": [
+            "detached_new"
+          ],
+          "section": "52-149, 52-113(c)(1), 52-114(c)(1)",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIGERE",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. Whether the lot must hold twice the district lot area, and whether a land development plan is needed under Chapter 42, was not settled"
+        },
+        {
+          "name": "Manufactured home for agricultural uses (A)",
+          "path": "special_exception",
+          "districts": [
+            "A"
+          ],
+          "conditions": "An accessory use to an agricultural operation, one per farm, permanently occupied by at least one person who works at least 240 hours a year on the farm, set back 100 ft from any street right-of-way, 12 ft from side lines and 25 ft from rear lines, with approved water and sewage. The use and occupancy certificate is renewed every year and the home is removed within 30 days if the occupancy rule is not met",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is a farm in agricultural operation and the occupant works on it",
+              "section": "52-277(1), (4)"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "52-114(b)(3)c, 52-277",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+          "confidence": "verified",
+          "note": "Housing for farm workers on a farm, not a general ADU"
+        }
+      ],
+      "section": "52-149, 52-277, 52-291",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "52-114(b)(2)j, 52-116(b)(2)c, 52-117(b)(2)d, 52-118(b)(2)b",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": null,
+      "section": "52-268(1)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'on the lot of a principal dwelling'. No house type is named"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "R-1",
+        "R-5",
+        "GC",
+        "PC",
+        "I"
+      ],
+      "section": "52-113(b), 52-115(b), 52-119(b), 52-120(b), 52-121(b), 52-122(b)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The cottage must be physically connected to the water, sewage and other utilities serving the house, with no separate systems. With on-site sewer or water the applicant must show the systems can serve both units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "52-268(6)",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Before the use and occupancy permit, an affidavit that the occupant of the house will live in the house or the cottage while both exist, and that the cottage will be removed within 90 days after it is no longer occupied by a qualifying person. The certificate is temporary and reviewed every 12 months for a fee.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "52-268(10), (11)",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+          "confidence": "verified"
+        },
+        {
+          "kind": "lot_area_per_unit",
+          "condition": "The total lot coverage of the house, existing accessory structures and the cottage may not exceed the district maximum. In A the number of uses and lots from a lot of record on January 8, 1975 is limited, and whether the cottage counts as an added use is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "52-268(3), 52-114(c)(1)",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "No dwelling unit may stand within 50 ft of land in the Agricultural District.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "building_types": null,
+          "section": "52-116(d)(3), 52-117(d)(3)",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Within any identified floodplain area 'any new construction or substantial improvements shall be prohibited' unless a variance is obtained under Article VIII of Chapter 14, and no new construction may stand within 50 ft landward of the top of bank of any watercourse.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "outside_zoning_chapter": "Chapter 14",
+          "section": "14-125, 14-124(d), 14-101",
+          "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH14FLMA",
+          "confidence": "verified"
+        }
+      ],
+      "section": "52-268, 14-125",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new"
+      ],
+      "section": "52-27 'Elder cottage', 52-268(8)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIDE_S52-27DE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "A 'small manufactured or modular, free-standing housing unit' placed to the side or rear of the house"
+    },
+    "types_not_addressed": {
+      "value": [
+        "internal",
+        "attached",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "52-27 'Elder cottage', 52-268",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIDE_S52-27DE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The code names only a free-standing manufactured or modular unit"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "free-standing manufactured or modular elder cottage"
+      },
+      "section": "52-27 'Elder cottage'",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIIDE_S52-27DE",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "52-268(2)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The elder cottage may not exceed 900 square feet of floor area.'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "52-268(4)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "An elderly (60 or over), handicapped or disabled person related to the occupants of the house by blood, marriage or adoption, and at most two people. The cottage is removed within 90 days after no qualifying person lives in it.",
+      "section": "52-268(4), (5), (10), 52-27 'Elderly'",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "52-268(10)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The occupant of the house must live in the house or the cottage. No rule that this person owns the lot was found"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "52-268(1)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'No more than one elder cottage shall be permitted on the lot of a principal dwelling.'"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "52-268(8)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The elder cottage shall be installed and located only to the side or rear of the principal dwelling'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "52-268(8)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'and shall adhere to all side and rear yard setback requirements'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "52-147, 52-268",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIGERE",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Whether the accessory building height of the district reaches an elder cottage is not settled. 52-268 sets no height"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "52-268(7)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTIXSPUS_S52-268ELCO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A minimum of one all-weather off-street parking space, with unrestricted ingress and egress to the street, shall be provided for the elder cottage, in addition to that required for the principal dwelling'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "52-268(7), 52-183(a)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIIPALOST",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two for the house and one for the cottage"
+    },
+    "reading": {
+      "value": "52-183(a) asks two spaces for every dwelling unit, so a reading that counts the cottage as a dwelling unit gives two for it and four in all",
+      "section": "52-183(a)",
+      "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVIIPALOST",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 33000,
+        "section": "52-114(c)(2)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family dwelling units. A new residential lot from a tract may be at most two acres (52-114(c)(1)e)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "52-114(d)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "On a local access street 60 ft from the centerline or 35 ft from the right-of-way, whichever is greater. More on collector and arterial streets"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "52-114(c)(2)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "52-114(c)(2)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "52-114(c)(2), 52-27 'Lot coverage'",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Max. Lot Coverage'. Lot coverage is the ratio of all impervious surfaces to the lot area"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "52-114(c)(3)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 30,
+        "section": "52-114(c)(3)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "52-116(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Public sewer and water are required (52-116(c)(3))"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "52-116(d)(1), 52-117(d)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "On a local access street 50 ft from the centerline or 25 ft from the right-of-way, whichever is greater"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "52-116(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "52-116(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "52-116(c)(1), 52-27 'Lot coverage'",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "52-116(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "52-116(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "52-117(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached. Public sewer and water are required (52-117(c)(3))"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "52-116(d)(1), 52-117(d)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "On a local access street 50 ft from the centerline or 25 ft from the right-of-way, whichever is greater"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "52-117(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "52-117(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "52-117(c)(1), 52-27 'Lot coverage'",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "52-117(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "52-117(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "52-118(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached. Lots at least 250 ft deep, fronting a public street and reaching an alley or another street"
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "52-118(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "52-118(c)(1)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "52-118(c)(1), 52-27 'Lot coverage'",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "52-118(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "52-118(c)(4)",
+        "url": "https://library.municode.com/pa/east_donegal_township/codes/code_of_ordinances?nodeId=COOR_CH52ZO_ARTVDIRE",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    }
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "provenance": {
+    "jurisdiction": "Southampton township",
+    "instrument": "Southampton Township Zoning Ordinance (Chapter 39 Zoning, Ord. No. 2017-002 of 4-25-2017, as amended), as published on Municode",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Municode Library, Southampton Township, Franklin County (the code's own title). District use lists and the minimum area tables are text in Parts 7 to 11. Floodplain rules are in Chapter 10, Floodplain Management Ordinance. The township's codes page links only to Municode and to Ord. No. 2021-003 (solar)",
+    "effective_date": null,
+    "source_urls": [
+      "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances",
+      "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
+      "https://www.southamptontownship.org/information/codes/"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Franklin",
+    "municipality_type": "township",
+    "geoid": "4205571912",
+    "code_host": "municode",
+    "code_url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+    "code_current_through": "2024-12-23",
+    "code_current_through_note": "Municode version 'Dec 23, 2024 (Current)'. The latest zoning history note seen is Ord. No. 2024-002 of 10-22-2024",
+    "checks": [
+      "ECHO housing (Elder Cottage Housing Opportunities), 'also known as granny flat or elder cottage housing': accessory to the house, one or two bedrooms, connected to the house's utilities, and either transportable manufactured housing without a permanent foundation or the residential conversion of an existing accessory structure (Part 14 'ECHO Housing'). Permitted by right in A, R-1 and R-2 (39-321A)",
+      "ECHO standards: at most two stories and 900 sq ft of total floor area, one per lot, combined building coverage within the district maximum, occupied by an elderly, handicapped or disabled person related to the occupants of the house by blood, marriage or adoption, at most two people, connected to the house's utilities, no added parking when the house meets its own, not in the required front yard and within the side and rear yards for principal uses, an open covered walkway to the house allowed. The right to occupy ends on the death or relocation of the family member or the sale of the property, and the unit is removed (or a converted accessory structure restored) within 90 days. A letter of determination from the Zoning Officer comes before the land use and building permits (39-321A(1) to (12))",
+      "Two-family detached dwellings (one unit over the other) are permitted by right in R-2 and C on a lot 25% larger than the single-family minimum. Conversion of an existing single-family dwelling into a two-family dwelling is permitted by right in R-2 and a conditional use in C, with two entrances per unit, two parking spaces per unit and lot area of the single-family minimum plus 3,000 sq ft per added unit (39-901B, E, 39-1001B, 39-1002A)",
+      "Semi-detached dwellings (duplex) are permitted in R-2 and C and a conditional use in R-1. Individual mobile homes are permitted in A and R-1 as a principal dwelling (39-701D, 39-801G, 39-802G, 39-901C, 39-1001C)",
+      "During construction of a single-family house one mobile home or travel trailer may be lived in for six months, once extendable for six more (39-306A)",
+      "Accessory buildings: at most 25 ft tall, they meet the yard rules (a nonpermanent one of 200 sq ft or less and one story may be 5 ft from side and rear lines), together cover at most 30% of the required rear or side yard, and stand no nearer the street than the house's setback (39-300)",
+      "An existing small lot may be used if it meets all district rules other than lot area, width and side yards, with side yards of 8 ft and rear yards of 10 ft (39-302D)",
+      "Floodplain (Chapter 10): new construction or substantial improvement of a residential structure in the identified floodplain must have its lowest floor 1.5 ft above the 100-year flood elevation, and manufactured homes are prohibited in the floodway (10-404.1, 10-407.1)",
+      "Parking: at least two spaces for each dwelling unit, three where more than two unrelated persons live in it. A garage or carport counts, and a front-yard driveway of a one- or two-family house counts as up to two (39-304A, B)"
+    ],
+    "notes": "Read in a browser on Municode on 2026-11-17, by text and screenshots. Read: Parts 1 to 3 to 39-309 (39-310 to 39-320 not read except 39-320's heading), 39-321, Parts 7 to 10 use lists and minimum area tables, the C-I use list start (39-1101), Part 14 from 'Dwelling' to 'Garden apartment', 39-600 and 39-601, and Chapter 10 sections 10-404 to 10-407. Not read: Part 4 (nonconforming uses), Part 5, Part 6 after 39-601 (including the variance and special exception sections), Parts 12, 13 and 15, the C-I lot figures, the rest of Part 14 (lot coverage not found), and Chapter 10 Parts 1 to 3 and 5 to 7. No section on uses not listed was found."
+  },
+  "adu": {
+    "term": {
+      "value": "ECHO housing",
+      "section": "Part 14 'ECHO Housing (Elder Cottage Housing Opportunities)', 39-321",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'also known as granny flat or elder cottage housing. ECHO housing permits a family member, related by blood, marriage or adoption, to live independently but close to relatives on the same lot'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "39-321A",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Within the (A), (R-1), and (R-2) districts ECHO housing is permitted by right, as an accessory use to a principal single-family residence'. Only an elderly, handicapped or disabled relative of the occupants of the house"
+    },
+    "scope_districts": {
+      "value": [
+        "A",
+        "R-1",
+        "R-2"
+      ],
+      "section": "39-321A",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "39-1001, 39-1002, 39-1101",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "C and C-I do not list ECHO housing"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "39-321A, A(12)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Permitted by right. A written letter of determination from the Zoning Officer comes before the land use permit and building permit"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Part 6",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board. The variance section of Part 6 was not read, so whether it bars a use variance is not known"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Conversion apartments: an existing single-family detached dwelling converted into a two-family dwelling, each unit with two points of entrance and exit and two off-street parking spaces. Lot area of the single-family minimum plus 3,000 sq ft for each added unit, and the single-family setbacks. Labor and Industry approval comes first where it applies",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "39-901E"
+            }
+          ],
+          "min_lot_by_utility": [
+            {
+              "when": "Centralized water and sewer",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 11500
+            },
+            {
+              "when": "On-lot water",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 18000
+            },
+            {
+              "when": "On-lot water and sewer",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 33000
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "39-901E, 39-903B",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "secondary",
+          "note": "A house divided into two units, not a unit added to it. The lot figures add 3,000 sq ft to the 39-903B single-family minimum for each column"
+        },
+        {
+          "name": "Conversion of a single-family dwelling into a two-family dwelling (C)",
+          "path": "conditional_use",
+          "districts": [
+            "C"
+          ],
+          "conditions": "Conversion apartments: an existing single-family detached dwelling converted into a two-family dwelling, each unit with two points of entrance and exit and two off-street parking spaces. Lot area of the single-family minimum plus 3,000 sq ft for each added unit, and the single-family setbacks",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "39-1002A"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "39-1002A, 39-1005A",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "secondary",
+          "note": "A house divided into two units, not a unit added to it. C takes the single-family figures of Part 8"
+        },
+        {
+          "name": "Two-family detached dwelling (R-2, C)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "C"
+          ],
+          "conditions": "A building for two families with one unit over the other, on a lot 25% larger than the single-family minimum, meeting the single-family yards",
+          "min_lot_by_district": {
+            "R-2": 10625,
+            "C": 12500
+          },
+          "section": "39-901B, 39-1001B, Part 14 'Dwelling, Two-Family, Detached'",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "secondary",
+          "note": "A new two-unit building, not a unit added to a house. The figures are for a lot with centralized water and sewer"
+        }
+      ],
+      "section": "39-901, 39-1001, 39-1002",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "A",
+        "R-1",
+        "R-2"
+      ],
+      "section": "39-321A",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "39-321A, Part 14 'ECHO Housing'",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'as an accessory use to a principal single-family residence'"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "C-I"
+      ],
+      "section": "39-1001, 39-1002, 39-1101",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "The unit must be connected to the utility systems serving the house, with no separate systems. With on-site sewer or water the applicant shows the Board of Supervisors the systems can serve both units.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "39-321A(6), Part 14 'ECHO Housing'",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The right to occupy ends on the death or relocation of the family member or the sale of the property, whichever comes first. Within 90 days the unit is removed, or a converted accessory structure is restored to its previous condition.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "39-321A(10), (11)",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The building coverage of the house, existing accessory structures and the ECHO unit together may not exceed the district maximum.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "39-321A(3)",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Within any FW (floodway area), manufactured homes shall be prohibited.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway (FW)"
+          ],
+          "outside_zoning_chapter": "Chapter 10",
+          "section": "10-407.1",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Within any identified floodplain area, new construction or substantial improvement of a residential structure must have the lowest floor, including the basement, 1.5 ft above the 100-year flood elevation.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "outside_zoning_chapter": "Chapter 10",
+          "section": "10-404.1",
+          "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH10FLMAOR",
+          "confidence": "verified"
+        }
+      ],
+      "section": "39-321, 10-404, 10-407",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "Part 14 'ECHO Housing', 39-321A(11)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Units must be either transportable manufactured housing to be used without a permanent foundation, or the residential conversion of an existing accessory structure'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "internal",
+        "attached",
+        "over_garage"
+      ],
+      "section": "Part 14 'ECHO Housing', 39-321A(9)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "A unit in or added to the house is not named. A covered walkway may join the unit to the house 'without the unit being considered part of the principal residence'. Whether the upper floor of an existing garage counts as the conversion of an existing accessory structure is not settled"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "transportable manufactured ECHO unit without a permanent foundation",
+        "garage_conversion": "conversion of an existing accessory structure"
+      },
+      "section": "Part 14 'ECHO Housing'",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "39-321A(1)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The ECHO housing may not exceed two stories and 900 square feet of total floor area'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "39-321A(4), Part 14 'ECHO Housing'",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "An elderly, handicapped or disabled person related to the occupants of the house by blood, marriage or adoption, and at most two people. The right to occupy ends on that person's death or relocation or on the sale of the property.",
+      "section": "39-321A(4), (5), (10)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "39-321",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "No owner rule"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "39-321A(2)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A limit of one ECHO housing unit is permitted per lot'"
+    }
+  },
+  "envelope": {
+    "max_height_stories": {
+      "value": 2,
+      "section": "39-321A(1)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'may not exceed two stories'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "39-321A(8)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'shall not be permitted in the required front yard setback and shall adhere to all side and rear yard setback requirements for principal uses'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "39-300A(1)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "An accessory building not attached to the house 'shall not be more than 25 feet in height'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "39-300A, 39-321",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Whether the accessory building height reaches an ECHO unit is not settled. 39-321 sets two stories"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 0,
+      "section": "39-321A(7)",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'No additional parking shall be required for an ECHO housing unit so long as the principal residence complies with prevailing Township parking requirements'"
+    },
+    "total_on_site": {
+      "value": 2,
+      "section": "39-321A(7), 39-304A",
+      "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The house's two spaces"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "39-703B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Two acres. With on-lot sewage the minimum may be increased for health reasons"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "39-703B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "39-703B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "39-703B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "39-703A",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than ten percent of the area of the lot.'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "39-703B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "With central water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "39-803A",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 30 percent of the area of the lot.'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Other than central water and sewer: public sewer only",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.3,
+            "principal_max_height_ft": 40,
+            "section": "39-803B"
+          },
+          {
+            "when": "Other than central water and sewer: public water only",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.3,
+            "principal_max_height_ft": 40,
+            "section": "39-803B"
+          },
+          {
+            "when": "Other than central water and sewer: neither",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.3,
+            "principal_max_height_ft": 40,
+            "section": "39-803B"
+          }
+        ],
+        "section": "39-803B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "The table's 'Other' column"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family detached with centralized water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Each side yard"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "39-903A",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'All buildings including accessory buildings shall not cover more than 50 percent of the area of the lot.'"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "setback_front_ft": 30,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.5,
+            "principal_max_height_ft": 40,
+            "section": "39-903B"
+          },
+          {
+            "when": "On-lot water and sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "setback_front_ft": 35,
+            "setback_side_ft": 10,
+            "setback_rear_ft": 25,
+            "max_building_coverage": 0.5,
+            "principal_max_height_ft": 40,
+            "section": "39-903B"
+          }
+        ],
+        "section": "39-903B",
+        "url": "https://library.municode.com/pa/southampton_township,_franklin_county/codes/code_of_ordinances?nodeId=CH39ZO",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The 'On-Lot Water' column is read as on-lot water with public sewer. The table gives no column for public water with on-lot sewer"
+      }
+    }
+  }
+}
