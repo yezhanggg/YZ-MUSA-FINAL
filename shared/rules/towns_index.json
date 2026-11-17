@@ -4406,8 +4406,8 @@
       "housing_units": 3891,
       "pop_rank": 291,
       "file": "pa_delaware_darby_township",
-      "batch": 30,
-      "status": "drafted",
+      "batch": 43,
+      "status": "verified",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/27167274",
@@ -4417,7 +4417,7 @@
       "why": [
         "added as batch 43 by population. Code Chapter 27 has no ADU text (garages may not be used for habitation, 27-403.3E, two-family detached by right in R-B and R-C)"
       ],
-      "status_note": "Batch 43 first reading. Open points the code text does not settle. The code has no conversion section, so whether a house in R-B or R-C may become a two-family detached dwelling in place is for the zoning officer (27-501.3, 27-204). 'Garages shall not be used for permanent or temporary human habitation' sits in the R-A Part (27-403.3E) and reaches R-B and R-C through 27-501.1 and 27-601.1, and whether it also reaches a non-garage outbuilding is not settled. The code has no nonconforming lot section. Parts 14, 15 and 18, the adult use rules of Part 10 and Appendix A (PDF) not read. Code current only to 01-08-2025."
+      "status_note": "Batch 43 fix. Points for a later check. The code is current only to 01-08-2025, and no later township amendment was found. Appendix A and the Zoning Map (PDFs), 8-902 after 'Substantial improvement', 8-1001 and the Chapter 26 thresholds for regulated activities (Table 26-206.1.1) not read. The top of bank distance line says 'the new building' even for work inside the house (engine wording)."
     },
     {
       "geoid": "4201146680",
@@ -4430,7 +4430,7 @@
       "housing_units": 3435,
       "pop_rank": 292,
       "file": "pa_berks_maidencreek",
-      "batch": 31,
+      "batch": 43,
       "status": "drafted",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
@@ -4441,7 +4441,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 220-83 in-law quarters by conditional use, family only (AP, R-1, R-2))"
       ],
-      "status_note": "Batch 43 first reading. Open points the code text does not settle. Whether in-law quarters, defined as an accessory dwelling unit, need their own lot area under the per-unit-of-use figures (220-23A(1), 220-26A(1)) or count toward the AP sliding scale (220-17A). Whether 220-83A ties the quarters to a lot that meets the district minimum and maximum (shown as a condition). The AP coverage and impervious figures could not be tied to a column (220-17B(3)). R-1 gives figures only for lots with on-site water or sewage (220-23A). 220-62 to 220-82, 220-85 to 220-102, Chapter 190 and the Table of Uses (PDF, text controls per 220-125) not read."
+      "status_note": "Batch 43 fix. Open points the code text does not settle. Whether in-law quarters, defined as an accessory dwelling unit, count toward the AP sliding scale of dwelling units (220-17A). Whether 220-83A ties the quarters to a lot that meets the district minimum and maximum (shown as a condition). Whether a two-family dwelling in R-2a, R-3, R-4 and CR needs the lot area once or once for each unit of use (220-11 'Unit of use', shown as a disputed lot minimum). The AP coverage and impervious figures could not be tied to a column (220-17B(3)). R-1 gives figures only for lots with on-site water or sewage (220-23A). 220-62 to 220-82, 220-85 to 220-102, Chapter 190 and the Table of Uses (PDF, text controls per 220-125) not read."
     },
     {
       "geoid": "4201759384",
@@ -4454,7 +4454,7 @@
       "housing_units": 3730,
       "pop_rank": 294,
       "file": "pa_bucks_perkasie",
-      "batch": 31,
+      "batch": 43,
       "status": "drafted",
       "checked_on": "2026-11-16",
       "code_host": "ecode360",
@@ -4465,7 +4465,7 @@
       "why": [
         "added as batch 43 by population. Code Chapter 186 has no ADU text (186-18B(6) residential conversion of a house or accessory building by special exception)"
       ],
-      "status_note": "Batch 43 first reading. Open points the code text does not settle. Whether a residential conversion (special exception, 186-18B(6)) needs the district's lot area per dwelling unit for each unit. Which two-family lot table governs, 186-20 or the bedroom table of 186-18B(2)(c). The R-3 single-family table reads an accessory height of 1.5 ft (shown as 15 ft under 186-41). 186-18E to H, 186-19, Articles III, VII, IX, XII, XIII, the rest of 186-20L and M, Chapter 94 Article VI and the Table of Uses by District (PDF) not read."
+      "status_note": "Batch 43 fix. Open points the code text does not settle. Whether a residential conversion (special exception, 186-18B(6)) needs the district's lot area per dwelling unit for each unit (186-21 and 186-24 against 186-20J(3)(b)). Which two-family lot table governs, 186-20 or the bedroom table of 186-18B(2)(c). Whether an addition to a house begun before March 16, 2015 on floodplain land is barred by 186-57A or only when it is a substantial improvement (94-33, 94-37). The R-3 single-family table reads an accessory height of 1.5 ft (shown as 15 ft under 186-41). 186-18E to G, 186-85, the rest of 186-20L and M and the Table of Uses by District (PDF) not read."
     },
     {
       "geoid": "4200722264",
