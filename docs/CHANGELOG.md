@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-11-17, early morning
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Town rules
+
+- Batch 44 checked: Economy (Beaver) and West Manheim (York) verified. Economy has a conversion apartment by conditional use in R-2 near C-1. West Manheim coverage is impervious cover. East Nottingham (Chester) stays drafted: who may live in the temporary family home is not settled.
+- Batch 45: West Caln (Chester), Collingdale (Delaware), Brighton (Beaver). Collingdale and Brighton verified. West Caln stays drafted: on a farm lot in SRR and RR the code reads both by right and conditional use.
+- Batch 46 (first readings): Schuylkill (Chester), East Donegal (Lancaster), Southampton (Franklin).
+- Now 193 places with a rule file: 120 verified, 73 drafted. 74 of the 191 town codes have no ADU text.
+
+### Rules engine pass 22
+
+- A crash is fixed: an alternative path that meets a floodplain bar with an overlay and a test, on a lot whose overlays were not given.
+- A disputed bar gives its section before the overlay line. The top-of-bank line names the work it reaches. Equal sewer and water rows are said once.
+- A disputed two-family lot minimum can differ by sewer and water (Maidencreek). A use that is not an ADU listing but covers the work (Perkasie residential conversion) is named on the by-form line.
+- No stored lot record changes (all ten lot towns reproduce byte for byte, grid hashes hold).
+
+### Assistant eval
+
+<!-- source: ~/musa-drive/ops/agent-eval/2026-11-17T08-15-16-claude-haiku-5-5/report.md and transcripts/ -->
+
+- Full run after pass 22: 116 of 120, 0 made-up citations ($0.16). Three misses gave the right answer and had strict rubrics, now fixed (Carlisle, where only a unit in a detached garage is barred, an alley answer that names no alley width, and a cited "one apartment is allowed per lot"). Rescored: 119 of 120. The last miss, tierb-01, asks about Warren city as a text-search town, but Warren now has a rule file. The question needs a new town.
+
 ## 2026-11-16, night
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
