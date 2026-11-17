@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 182,
-      "population": 6260776,
-      "share_of_pa": 0.4815
+      "towns_beyond_the_two_cities": 185,
+      "population": 6287928,
+      "share_of_pa": 0.4836
     }
   ],
   "towns": [
@@ -4466,6 +4466,78 @@
         "added as batch 43 by population. Code Chapter 186 has no ADU text (186-18B(6) residential conversion of a house or accessory building by special exception)"
       ],
       "status_note": "Batch 43 first reading. Open points the code text does not settle. Whether a residential conversion (special exception, 186-18B(6)) needs the district's lot area per dwelling unit for each unit. Which two-family lot table governs, 186-20 or the bedroom table of 186-18B(2)(c). The R-3 single-family table reads an accessory height of 1.5 ft (shown as 15 ft under 186-41). 186-18E to H, 186-19, Articles III, VII, IX, XII, XIII, the rest of 186-20L and M, Chapter 94 Article VI and the Table of Uses by District (PDF) not read."
+    },
+    {
+      "geoid": "4200722264",
+      "geoid_aliases": [],
+      "name": "Economy borough",
+      "county": "Beaver",
+      "type": "borough",
+      "population": 9098,
+      "population_with_aliases": 9098,
+      "housing_units": 4047,
+      "pop_rank": 296,
+      "file": "pa_beaver_economy",
+      "batch": 44,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/8159919",
+      "plain_fetch": null,
+      "code_current_through": "2024-05-28",
+      "code_note": null,
+      "why": [
+        "added as batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment defined but not listed)"
+      ],
+      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether 'conversion apartment' (180-7, a unit created within an existing single-family dwelling) is a use any district allows, since no district lists it and no standards were found. Whether an ADU on an R-A lot is a use 'of the same general character' as a listed use under 180-11B and 180-66M. Whether 92-32B(4) (DEP permit relief near the top of bank for existing structures in an AE area without a floodway) reaches an addition despite 92-23D. Not read: most of 180-7, 180-66O to RR, 180-67 to 69, 180-71 to 80, Article XVII, Chapters 99, 155 and 163."
+    },
+    {
+      "geoid": "4213383440",
+      "geoid_aliases": [],
+      "name": "West Manheim township",
+      "county": "York",
+      "type": "township",
+      "population": 9072,
+      "population_with_aliases": 9072,
+      "housing_units": 3339,
+      "pop_rank": 297,
+      "file": "pa_york_west_manheim",
+      "batch": 44,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/28513605",
+      "plain_fetch": null,
+      "code_current_through": "2026-07-29",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 270-109A ECHO housing by conditional use, family only (Residential, Suburban Residential, Farming))"
+      ],
+      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether ECHO housing reaches the TND district through 270-31A(2) (customary R accessory uses). Whether the 20 ft accessory building height (270-90E) and the 10 ft separation (270-90D) bind an ECHO unit that meets principal setbacks (270-109A(8)). Whether an ECHO unit is a manufactured home for the floodway bar (141-27A). Farming yards grow with lot size (270-46) but the tool shows the one acre yards for a detached unit. Not read: rest of 270-13 (lot coverage), 270-131, Article XVIII, Parts 8 to 11 except 270-197 (conditional use procedure, 270-220B), 270-233, Article XIII."
+    },
+    {
+      "geoid": "4202921624",
+      "geoid_aliases": [],
+      "name": "East Nottingham township",
+      "county": "Chester",
+      "type": "township",
+      "population": 8982,
+      "population_with_aliases": 8982,
+      "housing_units": 2935,
+      "pop_rank": 299,
+      "file": "pa_chester_east_nottingham",
+      "batch": 44,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30831666",
+      "plain_fetch": null,
+      "code_current_through": "2024-09-21",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-1602.1C(7) temporary home for family members (mobile home), family only)"
+      ],
+      "status_note": "Batch 44 first reading. Open points the code text does not settle. Whether the temporary home for family members (27-1602.1C(7), a mobile home on 'any lot') is a by-right accessory use in every district that permits customary residential accessory uses, and whether it reaches C-1 and C-2. Whether any family member qualifies or only parents or grandparents (27-503.1A(3)(c)). Whether the accessory structure heights of 27-1602.1B(1) reach the mobile home. Not read: Part 2 definitions, Part 13, 27-1604, Parts 20, 21 and 25, C-2 area and bulk (27-1003), Chapter 8 floodplain management."
     }
   ]
 }

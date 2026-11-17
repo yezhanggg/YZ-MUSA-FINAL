@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-184 towns in the index, 184 with a rule file (Philadelphia and Pittsburgh included). Verified 115, drafted 69, in progress 0, todo 0.
+187 towns in the index, 187 with a rule file (Philadelphia and Pittsburgh included). Verified 115, drafted 72, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -197,6 +197,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Darby township | Delaware | drafted | none | not in the code (garage conversion prohibited, over garage prohibited) | variance | district gate (27-701). other ways (not ADUs): Two-family detached dwelling (R-B, R-C) (by right, 27-501.3, 27-601.1, 27-1300.3M). Two-family attached dwelling (A) (by right, 27-801.2) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 | Maidencreek township | Berks | drafted | in-law quarters | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | conditional use | ADU rule only in AP, R-1, R-2. occupancy (220-83B, C, I). family only (220-83B, I). house type detached. other ways (not ADUs): Two-family dwelling (R-2, R-2a, R-3, R-4, CR) (by right, 220-25A(2), 220-28A(2), 220-31A(2), 220-34A(2), 220-37A(5), 220-11 'Dwelling'). Another principal dwelling on the lot (R-1) (by right, 220-55C, 220-23A(1)). Another principal dwelling on the lot (R-2, R-2a, R-3, R-4, CR) (by right, 220-55C, 220-26A(1), 220-29A(1), 220-32A(2), 220-35A(2), 220-38A). 3 parking spaces in total | 1,000 | no | not confirmed | 2026-11-16 |
 | Perkasie borough | Bucks | drafted | none | not in the code | variance | other gate (94-22). other ways (not ADUs): Residential conversion (house or accessory building) (special exception, 186-18B(6), 186-20A(1)(c), B(1)(c), C(1)(c), D(1)(c), E(1)(c), F(1)(c), G(1)(c), H(1)(b), I(1)(c), 186-61C). Twin dwelling (R-1B, R-2, R-3, C-2) (by right, 186-18B(2)(a), 186-20B(3), C(3), D(3), G(3)). Duplex dwelling (R-2, R-3, C-2) (by right, 186-18B(2)(b), 186-20C(3), D(3), G(3)) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Economy borough | Beaver | drafted | none | not in the code | variance (unlisted-use path only in R-A, C-1, I-1) | 2 other gates (92-24, 92-18, 92-23D). other ways (not ADUs): Planned residential development with two-family dwellings (R-2) (conditional use with land development, 180-27B(1)(g), 180-56) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| West Manheim township | York | drafted | ECHO housing | family only | conditional use (not addressed for internal, garage conversion, over garage) | ADU rule only in Residential, Suburban Residential, Farming. occupancy (270-109A(4), (5)). family only (270-13 'ECHO housing', 270-109A(4)). 4 other gates (270-58B(2)(b), (5), 270-59C, D, 270-61B, C, 141-27A, 141-18A). other ways (not ADUs): Two-family residential conversion (special exception, 270-20B(2), 270-26A(2), 270-32C, 270-163). Two-family dwelling (Residential, Suburban Residential) (by right, 270-19B(5), 270-22, 270-25B(7), 270-28). Apartment residential conversion (special exception, 270-20B(1), 270-26A(1), 270-32B, 270-162). 4 parking spaces in total | none set | no | 1 | 2026-11-16 |
+| East Nottingham township | Chester | drafted | temporary home for family members | family only | by right (not addressed for internal, attached, garage conversion, over garage) | ADU rule only in R-1, R-1A, R-2, R-3, I-2. occupancy (27-1602.1C(7), 27-503.1A(3)(c)). family only (27-1602.1C(7)). 2 other gates (27-402.4F, 5A, 8B(6), 27-405.1). other ways: Second dwelling on a property in agricultural use (R-1, R-1A) (ADU under another listing, for attached, detached new, by right, 27-503.1A(3), 27-603.1A). Residential conversion (R-3, C-1, C-2) (special exception, 27-802.1B(2), 27-902.1B(2), 27-1002.1B(2), 27-1603.1E). Two-family dwelling (R-3) (by right, 27-802.1A(4), 27-803.1D) | none set | no | 1 | 2026-11-16 |
 
 ## Towns still to write
 
@@ -213,4 +216,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 182 | 48.1% |
+| 185 | 48.4% |

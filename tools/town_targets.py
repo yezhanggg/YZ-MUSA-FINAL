@@ -1472,6 +1472,7 @@ FIXED_BATCH.update({g: 38 for g in ("4209545104", "4207151664", "4207952584")})
 FIXED_BATCH.update({g: 40 for g in ("4200347696", "4201708760", "4212511152")})
 FIXED_BATCH.update({g: 41 for g in ("4204506024", "4212381000", "4201763048")})
 FIXED_BATCH.update({g: 42 for g in ("4207537392", "4200356384", "4209115848")})
+FIXED_BATCH.update({g: 44 for g in ("4200722264", "4213383440", "4202921624")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1722,6 +1723,12 @@ EXTRAS = {
     "4204518160": "batch 43 by population. Code Chapter 27 has no ADU text (garages may not be used for habitation, 27-403.3E, two-family detached by right in R-B and R-C)",
     "4201146680": "Code 220-83 in-law quarters by conditional use, family only (AP, R-1, R-2)",
     "4201759384": "batch 43 by population. Code Chapter 186 has no ADU text (186-18B(6) residential conversion of a house or accessory building by special exception)",
+    # Batch 44 (2026-11-16): the next towns by population without a rule file. Dallas (Luzerne) was skipped (95-45
+    # puts the schedule of area, bulk, density and height regulations only in a PDF attachment) and Beaver Falls (Beaver)
+    # (no zoning text found as web pages; eCode360 BE2264 is Beaver borough, and ZoningPoint finds no online code).
+    "4200722264": "batch 44 by population. Code Chapter 180 has no ADU text (180-11A bars unlisted uses in R-1, R-2, R-3, conversion apartment defined but not listed)",
+    "4213383440": "Code 270-109A ECHO housing by conditional use, family only (Residential, Suburban Residential, Farming)",
+    "4202921624": "Code 27-1602.1C(7) temporary home for family members (mobile home), family only",
 }
 
 if __name__ == "__main__":
