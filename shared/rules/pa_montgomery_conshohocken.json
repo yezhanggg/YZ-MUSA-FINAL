@@ -118,12 +118,13 @@
               "section": "27-825"
             },
             {
-              "test": null,
+              "test": "house_built_within_years",
+              "value": 50,
               "condition": "The house was built 50 years ago or less. An older house is a historic single-family detached dwelling",
               "section": "27-1902-C"
             },
             {
-              "test": null,
+              "test": "not_alley_only_access",
               "condition": "The lot has public street frontage, not only an alley",
               "section": "27-828"
             }
@@ -163,12 +164,13 @@
               "section": "27-825"
             },
             {
-              "test": null,
+              "test": "house_built_more_than_years_ago",
+              "value": 50,
               "condition": "The house was built more than 50 years ago",
               "section": "27-1902-C"
             },
             {
-              "test": null,
+              "test": "not_alley_only_access",
               "condition": "The lot has public street frontage, not only an alley",
               "section": "27-828"
             }
@@ -200,7 +202,7 @@
               "section": "27-825"
             },
             {
-              "test": null,
+              "test": "not_alley_only_access",
               "condition": "The lot has public street frontage, not only an alley",
               "section": "27-828"
             }
@@ -390,6 +392,8 @@
           "building_types": [
             "detached"
           ],
+          "test": "house_built_more_than_years_ago",
+          "value": 50,
           "section": "27-1902-C, 27-1903-C, 27-1904-C, 27-1906-C",
           "url": "https://ecode360.com/print/CO2517?guid=32727148",
           "confidence": "verified"
@@ -401,6 +405,7 @@
           "applies_to": null,
           "districts": null,
           "building_types": null,
+          "test": "not_alley_only_access",
           "section": "27-828",
           "url": "https://ecode360.com/print/CO2517?guid=14318085",
           "confidence": "verified"

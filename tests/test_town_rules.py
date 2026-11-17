@@ -4037,3 +4037,96 @@ def test_overlay_keeps_general_accessory_yards():
     assert out["setbacks_by_type"]["attached"]["setback_side_ft"] is None
     line = next(r for r in out["reasons"] if r.startswith("Yards for R-1"))
     assert "The base figures (front 60 ft, side 25 ft, rear 30 ft, building coverage 15%) do not apply" in line
+
+
+def test_failed_overlay_alternative_says_not_in():
+    """Pass 21: an alternative whose overlay the lot is not in says so. It read 'Not on this lot: the lot is in the
+    FCO or Fayette Street Corridor Overlay', the reverse of the fact."""
+    lot = {**DET, "zoning_district": "BC", "overlays": []}
+    out = rules.resolve("pa_montgomery_conshohocken", "today", lot)
+    fco = next(a for a in out["alternatives"] if "Fayette Street Corridor Overlay" in a["name"])
+    assert fco["applies"] is False
+    assert "Not on this lot: the lot is not in the FCO or Fayette Street Corridor Overlay." in fco["note"]
+    assert "the lot is in the FCO" not in fco["note"]
+    inside = rules.resolve("pa_montgomery_conshohocken", "today", {**lot, "overlays": ["FCO"]})
+    assert "Not on this lot" not in next(a for a in inside["alternatives"] if "Fayette" in a["name"])["note"]
+
+
+def test_quote_stop_not_doubled(tmp_path, monkeypatch):
+    """Pass 21: a gate condition that ends in a quote with its own stop gets no second stop before the distance
+    line (it read "... the DEP permit.'. At 40 ft from the top of bank ...")."""
+    body = raw("pa_washington_canonsburg")
+    gate = next(g for g in body["eligibility"]["gates"]["value"] if g.get("test") == "top_of_bank_ft_over")
+    gate["condition"] = "'No new construction within 50 feet of the top-of-bank.'"
+    name = _fixture(tmp_path, monkeypatch, "pa_test_quote", {k: v for k, v in body.items() if k != "provenance"})
+    district = next(iter(body["districts"]))
+    lot = {**DET, "zoning_district": district, "overlays": gate["overlays"], "top_of_bank_ft": 40}
+    out = rules.resolve(name, "today", lot)
+    text = json.dumps(out)
+    assert "top-of-bank.'. At 40 ft" not in text
+    assert "top-of-bank.' At 40 ft from the top of bank the new building is inside that line" in text
+
+
+def test_rolling_house_age():
+    """Pass 21: house_built_more_than_years_ago and house_built_within_years count back from today (Conshohocken
+    27-1902-C, 50 years). The year exactly 50 years back is not settled: the month decides."""
+    import datetime
+
+    cut = datetime.date.today().year - 50
+    base = {**DET, "zoning_district": "BR-1", "lot_sqft": 12000, "house_exists": True}
+
+    def alts(year):
+        lot = base if year is None else {**base, "house_year_built": year}
+        out = rules.resolve("pa_montgomery_conshohocken", "today", lot)
+        plain = next(
+            a for a in out["alternatives"] if a["name"].startswith("Residential conversion of an existing house")
+        )
+        hist = next(a for a in out["alternatives"] if a["name"].startswith("Conversion of a historic"))
+        gate = next(c for c in out["conditions"] if "27-1904-C" in (c.get("section") or ""))
+        return plain, hist, gate
+
+    plain, hist, gate = alts(cut - 10)
+    assert plain["applies"] is False and hist["applies"] is not False and gate["met"] is True
+    assert "Not on this lot: The house was built 50 years ago or less. An older house is a historic" in plain["note"]
+    assert f"(27-1902-C), and this house was built in {cut - 10}" in plain["note"]
+    plain, hist, gate = alts(cut + 10)
+    assert hist["applies"] is False and plain["applies"] is not False and gate["met"] is False
+    assert "Not on this lot: The house was built more than 50 years ago (27-1902-C)" in hist["note"]
+    plain, hist, gate = alts(cut)
+    assert gate["met"] is None
+    assert (
+        f"The house was built in {cut}, 50 years back from this year, so the month it was finished decides"
+        in (hist["note"])
+    )
+    plain, hist, gate = alts(None)
+    assert gate["condition"].endswith("Depends on the year the house was built (house_year_built), which was not given")
+
+
+def test_alley_only_access():
+    """Pass 21: not_alley_only_access (lot fact alley_only_access). Conshohocken 27-828: a house on an alley lot may
+    not be converted. Not given, the conversion and the gate say it depends on it."""
+    base = {**DET, "zoning_district": "BR-1", "lot_sqft": 12000, "house_exists": True, "house_year_built": 2000}
+
+    def run(fact):
+        lot = base if fact is None else {**base, "alley_only_access": fact}
+        out = rules.resolve("pa_montgomery_conshohocken", "today", lot)
+        conv = next(
+            a for a in out["alternatives"] if a["name"].startswith("Residential conversion of an existing house (")
+        )
+        gate = next(c for c in out["conditions"] if c.get("section") == "27-828")
+        return conv, gate
+
+    conv, gate = run(True)
+    assert conv["applies"] is False and gate["met"] is False
+    assert "Not on this lot: The lot has public street frontage, not only an alley (27-828)" in conv["note"]
+    conv, gate = run(False)
+    assert conv["applies"] is not False and gate["met"] is True and "27-828" not in conv["note"]
+    conv, gate = run(None)
+    assert gate["met"] is None
+    assert gate["condition"].endswith(
+        "Depends on whether the lot's only access is an alley (alley_only_access), which was not given"
+    )
+    assert (
+        "The lot has public street frontage, not only an alley (27-828). Depends on whether the lot's only access is"
+        in conv["note"]
+    )

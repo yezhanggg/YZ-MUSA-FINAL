@@ -1235,3 +1235,21 @@ describe('get_rule_text pass 20', () => {
     expect(dup.reads_as).toMatch(/Lot minimum by district: HR 5,000 sq ft, TC 9,000 sq ft\. In HR the lot minimum is not settled: another reading gives 10,890 sq ft \(308\.8\)\. HR caps density at eight units an acre/);
   });
 });
+
+describe('get_rule_text pass 21', () => {
+  it('drops the stop after a quote that ends with one and keeps an ellipsis', async () => {
+    const { ownerText } = await import('./ruleText');
+    expect(ownerText("'No new construction within 50 feet.'. Depends on how far")).toBe("'No new construction within 50 feet.' Depends on how far");
+    expect(ownerText("'a dwelling ...'. A second unit")).toBe("'a dwelling ...'. A second unit");
+  });
+
+  it('says a rolling house age test (Conshohocken 27-1902-C, 50 years)', async () => {
+    const out = JSON.stringify(await town6('pa_montgomery_conshohocken', 'approval', 'BR-1'));
+    expect(out).toContain('Applies only if the house was built more than 50 years ago.');
+  });
+
+  it('says an alley lot test (Conshohocken 27-828)', async () => {
+    const out = JSON.stringify(await town6('pa_montgomery_conshohocken', 'approval', 'BR-1'));
+    expect(out).toContain('So a house on an alley lot may not be converted to more units. Applies only if the lot has public street frontage, not only an alley.');
+  });
+});

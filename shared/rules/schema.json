@@ -1586,7 +1586,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate. Pass 13: no_accessory_building, the inverse of has_accessory_building, is met on a lot with no accessory building (for 'Accessory structures shall not be permitted'). A bar with disputed_by and no test, scoped by districts, building_types or overlays, reaches a lot in its scope as a failed bar, so the answer depends on the reading and never reads a plain variance.",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate. Pass 13: no_accessory_building, the inverse of has_accessory_building, is met on a lot with no accessory building (for 'Accessory structures shall not be permitted'). A bar with disputed_by and no test, scoped by districts, building_types or overlays, reaches a lot in its scope as a failed bar, so the answer depends on the reading and never reads a plain variance. Pass 21: house_built_more_than_years_ago and house_built_within_years (value in years, counted back from today, lot fact house_year_built) and not_alley_only_access (met when the lot fact alley_only_access is false: the lot has public street frontage, not only an alley).",
       "required": [
         "value",
         "section",
@@ -1691,6 +1691,7 @@
               "test": {
                 "enum": [
                   "has_alley",
+                  "not_alley_only_access",
                   "has_accessory_building",
                   "no_accessory_building",
                   "lot_sqft_at_least",
@@ -1699,6 +1700,8 @@
                   "house_sqft_over",
                   "house_built_before",
                   "accessory_building_built_before",
+                  "house_built_more_than_years_ago",
+                  "house_built_within_years",
                   "house_exists",
                   "public_sewer",
                   "public_water",
@@ -1751,7 +1754,7 @@
                   "null"
                 ],
                 "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "description": "Date for test house_built_before or accessory_building_built_before (met when the building was built before it, from the lot fact house_year_built or accessory_building_year_built)."
+                "description": "Date for test house_built_before or accessory_building_built_before (met when the building was built before it, from the lot fact house_year_built or accessory_building_year_built). Pass 21: test house_built_more_than_years_ago (met when the house was built more than value years before this year) and house_built_within_years (met when it was built value years ago or less) count back from today, so the cutoff year moves each year. The year exactly value years back is not settled."
               },
               "only_below_lot_sqft": {
                 "type": [
@@ -2079,10 +2082,13 @@
                         "house_sqft_over",
                         "house_built_before",
                         "accessory_building_built_before",
+                        "house_built_more_than_years_ago",
+                        "house_built_within_years",
                         "house_exists",
                         "public_sewer",
                         "public_water",
                         "has_alley",
+                        "not_alley_only_access",
                         "has_accessory_building",
                         "lot_sqft_at_least",
                         "lot_sqft_below",

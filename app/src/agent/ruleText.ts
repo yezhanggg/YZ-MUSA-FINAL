@@ -166,11 +166,14 @@ const BOOKKEEPING: [RegExp, string][] = [
 ];
 /** Pass 10: a note that ends with a period, joined with ". ", gives "..". An ellipsis ("...") stays (pipeline/rules.py DOUBLE_STOP). */
 const DOUBLE_STOP = /(?<![.\s])\.\.(?!\.)/g;
+/** Pass 21: a quote that ends its own sentence, joined with ". ", gives ".'.". An ellipsis before the quote keeps its stop (pipeline/rules.py QUOTE_STOP). */
+const QUOTE_STOP = /(?<![.\s])\.(['"\u2019\u201d])\.(?!\.)/g;
 export function ownerText<T>(text: T): T {
   if (typeof text !== 'string') return text;
   let out: string = text;
   for (const [re, rep] of BOOKKEEPING) out = out.replace(re, rep);
   out = out.replace(DOUBLE_STOP, '.');
+  out = out.replace(QUOTE_STOP, '.$1');
   return (out === text ? text : out.trim()) as T;
 }
 
@@ -245,12 +248,17 @@ const FACT_TEXT: Record<string, string> = {
   has_accessory_building: 'only if an accessory building already exists on the lot',
   // Pass 13: the inverse (pipeline/rules.py no_accessory_building), met on a lot with no accessory building.
   no_accessory_building: 'only if the lot has no accessory building',
+  // Pass 21 (pipeline/rules.py LOT_TESTS): met when the lot is not an alley lot (Conshohocken 27-828).
+  not_alley_only_access: 'only if the lot has public street frontage, not only an alley',
   lot_sqft_at_least: 'only if the lot is at least',
   lot_sqft_below: 'only if the lot is under',
   // Pass 7: tests on the house and the services (pipeline/rules.py HOUSE_TESTS). The answer depends on them.
   house_sqft_at_least: 'only if the house has at least',
   house_sqft_over: 'only if the house has more than',
   house_built_before: 'only if the house was built before',
+  // Pass 21 (pipeline/rules.py _built_years_ago): a rolling age, counted back from today.
+  house_built_more_than_years_ago: 'only if the house was built more than',
+  house_built_within_years: 'only if the house was built no more than',
   accessory_building_built_before: 'only if the accessory building was built before',
   house_exists: 'only if a lawful house already stands on the lot',
   public_sewer: 'only if the lot has public sewer',
@@ -266,11 +274,14 @@ const DEPENDS_FACT: Record<string, string> = {
   has_alley: 'whether the lot has an alley',
   has_accessory_building: 'whether the lot has an accessory building',
   no_accessory_building: 'whether the lot has an accessory building',
+  not_alley_only_access: "whether the lot's only access is an alley",
   lot_sqft_at_least: 'the lot area',
   lot_sqft_below: 'the lot area',
   house_sqft_at_least: "the house's floor area",
   house_sqft_over: "the house's floor area",
   house_built_before: 'the year the house was built',
+  house_built_more_than_years_ago: 'the year the house was built',
+  house_built_within_years: 'the year the house was built',
   accessory_building_built_before: 'the year the accessory building was built',
   house_exists: 'whether a lawful house already stands on the lot',
   public_sewer: 'whether the lot has public sewer',
@@ -304,7 +315,8 @@ const testText = (g: Obj): string => {
   const t = typeof g.test === 'string' ? FACT_TEXT[g.test] : undefined;
   if (!t) return '';
   const width = g.test === 'lot_width_at_least' || g.test === 'lot_width_below' ? ` ${num(g.value)} ft` : '';
-  const unit = width ? width : g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' || g.test === 'house_sqft_at_least' || g.test === 'house_sqft_over' ? ` ${num(g.value)} sq ft` : g.value_date ? ` ${String(g.value_date)}` : '';
+  const age = g.test === 'house_built_more_than_years_ago' || g.test === 'house_built_within_years' ? ` ${num(g.value)} years ago` : '';
+  const unit = age || width ? age || width : g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' || g.test === 'house_sqft_at_least' || g.test === 'house_sqft_over' ? ` ${num(g.value)} sq ft` : g.value_date ? ` ${String(g.value_date)}` : '';
   const bars = g.effect === 'bars';
   const fact = dependsFact(g.test);
   return ` ${bars ? 'Allowed' : 'Applies'} ${t}${unit}.${bars && fact ? ` It depends on ${fact}, which is not known here.` : ''}`;

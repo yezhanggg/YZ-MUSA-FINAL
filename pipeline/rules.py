@@ -956,12 +956,31 @@ PASS20_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 21 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
+# no stop after a quote that ends with one ("... max.'. semi_detached" reads "... max.' semi_detached"). Allentown's
+# notes hold such quotes. The other pass 21 changes reach keys the lot record does not keep (alternatives) or need
+# facts and tests the lot build never gives (house_built_more_than_years_ago, alley_only_access).
+PASS21_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
     "house_sqft_at_least": "the house's floor area (house_sqft)",
     "house_sqft_over": "the house's floor area (house_sqft)",
     "house_built_before": "the year the house was built (house_year_built)",
+    # Pass 21: a rolling age, N years back from today (Conshohocken 27-1902-C, 50 years)
+    "house_built_more_than_years_ago": "the year the house was built (house_year_built)",
+    "house_built_within_years": "the year the house was built (house_year_built)",
     "accessory_building_built_before": "the year the accessory building was built (accessory_building_year_built)",
     "house_exists": "whether a lawful house already stands on the lot (house_exists)",
     "public_sewer": "whether the lot has public sewer (public_sewer)",
@@ -987,6 +1006,8 @@ LOT_TESTS: dict[str, str] = {
     "tract_sqft_below": "the parent tract area (tract_sqft)",
     # Pass 19: how far the new building stands landward of the top of bank of a watercourse (Canonsburg 99-23D)
     "top_of_bank_ft_over": "how far the new building stands from the top of bank of the watercourse (top_of_bank_ft)",
+    # Pass 21: met when the lot has public street frontage, not only an alley (Conshohocken 27-828 alley lot)
+    "not_alley_only_access": "whether the lot's only access is an alley (alley_only_access)",
 }
 SIZE_PATHS = [
     ("size", k)
@@ -1089,6 +1110,9 @@ def _acc_where_figs(where_txt: str, figs: list[str]) -> str:
 # Pass 14: an overlay whose name ends in "Overlay" said once ("the Historic Resource Overlay overlay").
 OVERLAY_TWICE = re.compile(r"\b(Overlay|overlay|OVERLAY) overlay\b")
 DOUBLE_STOP = re.compile(r"(?<![.\s])\.\.(?!\.)")
+# Pass 21: a quote that ends its own sentence, joined with ". ", gives ".'." ("... the DEP permit.'. At 40 ft ...").
+# The stop inside the quote ends the sentence. An ellipsis before the quote ("...'.") keeps its stop.
+QUOTE_STOP = re.compile(r"(?<![.\s])\.(['\"’”])\.(?!\.)")
 
 
 def _leaf_from(item: dict[str, Any], parent: dict[str, Any], value: Any) -> dict[str, Any]:
@@ -1720,6 +1744,26 @@ def _built_before(year: Any, date: Any) -> bool | None:
     return None
 
 
+def _built_years_ago(year: Any, years: Any) -> bool | None:
+    """Pass 21: a building built in `year` was built more than `years` years ago, counted back from today? None when
+    the year is not given, or is exactly that many years back (the month decides)."""
+    if year is None or years is None:
+        return None
+    cut = datetime.date.today().year - int(years)
+    return None if int(year) == cut else int(year) < cut
+
+
+def _age_open(test: Any, value: Any, lot: dict[str, Any]) -> str:
+    """Pass 21: why a rolling-age test is open: the year was not given, or it is the year the count falls on."""
+    year = lot.get("house_year_built")
+    if test in ("house_built_more_than_years_ago", "house_built_within_years") and year is not None:
+        return (
+            f". The house was built in {int(year)}, {int(value)} years back from this year, "
+            "so the month it was finished decides"
+        )
+    return f". Depends on {HOUSE_TESTS[test]}, which was not given"
+
+
 def _gate_paths(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> list[dict[str, Any]]:
     """Pass 16: eligibility.gates[].path, the approval the gate's forms need on a lot it reaches (a special exception
     for any new building in a floodplain overlay). As form_paths items ({forms, path}), only where the lot is known to
@@ -1773,6 +1817,9 @@ def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
         return area >= g["value"] if test == "lot_sqft_at_least" else area < g["value"]
     if test in ("tract_sqft_at_least", "tract_sqft_below") and g.get("value") is not None:
         return _tract_met(test, g["value"], lot)
+    if test == "not_alley_only_access":  # pass 21: met when the lot is not an alley lot
+        alley_only = lot.get("alley_only_access")
+        return None if alley_only is None else not alley_only
     if test == "top_of_bank_ft_over" and g.get("value") is not None:  # pass 19: met when farther than the value
         bank = lot.get("top_of_bank_ft")
         return None if bank is None else bank > g["value"]
@@ -1801,6 +1848,9 @@ def _house_met(test: str, value: Any, date: Any, lot: dict[str, Any]) -> bool | 
         return house >= value if test == "house_sqft_at_least" else house > value
     if test == "house_built_before":
         return _built_before(lot.get("house_year_built"), date)
+    if test in ("house_built_more_than_years_ago", "house_built_within_years"):
+        older = _built_years_ago(lot.get("house_year_built"), value)
+        return older if older is None or test == "house_built_more_than_years_ago" else not older
     if test == "accessory_building_built_before":
         if lot.get("has_accessory_building") is False:
             return False
@@ -2393,9 +2443,7 @@ def _town_conditions(
                     + " or ".join(g["planned_development_kinds"])
                 )
             elif c["test"] in HOUSE_TESTS and c["met"] is None:
-                c["condition"] = (
-                    c["condition"].rstrip(".") + f". Depends on {HOUSE_TESTS[c['test']]}, which was not given"
-                )
+                c["condition"] = c["condition"].rstrip(".") + _age_open(c["test"], g.get("value"), lot)
             elif c["test"] == "top_of_bank_ft_over" and c["met"] is not None:  # pass 19: the distance was given
                 c["condition"] = c["condition"].rstrip(".") + (
                     f". At {lot['top_of_bank_ft']:,.0f} ft from the top of bank the new building is "
@@ -3271,7 +3319,8 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
     if a.get("overlays"):
         ov = lot.get("overlays")
         met = None if ov is None else any(_match_code(o, a["overlays"]) is not None for o in ov)
-        out.append((met, f"the lot is in the {' or '.join(a['overlays'])} overlay"))
+        # pass 21: a failed overlay test says the lot is not in it (it was "Not on this lot: the lot is in the X")
+        out.append((met, f"the lot is {'not ' if met is False else ''}in the {' or '.join(a['overlays'])} overlay"))
     for r in a.get("requires") or []:
         test = r.get("test")
         if test in HOUSE_TESTS:
@@ -3282,7 +3331,11 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
             met = None
         text = r["condition"].rstrip(".") + (f" ({r['section']})" if r.get("section") else "")
         if met is None and test in HOUSE_TESTS:
-            text += f". Depends on {HOUSE_TESTS[test]}, which was not given"
+            text += _age_open(test, r.get("value"), lot)
+        elif met is None and test == "not_alley_only_access":
+            text += f". Depends on {LOT_TESTS[test]}, which was not given"
+        elif met is False and test in ("house_built_more_than_years_ago", "house_built_within_years"):
+            text += f", and this house was built in {int(lot['house_year_built'])}"  # pass 21: the year that decided it
         out.append((met, text))
     return out
 
@@ -4152,7 +4205,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     )
     if allowed or state:
         out["reasons"] += _house_type_cases(data, lot, out)
-    _clean_owner_text(out, stops=place not in LOT_RECORD_TOWNS, once=place not in PASS14_HOLD_TOWNS)
+    _clean_owner_text(
+        out,
+        stops=place not in LOT_RECORD_TOWNS,
+        once=place not in PASS14_HOLD_TOWNS,
+        quotes=place not in PASS21_HOLD_TOWNS,
+    )
     dp_path = dp[0]["value"] if dp else None
     if not state and status in BOARDS and dp_path and PATH_ORDER.index(dp_path) < PATH_ORDER.index(status):
         out["adu_status"] = "allowed_by_right" if dp_path == "by_right" else dp_path  # pass 8: the district leads
@@ -4319,10 +4377,11 @@ def _planned_development_yards(
     return [line]
 
 
-def _owner_text(text: Any, stops: bool = True, once: bool = True) -> Any:
+def _owner_text(text: Any, stops: bool = True, once: bool = True, quotes: bool = True) -> Any:
     """Pass 8: a sentence for the owner, without the author's bookkeeping (dates added, second checks).
     Pass 10: and without a doubled full stop (stops=False keeps the pass 9 text for a held lot town).
-    Pass 14: and an overlay named once (once=False keeps the pass 13 text for a held lot town)."""
+    Pass 14: and an overlay named once (once=False keeps the pass 13 text for a held lot town).
+    Pass 21: and no stop after a quote that ends with one (quotes=False keeps the pass 20 text for a held lot town)."""
     if not isinstance(text, str):
         return text
     out = text
@@ -4330,26 +4389,28 @@ def _owner_text(text: Any, stops: bool = True, once: bool = True) -> Any:
         out = pat.sub(rep, out)
     if stops:
         out = DOUBLE_STOP.sub(".", out)
+    if quotes:
+        out = QUOTE_STOP.sub(r".\1", out)
     if once:
         out = OVERLAY_TWICE.sub(r"\1", out)
     return out.strip() if out != text else text
 
 
-def _clean_owner_text(out: dict[str, Any], stops: bool = True, once: bool = True) -> None:
+def _clean_owner_text(out: dict[str, Any], stops: bool = True, once: bool = True, quotes: bool = True) -> None:
     """Pass 8: every owner sentence built from a note goes through _owner_text."""
-    out["reasons"] = [_owner_text(r, stops, once) for r in out["reasons"]]
+    out["reasons"] = [_owner_text(r, stops, once, quotes) for r in out["reasons"]]
     for c in out.get("conditions") or []:
-        c["condition"] = _owner_text(c["condition"], stops, once)
+        c["condition"] = _owner_text(c["condition"], stops, once, quotes)
     for c in out.get("depends_on") or []:
-        c["condition"] = _owner_text(c["condition"], stops, once)
-        c["fact"] = _owner_text(c.get("fact"), stops, once)
+        c["condition"] = _owner_text(c["condition"], stops, once, quotes)
+        c["fact"] = _owner_text(c.get("fact"), stops, once, quotes)
     for a in out.get("alternatives") or []:
-        a["note"] = _owner_text(a.get("note"), stops, once)
+        a["note"] = _owner_text(a.get("note"), stops, once, quotes)
         if a.get("conditions"):
-            a["conditions"] = _owner_text(a["conditions"], stops, once)
+            a["conditions"] = _owner_text(a["conditions"], stops, once, quotes)
     for key in ("path_to_ask", "fallback"):
         if out.get(key) and out[key].get("note"):
-            out[key]["note"] = _owner_text(out[key]["note"], stops, once)
+            out[key]["note"] = _owner_text(out[key]["note"], stops, once, quotes)
 
 
 def _house_type_cases(data: dict[str, Any], lot: dict[str, Any], out: dict[str, Any]) -> list[str]:
@@ -5253,6 +5314,8 @@ def _lot_from_args(a: argparse.Namespace) -> dict[str, Any]:
         "abuts_residential_district": _yes_no(getattr(a, "abuts_residential_district", None)),
         # Pass 19: feet from the new building to the top of bank of a watercourse
         "top_of_bank_ft": getattr(a, "top_of_bank_ft", None),
+        # Pass 21: the lot's only access is an alley, with no public street frontage
+        "alley_only_access": _yes_no(getattr(a, "alley_only_access", None)),
     }
 
 
@@ -5298,6 +5361,7 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument(
         "--top-of-bank-ft", type=float, help="feet from the new building to the top of bank of a watercourse"
     )
+    r.add_argument("--alley-only-access", help="yes or no: the lot's only access is an alley, no street frontage")
     a = p.parse_args(argv)
     if a.cmd == "validate":
         return _cmd_validate()

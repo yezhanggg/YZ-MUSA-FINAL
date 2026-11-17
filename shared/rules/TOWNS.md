@@ -387,6 +387,15 @@ How the resolver reads a file now (pass 7):
 - `PASS20_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the own side yard line. No lot town file has a side yard by type beside a total today.
 - Not done: a status for employee or caretaker quarters (Bethel 480-136B(5) stays `family_only`).
 
+## More fields (pass 21)
+
+- Gate and `approval.alternatives[].requires[]` tests `house_built_more_than_years_ago` and `house_built_within_years` (with `value`, a number of years): a rolling age, counted back from today from the lot fact `house_year_built`. The cutoff year moves each year. A house built exactly `value` years back is not settled: the answer says the month decides. Conshohocken 27-1902-C (50 years). Moved: Conshohocken.
+- Gate and `requires[]` test `not_alley_only_access`: met when the lot has public street frontage, not only an alley (lot fact `alley_only_access`, false). An alley lot fails it. Not given, the answer says it depends on it. Conshohocken 27-828. Moved: Conshohocken.
+- A failed overlay on an alternative now reads "Not on this lot: the lot is not in the X overlay". Nothing to change in the file.
+- A note or condition that ends in a quote with its own stop ("...permit.'") gets no second stop when a sentence follows. Nothing to change in the file.
+- `PASS21_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the quote stop fix. Allentown notes hold such quotes.
+- Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate, which already reads "only if the reading that lets this lot in holds").
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:
