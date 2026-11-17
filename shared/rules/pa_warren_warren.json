@@ -266,6 +266,7 @@
       "value": [
         {
           "where": "An accessory building on a lot less than 60 ft wide may be 3 ft from the side and rear lines and may be one story, up to 20 ft. This does not apply on a lot 60 ft wide or more, where the 5 ft yards hold and no accessory height is given",
+          "lot_width_below_ft": 60,
           "section": "470-15A",
           "url": "https://ecode360.com/print/WA2487?guid=45785821"
         }
@@ -360,7 +361,30 @@
         "url": "https://ecode360.com/print/WA2487?guid=45785821",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). No single figure is stored. The tiers are in max_building_coverage_by_lot_size"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.5,
+            "lot_sqft_at_least": 4000,
+            "lot_sqft_below": 6000
+          },
+          {
+            "max_building_coverage": 0.45,
+            "lot_sqft_at_least": 6000,
+            "lot_sqft_below": 10000
+          },
+          {
+            "max_building_coverage": 0.35,
+            "lot_sqft_over": 10000
+          }
+        ],
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. Exactly 10,000 sq ft falls in no tier"
       }
     },
     "R-2": {
@@ -402,7 +426,30 @@
         "url": "https://ecode360.com/print/WA2487?guid=45785821",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). No single figure is stored. The tiers are in max_building_coverage_by_lot_size"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.5,
+            "lot_sqft_at_least": 4000,
+            "lot_sqft_below": 6000
+          },
+          {
+            "max_building_coverage": 0.45,
+            "lot_sqft_at_least": 6000,
+            "lot_sqft_below": 10000
+          },
+          {
+            "max_building_coverage": 0.35,
+            "lot_sqft_over": 10000
+          }
+        ],
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. Exactly 10,000 sq ft falls in no tier"
       }
     },
     "R-3": {
@@ -444,7 +491,30 @@
         "url": "https://ecode360.com/print/WA2487?guid=45785821",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). No single figure is stored. The tiers are in max_building_coverage_by_lot_size"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.5,
+            "lot_sqft_at_least": 4000,
+            "lot_sqft_below": 6000
+          },
+          {
+            "max_building_coverage": 0.45,
+            "lot_sqft_at_least": 6000,
+            "lot_sqft_below": 10000
+          },
+          {
+            "max_building_coverage": 0.35,
+            "lot_sqft_over": 10000
+          }
+        ],
+        "section": "470-15A",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. Exactly 10,000 sq ft falls in no tier"
       }
     },
     "MU": {
@@ -486,7 +556,30 @@
         "url": "https://ecode360.com/print/WA2487?guid=45785821",
         "verified_on": "2026-11-16",
         "confidence": "verified",
-        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). The tool holds no tiered building cover, so no single figure is stored"
+        "note": "Building cover by lot size: 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. It counts principal and accessory structures (470-90 'Lot area, maximum percentage of'). No single figure is stored. The tiers are in max_building_coverage_by_lot_size"
+      },
+      "max_building_coverage_by_lot_size": {
+        "value": [
+          {
+            "max_building_coverage": 0.5,
+            "lot_sqft_at_least": 4000,
+            "lot_sqft_below": 6000
+          },
+          {
+            "max_building_coverage": 0.45,
+            "lot_sqft_at_least": 6000,
+            "lot_sqft_below": 10000
+          },
+          {
+            "max_building_coverage": 0.35,
+            "lot_sqft_over": 10000
+          }
+        ],
+        "section": "470-15A, B",
+        "url": "https://ecode360.com/print/WA2487?guid=45785821",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft. Exactly 10,000 sq ft falls in no tier"
       }
     }
   }

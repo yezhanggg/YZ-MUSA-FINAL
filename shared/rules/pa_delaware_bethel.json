@@ -307,6 +307,8 @@
           "applies_to": null,
           "districts": null,
           "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
           "overlays": [
             "Identified floodplain area"
           ],
@@ -370,6 +372,7 @@
             "Active Adult Community Overlay"
           ],
           "supersedes_district_figures": true,
+          "keeps_accessory_yards": true,
           "disputed_by": {
             "section": "480-100B",
             "url": "https://ecode360.com/print/BE2833?guid=14418523",

@@ -1389,6 +1389,10 @@
           "$ref": "#/$defs/leaf_impervious_by_lot",
           "description": "Pass 16: the district's impervious cover when the code sets it by lot size (for example 35% under 10,000 sq ft, 30% over 10,000 and under 30,000, 25% at 30,000 or more). The tier for the lot replaces max_impervious_coverage in the owner text and the lot fit. A services row (utility_rows) that states its own max_impervious_coverage keeps it. Keep max_impervious_coverage as the base figure, shown when the lot size is not given or falls in a gap the code leaves."
         },
+        "max_building_coverage_by_lot_size": {
+          "$ref": "#/$defs/leaf_cover_by_lot",
+          "description": "Pass 20: the district's building cover when the code sets it by lot size (for example 50% on 4,000 to 5,999 sq ft, 45% on 6,000 to 9,999 sq ft, 35% over 10,000 sq ft). The tier for the lot replaces max_building_coverage in the owner text and the lot fit. A services row that states its own max_building_coverage keeps it. Keep max_building_coverage as the base figure (null when the code gives none), shown when the lot size is not given or falls in a gap the code leaves."
+        },
         "figures_in_dispute": {
           "$ref": "#/$defs/leaf_figures_in_dispute",
           "description": "Pass 16: the row's figures that another reading of the code puts at other values (for example a district that permits another district's uses 'as regulated therein' while its own chapter sets other yards and heights). value maps a row field to the other reading's figure. The row keeps the figure the file shows. Both are said and the row is qualified as not settled."
@@ -1851,6 +1855,10 @@
                 },
                 "description": "Pass 17: with supersedes_district_figures, the district figures the gate replaces. Others stay those of the district. Without it every district figure is replaced (Lower Pottsgrove Sanatoga Village overlay 250-125B: yards only, impervious cover stays the base district's)."
               },
+              "keeps_accessory_yards": {
+                "type": "boolean",
+                "description": "Pass 20: with supersedes_district_figures and overlays, the overlay's own figures replace the district row's yards and cover but not the chapter's general accessory building yards (envelope), which still hold in the overlay (Bethel AACOD 480-100B: the community meets every other requirement of the chapter, so the 480-137 7 ft side and rear yards stay)."
+              },
               "planned_development_kinds": {
                 "type": "array",
                 "minItems": 1,
@@ -2018,6 +2026,39 @@
                   "minimum": 0
                 },
                 "description": "Lot minimum by district code when it differs between the alternative's districts. Wins over min_lot_sqft for a listed district."
+              },
+              "disputed_min_lot": {
+                "type": "object",
+                "required": [
+                  "districts",
+                  "min_lot_sqft",
+                  "section",
+                  "note"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "districts": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "min_lot_sqft": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "section": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "description": "Pass 20: in these districts another reading of the code puts the alternative's lot minimum at min_lot_sqft, higher than the listing's own figure (Quakertown HR duplex: 5,000 sq ft by 308.6, or 10,890 sq ft by the 308.8 density cap). Both figures are said. A lot that meets only the lower one reads 'applies only if', never 'applies'."
               },
               "requires": {
                 "type": [
@@ -4209,6 +4250,14 @@
                 ],
                 "minimum": 0
               },
+              "lot_width_below_ft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Pass 20: the item holds only on a lot narrower than this many feet (lot fact lot_width_ft). A lot this wide or wider drops it. Not given, the condition says it depends on the lot width."
+              },
               "section": {
                 "type": "string",
                 "minLength": 1
@@ -4929,6 +4978,104 @@
             "additionalProperties": false,
             "properties": {
               "max_impervious": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "lot_sqft_over": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_least": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_below": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_most": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_cover_by_lot": {
+      "type": "object",
+      "description": "Pass 20: building cover that changes with lot size, in a district row, as leaf_impervious_by_lot. Each item: max_building_coverage (a share of the lot) and its lot area bounds, any of lot_sqft_over, lot_sqft_at_least, lot_sqft_below, lot_sqft_at_most. The first item whose bounds hold gives the cover for the lot. Without the lot area, or where no item reaches the lot, the row's max_building_coverage is shown and the sentence lists the tiers.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "max_building_coverage"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "max_building_coverage": {
                 "type": "number",
                 "minimum": 0,
                 "maximum": 1

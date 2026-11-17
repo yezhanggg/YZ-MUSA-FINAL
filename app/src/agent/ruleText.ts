@@ -373,7 +373,10 @@ function billKeeps(file: Obj, district: string | null): string[] {
   const m = isObj(row.min_lot_sqft) ? (row.min_lot_sqft as Obj) : null;
   if (m && typeof m.value === 'number' && m.value) out.push(`district minimum lot ${num(m.value)} sq ft for creating lots (${m.section ?? ''})`);
   const cov = pick('max_building_coverage', 'coverage', 'max_building_coverage');
-  if (cov && typeof cov.value === 'number') out.push(`building coverage ${Math.round(cov.value * 100)}% (${cov.section ?? ''})`);
+  // Pass 20 (pipeline/rules.py _cover_by_lot): building cover by lot size. No lot facts here, so every tier is named.
+  const covTiers = isObj(row.max_building_coverage_by_lot_size) && Array.isArray((row.max_building_coverage_by_lot_size as Obj).value) ? (row.max_building_coverage_by_lot_size as Obj) : null;
+  if (covTiers && (covTiers.value as Json[]).length) out.push(`building coverage by lot size: ${(covTiers.value as Json[]).filter(isObj).map((t) => `${Math.round((t.max_building_coverage as number) * 100)}% on ${lotBounds(t)}`).join(', ')} (${covTiers.section ?? ''})`);
+  else if (cov && typeof cov.value === 'number') out.push(`building coverage ${Math.round(cov.value * 100)}% (${cov.section ?? ''})`);
   // Pass 10: a district's impervious cover (districts.<code>.max_impervious_coverage).
   const imp = isObj(row.max_impervious_coverage) ? (row.max_impervious_coverage as Obj) : null;
   // Pass 16 (pipeline/rules.py _impervious_by_lot): cover by lot size. No lot facts here, so every tier is named.
@@ -732,7 +735,8 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const yards = (k: string, attached: boolean): Json => plannedYard(yardsRaw(k, attached));
   const yardsRaw = (k: string, attached: boolean): Json => {
     if (k === 'setback_side_ft' && sidesOnly && (attached || !fromRow('accessory_setback_side_ft'))) return sidesOnly;
-    if (k === 'setback_side_ft' && sidesBoth && (attached || !fromRow('accessory_setback_side_ft')) && (attached || !pick('envelope', k))) return sidesBoth;
+    // Pass 20 (pipeline/rules.py _own_side_line): a house type with its own side yard. The total is not for it.
+    if (k === 'setback_side_ft' && sidesBoth && (attached || !fromRow('accessory_setback_side_ft')) && (attached || !pick('envelope', k))) return attached ? byTypeYard(k, sidesBoth) : sidesBoth;
     if (tierNote && tiers!.some((x) => isObj(x) && k in x && (x.applies_to ?? 'accessory') === (attached ? 'principal' : 'accessory'))) return tierNote;
     if (attached) return byTypeYard(k, bindAllYard(k, fromRow(k)) ?? pick('envelope', k));
     // Pass 13 (pipeline/rules.py _rear_yard_only_yards): the town's accessory side and rear yards hold only inside the
@@ -761,7 +765,8 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const byTypeYard = (k: string, base: Json): Json => {
     const bt = fromRow(`${k}_by_type`);
     if (!bt || !isObj(bt) || !isObj(bt.value) || !isObj(base)) return base;
-    const figs = Object.entries(bt.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => `For a ${label(t)} house: ${num(v)} ft`).join('. ');
+    const total = typeof base.sides_total_ft === 'number' ? base.sides_total_ft : null;
+    const figs = Object.entries(bt.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => (total !== null ? `For ${/^[aeiou]/.test(t) ? 'an' : 'a'} ${label(t)} house: its own side yard of ${num(v)} ft. The ${num(total)} ft total for both sides is not for it` : `For a ${label(t)} house: ${num(v)} ft`)).join('. ');
     return figs ? { ...base, by_type: bt.value, by_type_section: bt.section ?? null, note: ownerText(`${base.note ? `${String(base.note).replace(/\.$/, '')}. ` : ''}${figs} (${bt.section ?? ''})`) } : base;
   };
   const insideRear = (() => {
@@ -1241,6 +1246,10 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
             : null,
           // Pass 7 (pipeline/rules.py _alternatives): per-district lots, overlays and other tests. Never "applies" unchecked.
           isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
+          // Pass 20 (pipeline/rules.py _alt_min_dispute): another reading puts the lot minimum higher in some districts.
+          isObj(a.disputed_min_lot) && Array.isArray(a.disputed_min_lot.districts)
+            ? `In ${(a.disputed_min_lot.districts as string[]).join(', ')} the lot minimum is not settled: another reading gives ${num(a.disputed_min_lot.min_lot_sqft)} sq ft (${a.disputed_min_lot.section ?? ''}). ${String(a.disputed_min_lot.note ?? '').replace(/\.$/, '')}`
+            : null,
           Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${overlayWords(a.overlays as string[])}` : null,
           // Pass 18 (pipeline/rules.py _alt_land_bars): an overlay bar reaches the path when it bars every form the path builds.
           ...landBars(a),

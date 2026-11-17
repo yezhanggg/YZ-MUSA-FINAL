@@ -1206,3 +1206,32 @@ describe('get_rule_text pass 19', () => {
     expect(c.bill_overrides).toBe(true);
   });
 });
+
+describe('get_rule_text pass 20', () => {
+  it('says a twin has its own side yard and the total is not for it (as Bethel R-4 480-53B(2))', async () => {
+    const src: TownSource = {
+      index: async () => TOWNS,
+      town: async () =>
+        ({
+          ...(FAKE_FILES.pa_testing_testville as object),
+          approval: { path: leaf('by_right', '1') },
+          districts: { 'R-4': { setback_side_ft: leaf(25, '41'), setback_sides_total_ft: leaf(60, '41'), setback_side_ft_by_type: leaf({ semi_detached: 15, attached: 15 }, '53B(2)') } },
+        }) as never,
+    };
+    const r4 = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-4' }, src)) as Any6;
+    expect(r4.forms.inside_or_attached.attached_yards.side.note).toBe(
+      'At least 25 ft on one side, 60 ft for both sides together. For a semi detached house: its own side yard of 15 ft. The 60 ft total for both sides is not for it. For an attached house: its own side yard of 15 ft. The 60 ft total for both sides is not for it (53B(2))',
+    );
+  });
+
+  it('names building cover by lot size in the bill line (Warren R-1 470-15A)', async () => {
+    const out = await town6('pa_warren_warren', 'status', 'R-1');
+    expect(out.under_hb2186.still_applies).toMatch(/Building coverage by lot size: 50% on a lot of at least 4,000 sq ft and under 6,000 sq ft, 45% on a lot of at least 6,000 sq ft and under 10,000 sq ft, 35% on a lot over 10,000 sq ft \(470-15A\)/);
+  });
+
+  it('says the disputed duplex lot minimum (Quakertown HR 5,000 or 10,890 sq ft)', async () => {
+    const out = await town6('pa_bucks_quakertown', 'approval', 'HR');
+    const dup = out.other_ways_to_add_a_unit.options.find((o: Any6) => /^Duplex/.test(o.name));
+    expect(dup.reads_as).toMatch(/Lot minimum by district: HR 5,000 sq ft, TC 9,000 sq ft\. In HR the lot minimum is not settled: another reading gives 10,890 sq ft \(308\.8\)\. HR caps density at eight units an acre/);
+  });
+});

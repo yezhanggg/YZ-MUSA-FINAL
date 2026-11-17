@@ -375,6 +375,18 @@ How the resolver reads a file now (pass 7):
 - `PASS19_HOLD_TOWNS` in `pipeline/rules.py` is empty: no pass 19 change reaches a stored lot record of the ten lot towns.
 - Not done: a development-wide share cap (Mount Joy Village Design Option 135-353E(2)(e), 15% of the houses). The listing already needs `designated_on_plan`, which settles it for a lot. A floodplain bar that reaches only a substantial improvement, or only the floodway: the tool has no lot fact for the work's cost against the building's value or for the floodway apart from the floodplain. `disputed_by` already makes such a bar depend on the reading (Mount Joy 70-62, Lower Saucon 90-33). Gross density counting an ADU (Marshall Table 1) stays a condition: the file says whether an ADU counts is not settled. The 20 ft between dwellings in Bristol borough R-3 (27-308.5) is only in a note and never binds the unit.
 
+## More fields (pass 20)
+
+- `envelope.accessory_rules_where[].lot_width_below_ft`: the item holds only on a lot narrower than this many feet (lot fact `lot_width_ft`). A lot this wide or wider drops the item. Not given, the condition says it depends on the lot width. Warren 470-15A (60 ft). Moved: Warren.
+- `districts.<code>.max_building_coverage_by_lot_size` (list of `{max_building_coverage, lot_sqft_over, lot_sqft_at_least, lot_sqft_below, lot_sqft_at_most}`): building cover set by lot size, as `max_impervious_coverage_by_lot_size`. The tier for the lot replaces `max_building_coverage`. A lot size in no tier, or not given, shows the base figure (or none) and a line that lists the tiers. Warren 470-15A (50%, 45%, 35%). Exactly 10,000 sq ft falls in no tier there. Moved: Warren.
+- `approval.alternatives[].disputed_min_lot` (`{districts, min_lot_sqft, section, note}`): in these districts another reading of the code puts the lot minimum higher than the listing's figure. Both figures are said. A lot that meets only the lower one reads "applies only if". Quakertown HR duplex (5,000 sq ft by 308.6, 10,890 sq ft by the 308.8 density cap). Moved: Quakertown.
+- `eligibility.gates[].keeps_accessory_yards`: with `supersedes_district_figures` and `overlays`, the overlay's figures replace the district row but not the chapter's general accessory yards (`envelope`). Set it only where the code keeps the rest of the chapter in the overlay. Bethel AACOD (480-100B, so the 480-137 yards stay). Moved: Bethel.
+- A district row with a side yard of its own for a house type (`setback_side_ft_by_type`) beside `setback_sides_total_ft` reads that type's own side yard, and the total for both sides is not said for it. Bethel R-4 twins (480-53B(2)), Quakertown MR, HR and TC twins. Nothing to change in the file.
+- A disputed overlay bar (`disputed_by`) with the lot's overlays not given reads "where one reading of the code bars it" and names the other reading. Bethel AACOD. Nothing to change in the file.
+- The gate test `top_of_bank_ft_over` now holds Bethel 222-20D and Quakertown 8-501.4 (50 ft). Quakertown's habitation rule (8-502.5A) is a gate of its own.
+- `PASS20_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the own side yard line. No lot town file has a side yard by type beside a total today.
+- Not done: a status for employee or caretaker quarters (Bethel 480-136B(5) stays `family_only`).
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

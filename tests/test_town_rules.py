@@ -3919,3 +3919,121 @@ def test_bill_caps_town_minimum_size():
     lot = {**DET, "zoning_district": "R-1", "house_exists": True, "overlays": []}
     assert rules.resolve("pa_montgomery_douglass", "today", lot)["min_size_sqft"] == 600
     assert rules.resolve("pa_montgomery_douglass", "state_reform", lot)["min_size_sqft"] == 200
+
+
+# ------------------------------------------------------------------ pass 20
+
+
+def test_own_side_yard_by_house_type():
+    """Bethel R-4 480-53B(2) (setback_side_ft_by_type beside setback_sides_total_ft): a twin has its own 15 ft side
+    yard, and the 60 ft total for both sides, set for a house with two side yards, is not said for it."""
+    out = rules.resolve("pa_delaware_bethel", "today", {"zoning_district": "R-4", "building_type": "semi_detached"})
+    sides = [r for r in out["reasons"] if r.startswith("Side yards for R-4")]
+    assert sides == [
+        "Side yards for R-4: a semi detached house has its own side yard of 15 ft (480-53B(2)). The 60 ft total for "
+        "both sides is not for it"
+    ]
+    det = rules.resolve("pa_delaware_bethel", "today", {"zoning_district": "R-4", "building_type": "detached"})
+    assert (
+        "Side yards for R-4: at least 25 ft on one side, 60 ft for both sides together (480-52A, 480-41)"
+        in det["reasons"]
+    )
+
+
+def test_disputed_overlay_bar_overlays_unknown():
+    """Bethel AACOD (480-100 and others, disputed_by 480-100B): with the lot's overlays not given, the path line says
+    one reading bars it and names the other, never a plain 'where the code bars it'."""
+    out = rules.resolve("pa_delaware_bethel", "today", {"zoning_district": "R-1", "building_type": "detached"})
+    line = next(r for r in out["reasons"] if "AACOD" in r and r.startswith("By right only if"))
+    assert "where one reading of the code bars it (480-100, 480-101H, 480-103G, 480-104A). But 480-100B: " in line
+    assert line.endswith("The code does not settle which reading holds")
+    assert "where the code bars it" not in line
+    dep = next(d for d in out["depends_on"] if d.get("test") == "overlays" and "AACOD" in d["overlays"])
+    assert dep["disputed_by"]["section"] == "480-100B"
+
+
+def test_top_of_bank_moved_gates():
+    """Bethel 222-20D and Quakertown 8-501.4 now use the top_of_bank_ft_over test (50 ft). Quakertown's habitation
+    rule (8-502.5A) stays a gate of its own."""
+    for place, d in (("pa_delaware_bethel", "R-1"), ("pa_bucks_quakertown", "HR")):
+        lot = {**DET, "zoning_district": d, "overlays": ["Identified floodplain area"]}
+
+        def gate(place=place, lot=lot, **kw):
+            out = rules.resolve(place, "today", {**lot, **kw})
+            return next(c for c in out["conditions"] if c.get("test") == "top_of_bank_ft_over")
+
+        assert gate()["met"] is None and gate()["condition"].endswith("(top_of_bank_ft), which was not given")
+        assert gate(top_of_bank_ft=40)["met"] is False
+        assert gate(top_of_bank_ft=80)["met"] is True
+    out = rules.resolve("pa_bucks_quakertown", "today", {**DET, "zoning_district": "HR"})
+    assert any(c.get("section") == "8-502.5A" and "human habitation" in c["condition"] for c in out["conditions"])
+
+
+def test_accessory_item_by_lot_width():
+    """Warren 470-15A (accessory_rules_where[].lot_width_below_ft 60): the 3 ft yards hold only on a lot under 60 ft
+    wide."""
+    lot = {**DET, "zoning_district": "R-1"}
+
+    def item(**kw):
+        out = rules.resolve("pa_warren_warren", "today", {**lot, **kw})
+        return [c["condition"] for c in out["conditions"] if c.get("section") == "470-15A" and "3 ft" in c["condition"]]
+
+    assert item(lot_width_ft=50)[0].endswith(". This lot is 50 ft wide, under 60 ft, so it applies")
+    assert item(lot_width_ft=70) == []
+    assert item()[0].endswith(". Depends on the lot width (lot_width_ft), which was not given")
+
+
+def test_building_cover_by_lot_size():
+    """Warren 470-15A (max_building_coverage_by_lot_size): 50%, 45% or 35% by lot size. Exactly 10,000 sq ft falls in
+    no tier, so no figure is shown and the tiers are said."""
+    lot = {**DET, "zoning_district": "R-1"}
+    cov = {
+        s: rules.resolve("pa_warren_warren", "today", {**lot, "lot_sqft": s})["max_building_coverage"]
+        for s in (5000, 7000, 12000)
+    }
+    assert cov == {5000: 0.5, 7000: 0.45, 12000: 0.35}
+    gap = rules.resolve("pa_warren_warren", "today", {**lot, "lot_sqft": 10000})
+    assert gap["max_building_coverage"] is None
+    assert any(
+        r.startswith("Building cover for R-1 depends on lot size: 50% on a lot of at least 4,000 sq ft")
+        and r.endswith(
+            "The code gives no figure for a lot of 10,000 sq ft, so no figure is shown. Ask the zoning officer"
+        )
+        for r in gap["reasons"]
+    )
+    unknown = rules.resolve("pa_warren_warren", "today", lot)
+    assert any(r.endswith("The lot size was not given, so no figure is shown") for r in unknown["reasons"])
+
+
+def test_alternative_disputed_lot_minimum():
+    """Quakertown HR duplex (alternatives[].disputed_min_lot): 5,000 sq ft by 308.6, or 10,890 sq ft by the 308.8
+    density cap. A lot between the two reads 'applies only if', never 'applies'."""
+
+    def alt(d, s):
+        out = rules.resolve("pa_bucks_quakertown", "today", {**DET, "zoning_district": d, "lot_sqft": s})
+        return next(a for a in out["alternatives"] if a["name"].startswith("Duplex"))
+
+    mid = alt("HR", 7000)
+    assert mid["applies"] is None
+    assert "In HR the lot minimum is not settled: 5,000 sq ft, or 10,890 sq ft by 308.8. " in mid["note"]
+    assert "This lot of 7,000 sq ft meets only the lower figure, so the reading decides" in mid["note"]
+    assert "it needs a lot of at least 5,000" not in mid["note"]
+    assert alt("HR", 12000)["applies"] is True and "meets both" in alt("HR", 12000)["note"]
+    assert alt("HR", 4000)["applies"] is False
+    tc = alt("TC", 9500)
+    assert tc["applies"] is True and "In TC it needs a lot of at least 9,000 sq ft" in tc["note"]
+
+
+def test_overlay_keeps_general_accessory_yards():
+    """Bethel AACOD (gates[].keeps_accessory_yards): the overlay's own figures replace the R-1 row, but the chapter's
+    480-137 accessory yards (7 ft side and rear) still hold for a detached unit there."""
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 8000, "overlays": ["AACOD"]}
+    out = rules.resolve("pa_delaware_bethel", "today", lot)
+    assert out["setbacks_by_type"]["detached_new"] == {
+        "setback_front_ft": None,
+        "setback_side_ft": 7,
+        "setback_rear_ft": 7,
+    }
+    assert out["setbacks_by_type"]["attached"]["setback_side_ft"] is None
+    line = next(r for r in out["reasons"] if r.startswith("Yards for R-1"))
+    assert "The base figures (front 60 ft, side 25 ft, rear 30 ft, building coverage 15%) do not apply" in line

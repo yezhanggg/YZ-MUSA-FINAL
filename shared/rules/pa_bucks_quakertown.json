@@ -115,10 +115,18 @@
             "HR": 5000,
             "TC": 9000
           },
+          "disputed_min_lot": {
+            "districts": [
+              "HR"
+            ],
+            "min_lot_sqft": 10890,
+            "section": "308.8",
+            "note": "HR caps density at eight units an acre for all uses except multiple apartment dwellings. On one lot that would mean 10,890 sq ft for a duplex. The code does not say whether density is counted on one lot or on a tract"
+          },
           "section": "308.2B, 308.6, 308.8, 309.2D, 309.6, 315.3D",
           "url": "https://ecode360.com/print/QU2431?guid=14361961",
           "confidence": "secondary",
-          "note": "A two-unit building, not a unit added to a house. The lot figures are the per-unit figure times two. The HR figure is not settled: 5,000 sq ft by 308.6, or 10,890 sq ft by the 308.8 density cap"
+          "note": "A two-unit building, not a unit added to a house. The lot figures are the per-unit figure times two"
         },
         {
           "name": "Building conversion into two or more dwelling units (TC)",
@@ -196,7 +204,7 @@
         },
         {
           "kind": "other",
-          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the Department of Environmental Protection's regional office.' An accessory structure in the floodplain that is not elevated may not be used for human habitation.",
+          "condition": "An accessory structure in the floodplain that is not elevated may not be used for human habitation.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -204,7 +212,24 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "8-501.4, 8-502.5A",
+          "section": "8-502.5A",
+          "url": "https://ecode360.com/print/QU2431?guid=15733858",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the Department of Environmental Protection's regional office.' A new building or addition closer than that needs the DEP permit.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-501.4",
           "url": "https://ecode360.com/print/QU2431?guid=15733858",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
