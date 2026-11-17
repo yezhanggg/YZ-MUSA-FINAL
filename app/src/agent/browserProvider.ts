@@ -11,6 +11,7 @@ import type { LotRecord } from '../lib/lot/types';
 import { moneyOptions, tractRents } from '../tool/testState';
 import { zoningTextSource } from './zoningText';
 import { placesSource } from './placeAnswer';
+import { tractTownsSource } from './tractTowns';
 import { lotPlacesText } from './lotPlaces';
 import { lotTownOf } from '../lib/lot/towns';
 import { addressIndexSource } from '../lib/lot/addressIndex';
@@ -100,6 +101,7 @@ export const browserProvider: DataProvider = {
   zoningText: zoningTextSource(),
   // The statewide place table for get_place_answer, from the app's own data folder.
   places: placesSource(),
+  tractTowns: tractTownsSource(),
   // find_lot: the address index of every lot place (published next to the tract files), fetched per street.
   addressIndex: addressIndexSource(),
   async lotById(id) {

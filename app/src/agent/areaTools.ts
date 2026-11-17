@@ -122,6 +122,7 @@ export const AREA_STATS_TOOL: ToolDef = {
   description:
     'Census and market numbers for a tract, town, county or the whole state: rents by bedroom, growth per year before and after 2019 (with a margin of error flag), ' +
     'whether a 600 sq ft unit pays off, lots with room, trend group, and ADUs expected by 2031 (low, mid, high) today, under HB 2186 and under SB 1346. ' +
+    'For a tract it also lists the towns the tract sits in, with each town share of homes and its ADU rule today (a tract can cross a town line). ' +
     'Give geoid or name. Without them: the selected site.',
   input_schema: {
     type: 'object',

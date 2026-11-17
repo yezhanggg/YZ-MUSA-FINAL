@@ -198,3 +198,18 @@ gzipped.
 - `text_search`: search the text and quote it. No conclusion without a quote.
 - `baseline`: the statewide baseline, and "this town's code is not in my data". Give the contact.
 - Always end with: ask the zoning officer before you design or build.
+
+## Tracts
+
+Zoning is set by each town, and a census tract can cross a town line. `python -m pipeline.tract.towns` splits every
+tract's homes and people between towns from the 2020 Census blocks (`tl_2020_42_tabblock20`) and the Census block
+assignment file, which places every block in one county subdivision. No shapes are overlaid, so the split is exact:
+every town's home count matches the 2020 count.
+
+- 674 of 3,445 tracts cross a town line. They hold 21.3% of the state's homes.
+- In 266 tracts the towns that hold at least 1% of the homes have different statuses.
+- Files: `<data root>/processed/tract_town_xwalk.csv` (all pairs) and `app/public/data/tract_towns.json` (pairs with
+  at least 0.5% of the tract's homes or people).
+- The tool's tract answer stays the answer of the town where the map was clicked. The Allowed row adds the split
+  when a tract crosses a town line. The assistant's `get_area_stats` on a tract lists every town with its share of
+  homes and its rule today.

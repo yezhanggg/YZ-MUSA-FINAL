@@ -14,6 +14,7 @@ import { lotTownByFile, townsOfPlace } from '../app/src/lib/lot/towns';
 import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
 import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
+import { memoryTractTowns, type TractTowns, type TractTownsSource } from '../app/src/agent/tractTowns';
 import { addressIndexSource } from '../app/src/lib/lot/addressIndex';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
@@ -177,6 +178,15 @@ export function nodePlaces(): PlacesSource {
   return placeRows;
 }
 
+/** The tract to town split (app/public/data/tract_towns.json), read once. Empty source when the file is missing. */
+let tractTownRows: TractTownsSource | null = null;
+export function nodeTractTowns(): TractTownsSource {
+  if (tractTownRows) return tractTownRows;
+  const f = resolve(DATA, 'tract_towns.json');
+  tractTownRows = existsSync(f) ? memoryTractTowns(JSON.parse(readFileSync(f, 'utf8')) as TractTowns) : { get: async () => null };
+  return tractTownRows;
+}
+
 /** Mean of the outer ring of a lot polygon, lon / lat. */
 function lotPoint(rec: LotRecord): LngLat | null {
   const g = rec.lot.polygon;
@@ -216,6 +226,7 @@ export function nodeProvider(
     lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
     zoningText: nodeZoningText(),
     places: nodePlaces(),
+    tractTowns: nodeTractTowns(),
     addressIndex: ADDRESS_INDEX,
     async lotById(id) {
       const lot = byId(id);

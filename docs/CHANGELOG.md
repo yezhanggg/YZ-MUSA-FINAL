@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-16, night
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Tracts and towns
+
+- New tract to town split from the 2020 Census blocks and block assignment file (`pipeline/tract/towns.py`, `app/public/data/tract_towns.json`). 674 of 3,445 tracts cross a town line (21.3% of homes). In 266 of them the towns have different ADU statuses.
+- Explore, Allowed row: a tract that crosses a town line now says so and gives each town's share of the homes. The answer stays the clicked town's.
+- Explore, Allowed row: where the statewide places table has a checked answer for the town, the row's detail now shows that answer, how sure it is and the code link. Before, it showed the older town layer's "Rule not coded yet" under an "Allowed with limits" label (Lancaster township and every other town with a rule file but no older town rule).
+- The assistant's `get_area_stats` on a tract lists the tract's towns with their share of homes, rule today and how sure it is.
+
 ## 2026-11-16, morning
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.

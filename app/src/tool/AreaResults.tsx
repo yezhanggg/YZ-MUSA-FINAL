@@ -10,9 +10,11 @@ import { fmt, isNum, money } from '../lib/format';
 import { ruleFor, ruleWarnings } from '../lib/rules';
 import type { RowState } from '../lib/lot/answer';
 import AduSamples from './AduSamples';
+import TractTownsNote from './TractTownsNote';
 import CountyTable from './CountyTable';
 import { areaAnswer, placeRule } from './areaAnswer';
-import { loadPlaces, usePlaces } from './places';
+import { loadPlaces, usePlaces, type PlaceRow } from './places';
+import { dateText } from '../lib/lot/words';
 import { FORECAST_LABEL } from './metrics';
 import { DemandCard, RoomCard, RulesCard, TownCard } from './Report';
 import { useTool, type Spot } from './store';
@@ -57,6 +59,31 @@ export function AreaLine({ spot }: { spot: Spot }) {
   );
 }
 
+/** Today's rule from the statewide places table, in place of the older town layer's card (which may read "not coded"
+ * for a town that has a checked rule file): the answer's own sentence, how sure it is, and the code link. */
+function PlaceRuleNote({ row, sub }: { row: PlaceRow; sub: string }) {
+  const date = row.source?.date ? dateText(row.source.date) : null;
+  const how =
+    row.tier === 'verified'
+      ? `Read from ${row.name}'s zoning code and checked${date ? ` (${date})` : ''}.`
+      : row.tier === 'drafted'
+        ? `First reading of ${row.name}'s zoning code${date ? ` (${date})` : ''}, with open points. Confirm with the town.`
+        : `Listed by ${row.source?.name ?? 'a public record'}. Not checked against the code here.`;
+  return (
+    <div className="space-y-1">
+      <p className="text-small text-slate-700">{sub}</p>
+      <p className="text-caption text-slate-500">
+        {how}{' '}
+        {row.code_url && (
+          <a className="underline" href={row.code_url} target="_blank" rel="noreferrer">
+            Zoning code
+          </a>
+        )}
+      </p>
+    </div>
+  );
+}
+
 const PAY_STATE = { yes: 'pass', maybe: 'approval', no: 'fail' } as const;
 const PAY_LABEL = { yes: 'Pays off', maybe: 'Close', no: 'Does not pay off' } as const;
 const RULE_STATE: Record<'good' | 'warn' | 'bad' | 'none', RowState> = { good: 'pass', warn: 'approval', bad: 'fail', none: 'unknown' };
@@ -65,6 +92,7 @@ const RULE_STATE: Record<'good' | 'warn' | 'bad' | 'none', RowState> = { good: '
  * Build answers the rule from the statewide table, so the older town rule row is left out. */
 export function AreaRows({ spot, skipRule }: { spot: Spot; skipRule?: boolean }) {
   const { adu, mode, costLevel, payRate, pay, rule, fromPlaces } = useArea(spot);
+  const placeRow = usePlaces((s) => (spot.town.GEOID ? s.places?.byGeoid.get(spot.town.GEOID as string) : undefined));
   const forecast = useTool((s) => s.forecast);
   const room = tractRoom(spot.tract);
   const warnings = ruleWarnings(mode, spot.town, null, adu.size);
@@ -107,7 +135,8 @@ export function AreaRows({ spot, skipRule }: { spot: Spot; skipRule?: boolean })
           {warnings.map((wn) => (
             <p key={wn} className="text-amber-800">{wn}</p>
           ))}
-          <RulesCard spot={spot} bare />
+          {fromPlaces && placeRow ? <PlaceRuleNote row={placeRow} sub={rule.sub} /> : <RulesCard spot={spot} bare />}
+          <TractTownsNote tract={spot.tract.GEOID} town={(spot.town.NAMELSAD as string | undefined) ?? null} />
         </Row>
       )}
       <Row state={null} name="Room on lots" value={room && room.lots > 0 ? `${room.measured ? '' : 'about '}${Math.round((100 * room.mid) / room.lots)}% of lots` : 'No estimate'} data={{ 'data-area-row': 'room' }}>

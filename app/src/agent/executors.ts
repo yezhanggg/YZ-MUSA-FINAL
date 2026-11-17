@@ -7,6 +7,7 @@ import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
 import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
 import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
+import { tractTownsOut, type TractTownsSource } from './tractTowns';
 import { areaStats, findLotIndexResult, findLotResult, forecast, matchAddress, roomOut, type AddressEntry, type AreaData } from './areaTools';
 import type { AddressIndexSource } from '../lib/lot/addressIndex';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
@@ -42,6 +43,8 @@ export interface DataProvider {
   zoningText?: ZoningTextSource | null;
   /** get_place_answer: the statewide place table (app/public/data/pa_places.json). */
   places?: PlacesSource | null;
+  /** get_area_stats on a tract: the towns it sits in (app/public/data/tract_towns.json). */
+  tractTowns?: TractTownsSource | null;
 }
 
 export interface SetMapInput {
@@ -203,7 +206,11 @@ export function makeExecutors(p: DataProvider) {
     async get_area_stats(input: { level?: unknown; geoid?: unknown; name?: unknown }) {
       const s = await p.selected();
       const rec = await p.lots?.selectedLot();
-      return areaStats(input, p.areas ? await p.areas() : null, { tract: s?.tract?.GEOID ?? rec?.lot.tract ?? null, town: (s?.town?.GEOID as string | undefined) ?? null });
+      const out = areaStats(input, p.areas ? await p.areas() : null, { tract: s?.tract?.GEOID ?? rec?.lot.tract ?? null, town: (s?.town?.GEOID as string | undefined) ?? null });
+      // A tract can cross a town line, and zoning is set by each town: list its towns with their rules.
+      const o = out as { level?: unknown; geoid?: unknown };
+      if (o.level === 'tract' && typeof o.geoid === 'string') return { ...out, ...(await tractTownsOut(o.geoid, p.tractTowns, p.places)) };
+      return out;
     },
     async get_rules(input: { town_geoid?: string }) {
       return rulesOf(await p.town(input.town_geoid));

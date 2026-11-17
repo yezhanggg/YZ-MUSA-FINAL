@@ -73,6 +73,7 @@ Size: the detail files are 108,915,795 bytes for Pittsburgh and 314,906,136 byte
 | `tracts.geojson` | `loadData`, both modes | One shape per tract with the numbers the panels read: growth, trend group, rent by bedrooms (`rent_b0` to `rent_b3`), payoff, ADUs by 2031 |
 | `towns.geojson` | `loadData`, both modes | One shape per town with town totals and the older town rule fields |
 | `counties.geojson` | `loadData`, Projecting mode | County roll-up of the tract results |
+| `tract_towns.json` | Explore's Allowed row (`tool/TractTownsNote.tsx`), the assistant's `get_area_stats` on a tract (`agent/tractTowns.ts`) | Tract GEOID to `[town GEOID, share of homes, share of people]`, largest first, from the 2020 Census blocks and block assignment file. Built by `python -m pipeline.tract.towns`, not by `build_data.py` |
 | `app/src/lib/headline.json` | `src/lib/numbers.ts`, the Research page, the assistant's `get_area_stats` | Statewide headline numbers: tract payoff share, ADUs by 2031 by scenario, trend groups, forecast fit, lots with room (`room`: measured and modelled tracts, low, mid, high) and the lot results of both cities (`lots`) |
 | `meta.json` | The eval question maker only | Build time of the files above |
 
