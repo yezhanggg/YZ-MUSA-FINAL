@@ -286,10 +286,12 @@
       "an alley runs"
      ],
      "reject": [
-      "no alley",
+      "there is no alley",
+      "no alley behind",
       "not have an alley",
       "doesn't have an alley",
-      "there is no alley"
+      "does not have an alley",
+      "no alley runs"
      ]
     }
    ],

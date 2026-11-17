@@ -76,7 +76,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b(?!\\s+per\\b)",
      "why": "a verdict outside a quote"
     },
     {
@@ -152,7 +152,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b(?!\\s+per\\b)",
      "why": "a verdict outside a quote"
     },
     {
@@ -227,7 +227,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b(?!\\s+per\\b)",
      "why": "a verdict outside a quote"
     },
     {
@@ -304,7 +304,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b(?!\\s+per\\b)",
      "why": "a verdict outside a quote"
     },
     {
@@ -502,7 +502,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(\u00a7|\\bsection)\\s*\\d",
+     "pattern": "(§|\\bsection)\\s*\\d",
      "why": "cites a section before knowing which Penn township"
     }
    ],
@@ -562,7 +562,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b",
+     "pattern": "(?<!(\\b(whether|if|say|says|said|know|decide|tell you|show|shows)|not mean|n't mean)\\b(?:[^.]|\\.(?=\\d)){0,120})\\b(adus?|accessory (dwelling units?|dwellings?|apartments?)|granny flats?|they|it)\\s+(is|are)\\s+(allowed|permitted|not allowed|prohibited|banned|not permitted)\\b(?!\\s+per\\b)",
      "why": "a verdict outside a quote"
     },
     {
@@ -717,7 +717,7 @@
    ],
    "forbidden": [
     {
-     "pattern": "(\u00a7|\\bsection)\\s*\\d",
+     "pattern": "(§|\\bsection)\\s*\\d",
      "why": "a section with no text behind it"
     }
    ],

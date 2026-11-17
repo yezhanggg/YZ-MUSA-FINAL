@@ -38,20 +38,22 @@
    "facts": [
     {
      "kind": "behaviour",
-     "label": "detached form barred",
+     "label": "backyard cottage: not allowed today",
      "accept": [
-      "bars",
+      "not allowed",
+      "no rule",
       "barred",
-      "prohibit",
-      "expressly",
-      "not allowed"
+      "prohibit"
      ],
-     "evidence": "bars this form"
+     "evidence": "Not allowed today: the code has no rule for this form"
     },
     {
-     "kind": "section",
-     "label": "section that bars it",
-     "value": "255-200D"
+     "kind": "behaviour",
+     "label": "cites the zoning chapter",
+     "accept": [
+      "255-"
+     ],
+     "evidence": "255-200D(12)(b)[7]"
     },
     {
      "kind": "behaviour",
@@ -81,11 +83,11 @@
     },
     {
      "pattern": "\\b(cottage|detached)[^.]{0,40}\\b(is|are) allowed\\b",
-     "why": "says the barred form is allowed"
+     "why": "says the cottage is allowed"
     }
    ],
    "scenario": null,
-   "rubric": "Carlisle borough: the answer differs by form. Detached forms are barred (255-200D); a unit inside or attached is not named, so a use variance."
+   "rubric": "Carlisle borough: the answer differs by form. A unit in a detached garage is barred (255-200D(12)(b)[7]). A backyard cottage or a unit inside is not named, so a use variance."
   },
   {
    "id": "rt-02",
