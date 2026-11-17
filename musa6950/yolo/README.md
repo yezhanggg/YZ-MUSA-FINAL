@@ -28,8 +28,10 @@ All large files live on the external drive, never in the repo.
 | Runs, weights, scores | `~/musa-drive/models/yolo/` |
 | Detections per lot (the product input) | `~/musa-drive/processed/yolo/detections_<city>.parquet` |
 
-Chip coordinates: city state plane feet, EPSG:2271 (Pittsburgh, as the lots) and EPSG:2272
-(Philadelphia). The world files carry the transform, `chips.csv` carries the CRS.
+Chip coordinates: state plane feet. Pittsburgh chips are in EPSG:2271 (Pennsylvania North), kept from the first
+chip run. The Pittsburgh lots are in EPSG:2272 (Pennsylvania South, the zone of Allegheny County), so detections are
+reprojected through the CRS in `chips.csv` before they meet a lot. Philadelphia chips and lots are both EPSG:2272.
+The world files carry the transform, `chips.csv` carries the CRS.
 
 ## Imagery
 
