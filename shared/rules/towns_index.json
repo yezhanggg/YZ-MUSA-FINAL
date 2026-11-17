@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 194,
-      "population": 6366071,
-      "share_of_pa": 0.4896
+      "towns_beyond_the_two_cities": 197,
+      "population": 6390876,
+      "share_of_pa": 0.4915
     }
   ],
   "towns": [
@@ -4754,6 +4754,78 @@
         "named as a town with an ADU ordinance (Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR))"
       ],
       "status_note": "Drafted 2026-11-17 after the fix round. Open: the tool shows the 10 acre and up impervious tiers rounded to whole percents until the engine prints decimals (6.6% reads as 7%, 6.4% as 6%, 370-114A(4)). Also open: whether an ADU inside the house needs the residential conversion special exception (370-14B(2)(a), 370-15B(2)(a)), whether a 10 acre conservancy lot of an RC-1 or RR-1 design may hold one (370-114A(2)), whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)), whether the twin density per net tract area reaches a single lot (V-2 21,780 sq ft, TC-2 14,520 sq ft), which body hears the 75 year exemption of 370-114B(7)(d), and whether the ADU counts against the RC-2 or RR-2 unit cap (370-114B(1)). The Scenic Preservation Overlay bars a new building or addition (370-31E(1)). At 15 acres or more the impervious cap is a fixed 38,000 sq ft that is not tested."
+    },
+    {
+      "geoid": "4213321464",
+      "geoid_aliases": [],
+      "name": "East Manchester township",
+      "county": "York",
+      "type": "township",
+      "population": 8337,
+      "population_with_aliases": 8337,
+      "housing_units": 3080,
+      "pop_rank": 332,
+      "file": "pa_york_east_manchester",
+      "batch": 48,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/13287498",
+      "plain_fetch": null,
+      "code_current_through": "2026-04-14",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 255-21D accessory dwelling unit by right, family only (CO, A, R-1, R-2, R-3, AO, V))"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the 900 sq ft minimum livable floor area for every dwelling unit (255-42) reaches an ADU capped at 900 sq ft or 30% of the house (255-21D(1)), whether the CO and A dwelling unit limits and 'Each dwelling unit shall be located on an individual lot' (255-9E, 255-10E) bar an ADU there, and whether the 30% share counts the unit. A unit in a separate building is not named (255-90)."
+    },
+    {
+      "geoid": "4209585592",
+      "geoid_aliases": [],
+      "name": "Wilson borough",
+      "county": "Northampton",
+      "type": "borough",
+      "population": 8259,
+      "population_with_aliases": 8259,
+      "housing_units": 3435,
+      "pop_rank": 342,
+      "file": "pa_northampton_wilson",
+      "batch": 48,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11718930",
+      "plain_fetch": null,
+      "code_current_through": "2026-02-09",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 170-83H(9) in-law suite by special exception (R-1, R-2, TC))"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the code's accessory dwelling unit definition (800 sq ft, two people, owner occupancy, 170-23 'Dwelling' H) binds an H-9 in-law suite, whether the Board will require relatives (170-83H(9) states only an intent), and whether the suite counts toward the average lot area per dwelling unit (170-32B, 170-37A(2)). The house's parking count is in Table 2, a PDF not opened."
+    },
+    {
+      "geoid": "4212511176",
+      "geoid_aliases": [],
+      "name": "Canton township",
+      "county": "Washington",
+      "type": "township",
+      "population": 8209,
+      "population_with_aliases": 8209,
+      "housing_units": 3777,
+      "pop_rank": 346,
+      "file": "pa_washington_canton",
+      "batch": 48,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30860010",
+      "plain_fetch": null,
+      "code_current_through": "2025-05-08",
+      "code_note": null,
+      "why": [
+        "added as batch 48 by population. Code Chapter 27 has no ADU text (27-2301.1.8 single-family conversion to two or three units in A-1, R-1, R-2, R-3)"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether a single-family conversion in R-1 and R-2 is by right (27-304.1) or a conditional use (27-401.1 lists 'Conversion apartment' as conditional), what the '0' acre single-family lot in A-1 and R-1 means, whether lot coverage counts only buildings, and the duplex rows of 27-401.1 that the Land Use Table does not list. 27-2809 special exceptions not read."
     }
   ]
 }

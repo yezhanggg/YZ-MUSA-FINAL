@@ -1,0 +1,940 @@
+{
+  "provenance": {
+    "jurisdiction": "East Manchester township",
+    "instrument": "East Manchester Township Zoning Ordinance (Chapter 255 Zoning, Ord. No. 2006-3, amended in its entirety 6-12-2007 by Ord. No. 2007-2, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 EA1085, Township of East Manchester, York County (255-6A(1) 'the Township of East Manchester, York County, Pennsylvania'). District use lists and lot area and bulk tables are text in Article III. The two attachments are sign charts (Chart A permanent signs, Chart B temporary signs). Floodplain rules are in Chapter 108, the riparian buffer in Chapter 199. New Laws: none",
+    "effective_date": "2025-05-13",
+    "source_urls": [
+      "https://ecode360.com/EA1085",
+      "https://ecode360.com/EA1085/laws",
+      "https://ecode360.com/13287498",
+      "https://ecode360.com/print/EA1085?guid=13287498",
+      "https://ecode360.com/print/EA1085?guid=13287937",
+      "https://ecode360.com/print/EA1085?guid=13288736",
+      "https://ecode360.com/print/EA1085?guid=13288191",
+      "https://ecode360.com/print/EA1085?guid=13288433",
+      "https://ecode360.com/print/EA1085?guid=13288665",
+      "https://ecode360.com/print/EA1085?guid=13288508",
+      "https://ecode360.com/print/EA1085?guid=13285040",
+      "https://ecode360.com/print/EA1085?guid=13287839",
+      "https://ecode360.com/print/EA1085?guid=13287934",
+      "https://ecode360.com/print/EA1085?guid=13287935",
+      "https://ecode360.com/print/EA1085?guid=13288313",
+      "https://ecode360.com/print/EA1085?guid=13288059",
+      "https://ecode360.com/print/EA1085?guid=13288353",
+      "https://ecode360.com/print/EA1085?guid=42273597",
+      "https://ecode360.com/print/EA1085?guid=13288529",
+      "https://ecode360.com/print/EA1085?guid=13288575",
+      "https://ecode360.com/EA1085/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20%22residential%20conversion%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EA1085/search?query=steep%20OR%20riparian%20OR%20wetland%20OR%20kitchen&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213321464",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/13287498",
+    "code_current_through": "2026-04-14",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 04-14-2026.' New Laws: 'There are currently no known new laws for this Code.' The definitions carry Ord. No. 2026-2 of 4-8-2026",
+    "checks": [
+      "ADU: 'In all districts where residential uses are permitted, and subject to the requirements of the applicable district, ADUs shall be permitted' (255-21D, Ord. No. 2025-5). An ADU is 'A dwelling unit added to, or created within, a single-family dwelling', may not be sold apart from the house, and may be lived in only by 'a person related to the principal dwelling unit owner by blood, marriage, or legal adoption, or persons providing care to the principal dwelling unit owner(s)' (255-90)",
+      "The ADU residents must apply for and renew each year an ADU occupancy permit, on proof that they are related to the owner of the house. Within six months after the ADU resident moves out, or after the permit lapses, the owner must turn the ADU back into part of the house (255-21D(2), (3))",
+      "Size: the lesser of 900 sq ft or 30% of the total floor area of the dwelling (255-21D(1)). Every dwelling unit needs at least 900 sq ft of livable floor area, and conversion apartments 400 sq ft (300 sq ft for one person) (255-42). Read together, the 900 sq ft minimum would leave only a unit of exactly 900 sq ft in a house of 3,000 sq ft or more. Ask the zoning officer which minimum applies",
+      "The house must keep the look of a single-family dwelling (255-21D(7)). A unit below grade needs emergency egress under the Uniform Construction Code (255-21D(5)). If the ADU brings the bedrooms served by a septic system to four or more, the Sewage Enforcement Officer must inspect and approve the system (255-21D(6))",
+      "Parking: 'One additional off-street parking space' for the ADU (255-21D(4)). A house needs one space for each 1/2 dwelling unit, which is two spaces (255-58E). Where Article IV and the parking table differ, Article IV prevails (255-58D)",
+      "CO and A: 'Total Number of Dwelling Units Permitted (including those existing)' is one on a tract of up to 10 acres (gross area as of 1-1-2006), and two plus one per added 10 acres above that. 'Each dwelling unit shall be located on an individual lot' (255-9E, 255-10E). These read as barring an ADU there, while 255-21D allows ADUs in all districts where residential uses are permitted. Ask the zoning officer",
+      "C and I: 'Dwellings' are expressly prohibited (255-16D(1), 255-17E(1)), so there is no single-family dwelling to add an ADU to",
+      "Each lot gets one principal use and one principal building (255-8A(6), 255-20, district use lists). A unit in a separate building is not an ADU under the definition. A use not specifically allowed is a special exception only where similar uses are allowed (255-19, 255-8A(4)). C and I expressly prohibit dwellings, so this does not open a path there",
+      "Residential conversion of an existing one-family dwelling to two or more units: special exception in R-2 and R-3, by right in AO and V. The lot needs at least 60% of the district minimum lot area for each unit created. The building must have had 1,000 sq ft of livable floor area on the chapter's effective date plus 600 sq ft for each added unit, with no change to the outside except as building codes require, and 1.5 parking spaces per unit (255-33). No family rule",
+      "Duplex dwellings are by right in R-2, R-3, AO and V (255-12B(2), 255-13B(2), 255-14B(2), 255-15B(2))",
+      "Floodplain (Chapter 108, 255-18): a land use permit is needed for any construction or development in the township (108-3A, 108-5). In the floodway any increase in flood heights is prohibited and new construction needs a DEP permit (108-16A). In FE and FA areas 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from DEP' (108-16C(1)). New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation, and a fully enclosed space below it is prohibited (108-17A, C(1)). Work of 50% or more of market value is a substantial improvement (108-29C). The Township may grant waivers for exceptional hardship (108-30, 108-31), and the Zoning Hearing Board hears variances from Chapter 108 (255-86B(5))",
+      "Riparian Buffer Zone (Chapter 199): no disturbance of vegetation and soil within 15 ft of the top of bank, and in the next 35 ft (or to the 100-year floodplain if wider) only uses allowed in the floodplain (199-18A(1), (2), B). Whether Chapter 199 reaches one house addition was not read (199-5)",
+      "Nonconforming lot: a single-family dwelling may be built on a lot of record irrespective of its area or width. The side yards together need not exceed 30% of the lot width (each at least 10%) and the rear yard need not exceed 20% of the depth (at least 10 ft) (255-71). A noncomplying building may be enlarged if no new nonconformity is created (255-70B)",
+      "Front yards: a single-family or duplex dwelling need not be set back farther than the average of the two existing dwellings with the greatest setbacks within 200 ft on each side, on the same side of the street, in the same block and district (255-48)",
+      "R-3: every use must be served by both public sewer and public water, and private septic and wells are prohibited (255-13E)"
+    ],
+    "notes": "Zoning office: East Manchester Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 255-1 to 255-18 (chapter print view), 255-19, 255-20, 255-21, 255-27, 255-33, 255-42, 255-48, 255-58, Article VII (255-67 to 255-72), 255-76, 255-86, 255-90 up to 'Short-term rental', Chapter 108 from 108-1 to 108-31, 199-18 and code searches. Not read: 255-18.1 (Data Center Overlay), 255-22 to 255-26, 255-28 to 255-32, 255-34 to 255-41, 255-43 to 255-47, 255-49 to 255-57.3, Article VI, 255-59 to 255-61, 255-73 to 255-75, 255-77 to 255-85, 255-87 to 255-89, 255-90 after 'Short-term rental', 255-91, 108-32 to 108-34 and 199-5. Open points: the 900 sq ft minimum of 255-42 against the ADU cap, whether the CO and A dwelling unit limits bar an ADU, and whether 30% is of the house before or after the unit is made."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "255-90 'Accessory dwelling unit (ADU)', 255-21D",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A dwelling unit added to, or created within, a single-family dwelling that provides basic requirements for living, sleeping, eating, cooking and sanitation'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "255-21D, 255-90 'Accessory dwelling unit (ADU)'",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "ADUs 'shall be permitted' in all districts where residential uses are permitted, by zoning permit. Only a relative of the owner of the house, or a person caring for the owner, may live in the unit"
+    },
+    "scope_districts": {
+      "value": [
+        "CO",
+        "A",
+        "R-1",
+        "R-2",
+        "R-3",
+        "AO",
+        "V"
+      ],
+      "section": "255-21D, 255-9B, 255-10B, 255-11B, 255-12B, 255-13B, 255-14B, 255-15B",
+      "url": "https://ecode360.com/print/EA1085?guid=13287498",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'In all districts where residential uses are permitted'. Single-family dwellings are permitted by right in CO, A, R-1, R-2, R-3, AO and V"
+    },
+    "status_outside": {
+      "value": "prohibited",
+      "section": "255-16D(1), 255-17E(1)",
+      "url": "https://ecode360.com/print/EA1085?guid=13287498",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "C and I expressly prohibit 'Dwellings'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "255-21D",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'ADUs shall be permitted subject to the following the following requirements'. A zoning permit, with an ADU occupancy permit that the residents renew each year"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "255-86B(5), (10)",
+      "url": "https://ecode360.com/print/EA1085?guid=13288665",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 255-86B(10)(a). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion (R-2, R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Conversion of an existing one-family dwelling to a two-family or larger dwelling. The lot needs at least 60% of the district minimum lot area for each dwelling unit created (with public sewer and water, 9,000 sq ft per unit in R-2 and 4,800 sq ft per unit in R-3). The building must have had 1,000 sq ft of livable floor area on the chapter's effective date, plus 600 sq ft for each added unit. Each unit has a full kitchen, toilet and bath. No change to the outside except as building or housing codes require. 1.5 off-street parking spaces per unit. No family rule. The Zoning Hearing Board decides on the standards of 255-86D",
+          "min_lot_by_district": {
+            "R-2": 18000,
+            "R-3": 9600
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing one-family dwelling to convert",
+              "section": "255-33A"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 1600,
+              "condition": "1,000 sq ft of livable floor area for the first unit plus 600 sq ft for the second, held on the chapter's effective date",
+              "section": "255-33D(1)"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "255-12C(8), 255-13C(6), 255-33, 255-90 'Residential conversion'",
+          "url": "https://ecode360.com/print/EA1085?guid=13288191",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU. The lot figure counts 60% of the district minimum for each of the two units, which reads as 18,000 sq ft in R-2 and 9,600 sq ft in R-3 with public sewer and water. Another reading counts only the added unit"
+        },
+        {
+          "name": "Residential conversion (AO, V)",
+          "path": "by_right",
+          "districts": [
+            "AO",
+            "V"
+          ],
+          "conditions": "Conversion of an existing one-family dwelling to a two-family or larger dwelling. The lot needs at least 60% of the district minimum lot area for each dwelling unit created (4,800 sq ft per unit with public sewer and water). The building must have had 1,000 sq ft of livable floor area on the chapter's effective date, plus 600 sq ft for each added unit. Each unit has a full kitchen, toilet and bath. No change to the outside except as building or housing codes require. 1.5 off-street parking spaces per unit. No family rule",
+          "min_lot_by_district": {
+            "AO": 9600,
+            "V": 9600
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing one-family dwelling to convert",
+              "section": "255-33A"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 1600,
+              "condition": "1,000 sq ft of livable floor area for the first unit plus 600 sq ft for the second, held on the chapter's effective date",
+              "section": "255-33D(1)"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "255-14B(6), 255-15B(9), 255-33",
+          "url": "https://ecode360.com/print/EA1085?guid=13288191",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU. In V without public sewer and water the district minimum is one acre, so the lot needs 52,272 sq ft for two units"
+        },
+        {
+          "name": "Duplex dwelling (R-2, R-3, AO, V)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "AO",
+            "V"
+          ],
+          "conditions": "A detached building for not more than two families. With public water and sewer the lot is 20,000 sq ft and 100 ft wide in R-2, 10,000 sq ft and 80 ft wide in R-3 and AO, and 10,000 sq ft and 100 ft wide in V. Without them it is 45,000 sq ft and 200 ft wide in R-2 and V. R-3 requires public sewer and water for every use. Two parking spaces per unit",
+          "min_lot_by_district": {
+            "R-2": 20000,
+            "R-3": 10000,
+            "AO": 10000,
+            "V": 10000
+          },
+          "builds": [
+            "attached",
+            "internal"
+          ],
+          "section": "255-12B(2), D, 255-13B(2), D, 255-14B(2), D, 255-15B(2), D, 255-90 'Dwelling, duplex'",
+          "url": "https://ecode360.com/print/EA1085?guid=13287498",
+          "confidence": "secondary",
+          "note": "A two-unit building. The code does not say whether an existing house may be enlarged into one"
+        }
+      ],
+      "section": "255-33, 255-12, 255-13, 255-14, 255-15",
+      "url": "https://ecode360.com/print/EA1085?guid=13288191",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "CO",
+        "A",
+        "R-1",
+        "R-2",
+        "R-3",
+        "AO",
+        "V"
+      ],
+      "section": "255-21D",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Districts where residential uses are permitted"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "255-90 'Accessory dwelling unit (ADU)', 'Dwelling, single-family'",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The ADU is added to or made within a single-family dwelling, which the code defines as 'A detached building designed for or used exclusively for residence purposes by one family'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 255",
+      "url": "https://ecode360.com/print/EA1085?guid=13287498",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in the parts read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C",
+        "I"
+      ],
+      "section": "255-16, 255-17",
+      "url": "https://ecode360.com/print/EA1085?guid=13287498",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Both expressly prohibit dwellings"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In CO and A the total number of dwelling units on a tract, counting those existing, is one up to 10 acres (gross area as of 1-1-2006), and 'Each dwelling unit shall be located on an individual lot'. The ADU rule is 'subject to the requirements of the applicable district', so these limits read as barring an ADU on a house lot here.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "CO",
+            "A"
+          ],
+          "building_types": null,
+          "section": "255-9E, 255-10E, 255-21D",
+          "url": "https://ecode360.com/print/EA1085?guid=13287498",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "255-21D",
+            "url": "https://ecode360.com/print/EA1085?guid=13287937",
+            "note": "255-21D permits ADUs 'In all districts where residential uses are permitted', which names CO and A. Whether an accessory unit counts toward the district's dwelling unit limit is not settled"
+          }
+        },
+        {
+          "kind": "size",
+          "condition": "Every dwelling unit needs at least 900 sq ft of livable floor area. With the ADU cap of 900 sq ft or 30% of the house, whichever is less, only a unit of exactly 900 sq ft in a house of 3,000 sq ft or more meets both.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "house_sqft_at_least",
+          "value": 3000,
+          "section": "255-42, 255-21D(1)",
+          "url": "https://ecode360.com/print/EA1085?guid=13288313",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "255-42, 255-21D(1)",
+            "url": "https://ecode360.com/print/EA1085?guid=13288313",
+            "note": "255-42 sets only 400 sq ft for apartments in apartment houses and conversion apartments (300 sq ft for one person), and the ADU section sets its own size, so the 900 sq ft minimum may not be meant for an ADU"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "The appearance of the house must remain that of a single-family dwelling.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "255-21D(7)",
+          "url": "https://ecode360.com/print/EA1085?guid=13287937",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In R-3 every use must be served by both public sewer and public water. Private septic systems and wells are prohibited.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-3"
+          ],
+          "building_types": null,
+          "section": "255-13E",
+          "url": "https://ecode360.com/print/EA1085?guid=13287498",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the FE or FA floodplain areas 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from DEP'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "FP"
+          ],
+          "section": "108-16C(1), 255-18",
+          "url": "https://ecode360.com/print/EA1085?guid=13285040",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 108"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay any construction or development needs a land use permit. In the floodway any increase in flood heights is prohibited and new construction needs a DEP permit. New construction and substantial improvement of a residential structure need the lowest floor, basement included, at or above the regulatory flood elevation, and a fully enclosed space below it is prohibited. Work of 50% or more of market value is a substantial improvement.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "108-5, 108-16, 108-17A, C, 108-29, 255-18",
+          "url": "https://ecode360.com/print/EA1085?guid=13285040",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 108"
+        },
+        {
+          "kind": "other",
+          "condition": "Riparian Buffer Zone: no disturbance of vegetation and soil within 15 ft of the top of bank of a perennial stream, spring or watercourse. In the next 35 ft, or to the 100-year floodplain if that is wider, only uses allowed in the floodplain.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "199-18A(1), (2), B",
+          "url": "https://ecode360.com/print/EA1085?guid=42273597",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 199"
+        },
+        {
+          "kind": "other",
+          "condition": "A single-family or duplex dwelling need not be set back farther from the street than the average of the two existing dwellings with the greatest setbacks within 200 ft on each side, on the same side of the street, in the same block and district.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "255-48",
+          "url": "https://ecode360.com/print/EA1085?guid=13288353",
+          "confidence": "verified"
+        }
+      ],
+      "section": "255-9E, 255-10E, 255-42, 108-16, 199-18",
+      "url": "https://ecode360.com/print/EA1085?guid=13287498",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "255-90 'Accessory dwelling unit (ADU)'",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A dwelling unit added to, or created within, a single-family dwelling'. A unit over an attached garage that is part of the house is an addition"
+    },
+    "types_not_addressed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "255-90 'Accessory dwelling unit (ADU)', 255-20",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The definition names only a unit added to or made within the house. A unit in a separate building is not named, and each lot gets one principal use (255-20)"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 900,
+      "section": "255-21D(1)(a)",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The maximum area of the ADU shall be the lesser of: (a) Nine hundred square feet; or (b) Thirty percent of the total floor area of the dwelling.'"
+    },
+    "max_share_of_house": {
+      "value": 0.3,
+      "section": "255-21D(1)(b)",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'Thirty percent of the total floor area of the dwelling', whichever is less. Whether the dwelling's floor area counts the unit is not said"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "255-90 'Accessory dwelling unit (ADU)', 255-21D(2)",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "A person related to the owner of the house by blood, marriage or legal adoption, or a person providing care to the owner. The residents apply for and renew an ADU occupancy permit each year, and the unit must be turned back into part of the house within six months after the resident leaves or the permit lapses.",
+      "section": "255-90 'Accessory dwelling unit (ADU)', 255-21D(2), (3)",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "255-21D, 255-90",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No rule that the owner live on the lot. The ADU resident must be related to the owner of the house, or care for the owner"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "255-21D, 255-90",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "The code gives no count. The definition speaks of 'A dwelling unit' added to the house"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "255-90 'Accessory dwelling unit (ADU)'",
+      "url": "https://ecode360.com/print/EA1085?guid=13288736",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Accessory units may not be subdivided or otherwise segregated in ownership from the principle dwelling unit and use'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "255-21D(4)",
+      "url": "https://ecode360.com/print/EA1085?guid=13287937",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'One additional off-street parking space.' Article IV prevails over the parking table (255-58D)"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "255-21D(4), 255-58E",
+      "url": "https://ecode360.com/print/EA1085?guid=13288433",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "Two spaces for the house (one space for each 1/2 dwelling unit) and one for the ADU"
+    }
+  },
+  "districts": {
+    "CO": {
+      "min_lot_sqft": {
+        "value": 217800,
+        "section": "255-9D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Five acres, 150 ft wide, for a single-family dwelling"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "255-9D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "255-9D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "255-9D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "255-9D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-9D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "One acre, 150 ft wide, with public water and public sewer"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "255-10D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 87120,
+            "section": "255-10D"
+          },
+          {
+            "when": "With public sewer and without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "section": "255-10D"
+          }
+        ],
+        "section": "255-10D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family dwelling: two acres, 200 ft wide, unless served by both public water and public sewer"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "20,000 sq ft, 100 ft wide, with water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "255-11D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With public sewer and without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "max_impervious_coverage": 0.3,
+            "section": "255-11D"
+          },
+          {
+            "when": "With public water and without public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "max_impervious_coverage": 0.3,
+            "section": "255-11D"
+          },
+          {
+            "when": "Without public sewer or public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 87120,
+            "setback_side_ft": 20,
+            "max_impervious_coverage": 0.2,
+            "section": "255-11D"
+          }
+        ],
+        "section": "255-11D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'With water or sewer': one acre, 150 ft wide, side 20 ft, cover 30%. With neither: two acres, 200 ft wide, side 20 ft, cover 20%"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "15,000 sq ft, 100 ft wide, with water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "255-12D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "max_impervious_coverage": 0.2,
+            "section": "255-12D"
+          },
+          {
+            "when": "With public sewer and without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "max_impervious_coverage": 0.2,
+            "section": "255-12D"
+          }
+        ],
+        "section": "255-12D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family dwelling without both water and sewer: one acre, 150 ft wide, side 20 ft, cover 20%"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "255-13D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "8,000 sq ft, 80 ft wide. Public sewer and water are required (255-13E)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-13D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-13D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "255-13D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "255-13D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-13D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "AO": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "255-14D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "8,000 sq ft, 80 ft wide, for a single-family dwelling"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-14D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-14D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "255-14D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "255-14D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-14D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "8,000 sq ft, 80 ft wide, with water and sewer"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "255-15D, 255-90 'Lot coverage (maximum cover)'",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Maximum Cover' in the table. The code defines lot coverage (maximum cover) as the share of the lot 'which may be covered with an impervious surface'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 25,
+            "max_impervious_coverage": 0.2,
+            "section": "255-15D"
+          },
+          {
+            "when": "With public sewer and without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_side_ft": 20,
+            "setback_rear_ft": 25,
+            "max_impervious_coverage": 0.2,
+            "section": "255-15D"
+          }
+        ],
+        "section": "255-15D",
+        "url": "https://ecode360.com/print/EA1085?guid=13287498",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single-family dwelling without both water and sewer: one acre, 150 ft wide, side 20 ft, rear 25 ft, cover 20%"
+      }
+    }
+  }
+}

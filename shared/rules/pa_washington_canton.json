@@ -1,0 +1,515 @@
+{
+  "provenance": {
+    "jurisdiction": "Canton township",
+    "instrument": "Official Zoning Ordinance of the Township of Canton (Chapter 27 Zoning, Ord. No. 4-2022 of 6-9-2022), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CA2579, Township of Canton (27-501.2(3): 'Areas contained within Canton Township have been identified as being within the \"airport hazard area\" for the Washington County Airport, located in Washington County'). The Land Use Table (27-304.1) and the district area and bulk tables (27-401.1) are text. Floodplain rules are in Chapter 8. New Laws: none on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/CA2579",
+      "https://ecode360.com/CA2579/laws",
+      "https://ecode360.com/30860010",
+      "https://ecode360.com/print/CA2579?guid=44235388",
+      "https://ecode360.com/print/CA2579?guid=44235389",
+      "https://ecode360.com/print/CA2579?guid=44235439",
+      "https://ecode360.com/print/CA2579?guid=44235212",
+      "https://ecode360.com/print/CA2579?guid=44235754",
+      "https://ecode360.com/print/CA2579?guid=44235476",
+      "https://ecode360.com/print/CA2579?guid=44236158",
+      "https://ecode360.com/print/CA2579?guid=44255890",
+      "https://ecode360.com/print/CA2579?guid=44255900",
+      "https://ecode360.com/print/CA2579?guid=44235507",
+      "https://ecode360.com/print/CA2579?guid=44235193",
+      "https://ecode360.com/print/CA2579?guid=32086374",
+      "https://ecode360.com/CA2579/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22second%20dwelling%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22extended%20family%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Washington",
+    "municipality_type": "township",
+    "geoid": "4212511176",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30860010",
+    "code_current_through": "2025-05-08",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-08-2025.' New Laws lists Ord. No. 4-2025, 2-2026, 5-2026, 6-2026 and resolutions, none on Chapter 27",
+    "checks": [
+      "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, ECHO, elder cottage, second dwelling, living quarters, caretaker, conversion, temporary dwelling, extended family) find only the single-family conversion use (27-203, 27-2301.1.8, 27-304.1), conversion rows in the area and bulk tables (27-401.1) and unrelated uses",
+      "Single-family conversion: 'A change in residential use form one single-family dwelling to two or three dwelling units in the same building' (27-203). The Land Use Table marks it P (permitted) in A-1, R-1, R-2 and R-3 (27-304.1, row 8). It needs at most three units in the building, two means of egress from each floor, one parking space on the lot for each apartment unit, no front-yard parking except in a driveway, and Township review of the floor plans under the building code (27-2301.1.8)",
+      "The district area and bulk tables list 'Conversion apartment' in R-1 and 'Conversion apartments' in R-2 among the conditional uses, and 'Multifamily conversion' among the permitted uses in R-3 (27-401.1(2)B, (3)B, (4)A). They give no figures of their own ('#: Standards for principal use apply'). Where the language is in doubt the code says it 'shall be interpreted ... in favor of the property owner' (27-105). Ask the zoning officer whether a conversion in R-1 or R-2 is by right or a conditional use before the Board of Supervisors",
+      "No district lists a second dwelling on a house lot. A new detached unit is not a listed use, so it is a use variance from the Zoning Hearing Board (27-2807.9). No bar on a use variance was found",
+      "The area and bulk tables list 'Duplex housing' as permitted in R-2 (32,000 sq ft) and R-3 (12,000 sq ft), while the Land Use Table lists single-family semidetached and attached dwellings, not duplexes (27-401.1(3)A, (4)A, 27-304.1)",
+      "On-lot sewage: 'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres' (27-305(2)). Where public water or sewer is at or near the lot, the owner must connect (27-501.2(4)B)",
+      "A-1 and R-1 single-family lots: '0' acres, 120 ft wide, side 20 ft, rear 30 ft, height 35 ft. The R-1 front yard is 40 ft on a local street, 50 ft on a collector and 60 ft on an arterial street (27-401.1(1)A, (2)A)",
+      "Sensitive environmental areas 'shall not be physically disturbed or used for any use other than agricultural uses, natural conservation areas' and conservation: natural slopes over 25%, wetlands, and quarries, streams, lakes, dams or ponds and all areas within 50 ft of them (27-501.2(1))",
+      "Floodplain (Chapter 8): a permit is needed for any construction or development in the township (8-202, 8-302). 'Within any identified floodplain area, any new construction shall be prohibited' unless the Township grants a variance, and then basements are prohibited and the lowest floor must be at or above the regulatory flood elevation (8-502(1), C(1), 8-801). An accessory structure there 'shall not be designed or used for human habitation' (8-502(1)E). Fill and manufactured homes are prohibited with no variance (8-503(1)A, 8-506). Work of 50% or more of market value on an existing structure is a substantial improvement (8-702)",
+      "A nonconforming use may be expanded by 25% or less of its floor or land area (27-2402). No relief for a small lot of record was found in the parts read",
+      "Accessory structures are permitted in every district (27-304.1, row 83) and 'must be owned by the same person(s) as the property owner' (27-203). No accessory building yards or height were found in the parts read",
+      "Conditional uses go to the Board of Supervisors after Planning Committee review and a public hearing (27-2808.1). Variances: 27-2807.9"
+    ],
+    "notes": "Zoning office: Canton Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 27-105, 27-203, 27-304.1, 27-305, 27-401.1, Part 5, Part 8, 27-2301.1.8, Part 24, 27-2807.9, 27-2808.1, Chapter 8 from 8-101 to the start of 8-902, and code searches. Not read: 27-101 to 27-104, 27-106, 27-201, 27-202, 27-301 to 27-304, 27-401, 27-402, Parts 6, 7 and 9 to 22, Part 23 except 27-2301.1.8, Parts 25 to 27, Part 28 except 27-2807.9 and 27-2808.1 (so 27-2809 and 27-2809.1 on special exceptions were not read), and the rest of the Chapter 8 definitions. Open points: whether a single-family conversion in R-1 and R-2 is by right (27-304.1) or a conditional use (27-401.1), what the '0' acre minimum for a single-family lot in A-1 and R-1 means, and whether lot coverage counts only buildings."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/CA2579/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20ECHO%20OR%20%22elder%20cottage%22%20OR%20%22second%20dwelling%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20conversion%20OR%20%22temporary%20dwelling%22%20OR%20%22extended%20family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, ECHO, elder cottage, second dwelling, living quarters, caretaker, conversion, temporary dwelling and extended family, and read the Land Use Table for all nine districts. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-304.1",
+      "url": "https://ecode360.com/print/CA2579?guid=44235388",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. A house may be converted into two or three units (single-family conversion) in A-1, R-1, R-2 and R-3"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-2807.9",
+      "url": "https://ecode360.com/print/CA2579?guid=44255890",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A house may instead be converted into two or three units (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2807.9",
+      "url": "https://ecode360.com/print/CA2579?guid=44255890",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 27-2807.9(1)A to E. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Single-family conversion (A-1, R-3)",
+          "path": "by_right",
+          "districts": [
+            "A-1",
+            "R-3"
+          ],
+          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling to convert",
+              "section": "27-203 'Dwelling single-family conversion'"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "27-304.1 (row 8), 27-2301.1.8, 27-203 'Dwelling single-family conversion'",
+          "url": "https://ecode360.com/print/CA2579?guid=44235754",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU. In R-3 the area and bulk table also lists a 'Multifamily conversion' as permitted"
+        },
+        {
+          "name": "Single-family conversion (R-1, R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "A change from one single-family dwelling to two or three dwelling units in the same building. At most three units in the building, two means of egress from each floor, one off-street parking space on the lot for each apartment unit, no parking in the front yard except in a driveway, and Township review of the floor plans under the building code. No family or owner rule",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling to convert",
+              "section": "27-203 'Dwelling single-family conversion'"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "disputed_path": {
+            "path": "conditional_use",
+            "section": "27-401.1(2)B, (3)B",
+            "url": "https://ecode360.com/print/CA2579?guid=44235439",
+            "note": "The R-1 and R-2 area and bulk tables list 'Conversion apartment' under 'Minimum Requirements; Conditional Use', which would send it to the Board of Supervisors after a hearing. The Land Use Table marks single-family conversion P, and doubtful language is read in favor of the owner (27-105)"
+          },
+          "section": "27-304.1 (row 8), 27-2301.1.8, 27-105",
+          "url": "https://ecode360.com/print/CA2579?guid=44235388",
+          "confidence": "secondary",
+          "note": "A house divided into units, not an ADU"
+        },
+        {
+          "name": "Duplex housing (R-2, R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Listed in the area and bulk tables as permitted. R-2: 32,000 sq ft, 120 ft wide, front 40 ft, side 30 ft, rear 35 ft, height 30 ft, lot coverage 35%. R-3: 12,000 sq ft, 85 ft wide, front 35 ft, side 15 ft, rear 35 ft, height 30 ft, lot coverage 35%",
+          "min_lot_by_district": {
+            "R-2": 32000,
+            "R-3": 12000
+          },
+          "builds": [
+            "attached"
+          ],
+          "section": "27-401.1(3)A, (4)A",
+          "url": "https://ecode360.com/print/CA2579?guid=44235439",
+          "confidence": "secondary",
+          "note": "The Land Use Table does not list a duplex. It lists single-family semidetached dwellings, permitted in A-1, R-1, R-2 and R-3. Whether an existing house may be enlarged into a duplex is not said"
+        }
+      ],
+      "section": "27-304.1, 27-2301.1.8, 27-401.1",
+      "url": "https://ecode360.com/print/CA2579?guid=44235388",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30860010",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in the parts read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "A-1",
+        "R-1",
+        "R-2",
+        "R-3",
+        "C-1",
+        "C-2",
+        "C-3",
+        "M-1",
+        "M-2"
+      ],
+      "section": "27-304.1",
+      "url": "https://ecode360.com/print/CA2579?guid=44235388",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. Only A-1, R-1, R-2 and R-3 permit single-family dwellings"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Sensitive environmental areas may not be physically disturbed or used except for agriculture and conservation: natural slopes over 25%, wetlands, and quarries, streams, lakes, dams or ponds and all areas within 50 ft of them.",
+          "effect": "bars",
+          "applies_to": [
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "section": "27-501.2(1)A(3), B",
+          "url": "https://ecode360.com/print/CA2579?guid=44235476",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area, any new construction shall be prohibited', unless the Township grants a variance. Basements are then prohibited and the lowest floor must be at or above the regulatory flood elevation.",
+          "effect": "bars",
+          "applies_to": [
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-502(1), C(1), 8-801",
+          "url": "https://ecode360.com/print/CA2579?guid=32086374",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory structure in the identified floodplain area 'shall not be designed or used for human habitation', may have at most 200 sq ft and may have no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-502(1)E",
+          "url": "https://ecode360.com/print/CA2579?guid=32086374",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain a permit is needed for any construction or development. No expansion of an existing structure may raise the base flood elevation, and work of 50% or more of its market value must fully meet Chapter 8.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-302, 8-702",
+          "url": "https://ecode360.com/print/CA2579?guid=32086374",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        }
+      ],
+      "section": "27-501.2, 8-502",
+      "url": "https://ecode360.com/print/CA2579?guid=44235476",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-304.1",
+      "url": "https://ecode360.com/print/CA2579?guid=44235388",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-2301.1.8(4)",
+      "url": "https://ecode360.com/print/CA2579?guid=44235754",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "No ADU use. A single-family conversion needs 'At least one parking space ... for each apartment dwelling unit'. Part 8 gives no count for a house"
+    }
+  },
+  "districts": {
+    "A-1": {
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-401.1(1)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single family: '0' acres, 120 ft wide. The front setback is marked '**' with no note in the A-1 table"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-401.1(1)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-401.1(1)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With an individual on-lot sewage disposal system",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 87120,
+            "lot_area_per_unit_sqft": 87120,
+            "section": "27-305(2)"
+          }
+        ],
+        "section": "27-305(2)",
+        "url": "https://ecode360.com/print/CA2579?guid=44235389",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+      }
+    },
+    "R-1": {
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-401.1(2)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "'Local Streets, 40 feet; Collector Streets, 50 feet; arterial streets, 60 feet.' Single family: '0' acres, 120 ft wide"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-401.1(2)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-401.1(2)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-401.1(2)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With an individual on-lot sewage disposal system",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 87120,
+            "lot_area_per_unit_sqft": 87120,
+            "section": "27-305(2)"
+          }
+        ],
+        "section": "27-305(2)",
+        "url": "https://ecode360.com/print/CA2579?guid=44235389",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 21000,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single family: 21,000 sq ft, 90 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "30 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-401.1(3)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "'Lot Coverage' in the table. The code does not define lot coverage, so whether it counts only buildings or all hard surfaces is not settled"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With an individual on-lot sewage disposal system",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 87120,
+            "lot_area_per_unit_sqft": 87120,
+            "section": "27-305(2)"
+          }
+        ],
+        "section": "27-305(2)",
+        "url": "https://ecode360.com/print/CA2579?guid=44235389",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 9000,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Single family: 9,000 sq ft, 70 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "20 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-401.1(4)A",
+        "url": "https://ecode360.com/print/CA2579?guid=44235439",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "'Lot Coverage' in the table. The code does not define lot coverage, so whether it counts only buildings or all hard surfaces is not settled"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "With an individual on-lot sewage disposal system",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 87120,
+            "lot_area_per_unit_sqft": 87120,
+            "section": "27-305(2)"
+          }
+        ],
+        "section": "27-305(2)",
+        "url": "https://ecode360.com/print/CA2579?guid=44235389",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Minimum lot area for new uses, utilizing individual lot sewage disposal systems in any zoning district shall be two acres in area and the maximum residential density for any dwelling unit shall be one dwelling unit per two net developable acres'"
+      }
+    }
+  }
+}

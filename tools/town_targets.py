@@ -1477,6 +1477,7 @@ FIXED_BATCH.update({g: 44 for g in ("4200722264", "4213383440", "4202921624")})
 FIXED_BATCH.update({g: 45 for g in ("4202982664", "4204515232", "4200708680")})
 FIXED_BATCH.update({g: 46 for g in ("4202968288", "4207121032", "4205571912")})
 FIXED_BATCH.update({g: 47 for g in ("4207182824", "4200361328", "4202954936")})
+FIXED_BATCH.update({g: 48 for g in ("4213321464", "4209585592", "4212511176")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1768,6 +1769,21 @@ EXTRAS = {
     "4207182824": "batch 47 by population. Code Chapter 184 has no ADU text (184-31 conversion of an existing house to two units, two-family by right in R-2)",
     "4200361328": "batch 47 by population. Code Chapter 374 has no ADU text (two-family by right in R-2, one kitchen per single-family dwelling)",
     "4202954936": "Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR)",
+    # Batch 48 (2026-11-17): the next towns by population without a rule file. Upper Hanover (Montgomery) was skipped
+    # (Ord. No. 2026-04 of 6-9-2026, a Chapter 500 zoning amendment, not yet codified), Allegheny (Westmoreland) (Ord. No.
+    # 01-2026 and No. 02-2026 of 6-8-2026, Chapter 250 zoning amendments, not yet codified), Mount Joy borough (Lancaster)
+    # (Tables of Permitted Uses and Table of Lot and Setback Requirements only in PDF attachments), Tobyhanna (Monroe)
+    # (155-18 puts the minimum lot and yard requirements only in PDF attachments), Bellevue (Allegheny) (zoning is the
+    # Avalon-Bellevue-Ben Avon Joint Zoning Ordinance, not codified, Chapter 275 holds only a note), Brookhaven (Delaware)
+    # (Ord. No. 802 of 9-10-2018 and No. 849 of 6-2-2025, zoning, not yet codified), Kennett (Chester) (the township says
+    # 2024 and 2025 ordinances, among them Ord. 318 on accessory structures, are not in the online codebook), East Pikeland
+    # (Chester) (the eCode360 code has no zoning chapter, no codified zoning found as web pages), Castle Shannon
+    # (Allegheny) (zoning ordinance only as a PDF on the borough website), Dormont (Allegheny) (Ord. No. 1660 of 8-24-2026,
+    # a Chapter 210 Development Code amendment, not yet codified) and Hatboro (Montgomery) (Ord. No. 1052, 1055, 1057,
+    # 1059, 1069 and 1074 of 2018 to 2023, Chapter 27 zoning amendments, not yet codified).
+    "4213321464": "Code 255-21D accessory dwelling unit by right, family only (CO, A, R-1, R-2, R-3, AO, V)",
+    "4209585592": "Code 170-83H(9) in-law suite by special exception (R-1, R-2, TC)",
+    "4212511176": "batch 48 by population. Code Chapter 27 has no ADU text (27-2301.1.8 single-family conversion to two or three units in A-1, R-1, R-2, R-3)",
 }
 
 if __name__ == "__main__":

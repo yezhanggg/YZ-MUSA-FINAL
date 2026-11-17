@@ -138,10 +138,10 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1767,
-    "pop": 5760657,
-    "pop_share": 0.4411,
-    "housing_units": 2583719
+    "places": 1765,
+    "pop": 5744229,
+    "pop_share": 0.4398,
+    "housing_units": 2576507
    },
    {
     "tier": "verified",
@@ -152,17 +152,17 @@
    },
    {
     "tier": "drafted",
-    "places": 73,
-    "pop": 1592459,
-    "pop_share": 0.1219,
-    "housing_units": 651169
+    "places": 76,
+    "pop": 1617590,
+    "pop_share": 0.1239,
+    "housing_units": 661461
    },
    {
     "tier": "reported",
-    "places": 556,
-    "pop": 798417,
-    "pop_share": 0.0611,
-    "housing_units": 383585
+    "places": 555,
+    "pop": 789714,
+    "pop_share": 0.0605,
+    "housing_units": 380505
    },
    {
     "tier": "text_search",
@@ -175,24 +175,24 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1819,
-    "pop": 5862394,
-    "pop_share": 0.4489,
-    "housing_units": 2631381
+    "places": 1817,
+    "pop": 5845966,
+    "pop_share": 0.4476,
+    "housing_units": 2624169
    },
    {
     "status": "limited",
-    "places": 132,
-    "pop": 4030122,
-    "pop_share": 0.3086,
-    "housing_units": 1714018
+    "places": 133,
+    "pop": 4038281,
+    "pop_share": 0.3092,
+    "housing_units": 1717453
    },
    {
     "status": "not_addressed",
-    "places": 76,
-    "pop": 1735914,
-    "pop_share": 0.1329,
-    "housing_units": 717634
+    "places": 77,
+    "pop": 1744183,
+    "pop_share": 0.1336,
+    "housing_units": 721411
    },
    {
     "status": "by_right",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1767,
-    "pop": 5760657
+    "places": 1765,
+    "pop": 5744229
    },
    {
     "tier": "drafted",
@@ -262,14 +262,14 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 51,
-    "pop": 975502
+    "places": 53,
+    "pop": 992364
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 16,
-    "pop": 376835
+    "places": 17,
+    "pop": 385104
    },
    {
     "tier": "reported",
@@ -280,8 +280,8 @@
    {
     "tier": "reported",
     "status": "limited",
-    "places": 22,
-    "pop": 120751
+    "places": 21,
+    "pop": 112048
    },
    {
     "tier": "reported",
