@@ -138,10 +138,10 @@
   "by_tier": [
    {
     "tier": "baseline",
-    "places": 1779,
-    "pop": 5878279,
-    "pop_share": 0.4501,
-    "housing_units": 2629393
+    "places": 1781,
+    "pop": 5884970,
+    "pop_share": 0.4506,
+    "housing_units": 2631869
    },
    {
     "tier": "verified",
@@ -159,10 +159,10 @@
    },
    {
     "tier": "reported",
-    "places": 559,
-    "pop": 816247,
-    "pop_share": 0.0625,
-    "housing_units": 389400
+    "places": 557,
+    "pop": 809556,
+    "pop_share": 0.062,
+    "housing_units": 386924
    },
    {
     "tier": "text_search",
@@ -175,17 +175,17 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1831,
-    "pop": 5980016,
-    "pop_share": 0.4579,
-    "housing_units": 2677055
+    "places": 1833,
+    "pop": 5986707,
+    "pop_share": 0.4584,
+    "housing_units": 2679531
    },
    {
     "status": "limited",
-    "places": 127,
-    "pop": 3974424,
-    "pop_share": 0.3043,
-    "housing_units": 1693519
+    "places": 125,
+    "pop": 3967733,
+    "pop_share": 0.3038,
+    "housing_units": 1691043
    },
    {
     "status": "not_addressed",
@@ -250,8 +250,8 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1779,
-    "pop": 5878279
+    "places": 1781,
+    "pop": 5884970
    },
    {
     "tier": "drafted",
@@ -280,8 +280,8 @@
    {
     "tier": "reported",
     "status": "limited",
-    "places": 25,
-    "pop": 138581
+    "places": 23,
+    "pop": 131890
    },
    {
     "tier": "reported",
@@ -390,15 +390,15 @@
    "kind": "inventory_use_check",
    "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
    "other": "the inventory lists this use in its ADU column",
-   "note": "Check whether this use is an ADU. Accessory Mobile Home (min. 2 acres) special exception (A-1, GC, RR) (inventory dated 2024-09)"
+   "note": "Decided: Accessory Mobile Home on 2 acres is a second dwelling accessory to the house, so it is kept. Accessory Mobile Home (min. 2 acres) special exception (A-1, GC, RR) (inventory dated 2024-09)"
   },
   {
    "geoid": "4213325584",
    "name": "Felton borough",
    "kind": "inventory_use_check",
-   "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
+   "kept": "not used: the use is not an ADU",
    "other": "the inventory lists this use in its ADU column",
-   "note": "Check whether this use is an ADU. Multiple Dwelling Structures by right (VC); not listed in residential-named district(s) R (inventory dated 2024-09)"
+   "note": "Decided: Multiple Dwelling Structures is a multifamily use in VC, not a unit accessory to a house. Multiple Dwelling Structures by right (VC); not listed in residential-named district(s) R (inventory dated 2024-09)"
   },
   {
    "geoid": "4213372992",
@@ -412,9 +412,9 @@
    "geoid": "4213373096",
    "name": "Springfield township",
    "kind": "inventory_use_check",
-   "kept": "reported limited (ycpc_senior_housing_2024, 2024-09)",
+   "kept": "not used: the use is not an ADU",
    "other": "the inventory lists this use in its ADU column",
-   "note": "Check whether this use is an ADU. Conservation Easement Residential Dwelling conditional use (A, C, R, ROS, VC) (inventory dated 2024-09)"
+   "note": "Decided: Conservation Easement Residential Dwelling is a house on preserved land, not an accessory unit. Conservation Easement Residential Dwelling conditional use (A, C, R, ROS, VC) (inventory dated 2024-09)"
   },
   {
    "geoid": "4213387048",

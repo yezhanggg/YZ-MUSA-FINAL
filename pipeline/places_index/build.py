@@ -105,6 +105,24 @@ def tierb_detail(p: dict[str, Any]) -> str | None:
     return "Searchable public zoning text, " + ", ".join(parts) if parts else "Searchable public zoning text"
 
 
+# Inventory rows that put a use in their ADU column, decided by reading the use's name. "not_adu": the use is not an
+# accessory dwelling, so the row sets no status (the place falls to the next tier). "adu_like": kept as reported.
+USE_CHECK_DECISIONS: dict[str, tuple[str, str]] = {
+    "4213325584": (
+        "not_adu",
+        "Multiple Dwelling Structures is a multifamily use in VC, not a unit accessory to a house",
+    ),
+    "4213373096": (
+        "not_adu",
+        "Conservation Easement Residential Dwelling is a house on preserved land, not an accessory unit",
+    ),
+    "4213321296": (
+        "adu_like",
+        "Accessory Mobile Home on 2 acres is a second dwelling accessory to the house, so it is kept",
+    ),
+}
+
+
 def _conflict(geoid: str, name: str, kind: str, kept: str, other: str, note: str) -> dict[str, str]:
     return {"geoid": geoid, "name": name, "kind": kind, "kept": kept, "other": other, "note": note}
 
@@ -173,16 +191,23 @@ def assemble(inp: Inputs) -> tuple[list[dict[str, Any]], pd.DataFrame, list[dict
             )
             rep = None
         if rep and rep["use_check"]:
+            decision = USE_CHECK_DECISIONS.get(gid)
+            kept = f"reported {rep['status']} ({rep['source_id']}, {rep['source']['date']})"
+            if decision and decision[0] == "not_adu":
+                kept = "not used: the use is not an ADU"
+            note = f"Decided: {decision[1]}. " if decision else "Check whether this use is an ADU. "
             conflicts.append(
                 _conflict(
                     gid,
                     pname,
                     "inventory_use_check",
-                    f"reported {rep['status']} ({rep['source_id']}, {rep['source']['date']})",
+                    kept,
                     "the inventory lists this use in its ADU column",
-                    "Check whether this use is an ADU. " + (rep["status_detail"] or ""),
+                    note + (rep["status_detail"] or ""),
                 )
             )
+            if decision and decision[0] == "not_adu":
+                rep = None
         if rule:
             tier, status = rule["tier"], rule["status"]
             detail, types, approval, source = (

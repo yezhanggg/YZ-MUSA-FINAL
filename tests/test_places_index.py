@@ -334,3 +334,18 @@ def test_dated_county_no_zoning_list_resolves_unknown(built):
         "reported",
     )
     assert k["source"]["date"] == "2024" and k["source"]["url"] == "https://example.gov/inv_a.pdf"
+
+
+def test_use_check_decisions_drop_non_adu_uses():
+    """Inventory uses read as not ADUs set no status: Felton and Springfield (York) are not 'limited' from them."""
+    from pipeline.places_index.build import USE_CHECK_DECISIONS
+
+    assert {k for k, v in USE_CHECK_DECISIONS.items() if v[0] == "not_adu"} == {"4213325584", "4213373096"}
+    app = Path(__file__).resolve().parents[1] / "app" / "public" / "data" / "pa_places.json"
+    if not app.exists():
+        pytest.skip("pa_places.json not built")
+    rows = {r["geoid"]: r for r in json.loads(app.read_text())}
+    for gid in ("4213325584", "4213373096"):
+        assert not (rows[gid]["tier"] == "reported" and "ADU column" in str(rows[gid]["status_detail"] or ""))
+        assert rows[gid]["status"] == "unknown" or rows[gid]["tier"] in ("verified", "drafted")
+    assert rows["4213321296"]["status"] == "limited"
