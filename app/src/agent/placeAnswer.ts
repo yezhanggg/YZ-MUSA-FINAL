@@ -101,6 +101,9 @@ export function verdictOf(r: PlaceRow): string {
       if (r.approval === 'variance' || r.approval === 'not_allowed') return 'Not allowed today except by variance';
       return 'Allowed with conditions';
     case 'not_addressed':
+      // The record may name a hearing path for a use the code does not list (Lancaster city: a special exception).
+      if (r.approval && r.approval !== 'variance' && r.approval !== 'not_allowed' && r.approval !== 'by_right')
+        return `Not addressed: the code has no ADU rule. The path to ask about is ${APPROVAL_TEXT[r.approval] ?? r.approval}`;
       return 'Not allowed today: the code has no ADU rule, so it takes a variance or a code change';
     case 'prohibited':
       return 'Not allowed today';

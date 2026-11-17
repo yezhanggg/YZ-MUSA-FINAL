@@ -26,7 +26,7 @@ describe('townsOfTract', () => {
 
   it('a town missing from the place table reads not checked, never a rule', () => {
     const out = townsOfTract('42000000001', tt, rows.slice(0, 1))!;
-    expect(out[1]).toMatchObject({ town: '4200000002', adu_rule_today: 'Not checked yet' });
+    expect(out[1]).toMatchObject({ town: '4200000002', adu_rule_today: 'Not checked yet', detail: null });
   });
 
   it('null for a tract not in the file or no file', () => {
@@ -67,6 +67,8 @@ describe('tract_towns.json', () => {
     expect(out.map((t) => t.town)).toEqual(['Lancaster township, Lancaster County', 'Lancaster city, Lancaster County']);
     expect(out[0].share_of_homes).toBeCloseTo(0.797, 3);
     expect(out[0].adu_rule_today).not.toEqual(out[1].adu_rule_today);
+    expect(out[1].detail).toMatch(/special exception/);
+    expect(out[1].adu_rule_today).toBe('Not addressed: the code has no ADU rule. The path to ask about is a special exception (Zoning Hearing Board hearing)');
   });
 });
 

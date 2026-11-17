@@ -1784,6 +1784,97 @@
    ],
    "scenario": null,
    "rubric": "Wrong premise: HB 2186 is a bill, not law. Reading bars ADUs today."
+  },
+  {
+   "id": "ladder-26",
+   "category": "ladder",
+   "question": "Census tract 42071013503 in Lancaster County: which towns is it in, and can I add an ADU there?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_area_stats"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_area_stats",
+     "input": {
+      "level": "tract",
+      "geoid": "42071013503"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "names Lancaster township",
+     "accept": [
+      "Lancaster township",
+      "Lancaster Township"
+     ],
+     "evidence": "Lancaster township"
+    },
+    {
+     "kind": "behaviour",
+     "label": "names Lancaster city",
+     "accept": [
+      "Lancaster city",
+      "City of Lancaster"
+     ],
+     "evidence": "Lancaster city"
+    },
+    {
+     "kind": "number",
+     "label": "township share of homes",
+     "value": 79.7,
+     "tol_pct": 2,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "city path is a special exception",
+     "accept": [
+      "special exception"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "behaviour",
+     "label": "rule depends on the town",
+     "accept": [
+      "each town",
+      "which town",
+      "town it is in",
+      "town it sits in",
+      "town the lot is in",
+      "which side of the",
+      "its own rule",
+      "own rules",
+      "depends on the lot",
+      "depends on the town"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Tract crosses the Lancaster city line: about 80% of homes in Lancaster township (ADU by right in R-1 with owner occupancy), 20% in Lancaster city (no ADU text, special exception to ask). Says the rule depends on the town."
   }
  ]
 }

@@ -37,6 +37,8 @@ export interface TractTown {
   share_of_homes: number;
   share_of_people: number;
   adu_rule_today: string;
+  /** The town's own words for its status ("no ADU text in the code, so the path to ask about is a special exception"). */
+  detail: string | null;
   how_sure: string;
 }
 
@@ -60,13 +62,14 @@ export function townsOfTract(tract: string, tt: TractTowns | null, rows: PlaceRo
         share_of_homes: pct(homes),
         share_of_people: pct(typeof people === 'number' ? people : homes),
         adu_rule_today: r ? verdictOf(r) : 'Not checked yet',
+        detail: r?.status_detail ?? null,
         how_sure: r ? confidenceOf(r) : "Statewide baseline, not this town's code.",
       };
     });
 }
 
 export const TRACT_TOWNS_NOTE =
-  'Zoning is set by each town. Shares are of the tract homes in each town (2020 Census blocks). A lot follows the rule of the town it is in: ask which town, or use find_lot.';
+  'Zoning is set by each town. Shares are of the tract homes in each town (2020 Census blocks). A lot follows the rule of the town it is in: ask which town, or use find_lot. detail is the town record in its own words and names the path where adu_rule_today is general. For more on one town use get_place_answer.';
 
 /** The towns block for get_area_stats on a tract, or a short reason when it cannot be given. */
 export async function tractTownsOut(tract: string, src: TractTownsSource | null | undefined, places: PlacesSource | null | undefined) {

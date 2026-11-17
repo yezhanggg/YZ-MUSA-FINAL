@@ -10,6 +10,7 @@ Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
 - Explore, Allowed row: a tract that crosses a town line now says so and gives each town's share of the homes. The answer stays the clicked town's.
 - Explore, Allowed row: where the statewide places table has a checked answer for the town, the row's detail now shows that answer, how sure it is and the code link. Before, it showed the older town layer's "Rule not coded yet" under an "Allowed with limits" label (Lancaster township and every other town with a rule file but no older town rule).
 - The assistant's `get_area_stats` on a tract lists the tract's towns with their share of homes, rule today and how sure it is.
+- The assistant no longer says "takes a variance" for a town whose record names a hearing path for a use the code does not list (Lancaster city: a special exception). New eval question ladder-26 (a tract across the Lancaster city line): 1 of 1, and ladder-01 and ladder-19 still pass, $0.09 in all.
 
 ## 2026-11-16, morning
 
