@@ -1,0 +1,577 @@
+{
+  "provenance": {
+    "jurisdiction": "Darby township",
+    "instrument": "Darby Township Zoning Ordinance of 2007 (Chapter 27 Zoning, Ord. 670 of 12/12/2007, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 DA2308, Township of Darby (Delaware County Department of Public Health named in 27-204 'Public sewer'). Not Darby borough or Upper Darby. District use lists and lot, yard, coverage and height figures are text tables in Parts 4 to 9. Attachments: Appendix A, Diagrams of Requirements, and the Zoning Map (PDFs, not opened). Floodplain rules are in Chapter 8. Chapter 17 only points to Chapter 27. New Laws: Ord. No. 733 (Chapter 21) and No. 755 (Appendix D), none on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/DA2308",
+      "https://ecode360.com/DA2308/laws",
+      "https://ecode360.com/27167274",
+      "https://ecode360.com/print/DA2308?guid=27167274",
+      "https://ecode360.com/print/DA2308?guid=27167627",
+      "https://ecode360.com/print/DA2308?guid=27168004",
+      "https://ecode360.com/print/DA2308?guid=27168009",
+      "https://ecode360.com/print/DA2308?guid=27167619",
+      "https://ecode360.com/print/DA2308?guid=27167623",
+      "https://ecode360.com/27166708",
+      "https://ecode360.com/print/DA2308?guid=27226113",
+      "https://ecode360.com/DA2308/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20caretaker%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22%20OR%20%22garage%20apartment%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20servant%20OR%20habitation&scope=all&sortOrder=relevance",
+      "https://ecode360.com/DA2308/search?query=nonconforming&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204518160",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/27167274",
+    "code_current_through": "2025-01-08",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 01-08-2025.' Uploaded on 09-10-2025. New Laws: two, neither amending Chapter 27",
+    "checks": [
+      "The code has no accessory dwelling unit. Each residential district permits listed uses 'and no other' (27-400, 27-501, 27-601, 27-801), and the R-A accessory uses are a private garage, shed or gazebo, a no-impact home-based business and a family-based community residence facility (27-400.5, 27-400.6)",
+      "'Garages shall not be used for permanent or temporary human habitation' (27-403.3E). Garages stand only in rear yards, at least 10 ft behind the rear of the house, at most 15 ft tall, 3 ft from the rear line and 2 ft from a side line (27-403.3). One shed of at most 120 sq ft and 8 ft is allowed in the rear or side yard (27-403.1)",
+      "'In residential districts, only one principal building may be erected on each lot' (27-204 'Principal building'). A family is related persons, or up to five unrelated persons living as one housekeeping unit 'with single kitchen facilities' (27-204)",
+      "A two-family detached dwelling is permitted by right in R-B, and in R-C, which takes the R-B uses: 5,000 sq ft per two-family dwelling, 50 ft wide, front yard 30 ft, side yards 20 ft together and 8 ft each, rear 25 ft (27-501.3, 27-601.1). The code defines it as two families 'with one family living wholly or partly over the other' (27-204). A house on such a lot may be read as one that can become a two-family dwelling, but the code has no conversion section",
+      "The A district permits only apartment buildings (12 units or more) and two-family attached dwellings, 6,000 sq ft per two-family dwelling, at most six attached (27-801). C-1 bars any residential use with its uses, and the general commercial and LI districts list no dwellings (27-901.2, 27-902, 27-1001)",
+      "R-D is an existing neighborhood of attached houses: 'No permanent additions or enclosed porches are permitted', 'No accessory buildings are permitted' and 'No business or accessory use is permitted' (27-701)",
+      "No use variance bar was found. The Zoning Hearing Board decides variances on the hardship findings of 27-1718. The code has no section on nonconforming lots or on adding units to a nonconforming building",
+      "Parking: 'One- and two-family dwellings: two spaces per dwelling unit' (27-1300.3M), and 'If the computation results in a fraction, a parking space shall be required for each fractional amount'. In residential districts all required parking must be behind the building line, and no vehicle may park in the front yard (27-1300.2)",
+      "Floodplain (Chapter 8): any new construction or substantial improvement needs its lowest floor at or above the regulatory flood elevation, and basements are prohibited (8-502.1, 8-502.3A). No construction in the floodway without an analysis showing no rise and a DEP permit (8-402A). In an AE area without a floodway, nothing new within 50 ft landward of the top of bank unless DEP's regional office issues a permit (8-402B(2)(b)). An accessory structure that is not elevated may not be used for human habitation (8-502.5A)"
+    ],
+    "notes": "Zoning office: Darby Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Chapter 27 Parts 1 to 9 and Part 10 to 27-1001.2D(2), Parts 11, 12, 13, 16 and 17, Chapter 8 Parts 1 to 8 and 8-902 to 'Development', Chapter 17, the New Laws page, Version Information and code searches. Not read: the rest of Part 10 (adult use rules), Parts 14, 15 and 18, the rest of 8-902 and 8-1001, Appendix A and the Zoning Map (PDFs)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched for in-law, accessory apartment, accessory dwelling, second dwelling, ECHO, caretaker, living quarters, guest house, garage apartment, extended family, household employee, conversion, servant and habitation, and read every district use list. No ADU use. The only hit is a janitor's living quarters in an apartment house (27-204)"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-400, 27-501, 27-601, 27-701, 27-801",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling on a single-family lot. Each list permits named uses 'and no other'"
+    },
+    "status_by_form": {
+      "value": {
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "27-403.3E",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Garages shall not be used for permanent or temporary human habitation.' Written in the R-A Part. R-B and R-C uses conform with these rules (27-501.1, 27-601.1)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-1718",
+      "url": "https://ecode360.com/print/DA2308?guid=27168009",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not a listed use, so the path is a use variance from the Zoning Hearing Board. In R-B and R-C a two-family detached dwelling is permitted by right (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-1718",
+      "url": "https://ecode360.com/print/DA2308?guid=27168009",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 27-1718.1"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family detached dwelling (R-B, R-C)",
+          "path": "by_right",
+          "districts": [
+            "R-B",
+            "R-C"
+          ],
+          "conditions": "Two families 'with one family living wholly or partly over the other' in one detached building (27-204). 5,000 sq ft per two-family dwelling, 50 ft wide and 50 ft of frontage, front yard 30 ft, side yards 20 ft together and 8 ft each (12 ft with a driveway), rear 25 ft, building coverage 35%, impervious cover 80%, 35 ft. Two parking spaces per dwelling unit, behind the building line",
+          "min_lot_sqft": 5000,
+          "section": "27-501.3, 27-601.1, 27-1300.3M",
+          "url": "https://ecode360.com/print/DA2308?guid=27167274",
+          "confidence": "verified",
+          "note": "A two-unit building, not a unit added to a house. The code has no conversion section, so whether a house may be converted in place is for the zoning officer"
+        },
+        {
+          "name": "Two-family attached dwelling (A)",
+          "path": "by_right",
+          "districts": [
+            "A"
+          ],
+          "conditions": "Two-family dwellings attached in a group of at most six. 3,000 sq ft per dwelling unit and 6,000 sq ft per two-family dwelling, 20 ft wide, rear yard 20 ft, building coverage 30%, 35 ft. Two parking spaces per dwelling unit",
+          "min_lot_sqft": 6000,
+          "section": "27-801.2",
+          "url": "https://ecode360.com/print/DA2308?guid=27167274",
+          "confidence": "verified",
+          "note": "The A district permits no single-family dwelling"
+        }
+      ],
+      "section": "27-501.3, 27-801.2",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic district or historic path was found in Chapter 27"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-A",
+        "R-B",
+        "R-C",
+        "R-D",
+        "A",
+        "C-1",
+        "C",
+        "LI",
+        "M",
+        "REC"
+      ],
+      "section": "27-400, 27-501, 27-601, 27-701, 27-801, 27-901, 27-902, 27-1001, 27-1100, 27-1200",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "None lists a second unit on a single-family lot. R-B and R-C permit two-family detached dwellings and A two-family attached dwellings (see the other paths). C-1, C, LI, M and REC permit no single-family dwelling"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "district",
+          "condition": "In R-D 'No permanent additions or enclosed porches are permitted', 'No accessory buildings are permitted' and 'No business or accessory use is permitted.'",
+          "effect": "bars",
+          "applies_to": [
+            "attached",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "R-D"
+          ],
+          "building_types": null,
+          "section": "27-701",
+          "url": "https://ecode360.com/print/DA2308?guid=27167274",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "'In residential districts, only one principal building may be erected on each lot.' A separate house on the lot would be a second principal building.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-204 'Principal building'",
+          "url": "https://ecode360.com/print/DA2308?guid=27167274",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In a floodway no new construction, substantial improvement or other development unless an engineering analysis shows no rise in flood levels, and no new construction without a permit from DEP's regional office. New construction and substantial improvement elsewhere in the floodplain need the lowest floor at or above the regulatory flood elevation, and basements are prohibited.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-402A, 8-502.1, 8-502.3A",
+          "url": "https://ecode360.com/print/DA2308?guid=27226113",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway, 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse' unless DEP's regional office issues the appropriate permit.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-402B(2)(b)",
+          "url": "https://ecode360.com/print/DA2308?guid=27226113",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory structure in the floodplain that is not elevated 'shall not be designed or used for human habitation' and may be at most 200 sq ft.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-502.5A, B",
+          "url": "https://ecode360.com/print/DA2308?guid=27226113",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        }
+      ],
+      "section": "27-701, 27-204, 8-402, 8-502",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-400, 27-501, 27-601",
+      "url": "https://ecode360.com/print/DA2308?guid=27167274",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible as a two-family dwelling where one is listed"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1300.3M",
+      "url": "https://ecode360.com/print/DA2308?guid=27167627",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "No ADU use. 'One- and two-family dwellings: two spaces per dwelling unit'"
+    },
+    "fraction_rounding": {
+      "value": "any_fraction_counts",
+      "section": "27-1300.3",
+      "url": "https://ecode360.com/print/DA2308?guid=27167627",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'If the computation results in a fraction, a parking space shall be required for each fractional amount.'"
+    }
+  },
+  "districts": {
+    "R-A": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Lot width at the building line 50 ft, frontage 20 ft. The impervious coverage line of the table is blank"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'30 feet from the street line on each street on which the lot abuts'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 side yards are required with an aggregate of 20 feet, neither of which may be less than 8 feet. A side yard containing a parking space or driveway must be at least 12 feet wide'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-401",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      }
+    },
+    "R-B": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "A single-family detached dwelling in R-B must conform with the R-A regulations (27-501.1), so the R-A figures apply. 50 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 side yards are required with an aggregate of 20 feet, neither of which may be less than 8 feet. A side yard containing a parking space or driveway must be at least 12 feet wide'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-401, 27-501.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2500
+        },
+        "section": "27-501.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family semidetached dwelling: 'Minimum Lot Area Per Dwelling 2,500 square feet', 35 ft wide. Height 25 ft and impervious cover 80% for this type"
+      },
+      "setback_front_ft_by_type": {
+        "value": {
+          "semi_detached": 20
+        },
+        "section": "27-501.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "semi_detached": 15
+        },
+        "section": "27-501.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The one side yard of a semidetached dwelling"
+      }
+    },
+    "R-C": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "R-C permits the R-B uses, which must conform with the R-B regulations, and an R-A use in R-B conforms with the R-A regulations (27-601.1, 27-501.1). So a single-family detached dwelling takes the R-A figures"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'2 side yards are required with an aggregate of 20 feet, neither of which may be less than 8 feet. A side yard containing a parking space or driveway must be at least 12 feet wide'"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-401, 27-501.1, 27-601.1",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Both side yards together"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2500,
+          "attached": 2200
+        },
+        "section": "27-501.2, 27-601.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Semidetached 2,500 sq ft per dwelling (R-B rules). Single-family attached 2,200 sq ft, 18 ft wide, at most 10 dwellings in a group, height 25 ft, impervious cover 80%"
+      },
+      "setback_front_ft_by_type": {
+        "value": {
+          "semi_detached": 20,
+          "attached": 30
+        },
+        "section": "27-501.2, 27-601.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "semi_detached": 15,
+          "attached": 0
+        },
+        "section": "27-501.2, 27-601.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Attached: 0 ft, and 8 ft at a break in the row"
+      },
+      "setback_rear_ft_by_type": {
+        "value": {
+          "semi_detached": 25,
+          "attached": 30
+        },
+        "section": "27-501.2, 27-601.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage_by_type": {
+        "value": {
+          "semi_detached": 0.35,
+          "attached": 0.45
+        },
+        "section": "27-501.2, 27-601.2",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "R-D": {
+      "min_lot_sqft": {
+        "value": 1100,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family attached unit only, 18 ft wide. 'This section is for an existing neighborhood which does not comply with the other residential neighborhood district.'"
+      },
+      "setback_front_ft": {
+        "value": 16,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 12,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum Height 12 feet'"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "One side yard"
+      },
+      "max_impervious_coverage": {
+        "value": 0.7,
+        "section": "27-701",
+        "url": "https://ecode360.com/print/DA2308?guid=27167274",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    }
+  }
+}

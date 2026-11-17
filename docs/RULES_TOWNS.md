@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-181 towns in the index, 181 with a rule file (Philadelphia and Pittsburgh included). Verified 115, drafted 66, in progress 0, todo 0.
+184 towns in the index, 184 with a rule file (Philadelphia and Pittsburgh included). Verified 115, drafted 69, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -194,6 +194,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Jackson township | Lebanon | verified | none | not in the code | variance | other ways (not ADUs): Conversion apartments (A) (special exception, 27-603H, 27-605, 27-1903). Conversion apartments (R-1) (special exception, 27-702.9F, 27-703, 27-1903). Conversion apartments (R-2) (special exception, 27-802.13A, 27-702.9F, 27-803, 27-1903). Two-family detached dwelling (R-2) (by right, 27-802.2, 27-803, 27-101). Second principal dwelling on the lot (A, I) (by right with land development, 27-1408, 27-101, 27-605, 27-1003). Second principal dwelling on the lot (R-R, R-1) (by right with land development, 27-1408, 27-101, 27-6A03, 27-703). Second principal dwelling on the lot (R-2) (by right with land development, 27-1408, 27-101, 27-803). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 | O'Hara township | Allegheny | drafted | extended family living area | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | by right | ADU rule only in R-1, R-2, R-3, R-4. occupancy (455-2.2). family only (455-2.2). 5 other gates (455-1.3, 230-23, 230-35, 230-35 'New construction', 230-22D, 230-31E). other ways (not ADUs): Duplex (R-3) (conditional use, 455-6.3E, 455-6.6, 455-15.24I, 455-15.24K). Riverfront infill development (Riverfront Green Overlay) (conditional use, 455-13.2, 455-13.7) | not confirmed | no | not confirmed | 2026-11-16 |
 | Conshohocken borough | Montgomery | verified | none | not in the code | variance (unlisted-use path only in R-O) | 2 other gates (27-1714.1B, 27-1714.1A). other ways (not ADUs): Residential conversion of an existing house (27-825), house 50 years old or less (special exception, 27-825, 27-828). Conversion of a historic single-family house (27-1906-C) (conditional use, 27-1902-C, 27-1903-C, 27-1906-C, 27-825). Residential conversion of an existing house in another district (27-825C) (special exception, 27-825, 27-825C, 27-703I). Two-family detached dwelling (BR-2) (by right, 27-1102.4, 27-1105, 27-202, 27-2005C). Residential use above a nonresidential use (BC) (by right, 27-1302.17). Residential use above a nonresidential use (Fayette Street Corridor Overlay) (by right, 27-2301, 27-2302, 27-2303, 27-2304, 27-2306.9, 27-2307). Multifamily dwellings (Multifamily Dwelling Overlay) (conditional use, 27-1802, 27-1803). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Darby township | Delaware | drafted | none | not in the code (garage conversion prohibited, over garage prohibited) | variance | district gate (27-701). other ways (not ADUs): Two-family detached dwelling (R-B, R-C) (by right, 27-501.3, 27-601.1, 27-1300.3M). Two-family attached dwelling (A) (by right, 27-801.2) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Maidencreek township | Berks | drafted | in-law quarters | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | conditional use | ADU rule only in AP, R-1, R-2. occupancy (220-83B, C, I). family only (220-83B, I). house type detached. other ways (not ADUs): Two-family dwelling (R-2, R-2a, R-3, R-4, CR) (by right, 220-25A(2), 220-28A(2), 220-31A(2), 220-34A(2), 220-37A(5), 220-11 'Dwelling'). Another principal dwelling on the lot (R-1) (by right, 220-55C, 220-23A(1)). Another principal dwelling on the lot (R-2, R-2a, R-3, R-4, CR) (by right, 220-55C, 220-26A(1), 220-29A(1), 220-32A(2), 220-35A(2), 220-38A). 3 parking spaces in total | 1,000 | no | not confirmed | 2026-11-16 |
+| Perkasie borough | Bucks | drafted | none | not in the code | variance | other gate (94-22). other ways (not ADUs): Residential conversion (house or accessory building) (special exception, 186-18B(6), 186-20A(1)(c), B(1)(c), C(1)(c), D(1)(c), E(1)(c), F(1)(c), G(1)(c), H(1)(b), I(1)(c), 186-61C). Twin dwelling (R-1B, R-2, R-3, C-2) (by right, 186-18B(2)(a), 186-20B(3), C(3), D(3), G(3)). Duplex dwelling (R-2, R-3, C-2) (by right, 186-18B(2)(b), 186-20C(3), D(3), G(3)) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 
 ## Towns still to write
 
@@ -210,4 +213,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 179 | 47.9% |
+| 182 | 48.1% |

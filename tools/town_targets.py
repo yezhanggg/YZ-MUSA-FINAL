@@ -1716,6 +1716,12 @@ EXTRAS = {
     "4207537392": "batch 42 by population. Code Chapter 27 has no ADU text (27-603H and 27-702.9F conversion apartments by special exception, two-family by right in R-2)",
     "4200356384": "Code 455-2.2 extended family living area, family only, by right in R-1, R-2, R-3 and R-4",
     "4209115848": "batch 42 by population. Code Chapter 27 has no ADU text (27-825 residential conversion, duplex by right in BR-2)",
+    # Batch 43 (2026-11-16): the next towns by population without a rule file. Aliquippa (Beaver) was skipped (zoning
+    # ordinance No. 1 of 2021 only as a PDF on the city website, no codified zoning found as web pages) and North Codorus
+    # (York) (Ord. No. 299-03-2026 of 3-3-2026, a Chapter 195 zoning amendment, not yet codified).
+    "4204518160": "batch 43 by population. Code Chapter 27 has no ADU text (garages may not be used for habitation, 27-403.3E, two-family detached by right in R-B and R-C)",
+    "4201146680": "Code 220-83 in-law quarters by conditional use, family only (AP, R-1, R-2)",
+    "4201759384": "batch 43 by population. Code Chapter 186 has no ADU text (186-18B(6) residential conversion of a house or accessory building by special exception)",
 }
 
 if __name__ == "__main__":
