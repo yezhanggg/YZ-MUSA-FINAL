@@ -1,0 +1,508 @@
+{
+  "provenance": {
+    "jurisdiction": "Conshohocken borough",
+    "instrument": "Conshohocken Borough Zoning Ordinance (Chapter 27 Zoning, Ord. 6-2001 of 10-10-2001, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CO2517, Borough of Conshohocken (Montgomery County Recorder of Deeds named in 27-825B(3)). District use lists and dimensional standards are text in Parts 10 to 16. The only attachment is the zoning map. New Laws (0)",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/14317188",
+      "https://ecode360.com/14318419",
+      "https://ecode360.com/CO2517/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20servant%20OR%20%22living%20quarters%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22extended%20family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/CO2517?guid=14318128",
+      "https://ecode360.com/print/CO2517?guid=14318171",
+      "https://ecode360.com/print/CO2517?guid=14318215",
+      "https://ecode360.com/print/CO2517?guid=14318259",
+      "https://ecode360.com/print/CO2517?guid=14318325",
+      "https://ecode360.com/print/CO2517?guid=14318382",
+      "https://ecode360.com/print/CO2517?guid=14318542",
+      "https://ecode360.com/print/CO2517?guid=14317754",
+      "https://ecode360.com/print/CO2517?guid=14318060",
+      "https://ecode360.com/print/CO2517?guid=14318085",
+      "https://ecode360.com/print/CO2517?guid=14317611",
+      "https://ecode360.com/print/CO2517?guid=14317207",
+      "https://ecode360.com/print/CO2517?guid=14318981",
+      "https://ecode360.com/print/CO2517?guid=14318713",
+      "https://ecode360.com/print/CO2517?guid=31281143",
+      "https://ecode360.com/print/CO2517?guid=32727148",
+      "https://www.conshohockenpa.gov/government/borough-council/proposed-ordinance-amendments/"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Montgomery",
+    "municipality_type": "borough",
+    "geoid": "4209115848",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14317188",
+    "code_current_through": "2024-03-06",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 03-06-2024. Uploaded on: 07-18-2024.' New Laws (0)",
+    "checks": [
+      "The code has no accessory dwelling unit. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, granny, caretaker, guest house, servant, living quarters, household employee, conversion, extended family) find only residential conversions (27-825) and the historic conversion rules (27-1906-C)",
+      "Uses accessory to dwellings are a garage or carport, parking space, barn, pet shelter, pool, greenhouse, garden shed and home occupations (27-811A). A freestanding accessory building may be at most 350 sq ft and 15 ft tall with a peaked roof, 10 ft with a flat roof (27-811C). Sheds may not be used as residences (27-811D(1))",
+      "Residential conversion of an existing single-family detached dwelling into no more than two added units (27-825). The section opens 'The Zoning Hearing Board may grant a special exception', BR-1, BR-2 and R-O list it as a conditional use (27-1003.7, 27-1103.7, 27-1203.3), and 27-825C says it 'shall be a permitted use in any zoning district'. Which path applies is not settled",
+      "Conversion standards: each unit at least 400 sq ft plus 100 sq ft a bedroom, a lot of the district single-family minimum plus 2,000 sq ft for each added unit, no more than three units in all, a recorded restriction against further subdivision, no outside change except for safety or design, two ways out for each unit, parking under Part 20 and a shared driveway (27-825)",
+      "Historic Residential Conservation Overlay: it covers every lot in a residential district (27-1903-C). A single-family detached dwelling built more than 50 years ago may be expanded or altered 'for continued use as a single-family detached dwelling only' (27-1904-C), and converted only by conditional use on a showing that the current use is not feasible and gives no reasonable return, among others (27-1906-C)",
+      "BR-2 permits a two-family detached dwelling (duplex) by right on 5,000 sq ft, 50 ft wide, with 7 ft side yards (27-1102.4, 27-1105). BC permits residential uses above a nonresidential use, not on the street or ground level (27-1302.17)",
+      "No structure may be built, converted or altered for human habitation on an alley lot, a lot with access only on an alley (27-828)",
+      "Parking: 2 spaces per dwelling unit for dwelling types other than multifamily studio and one-bedroom units, which need 1 1/2 (27-2002). No required parking between the front wall of the house and the curb in BR-1, BR-2 and R-O (27-1007, 27-1107, 27-1204.5)",
+      "Floodplain Conservation District: 'No new construction, alteration, or improvement of any buildings and any other type of permanent structure, including fences, shall be permitted in the floodway or the one-hundred-year floodplain', except as part of a redevelopment project under 27-1713.1G, which was not read (27-1714)",
+      "Variances: the Zoning Hearing Board on the hardship findings of 27-611.1. No bar on a use variance. A special exception or variance expires if permits are not obtained within one year (27-613). A lot of record too small to build on may get a variance where more ground is not available (27-802)",
+      "Exterior renovations in R-O are reviewed by the Design Review Committee (27-1208). In R-O a conditional use must keep the existing building, its front facade and porch, with additions to the rear (27-1204)",
+      "LI, SP-1, SP-2 and SP-3 permit no dwellings (27-1402, 27-1502, 27-1602B(30)). SP-4 and the Fayette Street Corridor Overlay were not read"
+    ],
+    "notes": "Zoning office: Conshohocken Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Part 6, Part 8 (27-801 to 27-817, 27-825, 27-828), Parts 10 to 13, Part 15, Part 16, 27-1714, Part 19-C, 27-2002 and parts of 27-202 and Part 20, and code searches. Not read: Parts 1, 3, 4, 5, 7 and 9, the rest of 27-202 and Part 20, 27-818 to 27-824, 27-826, 27-827, 27-829 to 27-831, Part 14 beyond its use list, the rest of Part 17, Parts 18, 19, 19-A, 21, 22 (SP-4) and 23 (FCO). A web search found a group home amendment to 27-823 dated 2024 whose adoption could not be confirmed. The code is current only to 03-06-2024."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/CO2517/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20servant%20OR%20%22living%20quarters%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20%22extended%20family%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, granny, caretaker, guest house, servant, living quarters, household employee, conversion and extended family, and read the use lists of BR-1, BR-2, R-O, BC, LI, SP-1, SP-2 and SP-3 and 27-811. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-811, 27-1002, 27-1102, 27-1202",
+      "url": "https://ecode360.com/print/CO2517?guid=14318128",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No district lists a second dwelling on a single-family lot as an accessory use. An existing house may be converted to up to three units (27-825)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-611.1",
+      "url": "https://ecode360.com/print/CO2517?guid=14317611",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A second unit on a single-family lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A unit inside an existing house may instead be a residential conversion (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-611.1",
+      "url": "https://ecode360.com/print/CO2517?guid=14317611",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board, on the findings of 27-611.1. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of an existing house (27-825)",
+          "path": "special_exception",
+          "districts": [
+            "BR-1",
+            "BR-2",
+            "R-O"
+          ],
+          "conditions": "An existing single-family detached dwelling into no more than two added units, three units in all. Each unit at least 400 sq ft plus 100 sq ft a bedroom. The lot must hold the district single-family minimum plus 2,000 sq ft for each added unit, and that land is restricted by a recorded deed against further subdivision. No outside change except for safety or improved design, fire escapes to the rear, two ways out for each unit, parking under Part 20 with the existing driveway shared. A house built more than 50 years ago may be converted only by conditional use under 27-1906-C, on a showing that its current use is not feasible and gives no reasonable return",
+          "min_lot_by_district": {
+            "BR-1": 6000,
+            "BR-2": 5500,
+            "R-O": 5500
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling",
+              "section": "27-825"
+            }
+          ],
+          "builds": [
+            "internal"
+          ],
+          "disputed_path": {
+            "path": "conditional_use",
+            "section": "27-1003.7, 27-1103.7, 27-1203.3",
+            "url": "https://ecode360.com/print/CO2517?guid=14318128",
+            "note": "The BR-1, BR-2 and R-O use lists name residential conversions as conditional uses before Borough Council. 27-825C also says the conversion 'shall be a permitted use in any zoning district'"
+          },
+          "section": "27-825, 27-1003.7, 27-1103.7, 27-1203.3, 27-1906-C",
+          "url": "https://ecode360.com/print/CO2517?guid=14318060",
+          "confidence": "secondary",
+          "note": "A house divided into units, not a unit added to it. The lot figures are the single-family minimum plus 2,000 sq ft for one added unit"
+        },
+        {
+          "name": "Two-family detached dwelling (BR-2)",
+          "path": "by_right",
+          "districts": [
+            "BR-2"
+          ],
+          "conditions": "A residential building with two dwelling units not attached to any other building. Lot 5,000 sq ft and 50 ft wide, front yard 15 ft or the block's building line, rear yard 25 ft, side yards 7 ft, building coverage 40%, impervious cover 60%",
+          "min_lot_sqft": 5000,
+          "section": "27-1102.4, 27-1105, 27-202",
+          "url": "https://ecode360.com/print/CO2517?guid=14318171",
+          "confidence": "verified",
+          "note": "A two-unit building, not a unit added to a house. Turning an existing house into two units is the conversion path"
+        },
+        {
+          "name": "Residential use above a nonresidential use (BC)",
+          "path": "by_right",
+          "districts": [
+            "BC"
+          ],
+          "conditions": "'Residential uses, provided that they are not located on the street or ground levels and are above a nonresidential use'",
+          "section": "27-1302.17",
+          "url": "https://ecode360.com/print/CO2517?guid=14318259",
+          "confidence": "verified",
+          "note": "Only above a nonresidential use, not over a house"
+        }
+      ],
+      "section": "27-825, 27-1102.4, 27-1302.17",
+      "url": "https://ecode360.com/print/CO2517?guid=14318060",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "27-1903-C to 27-1906-C",
+      "url": "https://ecode360.com/print/CO2517?guid=32727148",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "The Historic Residential Conservation Overlay limits changes to houses built more than 50 years ago. It opens no ADU path"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "BC",
+        "LI",
+        "SP-1",
+        "SP-2",
+        "SP-3"
+      ],
+      "section": "27-1302, 27-1402, 27-1502, 27-1602",
+      "url": "https://ecode360.com/print/CO2517?guid=14318259",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "BC permits dwellings only above a nonresidential use. LI, SP-1, SP-2 and SP-3 permit no dwellings, and SP-3 lists 'Residential use' as not permitted"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'No new construction, alteration, or improvement of any buildings and any other type of permanent structure, including fences, shall be permitted in the floodway or the one-hundred-year floodplain.' New buildings and fill in the one-hundred-year floodplain are prohibited too.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain Conservation District",
+            "FP"
+          ],
+          "disputed_by": {
+            "section": "27-1713.1G",
+            "url": "https://ecode360.com/print/CO2517?guid=14318713",
+            "note": "27-1714 excepts 'a redevelopment project in compliance with § 27-1713, Subsection 1G', which was not read"
+          },
+          "section": "27-1714.1A, B",
+          "url": "https://ecode360.com/print/CO2517?guid=31281143",
+          "confidence": "verified"
+        },
+        {
+          "kind": "historic",
+          "condition": "A single-family detached dwelling built more than 50 years ago may be expanded or altered 'for continued use as a single-family detached dwelling only', and converted only by conditional use on a showing that the current use is not feasible, other uses are not feasible and the permitted uses give no reasonable rate of return.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "BR-1",
+            "BR-2",
+            "R-O"
+          ],
+          "building_types": [
+            "detached"
+          ],
+          "test": "house_built_before",
+          "value_date": "1976-11-16",
+          "section": "27-1903-C, 27-1904-C, 27-1906-C",
+          "url": "https://ecode360.com/print/CO2517?guid=32727148",
+          "confidence": "verified"
+        },
+        {
+          "kind": "abutting_way",
+          "condition": "'No structure shall be erected, constructed, converted, altered, remodeled, restored, or repaired for human habitation on an alley lot.' An alley lot has access only on an alley and no public street frontage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-828",
+          "url": "https://ecode360.com/print/CO2517?guid=14318085",
+          "confidence": "verified"
+        }
+      ],
+      "section": "27-1714, 27-1904-C, 27-828",
+      "url": "https://ecode360.com/print/CO2517?guid=31281143",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-811",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-811B",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Accessory structures may be erected within the side or rear yard'"
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "27-811B",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'not closer than three feet to the rear or side lot line unless the abutting owner or owners provide written consent', with a 4 ft maintenance easement. 5 ft from the edge of an alley cartway"
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "27-811B",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Same 3 ft rule. 5 ft from the edge of an alley cartway"
+    },
+    "accessory_structure_max_sqft": {
+      "value": 350,
+      "section": "27-811C(1)",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'Any freestanding building used for an accessory use shall not exceed 350 square feet in area'. A garage only for parking may be 450 sq ft"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-811C(1)",
+      "url": "https://ecode360.com/print/CO2517?guid=14317754",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "15 ft with a peaked roof, 10 ft with a flat roof"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "27-2002",
+      "url": "https://ecode360.com/print/CO2517?guid=14318981",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "'Dwelling unit, all other types: 2 spaces per dwelling unit.' Read for a unit made by conversion. A studio or one-bedroom unit in a multifamily dwelling needs 1 1/2"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-2002",
+      "url": "https://ecode360.com/print/CO2517?guid=14318981",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Two for each of two dwelling units"
+    }
+  },
+  "districts": {
+    "BR-1": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached, 40 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way, or the building line of most buildings on that side of the block"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2800
+        },
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family semidetached dwelling, per dwelling unit"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "27-1005",
+        "url": "https://ecode360.com/print/CO2517?guid=14318128",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      }
+    },
+    "BR-2": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached, 40 ft wide. Two-family detached 5,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way, or the block's building line, never less than 10 ft from the curb"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2500
+        },
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family semidetached dwelling, per dwelling unit"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-1105",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "semi_detached": 5
+        },
+        "section": "27-1105E",
+        "url": "https://ecode360.com/print/CO2517?guid=14318171",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "The side not sharing a common wall"
+      }
+    },
+    "R-O": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family detached, 35 ft wide. Conditional uses need 4,500 sq ft (27-1206)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "From the ultimate right-of-way, or the building line of most buildings on the block"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "min_lot_sqft_by_type": {
+        "value": {
+          "semi_detached": 2500
+        },
+        "section": "27-1205",
+        "url": "https://ecode360.com/print/CO2517?guid=14318215",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family semidetached dwelling, per dwelling unit"
+      }
+    }
+  }
+}

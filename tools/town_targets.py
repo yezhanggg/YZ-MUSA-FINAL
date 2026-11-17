@@ -1471,6 +1471,7 @@ FIXED_BATCH.update({g: 37 for g in ("4207932416", "4202953608", "4204541440")})
 FIXED_BATCH.update({g: 38 for g in ("4209545104", "4207151664", "4207952584")})
 FIXED_BATCH.update({g: 40 for g in ("4200347696", "4201708760", "4212511152")})
 FIXED_BATCH.update({g: 41 for g in ("4204506024", "4212381000", "4201763048")})
+FIXED_BATCH.update({g: 42 for g in ("4207537392", "4200356384", "4209115848")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1708,6 +1709,13 @@ EXTRAS = {
     "4204506024": "Code 480-136B(5) living quarters for household employees, caretakers, or watchmen (R-1, R-3, R-4)",
     "4212381000": "Code 470-16 accessory dwelling unit by right in R-1, R-2, R-3 and MU",
     "4201763048": "batch 41 by population. Code Chapter 27 has no ADU text (duplex by right in HR and TC, 309.3F building conversion by special exception in TC, use variance barred 704.6C(2)(d))",
+    # Batch 42 (2026-11-16): the next towns by population without a rule file. Moore (Northampton) was skipped (the ECHO
+    # unit standards of 300-22, Appendix A, and Appendix D, Permitted Special Exception and Conditional Use Land Uses, only
+    # in PDF attachments) and Mechanicsburg (Cumberland) (27-405 points to Table 2, Authorized Land Uses, only in a PDF
+    # attachment).
+    "4207537392": "batch 42 by population. Code Chapter 27 has no ADU text (27-603H and 27-702.9F conversion apartments by special exception, two-family by right in R-2)",
+    "4200356384": "Code 455-2.2 extended family living area, family only, by right in R-1, R-2, R-3 and R-4",
+    "4209115848": "batch 42 by population. Code Chapter 27 has no ADU text (27-825 residential conversion, duplex by right in BR-2)",
 }
 
 if __name__ == "__main__":

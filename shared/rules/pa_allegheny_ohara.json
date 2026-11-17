@@ -1,0 +1,733 @@
+{
+  "provenance": {
+    "jurisdiction": "O'Hara township",
+    "instrument": "O'Hara Township Zoning Ordinance (Chapter 455 Zoning, Ord. No. 1361 of 1-14-2020, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 OH0217, Township of O'Hara (Allegheny County named in 455-2.2 'Lot of record' and 'Allegheny County Department of Economic Development'). District use lists and lot, yard and height figures are text in Articles IV to X. The chapter has no attachments. Floodplain rules are in Chapter 230. New Laws: Ord. No. 1464, 1465 (Chapter 420) and 1466, none on zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/31391570",
+      "https://ecode360.com/OH0217/laws",
+      "https://ecode360.com/OH0217/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22guest%20house%22%20OR%20servant%20OR%20%22living%20quarters%22%20OR%20%22household%20employee%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/OH0217/search?query=%22extended%20family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/OH0217?guid=31391571",
+      "https://ecode360.com/print/OH0217?guid=31391591",
+      "https://ecode360.com/print/OH0217?guid=31391917",
+      "https://ecode360.com/print/OH0217?guid=31391966",
+      "https://ecode360.com/print/OH0217?guid=31392017",
+      "https://ecode360.com/print/OH0217?guid=31392073",
+      "https://ecode360.com/print/OH0217?guid=31392139",
+      "https://ecode360.com/print/OH0217?guid=31392252",
+      "https://ecode360.com/print/OH0217?guid=31392476",
+      "https://ecode360.com/print/OH0217?guid=31393841",
+      "https://ecode360.com/print/OH0217?guid=31393968",
+      "https://ecode360.com/print/OH0217?guid=31394093",
+      "https://ecode360.com/print/OH0217?guid=31394305",
+      "https://ecode360.com/print/OH0217?guid=31463043",
+      "https://ecode360.com/print/OH0217?guid=31394095",
+      "https://ecode360.com/print/OH0217?guid=49691527",
+      "https://ecode360.com/print/OH0217?guid=31392841"
+    ],
+    "verified_on": "2026-11-16",
+    "county": "Allegheny",
+    "municipality_type": "township",
+    "geoid": "4200356384",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/31391570",
+    "code_current_through": "2026-05-12",
+    "code_current_through_note": "eCode360 Version Information: 'Includes legislation through 05-12-2026. Uploaded on: 08-22-2026.' New Laws: three, none amending Chapter 455",
+    "checks": [
+      "'Extended family living area' is a permitted accessory use in R-1, R-2, R-3 and R-4 (455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)). It is 'A separate living area in a home attached to the main home through a common door. The area may be used to house individuals related to the homeowner by marriage, blood or adoption. The space may not be rented out under any circumstances' (455-2.2). The code gives it no size cap, no count and no other standards",
+      "Whether the area may have its own kitchen is not settled. A dwelling unit has 'complete housekeeping facilities' and no enclosed space in common with another unit except vestibules, entrances, halls or porches, and a structure with two dwelling units is a two-family structure (455-2.2). Two-family structures are not listed in R-1, R-2 or R-4, and a duplex is a conditional use only in R-3 (455-6.3E)",
+      "A unit in a separate building is not allowed. The area must be 'in a home attached to the main home through a common door' (455-2.2), 'No accessory structure in the rear of a principal structure and on the same non-through lot shall be used in whole or in part as a dwelling' (455-15.19G), and a single-family dwelling may not share a lot with any other principal building (455-1.4)",
+      "A structure joined to the house by a covered passageway or a common wall is part of the principal structure (455-15.19F), so an attached area meets the district yards. No structure may project into a minimum yard (455-15.1B)",
+      "Uses not clearly permitted are prohibited (455-1.3, 455-1.6), and 'Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved' (455-20.7C)",
+      "CD-1 and CD-2 permit single-family detached dwellings but do not list the extended family living area (455-8.2). C and SM permit no dwellings (455-1.5, 455-9.2, 455-10.2)",
+      "Parking: 'Residential: two off-street parking spaces per dwelling unit' (455-16.1J(8)). If the area is not a dwelling unit, no added spaces are named. No driveway may serve more than two residences (455-16.2C(8))",
+      "Floodplain (Chapter 230): 'Within any identified floodplain area any new construction or substantial improvement shall be prohibited', unless a variance is obtained under Article VII (230-23). No new construction or development within 50 ft landward of the top of bank of any watercourse in an identified floodplain area (230-22D). The Zoning Hearing Board hears Chapter 230 variances (455-20.5G(1)(e))",
+      "Steep slopes: on 15% to 25% slopes no more than 75% of the area may be regraded or developed, on 25% to 40% no more than 30%, and none at 40% or more (455-19.3C). No more than 50% of a forest may be cleared (455-19.3D)",
+      "Nonconforming lot of record in separate ownership: a single-family dwelling and customary accessory buildings may be built though the lot is short of area or width, if the yards are met (455-18.2). A nonconforming structure may not be enlarged in a way that increases its nonconformity (455-18.4A)",
+      "Planned residential developments (Article XI) are permitted in R-2 and R-3, and lot averaging (Article XII) in R-1, R-2 and R-4. The Mixed-Use Overlay (Article XIV, Ord. No. 1447 of 11-11-2025) is a tract-scale conditional use for apartments, townhouses and mixed-use buildings at up to 20 units an acre"
+    ],
+    "notes": "Zoning office: O'Hara Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, IV to X, XIV, XV (455-15.1 to 455-15.21), XVI, XVIII and XX (to 455-20.14), 455-2.2 (to 'Manufacturing'), 455-19.3, Chapter 230 (230-1 to 230-33A(7)), the New Laws page and code searches. Not read: Article III, Articles XI to XIII in full, XVII, the rest of XIX, XXI, XXII, 455-15.22 to 455-15.45, the rest of 455-2.2 and of Chapter 230 (230-33A(8) on, 230-34, 230-35)."
+  },
+  "adu": {
+    "term": {
+      "value": "extended family living area",
+      "section": "455-2.2, 455-4.2B(14)",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Listed as an accessory use in R-1, R-2, R-3 and R-4. Not called an accessory dwelling. Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, granny, caretaker, guest house, servant, living quarters, household employee, conversion and extended family"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "455-2.2, 455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "A permitted accessory use, for relatives of the homeowner only. No hearing named"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)",
+      "url": "https://ecode360.com/print/OH0217?guid=31391917",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "455-8.2, 455-9.2, 455-10.2, 455-1.5",
+      "url": "https://ecode360.com/print/OH0217?guid=31392139",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "CD-1 and CD-2 permit single-family detached dwellings but do not list it. C and SM permit no dwellings"
+    },
+    "status_by_form": {
+      "value": {
+        "detached_new": "prohibited",
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "455-2.2, 455-15.19G, 455-1.4",
+      "url": "https://ecode360.com/print/OH0217?guid=31393841",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "The area must be in the home, joined to it through a common door. 'No accessory structure in the rear of a principal structure and on the same non-through lot shall be used in whole or in part as a dwelling' (455-15.19G), and a single-family dwelling may not share a lot with another principal building (455-1.4)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "455-4.2B(14), 455-4.8, 455-20.1",
+      "url": "https://ecode360.com/print/OH0217?guid=31391917",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Listed among the permitted accessory uses. A zoning/building permit from the Zoning Officer"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "455-20.7",
+      "url": "https://ecode360.com/print/OH0217?guid=31394305",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 455-20.7A. Dimensional only: a use variance is barred (455-20.7C)"
+    },
+    "use_variance_barred": {
+      "value": true,
+      "section": "455-20.7C",
+      "url": "https://ecode360.com/print/OH0217?guid=31394305",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "quote": "Under no circumstances shall the Zoning Hearing Board grant a variance to allow a use not permissible under the terms of this chapter in the district involved, or any use expressly, or by implication, prohibited by the terms of this chapter in said district",
+      "districts": null
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Duplex (R-3)",
+          "path": "conditional_use",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "'Duplex, triplex or quadraplex' by conditional use from Township Council. One point of ingress and one of egress. 5,000 sq ft of lot 'per dwelling unit for multiple-family uses', 50 ft wide, front and rear yards 20 ft, side yards 9 ft, building coverage 30%",
+          "min_lot_sqft": 10000,
+          "section": "455-6.3E, 455-6.6",
+          "url": "https://ecode360.com/print/OH0217?guid=31392017",
+          "confidence": "verified",
+          "note": "A two-unit building, not a unit added to a house. The lot is 5,000 sq ft for each of two units"
+        }
+      ],
+      "section": "455-6.3E",
+      "url": "https://ecode360.com/print/OH0217?guid=31392017",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)",
+      "url": "https://ecode360.com/print/OH0217?guid=31391917",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 455",
+      "url": "https://ecode360.com/31391570",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "No historic path for the area was found. 'Historic site or landmark' is defined in 455-2.2"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "CD-1",
+        "CD-2",
+        "C",
+        "SM"
+      ],
+      "section": "455-8.2, 455-9.2, 455-10.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31392139",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "CD-1 and CD-2 permit single-family detached dwellings without the extended family living area. C and SM permit no dwellings (455-1.5)"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "building_type",
+          "condition": "If the area has its own complete housekeeping facilities it may be read as a second dwelling unit, which would make the house a two-family structure. Two-family structures are not listed in R-1, R-2 or R-4, and a duplex is a conditional use in R-3. The code does not say whether the area may have a kitchen.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "455-2.2 'Dwelling unit', 'Extended family living area', 455-6.3E",
+          "url": "https://ecode360.com/print/OH0217?guid=31391591",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area any new construction or substantial improvement shall be prohibited.' A variance under Chapter 230, Article VII may allow it, with the lowest floor at or above the regulatory flood elevation.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "230-23",
+          "url": "https://ecode360.com/print/OH0217?guid=31463043",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 230"
+        },
+        {
+          "kind": "other",
+          "condition": "A substantial improvement (work costing 50% or more of the building's market value) in an identified floodplain area is prohibited unless a variance is granted, and no improvement may raise the base flood elevation. Smaller work must be elevated or floodproofed to the greatest extent possible.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "230-23, 230-31",
+          "url": "https://ecode360.com/print/OH0217?guid=31463043",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 230"
+        },
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse.' No permit exception is given here. For improvements to an existing structure in an AE area without a floodway, a DEP permit lifts the 50 ft rule (230-31E).",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "230-22D, 230-31E",
+          "url": "https://ecode360.com/print/OH0217?guid=31463043",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 230"
+        },
+        {
+          "kind": "other",
+          "condition": "Steep slopes: on 15% to 25% slopes no more than 75% of the area may be regraded or developed, on 25% to 40% no more than 30%, and no earth disturbance at 40% or more.",
+          "effect": "condition",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "455-19.3C",
+          "url": "https://ecode360.com/print/OH0217?guid=31394095",
+          "confidence": "verified"
+        }
+      ],
+      "section": "455-2.2, 230-22D, 230-23, 455-19.3",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "455-2.2 'Extended family living area', 455-15.19F",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'A separate living area in a home attached to the main home through a common door.' A structure joined by a common wall is part of the house (455-15.19F)"
+    },
+    "labels": {
+      "value": {
+        "attached": "Addition joined to the house through a common door"
+      },
+      "section": "455-2.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    }
+  },
+  "envelope": {
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "455-15.19F, 455-15.1B",
+      "url": "https://ecode360.com/print/OH0217?guid=31393841",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "An addition with a common wall is part of the principal structure and meets the district yards"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "455-2.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "verified",
+      "note": "'individuals related to the homeowner by marriage, blood or adoption'"
+    },
+    "occupancy": {
+      "value": "Individuals related to the homeowner by marriage, blood or adoption. The space may not be rented out under any circumstances",
+      "section": "455-2.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "455-2.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31391591",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary",
+      "note": "Occupants are tied to the homeowner, but the code does not say the owner must live there"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "455-16.1J(8)",
+      "url": "https://ecode360.com/print/OH0217?guid=31393968",
+      "verified_on": "2026-11-16",
+      "confidence": "unverified",
+      "note": "'Residential: two off-street parking spaces per dwelling unit.' Whether the area is a dwelling unit is not settled"
+    },
+    "reading": {
+      "value": "If the area is a dwelling unit, 2 more spaces (4 in all). If it is part of the house, the house's 2 spaces only",
+      "section": "455-16.1J(8), 455-2.2",
+      "url": "https://ecode360.com/print/OH0217?guid=31393968",
+      "verified_on": "2026-11-16",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "150 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum width side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "455-4.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391917",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "90 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum width side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "455-5.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31391966",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Single-family dwelling, 50 ft wide. 5,000 sq ft per dwelling unit for multiple-family uses"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 9,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum width side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "455-6.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392017",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "125 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Minimum width side yard'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "455-7.6",
+        "url": "https://ecode360.com/print/OH0217?guid=31392073",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    },
+    "CD-1": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "200 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "20 ft. Rear and side yards are 100 ft where a perimeter lot abuts a residential district"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.333,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    },
+    "CD-2": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "200 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "20 ft. Rear and side yards are 100 ft where a perimeter lot abuts a residential district"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.333,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Bulk: maximum building coverage'. Building coverage is the lot area 'covered only with principal and accessory buildings and/or other impervious surfaces' (455-2.2), so it may also count paving"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "'Maximum height of structure: 30 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "455-8.7",
+        "url": "https://ecode360.com/print/OH0217?guid=31392139",
+        "verified_on": "2026-11-16",
+        "confidence": "verified",
+        "note": "Permitted accessory structures"
+      }
+    }
+  }
+}

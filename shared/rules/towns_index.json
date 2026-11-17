@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 176,
-      "population": 6205375,
-      "share_of_pa": 0.4772
+      "towns_beyond_the_two_cities": 179,
+      "population": 6233268,
+      "share_of_pa": 0.4794
     }
   ],
   "towns": [
@@ -4322,6 +4322,78 @@
         "added as batch 41 by population. Code Chapter 27 has no ADU text (duplex by right in HR and TC, 309.3F building conversion by special exception in TC, use variance barred 704.6C(2)(d))"
       ],
       "status_note": "Batch 41 fix round. NC, HC and OB rows added, NC apartments above a nonresidential use, the POMU overlay, the 8-501.4 top-of-bank rule with its DEP permit exception, and the LR and HR density caps as disputed figures. Later check: parking counts are only in Table 6.1 (PDF, not read), and 313 H and 314 LI were not read."
+    },
+    {
+      "geoid": "4207537392",
+      "geoid_aliases": [],
+      "name": "Jackson township",
+      "county": "Lebanon",
+      "type": "township",
+      "population": 9348,
+      "population_with_aliases": 9348,
+      "housing_units": 3602,
+      "pop_rank": 285,
+      "file": "pa_lebanon_jackson",
+      "batch": 42,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/27064211",
+      "plain_fetch": null,
+      "code_current_through": "2026-04-06",
+      "code_note": null,
+      "why": [
+        "added as batch 42 by population. Code Chapter 27 has no ADU text (27-603H and 27-702.9F conversion apartments by special exception, two-family by right in R-2)"
+      ],
+      "status_note": "Batch 42 first reading. Open points. Whether a second house may share a lot under 27-1408 when 27-101 defines a single-family detached dwelling as one on an individual lot. Which district figure the conversion apartment two-thirds lot rule uses in R-2 (single-family or two-family). Whether the R-2 two-family figure of 4,000 sq ft is per unit. The 5 ft against 10 ft accessory yards in R-1 and R-2 (27-1402). Whether a conversion counts against the A allotment (27-604A). The effective date of Chapter 27 for 'existing' dwellings. Parts 16 to 28 (except 27-1904) and 27-1428, 27-1429 not read."
+    },
+    {
+      "geoid": "4200356384",
+      "geoid_aliases": [],
+      "name": "O'Hara township",
+      "county": "Allegheny",
+      "type": "township",
+      "population": 9284,
+      "population_with_aliases": 9284,
+      "housing_units": 4046,
+      "pop_rank": 288,
+      "file": "pa_allegheny_ohara",
+      "batch": 42,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/31391570",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-12",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 455-2.2 extended family living area, family only, by right in R-1, R-2, R-3 and R-4)"
+      ],
+      "status_note": "Batch 42 first reading. Open points. Whether an extended family living area may have its own kitchen, which would make it a dwelling unit and the house a two-family structure (455-2.2), and so whether 2 more parking spaces apply (455-16.1J(8)). Building coverage counts 'other impervious surfaces' (455-2.2). The 230-22D top-of-bank rule has no permit exception while 230-31E has one for existing structures. Articles III, XI to XIII, XVII, XXI, XXII, 455-15.22 to 455-15.45 and the rest of 455-2.2 not read."
+    },
+    {
+      "geoid": "4209115848",
+      "geoid_aliases": [],
+      "name": "Conshohocken borough",
+      "county": "Montgomery",
+      "type": "borough",
+      "population": 9261,
+      "population_with_aliases": 9261,
+      "housing_units": 5033,
+      "pop_rank": 289,
+      "file": "pa_montgomery_conshohocken",
+      "batch": 42,
+      "status": "drafted",
+      "checked_on": "2026-11-16",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/14317188",
+      "plain_fetch": null,
+      "code_current_through": "2024-03-06",
+      "code_note": null,
+      "why": [
+        "added as batch 42 by population. Code Chapter 27 has no ADU text (27-825 residential conversion, duplex by right in BR-2)"
+      ],
+      "status_note": "Batch 42 first reading. Open points: the residential conversion path (27-825 special exception, conditional use in the BR-1, BR-2 and R-O lists, 'permitted use' in 27-825C). The 27-1713.1G redevelopment exception to the floodplain bar (not read). Code current only to 03-06-2024 with a 2024 group home amendment to 27-823 not confirmed. Parts 1, 3 to 5, 7, 9, 18, 19, 19-A, 21, 22 (SP-4), 23 (FCO), most of Part 20 and of 27-202 not read."
     }
   ]
 }

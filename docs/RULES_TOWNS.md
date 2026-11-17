@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-178 towns in the index, 178 with a rule file (Philadelphia and Pittsburgh included). Verified 113, drafted 65, in progress 0, todo 0.
+181 towns in the index, 181 with a rule file (Philadelphia and Pittsburgh included). Verified 113, drafted 68, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -191,6 +191,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | Bethel township | Delaware | drafted | living quarters for household employees, caretakers, or watchmen | family only | by right | ADU rule only in R-1, R-3, R-4. occupancy (480-41H(5), 480-136B(5)). family only (480-136B(5)). building type gate (480-35 'Dwelling unit', 'Dwelling, two-family', 480-52D, 480-53B). other gate (480-100, 480-101H, 480-103G, 480-104A). other ways (not ADUs): Conversion of a single-family detached house into a dwelling for more families (special exception, 480-138). Two-family detached dwelling (R-4) (by right with land development, 480-52D, 480-53B, 480-54) | not confirmed | no | not confirmed | 2026-11-16 |
 | Warren city | Warren | verified | accessory dwelling unit | by right | by right | ADU rule only in R-1, R-2, R-3, MU. building type gate (470-90 'Dwelling, multifamily', 'Dwelling, single-family detached', 470-16). other ways (not ADUs): Multifamily dwelling (two or more units) (by right, 470-16, 470-15A, 470-23.1, 470-90). Apartment, second story and above (by right, 470-16, 470-90). 2 parking spaces in total | not confirmed | no | not confirmed | 2026-11-16 |
 | Quakertown borough | Bucks | verified | none | not in the code | variance | district figures not settled in LR, HR (306.8). other ways (not ADUs): Duplex (HR, TC) (by right, 308.2B, 308.6, 308.8, 309.2D, 309.6, 315.3D). Building conversion into two or more dwelling units (TC) (special exception, 309.3F, 315.3C). Up to two apartments above a nonresidential use (TC, NC) (by right, 309.2FF, 310.2CC, 315.6JJ) | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| Jackson township | Lebanon | drafted | none | not in the code | variance | other ways (not ADUs): Conversion apartments (A) (special exception, 27-603H, 27-605). Conversion apartments (R-1) (special exception, 27-702.9F, 27-703). Conversion apartments (R-2) (special exception, 27-802.13A, 27-702.9F, 27-803). Two-family detached dwelling (R-2) (by right, 27-802.2, 27-803, 27-101). Second principal dwelling on the lot (A, I) (by right with land development, 27-1408, 27-101, 27-605, 27-1003). Second principal dwelling on the lot (R-R, R-1) (by right with land development, 27-1408, 27-101, 27-6A03, 27-703). Second principal dwelling on the lot (R-2) (by right with land development, 27-1408, 27-101, 27-803). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-16 |
+| O'Hara township | Allegheny | drafted | extended family living area | family only (detached new prohibited, garage conversion prohibited, over garage prohibited) | by right | ADU rule only in R-1, R-2, R-3, R-4. occupancy (455-2.2). family only (455-2.2). other gate (230-23). other ways (not ADUs): Duplex (R-3) (conditional use, 455-6.3E, 455-6.6) | not confirmed | no | not confirmed | 2026-11-16 |
+| Conshohocken borough | Montgomery | drafted | none | not in the code | variance | other gate (27-1714.1A, B). other ways (not ADUs): Residential conversion of an existing house (27-825) (special exception, 27-825, 27-1003.7, 27-1103.7, 27-1203.3, 27-1906-C). Two-family detached dwelling (BR-2) (by right, 27-1102.4, 27-1105, 27-202). Residential use above a nonresidential use (BC) (by right, 27-1302.17). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-16 |
 
 ## Towns still to write
 
@@ -207,4 +210,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 176 | 47.7% |
+| 179 | 47.9% |
