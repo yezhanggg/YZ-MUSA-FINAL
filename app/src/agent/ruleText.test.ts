@@ -778,7 +778,7 @@ describe('get_rule_text pass 9', () => {
   it('gives a share of the house and the unit, ADUs by lot size, an exempt building and sides given as a total', async () => {
     const wg = await town6('pa_chester_west_goshen', 'size', 'R-2');
     expect(wg.forms.share_of_house_and_unit.inside).toMatch(/^At most 35% of the house \(35% of the house and the unit together/);
-    expect(wg.forms.share_of_house_and_unit.added).toMatch(/^At most 54% of the existing house/);
+    expect(wg.forms.share_of_house_and_unit.added).toMatch(/^At most 53\.8% of the existing house/);
     const wm = await town6('pa_montgomery_whitemarsh', 'size', 'AAA');
     expect(wm.forms.adus_by_lot_size.value).toHaveLength(3);
     expect(wm.forms.exempt_building.note).toMatch(/^an existing historic accessory building more than 75 years old: no floor area cap, ADU height limit or setbacks/);
@@ -1275,5 +1275,25 @@ describe('get_rule_text pass 22', () => {
   it('says the other reading of a lot minimum by services (Maidencreek R-3 two-family)', async () => {
     const out = JSON.stringify(await town6('pa_berks_maidencreek', 'approval', 'R-3'));
     expect(out).toContain('In R-3, R-4, CR the lot minimum is not settled: another reading gives with public sewer and public water: 20,000 sq ft, without public sewer: 130,680 sq ft, with public sewer and on-site water: 130,680 sq ft (220-32A');
+  });
+});
+
+describe('get_rule_text pass 23', () => {
+  it('prints a share that is not a whole percent with one decimal (North Coventry RC, Malvern R1)', async () => {
+    const { pct } = await import('./ruleText');
+    expect([pct(0.2), pct(0.066), pct(0.075), pct(0.3333)]).toEqual(['20%', '6.6%', '7.5%', '33.3%']);
+    const nc = JSON.stringify(await town6('pa_chester_north_coventry', 'coverage', 'RC'));
+    expect(nc).toContain('6.8% on a lot of at least 435,600 sq ft');
+    expect(nc).not.toContain('7% on a lot of at least 435,600 sq ft');
+    const mv = JSON.stringify(await town6('pa_chester_malvern', 'coverage', 'R1'));
+    expect(mv).toContain('Building coverage 7.5% (220-402)');
+  });
+});
+
+describe('get_rule_text pass 23 heights', () => {
+  it('does not say both heights are shown when the ADU has no height of its own (Mount Joy R-1)', async () => {
+    const out = JSON.stringify(await town6('pa_lancaster_mount_joy', 'height', 'R-1'));
+    expect(out).toContain("not settled: whether this 20 ft cap also binds an outbuilding with an ADU. The town's rules give no height for the ADU itself. Ask the zoning officer");
+    expect(out).not.toContain('the lower one is the safe reading');
   });
 });

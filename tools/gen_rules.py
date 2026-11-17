@@ -7,6 +7,12 @@ from pathlib import Path
 R = Path(__file__).resolve().parents[1] / "shared/rules"
 
 
+def _pct(v: float) -> str:
+    """A share as a percent: whole when it is a whole percent (20%), else one decimal (6.6%), as the resolver says it."""
+    p = v * 100
+    return f"{v:.0%}" if abs(p - round(p)) < 1e-6 else f"{p:.1f}%"
+
+
 def load(n):
     return json.loads((R / f"{n}.json").read_text())
 
@@ -120,9 +126,9 @@ def table(n, bill=False):
         if key == "eligibility.overlay_bars" and leaf.get("value"):
             v = f"{len(leaf['value'])} overlays (see below)"
         if key.endswith("share_of_house") and isinstance(leaf.get("value"), float):
-            v = f"{leaf['value']:.0%}"
+            v = f"{_pct(leaf['value'])}"
         if key == "coverage.max_building_coverage" and isinstance(leaf.get("value"), float):
-            v = f"{leaf['value']:.0%}"
+            v = f"{_pct(leaf['value'])}"
         label = LABEL.get(key, key)
         extra = " (labeled planning assumption)" if leaf.get("assumption") else ""
         row = [label + extra, v]
@@ -199,7 +205,7 @@ def cell(leaf):
     v = leaf.get("value")
     if v is None:
         return "not confirmed" if leaf.get("confidence") == "unverified" else "none set"
-    s = f"{v:.0%}" if isinstance(v, float) and v < 1 else f"{v:,}"
+    s = f"{_pct(v)}" if isinstance(v, float) and v < 1 else f"{v:,}"
     return s + (" (s)" if leaf.get("confidence") == "secondary" else "")
 
 
@@ -298,12 +304,14 @@ def _size_cell(d):
     share = (size.get("max_share_of_house") or {}).get("value")
     greater = (size.get("cap_is_greater_of") or {}).get("value") is True
     if greater and sqft is not None and share is not None:
-        base = f"{sqft:,.0f} or {share:.0%} of the house, whichever is greater"
+        base = f"{sqft:,.0f} or {_pct(share)} of the house, whichever is greater"
     elif sqft is None and share is not None:
-        base = f"{share:.0%} of the house"
+        base = f"{_pct(share)} of the house"
     hu = (size.get("max_share_of_house_and_unit") or {}).get("value")
     if hu is not None and share is None:  # pass 9: a share of the house and the unit together
-        base = (f"{sqft:,.0f} sq ft and " if sqft is not None else "") + f"{hu:.0%} of the house and the unit together"
+        base = (
+            f"{sqft:,.0f} sq ft and " if sqft is not None else ""
+        ) + f"{_pct(hu)} of the house and the unit together"
     tiers = (size.get("max_sqft_by_lot_size") or {}).get("value")
     if tiers:  # pass 12: a size cap by lot area replaces max_sqft
 

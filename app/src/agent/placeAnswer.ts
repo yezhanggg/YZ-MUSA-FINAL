@@ -10,7 +10,7 @@
 // <data root>/ops/logs/pa-places.md). Rule details come from get_rule_text, quotes from search_zoning_text.
 import type { ToolDef } from '../lib/lot/agentTools';
 import { NOTICE } from '../lib/lot/citations';
-import { dependsFact, getRuleText, hearingText, townKey } from './ruleText';
+import { dependsFact, getRuleText, hearingText, pct as sharePct, townKey } from './ruleText';
 import { searchZoningText, type ZoningTextSource } from './zoningText';
 import { lotPlaceOfTown, lotPlacesText } from './lotPlaces';
 
@@ -352,7 +352,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   const capNum = cap && typeof cap.value === 'number' ? cap.value : null;
   const shareNum = share && typeof share.value === 'number' ? share.value : null;
   const greater = !!sizeRule && sizeRule.includes('whichever is greater');
-  const pct = shareNum !== null ? `${Math.round(shareNum * 100)}%` : '';
+  const pct = shareNum !== null ? sharePct(shareNum) : '';
   // The house size at which the share of the house reaches the proposal.
   const houseFor = (sz: number) => Math.ceil(sz / shareNum!).toLocaleString('en-US');
   const houseDepends = (sz: number) => {
@@ -378,8 +378,8 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   // cap is only the outer limit, and the part cannot be measured here.
   const part = rule?.share_of_part ?? null;
   if (size && part) {
-    why.push(`It must also be at most ${Math.round(part.share * 100)}% of the house's ${part.part} (${part.section ?? 'rule file'}). Not checked: that part of the house cannot be measured here.`);
-    if (fits === 'yes') depends.push({ fact: `the floor area of the house's ${part.part}`, rule: `At most ${Math.round(part.share * 100)}% of the house's ${part.part}`, section: part.section });
+    why.push(`It must also be at most ${sharePct(part.share)} of the house's ${part.part} (${part.section ?? 'rule file'}). Not checked: that part of the house cannot be measured here.`);
+    if (fits === 'yes') depends.push({ fact: `the floor area of the house's ${part.part}`, rule: `At most ${sharePct(part.share)} of the house's ${part.part}`, section: part.section });
   }
   // Pass 10: a minimum floor area for this form (Penn, York: an elder cottage of at least 300 sq ft).
   const minForm = unit && rule?.min_sqft_by_form ? rule.min_sqft_by_form.value[FORM_OF[unit]] : undefined;

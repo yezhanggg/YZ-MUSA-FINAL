@@ -345,6 +345,12 @@ const orList = (xs: string[]): string => (xs.length > 1 ? `${xs.slice(0, -1).joi
 /** Pass 14 (pipeline/rules.py OVERLAY_TWICE): 'the A or B overlay', with a name that ends in "Overlay" said once. */
 const overlayWords = (xs: string[]): string => { const t = xs.join(' or '); return /overlay$/i.test(t) ? t : `${t} overlay`; };
 const num = (v: Json | undefined) => (typeof v === 'number' ? v.toLocaleString('en-US') : String(v));
+// Pass 23 (pipeline/rules.py _pct): a share as a percent, whole when it is a whole percent (20%), else one decimal
+// (6.6%), so a cap such as 6.6% never reads as the looser 7%.
+export const pct = (v: number) => {
+  const p = v * 100;
+  return Math.abs(p - Math.round(p)) < 1e-6 ? `${Math.round(p)}%` : `${p.toFixed(1)}%`;
+};
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
 // Pass 15 (pipeline/rules.py OCCUPANT_KINDS): conditions a form allowed under another listing is not held to.
 const LISTING_FREE = new Set(['adu_status', 'family', 'occupancy', 'owner_occupancy', 'age', 'care', 'sponsor', 'building_type', 'district', 'scope']);
@@ -403,14 +409,14 @@ function billKeeps(file: Obj, district: string | null): string[] {
   const cov = pick('max_building_coverage', 'coverage', 'max_building_coverage');
   // Pass 20 (pipeline/rules.py _cover_by_lot): building cover by lot size. No lot facts here, so every tier is named.
   const covTiers = isObj(row.max_building_coverage_by_lot_size) && Array.isArray((row.max_building_coverage_by_lot_size as Obj).value) ? (row.max_building_coverage_by_lot_size as Obj) : null;
-  if (covTiers && (covTiers.value as Json[]).length) out.push(`building coverage by lot size: ${(covTiers.value as Json[]).filter(isObj).map((t) => `${Math.round((t.max_building_coverage as number) * 100)}% on ${lotBounds(t)}`).join(', ')} (${covTiers.section ?? ''})`);
-  else if (cov && typeof cov.value === 'number') out.push(`building coverage ${Math.round(cov.value * 100)}% (${cov.section ?? ''})`);
+  if (covTiers && (covTiers.value as Json[]).length) out.push(`building coverage by lot size: ${(covTiers.value as Json[]).filter(isObj).map((t) => `${pct(t.max_building_coverage as number)} on ${lotBounds(t)}`).join(', ')} (${covTiers.section ?? ''})`);
+  else if (cov && typeof cov.value === 'number') out.push(`building coverage ${pct(cov.value)} (${cov.section ?? ''})`);
   // Pass 10: a district's impervious cover (districts.<code>.max_impervious_coverage).
   const imp = isObj(row.max_impervious_coverage) ? (row.max_impervious_coverage as Obj) : null;
   // Pass 16 (pipeline/rules.py _impervious_by_lot): cover by lot size. No lot facts here, so every tier is named.
   const impTiers = isObj(row.max_impervious_by_lot_size) && Array.isArray((row.max_impervious_by_lot_size as Obj).value) ? (row.max_impervious_by_lot_size as Obj) : null;
-  if (impTiers && (impTiers.value as Json[]).length) out.push(`impervious cover by lot size: ${(impTiers.value as Json[]).filter(isObj).map((t) => `${Math.round((t.max_impervious as number) * 100)}% on ${lotBounds(t)}`).join(', ')} (${impTiers.section ?? ''})`);
-  else if (imp && typeof imp.value === 'number') out.push(`impervious cover ${Math.round(imp.value * 100)}% (${imp.section ?? ''})`);
+  if (impTiers && (impTiers.value as Json[]).length) out.push(`impervious cover by lot size: ${(impTiers.value as Json[]).filter(isObj).map((t) => `${pct(t.max_impervious as number)} on ${lotBounds(t)}`).join(', ')} (${impTiers.section ?? ''})`);
+  else if (imp && typeof imp.value === 'number') out.push(`impervious cover ${pct(imp.value)} (${imp.section ?? ''})`);
   const front = pick('setback_front_ft', 'envelope', 'setback_front_ft');
   if (front && typeof front.value === 'number') out.push(`front yard ${num(front.value)} ft (${front.section ?? ''})`);
   return out;
@@ -441,8 +447,8 @@ const FRACTION_RULES: Record<string, [string, number]> = {
 const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false, strict = false): string | null =>
   share && typeof share.value === 'number'
     ? sqft && typeof sqft.value === 'number'
-      ? `At most ${num(sqft.value)} sq ft or ${strict ? 'less than ' : ''}${Math.round(share.value * 100)}% of the house, whichever is ${greater ? 'greater' : 'less'}`
-      : `${strict ? 'Less than' : 'At most'} ${Math.round(share.value * 100)}% of the house. Give the house size to get the number`
+      ? `At most ${num(sqft.value)} sq ft or ${strict ? 'less than ' : ''}${pct(share.value)} of the house, whichever is ${greater ? 'greater' : 'less'}`
+      : `${strict ? 'Less than' : 'At most'} ${pct(share.value)} of the house. Give the house size to get the number`
     : null;
 
 function conditionsOf(file: Obj, district: string | null): Obj[] {
@@ -473,7 +479,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
   const ml = leafAt(file, 'eligibility', 'min_lot_sqft');
   if (ml && typeof ml.value === 'number') out.push(cond('lot_size', `ADU rule: lot of at least ${num(ml.value)} sq ft`, ml));
   const share = leafAt(file, 'eligibility', 'min_lot_share_of_district');
-  if (share && typeof share.value === 'number') out.push(cond('lot_size', `The lot needs ${Math.round(share.value * 100)}% of the district minimum lot`, share));
+  if (share && typeof share.value === 'number') out.push(cond('lot_size', `The lot needs ${pct(share.value)} of the district minimum lot`, share));
   const perText = (p: Obj, code?: string) =>
     `${p.confidence === 'verified' ? '' : 'If the ADU counts as a dwelling unit: '}${code ? `${code}: ` : ''}${num(p.value)} sq ft of lot per dwelling unit, so ${num(2 * (p.value as number))} sq ft for a house and an ADU`;
   const per = leafAt(file, 'eligibility', 'lot_area_per_unit_sqft');
@@ -499,7 +505,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
         const who = `a ${String(c.label)} (${label(c.building_type)})`;
         const shown = typeof covBy[String(c.building_type)] === 'number' ? (covBy[String(c.building_type)] as number) : isObj(row.max_building_coverage) && typeof row.max_building_coverage.value === 'number' ? row.max_building_coverage.value : null;
         if (typeof c.max_building_coverage === 'number')
-          out.push(cond('house_type', `${code}: building coverage ${shown !== null ? `at most ${Math.round(shown * 100)}%, and ` : ''}${Math.round(c.max_building_coverage * 100)}% for ${who} (${sec}). ${tail}`, cases, { district: code }));
+          out.push(cond('house_type', `${code}: building coverage ${shown !== null ? `at most ${pct(shown)}, and ` : ''}${pct(c.max_building_coverage)} for ${who} (${sec}). ${tail}`, cases, { district: code }));
         const yardsC = ['accessory_setback_side_ft', 'accessory_setback_rear_ft'].filter((k) => typeof c[k] === 'number');
         if (yardsC.length) {
           const accSide = isObj(row.accessory_setback_side_ft) && typeof row.accessory_setback_side_ft.value === 'number' ? row.accessory_setback_side_ft.value : null;
@@ -532,7 +538,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
         const figs = ['min_lot_sqft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft', 'principal_max_height_ft', 'max_building_coverage', 'lot_area_per_unit_sqft', 'accessory_setback_front_ft', 'accessory_setback_side_ft', 'accessory_setback_rear_ft', 'accessory_max_height_ft', 'accessory_max_stories', 'max_impervious_coverage', 'setback_sides_total_ft']
           .filter((f) => typeof it[f] === 'number')
           // Pass 14 (pipeline/rules.py _utility_figures): figures with units.
-          .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' || f === 'max_impervious_coverage' ? `${Math.round((it[f] as number) * 100)}%` : `${num(it[f])}${f === 'accessory_max_stories' ? '' : f.endsWith('_sqft') ? ' sq ft' : ' ft'}`}`)
+          .map((f) => `${f.replace(/_ft$|_sqft$/, '').replace(/_/g, ' ')} ${f === 'max_building_coverage' || f === 'max_impervious_coverage' ? `${pct(it[f] as number)}` : `${num(it[f])}${f === 'accessory_max_stories' ? '' : f.endsWith('_sqft') ? ' sq ft' : ' ft'}`}`)
           .join(', ')
           .replace('accessory max stories', 'accessory building stories')
           .replace('accessory max height', 'accessory building height');
@@ -607,7 +613,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
       const figs = ([['setback_front_ft', 'front'], ['setback_side_ft', 'side'], ['setback_rear_ft', 'rear'], ['min_from_front_line_ft', 'from the front line at least'], ['max_height_ft', 'height at most']] as const)
         .filter(([k]) => typeof it[k] === 'number')
         .map(([k, l]) => `${l} ${num(it[k])} ft`);
-      if (typeof it.max_share_of_rear_yard === 'number') figs.push(`at most ${Math.round(it.max_share_of_rear_yard * 100)}% of the required rear yard`);
+      if (typeof it.max_share_of_rear_yard === 'number') figs.push(`at most ${pct(it.max_share_of_rear_yard)} of the required rear yard`);
       const whereTxt = `${it.where}${typeof it.over_sqft === 'number' ? ` (over ${num(it.over_sqft)} sq ft)` : ''}`;
       // Pass 15 (pipeline/rules.py): an item with no figures carries its rule in the where text. Never "...: .".
       const whereOnly = typeof it.over_sqft === 'number' && String(it.where).includes('sq ft') ? String(it.where) : whereTxt;
@@ -624,7 +630,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     for (const it of Array.isArray(partLeaf10?.value) ? partLeaf10!.value.filter(isObj) : []) {
       if (district && Array.isArray(it.districts) && !it.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(district))) continue;
       const sh = Number(it.share);
-      const capTxt = sh > 1 ? `${sh} times` : sh === 1 ? 'the same area as' : `${Math.round(sh * 100)}% of`;
+      const capTxt = sh > 1 ? `${sh} times` : sh === 1 ? 'the same area as' : `${pct(sh)} of`;
       const what = String(it.what);
       out.push({ kind: 'size', condition: ownerText(`${what.charAt(0).toUpperCase()}${what.slice(1)}: at most ${capTxt} ${String(it.of)}${it.when ? `, ${it.when}` : ''}. The tool cannot measure that part of the house, so no number is given${it.note ? `. ${it.note}` : ''}`), section: it.section ?? partLeaf10!.section ?? null, url: it.url ?? partLeaf10!.url ?? null, checked_on: partLeaf10!.verified_on ?? null, confidence: partLeaf10!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'], ...(Array.isArray(it.districts) ? { districts: it.districts } : {}) });
     }
@@ -657,7 +663,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
   else if (bar && bar.value === true)
     out.push(cond('front_yard', `An accessory building may not stand in the front yard, between the house and the street. It is a bar, not a setback number${bar.note ? `. ${bar.note}` : ''}`, bar, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
   const si = leafAt(file, 'size', 'max_share_internal');
-  if (si && typeof si.value === 'number') out.push(cond('size', `A unit inside or attached to the house: at most ${Math.round(si.value * 100)}% of the house`, si));
+  if (si && typeof si.value === 'number') out.push(cond('size', `A unit inside or attached to the house: at most ${pct(si.value)} of the house`, si));
   // No ADU rule here: no ADU parking, except on a historic path that has its own rule (pipeline/rules.py, pass 6).
   const histPath = leafAt(file, 'approval', 'historic_path');
   const parkScope: Obj | null = noAduHere ? (histPath && histPath.value ? { when: 'historic' } : null) : {};
@@ -703,7 +709,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     const base: Obj | null = row && isObj(row[k]) ? ruleOut(`districts.${rowKey}.${k}`, row[k]) : null;
     const other = disputeRow ? (disputeRow.value as Obj)[k] : undefined;
     if (!base || typeof other !== 'number' || typeof base.value !== 'number' || other === base.value) return base;
-    return { ...base, disputed_figure: other, disputed_section: disputeRow!.section ?? null, note: ownerText(`${base.note ? `${String(base.note).replace(/\.$/, '')}. ` : ''}Not settled. The other reading gives ${/coverage/.test(k) ? `${Math.round(other * 100)}%` : k.endsWith('_stories') ? `${num(other)} stories` : k.endsWith('_sqft') ? `${num(other)} sq ft` : `${num(other)} ft`} (${disputeRow!.section ?? ''}). Ask the zoning officer which governs`) };
+    return { ...base, disputed_figure: other, disputed_section: disputeRow!.section ?? null, note: ownerText(`${base.note ? `${String(base.note).replace(/\.$/, '')}. ` : ''}Not settled. The other reading gives ${/coverage/.test(k) ? `${pct(other)}` : k.endsWith('_stories') ? `${num(other)} stories` : k.endsWith('_sqft') ? `${num(other)} sq ft` : `${num(other)} ft`} (${disputeRow!.section ?? ''}). Ask the zoning officer which governs`) };
   };
   const internalFlag = leafAt(file, 'envelope', 'internal_uses_district_height');
   const accApplies = leafAt(file, 'envelope', 'accessory_height_applies');
@@ -820,6 +826,9 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const accShare = leafAt(file, 'envelope', 'accessory_structure_max_share');
   const accH = inDistricts(file, 'accessory_height_cap_districts', district) ? leafAt(file, 'envelope', 'accessory_structure_max_height_ft') : null;
   const binds = leafAt(file, 'envelope', 'accessory_cap_binds_adu');
+  // Pass 23 (pipeline/rules.py _height_cap_reasons): with no height of the ADU's own, "both are shown" is not said.
+  const isNumLeaf = (l: Json | undefined | null) => isObj(l) && typeof l.value === 'number';
+  const adusOwnHeight = isNumLeaf(accStories) || isNumLeaf(accHeight) || (isObj(atHouse) && atHouse.value === true);
   const general =
     accSqft && typeof accSqft.value === 'number'
       ? {
@@ -841,7 +850,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
                       ? 'yes: the unit must meet this cap too'
                       : binds.value === false
                         ? 'no: the ADU text sets the height of a unit in an accessory building instead'
-                        : `not settled: whether this ${num(accH.value)} ft cap also binds an outbuilding with an ADU. Both it and the ADU's own outbuilding rule are shown, and the lower one is the safe reading. Ask the zoning officer`,
+                        : `not settled: whether this ${num(accH.value)} ft cap also binds an outbuilding with an ADU. ${adusOwnHeight ? "Both it and the ADU's own outbuilding rule are shown, and the lower one is the safe reading" : "The town's rules give no height for the ADU itself"}. Ask the zoning officer`,
                   binds_section: binds.section ?? null,
                 }
               : {}),
@@ -866,7 +875,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const withPart = (text: string | null, sqft: Obj | null): string | null => {
     if (!part || lifted) return text;
     // Pass 13: "at most" is said once (never "At most at most").
-    const p = `${Math.round((part.share as number) * 100)}% of the house's ${String(part.part)}`;
+    const p = `${pct(part.share as number)} of the house's ${String(part.part)}`;
     if (text) return `${text}. Also at most ${p}, which may be less`;
     if (sqft && typeof sqft.value === 'number') return `At most ${num(sqft.value)} sq ft and at most ${p}, whichever is less. The tool cannot measure that part of the house, so ${num(sqft.value)} sq ft is only the outer limit`;
     return `At most ${p}. The tool cannot measure that part of the house, so no number is given`;
@@ -889,7 +898,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const hu = leafAt(file, 'size', 'max_share_of_house_and_unit');
   const huRule = (t: 'inside' | 'added') =>
     hu && typeof hu.value === 'number' && !lifted
-      ? `At most ${Math.round((t === 'inside' ? hu.value : hu.value / (1 - hu.value)) * 100)}% of the ${t === 'inside' ? 'house' : 'existing house'} (${Math.round(hu.value * 100)}% of the house and the unit together, ${hu.section ?? ''})`
+      ? `At most ${pct(t === 'inside' ? hu.value : Math.round((hu.value / (1 - hu.value)) * 1000) / 1000)} of the ${t === 'inside' ? 'house' : 'existing house'} (${pct(hu.value)} of the house and the unit together, ${hu.section ?? ''})`
       : null;
   const byLot = leafAt(file, 'use', 'max_adus_by_lot_size');
   const exempt = leafAt(file, 'size', 'exempt_building');

@@ -2774,6 +2774,7 @@ def test_no_semicolon_in_the_not_settled_height_line():
     picked = {
         ("envelope", "accessory_structure_max_height_ft"): (_leaf(15, "1"), "x"),
         ("envelope", "accessory_cap_binds_adu"): (_leaf(None, "2"), "x"),
+        ("envelope", "max_height_stories"): (_leaf(2, "3"), "x"),  # pass 23: an ADU rule of its own, so both shown
     }
     by_type = dict.fromkeys(rules.ALL_TYPES, "by_right")
     (line,) = allentown(picked, by_type)
@@ -4271,3 +4272,97 @@ def test_habitation_bar_reaches_accessory_building_conversion():
     )
     assert conv(overlays=[])["applies"] is True
     assert "Not if the lot is in the Identified floodplain area overlay: An accessory structure" in conv()["note"]
+
+
+def test_share_not_a_whole_percent_keeps_one_decimal(monkeypatch):
+    """Pass 23: a share that is not a whole percent prints with one decimal, so North Coventry's 6.8% cap on a 10 acre
+    RC lot no longer reads as the looser 7%. A whole percent stays whole. The ten lot towns keep whole percents until
+    their next lot rebuild (PASS23_HOLD_TOWNS): Malvern R1 building coverage is 7.5%."""
+    lot = {**DET, "zoning_district": "RC", "lot_sqft": 450000}
+    out = rules.resolve("pa_chester_north_coventry", "today", lot)
+    line = next(r for r in out["reasons"] if r.startswith("Impervious cover for RC:"))
+    assert line.startswith("Impervious cover for RC: at most 6.8% of the lot")
+    out = rules.resolve("pa_chester_north_coventry", "today", {**DET, "zoning_district": "RC"})
+    line = next(r for r in out["reasons"] if r.startswith("Impervious cover for RC depends on lot size"))
+    assert line.startswith("Impervious cover for RC depends on lot size: 14% on a lot of at least 87,120 sq ft")
+    assert "6.8% on a lot of at least 435,600 sq ft" in line and "6.6% on a lot of at least 479,160" in line
+    assert rules._pct(0.2) == "20%" and rules._pct(0.066) == "6.6%" and rules._pct(0.3333) == "33.3%"
+
+    def malvern():
+        out = rules.resolve("pa_chester_malvern", "state_reform", {**DET, "zoning_district": "R1"})
+        return next(r for r in out["reasons"] if "Building coverage" in r)
+
+    assert len(rules.PASS23_HOLD_TOWNS) == 10 and "pa_chester_malvern" in rules.PASS23_HOLD_TOWNS
+    assert "Building coverage 8% (220-402)" in malvern()
+    monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", set())
+    assert "Building coverage 7.5% (220-402)" in malvern()
+
+
+def test_adus_by_lot_size_under_every_tier():
+    """Pass 23: a given lot size under every tier of use.max_adus_by_lot_size said "depends on the lot size, which was
+    not given". Worcester's table starts at five acres (217,800 sq ft)."""
+
+    def line(**kw):
+        out = rules.resolve("pa_montgomery_worcester", "state_reform", {**DET, "zoning_district": "AGR", **kw})
+        return next(r for r in out["reasons"] if r.startswith("ADUs per lot by size"))
+
+    small = line(lot_sqft=100000)
+    assert "which was not given" not in small
+    assert (
+        "This lot: none from this table, since a lot of 100,000 sq ft is under 217,800 sq ft, the smallest size it "
+        "lists" in small
+    )
+    assert "This lot: 1." in line(lot_sqft=300000)
+    assert "This lot: depends on the lot size, which was not given" in line()
+
+
+def test_coverage_only_development_keeps_the_yards():
+    """Pass 23: a planned-development gate whose supersedes_figures names coverage only (Schuylkill 370-230) opened
+    "Yards for R-1: ... whose own figures replace the district's", though the yards stay the district's."""
+
+    def line(**kw):
+        out = rules.resolve("pa_chester_schuylkill", "today", {**DET, "zoning_district": "R-1", **kw})
+        assert not [r for r in out["reasons"] if r.startswith("Yards for R-1")]
+        return out, next(r for r in out["reasons"] if r.startswith("Coverage for R-1"))
+
+    out, inside = line(in_planned_development=True)
+    assert inside.startswith(
+        "Coverage for R-1: this lot is in the development the code names, whose own coverage figures replace the "
+        "district's (370-230A to C"
+    )
+    assert inside.endswith(
+        "The district figures (building coverage 10%, impervious cover 25%) do not apply, so none is shown. The "
+        "district yards still apply. See the conditions"
+    )
+    assert out["setback_rear_ft"] == 50 and out["max_impervious"] is None
+    _, open_ = line()
+    assert open_.endswith(
+        "follows that plan's coverage figures instead of the district's (370-230A to C, 370-229C(4), 370-16B, "
+        "370-20C). The district yards still apply"
+    )
+    lp = rules.resolve("pa_montgomery_lower_pottsgrove", "today", {**DET, "zoning_district": "R-1"})
+    assert [r for r in lp["reasons"] if r.startswith("Yards for R-1: a lot in the SV")]
+
+
+def test_accessory_height_not_settled_with_no_adu_height(monkeypatch):
+    """Pass 23: accessory_cap_binds_adu null and no height of the ADU's own (East Donegal R-2, R-4) said "Both are
+    shown, and the lower one is the safe reading" beside "No height number on file". Now the lines agree. Under the
+    bill the unit takes the bill's height, so the line does not say none is shown. Held for the ten lot towns."""
+
+    def cap(sc, d="R-2"):
+        out = rules.resolve("pa_lancaster_east_donegal", sc, {**DET, "zoning_district": d})
+        return out, next(r for r in out["reasons"] if r.startswith("Accessory structures are capped at 25 ft"))
+
+    out, line = cap("today")
+    assert "safe reading" not in line and "Both are shown" not in line
+    assert line.endswith(
+        "Not settled: whether this 25 ft cap also binds an outbuilding with an ADU (52-147, 52-268). The town's rules "
+        "give no height for the ADU itself, so none is shown for the unit. Ask the zoning officer"
+    )
+    assert out["max_height_ft"] is None and rules.NO_DETACHED_HEIGHT in out["reasons"]
+    assert "safe reading" not in cap("today", "R-4")[1]
+    out, line = cap("state_reform")
+    assert out["max_height_ft"] == 25
+    assert line.endswith("The town's rules give no height for the ADU itself. Ask the zoning officer")
+    monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", {"pa_lancaster_east_donegal"})
+    assert cap("today")[1].endswith("Both are shown, and the lower one is the safe reading. Ask the zoning officer")

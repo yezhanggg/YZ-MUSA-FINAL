@@ -23,14 +23,16 @@ CLI:
 from __future__ import annotations
 
 import argparse
+import contextvars
 import datetime
 import functools
 import json
 import math
 import re
 import sys
+from collections.abc import Callable
 from pathlib import Path
-from typing import Any, TypeGuard
+from typing import Any, TypeGuard, cast
 
 RULES_DIR = Path(__file__).resolve().parents[1] / "shared" / "rules"
 SCHEMA_PATH = RULES_DIR / "schema.json"
@@ -656,6 +658,33 @@ def _rear(out: dict[str, Any], lot: dict[str, Any]) -> tuple[float | None, str]:
     return out["setback_rear_ft"], "no_alley"
 
 
+_HOLD23: contextvars.ContextVar[bool] = contextvars.ContextVar("hold23", default=False)
+
+
+def _pct(v: float) -> str:
+    """Pass 23: a share as a percent. Whole when it is a whole percent (20%), else one decimal (6.6%), so a cap such as
+    6.6% never reads as the looser 7%. Whole percents while resolving a town in PASS23_HOLD_TOWNS."""
+    p = v * 100
+    if _HOLD23.get() or abs(p - round(p)) < 1e-6:
+        return f"{v:.0%}"
+    return f"{p:.1f}%"
+
+
+def _pct_hold[F: Callable[..., Any]](fn: F) -> F:
+    """Pass 23: the pass 22 text (whole percents, both heights shown) while resolving a town in PASS23_HOLD_TOWNS (its
+    first argument is the place)."""
+
+    @functools.wraps(fn)
+    def run(place: str, *args: Any, **kwargs: Any) -> Any:
+        token = _HOLD23.set(place in PASS23_HOLD_TOWNS)
+        try:
+            return fn(place, *args, **kwargs)
+        finally:
+            _HOLD23.reset(token)
+
+    return cast(F, run)
+
+
 EXTRA_KEYS = ["rule_path_by_type", "lot_conditions_by_type", "citations_by_type"]
 NO_OUTBUILDING = "No garage or outbuilding on this lot"
 
@@ -725,6 +754,7 @@ def _with_extra(out: dict[str, Any], place: str, scenario: str, lot: dict[str, A
     return {**out, "rule_path_by_type": rule_paths, "lot_conditions_by_type": lot_cond, "citations_by_type": cites}
 
 
+@_pct_hold
 def _resolve_city(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
     reasons: list[str] = []
     limits: dict[str, Any] = {}
@@ -977,6 +1007,23 @@ PASS21_HOLD_TOWNS: set[str] = {
 # The other pass 22 changes reach keys the lot record does not keep (alternatives) or need fields and tests no lot town
 # file uses (a disputed bar in an overlay, top_of_bank_ft_over, disputed_min_lot_by_services).
 PASS22_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
+# Pass 23 holds its changes that could reach stored lot records, for the ten lot towns until their next lot rebuild: a
+# share that is not a whole percent printed with one decimal (Malvern R1 7.5%, Phoenixville 66.7%) in place of a whole
+# percent, and an accessory height cap not settled for the ADU with no height of the ADU's own said as one figure (no
+# lot town has that case). The other pass 23 changes need fields no lot town file uses (max_adus_by_lot_size,
+# supersedes_figures with coverage only).
+PASS23_HOLD_TOWNS: set[str] = {
     "pa_lehigh_allentown",
     "pa_centre_college",
     "pa_chester_west_chester",
@@ -1249,11 +1296,11 @@ def _cover_tier_line(row: dict[str, Any], lot: dict[str, Any]) -> str | None:
     area = lot.get("lot_sqft")
     if _lot_tier(leaf["value"], area) is not None:
         return None
-    tiers = ", ".join(f"{it['max_building_coverage']:.0%} on {_lot_bounds(it)}" for it in leaf["value"])
+    tiers = ", ".join(f"{_pct(it['max_building_coverage'])} on {_lot_bounds(it)}" for it in leaf["value"])
     line = f"Building cover for {lot.get('zoning_district')} depends on lot size: {tiers} ({leaf['section']})"
     base = row.get("max_building_coverage")
     shown = (
-        f", so the district's base figure of {base['value']:.0%} is shown"
+        f", so the district's base figure of {_pct(base['value'])} is shown"
         if _usable(base) and base.get("value") is not None
         else ", so no figure is shown"
     )
@@ -1277,7 +1324,7 @@ DISPUTE_WORDS: dict[str, tuple[str, str]] = {
 def _dispute_fig(field: str, v: float) -> str:
     word, unit = DISPUTE_WORDS[field]
     if unit == "share":
-        return f"{word} {v:.0%}"
+        return f"{word} {_pct(v)}"
     if unit == "sqft":
         return f"{word} {v:,.0f} sq ft"
     if unit == "stories":
@@ -1322,11 +1369,11 @@ def _impervious_tier_line(row: dict[str, Any], lot: dict[str, Any]) -> str | Non
     area = lot.get("lot_sqft")
     if _lot_tier(leaf["value"], area) is not None:
         return None
-    tiers = ", ".join(f"{it['max_impervious']:.0%} on {_lot_bounds(it)}" for it in leaf["value"])
+    tiers = ", ".join(f"{_pct(it['max_impervious'])} on {_lot_bounds(it)}" for it in leaf["value"])
     line = f"Impervious cover for {lot.get('zoning_district')} depends on lot size: {tiers} ({leaf['section']})"
     base = row.get("max_impervious_coverage")
     shown = (
-        f", so the district's base figure of {base['value']:.0%} is shown"
+        f", so the district's base figure of {_pct(base['value'])} is shown"
         if _usable(base) and base.get("value") is not None
         else ", so no figure is shown"
     )
@@ -2105,7 +2152,7 @@ def _town_conditions(
             which = "lot minimum for the lot's sewer and water" if by_services else "district minimum"
             text = (
                 f"The ADU needs a lot of at least {need:,.0f} sq ft"
-                + (f", {share:.0%} of the {which} of {leaf['value']:,.0f}" if share != 1 else f", the {which}")
+                + (f", {_pct(share)} of the {which} of {leaf['value']:,.0f}" if share != 1 else f", the {which}")
                 + (f" ({leaf['section']}, {rule['section']})" if by_services else f" ({rule['section']})")
             )
             out.append(_cond("lot_size", text, leaf, met, effect="bars"))
@@ -2267,7 +2314,7 @@ def _town_conditions(
             if item.get(k) is not None
         ]
         if item.get("max_share_of_rear_yard") is not None:
-            figs.append(f"at most {item['max_share_of_rear_yard']:.0%} of the required rear yard")
+            figs.append(f"at most {_pct(item['max_share_of_rear_yard'])} of the required rear yard")
         where_txt = item["where"] + (f" (over {item['over_sqft']:,.0f} sq ft)" if item.get("over_sqft") else "")
         if figs:  # pass 17: never the building named twice, and the figures after the where text's first sentence
             text = _acc_where_figs(where_txt, figs)
@@ -2317,7 +2364,7 @@ def _town_conditions(
         if item.get("districts") and _match_code(lot.get("zoning_district"), item["districts"]) is None:
             continue
         sh = item["share"]
-        cap = f"{sh:g} times" if sh > 1 else ("the same area as" if sh == 1 else f"{sh:.0%} of")
+        cap = f"{sh:g} times" if sh > 1 else ("the same area as" if sh == 1 else f"{_pct(sh)} of")
         out.append(
             _cond(
                 "size",
@@ -2524,7 +2571,7 @@ def _utility_figures(item: dict[str, Any], hold: bool = False) -> str:
             continue
         name = f.replace("_ft", "").replace("_sqft", "").replace("_", " ")
         if f in ("max_building_coverage", "max_impervious_coverage"):
-            parts.append(f"{name} {v:.0%}")
+            parts.append(f"{name} {_pct(v)}")
         elif hold or f == "accessory_max_stories":
             parts.append(f"{name} {v:,.0f}")
         else:
@@ -3132,7 +3179,15 @@ def _adus_by_lot(data: dict[str, Any], lot: dict[str, Any]) -> tuple[int | None,
             pick = it
     basis = "tract" if any(r[3] for r in rows) else "lot"
     line = f"ADUs per lot by size ({leaf['section']}): " + ", ".join(parts)  # pass 12: no semicolons
-    if pick is None:
+    if pick is None and all(r[2] is False for r in rows):  # pass 23: a given size under every tier
+        t0, _, _, tract0, strict0 = rows[0]
+        area = lot.get("lot_sqft")
+        size = f"a lot of {area:,.0f} sq ft" if not tract0 and area is not None else f"this {basis}"
+        line += (
+            f". This lot: none from this table, since {size} is {'not over' if strict0 else 'under'} "
+            f"{t0:,.0f} sq ft, the smallest size it lists"
+        )
+    elif pick is None:
         line += f". This lot: depends on the {basis} size, which was not given" + (
             " (the tract is the parent tract, tract_sqft)" if basis == "tract" else ""
         )
@@ -3485,6 +3540,7 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
     return out
 
 
+@_pct_hold
 def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
     reasons: list[str] = []
     limits: dict[str, Any] = {}
@@ -3527,7 +3583,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
                 else "The district's minimum lot is"
             )
             + f" {leaf['value']:,.0f} sq ft ({leaf['section']})"
-            + (f". The ADU rule accepts {share:.0%} of it, {need:,.0f} sq ft" if share != 1 else "")
+            + (f". The ADU rule accepts {_pct(share)} of it, {need:,.0f} sq ft" if share != 1 else "")
             + f". This lot is {area:,.0f} sq ft, so any new use needs relief"
         )
     dens = _density(data, lot)
@@ -3895,7 +3951,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         + doubt_line
         + listing_line
         + tail
-        + _town_type_reasons(_cap_in_scope(data, picked, lot), by_type, place in PASS12_HOLD_TOWNS)
+        + _town_type_reasons(_cap_in_scope(data, picked, lot), by_type, place in PASS12_HOLD_TOWNS, state)
         + checks,
         "types_allowed": types_allowed,
     }
@@ -4254,7 +4310,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     ):  # pass 10: impervious cover is not building coverage
         bcov = d_row.get("max_building_coverage")
         out["reasons"].append(
-            f"Impervious cover for {lot.get('zoning_district')}: at most {imp['value']:.0%} of the lot, buildings and "
+            f"Impervious cover for {lot.get('zoning_district')}: at most {_pct(imp['value'])} of the lot, buildings and "
             f"paved surfaces together ({imp['section']})"
             + (
                 ""
@@ -4488,9 +4544,13 @@ def _planned_development_yards(
             if not _sup_covers(c, fig):  # pass 17: the gate names the figures it replaces, and not this one
                 continue
             if out.get(k) is not None and "#districts." in (citations.get(k) or {}).get("source_file", ""):
-                shown.append(f"{word} {out[k]:.0%}")
+                shown.append(f"{word} {_pct(out[k])}")
                 out[k] = None
                 citations.pop(k, None)
+    # pass 23: a gate that keeps the district yards (supersedes_figures without yards) says so, and not "Yards for"
+    yards_kept = not _sup_covers(c, "yards")
+    head, figs = ("Coverage", "coverage figures ") if yards_kept else ("Yards", "figures ")
+    kept = f". The {'base' if overlay else 'district'} yards still apply" if yards_kept else ""
     if inside:
         if not shown:
             return []
@@ -4500,16 +4560,18 @@ def _planned_development_yards(
             if _sup_met(o) is True and _sup_where(o, True) != _sup_where(c, True)
         ]  # pass 16: every gate the lot is inside is named
         return [
-            f"Yards for {d}: this lot is in {_sup_where(c, True)}, whose own figures replace the district's "
+            f"{head} for {d}: this lot is in {_sup_where(c, True)}, whose own {figs}replace the district's "
             f"({c['section']}). The {'base' if overlay else 'district'} figures ({', '.join(shown)}) do not apply, "
-            "so none is shown" + "".join(f". {a}" for a in also) + ". See the conditions"
+            "so none is shown" + kept + "".join(f". {a}" for a in also) + ". See the conditions"
         ]
     if not shown and not any(principal[k][0].get("value") is not None for k in YARDS if k in principal):
         return []  # no district figure on file, so nothing for the development's figures to replace
     follows = "the overlay's figures" if overlay else "that plan's figures"
+    if yards_kept:
+        follows = follows.replace("figures", "coverage figures")
     line = (
-        f"Yards for {d}: a lot {'in' if overlay else 'inside'} {_sup_where(c, False)} follows {follows} instead of "
-        f"the district's ({c['section']})"
+        f"{head} for {d}: a lot {'in' if overlay else 'inside'} {_sup_where(c, False)} follows {follows} instead of "
+        f"the district's ({c['section']}){kept}"
     )
     said = {_sup_where(c, False)}
     for o in [] if hold16 else hits[1:]:  # pass 16: every other gate whose own figures replace the district's
@@ -4580,9 +4642,9 @@ def _house_type_cases(data: dict[str, Any], lot: dict[str, Any], out: dict[str, 
         if cov is not None:
             lines.append(
                 (
-                    f"Building coverage at most {shown:.0%}, and {cov:.0%} for {who}"
+                    f"Building coverage at most {_pct(shown)}, and {_pct(cov)} for {who}"
                     if shown is not None
-                    else f"Building coverage {cov:.0%} for {who}"
+                    else f"Building coverage {_pct(cov)} for {who}"
                 )
                 + f" ({sec}). {tail}"
             )
@@ -4742,10 +4804,10 @@ def _bill_keeps(picked: Picked, data: dict[str, Any], lot: dict[str, Any]) -> li
         out.append(f"district minimum lot {m['value']:,.0f} sq ft for creating lots ({m['section']})")
     cov = picked.get(("coverage", "max_building_coverage"))
     if cov and cov[0].get("value") is not None and cov[1] != DEFAULT:
-        out.append(f"building coverage {cov[0]['value']:.0%} ({cov[0]['section']})")
+        out.append(f"building coverage {_pct(cov[0]['value'])} ({cov[0]['section']})")
     imp = row.get("max_impervious_coverage")  # pass 10: a district's impervious cover
     if _usable(imp) and imp.get("value") is not None:
-        out.append(f"impervious cover {imp['value']:.0%} ({imp['section']})")
+        out.append(f"impervious cover {_pct(imp['value'])} ({imp['section']})")
     front = picked.get(("envelope", "setback_front_ft"))
     if front and front[0].get("value") is not None and front[1] != DEFAULT:
         out.append(f"front yard {front[0]['value']:g} ft ({front[0]['section']})")
@@ -4772,11 +4834,11 @@ def _acc_cap(picked: Picked) -> dict[str, Any]:
     }
 
 
-def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = False) -> list[str]:
+def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = False, state: bool = False) -> list[str]:
     """The accessory building cap, said as a cap and only when the file stores one. Never as the reason."""
     cap = picked.get(("envelope", "accessory_structure_max_sqft"))
     if not (cap and cap[0].get("value") is not None):
-        return _height_cap_reasons(picked, by_type, hold)
+        return _height_cap_reasons(picked, by_type, hold, state)
     acc = _acc_cap(picked)
     height = acc["height"] if acc["height"] is not None else _value(picked, "envelope", "max_height_ft")
     secs = [cap[0]["section"]]
@@ -4786,7 +4848,7 @@ def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = Fal
             secs.append(hit[0]["section"])
     line = (
         f"Accessory buildings are capped at {cap[0]['value']:,.0f} sq ft"
-        + (f" or {acc['share']:.0%} of the house, whichever is less," if acc["share"] is not None else "")
+        + (f" or {_pct(acc['share'])} of the house, whichever is less," if acc["share"] is not None else "")
         + (f" and {height:,.0f} ft" if height is not None else "")
         + f" ({', '.join(secs)})"
     )
@@ -4801,10 +4863,11 @@ def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = Fal
     return [line]
 
 
-def _height_cap_reasons(picked: Picked, by_type: dict[str, str], hold: bool = False) -> list[str]:
+def _height_cap_reasons(picked: Picked, by_type: dict[str, str], hold: bool = False, state: bool = False) -> list[str]:
     """Pass 8: an accessory structure height cap stored without a floor area cap (Allentown 660-41B(4)), said
     where a detached unit is allowed. When it is not settled whether the cap binds the ADU, the ADU's own
-    outbuilding rule is said beside it."""
+    outbuilding rule is said beside it. Pass 23: with no rule of the ADU's own, the line says so and not "both are shown"
+    (under the bill the unit's height is the bill's, said in its own line)."""
     hit = picked.get(("envelope", "accessory_structure_max_height_ft"))
     if not (hit and hit[0].get("value") is not None) or not any(by_type[t] in OK_PATHS for t in DETACHED_TYPES):
         return []
@@ -4828,6 +4891,13 @@ def _height_cap_reasons(picked: Picked, by_type: dict[str, str], hold: bool = Fa
     if at_house and at_house[0].get("value") is True:
         own.append(f"no taller than the house ({at_house[0]['section']})")
     rule = f"The outbuilding rule for the ADU: {', '.join(own)}. " if own else ""
+    if not own and not _HOLD23.get():  # pass 23: one figure only, so no "both are shown" (East Donegal R-2)
+        return [
+            line + f". Not settled: whether this {hit[0]['value']:g} ft cap also binds an outbuilding with an ADU "
+            f"({leaf['section']}). The town's rules give no height for the ADU itself"
+            + ("" if state else ", so none is shown for the unit")
+            + ". Ask the zoning officer"
+        ]
     return [
         line + f". Not settled: whether this {hit[0]['value']:g} ft cap also binds an outbuilding with an ADU "
         f"({leaf['section']}). {rule}"
@@ -5081,7 +5151,7 @@ def _town_sizes(
             # pass 9: a share of the house and the unit together. Inside the house it is that share of the house;
             # an added unit may be share / (1 - share) of the existing house
             share = house_and_unit if t == "internal" else round(house_and_unit / (1 - house_and_unit), 3)
-            hu_note = f" ({house_and_unit:.0%} of the house and the unit together)"
+            hu_note = f" ({_pct(house_and_unit)} of the house and the unit together)"
         text: str | None = None
         if state and t not in today_forms:  # barred today, opened by the bill
             if (sqft is None and share is None) or bill is None:
@@ -5105,14 +5175,14 @@ def _town_sizes(
             strict = strict and share >= share_floor
             share = max(share, share_floor)
         town = sqft
-        shr = f"{'less than ' if strict else ''}{share:.0%} of the house" if share is not None else ""
+        shr = f"{'less than ' if strict else ''}{_pct(share)} of the house" if share is not None else ""
         if sqft is not None and share is not None:  # whichever is less, or greater
             n = (max if greater else min)(sqft, _share_sqft(share, house, strict)) if house else None
             text = f"At most {sqft:,.0f} sq ft or {shr}, whichever is {'greater' if greater else 'less'}"
             town = n if n is not None else (None if greater else sqft)
         elif share is not None:  # share only (pass 7)
             n = _share_sqft(share, house, strict) if house else None
-            text = f"Less than {share:.0%} of the house" if strict else f"At most {share:.0%} of the house"
+            text = f"Less than {_pct(share)} of the house" if strict else f"At most {_pct(share)} of the house"
             town = n
         if text is not None:
             text += hu_note
@@ -5123,7 +5193,7 @@ def _town_sizes(
                     f": {n:,.0f} sq ft for this house" if n is not None else ". Give the house size to get the number"
                 )
         if part:  # pass 8: a share of a named part of the house, which the tool cannot measure
-            p_text = f"{part['share']:.0%} of the house's {part['part']}"  # pass 13: "at most" is said once
+            p_text = f"{_pct(part['share'])} of the house's {part['part']}"  # pass 13: "at most" is said once
             if text is not None:
                 text += f". Also at most {p_text}, which may be less"
             elif town is not None:
