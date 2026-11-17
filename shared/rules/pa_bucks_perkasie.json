@@ -99,7 +99,13 @@
           "section": "186-18B(6), 186-20A(1)(c), B(1)(c), C(1)(c), D(1)(c), E(1)(c), F(1)(c), G(1)(c), H(1)(b), I(1)(c), 186-21, 186-61C",
           "url": "https://ecode360.com/print/PE0952?guid=10782848",
           "confidence": "secondary",
-          "note": "It covers a unit made inside an existing house. In the floodplain, work on a house begun on or after March 16, 2015 is new construction, which 94-22 prohibits without a variance (94-37), and work on an older house worth 50% or more of its market value is a substantial improvement (94-33). Whether each unit needs the district's lot area per dwelling unit is not settled. 186-21 and 186-24 point to it, and 186-20J(3)(b) sets a figure per unit only for conversions into three or more units in the Town Center Overlay, which points away from it. Read per unit, two units in R-2 would need 14,000 sq ft"
+          "note": "It covers a unit made inside an existing house. In the floodplain, work on a house begun on or after March 16, 2015 is new construction, which 94-22 prohibits without a variance (94-37), and work on an older house worth 50% or more of its market value is a substantial improvement (94-33). Whether each unit needs the district's lot area per dwelling unit is not settled. 186-21 and 186-24 point to it, and 186-20J(3)(b) sets a figure per unit only for conversions into three or more units in the Town Center Overlay, which points away from it. Read per unit, two units in R-2 would need 14,000 sq ft",
+          "builds": [
+            "internal"
+          ],
+          "covers_forms": [
+            "internal"
+          ]
         },
         {
           "name": "Residential conversion of an accessory building",
@@ -121,6 +127,9 @@
           "confidence": "secondary",
           "note": "It covers a unit made in an existing accessory building such as a garage. In the floodplain an accessory structure may not be used for human habitation (94-22E(1)). Whether each unit needs the district's lot area per dwelling unit is not settled. 186-21 and 186-24 point to it, and 186-20J(3)(b) sets a figure per unit only for conversions into three or more units in the Town Center Overlay, which points away from it. Read per unit, two units in R-2 would need 14,000 sq ft",
           "builds": [
+            "garage_conversion"
+          ],
+          "covers_forms": [
             "garage_conversion"
           ],
           "requires": [

@@ -2059,6 +2059,43 @@
                   "note": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "min_lot_by_utility": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "description": "Pass 22: the other reading's lot minimum by public sewer and water, when it differs by the services (Maidencreek R-3 two-family: 20,000 sq ft with both, 130,680 sq ft without). The item matching the lot's services wins over min_lot_sqft, which stays the figure with public sewer and water. With the services not given every figure is said.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "when",
+                        "min_lot_sqft"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "when": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "public_sewer": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "public_water": {
+                          "type": [
+                            "boolean",
+                            "null"
+                          ]
+                        },
+                        "min_lot_sqft": {
+                          "type": "number",
+                          "minimum": 0
+                        }
+                      }
+                    }
                   }
                 },
                 "description": "Pass 20: in these districts another reading of the code puts the alternative's lot minimum at min_lot_sqft, higher than the listing's own figure (Quakertown HR duplex: 5,000 sq ft by 308.6, or 10,890 sq ft by the 308.8 density cap). Both figures are said. A lot that meets only the lower one reads 'applies only if', never 'applies'."
@@ -2276,6 +2313,22 @@
                 },
                 "description": "Pass 15: with adu_listing true, the ADU forms this listing covers (for example internal for a unit inside an existing house). Where the listing reaches the lot and its path is less demanding than the ADU rule's path for a form, the form takes the listing's path, and the ADU rule's conditions on who may live in the unit (family, occupancy, owner) do not reach that form. Set it only where the code gives the listing its own path and standards."
               },
+              "covers_forms": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "enum": [
+                    "detached_new",
+                    "garage_conversion",
+                    "over_garage",
+                    "internal",
+                    "attached"
+                  ]
+                },
+                "description": "Pass 22: without adu_listing, the ADU forms whose work this use covers, though the code does not call it an ADU (Perkasie 186-18B(6): residential conversion of a house covers a unit inside it). The ADU path stays as it is. Where the use reaches the lot and its path is less demanding, the answer names that path for those forms beside the ADU path."
+              },
               "builds": {
                 "type": [
                   "array",
@@ -2290,7 +2343,7 @@
                     "attached"
                   ]
                 },
-                "description": "Pass 18: the ADU forms whose building work this path takes (detached_new for a second principal building or a manufactured home placed on the lot). A bar on the land (a gate with overlays or outside_zoning_chapter) that bars every one of these forms reaches the alternative too. An ADU under another listing uses its forms when this is not set."
+                "description": "Pass 18: the ADU forms whose building work this path takes (detached_new for a second principal building or a manufactured home placed on the lot). Pass 22: work on an existing building counts too (internal for a conversion inside the house, garage_conversion for a conversion of an accessory building), so a habitation or floodplain bar on that form reaches it. A bar on the land (a gate with overlays or outside_zoning_chapter) that bars every one of these forms reaches the alternative too. An ADU under another listing uses its forms when this is not set."
               },
               "no_standards": {
                 "type": "boolean",

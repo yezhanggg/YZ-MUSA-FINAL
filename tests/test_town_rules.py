@@ -3901,15 +3901,15 @@ def test_top_of_bank_distance():
 
     assert gate()["met"] is None
     assert gate()["condition"].endswith(
-        "Depends on how far the new building stands from the top of bank of the watercourse (top_of_bank_ft), "
-        "which was not given"
+        "Depends on how far the building where the unit goes stands from the top of bank of the watercourse "
+        "(top_of_bank_ft), which was not given"
     )
     near, far = gate(top_of_bank_ft=40), gate(top_of_bank_ft=80)
     assert near["met"] is False and near["condition"].endswith(
-        "At 40 ft from the top of bank the new building is inside that line"
+        "At 40 ft from the top of bank the building where the unit goes is inside that line"
     )
     assert far["met"] is True and far["condition"].endswith(
-        "At 80 ft from the top of bank the new building is clear of that line"
+        "At 80 ft from the top of bank the building where the unit goes is clear of that line"
     )
 
 
@@ -4064,7 +4064,7 @@ def test_quote_stop_not_doubled(tmp_path, monkeypatch):
     out = rules.resolve(name, "today", lot)
     text = json.dumps(out)
     assert "top-of-bank.'. At 40 ft" not in text
-    assert "top-of-bank.' At 40 ft from the top of bank the new building is inside that line" in text
+    assert "top-of-bank.' At 40 ft from the top of bank the building where the unit goes is inside" in text
 
 
 def test_rolling_house_age():
@@ -4130,3 +4130,144 @@ def test_alley_only_access():
         "The lot has public street frontage, not only an alley (27-828). Depends on whether the lot's only access is"
         in conv["note"]
     )
+
+
+def test_alt_land_bar_with_test_overlays_not_given():
+    """Pass 22: a bar gate with a test and overlays reached an alternative's builds on a lot whose overlays were not
+    given, and raised KeyError 'overlay_names'. Perkasie's house conversion builds an internal unit, and 94-37 bars
+    work on a house begun on or after March 16, 2015 in the floodplain."""
+    base = {**DET, "zoning_district": "R-2"}
+
+    def conv(lot):
+        out = rules.resolve("pa_bucks_perkasie", "today", lot)
+        return next(a for a in out["alternatives"] if a["name"] == "Residential conversion of a house")
+
+    a = conv(base)
+    assert a["applies"] is None
+    assert "Not if the lot is in the Identified floodplain area overlay and fails this: New construction" in a["note"]
+    a = conv({**base, "house_year_built": 2020})
+    assert "Not if the lot is in the Identified floodplain area overlay: New construction" in a["note"]
+    a = conv({**base, "house_year_built": 1990})
+    assert a["applies"] is True and "94-37 'New construction')" not in a["note"]
+    a = conv({**base, "house_year_built": 2020, "overlays": ["Identified floodplain area"]})
+    assert a["applies"] is False and "Not on this lot: New construction includes" in a["note"]
+
+
+def test_disputed_overlay_bar_sections_before_overlay_sentence():
+    """Pass 22: a disputed bar in an overlay, the lot's overlays not given, put its sections and dispute after "The
+    lot's overlays were not given". They now follow the gate's own text (Perkasie 186-57A, 94-22)."""
+    out = rules.resolve("pa_bucks_perkasie", "today", {**DET, "zoning_district": "R-2"})
+    c = next(c for c in out["conditions"] if c.get("disputed_by") and c["section"] == "186-57A, 94-22")
+    assert "were not given (186-57A" not in c["condition"]
+    assert "floodplain land is barred (186-57A, 94-22). But 94-32, 94-33, 94-37: For a house" in c["condition"]
+    assert c["condition"].endswith(
+        "The code does not settle which reading holds. Applies only if the lot is in the Identified floodplain area "
+        "overlay. The lot's overlays were not given. Ask the zoning officer"
+    )
+
+
+def test_top_of_bank_names_the_work_it_reaches():
+    """Pass 22: the top of bank line said "the new building" where the gate reaches work inside the house. It now
+    names the building by the forms the gate reaches (Perkasie 94-17B(1)(b) reaches every form, Economy only a new
+    building or an addition)."""
+    lot = {**DET, "zoning_district": "R-2", "overlays": ["Identified floodplain area"]}
+    out = rules.resolve("pa_bucks_perkasie", "today", {**lot, "top_of_bank_ft": 40})
+    c = next(c for c in out["conditions"] if c.get("test") == "top_of_bank_ft_over")
+    assert c["condition"].endswith("At 40 ft from the top of bank the building where the unit goes is inside that line")
+    assert "the new building is" not in c["condition"]
+    assert rules._bank_subject(["detached_new"]) == "the new building"
+    assert rules._bank_subject(["detached_new", "attached"]) == "the new building or addition"
+    assert rules._bank_subject(None) == "the building where the unit goes"
+
+
+def test_services_rows_same_words_said_once(tmp_path, monkeypatch):
+    """Pass 22: two services rows with the same words and figures, differing only in the closing clause, were said
+    twice. Said once now, with one closing clause for every service they name (Maidencreek R-2 220-26A rows under one
+    heading for any on-site supply)."""
+    body = {k: v for k, v in raw("pa_berks_maidencreek").items() if k != "provenance"}
+    for row in body["districts"]["R-2"]["utility_rows"]["value"]:
+        row["when"] = "Water supply or sewage disposal on site"
+    name = _fixture(tmp_path, monkeypatch, "pa_test_services_once", body)
+
+    def rows(**kw):
+        out = rules.resolve(name, "today", {**DET, "zoning_district": "R-2", **kw})
+        return [c for c in out["conditions"] if c["condition"].startswith("Water supply or sewage disposal on site")]
+
+    open_rows = rows()
+    assert len(open_rows) == 1
+    assert open_rows[0]["condition"].endswith(
+        "max impervious coverage 25%. The district figures shown are for a lot with public sewer and water. "
+        "Depends on whether the lot has public sewer and water (public_sewer, public_water), which was not given"
+    )
+    assert open_rows[0]["fact"] == "whether the lot has public sewer and water"
+    no_sewer = rows(public_sewer=False)
+    assert len(no_sewer) == 1 and no_sewer[0]["met"] is True and "Depends on" not in no_sewer[0]["condition"]
+    sewer = rows(public_sewer=True)
+    assert len(sewer) == 1 and sewer[0]["condition"].endswith(
+        "Depends on whether the lot has public water (public_water), which was not given"
+    )
+
+
+def test_disputed_min_lot_by_services():
+    """Pass 22: disputed_min_lot.min_lot_by_utility. The other reading's lot minimum follows the services. Maidencreek
+    R-3 two-family on-site read '65,340 sq ft, or 20,000 sq ft', the public sewer and water figure. Doubled on-site it
+    is 130,680 sq ft."""
+
+    def two(**kw):
+        out = rules.resolve("pa_berks_maidencreek", "today", {**DET, "zoning_district": "R-3", **kw})
+        return next(a for a in out["alternatives"] if a["name"].startswith("Two-family dwelling (R-3"))
+
+    a = two(public_sewer=False, lot_sqft=70000)
+    assert "In R-3 the lot minimum is not settled: 65,340 sq ft, or 130,680 sq ft by 220-32A" in a["note"]
+    assert "or 20,000 sq ft by" not in a["note"] and a["applies"] is None
+    assert "This lot of 70,000 sq ft meets only the lower figure" in a["note"]
+    assert two(public_sewer=False, lot_sqft=140000)["applies"] is True
+    a = two(public_sewer=True, public_water=True, lot_sqft=15000)
+    assert "10,000 sq ft, or 20,000 sq ft by 220-32A" in a["note"]
+    a = two(lot_sqft=70000)
+    assert (
+        "In R-3 the lot minimum is not settled: another reading gives with public sewer and public water: 20,000 sq "
+        "ft, without public sewer: 130,680 sq ft, with public sewer and on-site water: 130,680 sq ft (220-32A"
+        in a["note"]
+    )
+    assert "This lot of 70,000 sq ft is short of some figures, so the services and the reading decide" in a["note"]
+    assert a["applies"] is None
+
+
+def test_covers_forms_names_the_other_path():
+    """Pass 22: alternatives[].covers_forms. A use that is not an ADU listing but covers some forms (Perkasie
+    186-18B(6) residential conversion, by special exception) is named for those forms. The ADU path stays a use
+    variance, since the unit is not an ADU there."""
+    out = rules.resolve("pa_bucks_perkasie", "today", {**DET, "zoning_district": "R-2"})
+    assert out["approval_by_type"]["internal"] == "variance"
+    lines = [r for r in out["reasons"] if "not as an ADU" in r]
+    assert len(lines) == 2
+    assert lines[0].startswith(
+        "Internal: not as an ADU, but special exception as Residential conversion of a house (186-18B(6)"
+    )
+    assert (
+        "That use is not an ADU listing, and it covers this work. It applies only if the lot meets its terms"
+        in (lines[0])
+    )
+    assert lines[1].startswith("Garage conversion: not as an ADU, but special exception as Residential conversion of")
+    i3 = rules.resolve("pa_bucks_perkasie", "today", {**DET, "zoning_district": "I-3"})
+    assert not [r for r in i3["reasons"] if "not as an ADU" in r]
+
+
+def test_habitation_bar_reaches_accessory_building_conversion():
+    """Pass 22: a habitation bar in the floodplain reaches an alternative that converts an existing accessory building
+    (builds garage_conversion, Perkasie 94-22E(1)). The bar's own text cites its section, so it is not said twice."""
+    lot = {**DET, "zoning_district": "R-2", "has_accessory_building": True}
+
+    def conv(**kw):
+        out = rules.resolve("pa_bucks_perkasie", "today", {**lot, **kw})
+        return next(a for a in out["alternatives"] if a["name"] == "Residential conversion of an accessory building")
+
+    a = conv(overlays=["Identified floodplain area"])
+    assert a["applies"] is False
+    assert a["note"].endswith(
+        "Not on this lot: An accessory structure in the floodplain 'shall not be designed or used for human "
+        "habitation' (94-22E(1)). A unit in a garage or other accessory building there would need a floodplain variance"
+    )
+    assert conv(overlays=[])["applies"] is True
+    assert "Not if the lot is in the Identified floodplain area overlay: An accessory structure" in conv()["note"]

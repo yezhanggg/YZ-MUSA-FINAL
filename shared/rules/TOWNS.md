@@ -396,6 +396,18 @@ How the resolver reads a file now (pass 7):
 - `PASS21_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the quote stop fix. Allentown notes hold such quotes.
 - Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate, which already reads "only if the reading that lets this lot in holds").
 
+## More fields (pass 22)
+
+- `approval.alternatives[].covers_forms` (list of ADU forms), without `adu_listing`: a use the code does not call an ADU but whose work covers these forms. The ADU path stays as it is. Where the use reaches the lot and its path is less demanding, the answer names that path for those forms ("Internal: not as an ADU, but special exception as ..."). Perkasie 186-18B(6) (house conversion covers `internal`, accessory building conversion covers `garage_conversion`). Moved: Perkasie.
+- `approval.alternatives[].disputed_min_lot.min_lot_by_utility` (list of `{when, public_sewer, public_water, min_lot_sqft}`): the other reading's lot minimum by public sewer and water. The row that fits the lot's services wins over `min_lot_sqft`, which stays the figure with both. With the services not given every figure is said, and the largest is the test. Maidencreek two-family R-2a (17,500, 30,000, 130,680 sq ft) and R-3, R-4, CR (20,000 and 130,680 sq ft). Moved: Maidencreek.
+- `approval.alternatives[].builds` now also takes work on an existing building: `internal` for a conversion inside the house, `garage_conversion` for a conversion of an accessory building. A habitation or floodplain bar on that form reaches the alternative. Perkasie house conversion now has `builds: ["internal"]`.
+- A bar gate with both a test and overlays, on a lot whose overlays were not given, no longer stops the answer when it reaches an alternative. The alternative reads "Not if the lot is in the X overlay and fails this". Nothing to change in the file.
+- A disputed bar in an overlay, the lot's overlays not given, says its sections and the dispute before "Applies only if the lot is in the X overlay. The lot's overlays were not given". Nothing to change in the file.
+- The top of bank line names what stands there by the forms the gate reaches: "the new building" (only `detached_new`), "the new building or addition" (with `attached`), "the building where the unit goes" (any other form, or no `applies_to`). Nothing to change in the file.
+- Services rows with the same words, figures and section are said once, with one closing clause for every service they name. Nothing to change in the file.
+- `PASS22_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the services row fix. Upper Dublin has services rows.
+- Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

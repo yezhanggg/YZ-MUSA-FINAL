@@ -1253,3 +1253,27 @@ describe('get_rule_text pass 21', () => {
     expect(out).toContain('So a house on an alley lot may not be converted to more units. Applies only if the lot has public street frontage, not only an alley.');
   });
 });
+
+describe('get_rule_text pass 22', () => {
+  it('names the building near the top of bank by the forms the gate reaches', async () => {
+    const { dependsFact } = await import('./ruleText');
+    expect(dependsFact('top_of_bank_ft_over', ['detached_new'])).toBe('how far the new building stands from the top of bank of the watercourse');
+    expect(dependsFact('top_of_bank_ft_over', ['detached_new', 'attached'])).toBe('how far the new building or addition stands from the top of bank of the watercourse');
+    expect(dependsFact('top_of_bank_ft_over', null)).toBe('how far the building where the unit goes stands from the top of bank of the watercourse');
+  });
+
+  it('names a use that covers a form but is not an ADU listing (Perkasie residential conversion)', async () => {
+    const r2 = (await getRuleText({ place: 'pa_bucks_perkasie', topic: 'approval', district: 'R-2' })) as Any6;
+    expect(r2.approval.by_form_today.internal).toBe('variance');
+    const other = r2.approval.other_path_by_form as { forms: string[]; path: string; name: string }[];
+    expect(other.map((o) => [o.forms, o.path])).toEqual([[['internal'], 'special_exception'], [['garage_conversion'], 'special_exception']]);
+    expect(JSON.stringify(r2)).toContain('Internal: not as an ADU, but special exception as Residential conversion of a house (186-18B(6)');
+    const i3 = (await getRuleText({ place: 'pa_bucks_perkasie', topic: 'approval', district: 'I-3' })) as Any6;
+    expect(i3.approval.other_path_by_form).toBeUndefined();
+  });
+
+  it('says the other reading of a lot minimum by services (Maidencreek R-3 two-family)', async () => {
+    const out = JSON.stringify(await town6('pa_berks_maidencreek', 'approval', 'R-3'));
+    expect(out).toContain('In R-3, R-4, CR the lot minimum is not settled: another reading gives with public sewer and public water: 20,000 sq ft, without public sewer: 130,680 sq ft, with public sewer and on-site water: 130,680 sq ft (220-32A');
+  });
+});

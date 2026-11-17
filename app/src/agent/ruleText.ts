@@ -291,6 +291,7 @@ const DEPENDS_FACT: Record<string, string> = {
   designated_on_plan: 'whether the lot is designated on the plan the code names',
   in_planned_development: 'whether the lot is in a planned or cluster development the code names',
   // Pass 19 (pipeline/rules.py LOT_TESTS): feet from the new building to the top of bank (Canonsburg 99-23D).
+  // Pass 22: dependsFact names the building by the forms the gate reaches.
   top_of_bank_ft_over: 'how far the new building stands from the top of bank of the watercourse',
 };
 /** Pass 18 (pipeline/rules.py _alt_own_figures): an alternative's own accessory height and parking, in words. */
@@ -300,13 +301,28 @@ const altOwnFigures = (a: Obj): string => {
   if (typeof a.parking_spaces === 'number') figs.push(`${num(a.parking_spaces)} parking space${a.parking_spaces === 1 ? '' : 's'} for the unit beyond the house's`);
   return figs.length ? `Its own figures: ${figs.join(' and ')}` : '';
 };
+/** Pass 22 (pipeline/rules.py _dm_figure): the other reading's lot minimum, by services when it has rows for them. */
+const dmFigs = (dm: Obj): string => {
+  const rows = Array.isArray(dm.min_lot_by_utility) ? dm.min_lot_by_utility.filter(isObj) : [];
+  return rows.length ? rows.map((r) => `${r.when}: ${num(r.min_lot_sqft)} sq ft`).join(', ') : `${num(dm.min_lot_sqft)} sq ft`;
+};
 /** Pass 13: a disputed path's note after "The other reading: ", its first letter lower case unless an acronym. */
 const otherReading = (note: string): string => {
   const t = note.replace(/\.$/, '');
   return /^.[a-z]/.test(t) ? t.charAt(0).toLowerCase() + t.slice(1) : t;
 };
 /** The fact a gate test reads ("the lot width"), or null for no test. */
-export const dependsFact = (test: unknown): string | null => (typeof test === 'string' ? DEPENDS_FACT[test] ?? null : null);
+/** Pass 22 (pipeline/rules.py _bank_subject): what stands near the top of bank, by the forms the gate reaches. */
+export const bankSubject = (appliesTo: unknown): string => {
+  const forms = Array.isArray(appliesTo) && appliesTo.length ? (appliesTo as string[]) : ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'];
+  if (forms.every((t) => t === 'detached_new')) return 'the new building';
+  if (forms.every((t) => t === 'detached_new' || t === 'attached')) return 'the new building or addition';
+  return 'the building where the unit goes';
+};
+export const dependsFact = (test: unknown, appliesTo?: unknown): string | null => {
+  const fact = typeof test === 'string' ? DEPENDS_FACT[test] ?? null : null;
+  return fact && test === 'top_of_bank_ft_over' ? fact.replace('the new building', bankSubject(appliesTo)) : fact;
+};
 /**
  * " Allowed only if ..." for a gate that bars, " Applies only if ..." for a gate that is a condition. No lot facts
  * here, so a bar always names the fact it depends on.
@@ -318,7 +334,7 @@ const testText = (g: Obj): string => {
   const age = g.test === 'house_built_more_than_years_ago' || g.test === 'house_built_within_years' ? ` ${num(g.value)} years ago` : '';
   const unit = age || width ? age || width : g.test === 'lot_sqft_at_least' || g.test === 'lot_sqft_below' || g.test === 'house_sqft_at_least' || g.test === 'house_sqft_over' ? ` ${num(g.value)} sq ft` : g.value_date ? ` ${String(g.value_date)}` : '';
   const bars = g.effect === 'bars';
-  const fact = dependsFact(g.test);
+  const fact = dependsFact(g.test, g.applies_to);
   return ` ${bars ? 'Allowed' : 'Applies'} ${t}${unit}.${bars && fact ? ` It depends on ${fact}, which is not known here.` : ''}`;
 };
 /** A condition followed by an "only if" sentence ends its own sentence first (eval ladder-01, Nov 15: York read
@@ -949,7 +965,7 @@ function approvalOf(file: Obj, district: string | null) {
       ...((out.by_form as Obj[] | undefined) ?? []),
       ...gatePaths.map((g) => {
         const where = [Array.isArray(g.overlays) && g.overlays.length ? `the lot is in the ${overlayWords(g.overlays as string[])}` : '', Array.isArray(g.districts) && g.districts.length ? `the lot is in ${orList(g.districts as string[])}` : ''].filter(Boolean);
-        const fact = dependsFact(g.test);
+        const fact = dependsFact(g.test, g.applies_to);
         return { forms: Array.isArray(g.applies_to) ? g.applies_to : [...ADU_FORMS], path: g.path, section: g.section ?? null, url: g.url ?? gl!.url ?? null, note: ownerText(`Only if ${[where.join(' or '), fact ? `it depends on ${fact}` : ''].filter(Boolean).join(', and ') || 'the gate reaches the lot'}`), confidence: g.confidence ?? gl!.confidence ?? null };
       }),
     ];
@@ -1180,6 +1196,21 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     for (const c of conditions)
       if (LISTING_FREE.has(String(c.kind))) c.applies_to = ((Array.isArray(c.applies_to) ? c.applies_to : [...ADU_FORMS]) as string[]).filter((t) => !forms.includes(t as (typeof ADU_FORMS)[number]));
   }
+  // Pass 22 (pipeline/rules.py _covering_lines): a use that is not an ADU listing but covers the work of some forms
+  // (alternatives[].covers_forms) names its own path for them. The ADU path stays as it is.
+  const otherPaths: Obj[] = [];
+  for (const a of Array.isArray(listingAlts?.value) ? listingAlts!.value.filter(isObj) : []) {
+    if (a.adu_listing === true || !Array.isArray(a.covers_forms) || typeof a.path !== 'string' || !OK_PATHS.has(a.path)) continue;
+    if (district && Array.isArray(a.districts) && !listedIn(a.districts, district)) continue;
+    const forms = ADU_FORMS.filter((t) => (a.covers_forms as string[]).includes(t) && PATH_ORDER.indexOf(a.path as string) < PATH_ORDER.indexOf(byType[t]));
+    if (!forms.length) continue;
+    const names = forms.map(label).join(', ');
+    const where = !district && Array.isArray(a.districts) && a.districts.length ? ` in ${orList(a.districts as string[])}` : '';
+    const conf = a.confidence ?? listingAlts!.confidence ?? null;
+    const text = `${names.charAt(0).toUpperCase()}${names.slice(1)}: not as an ADU, but ${label(a.path)} as ${String(a.name)}${where} (${a.section ?? ''}). That use is not an ADU listing, and it covers this work. It applies only if the lot meets its terms${conf === 'verified' ? '' : '. The reading is not settled. Ask the zoning officer'}. See the other paths`;
+    otherPaths.push({ forms, path: a.path, name: a.name, section: a.section ?? null, note: text });
+    parts.push(text);
+  }
   const nn = leafAt(file, 'form', 'types_not_addressed');
   if (notNamed.length) parts.push(`Not addressed for ${notNamed.map(label).join(', ')}: the code does not name it, so ask the zoning officer (${nn?.section ?? ''})`);
   if (inConflict.length) parts.push(`The code's text conflicts on ${inConflict.map(label).join(', ')} (${conflictLeaf?.section ?? ''}). Not settled, so neither a yes nor a firm no. Ask the zoning officer${conflictLeaf?.note ? `. ${ownerText(conflictLeaf.note)}` : ''}`);
@@ -1195,7 +1226,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       ...(dpLess ? { status_in_district: { value: status ?? null, district, town_status: townStatus ?? null, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
       ...(status === 'allowed_by_right' && typeof dpath === 'string' && dpath in BOARDS ? { status_in_district: { value: dpath, district, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
     },
-    approval: { ...approval, by_form_today: byType, ...(listingForms.length ? { under_another_listing: listingForms } : {}), ...(inConflict.length ? { forms_in_conflict: inConflict, forms_in_conflict_section: conflictLeaf?.section ?? null } : {}) },
+    approval: { ...approval, by_form_today: byType, ...(listingForms.length ? { under_another_listing: listingForms } : {}), ...(otherPaths.length ? { other_path_by_form: otherPaths } : {}), ...(inConflict.length ? { forms_in_conflict: inConflict, forms_in_conflict_section: conflictLeaf?.section ?? null } : {}) },
     conditions: inScope === false ? conditions.filter((c) => !['family', 'occupancy', 'owner_occupancy', 'adu_status'].includes(String(c.kind))) : conditions,
     checks: (prov.checks as Json) ?? [],
     forms: formsOf(file, district, noAdu || inScope === false),
@@ -1260,7 +1291,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
           // Pass 20 (pipeline/rules.py _alt_min_dispute): another reading puts the lot minimum higher in some districts.
           isObj(a.disputed_min_lot) && Array.isArray(a.disputed_min_lot.districts)
-            ? `In ${(a.disputed_min_lot.districts as string[]).join(', ')} the lot minimum is not settled: another reading gives ${num(a.disputed_min_lot.min_lot_sqft)} sq ft (${a.disputed_min_lot.section ?? ''}). ${String(a.disputed_min_lot.note ?? '').replace(/\.$/, '')}`
+            ? `In ${(a.disputed_min_lot.districts as string[]).join(', ')} the lot minimum is not settled: another reading gives ${dmFigs(a.disputed_min_lot)} (${a.disputed_min_lot.section ?? ''}). ${String(a.disputed_min_lot.note ?? '').replace(/\.$/, '')}`
             : null,
           Array.isArray(a.overlays) && a.overlays.length ? `Applies only if the lot is in the ${overlayWords(a.overlays as string[])}` : null,
           // Pass 18 (pipeline/rules.py _alt_land_bars): an overlay bar reaches the path when it bars every form the path builds.

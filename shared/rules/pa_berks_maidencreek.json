@@ -218,7 +218,33 @@
             ],
             "min_lot_sqft": 17500,
             "section": "220-29A, 220-11 'Unit of use'",
-            "note": "Each unit of a two-family dwelling is independent of the other, so it may be a unit of use, and the lot figure may be needed for each. With public sewer and water that is 17,500 sq ft. Without them the same reading doubles the figure for the lot's services"
+            "note": "Each unit of a two-family dwelling is independent of the other, so it may be a unit of use, and the lot figure may be needed for each. With public sewer and water that is 17,500 sq ft. Without them the same reading doubles the figure for the lot's services",
+            "min_lot_by_utility": [
+              {
+                "when": "with public sewer and public water",
+                "public_sewer": true,
+                "public_water": true,
+                "min_lot_sqft": 17500
+              },
+              {
+                "when": "with public sewer and on-site water",
+                "public_sewer": true,
+                "public_water": false,
+                "min_lot_sqft": 30000
+              },
+              {
+                "when": "with public water and on-site sewage",
+                "public_sewer": false,
+                "public_water": true,
+                "min_lot_sqft": 30000
+              },
+              {
+                "when": "with on-site water and on-site sewage",
+                "public_sewer": false,
+                "public_water": false,
+                "min_lot_sqft": 130680
+              }
+            ]
           }
         },
         {
@@ -265,7 +291,27 @@
             ],
             "min_lot_sqft": 20000,
             "section": "220-32A, 220-35A, 220-38A, 220-11 'Unit of use'",
-            "note": "The tables give lot area 'per unit of use', and each unit of a two-family dwelling is independent of the other (220-11 'Unit of use'). Read that way the lot needs 20,000 sq ft with public sewer and water. Without them the same reading needs 130,680 sq ft"
+            "note": "The tables give lot area 'per unit of use', and each unit of a two-family dwelling is independent of the other (220-11 'Unit of use'). Read that way the lot needs 20,000 sq ft with public sewer and water. Without them the same reading needs 130,680 sq ft",
+            "min_lot_by_utility": [
+              {
+                "when": "with public sewer and public water",
+                "public_sewer": true,
+                "public_water": true,
+                "min_lot_sqft": 20000
+              },
+              {
+                "when": "without public sewer",
+                "public_sewer": false,
+                "public_water": null,
+                "min_lot_sqft": 130680
+              },
+              {
+                "when": "with public sewer and on-site water",
+                "public_sewer": true,
+                "public_water": false,
+                "min_lot_sqft": 130680
+              }
+            ]
           }
         },
         {

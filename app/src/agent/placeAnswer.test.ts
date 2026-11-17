@@ -142,6 +142,15 @@ describe('rule text from the resolver', () => {
   const ask2 = (input: Record<string, unknown>) => ask(input, { places: memoryPlaces(R) });
   const za = (o: Out) => o.zoning_allows as Out;
 
+  it('a use that covers a form but is not an ADU listing is named on that form line (pass 22, Perkasie)', async () => {
+    const pk = town('4201759576', 'Perkasie borough', 'Bucks', 'pa_bucks_perkasie', { tier: 'drafted', status: 'not_addressed', approval: 'variance', unit_types: [] });
+    const o = await ask({ place: 'Perkasie borough, Bucks County' }, { places: memoryPlaces([pk]) });
+    const rows = za(o).by_form as Out[];
+    expect(rows.find((f) => f.form === 'a unit inside the house')!.verdict).toMatch(/no rule for this form, so it takes a use variance or a code change\. Not as an ADU: a special exception \(Zoning Hearing Board hearing\) as residential conversion of a house \(186-18B\(6\)/);
+    expect(rows.find((f) => f.form === 'a garage conversion')!.verdict).toMatch(/Not as an ADU: a special exception .* as residential conversion of an accessory building/);
+    expect(rows.find((f) => f.form === 'a detached backyard cottage')!.verdict).not.toMatch(/Not as an ADU/);
+  });
+
   it('a status that differs by form gives one verdict line per form', async () => {
     const o = await ask2({ place: 'Whitehall township, Lehigh County', unit_type: 'detached' });
     expect(String(o.verdict)).toMatch(/^Depends on the form\. A detached backyard cottage.*bars this form \(27-62D\).*A unit inside the house or an addition attached to the house: Not allowed today/);

@@ -263,6 +263,12 @@ async function ruleDetails(r: PlaceRow) {
   const conflict = Array.isArray(approval.forms_in_conflict) ? (approval.forms_in_conflict as string[]) : [];
   const conflictSec = (approval.forms_in_conflict_section as string | undefined) ?? null;
   const formRows = Object.keys(FORM_TEXT).filter((t) => t in byType).map((t) => ({ form: t, verdict: conflict.includes(t) && (byType[t] === 'not_addressed' || byType[t] === 'in_conflict') ? formVerdict('not_addressed', 'in_conflict', conflictSec) : formVerdict(byType[t], statusByForm[t] ?? noRule, statusByForm[t] ? ((sbf?.section as string) ?? null) : null) }));
+  // Pass 22 (pipeline/rules.py _covering_lines): a use that is not an ADU listing but covers a form names its path.
+  const otherPaths = Array.isArray(approval.other_path_by_form) ? (approval.other_path_by_form as Obj[]) : [];
+  for (const x of formRows) {
+    const o = otherPaths.find((p) => Array.isArray(p.forms) && (p.forms as string[]).includes(x.form));
+    if (o) x.verdict = `${x.verdict}. Not as an ADU: ${APPROVAL_TEXT[String(o.path)] ?? String(o.path).replace(/_/g, ' ')} as ${String(o.name).replace(/^./, (c) => c.toLowerCase())} (${o.section ?? 'rule file'})`;
+  }
   const differs = new Set(formRows.map((x) => x.verdict)).size > 1;
   const alts = ((out.other_ways_to_add_a_unit as Obj | undefined)?.options ?? []) as Obj[];
   const accCap = leafOut(acc.max_sqft);
@@ -274,7 +280,7 @@ async function ruleDetails(r: PlaceRow) {
     .filter((c) => c.effect === 'bars' && dependsFact(c.test))
     .filter((c) => (Array.isArray(c.applies_to) ? (c.applies_to as string[]) : Object.keys(byType)).some(okForm))
     .map((c) => ({
-      fact: dependsFact(c.test)!,
+      fact: dependsFact(c.test, c.applies_to)!,
       rule: c.condition,
       section: c.section ?? null,
       ...(Array.isArray(c.applies_to) ? { forms: (c.applies_to as string[]).filter((t) => t in FORM_TEXT).map((t) => FORM_TEXT[t]) } : {}),
