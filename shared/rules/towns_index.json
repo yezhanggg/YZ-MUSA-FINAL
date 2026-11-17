@@ -4743,7 +4743,7 @@
       "pop_rank": 330,
       "file": "pa_chester_north_coventry",
       "batch": 47,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11562582",
@@ -4753,7 +4753,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 370-114B(7) accessory dwelling unit by right on an RC-2 or RR-2 lot of 10 acres or more (RC, RR))"
       ],
-      "status_note": "Drafted 2026-11-17 after the fix round. Open: the tool shows the 10 acre and up impervious tiers rounded to whole percents until the engine prints decimals (6.6% reads as 7%, 6.4% as 6%, 370-114A(4)). Also open: whether an ADU inside the house needs the residential conversion special exception (370-14B(2)(a), 370-15B(2)(a)), whether a 10 acre conservancy lot of an RC-1 or RR-1 design may hold one (370-114A(2)), whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)), whether the twin density per net tract area reaches a single lot (V-2 21,780 sq ft, TC-2 14,520 sq ft), which body hears the 75 year exemption of 370-114B(7)(d), and whether the ADU counts against the RC-2 or RR-2 unit cap (370-114B(1)). The Scenic Preservation Overlay bars a new building or addition (370-31E(1)). At 15 acres or more the impervious cap is a fixed 38,000 sq ft that is not tested."
+      "status_note": "Verified 2026-11-17 after the fix round and engine pass 23 (impervious tiers now print with one decimal). Open: whether an ADU inside the house needs the residential conversion special exception (370-14B(2)(a), 370-15B(2)(a)), whether a 10 acre conservancy lot of an RC-1 or RR-1 design may hold one (370-114A(2)), whether an ADU of 500 sq ft or less takes the 25 ft accessory setbacks (370-37A(2)), whether the twin density per net tract area reaches a single lot (V-2 21,780 sq ft, TC-2 14,520 sq ft), which body hears the 75 year exemption of 370-114B(7)(d), and whether the ADU counts against the RC-2 or RR-2 unit cap (370-114B(1)). The Scenic Preservation Overlay bars a new building or addition (370-31E(1)). At 15 acres or more the impervious cap is a fixed 38,000 sq ft that is not tested."
     },
     {
       "geoid": "4213321464",
