@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 215,
-      "population": 6526078,
-      "share_of_pa": 0.5019
+      "towns_beyond_the_two_cities": 218,
+      "population": 6547596,
+      "share_of_pa": 0.5036
     }
   ],
   "towns": [
@@ -5258,6 +5258,80 @@
         "added as batch 54 by population. Code Chapter 27 has no ADU text (two-family by right in R, RMH, VMX, TND)"
       ],
       "status_note": "For a later check: the full text of 8-702.1C (no variance for some floodplain accessory structures, only its opening words read), the TND Ordinance of June 21, 2001 (27-607), the 27-602 and 27-603 columns read by order from text, whether a house may be made into a two-family dwelling where 2F is permitted (no conversion section), whether the MX 40,000 sq ft tract minimum reaches an older single lot, and the 1 1/2 story accessory limit in R and RMH, which is kept in the notes"
+    },
+    {
+      "geoid": "4207323304",
+      "geoid_aliases": [
+        "4200723304"
+      ],
+      "name": "Ellwood City borough",
+      "county": "Lawrence",
+      "type": "borough",
+      "population": 7032,
+      "population_with_aliases": 7642,
+      "housing_units": 3453,
+      "pop_rank": 405,
+      "file": "pa_lawrence_ellwood_city",
+      "batch": 55,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "amlegal",
+      "code_url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7830",
+      "plain_fetch": null,
+      "code_current_through": "2025-09-15",
+      "code_note": null,
+      "why": [
+        "added as batch 55 by population. Code Part Twelve Title Six has no ADU text (two-family by special exception in R-1 and by right in R-2, 1266.04)"
+      ],
+      "status_note": "Not addressed. 'Any use not expressly listed for a district is prohibited in that district' (1266.04), so a second unit on a house lot is a use variance, with two-family dwellings by special exception in R-1 and by right in R-2. Open: Table 1266.04(B) side yards (10 ft, 24 ft total) against the text above it (5 ft on one side, 15 ft total), the 'Minimum Number of Stories' row, whether 1272.35 compatible uses reach R-1 and R-2, and who hears a floodplain variance (1482.33 the Borough, 1264.02(a)(3) the Zoning Hearing Board)"
+    },
+    {
+      "geoid": "4200702288",
+      "geoid_aliases": [],
+      "name": "Ambridge borough",
+      "county": "Beaver",
+      "type": "borough",
+      "population": 6972,
+      "population_with_aliases": 6972,
+      "housing_units": 3832,
+      "pop_rank": 409,
+      "file": "pa_beaver_ambridge",
+      "batch": 55,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/15265289",
+      "plain_fetch": null,
+      "code_current_through": "2018-11-13",
+      "code_note": null,
+      "why": [
+        "added as batch 55 by population. Code Chapter 310 has no ADU text (conversion apartments and multiple-family dwellings by right in R and C, 310-11)"
+      ],
+      "status_note": "Not addressed. R permits conversion apartments and multiple-family dwellings by right (310-11B), and C takes the R uses (310-22A). Open: whether a two-unit conversion apartment qualifies (310-3 calls it multifamily, more than two families, 310-14 sets lot area only for three units or more), C building area 50% (310-16 by 310-22A) against 70% (310-25), whether the 140-24E floodplain accessory structure rules reach a garage conversion, and code currency (eCode360 through 11-13-2018)"
+    },
+    {
+      "geoid": "4204576576",
+      "geoid_aliases": [],
+      "name": "Thornbury township",
+      "county": "Delaware",
+      "type": "township",
+      "population": 6904,
+      "population_with_aliases": 6904,
+      "housing_units": 2255,
+      "pop_rank": 413,
+      "file": "pa_delaware_thornbury",
+      "batch": 55,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30828967",
+      "plain_fetch": null,
+      "code_current_through": "2026-03-18",
+      "code_note": null,
+      "why": [
+        "added as batch 55 by population. Code Chapter 27 has no ADU text (27-2108 conversion to two-family use by special exception in R-1 and R-2, 27-2807 historic resource conversion by conditional use)"
+      ],
+      "status_note": "Not addressed. R-1 and R-2 allow their uses 'and for no other' (27-402.1, 27-502.1), so a new second building is a use variance. A house may be converted to two-family use by special exception (27-2108, lot area waiver for a relative, then no renting), and a resource on the Historic Resource Inventory may gain a residential conversion, such as a barn to an apartment, by conditional use (27-2807.1A(1)). Open: the I, IR, LI, C, Q, MHP, RW and PRD use lists were not read, and the full family definition (27-201)"
     }
   ]
 }

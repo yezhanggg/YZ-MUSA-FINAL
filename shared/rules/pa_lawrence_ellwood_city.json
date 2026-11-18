@@ -1,0 +1,568 @@
+{
+  "provenance": {
+    "jurisdiction": "Ellwood City borough",
+    "instrument": "Ellwood City Borough Zoning Ordinance (Part Twelve, Title Six, Chapters 1260 to 1274, Ord. 2210 of 4-21-1997, as amended), with Chapter 1482 Flood Hazards (Ord. 2470 of 9-19-2011), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "American Legal code library 'Ellwood City, PA', 'Ellwood City (Beaver/Lawrence Co)', 2025 S-27, borough office at 525 Lawrence Avenue. The borough lies mostly in Lawrence County with a small part in Beaver County. Every district's uses and figures are web text in 1266.04, with no PDF tables. No later zoning amendment was found. A 2018 council report on a downtown zoning change matches Ord. 2547 of 6-18-2018, which the code shows",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/overview",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7021",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7830",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7839",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7877",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8002",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8142",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8212",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8289",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-11171",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-11233",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8384",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8667",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8887",
+      "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8972",
+      "https://codelibrary.amlegal.com/search",
+      "https://ellwoodcity.org/2018/06/22/21779/"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Lawrence",
+    "municipality_type": "borough",
+    "geoid": "4207323304",
+    "geoid_aliases": [
+      "4200723304"
+    ],
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7830",
+    "code_current_through": "2025-09-15",
+    "code_current_through_note": "American Legal shows 'Local legislation current through September 15, 2025' (2025 S-27)",
+    "checks": [
+      "The code has no accessory dwelling unit use. A search of the whole code for in-law, accessory, apartment, ECHO, granny, cottage, guesthouse, tenant, quarters, conversion, two-family and second dwelling found only the two-family and multi-family listings, the nonconforming conversion rule (1268.05), parking and building code text. The zoning definitions (1260.08) do not define family, dwelling unit, accessory use or lot coverage, so those words 'carry their customary meanings'",
+      "'Any use not expressly listed for a district is prohibited in that district', and 'Uses which are normally accessory to the declared permitted uses are also permitted' (1266.04). R-1 (A Residential) permits single-family detached dwellings and lists two-family dwellings as a special exception. R-2 (B Residential) permits single-family and two-family dwellings, and lists multi-family dwellings and individual mobile homes as special exceptions (1266.04 Table A, 1272.07). C-1 and C-2 list multifamily dwellings as conditional uses, on floors above the ground floor (1272.23). C-3 overlays: residential uses above the ground floor by right in CC, apartments and townhouses by right and duplexes and single-family dwellings by conditional use in GN, single-family dwellings by right in IP. HM-1 and I list no dwelling",
+      "Lot figures (1266.04): R-1 lot area 5,000 sq ft per family, building cover ('lot coverage') 40%, width 50 ft, front yard 20 ft, rear yard 30 ft, height 35 ft. R-2 lot area 4,000 sq ft per family, cover 45%, width 60 ft, front 20 ft, rear 30 ft, height 45 ft. Table 1266.04(B) gives side yards of 10 ft and 24 ft for both sides, while the text above it gives a total of 15 ft with 5 ft on one side on a lot 50 ft wide or more, down to 7 ft with 4 ft on one side on an R-2 lot just over 30 ft wide. Table B also lists 'Minimum Number of Stories' of 2 1/2 in R-1 and 4 in R-2, which reads like a story limit but is labeled a minimum, so it is not used. A front yard follows the average of the adjacent houses (1272.02(e))",
+      "Accessory buildings 'shall conform to side yard requirements and shall be no less than five feet from any rear lot line' (1272.02(f)). No structure, attached or not, may project into a minimum front, side or rear yard (1272.02(b)). The code sets no size or height for an accessory building apart from the district height",
+      "Parking: 'Dwellings 2 for each family or dwelling unit, including space in a garage', each space at least 180 sq ft, on the same lot as the principal use (1270.03(a), (b), (c)). No off-street parking is required in C-2 (1270.03(b) note)",
+      "Floodplain, Chapter 1482 (Ord. 2470 of 9-19-2011, FIRM of 1-18-2012): in the floodway any encroachment that raises flood heights is prohibited, and no new construction or development is allowed without a DEP permit (1482.18(b)(1)). In the flood fringe and the general floodplain no new construction or development may be within 50 ft landward of the top of bank of a watercourse without a DEP permit (1482.18(b)(2)B, (3)B). New construction or a substantial improvement of a residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, and enclosed space below the lowest floor is prohibited (1482.03(y), 1482.22). New construction is a structure begun on or after June 1, 1982, with its later improvements (1482.03(u)). Manufactured homes and any addition to one are prohibited in the floodplain (1482.25(a)). No variance may raise the base flood elevation in a floodway, or by more than one foot in the flood fringe (1482.33(b)). The chapter has no rule on habitation of accessory structures. Which body hears a floodplain variance is not settled: 1482.33(a) says 'the Borough may' grant relief, and 1264.02(a)(3) gives the Zoning Hearing Board variances 'of flood plain or flood hazard ordinances'",
+      "Nonconforming uses: a nonconforming building or structure may be converted into residential uses by special exception, with the district's yards and area, at least 900 sq ft of habitable living area in each unit, one bathroom and three habitable rooms (1268.05). A house in a residential district is usually a conforming use, so this rarely reaches a house",
+      "Lots of record that existed on 4-21-1997 in separate ownership may be used for a permitted use though smaller than the minimum (1272.01(a)). Adjacent small lots may be combined (1272.01(b))",
+      "Variances: the Zoning Hearing Board grants them on the five findings of MPC 910.2 (1264.03(h)). No bar on a use variance was found. The code has no steep slope, riparian or wetland rules in the zoning chapter"
+    ],
+    "notes": "Zoning office: Ellwood City Borough Zoning Officer. Read in a browser on American Legal, one page at a time, on 2026-11-18. Read: 1260 (all), 1264.01 to 1264.03, 1266 (all), 1268.01 to 1268.05, 1270 (all), 1272.01 to 1272.13, 1272.18 to 1272.35, 1482.01 to 1482.03 and 1482.18 to 1482.33. Not read: 1262, 1264.04, 1264.05, 1268.06 to 1268.12, 1272.14 to 1272.17, 1272.36 to 1272.41, 1274, 1482.04 to 1482.17, Title Four (subdivision), Chapter 1488 (storm water) and the Ellwood City Borough Mobile Home Specifications. Saved text in the batch 55 cache."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapters 1260 to 1272",
+      "url": "https://codelibrary.amlegal.com/search",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched the code for in-law, accessory, apartment, ECHO, granny, cottage, guesthouse, tenant, quarters, conversion, two-family and second dwelling, and read the use list of every district. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "1266.04 Table A",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. 'Any use not expressly listed for a district is prohibited in that district'. R-1 lists a two-family dwelling by special exception and R-2 by right (see the other paths)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "1266.04, 1264.03(h)",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and 'Any use not expressly listed for a district is prohibited in that district', so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A house may become a two-family dwelling by special exception in R-1 and by right in R-2 (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1264.03(h)",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8002",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the five findings of MPC 910.2. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "1272.35, 1266.04 C-3 (2)T, (3)B, (4)V",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-11233",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'A land use not expressly delineated as a permitted use, conditional use, or special exception maybe permitted as a conditional use' when its impacts are 'equal to or less than any use specifically listed in the Zoning District'. Borough Council decides after the Planning Commission's recommendation (1266.04). The C-3 Downtown lists name 'Compatible uses not otherwise listed'. 1266.04 bars any use not expressly listed, so outside C-3 this path is not read as open. In R-1 and R-2 a second unit may be read as the listed two-family dwelling, not an unlisted use, and in the C-3 Gateway North overlay as the listed duplex (see the other paths)"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C-3"
+      ],
+      "section": "1266.04 C-3 (2)T, (3)B, (4)V",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Only the C-3 Downtown Commercial lists name compatible uses not otherwise listed. R-1 and R-2 do not"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "1272.35, 1260.08(17)",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-11233",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The Borough weighs employees, floor area, products, walk-in trade and traffic, which fit a business better than a home",
+      "quote": "A use which is not specifically listed in a particular zoning district, but which is determined by the Borough, in accordance with the express standards and criteria set forth in this chapter, to be similar in characteristics and impacts to another use which is specifically listed in the same zoning district"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R-1)",
+          "path": "special_exception",
+          "districts": [
+            "R-1"
+          ],
+          "conditions": "A two-family dwelling by special exception from the Zoning Hearing Board. Lot area 5,000 sq ft per family, so 10,000 sq ft for two families, building cover at most 40%, width 50 ft, front yard 20 ft, rear yard 30 ft, height 35 ft. Side yards 10 ft and 24 ft together by Table 1266.04(B), or less by the text above it. Two parking spaces for each dwelling unit, a garage space included (1270.03(b))",
+          "min_lot_sqft": 10000,
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "1266.04 Table A, Table B, 1270.03(b)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+          "confidence": "secondary",
+          "note": "The code does not define a two-family dwelling or say how a house is converted to one. The 10,000 sq ft is the table's 5,000 sq ft per family for two families"
+        },
+        {
+          "name": "Two-family dwelling (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A two-family dwelling by right. Lot area 4,000 sq ft per family, so 8,000 sq ft for two families, building cover at most 45%, width 60 ft, front yard 20 ft, rear yard 30 ft, height 45 ft. Side yards 10 ft and 24 ft together by Table 1266.04(B), or less by the text above it. Two parking spaces for each dwelling unit, a garage space included (1270.03(b))",
+          "min_lot_sqft": 8000,
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "1266.04 Table A, Table B, 1270.03(b)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+          "confidence": "secondary",
+          "note": "The code does not define a two-family dwelling or say how a house is converted to one. The 8,000 sq ft is the table's 4,000 sq ft per family for two families"
+        },
+        {
+          "name": "Multi-family dwelling (R-2)",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Three or more families. 6,000 sq ft for three families and 1,000 sq ft more for each family from four to eight (1266.04 Table B note (b)). Two parking spaces for each dwelling unit",
+          "min_lot_sqft": 6000,
+          "min_units": 3,
+          "section": "1266.04 Table A, Table B note (b), 1260.08(45), (46)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Multi-family dwelling - duplex (C-3 Gateway North)",
+          "path": "conditional_use",
+          "districts": [
+            "C-3"
+          ],
+          "conditions": "A duplex by conditional use from Borough Council in the C-3 Gateway North overlay. Parking on the same lot and not in the front lawn, and a traffic impact study (1272.27). A residential lot of at least 5,000 sq ft and 40 ft wide, front yard 10 ft, side yards 10 ft, rear yard 20 ft, lot coverage 80%, height 50 ft",
+          "min_lot_sqft": 5000,
+          "overlays": [
+            "C-3: GN"
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "1266.04 C-3 (8)C, (8)E, 1272.27",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Residential use above the ground floor (C-1, C-2, C-3)",
+          "path": "conditional_use",
+          "districts": [
+            "C-1",
+            "C-2",
+            "C-3"
+          ],
+          "conditions": "Multifamily dwellings by conditional use in C-1, C-2 and the C-3 Gateway West and Institutional and Professional overlays, on floors above the ground floor with access not through a ground floor business (1272.23). In the C-3 Core Commercial overlay residential uses on the second floor or above are permitted by right, and in Gateway North apartments and townhouses of three or more units are permitted by right",
+          "section": "1266.04 Table A, C-3 (6)B, (7)C, (8)B, (9)C, 1272.23, 1260.08(46)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+          "confidence": "secondary",
+          "note": "A multi-family dwelling is 'A building and lot are occupied by more than one family' (1260.08(45)), while an apartment has three or more units (1260.08(46)). Whether two units on upper floors count is not settled"
+        },
+        {
+          "name": "Conversion of a nonconforming building to residential use",
+          "path": "special_exception",
+          "districts": null,
+          "conditions": "A nonconforming building or structure may be converted into residential uses by special exception. The district's yards and area apply, each living unit has at least 900 sq ft of habitable living area, one bathroom and three habitable rooms, and the Fire Chief certifies fire and safety",
+          "builds": [
+            "internal"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "Only a building that is nonconforming. A house in a district that permits it is usually not",
+              "section": "1268.05"
+            }
+          ],
+          "section": "1268.05",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8142",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "1266.04, 1268.05, 1272.23, 1272.27",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapters 1260 to 1274",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The zoning chapters have no historic path"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "C-1",
+        "C-2",
+        "C-3",
+        "HM-1",
+        "I"
+      ],
+      "section": "1266.04 Table A",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-1 lists two-family dwellings by special exception and R-2 by right"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In the floodway any encroachment that would raise flood heights is prohibited, and 'No new construction or development shall be allowed, unless a permit is obtained from the Department of Environmental Protection Regional Office'. No expansion of an existing structure in the floodway may raise the base flood elevation, and no variance may be granted that would.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway"
+          ],
+          "section": "1482.18(b)(1), 1482.32(a), 1482.33(b)(1)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8887",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 1482"
+        },
+        {
+          "kind": "other",
+          "condition": "In the flood fringe and the general floodplain 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "1482.18(b)(2)B, (3)B",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8887",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 1482"
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain new construction or a substantial improvement of a residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, and enclosed space below the lowest floor is prohibited. Fill reaches 15 ft beyond the building. Work of 50% or more of market value is a substantial improvement in full compliance. New construction is a structure begun on or after June 1, 1982, with its later improvements. Manufactured homes and any addition to one are prohibited in the floodplain.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "1482.03(u), (y), 1482.22, 1482.23(a), 1482.25(a), 1482.32(c)",
+          "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8887",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 1482"
+        }
+      ],
+      "section": "1482.18, 1482.22, 1482.25, 1482.33",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8887",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "1266.04",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is possible only by a use variance or as a two-family dwelling"
+    }
+  },
+  "envelope": {
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building in any district",
+          "districts": null,
+          "setback_rear_ft": 5,
+          "section": "1272.02(f)",
+          "note": "'The location of accessory buildings shall conform to side yard requirements and shall be no less than five feet from any rear lot line'. The side yards are the district's"
+        }
+      ],
+      "section": "1272.02(f)",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "1270.03(b)",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8212",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. The code asks 2 spaces 'for each family or dwelling unit, including space in a garage', so a house and a second unit by variance would need 4. None are required in C-2"
+    },
+    "reading": {
+      "value": "No ADU use. If a second unit were allowed, 2 spaces for each dwelling unit, a garage space included, 4 in all, each at least 180 sq ft, on the same lot (1270.03). None in C-2",
+      "section": "1270.03",
+      "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8212",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum Lot Area Per Family' 5,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1266.04 Table B, 1272.02(e)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Or the average of the adjacent houses' front yards"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 1266.04(B) gives a side yard of at least 10 ft and 24 ft for both sides. The text above the table gives smaller side yards by lot width: on a lot 50 ft wide or more 'A total of 15 ft. with a minimum of 5 ft. on one side', and less on narrower lots. The row keeps the table's figure"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Minimum Total Width of Side Yards'. The text above the table gives 15 ft in all on a lot 50 ft wide or more"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Lot Coverage'. The code does not define lot coverage, so it is read as building cover"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "1272.02(f)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Accessory buildings 'shall conform to side yard requirements'. The district side yard is in dispute"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "1272.02(f)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'no less than five feet from any rear lot line'"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "setback_side_ft": 5
+        },
+        "section": "1266.04 R-1 text and Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 1266.04(B) gives a side yard of 10 ft. The text above the table gives 'A total of 15 ft. with a minimum of 5 ft. on one side' on a lot 50 ft wide or more, and smaller totals on narrower lots"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum Lot Area Per Family' 4,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "1266.04 Table B, 1272.02(e)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Or the average of the adjacent houses' front yards"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 1266.04(B) gives a side yard of at least 10 ft and 24 ft for both sides. The text above the table gives smaller side yards by lot width: on a lot 50 ft wide or more 'A total of 15 ft. with a minimum of 5 ft. on one side', and less on narrower lots. The row keeps the table's figure"
+      },
+      "setback_sides_total_ft": {
+        "value": 24,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Minimum Total Width of Side Yards'. The text above the table gives 15 ft in all on a lot 50 ft wide or more"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.45,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Lot Coverage'. The code does not define lot coverage, so it is read as building cover"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "1272.02(f)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Accessory buildings 'shall conform to side yard requirements'. The district side yard is in dispute"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "1272.02(f)",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8243",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'no less than five feet from any rear lot line'"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "setback_side_ft": 5
+        },
+        "section": "1266.04 R-2 text and Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 1266.04(B) gives a side yard of 10 ft. The text above the table gives 'A total of 15 ft. with a minimum of 5 ft. on one side' on a lot 50 ft wide or more, and smaller totals on narrower lots"
+      }
+    },
+    "HM-1": {
+      "max_building_coverage": {
+        "value": 0.65,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Lot Coverage'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "I": {
+      "max_building_coverage": {
+        "value": 0.65,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Lot Coverage'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 100,
+        "section": "1266.04 Table B",
+        "url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-8083",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "provenance": {
+    "jurisdiction": "Thornbury township",
+    "instrument": "Thornbury Township Zoning Ordinance (Chapter 27 Zoning and Planned Residential Development, Ord. 2-1976 of 2-3-1976, as amended), with Article 15 Floodplain Conservation District (Ord. 3-2015 of 8-19-2015), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 TH3682, Township of Thornbury, PA. 27-1509.2C names 'the Zoning Ordinance of Thornbury Township, Delaware County, Pennsylvania', so this is Thornbury township, Delaware County. eCode360 TH1634 is Thornbury Township, Chester County, a different place. The district use lists and figures read are web text. The sign tables and the zoning map are PDF attachments that were not opened",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/TH3682",
+      "https://ecode360.com/TH3682/laws",
+      "https://ecode360.com/30828967",
+      "https://ecode360.com/TH3682/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20%22tenant%20house%22%20OR%20%22elder%20cottage%22%20OR%20%22temporary%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/TH3682?guid=30948473",
+      "https://ecode360.com/print/TH3682?guid=30948642",
+      "https://ecode360.com/print/TH3682?guid=30948778",
+      "https://ecode360.com/print/TH3682?guid=30948831",
+      "https://ecode360.com/print/TH3682?guid=30948882",
+      "https://ecode360.com/print/TH3682?guid=30949260",
+      "https://ecode360.com/print/TH3682?guid=30949372",
+      "https://ecode360.com/print/TH3682?guid=30949696",
+      "https://ecode360.com/print/TH3682?guid=30949977",
+      "https://ecode360.com/print/TH3682?guid=30950640"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Delaware",
+    "municipality_type": "township",
+    "geoid": "4204576576",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30828967",
+    "code_current_through": "2026-03-18",
+    "code_current_through_note": "eCode360 shows 'Includes legislation through 03-18-2026.' New Laws lists only Res. Nos. 9-2026 to 13-2026 (appointments, the Delaware County consortium, a land development approval and the sewage facilities plan), no zoning",
+    "checks": [
+      "The code has no accessory dwelling unit use. A search for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, two-family, tenant house, elder cottage and temporary dwelling found the conversion of a dwelling to two-family use (27-2108), the R-1 and R-2 listings of it (27-402.1E(3), 27-502.1E(3)), the historic resource adaptive reuse (27-2807) and definitions",
+      "R-1 and R-2 permit their uses 'and for no other': a single-family detached dwelling, conservation and farm uses, and accessory uses. Conversion of a single-family dwelling 'to a two-or multi-family use' is a special exception from the Zoning Hearing Board under 27-2108 (27-402.1E(3), 27-502.1E(3)). PA permits apartment developments on 5 acres and townhouses on 20 acres, and no single-family dwelling (27-602, 27-603, 27-604). R-3 is a development district for a variety of housing on public water and sewer, at most 4 units per acre (27-1901, 27-1902)",
+      "A dwelling unit is 'a room or a series of connected rooms wholly used for residential purposes and containing living, cooking, sleeping, and sanitary facilities for one housekeeping unit', self-contained and not sharing facilities with another housekeeping unit. A two-family dwelling is a building on a lot for two families living independently of one another (27-201). Every single-family dwelling other than a mobile home has at least 1,150 sq ft of floor area (27-2112)",
+      "R-1: lot 87,000 sq ft, width 200 ft. R-2: lot 60,000 sq ft, width 150 ft. In both, buildings and other impervious cover at most 15% of the lot (a pool not counted), front yard 85 ft, two side yards of at least 45 ft and 100 ft together, rear yard 45 ft, height three stories or 35 ft (27-403, 27-404, 27-503, 27-504). An accessory building meets those yards, or 25 ft from the side and rear lines if it stands wholly behind a line through the rear of the main building (27-403.7, 27-503.7)",
+      "Steep slopes: no building or impervious surface on land with a slope over 20%, unless the Zoning Hearing Board grants a special exception because compliance is impractical or confiscatory. No special exception is needed for an encroachment of less than 50 ft (27-2115.2B). New lots in R-1 and R-2 need at least half their minimum area under 20% slope, or 130,000 sq ft (27-2115.2A)",
+      "Parking: 'Dwellings. Two spaces per dwelling unit', on any lot where a dwelling is erected or converted, and never fewer (27-2104.2). No parking in the front yard setback without a special exception, and never within 20 ft of the right-of-way (27-2106.1D)",
+      "Floodplain Conservation District (Article 15, Ord. 3-2015 of 8-19-2015, FIRM of 11-18-2009, with alluvial soils): 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds crops, pasture, nurseries, permeable parking and sewer lines, no building (27-1505). On-site sewage systems and wells, and any new construction in a riparian buffer, are prohibited, and the Board may not grant a use variance for those prohibited uses (27-1507.1E, J, 27-1508.2). A new or improved residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor (27-1503, 27-1511.1, 3). An accessory structure 'shall not be designed or used for human habitation', is at most 100 sq ft and has no sanitary facilities (27-1511.5). No expansion in the floodway may raise the base flood elevation, and work of 50% or more of market value must fully comply (27-1511.4). New construction is a structure begun on or after the article's effective date, and work begun after April 27, 1973 follows the ordinance in force at its permit (27-1503). Variances go to the Zoning Hearing Board under MPC 910.2 (27-1508)",
+      "Historic resources: a resource on the Historic Resource Inventory may, after review by the Historical Commission and the Planning Commission and conditional use approval from the Board of Supervisors, gain a 'Residential conversion of the resource notwithstanding any other residential use or structure on the subject property, e.g., conversion of a barn to an apartment', where it is not part of a subdivision or land development (27-2807.1A(1))",
+      "Nonconforming lots: a vacant lot held in single and separate ownership when the chapter took effect may be built on if the yards are met, and otherwise needs a variance. An owner of adjoining land must combine the lots first (27-2101.F)",
+      "Variances: the Zoning Hearing Board on the five findings of the MPC (27-2310). No bar on a use variance was found outside the floodplain (27-1508.2). Special exceptions meet the standards of 27-2309"
+    ],
+    "notes": "Zoning office: Thornbury Township (Delaware County) Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Chapter 27 Articles 3, 4, 5, 6, 15 (to 27-1515.2), 19 and 21 (to 27-2117.5B), 27-2806, 27-2807, 27-2309, 27-2310, and parts of 27-201. Not read: Articles 1, 7 to 14, 16 to 18, 20, 22, 24 to 27, the rest of Articles 15, 21, 23 and 28 and of 27-201 (the family definition in full), the PDF attachments, Chapter 22 (subdivision), Chapter 19 (storm water) and any riparian buffer rule. Saved text in the batch 55 cache."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/TH3682/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20%22tenant%20house%22%20OR%20%22elder%20cottage%22%20OR%20%22temporary%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, two-family, tenant house, elder cottage and temporary dwelling. No ADU use. The nearest are the conversion to two-family use (27-2108) and the residential conversion of a historic resource (27-2807)"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot as an accessory use. R-1 and R-2 allow their uses 'and for no other', with a conversion to two-family use by special exception (27-2108)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-402.1, 27-502.1, 27-2310",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit in a new building on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A unit inside the house may be a conversion to two-family use by special exception (27-2108, see the other paths). On a property with a resource on the Historic Resource Inventory, a residential conversion of the resource, such as a barn to an apartment, is a conditional use (27-2807)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2310",
+      "url": "https://ecode360.com/print/TH3682?guid=30949977",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the five MPC findings. No bar on a use variance outside the floodplain"
+    },
+    "historic_path": {
+      "value": "conditional_use",
+      "section": "27-2807.1A(1)",
+      "url": "https://ecode360.com/print/TH3682?guid=30950640",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "After review by the Historical Commission and the Planning Commission, the Board of Supervisors may approve as a conditional use the 'Residential conversion of the resource notwithstanding any other residential use or structure on the subject property, e.g., conversion of a barn to an apartment'. Only where the resource is not part of a subdivision or land development. The code calls it an adaptive reuse, not an accessory dwelling unit"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of dwelling to two-family use (R-1, R-2)",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "The Zoning Hearing Board may authorize as a special exception the conversion of a dwelling in a Residential District from single-family to two-family or multiple-dwelling occupancy. The lot area per dwelling unit may not drop below the lot area for a single-family dwelling in the district (87,000 sq ft in R-1, 60,000 sq ft in R-2, so twice that for two units). Each family unit has at least 600 sq ft of gross habitable floor area, not counting stairs and corridors, and the added unit needs added sewage capacity under state rules. Where the conversion is to house a relative or relatives of the owner and occupant, the Board may waive the lot area rule, and the converted unit may then not be leased or rented. Two parking spaces per dwelling unit (27-2104.2A(1))",
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "A lot of at least 174,000 sq ft in R-1 or 120,000 sq ft in R-2 for two units, unless the Board waives the lot area rule for a relative of the owner and occupant",
+              "section": "27-2108.1A, D"
+            }
+          ],
+          "section": "27-402.1E(3), 27-502.1E(3), 27-2108, 27-2104.2A(1)",
+          "url": "https://ecode360.com/print/TH3682?guid=30949696",
+          "confidence": "verified",
+          "note": "The lot area rule is waived only at the Board's discretion for a relative of the owner and occupant, and the unit then may not be rented"
+        }
+      ],
+      "section": "27-2108",
+      "url": "https://ecode360.com/print/TH3682?guid=30949696",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": true,
+      "section": "27-2807.1A(1)",
+      "url": "https://ecode360.com/print/TH3682?guid=30950640",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A resource on the Historic Resource Inventory may gain a residential conversion by conditional use. Confirm the resource is on the inventory"
+    },
+    "historic_test": {
+      "value": "The property has a resource on the Thornbury Township Historic Resource Inventory (HRI), and the conversion is not part of a subdivision or land development",
+      "section": "27-2806, 27-2807.1A",
+      "url": "https://ecode360.com/print/TH3682?guid=30950640",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Confirm the resource is on the Historic Resource Inventory"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "PA",
+        "R-3"
+      ],
+      "section": "27-402, 27-502, 27-602, 27-1902",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-1 and R-2 list the conversion to two-family use by special exception. The I, IR, LI, C, Q-1, Q-2, MHP, RW, PRD-1 and PRD-2 use lists were not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Floodplain Conservation District: 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds no building. On-site sewage systems and wells are prohibited there, and new construction in a riparian buffer is prohibited.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPC"
+          ],
+          "section": "27-1505, 27-1507.1E, J",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District an accessory structure 'shall not be designed or used for human habitation', is limited to parking or storage, has at most 100 sq ft of floor area and no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPC"
+          ],
+          "section": "27-1511.5A, B, G",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District a new or improved residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor. No expansion in the floodway may raise the base flood elevation. Work of 50% or more of market value must fully comply. New construction is a structure begun on or after the article's effective date (Ord. 3-2015 of 8-19-2015), with its later improvements.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPC"
+          ],
+          "section": "27-1503, 27-1511.1, 3, 4",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "No building or impervious surface on land with a slope over 20%, unless the Zoning Hearing Board grants a special exception because compliance is impractical or confiscatory, with a drainage plan and an erosion and sediment control plan. No special exception is needed for an encroachment of less than 50 ft.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "building_types": null,
+          "section": "27-2115.2B",
+          "url": "https://ecode360.com/print/TH3682?guid=30949696",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The resource must be on the Historic Resource Inventory, the Historical Commission and the Planning Commission review the proposal, and the Board of Supervisors approves it as a conditional use. The conversion may not be part of a subdivision or land development.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "historic",
+          "section": "27-2807.1A",
+          "url": "https://ecode360.com/print/TH3682?guid=30950640",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "27-1505, 27-1511, 27-2115, 27-2807",
+      "url": "https://ecode360.com/print/TH3682?guid=30949260",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-402.1, 27-502.1",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. Off the historic path a second unit is possible only as a conversion to two-family use or by a use variance"
+    },
+    "types_allowed_historic": {
+      "value": [
+        "garage_conversion",
+        "internal"
+      ],
+      "section": "27-2807.1A(1)",
+      "url": "https://ecode360.com/print/TH3682?guid=30950640",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Historic path only. The conversion is of the resource itself, 'e.g., conversion of a barn to an apartment', notwithstanding the house on the lot. A new building or an addition is not addressed"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": null,
+      "section": "27-2108.1B",
+      "url": "https://ecode360.com/print/TH3682?guid=30949696",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. A unit made by conversion to two-family use needs at least 600 sq ft of gross habitable floor area, not counting stairs and corridors"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 35,
+      "section": "27-404, 27-504",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code has no ADU height. In R-1 and R-2 'No building shall exceed three stories or 35 feet in height', which reaches an accessory building too"
+    },
+    "max_height_stories": {
+      "value": 3,
+      "section": "27-404, 27-504",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building wholly behind a line parallel to the street through the rear of the main building",
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "setback_side_ft": 25,
+          "setback_rear_ft": 25,
+          "section": "27-403.7, 27-503.7",
+          "note": "Otherwise an accessory building meets the district's front, side and rear yards"
+        }
+      ],
+      "section": "27-403.7, 27-503.7",
+      "url": "https://ecode360.com/print/TH3682?guid=30948778",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "27-2104.2A(1)",
+      "url": "https://ecode360.com/print/TH3682?guid=30949696",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Dwellings. Two spaces per dwelling unit', on any lot where a dwelling is erected or converted. The code has no ADU use, so this is the count for a second dwelling unit"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-2104.2A(1)",
+      "url": "https://ecode360.com/print/TH3682?guid=30949696",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Two spaces for the house and two for the second dwelling unit"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 87000,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Or more under the steep slope rules (27-2115). Width 200 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 85,
+        "section": "27-403.4",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "27-403.5",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards, neither less than 45 ft"
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "27-403.5",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "27-403.6",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "27-403.3",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Not more than 15% of the area of each lot may be occupied by buildings or other impervious cover', a pool not counted"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-404",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Three stories or 35 ft"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "27-404",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 45,
+        "section": "27-403.7",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building meets the district yards, or 25 ft from the side and rear lines if it stands wholly behind the rear of the main building"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 45,
+        "section": "27-403.7",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 35,
+        "section": "27-404",
+        "url": "https://ecode360.com/print/TH3682?guid=30948778",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'No building shall exceed three stories or 35 feet in height'. The code gives no other height for an accessory building"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 60000,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Or more under the steep slope rules (27-2115). Width 150 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 85,
+        "section": "27-503.4",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "27-503.5",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards, neither less than 45 ft"
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "27-503.5",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 45,
+        "section": "27-503.6",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Not more than 15% of the area of each lot may be occupied by buildings or other impervious cover', a pool not counted"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-504",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Three stories or 35 ft"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "27-504",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 45,
+        "section": "27-503.7",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building meets the district yards, or 25 ft from the side and rear lines if it stands wholly behind the rear of the main building"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 45,
+        "section": "27-503.7",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 35,
+        "section": "27-504",
+        "url": "https://ecode360.com/print/TH3682?guid=30948831",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'No building shall exceed three stories or 35 feet in height'. The code gives no other height for an accessory building"
+      }
+    }
+  }
+}

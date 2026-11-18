@@ -1483,6 +1483,7 @@ FIXED_BATCH.update({g: 50 for g in ("4208531656", "4208308040", "4200384704")})
 FIXED_BATCH.update({g: 51 for g in ("4202921104", "4207961048", "4213345152")})
 FIXED_BATCH.update({g: 53 for g in ("4204529720", "4208718944", "4204372200")})
 FIXED_BATCH.update({g: 54 for g in ("4207939792", "4202921008", "4200117640")})
+FIXED_BATCH.update({g: 55 for g in ("4207323304", "4200702288", "4204576576")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1854,6 +1855,19 @@ EXTRAS = {
     "4207939792": "batch 54 by population. Code Chapter 27 defines an accessory dwelling unit (27-202) but no district lists it (duplex by right in R-2 and R-3, two-family in A-1, 27-307 conversion, 27-312 group housing in R-3)",
     "4202921008": "Code 27-1515 in-law suite by special exception, family only (FR, R-1, R-2, R-3, C-1, LI)",
     "4200117640": "batch 54 by population. Code Chapter 27 has no ADU text (two-family by right in R, RMH, VMX, TND)",
+    # Batch 55 (2026-11-18): the next towns by population without a rule file. Connellsville (Fayette) was skipped
+    # (zoning ordinances of 2012 and 2022 only as PDFs on the city website, no codified zoning found as web pages),
+    # Middlesex (Cumberland) (zoning ordinance No. 3-89 and its amendments only as PDFs on the township website, eCode360
+    # MI2094 is Middlesex Township, Butler County, and the browser was refused the township website), Providence
+    # (Lancaster) (zoning ordinance of 2014, amended through 12-11-2023, only as a PDF on the township website), Shamokin
+    # (Northumberland) (Ord. No. 21-05 of 8-9-2021, a Central Business and Gateway Zone District amendment, not yet
+    # codified on eCode360), Lower Nazareth (Northampton) (zoning ordinance of 12-13-2023 only as article PDFs on the
+    # township website, and the browser was refused the township zoning page) and Tamaqua (Schuylkill) (eCode360 Chapter
+    # 350 is a placeholder for the Eastern Schuylkill Planning Region Joint Zoning Ordinance, on file in the borough
+    # offices).
+    "4207323304": "batch 55 by population. Code Part Twelve Title Six has no ADU text (two-family by special exception in R-1 and by right in R-2, 1266.04)",
+    "4200702288": "batch 55 by population. Code Chapter 310 has no ADU text (conversion apartments and multiple-family dwellings by right in R and C, 310-11)",
+    "4204576576": "batch 55 by population. Code Chapter 27 has no ADU text (27-2108 conversion to two-family use by special exception in R-1 and R-2, 27-2807 historic resource conversion by conditional use)",
 }
 
 if __name__ == "__main__":
