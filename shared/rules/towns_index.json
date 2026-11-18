@@ -5199,7 +5199,7 @@
       "pop_rank": 399,
       "file": "pa_luzerne_kingston_township",
       "batch": 54,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11770378",
@@ -5209,7 +5209,7 @@
       "why": [
         "added as batch 54 by population. Code Chapter 27 defines an accessory dwelling unit (27-202) but no district lists it (duplex by right in R-2 and R-3, two-family in A-1, 27-307 conversion, 27-312 group housing in R-3). Its code as read has no ADU rule (not addressed)"
       ],
-      "status_note": "Open point: the answer says 'The code has no ADU rule here', while the code defines an accessory dwelling unit with its own limits (27-202 'Dwelling unit, accessory') that no district lists. A permitted use is 'Any use which is specifically permitted in a particular zoning district' (27-202 'Permitted use'), so the definition alone is read as no permission (not addressed, a use variance), and the answer needs wording for a defined but unlisted unit. For a later check: which districts 27-316 means by general and neighborhood commercial (read as B-1 and B-2), and Part 4 (district list and map), 27-344 to 27-352, Part 6, Part 8, Part 9, 27-512 and Chapter 8 sections 603 to 607 and 802, which were not read"
+      "status_note": "Verified 2026-11-18 after the fix round and engine pass 28 (the tool now says the code defines an ADU but no district permits it, and holds the 1.5 story accessory limit). Open: A permitted use is 'Any use which is specifically permitted in a particular zoning district' (27-202 'Permitted use'), so the definition alone is read as no permission (not addressed, a use variance). For a later check: which districts 27-316 means by general and neighborhood commercial (read as B-1 and B-2), and Part 4 (district list and map), 27-344 to 27-352, Part 6, Part 8, Part 9, 27-512 and Chapter 8 sections 603 to 607 and 802, which were not read"
     },
     {
       "geoid": "4202921008",
@@ -5223,7 +5223,7 @@
       "pop_rank": 401,
       "file": "pa_chester_east_coventry",
       "batch": 54,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30868304",
@@ -5233,7 +5233,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1515 in-law suite by special exception, family only (FR, R-1, R-2, R-3, C-1, LI))"
       ],
-      "status_note": "Open point: on a lot that the Option 4 country property listing reaches (27-11.104.3), the answer gives its unit the in-law suite's 40% share cap, its parking space and its family-only status, while Option 4 sets only a 1,500 sq ft cap, the district setbacks and the district height. A listing cannot yet carry its own size and parking rules, so the listing stays secondary. Also open: the conversion path (special exception under 27-1312.2 or by right under 27-502.1C) and its date (27-202 leaves the chapter's effective date blank), whether the suite reaches NC and C, which figures govern a house in NC, C, C-1 and LI (27-803 or 27-904.1, 27-1004.1, 27-1104.1), whether renting rooms with a kitchen (27-1319.1B(7)) is a second dwelling unit, and Part 3, Part 12, Part 14 and Parts 16 to 20, which were not read"
+      "status_note": "Verified 2026-11-18 after the fix round and engine pass 28 (the Option 4 country property ADU now carries its own 1,500 sq ft cap with no owner, family or parking rule). Open: the conversion path (special exception under 27-1312.2 or by right under 27-502.1C) and its date (27-202 leaves the chapter's effective date blank), whether the suite reaches NC and C, which figures govern a house in NC, C, C-1 and LI (27-803 or 27-904.1, 27-1004.1, 27-1104.1), whether renting rooms with a kitchen (27-1319.1B(7)) is a second dwelling unit, and Part 3, Part 12, Part 14 and Parts 16 to 20, which were not read"
     },
     {
       "geoid": "4200117640",

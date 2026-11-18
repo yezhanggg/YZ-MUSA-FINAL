@@ -145,17 +145,17 @@
    },
    {
     "tier": "verified",
-    "places": 139,
-    "pop": 4925110,
-    "pop_share": 0.3771,
-    "housing_units": 2126527
+    "places": 141,
+    "pop": 4939804,
+    "pop_share": 0.3782,
+    "housing_units": 2132235
    },
    {
     "tier": "drafted",
-    "places": 83,
-    "pop": 1657776,
-    "pop_share": 0.1269,
-    "housing_units": 679707
+    "places": 81,
+    "pop": 1643082,
+    "pop_share": 0.1258,
+    "housing_units": 673999
    },
    {
     "tier": "reported",
@@ -262,14 +262,14 @@
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 53,
-    "pop": 989366
+    "places": 52,
+    "pop": 981903
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 24,
-    "pop": 428288
+    "places": 23,
+    "pop": 421057
    },
    {
     "tier": "reported",
@@ -310,14 +310,14 @@
    {
     "tier": "verified",
     "status": "limited",
-    "places": 67,
-    "pop": 2998257
+    "places": 68,
+    "pop": 3005720
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 67,
-    "pop": 1413054
+    "places": 68,
+    "pop": 1420285
    },
    {
     "tier": "verified",
