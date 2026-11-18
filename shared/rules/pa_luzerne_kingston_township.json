@@ -1,0 +1,773 @@
+{
+  "provenance": {
+    "jurisdiction": "Kingston township",
+    "instrument": "Zoning Ordinance of Kingston Township (Chapter 27 Zoning, effective 1-14-1987, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 KI2368, Township of Kingston, PA, a home rule township. The code defines the municipality as 'The Township of Kingston, Luzerne County, Pennsylvania, also known as \"Kingston Township\"' (27-202), so this is Kingston township, Luzerne County, not Kingston borough (KI0963). District use lists and lot and building figures are text in Part 5. No zoning attachment was seen. The floodplain rules are in Chapter 8 (Ord. No. 2024-01). New Laws lists only two Appendix D items of 9-9-2026, none for zoning",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/KI2368",
+      "https://ecode360.com/KI2368/laws",
+      "https://ecode360.com/11770378",
+      "https://ecode360.com/print/KI2368?guid=11770378",
+      "https://ecode360.com/print/KI2368?guid=14428745",
+      "https://ecode360.com/print/KI2368?guid=14428899",
+      "https://ecode360.com/print/KI2368?guid=14429020",
+      "https://ecode360.com/print/KI2368?guid=14429097",
+      "https://ecode360.com/print/KI2368?guid=14429447",
+      "https://ecode360.com/print/KI2368?guid=11770359",
+      "https://ecode360.com/print/KI2368?guid=26941933",
+      "https://ecode360.com/print/KI2368?guid=45063985",
+      "https://ecode360.com/print/KI2368?guid=26942035",
+      "https://ecode360.com/KI2368/search?query=%22dwelling%20unit%2C%20accessory%22%20OR%20%22accessory%20dwelling%22%20OR%20%22servants%22%20OR%20%22secondary%20residence%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Luzerne",
+    "municipality_type": "township",
+    "geoid": "4207939792",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/11770378",
+    "code_current_through": "2026-07-08",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 07-08-2026.' New Laws lists two items of 2026-09-09 under Governmental and Intergovernmental Affairs (Appendix D), none for zoning.",
+    "checks": [
+      "The code defines an accessory dwelling unit: 'A separate second dwelling unit which may be located within a structure in which the principal use is for a single-family dwelling provided that such accessory dwelling shall be permitted only if it' has at most three rooms or 800 sq ft of livable area and is not meant for more than three persons (27-202 'Dwelling unit, accessory'). No district use list names it, and a code search finds the term only in the definitions of Chapter 27 and Chapter 22. Whether the definition alone lets the unit be added to a house as an accessory use is not settled. Ask the zoning officer",
+      "R-1 permits by right the single-family detached dwelling, the Conservation District uses and noncommercial horticulture. It lists no two-family dwelling and no conversion (27-503.1). Only one principal building and its customary accessory buildings may be built on a lot, outside mobile home parks and group housing (27-332)",
+      "An accessory building is defined as 'A secondary residence, garage, or other building' subordinate to the main building, and 'may include servants' quarters' (27-202 'Accessory building'). No section sets rules for living in an accessory building, and 27-332 allows one principal building and its customary accessory buildings. Whether a separate cottage or a unit in a garage can be read as an accessory building is not settled",
+      "Rear dwellings: in all districts except the industrial districts, 'no building in the rear of a principal building on the same lot shall be used for residence purposes unless it conforms to the open space requirements of this chapter'. The rear yard line of the front house is the front lot line of the rear building, and the rear dwelling needs an open accessway at least 10 ft wide to a road (27-335). This rule does not itself permit a second dwelling. Read with 27-332, it reaches only where the code allows two dwellings on one lot (group housing in R-3)",
+      "Conversions: a dwelling may be converted to more units 'only within a district in which a new building for similar occupancy would be permitted', meeting the lot size, lot area per unit, coverage, yards and parking of new construction there (27-307). R-2 permits duplexes, R-3 permits every R-2 use and multiple-family dwellings, and A-1 permits two-family dwellings on 2 1/2 acres (27-504.1, 27-505.1, 27-502.1A)",
+      "R-2 duplex figures: 'Living units Maximum 4 per acre' and 'Minimum lot area (2 units and greater) 15,000 square feet' (27-504.3). Four units an acre is 10,890 sq ft a unit, so two units would need 21,780 sq ft by the density figure. The two figures are not reconciled in the code. A duplex is defined as one unit over the other (27-202). R-2 does not list a twin",
+      "Group housing: 'two single or multiple-family dwellings to be constructed on a plot of ground under single ownership of one acre or more, not subdivided into the customary streets and lots', in any multifamily district, meeting the district coverage, height and yards (27-312). A group of two or more residential buildings on a lot is a land development (27-202 'Land development')",
+      "Accessory buildings in residential districts may stand only in the rear yard, or be part of the house, or be joined to it by a breezeway if at least 6 ft away, meeting the house's yards (27-303). Detached accessory structures in A-1 and R districts: at most 1 1/2 stories or 15 ft tall (not in A-1), at least 10 ft from the house, and not more than two accessory structures, a private garage included, on one lot in an R district (27-343.3A). Accessory rear yard 10 ft and side yard as for the house in R-1, R-2 and R-3 (27-503.3, 27-504.3, 27-505.4). In A-1 front 40 ft, rear 30 ft, side as for the house (27-502.4)",
+      "Lot coverage is not defined in the chapter. The district tables give a 'Maximum percent of lot coverage'. The figures are shown here as building cover. Impervious material is defined separately and includes buildings, paved and gravel areas (27-202)",
+      "R-1 without central sanitary sewer: at least 3/4 acre. Without central sewer and central water: at least one acre, and the lot must connect within 90 days once either service reaches it (27-503.4). On-lot sewage needs a sewage permit (27-503.5)",
+      "Minimum living area: 525 sq ft for any single or multiple-family living unit. An efficiency apartment with no separate bedroom may be smaller by special exception from the Zoning Hearing Board (27-317)",
+      "Parking: 'Dwellings - single-family 2 for each unit', 'Dwellings - multiple 1 1/2 for each unit', and a parking area for a single-family detached dwelling has at least three spaces (27-326.1, 27-326.2). A two-family dwelling is not in the table. 'Where the use of the premises is not specifically mentioned, requirements for similar uses shall apply' (27-326.2). No rule for a fraction of a space was found",
+      "Business districts: dwellings are not a principal use in a business or industrial zone. Living units may be set up inside the principal building of a business use, with direct street access in B-1 and B-2, and single-family dwellings are permitted on existing lots of record there, all by conditional use (27-316). B-1 lists multiple dwellings and B-2 apartments as conditional uses decided by the Board of Supervisors (27-507.2, 27-508.2). Industrial districts bar dwellings except for watchmen, caretakers or farms (27-509.6A)",
+      "C-1 Conservation: a conservation area reaches 35 ft from a stream bed on both sides, 40 ft from the shore of a lake, pond or swamp, and all slopes over 20%. No use may disturb the natural fauna, flora, water regimen or topography, and accessory structures need a special exception (27-501.1E, 27-501.3)",
+      "Floodplain (Chapter 8): any construction or development anywhere in the township needs a permit from the Floodplain Administrator (8-202, 8-402). The identified floodplain is the special flood hazard area on the FIRM of June 20, 2024 (8-501). The floodway includes 'the area measured 50 feet landward from the top-of-bank of any watercourse' where no floodway is mapped. Only uses that need no fill or structures are permitted there, and other development needs a variance showing no rise in flood levels and a DEP permit (8-502.1A). New residential construction or a substantial improvement has its lowest floor at or above the base flood elevation plus 1 1/2 ft (8-302, 8-602.1A). New construction means structures begun on or after June 20, 2024, with later improvements (8-302). An accessory structure that is not elevated may not be used for human habitation, may have no sanitary facilities and may have at most 200 sq ft of floor area (8-602.5). Variances go to the Zoning Hearing Board. None may raise the base flood elevation in the floodway, or more than one foot in an AE zone without a floodway, and none for an accessory structure over 600 sq ft (8-901)",
+      "Variances: Zoning Hearing Board on the findings of 27-705, which follow MPC 910.2. No bar on a use variance was found, and no rule for a use the chapter does not list",
+      "Lots of record: a lot of record in A-1 or an R district may be used for a single-family dwelling even though it is below the district minimum, with yards as close to the rules as possible (27-342). A substandard lot gets a building permit for a single-family dwelling only after the Zoning Hearing Board grants variances (27-321.4)",
+      "Not read: Part 4 (district list and map, 27-401 to 27-403), 27-344 to 27-352, Part 6 (conditional use criteria), Part 8 (administration), Part 9 (amendments), 27-511 past the PRD procedure, 27-512 (conservation subdivision), and Chapter 8 sections 603 to 607 and Part 8 (existing structures). The I-1 code for the Industrial District is taken from the text of 27-509"
+    ],
+    "notes": "Zoning office: Kingston Township Zoning Officer, who is also the Floodplain Administrator (8-401). Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: Chapter 27 Parts 1 and 2 (definitions to 'Parking lot' in full, later terms by search), Part 3 (27-301 to 27-343), Part 5 (27-501 to 27-511.6), Part 7, and Chapter 8 Parts 1 to 5, 602, Part 7 and Part 9, with a code search. The code_current_through date is the eCode360 legislation date."
+  },
+  "adu": {
+    "term": {
+      "value": "dwelling unit, accessory",
+      "section": "27-202 'Dwelling unit, accessory'",
+      "url": "https://ecode360.com/print/KI2368?guid=14428745",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Defined as 'A separate second dwelling unit which may be located within a structure in which the principal use is for a single-family dwelling', at most three rooms or 800 sq ft and not meant for more than three persons. Searched for accessory dwelling, dwelling unit accessory, second dwelling, secondary residence, servants, in-law, accessory apartment, garage apartment, ECHO and living quarters. The term appears only in the definitions of Chapter 27 and Chapter 22"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-202, 27-503.1, 27-504.1, 27-505.1, 27-332",
+      "url": "https://ecode360.com/print/KI2368?guid=14429097",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code defines an accessory dwelling unit but no district use list names it, and only one principal building may stand on a lot (27-332). Whether the definition alone permits the unit inside a house is not settled. R-2 permits duplexes, R-3 group housing and A-1 two-family dwellings by right"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-705",
+      "url": "https://ecode360.com/print/KI2368?guid=14429447",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). The defined accessory dwelling unit may be read as permitted inside a house, which is not settled. R-2 and R-3 permit duplexes and A-1 two-family dwellings by right (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-705, 27-706.1E",
+      "url": "https://ecode360.com/print/KI2368?guid=14429447",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 27-705. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a dwelling to more units (R-2, R-3, A-1)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3",
+            "A-1"
+          ],
+          "conditions": "A dwelling converted to more units only where a new building for similar occupancy is permitted, and only when the result meets the lot size, lot area per unit, coverage, yards and parking that new construction there must meet. In R-2 the new building is a duplex, one unit over the other, on at least 15,000 sq ft at most 4 units an acre. In A-1 a two-family dwelling on 2 1/2 acres. Living units at least 525 sq ft",
+          "min_lot_sqft": 15000,
+          "min_lot_by_district": {
+            "R-2": 15000,
+            "A-1": 108900
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing dwelling to convert",
+              "section": "27-307"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "disputed_min_lot": {
+            "districts": [
+              "R-2"
+            ],
+            "min_lot_sqft": 21780,
+            "section": "27-504.3",
+            "note": "R-2 allows at most 4 living units an acre, which is 21,780 sq ft for two units, while the same table gives 15,000 sq ft for two units and greater"
+          },
+          "section": "27-307, 27-504.1B, 27-504.3, 27-505.1A, 27-502.1A, 27-502.4, 27-317",
+          "url": "https://ecode360.com/print/KI2368?guid=14428899",
+          "confidence": "secondary",
+          "note": "R-3 permits all R-2 uses, and its own table gives figures only for garden apartments and townhouses, so the R-2 figure is used there. In A-1 the 2 1/2 acres are read as the lot for one two-family dwelling"
+        },
+        {
+          "name": "Duplex (R-2, R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "A two-family dwelling with one unit over the other. In R-2 at least 15,000 sq ft and 100 ft wide at the building line, at most 4 living units an acre, front yard 35 ft, side yards 25 ft, street side 20 ft, rear yard 25 ft, lot coverage 30%, height 35 ft. Living units at least 525 sq ft",
+          "min_lot_sqft": 15000,
+          "builds": [
+            "attached"
+          ],
+          "disputed_min_lot": {
+            "districts": [
+              "R-2"
+            ],
+            "min_lot_sqft": 21780,
+            "section": "27-504.3",
+            "note": "R-2 allows at most 4 living units an acre, which is 21,780 sq ft for two units, while the same table gives 15,000 sq ft for two units and greater"
+          },
+          "requires": [
+            {
+              "test": null,
+              "condition": "One unit over the other. A side by side twin is not listed in R-2",
+              "section": "27-202 'Dwelling', 27-504.1B"
+            }
+          ],
+          "section": "27-504.1B, 27-504.3, 27-505.1A, 27-202 'Dwelling', 27-317",
+          "url": "https://ecode360.com/print/KI2368?guid=14429097",
+          "confidence": "secondary",
+          "note": "R-3 permits all R-2 uses. Its own table gives no duplex figures, so the R-2 figures are used there"
+        },
+        {
+          "name": "Two-family dwelling (A-1)",
+          "path": "by_right",
+          "districts": [
+            "A-1"
+          ],
+          "conditions": "Single and two-family dwellings 'on the basis of one dwelling for each 2 1/2 acres or more under the same ownership'. Lot at least 2 1/2 acres and 400 ft wide at the building line, front yard 100 ft, side yards 50 ft, street side 40 ft, rear yard 50 ft, lot coverage 20%",
+          "min_lot_sqft": 108900,
+          "builds": [
+            "attached"
+          ],
+          "section": "27-502.1A, 27-502.4",
+          "url": "https://ecode360.com/print/KI2368?guid=14429097",
+          "confidence": "verified"
+        },
+        {
+          "name": "Group housing, two dwellings on one plot (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Two single or multiple-family dwellings on a plot of one acre or more under single ownership, not subdivided into lots, meeting the district's coverage, height and yards. A rear dwelling needs an open accessway at least 10 ft wide to a road, and its front yard is measured from the rear line of the front house's rear yard (27-335). Two residential buildings on a lot are a land development",
+          "min_lot_sqft": 43560,
+          "land_development": true,
+          "builds": [
+            "detached_new"
+          ],
+          "section": "27-312, 27-332, 27-335, 27-202 'Land development'",
+          "url": "https://ecode360.com/print/KI2368?guid=14428899",
+          "confidence": "secondary",
+          "note": "27-312 names no approval beyond the district rules, so it is read as by right with a land development plan"
+        },
+        {
+          "name": "Multiple dwellings or apartments of three or more units (B-1, B-2)",
+          "path": "conditional_use",
+          "districts": [
+            "B-1",
+            "B-2"
+          ],
+          "conditions": "B-1 lists multiple dwellings and B-2 apartments as conditional uses approved by the Board of Supervisors. An apartment building houses more than two families",
+          "min_units": 3,
+          "section": "27-507.2, 27-508.2, 27-202 'Apartment building', 27-706.2C",
+          "url": "https://ecode360.com/print/KI2368?guid=14429097",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "27-307, 27-312, 27-502, 27-504, 27-505, 27-507, 27-508",
+      "url": "https://ecode360.com/print/KI2368?guid=14429097",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/KI2368?guid=11770378",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No historic district or historic path in the zoning chapter"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "C-1",
+        "A-1",
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "B-1",
+        "B-2",
+        "I-1",
+        "M-1"
+      ],
+      "section": "27-501 to 27-510",
+      "url": "https://ecode360.com/print/KI2368?guid=14429097",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-2 lists duplexes, R-3 multiple-family dwellings and A-1 two-family dwellings"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain any construction or development needs a permit. New residential construction or a substantial improvement (work of 50% or more of market value) has its lowest floor at or above the base flood elevation plus 1 1/2 ft. In the floodway only uses that need no fill or structures are permitted, and other development needs a variance showing no rise in flood levels and a DEP permit. In an AE zone without a floodway no development that, with all other development, raises flood levels more than one foot. Variances go to the Zoning Hearing Board and may not raise the base flood elevation in the floodway.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-202, 8-302, 8-502.1, 8-602.1, 8-901",
+          "url": "https://ecode360.com/print/KI2368?guid=11770359",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "The floodway includes 'the area measured 50 feet landward from the top-of-bank of any watercourse' where the map shows no floodway. Structures are not among the uses permitted there, and other development needs a variance showing no rise in flood levels.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-502.1A",
+          "url": "https://ecode360.com/print/KI2368?guid=11770359",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain an accessory structure that is not elevated 'shall not be designed or used for human habitation', may have no sanitary facilities and at most 200 sq ft of floor area. One of 200 sq ft or more below the base flood elevation needs a variance, and no variance is granted for one over 600 sq ft.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "8-602.5, 8-901.2C",
+          "url": "https://ecode360.com/print/KI2368?guid=26941933",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8",
+          "no_variance": {
+            "section": "8-901.2C",
+            "url": "https://ecode360.com/print/KI2368?guid=26942035",
+            "quote": "No variance shall be granted for a proposed accessory structure that exceeds 600 square feet in size.",
+            "note": "Reaches an accessory structure in the floodplain"
+          }
+        }
+      ],
+      "section": "8-502, 8-602, 8-901",
+      "url": "https://ecode360.com/print/KI2368?guid=11770359",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-503.1, 27-504.1, 27-505.1, 27-332",
+      "url": "https://ecode360.com/print/KI2368?guid=14429097",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists the defined accessory dwelling unit. A second unit is only possible through the listed paths"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": null,
+      "section": "27-317",
+      "url": "https://ecode360.com/print/KI2368?guid=14428899",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. Any living unit needs at least 525 sq ft, and an efficiency apartment may be smaller by special exception (27-317). The ADU definition caps the unit at three rooms or 800 sq ft (27-202)"
+    }
+  },
+  "envelope": {
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "27-303, 27-343.3A",
+      "url": "https://ecode360.com/print/KI2368?guid=14428899",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'No accessory building in residential districts shall be erected in any required court or any yard other than a rear yard'. An accessory building may be part of the house or joined to it by a breezeway if at least 6 ft away, meeting the house's yards"
+    },
+    "accessory_rear_yard_only_districts": {
+      "value": [
+        "A-1",
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "27-303, 27-343.3A",
+      "url": "https://ecode360.com/print/KI2368?guid=14429020",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "27-303 reaches residential districts. 27-343.3A lets unattached accessory structures in A-1 and R districts stand within a rear yard"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 15,
+      "section": "27-343.3A(1)",
+      "url": "https://ecode360.com/print/KI2368?guid=14429020",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Maximum height: 1 1/2 stories or 15 feet, except in A-1 Districts'"
+    },
+    "accessory_height_cap_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "27-343.3A(1)",
+      "url": "https://ecode360.com/print/KI2368?guid=14429020",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The cap does not hold in A-1"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "27-343.3A(3)",
+      "url": "https://ecode360.com/print/KI2368?guid=14429020",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'An accessory structure shall be located not less than 10 feet from a principal structure'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-326.2",
+      "url": "https://ecode360.com/print/KI2368?guid=14428899",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. 'Dwellings - single-family 2 for each unit' and 'Dwellings - multiple 1 1/2 for each unit'"
+    },
+    "reading": {
+      "value": "A two-family dwelling is not in the parking table. Read as single-family units it needs 2 spaces a unit, 4 in all. Read as a multiple dwelling it needs 1 1/2 a unit, 3 in all. A single-family detached dwelling's parking area has at least three spaces",
+      "section": "27-326.1, 27-326.2",
+      "url": "https://ecode360.com/print/KI2368?guid=14428899",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "A-1": {
+      "min_lot_sqft": {
+        "value": 108900,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum lot 2 1/2 acres'. Lot width at least 400 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 100,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Interior side yard. A street side yard is 40 ft"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum percent of lot coverage 20%'. Lot coverage is not defined in the chapter"
+      },
+      "accessory_setback_front_ft": {
+        "value": 40,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 50,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Same as principal building'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 30,
+        "section": "27-502.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Lot width at least 100 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Interior side yard. A street side yard is 20 ft"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum percent of lot coverage 30%'. Lot coverage is not defined in the chapter"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Same as principal building'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-503.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without central sanitary sewer",
+            "public_sewer": false,
+            "public_water": null,
+            "min_lot_sqft": 32670,
+            "section": "27-503.4",
+            "note": "3/4 of an acre"
+          },
+          {
+            "when": "Without central sanitary sewer and without central water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "27-503.4",
+            "note": "One acre. The lot must connect within 90 days once either service reaches it"
+          }
+        ],
+        "section": "27-503.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Minimum lot area (2 units and greater) 15,000 square feet', and at most 4 living units an acre. R-2 permits every R-1 use, and its table is read as reaching a single-family house too. Lot width at least 100 ft"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Interior side yard. A street side yard is 20 ft"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum percent of lot coverage 30%'. Lot coverage is not defined in the chapter"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10890,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Living units Maximum 4 per acre', read as 10,890 sq ft a unit"
+      },
+      "accessory_setback_side_ft": {
+        "value": 25,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Same as principal building'"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-504.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "setback_front_ft": {
+        "value": 10,
+        "section": "27-505.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The garden apartment figure, read as reaching a house in R-3 too"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-505.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The garden apartment figure, read as reaching a house in R-3 too, interior side. A street side yard is 20 ft"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "27-505.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The garden apartment figure, read as reaching a house in R-3 too"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-505.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The garden apartment figure, read as reaching a house in R-3 too. Lot coverage is not defined in the chapter"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-505.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 15,
+        "section": "27-505.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Same as principal building', here the garden apartment side yard"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-505.4",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "B-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Principal and accessory structures. Lot width at least 50 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Interior side setback. A street side setback is 15 ft"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum percent of lot coverage 30%'. Lot coverage is not defined in the chapter"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-507.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "B-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Lot width at least 50 ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Interior side setback. A street side setback is 15 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum percent of lot coverage 30%'. Lot coverage is not defined in the chapter"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-508.3",
+        "url": "https://ecode360.com/print/KI2368?guid=14429097",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}

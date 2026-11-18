@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 212,
-      "population": 6504869,
-      "share_of_pa": 0.5003
+      "towns_beyond_the_two_cities": 215,
+      "population": 6526078,
+      "share_of_pa": 0.5019
     }
   ],
   "towns": [
@@ -5186,6 +5186,78 @@
         "named as a town with an ADU ordinance (Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C))"
       ],
       "status_note": "Open points: the online code stops at 10-10-2023, and a data center overlay ordinance with its own overlay map was advertised with a vote set for March 24, 2026. Whether it was adopted, its text and which residential land it covers were not confirmed. Also open: whether the base district's conditional uses still apply inside the FP District (27-301, 27-302, 27-1403), the parking count for the apartment (3 under 27-1502.15H or 4 under 27-1802), whether density counts the apartment in R-A, R-S and R-C, whether an apartment may be added on an R-C cluster lot (27-1010.1A), the minimum apartment size (300 sq ft, or 150 sq ft for one person under 27-1509) and whether the guesthouse path reaches R-MH"
+    },
+    {
+      "geoid": "4207939792",
+      "geoid_aliases": [],
+      "name": "Kingston township",
+      "county": "Luzerne",
+      "type": "township",
+      "population": 7108,
+      "population_with_aliases": 7108,
+      "housing_units": 3056,
+      "pop_rank": 399,
+      "file": "pa_luzerne_kingston_township",
+      "batch": 54,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11770378",
+      "plain_fetch": null,
+      "code_current_through": "2026-07-08",
+      "code_note": null,
+      "why": [
+        "added as batch 54 by population. Code Chapter 27 defines an accessory dwelling unit (27-202) but no district lists it (duplex by right in R-2 and R-3, two-family in A-1, 27-307 conversion, 27-312 group housing in R-3). Its code as read has no ADU rule (not addressed)"
+      ],
+      "status_note": "Open points (first reading): whether the defined accessory dwelling unit (27-202, at most three rooms or 800 sq ft) is permitted inside a house although no district lists it, whether 27-335 lets a rear dwelling stand beside 27-332's one principal building outside R-3 group housing, the R-2 duplex lot (15,000 sq ft or 21,780 sq ft at 4 units an acre), whether the R-3 garden apartment figures reach a house, and Part 4 (district list and map), Part 6, Part 8 and Chapter 8 sections 603 to 607 and Part 8, which were not read"
+    },
+    {
+      "geoid": "4202921008",
+      "geoid_aliases": [],
+      "name": "East Coventry township",
+      "county": "Chester",
+      "type": "township",
+      "population": 7068,
+      "population_with_aliases": 7068,
+      "housing_units": 2652,
+      "pop_rank": 401,
+      "file": "pa_chester_east_coventry",
+      "batch": 54,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30868304",
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-1515 in-law suite by special exception, family only (FR, R-1, R-2, R-3, C-1, LI))"
+      ],
+      "status_note": "Open points (first reading): whether the in-law suite reaches NC and C (27-1515 cites 27-902, whose lists do not name it), the conversion path (special exception under 27-1312.2 or by right under 27-502.1C), whether renting rooms with a kitchen (27-1319.1B(7)) is a second dwelling unit, whether the 600 sq ft dwelling minimum (27-1311) reaches the suite, the 40% cap showing on Option 4 detached forms, and Part 3, Part 12, Part 14, Parts 16 to 20 and the C-1 and LI standards, which were not read"
+    },
+    {
+      "geoid": "4200117640",
+      "geoid_aliases": [],
+      "name": "Cumberland township",
+      "county": "Adams",
+      "type": "township",
+      "population": 7033,
+      "population_with_aliases": 7033,
+      "housing_units": 3158,
+      "pop_rank": 404,
+      "file": "pa_adams_cumberland",
+      "batch": 54,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30831722",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-26",
+      "code_note": null,
+      "why": [
+        "added as batch 54 by population. Code Chapter 27 has no ADU text (two-family by right in R, RMH, VMX, TND)"
+      ],
+      "status_note": "Open points (first reading): whether a house may be made into a two-family dwelling where 2F is permitted (no conversion section found), the R lot for two units (12,000 sq ft or 24,892 sq ft at 3.5 units a developable acre), the VMX, TND and MX standards (27-603), Part 14 multi-family overlays, Part 17 lots of record, the parking fraction rule and Chapter 8, which were not read"
     }
   ]
 }

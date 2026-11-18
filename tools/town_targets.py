@@ -1482,6 +1482,7 @@ FIXED_BATCH.update({g: 49 for g in ("4204111000", "4208971344", "4202919752")})
 FIXED_BATCH.update({g: 50 for g in ("4208531656", "4208308040", "4200384704")})
 FIXED_BATCH.update({g: 51 for g in ("4202921104", "4207961048", "4213345152")})
 FIXED_BATCH.update({g: 53 for g in ("4204529720", "4208718944", "4204372200")})
+FIXED_BATCH.update({g: 54 for g in ("4207939792", "4202921008", "4200117640")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1839,6 +1840,20 @@ EXTRAS = {
     "4204529720": "batch 53 by population. Code Chapter 162 has no ADU text (R-1 one single-family detached dwelling, R-3 apartment buildings of three or more units)",
     "4208718944": "Code 215-69 ECHO housing by conditional use, family only (A, R, LDR, MDR, HDR)",
     "4204372200": "Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C)",
+    # Batch 54 (2026-11-18): the next towns by population without a rule file. Souderton (Montgomery) was skipped
+    # (eCode360 Chapter 600 is a placeholder, and the zoning ordinance is only a PDF on the borough website), Ridley Park
+    # (Delaware) (eCode360 code through 12-21-2017, and Ord. No. 2020-1, 2023-1 and 2025-5, Chapter 213 zoning
+    # amendments, not yet codified), New Sewickley (Beaver) (zoning ordinance No. 208 only as article PDFs on the township
+    # website), Maxatawny (Berks) (zoning ordinance of 2012 and its amendments only as downloads on the township website),
+    # Ohio (Allegheny) (no codified zoning found as web pages, and the browser was refused the township website), Earl
+    # (Lancaster) (no zoning text found as web pages, copies only at the township building), Shenango (Lawrence) (zoning
+    # ordinance No. 1 of 2023 only as a document on the township website), Gettysburg (Adams) (each district's building
+    # form regulations only as images, Figures 204 to 217), Franklin (Greene) (zoning ordinance of 2022 only as a PDF on
+    # the township website) and Tunkhannock (Monroe) (zoning ordinance No. 2012-127 and its amendment only as PDFs on the
+    # township website).
+    "4207939792": "batch 54 by population. Code Chapter 27 defines an accessory dwelling unit (27-202) but no district lists it (duplex by right in R-2 and R-3, two-family in A-1, 27-307 conversion, 27-312 group housing in R-3)",
+    "4202921008": "Code 27-1515 in-law suite by special exception, family only (FR, R-1, R-2, R-3, C-1, LI)",
+    "4200117640": "batch 54 by population. Code Chapter 27 has no ADU text (two-family by right in R, RMH, VMX, TND)",
 }
 
 if __name__ == "__main__":

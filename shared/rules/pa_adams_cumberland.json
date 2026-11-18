@@ -1,0 +1,654 @@
+{
+  "provenance": {
+    "jurisdiction": "Cumberland township",
+    "instrument": "Zoning Ordinance of Cumberland Township of 2003 (Chapter 27 Zoning, Ord. of 11-25-2003, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CU3685, 'Cumberland Township, Adams County, PA', so this is Cumberland township, Adams County. District use lists and development standards are text tables in Parts 4 to 10. No zoning attachment was seen on the chapter page. Floodplain rules are in 27-1102 and in Chapter 8. New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/CU3685",
+      "https://ecode360.com/CU3685/laws",
+      "https://ecode360.com/30831722",
+      "https://ecode360.com/CU3685/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/CU3685?guid=31051097",
+      "https://ecode360.com/print/CU3685?guid=31051391",
+      "https://ecode360.com/print/CU3685?guid=31051467",
+      "https://ecode360.com/print/CU3685?guid=31051546",
+      "https://ecode360.com/print/CU3685?guid=31051743",
+      "https://ecode360.com/print/CU3685?guid=31052104",
+      "https://ecode360.com/print/CU3685?guid=31052122",
+      "https://ecode360.com/print/CU3685?guid=31052368"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Adams",
+    "municipality_type": "township",
+    "geoid": "4200117640",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/30831722",
+    "code_current_through": "2026-05-26",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-26-2026.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, living quarters, guest house, tenant house, elder cottage, extended family, conversion) find no such use in the zoning chapter",
+      "Uses accessory to dwellings 'include but are not limited to' a private garage, carport, parking, pool, open space, greenhouse or garden storage building, pet shelter, home occupation, antenna, fence and heating or cooling equipment (27-1501.1). No living quarters are listed. The Zoning Hearing Board interprets whether a questionable use is permitted as 'similar to' or 'customarily incidental to' a permitted use (27-1902.4A)",
+      "A dwelling unit is 'Two or more rooms used exclusively for occupancy by one person or family, containing living, sleeping, cooking, and bath facilities' (27-201). A two-family dwelling is 'A building designed for and occupied by two families', as a twin or a duplex (27-201)",
+      "Two-family dwellings are permitted by right in R and RMH (27-502.1), in VMX and TND, and in MX on a lot existing before August 22, 2023 (27-602). No section on converting a house to two units was found, so adding a unit to a house in those districts is read as making it a two-family dwelling that meets the district rules",
+      "R figures: at most 3.5 units per developable acre and a lot of at least 12,000 sq ft (27-503.1). Two units would need 24,892 sq ft by the density figure. Developable acreage leaves out rights-of-way, utility easements, floodplains, wetlands and part of steep slopes (27-201). Central water and sewer are required unless the residential lots are two acres or more (27-503.1 note). RMH allows 9 units a developable acre on lots of at least 4,000 sq ft",
+      "A and AR permit only the single-family detached dwelling among dwellings (27-402). In A each additional dwelling a parcel is allowed 'shall be located upon a separate and approved lot whether intended for transfer of title or not' (27-404.4B). So a second dwelling on a house lot in A is not a listed use",
+      "Accessory buildings: at least 10 ft from each other and from principal structures (27-1501.3). In R and RMH accessory structures stand at least 10 ft from property lines (5 ft beside a non-residential district) and are at most 16 ft and 1 1/2 stories tall (27-503.1). In A an accessory structure is at most 20 ft tall, and in AR 30 ft (27-403)",
+      "Parking: two spaces per dwelling unit for a single-family detached dwelling and for a two-family dwelling (27-1302)",
+      "Floodplain (27-1102): the identified floodplain is the special flood hazard area on the FIRM of July 22, 2020. 'Freestanding structures, buildings, and retaining walls' are prohibited in floodplains, as are on-site sewage systems, private wells and manufactured homes (27-1102.9). Basements are prohibited (27-1102.16C(1)). New residential construction or a substantial improvement has its lowest floor at or above the regulatory flood elevation (27-1102.16A). In an AE zone without a floodway no new construction within 50 ft landward of the top of bank without a DEP permit (27-1102.4B(2)(b), 27-1102.18F). An unelevated accessory structure may not be used for human habitation, has no sanitary facilities and at most 200 sq ft (27-1102.16E). Variances go to the Zoning Hearing Board and may not raise the 100-year flood elevation in the floodway, or more than one foot in an AE zone without a floodway (27-1102.11). An existing structure in the floodway may not be expanded if it raises the base flood elevation (27-1102.18)",
+      "Steep slopes: in areas of steep slope a structure the district permits needs a conditional use from the Board of Supervisors, and in areas of very steep slope only listed conditional uses are allowed. No more than 33% of the steep slopes on a lot may be disturbed (27-1103.4, 27-1103.6, 27-1103.8G)",
+      "Variances: Zoning Hearing Board on unnecessary hardship findings (27-1901.1C, 27-1902.4C). No bar on a use variance was found",
+      "Not read: Part 1, Part 3, Part 6 development standards (27-603), Parts 7 to 10, Part 12, Part 14 overlays (Neighborhood and Mixed Multi-Family Overlays), Part 16, Part 17 (nonconformance and lots of record), Part 18, the rest of Part 19, 27-1103.9 onward, 27-1104, Chapter 8 Floodplains, and the parking fraction rule"
+    ],
+    "notes": "Zoning office: Cumberland Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: Part 4, Part 5, the 27-602 use table, 27-1101 to 27-1103.8, 27-1302, Part 15, the start of Part 19 and parts of 27-201, with a code search. Some tables and definitions were read from the page image."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/CU3685/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22%20OR%20%22tenant%20house%22%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22%20OR%20conversion&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, living quarters, guest house, tenant house, elder cottage, extended family and conversion, and read the residential, agricultural and mixed-use use tables. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-402, 27-502, 27-602, 27-1501",
+      "url": "https://ecode360.com/print/CU3685?guid=31051467",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. R, RMH, VMX and TND permit two-family dwellings by right, and MX on lots existing before August 22, 2023"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-1901.1C, 27-1902.4C",
+      "url": "https://ecode360.com/print/CU3685?guid=31052368",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). Where two-family dwellings are permitted, a house may be made into one by right (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-1902.4C",
+      "url": "https://ecode360.com/print/CU3685?guid=31052368",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on unnecessary hardship findings. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling (R, RMH, VMX, TND, MX)",
+          "path": "by_right",
+          "districts": [
+            "R",
+            "RMH",
+            "VMX",
+            "TND",
+            "MX"
+          ],
+          "conditions": "A building designed for and occupied by two families, as a twin or a duplex. In R a lot of at least 12,000 sq ft and 80 ft wide at the setback line, at most 3.5 units per developable acre, side yards 12 ft each and 30 ft together (no side yard at a common wall), rear yard 25 ft, 25 ft from a local street, buildings at most 40% and impervious cover 50% of the lot, central water and sewer unless the lot is two acres or more. In RMH a lot of at least 4,000 sq ft and at most 9 units per developable acre. In MX only on a lot existing before August 22, 2023. Mixed-use districts need central water and sewer. Two parking spaces per unit",
+          "min_lot_sqft": 12000,
+          "min_lot_by_district": {
+            "R": 12000,
+            "RMH": 4000
+          },
+          "disputed_min_lot": {
+            "districts": [
+              "R"
+            ],
+            "min_lot_sqft": 24892,
+            "section": "27-503.1",
+            "note": "R allows at most 3.5 units per developable acre, so two units need 24,892 sq ft of developable land, while the lot minimum is 12,000 sq ft"
+          },
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "27-201 'Dwelling', 27-502.1, 27-503.1, 27-601.7, 27-602, 27-1302",
+          "url": "https://ecode360.com/print/CU3685?guid=31051467",
+          "confidence": "secondary",
+          "note": "No section on converting a house was found. Turning a house into a twin or duplex is read as a two-family dwelling. The VMX, TND and MX lot figures (27-603) were not read"
+        },
+        {
+          "name": "Multi-family dwelling of three or more units (RMH)",
+          "path": "by_right",
+          "districts": [
+            "RMH"
+          ],
+          "conditions": "A building designed for and occupied by more than two families, on a tract of at least 2 acres at most 9 units per developable acre, with central water and sewer",
+          "min_units": 3,
+          "min_lot_sqft": 87120,
+          "min_lot_is_tract": true,
+          "section": "27-201 'Dwelling', 27-502.1, 27-503.1",
+          "url": "https://ecode360.com/print/CU3685?guid=31051467",
+          "confidence": "verified"
+        }
+      ],
+      "section": "27-502, 27-503, 27-602",
+      "url": "https://ecode360.com/print/CU3685?guid=31051467",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/30831722",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "27-106 (conditional uses for historic resources) was not read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "A",
+        "AR",
+        "R",
+        "RMH",
+        "VMX",
+        "MX",
+        "BP",
+        "TND"
+      ],
+      "section": "27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/CU3685?guid=31051467",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R, RMH, VMX, TND and MX (older lots) list two-family dwellings. The I, INS, AIR and OS use lists were not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In floodplains 'Freestanding structures, buildings, and retaining walls' are specifically prohibited, as are on-site sewage disposal systems and private water supply wells.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "27-1102.9",
+          "url": "https://ecode360.com/print/CU3685?guid=31051743",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain new residential construction or a substantial improvement has its lowest floor at or above the regulatory flood elevation, and basements are prohibited. In the floodway no encroachment without a hydraulic study showing no rise and a DEP permit. An existing structure in the floodway may not be expanded if it raises the base flood elevation. Variances go to the Zoning Hearing Board and may not raise the 100-year flood elevation in the floodway.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "27-1102.4, 27-1102.11, 27-1102.16, 27-1102.18",
+          "url": "https://ecode360.com/print/CU3685?guid=31051743",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE zone without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "27-1102.4B(2)(b), 27-1102.18F",
+          "url": "https://ecode360.com/print/CU3685?guid=31051743",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain an accessory structure that is not elevated 'shall not be designed or used for human habitation', has no sanitary facilities and at most 200 sq ft of floor area. One of 200 sq ft or more below the base flood elevation needs a variance.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "27-1102.16E",
+          "url": "https://ecode360.com/print/CU3685?guid=31051743",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "On steep slopes a structure the district permits needs a conditional use from the Board of Supervisors, and on very steep slopes only listed conditional uses are allowed. No more than 33% of the steep slopes on a lot may be disturbed.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-1103.4, 27-1103.5, 27-1103.6, 27-1103.8G",
+          "url": "https://ecode360.com/print/CU3685?guid=31051743",
+          "confidence": "verified"
+        }
+      ],
+      "section": "27-1102, 27-1103",
+      "url": "https://ecode360.com/print/CU3685?guid=31051743",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-402, 27-502, 27-602",
+      "url": "https://ecode360.com/print/CU3685?guid=31051467",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "separation_ft": {
+      "value": 10,
+      "section": "27-1501.3",
+      "url": "https://ecode360.com/print/CU3685?guid=31052122",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory buildings on a lot shall be located not less than 10 feet from each other and from principal structures.'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1302",
+      "url": "https://ecode360.com/print/CU3685?guid=31052104",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. Two spaces per dwelling unit for single-family detached and two-family dwellings"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-1302",
+      "url": "https://ecode360.com/print/CU3685?guid=31052104",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Two spaces for each unit of a two-family dwelling"
+    }
+  },
+  "districts": {
+    "A": {
+      "min_lot_sqft": {
+        "value": 21780,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Minimum lot for a single-family detached dwelling, 0.5 acre (and at most 2 acres). The tract minimum is 5 acres"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building face to a collector or local street right-of-way. 60 ft to an arterial street"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One side. 40 ft for both sides together"
+      },
+      "setback_sides_total_ft": {
+        "value": 40,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Of a single-family detached dwelling lot. Building coverage is 'The percentage of the lot area covered by the legally prescribed building area' (27-201)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Of a single-family detached dwelling lot"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "27-403.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "AR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "With central water and central sewer. 100 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "From a local street. 40 ft from a collector street, 50 ft from an arterial street"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "With central water and central sewer. Building coverage is 'The percentage of the lot area covered by the legally prescribed building area' (27-201)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "With central water and central sewer"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 30,
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "On-lot water and on-lot sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 80000,
+            "max_building_coverage": 0.15,
+            "max_impervious_coverage": 0.2,
+            "section": "27-403.2",
+            "note": "200 ft wide"
+          },
+          {
+            "when": "On-lot water and central sewer",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 30000,
+            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.4,
+            "section": "27-403.2",
+            "note": "150 ft wide"
+          },
+          {
+            "when": "Central water and on-lot sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 40000,
+            "max_building_coverage": 0.3,
+            "max_impervious_coverage": 0.4,
+            "section": "27-403.2",
+            "note": "125 ft wide"
+          }
+        ],
+        "section": "27-403.2",
+        "url": "https://ecode360.com/print/CU3685?guid=31051391",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 12000,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "80 ft wide at the setback line. Central water and sewer are required unless the lot is two acres or more"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 12446,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Tract Density (units per developable acre) 3.5', read as 12,446 sq ft of developable land a unit"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building face to a local street right-of-way. 40 ft to a collector street, 50 ft to an arterial street"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One side. Common walls of twins and attached dwellings are excepted"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building coverage is 'The percentage of the lot area covered by the legally prescribed building area' (27-201)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum Accessory Structures Setback from Property Lines' 10 ft, 5 ft where the line adjoins a non-residential district"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "5 ft where the line adjoins a non-residential district"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 16,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "16 ft and 1 1/2 stories"
+      }
+    },
+    "RMH": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "40 ft wide. The tract minimum is 2 acres, with central water and sewer"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4840,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum Tract Density (units per developable acre) 9.0', read as 4,840 sq ft of developable land a unit"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building face to a local street right-of-way. 40 ft to a collector street, 50 ft to an arterial street"
+      },
+      "setback_side_ft": {
+        "value": 8,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One side. Common walls of twins and attached dwellings are excepted"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building coverage is 'The percentage of the lot area covered by the legally prescribed building area' (27-201)"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "5 ft where the line adjoins a non-residential district"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "5 ft where the line adjoins a non-residential district"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 16,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "16 ft and 1 1/2 stories"
+      }
+    }
+  }
+}
