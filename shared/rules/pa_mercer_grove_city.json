@@ -1,0 +1,757 @@
+{
+  "provenance": {
+    "jurisdiction": "Grove City borough",
+    "instrument": "Borough of Grove City Zoning Ordinance (Code of Ordinances Chapter 156 Zoning, Ord. 1419 of 9-16-2013, as amended), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "American Legal Publishing code library 'grovecitybor', Grove City Borough, Pennsylvania (overview page: 123 W Main St, Grove City Borough, Pennsylvania 16127, website grovecityonline.com). Mercer County. Ordinance 1452 adopted this codification. Chapter 156 is web text, including each district's table of uses and its lot, yard and height table. Floodplain rules are Chapter 152 Floodplains (Ord. 1422 of 4-21-2014). The borough website also posts the 2013 zoning ordinance as a PDF, which was not opened",
+    "effective_date": null,
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/overview",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5717",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5814",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5954",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6246",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6429",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6600",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4311",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4490",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4515",
+      "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4707"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Mercer",
+    "municipality_type": "borough",
+    "geoid": "4208531656",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5717",
+    "code_current_through": "2026-01-05",
+    "code_current_through_note": "American Legal overview: 'Supplement contains: Local legislation current through Ord. 1506, passed 1-5-2026'. Version shown: 2026 S-7 (current). Ord. 1506 amended 156.044 and 156.060. No later zoning ordinance was found",
+    "checks": [
+      "ADU: an 'accessory apartment' is a special exception from the Zoning Hearing Board in R-1B ('One accessory apartment (see § 156.059)') and a conditional use from Borough Council in R-2 ('Accessory apartments/multiple-family dwellings (subject to § 156.059 and § 156.066 respectively)') (156.037, 156.038). No other district lists it",
+      "Where: 'The accessory apartment must be located in a garage or another building separate from the principle dwelling unit' (156.059(B)). So a unit inside the house or in an addition does not qualify. A conversion of the house into apartments is a separate conditional use in R-2, RLC and C-1 (156.063)",
+      "Owner: 'The owner of the property shall occupy either the principal dwelling unit or the accessory apartment', and the owner must tell the borough of any change in residency, such as a sale (156.059(C)). At most one bedroom (156.059(E)). One added off-street parking space per apartment (156.059(D)), besides the house's two (156.111 Table 156.111B)",
+      "Size: 156.059 sets no floor area cap and no minimum. The 600 sq ft minimum per unit in 156.063 and 156.066 is for conversions, duplexes and multifamily dwellings",
+      "Accessory buildings meet the district's front, side and rear yards (156.107). A private garage of at most 900 sq ft accessory to a single-family dwelling may stand within 5 ft of a side or rear line (156.107(B)). Whether a garage with an apartment keeps that allowance is not settled. The code has no separate height cap for accessory buildings, so the district height of 28 ft is read as the limit",
+      "Coverage is defined as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area' (156.146). The 33% cap may count every floor, not only the footprint. Ask the zoning officer how it is measured",
+      "Lots of record: a lot that existed when the chapter took effect may be built on with a use the district permits though it is below the area and width minimums (156.106). A single-family dwelling on a lot of record may extend into a side yard, not closer than 4 ft to the line (156.105(D)). Front yards may be averaged with neighbors (156.105(E))",
+      "A use the Zoning Officer cannot find provided for in any district may be referred to the Zoning Hearing Board, which may permit it if it is similar to and compatible with the permitted uses (156.035(E)(2)). The accessory apartment is provided for in R-1B and R-2, so this is not read as a path in other districts. Outside R-1B and R-2 the path is a use variance (156.167(H))",
+      "Floodplain (Chapter 152): a permit for any construction or development. In a floodway no new construction or development without an engineering analysis of no rise and a DEP permit. In an AE area without a floodway nothing within 50 ft landward of the top of bank without a DEP permit (152.096(F)). New construction and substantial improvement of a residential structure have the lowest floor at or above the base flood elevation plus 1.5 ft. An accessory structure that is not elevated may not be used for human habitation (152.061(E)). Floodplain variances may not allow any rise in a floodway (152.111)",
+      "Duplex: 'Duplex, when new construction' is permitted by right in R-2 (8,500 sq ft), and a duplex is a special exception in RLC (12,000 sq ft, with a cap of four units per acre) (156.038, 156.039, 156.066)",
+      "Height: a building may be up to 10 ft taller than the district height if every yard grows 1 ft for each added foot (156.109(A))"
+    ],
+    "notes": "Zoning office: Grove City Borough Zoning Officer. Read in a browser on the American Legal code library, one page at a time, on 2026-11-17 and 2026-11-18. Read: 156.001 to 156.008, 156.020, 156.035 to 156.044, 156.055 to 156.071, 156.092, 156.093, 156.105 to 156.112, 156.133, 156.134, 156.145, 156.146, 156.160 to 156.167, and Chapter 152 sections 152.001 to 152.003, 152.027 to 152.049, 152.060 to 152.062, 152.081 to 152.083, 152.095, 152.096, 152.110, 152.111, 152.125, 152.126. Not read: 156.072 to 156.091 (156.075 upper floor dwelling unit is a C-1 conditional use), 156.113, 156.114, 156.125 to 156.132, 156.168 to 156.170, 156.185 to 156.204, 156.999, 152.004 to 152.026, 152.063 to 152.066, 152.080, Chapter 153 (mobile homes) and Chapter 155 (subdivision and land development). Searched the zoning chapter for accessory dwelling, accessory apartment, in-law, garage apartment, second dwelling, conversion, ECHO, elder cottage, tenant house, caretaker and temporary dwelling by reading its full table of contents and use tables: only 'accessory apartment' (156.059), conversion (156.063), duplex (156.066) and upper floor dwelling unit (156.075) appear. Open points: whether the 900 sq ft garage allowance of 156.107(B) reaches a garage with an apartment, how coverage is measured under the 156.146 definition, whether R-2 allows more than one accessory apartment, and whether a duplex may stand beside an existing house."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "156.059, 156.037, 156.038",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'The intent is that the accessory apartment shall be clearly incidental and subordinate to a single-family dwelling'. The chapter gives no definition of its own"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "156.037, 156.038, 156.059",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "A special exception from the Zoning Hearing Board in R-1B and a conditional use from Borough Council in R-2. Only in a garage or another building separate from the house"
+    },
+    "status_by_form": {
+      "value": {
+        "internal": "prohibited",
+        "attached": "prohibited"
+      },
+      "section": "156.059(B)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'The accessory apartment must be located in a garage or another building separate from the principle dwelling unit'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1B",
+        "R-2"
+      ],
+      "section": "156.037, 156.038",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "R-1B lists 'One accessory apartment' as a special exception and R-2 lists 'Accessory apartments' as a conditional use"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "156.036, 156.039 to 156.044",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "R-1A, RLC, P-1, C-1, C-2, HCLI and I do not list an accessory apartment. The code does not bar it in words there"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "156.037, 156.055(B)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "R-1B: 'One accessory apartment (see § 156.059)' under Special Exceptions, granted or denied by the Zoning Hearing Board"
+    },
+    "district_paths": {
+      "value": [
+        {
+          "districts": [
+            "R-2"
+          ],
+          "path": "conditional_use",
+          "section": "156.038, 156.055(B)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+          "note": "'Accessory apartments/multiple-family dwellings (subject to § 156.059 and § 156.066 respectively)' under Conditional Uses, granted or denied by Borough Council after the Planning Commission's recommendation"
+        }
+      ],
+      "section": "156.038",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "156.167(E), (H)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6600",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 156.167(H)(2)(a) to (e). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a single-family dwelling into apartments (R-2, RLC, C-1)",
+          "path": "conditional_use",
+          "districts": [
+            "R-2",
+            "RLC",
+            "C-1"
+          ],
+          "conditions": "Conversion of an existing single-family home into up to three units, by Borough Council after a hearing and a Planning Commission review. The lot may not be smaller than a conforming single-family lot in the district. Each unit at least 600 sq ft without common spaces, with its own kitchen, bathroom and living and sleeping space, and its own utility connections and meters. Parking on the lot and behind the house: 1.5 spaces for a one-bedroom or efficiency unit and 2 for a two-bedroom unit. No parking in the front yard except a driveway up to 28 ft wide",
+          "min_lot_by_district": {
+            "R-2": 6000,
+            "RLC": 6000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family home to convert",
+              "section": "156.063(A)"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "156.038, 156.039, 156.041, 156.063",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5954",
+          "confidence": "secondary",
+          "note": "C-1 does not list single-family dwellings and gives one figure for all uses (1,000 sq ft), so the lot figure for a conversion there is not settled. New development in C-1 is not subject to the parking standards unless the conditional use asks for them (156.111(B))"
+        },
+        {
+          "name": "Duplex, new construction (R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "'Duplex, when new construction' is permitted. 8,500 sq ft and 75 ft wide, front 30 ft, side 30 ft, rear 30 ft, coverage 33%, height 28 ft. Each unit at least 600 sq ft, with its own kitchen, bathroom and living and sleeping space and separately metered utilities. Two parking spaces per unit",
+          "min_lot_sqft": 8500,
+          "requires": [
+            {
+              "test": null,
+              "condition": "A new building with two dwelling units. Turning the existing house into two units is a conversion instead",
+              "section": "156.038, 156.146 'Dwelling' (4)"
+            }
+          ],
+          "section": "156.038 Table 156.038, 156.066(A), (B), 156.111 Table 156.111B",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+          "confidence": "verified",
+          "note": "Read as a new two-unit building on the lot in place of the house. The code does not say whether a duplex may stand on a lot beside an existing house"
+        },
+        {
+          "name": "Duplex (RLC)",
+          "path": "special_exception",
+          "districts": [
+            "RLC"
+          ],
+          "conditions": "A duplex by special exception from the Zoning Hearing Board. 12,000 sq ft and 100 ft wide, 'Maximum of 4 dwelling units per acre' (prorated for lots under an acre), front 50 ft, side 25 ft, rear 25 ft, coverage 50%, height 35 ft. Each unit at least 600 sq ft with separately metered utilities. Two parking spaces per unit",
+          "min_lot_sqft": 12000,
+          "disputed_min_lot": {
+            "districts": [
+              "RLC"
+            ],
+            "min_lot_sqft": 21780,
+            "section": "156.066(D)",
+            "note": "The same table caps a duplex in RLC at four dwelling units per acre, prorated for lots under one acre. Two units then need half an acre, 21,780 sq ft, more than the 12,000 sq ft lot minimum"
+          },
+          "section": "156.039, 156.066(D)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5954",
+          "confidence": "secondary",
+          "note": "RLC also lists conversion of a single-family dwelling into apartments by conditional use"
+        }
+      ],
+      "section": "156.038, 156.039, 156.063, 156.066",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5954",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1B",
+        "R-2"
+      ],
+      "section": "156.037, 156.038",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "156.059(A), 156.146 'Dwelling' (3)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The apartment is 'subordinate to a single-family dwelling', defined as 'A building containing only one dwelling unit'. The section does not name a house type"
+    },
+    "lot_area_per_unit_sqft": {
+      "value": null,
+      "section": "156.059(A)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The district tables give no lot area per unit. 156.059(A) says the use is meant to add housing 'without altering the density of single-family residential neighborhoods'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "156.061(A)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Adaptive re-use of historic buildings reaches only former public buildings and lists no dwelling use"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1A",
+        "RLC",
+        "P-1",
+        "C-1",
+        "C-2",
+        "HCLI",
+        "I"
+      ],
+      "section": "156.036, 156.039 to 156.044",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "R-1A, RLC and P-1 permit single-family dwellings and list no accessory apartment. C-1, C-2, HCLI and I do not permit single-family dwellings"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "The accessory apartment must be in a garage or another building separate from the house, and it may have no more than one bedroom.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "156.059(B), (E)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Accessory buildings, whether attached to the house or not, may not reach into any minimum front, side or rear yard of the district. Only a private garage of at most 900 sq ft that is accessory to a single-family dwelling may stand within 5 ft of a side or rear lot line, and whether a garage that holds an apartment still counts as such a garage is not settled.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "156.107, 156.107(B)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 152) every construction or development needs a floodplain permit. In a floodway no new construction, substantial improvement or other development is allowed unless an engineering analysis shows no rise in flood levels, and no new construction or development without a DEP permit. In an AE area without a floodway the work may not raise the base flood elevation more than one foot. New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation (base flood plus 1.5 ft). Development includes the renovation, expansion or alteration of a building.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "152.003, 152.046(A), 152.061(A), 152.096, 152.126 'Development'",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4707",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 152"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway 'no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "152.096(F)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4707",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 152"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', may have no sanitary facilities or fixed utility equipment, and at most 600 sq ft of floor area.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "152.061(E)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4515",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 152",
+          "disputed_by": {
+            "section": "152.061(A)",
+            "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-4515",
+            "note": "The rule is for accessory structures that are not elevated or floodproofed. A building for the apartment built with its lowest floor at or above the regulatory flood elevation, as 152.061(A) asks of residential structures, may not be reached"
+          }
+        }
+      ],
+      "section": "156.059, 156.107, 152.003, 152.046, 152.061, 152.096",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "156.059(B)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'in a garage or another building separate from the principle dwelling unit'"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "new building separate from the house"
+      },
+      "section": "156.059(B)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "156.059",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "156.059 sets no floor area cap. The apartment may have at most one bedroom (156.059(E))"
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "156.059",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "156.059 sets no minimum. The 600 sq ft minimum of 156.063(B)(5) and 156.066(B) is for conversions and duplexes"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 28,
+      "section": "156.037, 156.038 Tables, 156.109",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code has no separate height for accessory buildings, so the district height of 28 ft in R-1B and R-2 is read as the limit"
+    },
+    "setback_rear_alley_ft": {
+      "value": 30,
+      "section": "156.107, 156.037, 156.038 Tables",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Accessory buildings may not reach into the district's 30 ft rear yard, alley or not. A private garage of at most 900 sq ft may stand within 5 ft of the rear line (156.107(B))"
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "156.107",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The code sets no distance between the house and an accessory building"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "156.107",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'All accessory buildings or structures, whether attached to the principal structure or not ... shall not project into any minimum front, side or rear yards except as noted in this section'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A private, noncommercial garage accessory to a single-family dwelling, of at most 900 sq ft. Whether a garage that holds an apartment still counts is not settled",
+          "setback_side_ft": 5,
+          "setback_rear_ft": 5,
+          "section": "156.107(B)",
+          "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181"
+        }
+      ],
+      "section": "156.107(B)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6181",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": false,
+      "section": "156.059",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "No rule on who may live in the apartment"
+    },
+    "occupancy": {
+      "value": "No rule on who may live there. The apartment may have at most one bedroom.",
+      "section": "156.059(E)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "156.059(C)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'The owner of the property shall occupy either the principal dwelling unit or the accessory apartment'"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "156.037, 156.038",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "R-1B allows 'One accessory apartment'. R-2 lists 'Accessory apartments' and 156.059(D) speaks of parking 'per apartment', so the number in R-2 is not settled"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "156.059(D)",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5879",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'There shall be adequate off-street parking space for one additional motor vehicle per apartment'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "156.059(D), 156.111 Table 156.111B",
+      "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-6246",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Two for the single-family dwelling ('2 per dwelling unit') and one for the apartment"
+    }
+  },
+  "districts": {
+    "R-1A": {
+      "min_lot_sqft": {
+        "value": 8500,
+        "section": "156.036 Table 156.036",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 8,500 sq ft, 75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "156.036 Table 156.036",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'*See also § 156.105 for alternative standards'. Front yard averaging with neighbors may lower it, not below 4 ft (156.105(E))"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "156.036 Table 156.036",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side. A house on a lot of record may extend into a side yard under 156.105(D), not closer than 4 ft to the line"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "156.036 Table 156.036",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.33,
+        "section": "156.036 Table 156.036, 156.146 'Coverage'",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum coverage'. The code defines coverage as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area', so how floors above the first count is not settled"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "156.036 Table 156.036",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Up to 10 ft more if every yard grows 1 ft for each added foot (156.109(A))"
+      }
+    },
+    "R-1B": {
+      "min_lot_sqft": {
+        "value": 7000,
+        "section": "156.037 Table (printed as 156.038)",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 7,000 sq ft, 75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "156.037 Table (printed as 156.038)",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'*See also § 156.105 for alternative standards'. Front yard averaging with neighbors may lower it, not below 4 ft (156.105(E))"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "156.037 Table (printed as 156.038)",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side. A house on a lot of record may extend into a side yard under 156.105(D), not closer than 4 ft to the line"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "156.037 Table (printed as 156.038)",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.33,
+        "section": "156.037 Table (printed as 156.038), 156.146 'Coverage'",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum coverage'. The code defines coverage as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area', so how floors above the first count is not settled"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "156.037 Table (printed as 156.038)",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Up to 10 ft more if every yard grows 1 ft for each added foot (156.109(A))"
+      },
+      "max_adus": {
+        "value": 1,
+        "section": "156.037",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'One accessory apartment (see § 156.059)'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "156.038 Table 156.038",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 6,000 sq ft, 75 ft wide. A duplex needs 8,500 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "156.038 Table 156.038",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'*See also § 156.105 for alternative standards'. Front yard averaging with neighbors may lower it, not below 4 ft (156.105(E))"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "156.038 Table 156.038",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side. A house on a lot of record may extend into a side yard under 156.105(D), not closer than 4 ft to the line"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "156.038 Table 156.038",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.33,
+        "section": "156.038 Table 156.038, 156.146 'Coverage'",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum coverage'. The code defines coverage as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area', so how floors above the first count is not settled"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "156.038 Table 156.038",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Up to 10 ft more if every yard grows 1 ft for each added foot (156.109(A))"
+      }
+    },
+    "RLC": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "156.039 Table 156.039",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 6,000 sq ft, 75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "156.039 Table 156.039",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'*See also § 156.105 for alternative standards'. Front yard averaging with neighbors may lower it, not below 4 ft (156.105(E))"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "156.039 Table 156.039",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side. A house on a lot of record may extend into a side yard under 156.105(D), not closer than 4 ft to the line"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "156.039 Table 156.039",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.33,
+        "section": "156.039 Table 156.039, 156.146 'Coverage'",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum coverage'. The code defines coverage as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area', so how floors above the first count is not settled"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "156.039 Table 156.039",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Up to 10 ft more if every yard grows 1 ft for each added foot (156.109(A))"
+      }
+    },
+    "P-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "156.040 Table 156.040",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 6,000 sq ft, 75 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "156.040 Table 156.040",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'*See also § 156.105 for alternative standards'. Front yard averaging with neighbors may lower it, not below 4 ft (156.105(E))"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "156.040 Table 156.040",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side. A house on a lot of record may extend into a side yard under 156.105(D), not closer than 4 ft to the line"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "156.040 Table 156.040",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.33,
+        "section": "156.040 Table 156.040, 156.146 'Coverage'",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum coverage'. The code defines coverage as 'The percentage of a lot covered by buildings or structures, measured as gross floor area divided into lot area', so how floors above the first count is not settled"
+      },
+      "principal_max_height_ft": {
+        "value": 28,
+        "section": "156.040 Table 156.040",
+        "url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5779",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Up to 10 ft more if every yard grows 1 ft for each added foot (156.109(A))"
+      }
+    }
+  }
+}

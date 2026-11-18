@@ -1479,6 +1479,7 @@ FIXED_BATCH.update({g: 46 for g in ("4202968288", "4207121032", "4205571912")})
 FIXED_BATCH.update({g: 47 for g in ("4207182824", "4200361328", "4202954936")})
 FIXED_BATCH.update({g: 48 for g in ("4213321464", "4209585592", "4212511176")})
 FIXED_BATCH.update({g: 49 for g in ("4204111000", "4208971344", "4202919752")})
+FIXED_BATCH.update({g: 50 for g in ("4208531656", "4208308040", "4200384704")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1798,6 +1799,16 @@ EXTRAS = {
     "4204111000": "Code 200-19 and 200-101 accessory dwelling unit for care of relative, family only (LDR, MDR, MDRO, MDRO1)",
     "4208971344": "batch 49 by population. Code Chapter 27 has no ADU text (27-511.6 residential conversion by conditional use and two-family by right in R-2 and R-C)",
     "4202919752": "batch 49 by population. Code Chapter 287 has no ADU text (287-94 conversion of a large older house by special exception in R-3, R-4, C-1, two-family by right in R-3 and R-4)",
+    # Batch 50 (2026-11-18): the next towns by population without a rule file. Conewago (Adams) was skipped (155 puts the
+    # area and design requirements for the A, R-1, R-2, R-3 and MU zones only in PDF attachments), Palmyra (Lebanon) (Ord.
+    # No. 841 of 5-26-2026 and Ord. No. 843, Chapter 380 zoning amendments, not yet codified), Upper Milford (Lehigh)
+    # (American Legal code current through 2-6-2025, and a replacement zoning ordinance, No. 175 of 5-21-2026, not yet
+    # codified), East Huntingdon (Westmoreland) (no zoning code found as web pages, and the browser was refused the page
+    # that says it has no zoning) and South Heidelberg (Berks) (zoned by the Southwestern Berks County Zoning Ordinance of
+    # 2009, no codified text found as web pages).
+    "4208531656": "Code 156.059 accessory apartment in a garage or separate building, by special exception in R-1B and conditional use in R-2",
+    "4208308040": "Code 220-8 and 220-23B(2)(e) guesthouse by special exception (R-1, R-2, R-3, C-1, C-2)",
+    "4200384704": "batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)",
 }
 
 if __name__ == "__main__":

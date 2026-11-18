@@ -1,0 +1,948 @@
+{
+  "provenance": {
+    "jurisdiction": "Bradford city",
+    "instrument": "City of Bradford Zoning Ordinance (Code Chapter 220 Zoning, Ord. No. 3231 of 6-23-2009, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 BR1254, City of Bradford, McKean County (220-8 'County': 'McKean County, Pennsylvania'). The code was adopted as a whole by Ord. No. 3296 of 5-14-2024. Each district article states its authorized uses and its area and bulk rules as web text. The zoning map and three appendix figures are PDF attachments and were not opened. Floodplain rules are Chapter 114 Floodplain Management",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/9030425",
+      "https://ecode360.com/BR1254/laws",
+      "https://ecode360.com/BR1254/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20conversion%20OR%20%22care%20of%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/BR1254/search?query=%22guest%20house%22%20OR%20%22two-family%22%20OR%20%22accessory%20building%22%20OR%20%22accessory%20structure%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/BR1254?guid=9030547",
+      "https://ecode360.com/print/BR1254?guid=9030580",
+      "https://ecode360.com/print/BR1254?guid=13760371",
+      "https://ecode360.com/print/BR1254?guid=13760405",
+      "https://ecode360.com/print/BR1254?guid=13760442",
+      "https://ecode360.com/print/BR1254?guid=13760502",
+      "https://ecode360.com/print/BR1254?guid=13760572",
+      "https://ecode360.com/print/BR1254?guid=13760619",
+      "https://ecode360.com/print/BR1254?guid=13760727",
+      "https://ecode360.com/print/BR1254?guid=13760843",
+      "https://ecode360.com/print/BR1254?guid=13760948",
+      "https://ecode360.com/print/BR1254?guid=13761057",
+      "https://ecode360.com/print/BR1254?guid=13761431",
+      "https://ecode360.com/print/BR1254?guid=13761708",
+      "https://ecode360.com/print/BR1254?guid=13761922",
+      "https://ecode360.com/print/BR1254?guid=9031235",
+      "https://ecode360.com/print/BR1254?guid=9027872",
+      "https://ecode360.com/print/BR1254?guid=32146332"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "McKean",
+    "municipality_type": "city",
+    "geoid": "4208308040",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/9030425",
+    "code_current_through": "2026-08-11",
+    "code_current_through_note": "eCode360 version shown: 'Code 2026-08-11'. New Laws lists no legislation awaiting codification (0)",
+    "checks": [
+      "ADU: the code has no accessory dwelling unit term. A 'Guesthouse', defined as 'A small, separate house on the grounds of a larger one, used for accommodating guests' (220-8, added 3-26-2019 by Ord. No. 3231.2), is an accessory use by special exception in R-1, R-2 and R-3, and a principal use by special exception in C-1 and C-2 (220-23B(2)(e), 220-31B(2)(e), 220-39B(2)(e), 220-55B(1)(j), 220-64B(1)(j)). Article XIII gives it no specific standards, so the general special exception standards of 220-89 apply",
+      "A guesthouse is read here as the code's detached ADU form. The code does not say whether it may be rented as a separate home, how small it must be, or whether the owner must live on the lot. Ask the zoning officer",
+      "Parking: 'Guesthouse: 1 space for each apartment in addition to 2 spaces required for the existing dwelling' (220-114C). Any fraction of a space counts as one (220-114A)",
+      "Accessory structures in C-D, R-1, R-2 and R-3: 'one story, but no more than 20 feet'. Accessory buildings and roofed projections may cover at most 30% of a required rear yard (40% on a corner lot) in R-1, R-2 and R-3 (220-94C(7)(b)). Detached garages and storage structures stay out of the required front yard, 5 ft from a side line, 3 ft from a rear line and 10 ft from the dwelling (220-94C(7)(a)). The code gives no accessory yards for a guesthouse, so the district yards are read as the safe figures",
+      "Uses: in C-D, R-1, R-2 and R-3 'any use not specifically listed as an authorized use in the zoning district shall not be permitted' (220-12B). In C-1, C-2, M-1 and M-2 a use not listed may be allowed as a comparable use by special exception if it is of the same general character as a listed use (220-12C, 220-90I). A single-family or two-family dwelling must be the only principal structure on its lot (220-12D)",
+      "Conversion apartment: a unit created inside an existing single-family dwelling is a special exception in R-2 (one new unit) and R-3 (up to four), at least 400 sq ft each, with one added parking space. Detached garages and other accessory structures may not be converted to dwelling units under this listing (220-90J)",
+      "Two-family dwellings: a special exception in R-2 on a 10,000 sq ft site, 5,000 sq ft per unit (220-90CC), and permitted by right in R-3 on 4,000 sq ft (220-39, 220-40)",
+      "Lots of record: a lot of record may be built on with a use the district permits though it is below the area and width minimums, if it meets the yards, height and coverage (220-125A)",
+      "Floodplain (Chapter 114, FIRM of 12-22-2016): a permit for any construction or development. In a floodway no new construction or development without an engineering analysis of no rise and a DEP permit. In an AE area without a floodway nothing within 50 ft landward of the top of bank without a DEP permit (114-18B(2)(b)). New construction and substantial improvement of a residential structure have the lowest floor at or above the regulatory flood elevation. An accessory structure that is not elevated may not be used for human habitation and may have at most 200 sq ft (114-23E)",
+      "Rooming houses are also a special exception in R-1, R-2, R-3, C-1 and C-2 (added 2019). They are not dwelling units for one household and are not read as an ADU path"
+    ],
+    "notes": "Zoning office: City of Bradford Zoning Officer. Read in a browser on eCode360 (print view and code searches), one page at a time, on 2026-11-18. Read in full: 220-9 to 220-13, 220-14 to 220-62 (C-D, R-1, R-2, R-3, M-C and C-1 articles), 220-63 to 220-70 (C-2), 220-87 to 220-90W, 220-90CC, 220-112 to 220-115, 220-122 to 220-126, 114-23, and 220-8 from A to 'Lot area'. Read in part: 220-8 'Lot coverage' and later lot terms (screenshot), M-1 and M-2 use lists (in-page search only), 220-94 (screenshots), 220-131 to 220-133, 114-16 to 114-18. Not read: 220-0 to 220-7, the rest of 220-8, 220-73 to 220-78 and 220-81 to 220-86 (M-1 and M-2 area and bulk), 220-90X to BB except part of BB, 220-90DD, 220-91 to 220-93, 220-95 to 220-111, 220-116 to 220-121, 220-127 to 220-130, 220-134 to 220-149, Chapter 114 except the sections named, Chapter 191 (subdivision and land development) and the zoning map. Searched the code for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, household employee, elder cottage, tenant house, supplemental dwelling, temporary dwelling, apartment addition, living quarters, caretaker, conversion, care of, guest house, two-family and accessory building. Open points: whether a guesthouse is a dwelling unit an owner may rent as a separate home or only a house for guests, whether a guesthouse takes the garage yards of 220-94C(7) or the district's principal yards, whether a guesthouse may be added over a garage, and whether the C-1 and C-2 listing reaches a lot with a house."
+  },
+  "adu": {
+    "term": {
+      "value": "guesthouse",
+      "section": "220-8 'Dwelling types' I, 220-23B(2)(e), 220-31B(2)(e), 220-39B(2)(e)",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'A small, separate house on the grounds of a larger one, used for accommodating guests' [Added 3-26-2019 by Ord. No. 3231.2]. The code has no accessory dwelling unit term"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "220-23B(2)(e), 220-31B(2)(e), 220-39B(2)(e), 220-88",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A guesthouse is an accessory use by special exception from the Zoning Hearing Board in R-1, R-2 and R-3. It is a separate house on the lot, 'used for accommodating guests'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "C-1",
+        "C-2"
+      ],
+      "section": "220-23B(2)(e), 220-31B(2)(e), 220-39B(2)(e), 220-55B(1)(j), 220-64B(1)(j)",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Accessory use by special exception in R-1, R-2 and R-3, principal use by special exception in C-1 and C-2"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "220-12C",
+      "url": "https://ecode360.com/print/BR1254?guid=9030580",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "M-C, M-1 and M-2 do not list a guesthouse or any dwelling"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "C-D"
+          ],
+          "status": "prohibited",
+          "section": "220-12B, 220-15",
+          "url": "https://ecode360.com/print/BR1254?guid=9030580",
+          "note": "'In the C-D, R-1, R-2 and R-3 Districts, any use not specifically listed as an authorized use in the zoning district shall not be permitted in that zoning district.' C-D does not list a guesthouse"
+        }
+      ],
+      "section": "220-12B",
+      "url": "https://ecode360.com/print/BR1254?guid=9030580",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "220-23B(2)(e), 220-88, 220-89",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'Guesthouse' under Uses by special exception, Accessory uses. The Zoning Hearing Board decides after a public hearing on the general standards of 220-89"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "220-131E, 220-132",
+      "url": "https://ecode360.com/print/BR1254?guid=9031235",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 220-132A to E. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "220-12C, 220-90I",
+      "url": "https://ecode360.com/print/BR1254?guid=13761057",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Comparable uses not specifically listed, a special exception in C-1, C-2, M-1 and M-2. M-1 and M-2 list no dwelling, so a guesthouse there is not read as comparable. A guesthouse is itself listed in C-1 and C-2. Two-family dwellings are listed in R-2 and R-3, where unlisted uses are barred"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "M-1",
+        "M-2"
+      ],
+      "section": "220-12C, 220-72B(1)(d), 220-80B(1)(d)",
+      "url": "https://ecode360.com/print/BR1254?guid=9030580",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "220-90I(1)",
+      "url": "https://ecode360.com/print/BR1254?guid=13761057",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "quote": "Uses of the same general character as any of the uses authorized as permitted uses by right or uses by special exception in the zoning district in which the property is located"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment (R-2, R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "A dwelling unit created inside an existing single-family dwelling, by special exception from the Zoning Hearing Board. Each unit at least 400 sq ft of gross floor area with its own living, sleeping, kitchen and sanitary facilities. In R-2 only one new unit in a single-family dwelling, in R-3 up to four. Detached garages and other accessory structures may not be converted to dwelling units. One parking space for each apartment besides the 2 for the house",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling to adapt",
+              "section": "220-8 'Conversion apartment'"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "220-31B(1)(a), 220-39B(1)(b), 220-90J, 220-114C",
+          "url": "https://ecode360.com/print/BR1254?guid=13761057",
+          "confidence": "verified"
+        },
+        {
+          "name": "Two-family dwelling (R-2)",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "A building with two dwelling units, by special exception. 'The minimum site required to develop two-family dwellings shall be 10,000 square feet' and 5,000 sq ft per dwelling unit. A two-family dwelling made inside an existing single-family dwelling meets the conversion apartment rules. Two parking spaces per unit",
+          "min_lot_sqft": 10000,
+          "section": "220-31B(1)(l), 220-90CC, 220-114C",
+          "url": "https://ecode360.com/print/BR1254?guid=13761057",
+          "confidence": "verified",
+          "note": "The single-family or two-family dwelling must be the only principal structure on the lot (220-12D), so a new two-family building takes the place of the house"
+        },
+        {
+          "name": "Two-family dwelling (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "A building with two dwelling units is a permitted use. 4,000 sq ft and 40 ft wide, front 20 ft, side 4 ft, rear 20 ft or the building height, coverage 60%. Two parking spaces per unit",
+          "min_lot_sqft": 4000,
+          "section": "220-39A(1)(j), 220-40, 220-114C",
+          "url": "https://ecode360.com/print/BR1254?guid=13760502",
+          "confidence": "secondary",
+          "note": "The single-family or two-family dwelling must be the only principal structure on the lot (220-12D). Whether an existing house may be turned into two units by right here, or only as a conversion apartment by special exception, is not settled"
+        },
+        {
+          "name": "Infill housing (R-1, R-2, R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "Newly built single-family or two-family dwellings, or townhouses of up to four units, on a lot where deteriorated dwelling units stood before they were demolished. A lot below the district minimum may be used if 75% of the yards can be met. Design compatible with the houses on the same block",
+          "requires": [
+            {
+              "test": null,
+              "condition": "Deteriorated dwelling units stood on the lot and were demolished",
+              "section": "220-8 'Infill housing'"
+            }
+          ],
+          "section": "220-23B(1)(b), 220-31B(1)(c), 220-39B(1)(g), 220-90Q",
+          "url": "https://ecode360.com/print/BR1254?guid=13761057",
+          "confidence": "secondary",
+          "note": "C-2 permits infill housing by right (220-64A(1)(zzz))"
+        }
+      ],
+      "section": "220-31, 220-39, 220-90J, 220-90Q, 220-90CC",
+      "url": "https://ecode360.com/print/BR1254?guid=13761057",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "C-1",
+        "C-2"
+      ],
+      "section": "220-23B(2)(e), 220-31B(2)(e), 220-39B(2)(e), 220-55B(1)(j), 220-64B(1)(j)",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The guesthouse stands 'on the grounds of a larger one'. The definition does not name a house type"
+    },
+    "lot_area_per_unit_sqft": {
+      "value": null,
+      "section": "220-24, 220-32, 220-40",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The R districts give a lot area by dwelling type, not per unit, and say nothing of a guesthouse"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "M-C",
+        "M-1",
+        "M-2"
+      ],
+      "section": "220-47, 220-72, 220-80",
+      "url": "https://ecode360.com/print/BR1254?guid=13760572",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "M-C, M-1 and M-2 list no dwelling and no guesthouse"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "C-1",
+        "C-2"
+      ],
+      "section": "220-55B(1)(j), 220-64B(1)(j), 220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=13760619",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "C-1 and C-2 list a guesthouse as a principal use by special exception but do not authorize single-family dwellings, while a guesthouse stands on the grounds of a larger house",
+      "named_by": {
+        "C-1": "reach",
+        "C-2": "reach"
+      }
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "occupancy",
+          "condition": "A guesthouse is 'A small, separate house on the grounds of a larger one, used for accommodating guests'. The code sets no size, owner or tenant rule for it, and whether it may be let as a home of its own is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "220-8 'Dwelling types' I",
+          "url": "https://ecode360.com/print/BR1254?guid=9030547",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area (Chapter 114) every construction or development needs a floodplain permit. In a floodway no new construction, substantial improvement or other development is allowed unless an engineering analysis shows no rise in flood levels, and no new construction or development without a DEP permit. In an AE area without a floodway the work may not raise flood levels more than one foot. New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "114-18A, B(2)(a), 114-23A, 114-34",
+          "url": "https://ecode360.com/print/BR1254?guid=9027872",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 114"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "114-18B(2)(b), 114-34F",
+          "url": "https://ecode360.com/print/BR1254?guid=9027872",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 114"
+        },
+        {
+          "kind": "other",
+          "condition": "In an identified floodplain area an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', may have no sanitary facilities or fixed utility equipment and at most 200 sq ft of floor area. A larger one below the base flood elevation needs a variance and a recorded nonconversion agreement.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "114-23E",
+          "url": "https://ecode360.com/print/BR1254?guid=32146332",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 114",
+          "disputed_by": {
+            "section": "114-23A",
+            "url": "https://ecode360.com/print/BR1254?guid=32146332",
+            "note": "The rule is for accessory structures that are not elevated or floodproofed. A guesthouse built with its lowest floor at or above the regulatory flood elevation, as 114-23A asks of residential structures, may not be reached"
+          }
+        }
+      ],
+      "section": "220-8, 114-18, 114-23",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'A small, separate house on the grounds of a larger one'. A new separate house, or an accessory building turned into one"
+    },
+    "types_not_addressed": {
+      "value": [
+        "over_garage"
+      ],
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code does not say whether quarters above a garage are a separate house"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "guesthouse (a small, separate house)",
+        "garage_conversion": "accessory building turned into a guesthouse"
+      },
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The definition says 'small' and gives no number"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 20,
+      "section": "220-24I(2), 220-32I(2), 220-40J(2)",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'All accessory structures: one story, but no more than 20 feet'"
+    },
+    "max_height_stories": {
+      "value": 1,
+      "section": "220-24I(2), 220-32I(2), 220-40J(2)",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "setback_rear_alley_ft": {
+      "value": 20,
+      "section": "220-24E, 220-32E, 220-40F",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The district rear yard (20 ft or the building height for principal structures) is read as the safe figure, alley or not. Detached garages and storage structures may stand 3 ft from a rear line (220-94C(7)(a))"
+    },
+    "separation_ft": {
+      "value": null,
+      "section": "220-94C(7)(a)",
+      "url": "https://ecode360.com/print/BR1254?guid=13761431",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "Detached garages and storage structures stay 10 ft from the dwelling. The code sets no distance for a guesthouse"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "220-24E, F, 220-94C",
+      "url": "https://ecode360.com/print/BR1254?guid=13760405",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The district rows send accessory yards to 220-94C, which gives yards only for listed kinds of accessory structures such as detached garages and storage structures, not a guesthouse. The district's own yards are read as the safe figures"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A detached garage or storage structure accessory to a dwelling, and a guesthouse made in one if those yards still hold: not in the required front yard, at least 10 ft from the dwelling and 5 ft from any other structure",
+          "setback_side_ft": 5,
+          "setback_rear_ft": 3,
+          "section": "220-94C(7)(a)",
+          "url": "https://ecode360.com/print/BR1254?guid=13761431"
+        },
+        {
+          "where": "In R-1, R-2 and R-3, accessory buildings and roofed projections",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "max_share_of_rear_yard": 0.3,
+          "section": "220-94C(7)(b)",
+          "url": "https://ecode360.com/print/BR1254?guid=13761431",
+          "note": "40% of a required rear yard on a corner lot"
+        }
+      ],
+      "section": "220-94C(7)",
+      "url": "https://ecode360.com/print/BR1254?guid=13761431",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": false,
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Used for accommodating guests. No family rule"
+    },
+    "occupancy": {
+      "value": "Used for accommodating guests. Whether it may be rented as a separate home is not settled.",
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    },
+    "owner_occupancy": {
+      "value": null,
+      "section": "220-8, 220-90",
+      "url": "https://ecode360.com/print/BR1254?guid=13761057",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The code sets no owner rule for a guesthouse"
+    },
+    "max_adus": {
+      "value": null,
+      "section": "220-8 'Dwelling types' I",
+      "url": "https://ecode360.com/print/BR1254?guid=9030547",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "The definition speaks of 'a small, separate house'. No number is set"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "220-114C",
+      "url": "https://ecode360.com/print/BR1254?guid=13761708",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Guesthouse: 1 space for each apartment in addition to 2 spaces required for the existing dwelling'"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "220-114C",
+      "url": "https://ecode360.com/print/BR1254?guid=13761708",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Two for the existing dwelling and one for the guesthouse"
+    },
+    "fraction_rounding": {
+      "value": "any_fraction_counts",
+      "section": "220-114A",
+      "url": "https://ecode360.com/print/BR1254?guid=13761708",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'any fraction shall be counted as one parking space'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Minimum lot area 6,000 sq ft, 60 ft wide. A lot of record may be built on though smaller (220-125A)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings: 'six feet minimum; 10 feet maximum'. All other principal structures 10 ft"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Principal structures: '20 feet or the height of the building, whichever is greater'"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "220-24, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'three stories, but no more than 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-24",
+        "url": "https://ecode360.com/print/BR1254?guid=13760405",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family and two-family dwellings 5,000 sq ft, 50 ft wide. Other principal uses 10,000 sq ft"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family and two-family dwellings: 'five feet minimum; 10 feet maximum'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Principal structures: '20 feet or the height of the building, whichever is greater'"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "220-32, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'three stories, but no more than 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-32",
+        "url": "https://ecode360.com/print/BR1254?guid=13760442",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family and two-family dwellings 4,000 sq ft, 40 ft wide"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 4,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family and two-family dwellings: 'four feet minimum. 10 feet maximum.'"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Principal structures: '20 feet or the height of the building, whichever is greater'"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "220-40, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'three stories, but no more than 45 feet'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-40",
+        "url": "https://ecode360.com/print/BR1254?guid=13760502",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      }
+    },
+    "C-D": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "220-16A",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All other uses: one acre'. Agriculture five acres"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "220-16D",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "220-16F",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family dwellings 25 ft"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "220-16E",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "220-16C, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-16I",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-16I",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 25,
+        "section": "220-16F(3)",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 25,
+        "section": "220-16E(2)",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-16I(2)",
+        "url": "https://ecode360.com/print/BR1254?guid=13760371",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      }
+    },
+    "C-1": {
+      "min_lot_sqft": {
+        "value": 0,
+        "section": "220-56A",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum lot area: none required'"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "220-56D",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "May use the average of the setbacks on the adjacent properties where they are less than 10 ft"
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "220-56F",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "10 ft adjoining any R District, 'All other side yards: zero feet'"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "220-56E",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Adjoining any R District '20 feet or the height of the building, whichever is greater'"
+      },
+      "max_building_coverage": {
+        "value": 1.0,
+        "section": "220-56C, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 75,
+        "section": "220-56K",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'six stories, but no more than 75 feet'"
+      },
+      "principal_max_stories": {
+        "value": 6,
+        "section": "220-56K",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-56K(2)",
+        "url": "https://ecode360.com/print/BR1254?guid=13760619",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      }
+    },
+    "C-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "220-65A",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Nonconforming lots of record may be developed without a variance"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "220-65D",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "220-65F",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Adjoining any R District 'a distance equal to the height of the building'"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "220-65E",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Adjoining any R District 'a distance equal to the height of the building'"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "220-65C, 220-8 'Lot coverage'",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage'. Lot coverage is 'That portion of the lot area covered by all principal and accessory structures expressed as a percentage' (220-8)"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "220-65K",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-65K",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 20,
+        "section": "220-65K(2)",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All accessory structures: one story, but no more than 20 feet'"
+      },
+      "separation_ft": {
+        "value": 20,
+        "section": "220-65H",
+        "url": "https://ecode360.com/print/BR1254?guid=13760727",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum distance between building (where two or more buildings are on the same lot): 20 feet'"
+      }
+    }
+  }
+}

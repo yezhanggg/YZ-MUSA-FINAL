@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 200,
-      "population": 6414865,
-      "share_of_pa": 0.4933
+      "towns_beyond_the_two_cities": 203,
+      "population": 6438215,
+      "share_of_pa": 0.4951
     }
   ],
   "towns": [
@@ -4898,6 +4898,78 @@
         "added as batch 49 by population. Code Chapter 287 has no ADU text (287-94 conversion of a large older house by special exception in R-3, R-4, C-1, two-family by right in R-3 and R-4)"
       ],
       "status_note": "Drafted 2026-11-17 (first reading). Open: whether the code has a rule for uses not provided for (none found, and a code search for it failed), the C-1 lot figures for a 287-94 conversion, and whether 150-6.02 bars an addition to an existing house in the floodplain (shown as disputed). Articles IX to XVD (commercial, industrial, OS, P, R/C and the overlays, among them the Historic Resources Overlay) and Chapter 150 Article IX were not read."
+    },
+    {
+      "geoid": "4208531656",
+      "geoid_aliases": [],
+      "name": "Grove City borough",
+      "county": "Mercer",
+      "type": "borough",
+      "population": 7871,
+      "population_with_aliases": 7871,
+      "housing_units": 2767,
+      "pop_rank": 361,
+      "file": "pa_mercer_grove_city",
+      "batch": 50,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "amlegal",
+      "code_url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5717",
+      "plain_fetch": null,
+      "code_current_through": "2026-01-05",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 156.059 accessory apartment in a garage or separate building, by special exception in R-1B and conditional use in R-2)"
+      ],
+      "status_note": "First reading, not yet reviewed. Open: whether the 900 sq ft garage allowance of 156.107(B) reaches a garage with an apartment, how coverage is measured under the 156.146 'Coverage' definition (gross floor area over lot area), whether R-2 allows more than one accessory apartment, and whether a new duplex may stand beside an existing house."
+    },
+    {
+      "geoid": "4208308040",
+      "geoid_aliases": [],
+      "name": "Bradford city",
+      "county": "McKean",
+      "type": "city",
+      "population": 7849,
+      "population_with_aliases": 7849,
+      "housing_units": 3826,
+      "pop_rank": 362,
+      "file": "pa_mckean_bradford",
+      "batch": 50,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/9030425",
+      "plain_fetch": null,
+      "code_current_through": "2026-08-11",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 220-8 and 220-23B(2)(e) guesthouse by special exception (R-1, R-2, R-3, C-1, C-2))"
+      ],
+      "status_note": "First reading, not yet reviewed. Open: whether the guesthouse (220-8, a small separate house 'used for accommodating guests', special exception) may be rented as a separate home, whether it takes the garage yards of 220-94C(7) or the district yards, whether it may sit over a garage, and whether the C-1 and C-2 listings reach a house lot."
+    },
+    {
+      "geoid": "4200384704",
+      "geoid_aliases": [],
+      "name": "White Oak borough",
+      "county": "Allegheny",
+      "type": "borough",
+      "population": 7630,
+      "population_with_aliases": 7630,
+      "housing_units": 3891,
+      "pop_rank": 367,
+      "file": "pa_allegheny_white_oak",
+      "batch": 50,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "amlegal",
+      "code_url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7310",
+      "plain_fetch": null,
+      "code_current_through": "2017-04-02",
+      "code_note": null,
+      "why": [
+        "added as batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)"
+      ],
+      "status_note": "First reading, not yet reviewed. Open: the online code is complete only to 4-2-2017 and its floodplain article cites a 1995 FIRM, so later amendments may be missing. Also where the Lincoln Way Transitional Zone lies, whether C-1 or C-2 permit dwellings (not read), and the R-4 conversion reading."
     }
   ]
 }

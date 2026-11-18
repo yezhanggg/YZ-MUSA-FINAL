@@ -1,0 +1,566 @@
+{
+  "provenance": {
+    "jurisdiction": "White Oak borough",
+    "instrument": "The White Oak Zoning Ordinance (Codified Ordinances Part Thirteen, Planning and Zoning Code, Titles One to Five, Ord. 2717 of 2-10-1986, as amended), as published by American Legal Publishing",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "American Legal Publishing code library 'whiteoak', White Oak, Pennsylvania (Allegheny County). The overview names the address as 2280 Lincoln Way, White Oak. Each residence district article states its uses and its area regulations as web text. Floodplain districts are an overlay in Article 1339 of the zoning code",
+    "effective_date": null,
+    "code_caution": "The online code is shown as 'Complete to April 2, 2017' (version 2019 S-0), and its floodplain article still cites a Flood Insurance Rate Map dated October 4, 1995. Later zoning or floodplain ordinances, if any, were not seen. Ask the borough whether the zoning text changed after April 2017.",
+    "source_urls": [
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/overview",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7310",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7366",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8183",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8257",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8374",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8606",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14282",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-9126",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15024",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+      "https://codelibrary.amlegal.com/search"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Allegheny",
+    "municipality_type": "borough",
+    "geoid": "4200384704",
+    "code_host": "amlegal",
+    "code_url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7310",
+    "code_current_through": "2017-04-02",
+    "code_current_through_note": "American Legal overview: 'Complete to April 2, 2017'. Version shown: 2019 S-0 (current)",
+    "checks": [
+      "ADU: the code has no accessory dwelling unit term. A search of the code for accessory dwelling, in-law, accessory apartment, guest house, caretaker, second dwelling, garage apartment, elder cottage, temporary dwelling and family member found none of them in the zoning text. Each residence district lists its uses 'and no other' (1323.02, 1325.02, 1327.02, 1329.02), and none lists a second unit on a house lot, so the path is a use variance (1309.06)",
+      "'No part of a detached private garage shall be used for habitable purposes' (1371.07(b)), and a storage shed may not be used for any habitable purpose (1371.08(a))",
+      "'No dwelling shall hereafter be erected, placed or constructed on the rear portion of any lot so that the front or main entrance shall front or open on any alley' (1371.13)",
+      "Lot area is set per family: 13,500 sq ft in R-1, 6,000 sq ft in R-2, 4,500 sq ft in R-3 and 3,500 sq ft in R-4 'for every building hereafter erected or used in whole or in part as a dwelling'. A second household on the lot would need twice the figure",
+      "Conversion: in R-3 an existing dwelling built more than 40 years ago with at least 1,600 sq ft may be converted into units for two or more families by special exception, on 4,500 sq ft per family, without converting the garage or basement (1327.02(b)(1)C). In R-2 the same conversion is a special exception only in the Lincoln Way Transitional Zone, on 6,000 sq ft per family (1325.02(c)(1)B). Special exceptions need a Planning Commission advisory report first (1309.07(b))",
+      "Two-family detached dwellings and multiple dwellings are permitted by right in R-4, on 3,500 sq ft per family (1329.02, 1329.03). Townhouses and garden apartments are special exceptions in R-1 to R-3 under Article 1351, which was not read",
+      "A detached private garage stands to the rear of the main building, at least 3 ft from a property line and 5 ft from an alley line, and may be at most 18 ft tall (1371.07(a), (c)). The lot coverage of all buildings may not exceed the district maximum (1371.07(d))",
+      "Floodplain districts (FW, FF, FA, overlays on the 1995 FIRM): a zoning permit for all construction and development, including alterations of existing structures. No new construction or development without a DEP Water Obstruction and Encroachment permit, and no new construction within 50 ft landward of the top of bank without one. The lowest floor of a residential structure at or above the 100 year flood elevation (1339.03(d), 1339.04(a), 1339.06(a))",
+      "Variances: the Zoning Hearing Board on the hardship findings of 1309.06(a) to (e). No bar on a use variance was seen"
+    ],
+    "notes": "Zoning office: White Oak Borough Zoning Officer. Read in a browser on the American Legal code library, one page at a time, on 2026-11-18. Read: 1301.01 to 1301.03, parts of 1301.04 (dwelling types, dwelling unit, building coverage and other definitions by screenshot and element snippets), 1309.06, 1309.07, 1321.01, 1321.02, Article 1323 (R-1), Article 1325 (R-2), Article 1327 (R-3), Article 1329 (R-4), 1339.01 to 1339.06, 1371.01 to 1371.15, and a keyword search of the code. Not read: Articles 1305, 1313, 1317, 1319, 1331 to 1337 (C-1, C-2, I-1, I-2), 1341, 1351, 1355, 1359, 1363 (parking), 1367, 1375, 1371.16 to 1371.27, 1339.07 to 1339.10, the rest of 1301.04 and 1309, and Title Seven. Open points: whether the code text is current (complete to April 2, 2017, floodplain article on a 1995 FIRM), where the Lincoln Way Transitional Zone lies, and whether C-1 or C-2 permit dwellings."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Part Thirteen, Titles One to Five",
+      "url": "https://codelibrary.amlegal.com/search",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched the code for accessory dwelling, in-law, accessory apartment, guest house, caretaker, second dwelling, garage apartment, elder cottage, temporary dwelling and family member, and read the R-1 to R-4 use lists. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "1323.02, 1325.02, 1327.02, 1329.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8257",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No residence district lists a second unit on a house lot. An existing older dwelling may be converted into two or more units by special exception in R-3, and in R-2 only in the Lincoln Way Transitional Zone. R-4 permits two-family dwellings by right"
+    },
+    "status_by_form": {
+      "value": {
+        "garage_conversion": "prohibited",
+        "over_garage": "prohibited"
+      },
+      "section": "1371.07(b)",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'No part of a detached private garage shall be used for habitable purposes'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "1309.06",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14282",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and each district lists its uses 'and no other', so the path is a use variance from the Zoning Hearing Board (MPC 910.2). R-3 and R-2 (Lincoln Way Transitional Zone) allow conversions of older houses by special exception, and R-4 permits two-family dwellings (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "1309.06",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14282",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 1309.06(a) to (e). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of an existing dwelling into units for two or more families (R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "By special exception from the Zoning Hearing Board, after a Planning Commission advisory report. The dwelling was built more than 40 years before the application and has at least 1,600 sq ft of gross floor area without the garage and basement, which may not be converted. 4,500 sq ft of lot per family, and the district yards and building area per family unit. Separate kitchen and sanitary facilities for each unit, fire marshal rules, and two off-street parking spaces for each family unit",
+          "min_lot_sqft": 9000,
+          "requires": [
+            {
+              "test": "house_built_more_than_years_ago",
+              "value": 40,
+              "condition": "The dwelling was erected more than forty years before the application",
+              "section": "1327.02(b)(1)C.1"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 1600,
+              "condition": "At least 1,600 sq ft of gross floor area, exclusive of garage and basement",
+              "section": "1327.02(b)(1)C.2"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "1327.02(b)(1)C, 1309.07",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+          "confidence": "verified",
+          "note": "The lot figure reads 4,500 sq ft per family as 9,000 sq ft for two units"
+        },
+        {
+          "name": "Conversion of an existing dwelling into units for two or more families (R-2, Lincoln Way Transitional Zone)",
+          "path": "special_exception",
+          "districts": [
+            "R-2"
+          ],
+          "conditions": "Only in the Lincoln Way Transitional Zone, by special exception. The dwelling was built more than 40 years before the application and has at least 1,600 sq ft of gross floor area without the garage and basement, which may not be converted. 6,000 sq ft of lot per family. Separate kitchen and sanitary facilities for each unit and two off-street parking spaces for each family unit",
+          "min_lot_sqft": 12000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The lot is in the Lincoln Way Transitional Zone",
+              "section": "1325.02(c)"
+            },
+            {
+              "test": "house_built_more_than_years_ago",
+              "value": 40,
+              "condition": "The dwelling was erected more than forty years before the application",
+              "section": "1325.02(c)(1)B.1"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 1600,
+              "condition": "At least 1,600 sq ft of gross floor area, exclusive of garage and basement",
+              "section": "1325.02(c)(1)B.2"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "1325.02(c)(1)B",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8374",
+          "confidence": "secondary",
+          "note": "The code does not describe where the Lincoln Way Transitional Zone lies. It is read as an area shown on the zoning map. R-3 lots in the zone may also use this listing (1327.02(c))"
+        },
+        {
+          "name": "Two-family detached dwelling (R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-4"
+          ],
+          "conditions": "A permitted use in R-4, with 3,500 sq ft of lot per family and 35 ft of width. Single-family or two-family semi-detached dwellings are permitted when the dwellings sharing party walls are built at the same time",
+          "min_lot_sqft": 7000,
+          "section": "1329.02(a)(1)B, C, 1329.03(a)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8606",
+          "confidence": "secondary",
+          "note": "Read as a new building for two units. R-4 does not carry over the R-3 special exception for converting dwellings (1329.02(b)(1)A), so whether an existing house may be turned into a two-family dwelling by right is not settled"
+        }
+      ],
+      "section": "1325.02(c), 1327.02(b), 1329.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4"
+      ],
+      "section": "1323.02, 1325.02, 1327.02, 1329.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8257",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The residence district use lists name no second unit on a house lot"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "existing_structure",
+          "condition": "'No part of a detached private garage shall be used for habitable purposes.' Storage sheds may not be used for any habitable purpose either.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1371.07(b), 1371.08(a)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+          "confidence": "verified"
+        },
+        {
+          "kind": "abutting_way",
+          "condition": "'No dwelling shall hereafter be erected, placed or constructed on the rear portion of any lot so that the front or main entrance shall front or open on any alley.'",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "1371.13",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Districts (FW, FF, FA) a zoning permit is needed for all construction and development, including the alteration, repair, remodeling or improvement of existing structures. No new construction or development without a Water Obstruction and Encroachment permit from DEP. The lowest floor, including basement, of a residential structure must be at or above the 100 year flood elevation, with no fully enclosed space below it. An existing structure in the floodway may not be enlarged unless the effect on flood heights is fully offset.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FW",
+            "FF",
+            "FA"
+          ],
+          "section": "1339.03(d)(1), 1339.04(a), 1339.05, 1339.06(a)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15024",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "'No new construction shall be located within the area measured fifty feet landward from the top of the bank of any watercourse unless a Water Obstruction and Encroachment permit is obtained from the Department of Environmental Protection'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "FW",
+            "FF",
+            "FA"
+          ],
+          "section": "1339.03(d)(3)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15024",
+          "confidence": "verified"
+        }
+      ],
+      "section": "1371.07, 1371.13, 1339.03 to 1339.06",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "1323.02, 1325.02, 1327.02, 1329.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8257",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A detached private garage: to the rear of the main building, at most 18 ft tall, and 5 ft from an alley line. No part of it may be used for habitable purposes",
+          "setback_side_ft": 3,
+          "setback_rear_ft": 3,
+          "max_height_ft": 18,
+          "section": "1371.07(a), (b), (c)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126"
+        }
+      ],
+      "section": "1371.07",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 13500,
+        "section": "1323.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "13,500 sq ft per family, 90 ft wide at the building line"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 13500,
+        "section": "1323.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 13,500 square feet per family shall be provided for every building hereafter erected or used in whole or in part as a dwelling'"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "1323.03(c)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "1323.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Neither side yard under 10 ft"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "1323.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "None required on a corner lot"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "1323.03(b), 1301.04(10)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Building coverage' is the share of the lot covered by all principal and accessory buildings (1301.04(10))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1371.02",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'In residence districts, no building shall exceed thirty-five feet in height' (1371.02)"
+      },
+      "setback_sides_total_ft": {
+        "value": 30,
+        "section": "1323.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14419",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Aggregate width of both side yards"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "1325.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "6,000 sq ft per family, 60 ft wide at the building line"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "1325.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 6,000 square feet per family shall be provided for every building hereafter erected or used in whole or in part as a dwelling'"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "1325.03(c)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 7.5,
+        "section": "1325.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Neither side yard under 7.5 ft"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "1325.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "None required on a corner lot"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "1325.03(b), 1301.04(10)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Building coverage' is the share of the lot covered by all principal and accessory buildings (1301.04(10))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1371.02",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'In residence districts, no building shall exceed thirty-five feet in height' (1371.02)"
+      },
+      "setback_sides_total_ft": {
+        "value": 20,
+        "section": "1325.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8491",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Aggregate width of both side yards"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 4500,
+        "section": "1327.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "4,500 sq ft per family, 50 ft wide for a single-family detached dwelling"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 4500,
+        "section": "1327.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 4,500 square feet per family shall be provided for every building hereafter erected or used in whole or in part as a dwelling'"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "1327.03(c)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 6,
+        "section": "1327.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Neither side yard under 6 ft"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "1327.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "15% of the average lot depth, but it need not exceed 15 ft. None required on a corner lot"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "1327.03(b), 1301.04(10)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Building coverage' is the share of the lot covered by all principal and accessory buildings (1301.04(10))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1371.02",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'In residence districts, no building shall exceed thirty-five feet in height' (1371.02)"
+      },
+      "setback_sides_total_ft": {
+        "value": 16,
+        "section": "1327.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Aggregate width of both side yards"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "1329.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "3,500 sq ft per family, 35 ft wide for a detached dwelling and 25 ft for a semi-detached one"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3500,
+        "section": "1329.03(a)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 3,500 square feet per family shall be provided for every building hereafter erected or used in whole or in part as a dwelling'"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "1329.03(c)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "1329.03(d)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards for a detached dwelling, neither under 5 ft. A semi-detached dwelling has one side yard of at least 7 ft"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "1329.03(e)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "15% of the average lot depth, but it need not exceed 15 ft. None required on a corner lot"
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "1329.03(b), 1301.04(10)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Building coverage' is the share of the lot covered by all principal and accessory buildings (1301.04(10))"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "1371.02",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'In residence districts, no building shall exceed thirty-five feet in height' (1371.02)"
+      },
+      "setback_side_semi_ft": {
+        "value": 7,
+        "section": "1329.03(d)(2)",
+        "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14580",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'one side yard which shall be not less than seven feet in width'"
+      }
+    }
+  }
+}
