@@ -1775,6 +1775,13 @@
                 "minimum": 0,
                 "description": "The gate holds only on a lot under this size (for example a rule for parcels of five acres or less)."
               },
+              "unless_elevated": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Pass 27: on a bar, true when the bar reaches only an accessory structure that is not elevated, not a new building built elevated as a residential structure (Grove City 152.061(E)). For detached_new the bar is then a condition: barred unless built elevated as a residential structure, its lowest floor at or above the regulatory flood elevation. The other forms in applies_to keep the bar. Put detached_new in applies_to for it to act."
+              },
               "disputed_by": {
                 "type": [
                   "object",
@@ -4319,6 +4326,13 @@
                   "null"
                 ],
                 "minimum": 0
+              },
+              "side_one_only": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Pass 27: true when setback_side_ft holds on one side only and the other side keeps the district side yard (Glenolden 162-12C(8): 'may have one side yard of not less than three feet'). The figure is said as 'on one side only', and where a unit in an accessory building shows it, a line gives the district side yard for the other side."
               },
               "setback_front_ft": {
                 "type": [

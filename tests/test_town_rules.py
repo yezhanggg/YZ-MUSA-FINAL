@@ -4781,3 +4781,92 @@ def test_status_follows_a_district_hearing(monkeypatch):
     held = rules.resolve("pa_mercer_grove_city", "today", lot)
     assert held["adu_status"] == "special_exception"
     assert not [c for c in held["conditions"] if c["condition"].startswith("Town-wide")]
+
+
+# ------------------------------------------------------------------ pass 27
+
+
+def test_accessory_rules_said_under_the_bill_and_one_side_only(tmp_path, monkeypatch):
+    """Pass 27: envelope.accessory_rules_where items were never said in a town with no ADU rule, even under the bill,
+    where an ADU is allowed (Glenolden 162-12C(8)). Now they are said there. An item's side_one_only says its side yard
+    holds on one side only, and a unit in an accessory building that shows that side yard says the district's yard for
+    the other side. Held for the ten lot towns."""
+    body = _base("not_addressed", "variance")
+    body["form"] = {"types_allowed": _leaf([], "162-12B")}
+    item = {"where": "in R-1", "districts": ["R-1"], "setback_side_ft": 3, "side_one_only": True}
+    item.update(setback_rear_ft=3, section="162-12C(8)")
+    body["envelope"] = {"accessory_rules_where": _leaf([item], "162-12C(8)")}
+    yards = {"setback_side_ft": _leaf(10, "162-12C(4)"), "setback_rear_ft": _leaf(25, "162-12C(5)")}
+    yards.update(accessory_setback_side_ft=_leaf(3, "162-12C(8)"), accessory_setback_rear_ft=_leaf(3, "162-12C(8)"))
+    body["districts"] = {"R-1": yards}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_oneside", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 7500}
+    said = "An accessory building in R-1: side 3 ft on one side only, rear 3 ft"
+    line = (
+        "Side yard for a unit in an accessory building: 3 ft on one side only (162-12C(8)). The other side keeps the "
+        "district's 10 ft side yard"
+    )
+    today = rules.resolve(name, "today", lot)
+    assert not [c for c in today["conditions"] if c["condition"].startswith(said)]
+    assert line not in today["reasons"]
+    bill = rules.resolve(name, "state_reform", lot)
+    assert [c for c in bill["conditions"] if c["condition"] == said]
+    assert bill["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 3
+    assert line in bill["reasons"]
+    monkeypatch.setattr(rules, "PASS27_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "state_reform", lot)
+    assert not [c for c in held["conditions"] if c["condition"].startswith(said)]
+
+
+def test_glenolden_accessory_side_yard_on_one_side_only():
+    """Pass 27: Glenolden 162-12C(8). Under the bill a detached unit showed side 3 ft and no word that the 3 ft is
+    for one side only."""
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 7500}
+    out = rules.resolve("pa_delaware_glenolden", "state_reform", lot)
+    assert out["setbacks_by_type"]["detached_new"]["setback_side_ft"] == 3
+    cond = [c["condition"] for c in out["conditions"] if c["condition"].startswith("An accessory building in R-1")]
+    assert cond and cond[0].startswith("An accessory building in R-1 or R-2: side 3 ft on one side only, rear 3 ft")
+    assert (
+        "Side yard for a unit in an accessory building: 3 ft on one side only (162-12C(8), 162-13C(8)). The other side "
+        "keeps the district's 10 ft side yard"
+    ) in out["reasons"]
+    today = rules.resolve("pa_delaware_glenolden", "today", lot)
+    assert not [c for c in today["conditions"] if c["condition"].startswith("An accessory building in R-1")]
+
+
+def test_floodplain_bar_unless_elevated(tmp_path, monkeypatch):
+    """Pass 27: a gate's unless_elevated. A floodplain bar on an accessory structure that is not elevated (Grove City
+    152.061(E)) does not reach a new building elevated as a residential structure. For detached_new it now reads as
+    barred unless built that way, a condition. A garage conversion keeps the bar."""
+    body = _base()
+    body["form"] = {"types_allowed": _leaf(["detached_new", "garage_conversion"], "3")}
+    gate = {
+        "kind": "other",
+        "condition": "In the floodplain an accessory structure that is not elevated may not be used for human habitation.",
+        "effect": "bars",
+        "applies_to": ["garage_conversion", "detached_new"],
+        "overlays": ["FP"],
+        "section": "152.061(E)",
+        "url": "https://ecode360.com/1",
+        "confidence": "verified",
+        "unless_elevated": True,
+    }
+    body["eligibility"] = {"gates": _leaf([gate], "152.061(E)")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_elevated", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000, "overlays": ["FP"]})
+    det = [c for c in out["conditions"] if c["applies_to"] == ["detached_new"]]
+    assert len(det) == 1 and det[0]["effect"] == "condition"
+    assert det[0]["condition"] == (
+        "In the floodplain an accessory structure that is not elevated may not be used for human habitation. A new "
+        "building for the unit is barred unless it is built elevated as a residential structure, with its lowest floor "
+        "at or above the regulatory flood elevation. Built that way, this bar does not reach it."
+    )
+    gar = [c for c in out["conditions"] if c["applies_to"] == ["garage_conversion"]]
+    assert len(gar) == 1 and gar[0]["effect"] == "bars"
+    assert out["approval_by_type"]["detached_new"] == "by_right"
+    assert out["approval_by_type"]["garage_conversion"] != "by_right"
+    gate.pop("unless_elevated")
+    body["eligibility"] = {"gates": _leaf([gate], "152.061(E)")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_elevated2", body)
+    out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000, "overlays": ["FP"]})
+    assert out["approval_by_type"]["detached_new"] != "by_right"

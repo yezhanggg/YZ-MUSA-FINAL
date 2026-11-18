@@ -191,12 +191,16 @@
     "accessory_rules_where": {
       "value": [
         {
-          "where": "An accessory building in R-1 or R-2 may stand 3 ft from one side line only. Its other side yard is the district's 10 ft (162-12C(8), 162-13C(8))",
+          "where": "in R-1 or R-2",
           "districts": [
             "R-1",
             "R-2"
           ],
-          "section": "162-12C(8), 162-13C(8)"
+          "setback_side_ft": 3,
+          "side_one_only": true,
+          "setback_rear_ft": 3,
+          "section": "162-12C(8), 162-13C(8)",
+          "note": "An accessory building 'may have one side yard of not less than three feet and a rear yard of not less than three feet'. The district yards apply to it otherwise, so its other side yard is the district's 10 ft"
         }
       ],
       "section": "162-12C(8), 162-13C(8)",

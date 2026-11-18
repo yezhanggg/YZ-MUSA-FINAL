@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { TOOLS } from '../../../agent/schema';
 import { makeExecutors, runTool } from './executors';
-import { RULE_PLACES, RULE_TOPICS, findTown, getRuleText, listRulePlaces, rulePlaceOf, siteLines, siteRowMet, townIndex, type TownEntry, type TownSource } from './ruleText';
+import { RULE_PLACES, RULE_TOPICS, UNLESS_ELEVATED, findTown, getRuleText, listRulePlaces, rulePlaceOf, siteLines, siteRowMet, townIndex, unlessElevatedSplit, type TownEntry, type TownSource } from './ruleText';
 
 const RULES = resolve(import.meta.dirname, '../../../shared/rules');
 const file = (name: string) => JSON.parse(readFileSync(resolve(RULES, `${name}.json`), 'utf8'));
@@ -1376,5 +1376,26 @@ describe('get_rule_text pass 26 fields', () => {
     expect(r2.adu.status_in_district).toMatchObject({ value: 'conditional_use', district: 'R-2', town_status: 'special_exception' });
     const r1b = await town6('pa_mercer_grove_city', 'status', 'R-1B');
     expect(r1b.adu.status_in_district).toBeUndefined();
+  });
+});
+
+describe('get_rule_text pass 27 fields', () => {
+  it('says the accessory building yards under HB 2186 where the town has no ADU rule, one side only (Glenolden 162-12C(8))', async () => {
+    const out = await town6('pa_delaware_glenolden', 'setbacks', 'R-1');
+    const said = 'An accessory building in R-1 or R-2: side 3 ft on one side only, rear 3 ft';
+    expect(JSON.stringify(out.conditions)).not.toContain(said);
+    expect(out.under_hb2186.accessory_building_rules[0].condition.startsWith(said)).toBe(true);
+    const b1 = await town6('pa_delaware_glenolden', 'setbacks', 'B-1');
+    expect(JSON.stringify(b1)).not.toContain(said);
+  });
+
+  it('turns a floodplain bar on an unelevated accessory structure into a condition for a new building (gate unless_elevated)', () => {
+    const gate = { kind: 'other', condition: 'An accessory structure that is not elevated may not be used for human habitation.', effect: 'bars', applies_to: ['garage_conversion', 'detached_new'], overlays: ['FP'], section: '152.061(E)', unless_elevated: true, disputed_by: { section: '152.061(A)', note: 'x' } };
+    const [bar, det] = unlessElevatedSplit([gate]) as Any6[];
+    expect(bar).toMatchObject({ applies_to: ['garage_conversion'], effect: 'bars', disputed_by: { section: '152.061(A)' } });
+    expect(det).toMatchObject({ applies_to: ['detached_new'], effect: 'condition' });
+    expect(det.disputed_by).toBeUndefined();
+    expect(det.condition).toBe(`An accessory structure that is not elevated may not be used for human habitation. ${UNLESS_ELEVATED}.`);
+    expect(unlessElevatedSplit([{ ...gate, unless_elevated: false }])).toHaveLength(1);
   });
 });

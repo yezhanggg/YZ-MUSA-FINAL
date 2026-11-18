@@ -437,6 +437,14 @@ How the resolver reads a file now (pass 7):
 - Not done: a bar on adding a listed use to a lot that holds a nonconforming use (Bradford 220-123C(3), 220-12D). No lot fact says a house is a nonconforming use. Where the district settles it, put it in `status_outside_by_district` (Bradford C-1 and C-2).
 - Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
 
+## More fields (pass 27)
+
+- `envelope.accessory_rules_where` items are now said under the bill in a town with no ADU rule. The bill allows the unit, so the accessory building rules that reach it are said there. Today they are still not said, as before. Glenolden 162-12C(8).
+- `envelope.accessory_rules_where[].side_one_only` (boolean): `setback_side_ft` holds on one side only, and the other side keeps the district side yard. The figure reads "side 3 ft on one side only". Where a unit in an accessory building shows that side yard, a line says "Side yard for a unit in an accessory building: 3 ft on one side only (162-12C(8)). The other side keeps the district's 10 ft side yard". Glenolden 162-12C(8): an accessory building 'may have one side yard of not less than three feet'. Added: Glenolden.
+- A gate's `unless_elevated` (boolean, on a bar): the bar reaches only an accessory structure that is not elevated, not a new building built elevated as a residential structure. Put `detached_new` in `applies_to`. For `detached_new` the bar becomes a condition: "A new building for the unit is barred unless it is built elevated as a residential structure, with its lowest floor at or above the regulatory flood elevation. Built that way, this bar does not reach it". The other forms in `applies_to` keep the bar, with its `disputed_by` and `no_variance`. Grove City 152.061(E), Bradford 114-23E, Camp Hill 200-29D(2)(e), Pittston 270-23E. Not set in any file yet. Pittston gate 270-23E has `over_garage` too, which keeps the bar.
+- To use `unless_elevated`: Grove City gate 152.061(E) adds `detached_new` and the flag, and gate 152.061(A), (C), (E) keeps only `over_garage`, its text then on a new story over a garage. Bradford gate 114-23E, 114-36C adds `detached_new` and the flag, and gate 114-23A, E for `detached_new` can go. Camp Hill gate 200-29D(2)(e) adds `detached_new` and the flag, and gate 200-29C(2)(a)[1], [4], D(2)(a), (c), (e)[1] for `detached_new` drops its sentence on the exemption for accessory structures. Pittston gate 270-23E adds `detached_new` and the flag.
+- `PASS27_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the accessory rules said under the bill. No lot town file has a no-ADU status or an `accessory_rules_where` item today, so nothing stored changes at a rebuild.
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

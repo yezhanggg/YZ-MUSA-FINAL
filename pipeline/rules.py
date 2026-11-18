@@ -1086,6 +1086,22 @@ PASS26_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 27 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
+# envelope.accessory_rules_where items are said under the bill in a town with no ADU rule (Glenolden 162-12C(8)). No
+# lot town file has a no-ADU status, so nothing stored changes at a rebuild. The other pass 27 changes need fields no
+# lot town file uses (accessory_rules_where[].side_one_only, a gate's unless_elevated).
+PASS27_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
@@ -1949,6 +1965,35 @@ def _pd_kind_words(g: dict[str, Any], lot: dict[str, Any]) -> str:
     return f"{HOUSE_TESTS['in_planned_development']} and which kind it is (planned_development_kind)"
 
 
+UNLESS_ELEVATED = (
+    "A new building for the unit is barred unless it is built elevated as a residential structure, with its lowest "
+    "floor at or above the regulatory flood elevation. Built that way, this bar does not reach it"
+)
+
+
+def _unless_elevated_split(gates: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Pass 27: a floodplain bar on an accessory structure that is not elevated (gate unless_elevated, Grove City
+    152.061(E)) does not reach a new building elevated as a residential structure. For detached_new the bar becomes a
+    condition that says so. The other forms it names keep the bar as the file has it."""
+    out = []
+    for g in gates:
+        forms = g.get("applies_to") or ALL_TYPES
+        if not g.get("unless_elevated") or g.get("effect") != "bars" or "detached_new" not in forms:
+            out.append(g)
+            continue
+        rest = [t for t in forms if t != "detached_new"]
+        if rest:
+            out.append({**g, "applies_to": rest})
+        new = {k: v for k, v in g.items() if k not in ("disputed_by", "no_variance")}
+        new.update(
+            applies_to=["detached_new"],
+            effect="condition",
+            condition=f"{str(g['condition']).rstrip().rstrip('.')}. {UNLESS_ELEVATED}.",
+        )
+        out.append(new)
+    return out
+
+
 def _gate_met(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
     test, area = g.get("test"), lot.get("lot_sqft")
     if test == "in_planned_development" and g.get("planned_development_kinds"):
@@ -2090,6 +2135,7 @@ def _town_conditions(
     hold22: bool = False,
     hold25: bool = False,
     hold26: bool = False,
+    bill: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
@@ -2098,7 +2144,9 @@ def _town_conditions(
     hold18: a lot town whose pass 18 sentence fix waits for its next lot rebuild (PASS18_HOLD_TOWNS).
     hold22: a lot town whose pass 22 services row fix waits for its next lot rebuild (PASS22_HOLD_TOWNS).
     hold25: a lot town whose pass 25 fixes wait for its next lot rebuild (PASS25_HOLD_TOWNS).
-    hold26: a lot town whose pass 26 status line waits for its next lot rebuild (PASS26_HOLD_TOWNS)."""
+    hold26: a lot town whose pass 26 status line waits for its next lot rebuild (PASS26_HOLD_TOWNS).
+    bill: the state bill scenario, outside PASS27_HOLD_TOWNS. The bill allows an ADU, so the accessory building items
+    that reach a detached unit are said even where the town has no ADU rule (pass 27)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -2392,7 +2440,8 @@ def _town_conditions(
         c["max_height_ft"] = item["max_height_ft"]
         out.append(c)
     acc_where = _leaf(data, ("envelope", "accessory_rules_where"))
-    for item in (acc_where or {}).get("value") or [] if not no_adu else []:  # pass 9: yards by placement or size
+    # pass 9: yards by placement or size. Pass 27: said under the bill too, where the town has no ADU rule
+    for item in (acc_where or {}).get("value") or [] if (not no_adu or bill) else []:
         if item.get("districts") and _match_code(lot.get("zoning_district"), item["districts"]) is None:
             continue
         narrow = item.get("lot_width_below_ft")  # pass 20: the item holds only on a lot narrower than this
@@ -2401,6 +2450,7 @@ def _town_conditions(
             continue  # the lot is that wide or wider, so the item does not reach it
         figs = [
             f"{label} {item[k]:g} ft"
+            + (" on one side only" if k == "setback_side_ft" and item.get("side_one_only") else "")
             for k, label in (
                 ("setback_front_ft", "front"),
                 ("setback_side_ft", "side"),
@@ -2567,7 +2617,7 @@ def _town_conditions(
             )
         )
     gates = _leaf(data, ("eligibility", "gates")) or {}
-    for g in gates.get("value") or []:
+    for g in _unless_elevated_split(gates.get("value") or []):
         if _gate_scope(g, lot, historic):
             effect = g["effect"]
             scoped = (
@@ -3897,6 +3947,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         place in PASS22_HOLD_TOWNS,
         place in PASS25_HOLD_TOWNS,
         place in PASS26_HOLD_TOWNS,
+        state and place not in PASS27_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     chapter_bars: list[dict[str, Any]] = []
@@ -4507,6 +4558,9 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         if scope_line:
             out["reasons"].append(scope_line)
     _, d_row = _district_row(data, lot)
+    one_side = _one_side_only_line(data, lot, d_row, setbacks, types_allowed) if allowed else None
+    if one_side:  # pass 27: a side yard the code drops on one side only is never shown as both sides
+        out["reasons"].append(one_side)
     min_h = None if state else d_row.get("min_height_ft")
     if _usable(min_h) and min_h.get("value") is not None:  # pass 17: every building in the district at least this tall
         low = [t for t in DETACHED_TYPES if t in types_allowed and (heights[t] is None or heights[t] < min_h["value"])]
@@ -5674,6 +5728,40 @@ def _town_setbacks(
             yards[k] = v
         out[t] = yards
     return out
+
+
+def _one_side_only_line(
+    data: dict[str, Any],
+    lot: dict[str, Any],
+    d_row: dict[str, Any],
+    setbacks: dict[str, dict[str, Any]],
+    types_allowed: list[str],
+) -> str | None:
+    """Pass 27: an envelope.accessory_rules_where item with side_one_only (Glenolden 162-12C(8): an accessory building
+    may have one side yard of 3 ft, the district's 10 ft on the other). Where a unit in an accessory building shows that
+    side yard, say it holds on one side only and give the district's side yard for the other. None otherwise."""
+    acc_where = _leaf(data, ("envelope", "accessory_rules_where")) or {}
+    shown = {(setbacks.get(t) or {}).get("setback_side_ft") for t in DETACHED_TYPES if t in types_allowed}
+    for item in acc_where.get("value") or []:
+        v = item.get("setback_side_ft")
+        if not item.get("side_one_only") or v is None or v not in shown:
+            continue
+        if item.get("districts") and _match_code(lot.get("zoning_district"), item["districts"]) is None:
+            continue
+        other = d_row.get("setback_side_ft")
+        other_v = other.get("value") if _usable(other) else None
+        if other_v is not None and other_v <= v:
+            continue  # the district side yard is no larger, so the figure holds on both sides
+        return (
+            f"Side yard for a unit in an accessory building: {v:g} ft on one side only "
+            f"({item.get('section') or acc_where.get('section')}). "
+            + (
+                f"The other side keeps the district's {other_v:g} ft side yard"
+                if other_v is not None
+                else "The other side keeps the district's side yard, which is not on file here"
+            )
+        )
+    return None
 
 
 def _headline_scope_line(

@@ -461,6 +461,51 @@ const lesserOf = (sqft: Obj | null, share: Obj | null, greater = false, strict =
       : `${strict ? 'Less than' : 'At most'} ${pct(share.value)} of the house. Give the house size to get the number`
     : null;
 
+// Pass 27 (pipeline/rules.py _unless_elevated_split): a floodplain bar on an accessory structure that is not elevated
+// (gate unless_elevated, Grove City 152.061(E)) does not reach a new building elevated as a residential structure. For
+// detached_new the bar is a condition that says so. The other forms it names keep the bar.
+export const UNLESS_ELEVATED =
+  'A new building for the unit is barred unless it is built elevated as a residential structure, with its lowest floor at or above the regulatory flood elevation. Built that way, this bar does not reach it';
+export function unlessElevatedSplit(gates: Json[]): Json[] {
+  const out: Json[] = [];
+  for (const g of gates) {
+    const forms = isObj(g) && Array.isArray(g.applies_to) && g.applies_to.length ? (g.applies_to as string[]) : [...ADU_FORMS];
+    if (!isObj(g) || g.unless_elevated !== true || g.effect !== 'bars' || !forms.includes('detached_new')) {
+      out.push(g);
+      continue;
+    }
+    const rest = forms.filter((t) => t !== 'detached_new');
+    if (rest.length) out.push({ ...g, applies_to: rest });
+    const { disputed_by: _d, no_variance: _n, ...keep } = g;
+    out.push({ ...keep, applies_to: ['detached_new'], effect: 'condition', condition: `${String(g.condition ?? '').trim().replace(/\.$/, '')}. ${UNLESS_ELEVATED}.` });
+  }
+  return out;
+}
+
+// Pass 9: accessory yards by placement or size (pipeline/rules.py envelope.accessory_rules_where). Pass 27: also said
+// under HB 2186 where the town has no ADU rule, since the bill allows the unit (under_hb2186.accessory_building_rules).
+function accessoryRulesWhere(file: Obj, district: string | null): Obj[] {
+  const out: Obj[] = [];
+  const accWhere = leafAt(file, 'envelope', 'accessory_rules_where');
+  for (const it of Array.isArray(accWhere?.value) ? accWhere!.value.filter(isObj) : []) {
+    if (district && Array.isArray(it.districts) && !it.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(district))) continue;
+    const figs = ([['setback_front_ft', 'front'], ['setback_side_ft', 'side'], ['setback_rear_ft', 'rear'], ['min_from_front_line_ft', 'from the front line at least'], ['max_height_ft', 'height at most']] as const)
+      .filter(([k]) => typeof it[k] === 'number')
+      .map(([k, l]) => `${l} ${num(it[k])} ft${k === 'setback_side_ft' && it.side_one_only === true ? ' on one side only' : ''}`);
+    if (typeof it.max_share_of_rear_yard === 'number') figs.push(`at most ${pct(it.max_share_of_rear_yard)} of the required rear yard`);
+    const whereTxt = `${it.where}${typeof it.over_sqft === 'number' ? ` (over ${num(it.over_sqft)} sq ft)` : ''}`;
+    // Pass 15 (pipeline/rules.py): an item with no figures carries its rule in the where text. Never "...: .".
+    const whereOnly = typeof it.over_sqft === 'number' && String(it.where).includes('sq ft') ? String(it.where) : whereTxt;
+    const accText = figs.length
+      ? accWhereFigs(whereTxt, figs)
+      : NAMES_BUILDING.test(whereOnly)
+        ? `${whereOnly.charAt(0).toUpperCase()}${whereOnly.slice(1)}`
+        : `For an accessory building, ${whereOnly}`;
+    out.push({ kind: 'other', condition: ownerText(`${accText}${it.note ? `. ${it.note}` : ''}`), section: it.section ?? accWhere!.section ?? null, url: it.url ?? accWhere!.url ?? null, checked_on: accWhere!.verified_on ?? null, confidence: accWhere!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'], ...(Array.isArray(it.districts) ? { districts: it.districts } : {}) });
+  }
+  return out;
+}
+
 function conditionsOf(file: Obj, district: string | null): Obj[] {
   const out: Obj[] = [];
   const st = leafAt(file, 'adu', 'status');
@@ -574,7 +619,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
       }
   }
   const gates = leafAt(file, 'eligibility', 'gates');
-  for (const g of Array.isArray(gates?.value) ? gates!.value : []) {
+  for (const g of unlessElevatedSplit(Array.isArray(gates?.value) ? gates!.value : [])) {
     if (!isObj(g)) continue;
     const want = rowKey ?? district;
     if (want && Array.isArray(g.districts) && !g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
@@ -616,24 +661,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     for (const it of Array.isArray(bySt?.value) ? bySt!.value.filter(isObj) : [])
       out.push({ kind: 'height', condition: ownerText(`A detached unit of ${num(it.stories)} stor${it.stories === 1 ? 'y' : 'ies'} may be up to ${num(it.max_height_ft)} ft${it.note ? `. ${it.note}` : ''}`), section: it.section ?? bySt!.section ?? null, url: bySt!.url ?? null, checked_on: bySt!.verified_on ?? null, confidence: bySt!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'] });
   // Pass 9: accessory yards by placement or size (pipeline/rules.py envelope.accessory_rules_where).
-  const accWhere = leafAt(file, 'envelope', 'accessory_rules_where');
-  if (!noAduHere)
-    for (const it of Array.isArray(accWhere?.value) ? accWhere!.value.filter(isObj) : []) {
-      if (district && Array.isArray(it.districts) && !it.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(district))) continue;
-      const figs = ([['setback_front_ft', 'front'], ['setback_side_ft', 'side'], ['setback_rear_ft', 'rear'], ['min_from_front_line_ft', 'from the front line at least'], ['max_height_ft', 'height at most']] as const)
-        .filter(([k]) => typeof it[k] === 'number')
-        .map(([k, l]) => `${l} ${num(it[k])} ft`);
-      if (typeof it.max_share_of_rear_yard === 'number') figs.push(`at most ${pct(it.max_share_of_rear_yard)} of the required rear yard`);
-      const whereTxt = `${it.where}${typeof it.over_sqft === 'number' ? ` (over ${num(it.over_sqft)} sq ft)` : ''}`;
-      // Pass 15 (pipeline/rules.py): an item with no figures carries its rule in the where text. Never "...: .".
-      const whereOnly = typeof it.over_sqft === 'number' && String(it.where).includes('sq ft') ? String(it.where) : whereTxt;
-      const accText = figs.length
-        ? accWhereFigs(whereTxt, figs)
-        : NAMES_BUILDING.test(whereOnly)
-          ? `${whereOnly.charAt(0).toUpperCase()}${whereOnly.slice(1)}`
-          : `For an accessory building, ${whereOnly}`;
-      out.push({ kind: 'other', condition: ownerText(`${accText}${it.note ? `. ${it.note}` : ''}`), section: it.section ?? accWhere!.section ?? null, url: it.url ?? accWhere!.url ?? null, checked_on: accWhere!.verified_on ?? null, confidence: accWhere!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'], ...(Array.isArray(it.districts) ? { districts: it.districts } : {}) });
-    }
+  if (!noAduHere) out.push(...accessoryRulesWhere(file, district));
   // Pass 24 (pipeline/rules.py envelope.setbacks_by_form): yards one form keeps, said for that form only.
   const byFormYards = leafAt(file, 'envelope', 'setbacks_by_form');
   if (!noAduHere && byFormYards && isObj(byFormYards.value))
@@ -1284,14 +1312,18 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     out.lot_status = { value: outside, note: `This district is outside ${scopeList!.join(', ')}. The town's ADU numbers do not apply here${outHit ? `. In ${district} the code's status is ${label(outside)} (${outHit.section ?? byOut!.section ?? ''})` : ''}` };
   if (useOpen) out.lot_status = { value: null, note: `Only if a ${String(useVal!.use)} is a permitted use in ${district} (${useLeaf!.section ?? ''}). ${useListText}. Ask the zoning officer` };
   const overridden = (out.conditions as Obj[]).filter((c) => c.bill_would_override);
+  // Pass 27 (pipeline/rules.py _town_conditions bill): with no ADU rule today, the accessory building items are said
+  // under the bill, which allows the unit.
+  const accBill = noAdu ? accessoryRulesWhere(file, district) : [];
   const kept = billKeeps(file, district);
   const inDoubtHere = isObj(approval.district_path) && approval.district_path.listed_in_doubt === true;
-  if (overridden.length || kept.length || inDoubtHere)
+  if (overridden.length || kept.length || inDoubtHere || (noAdu && accBill.length))
     out.under_hb2186 = {
       note: 'HB 2186 (not law) would make one ADU by right and would remove these town conditions. Town size caps would give way to the bill floor: at least the lesser of 50 percent of the house or 850 sq ft. A form the town bars today would get that floor',
       ...(inDoubtHere ? { district_in_doubt: `${district} would be opened by the bill like any other district where a house is allowed` } : {}),
       conditions: overridden.map((c) => ({ kind: c.kind, section: c.section ?? null })),
       ...(kept.length ? { still_applies: `Town lot rules the bill does not address still apply: ${kept.map((k, i) => (i ? k.charAt(0).toUpperCase() + k.slice(1) : k)).join('. ')}` } : {}),
+      ...(noAdu && accBill.length ? { accessory_building_rules: accBill.map((c) => ({ condition: c.condition, section: c.section ?? null })) } : {}),
     };
   const alts = leafAt(file, 'approval', 'alternatives');
   const altGates = Array.isArray(leafAt(file, 'eligibility', 'gates')?.value) ? (leafAt(file, 'eligibility', 'gates')!.value as Json[]).filter(isObj) : [];
