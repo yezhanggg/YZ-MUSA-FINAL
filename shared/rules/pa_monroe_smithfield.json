@@ -4,7 +4,7 @@
     "instrument": "Smithfield Township Zoning Ordinance (Chapter 27 Zoning, Ord. 187 of 4-18-2008, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 SM4779, Township of Smithfield. The code's 27-1002 'County' is 'The County of Monroe, Commonwealth of Pennsylvania', and its stormwater and access rules name Route 209 and the East Stroudsburg School District, so it is Smithfield Township, Monroe County, not Middle Smithfield (Chapter 200, another code). The Schedule of District Regulations (27-309) and the parking schedule (27-404 Schedule II) are text. The only attachment is the zoning map. Floodplain rules are in Chapter 8. New Laws: none",
+    "status_detail": "eCode360 SM4779, Township of Smithfield. The code's 27-1002 'County' is 'The County of Monroe, Commonwealth of Pennsylvania', and its stormwater and access rules name Route 209 and the East Stroudsburg School District, so it is Smithfield Township, Monroe County, not Middle Smithfield (Chapter 200, another code). The Schedule of District Regulations (27-309) and the parking schedule (Schedule II of Part 4, 27-402.6) are text. The only attachment is the zoning map. Floodplain rules are in Chapter 8. New Laws: none. Ord. No. 272 of 11-10-2026 (Enhanced Design Incentive) is posted on eCode360 as a PDF only. It is not in the codified chapter and was not read. It was passed after the code's currency date of 09-09-2026 and may amend Chapter 27",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/SM4779",
@@ -21,32 +21,42 @@
       "https://ecode360.com/print/SM4779?guid=41765780",
       "https://ecode360.com/print/SM4779?guid=41767032",
       "https://ecode360.com/print/SM4779?guid=41767219",
-      "https://ecode360.com/print/SM4779?guid=41759901"
+      "https://ecode360.com/print/SM4779?guid=41759901",
+      "https://ecode360.com/print/SM4779?guid=41765669",
+      "https://ecode360.com/print/SM4779?guid=41767027"
     ],
-    "verified_on": "2026-11-17",
+    "verified_on": "2026-11-18",
     "county": "Monroe",
     "municipality_type": "township",
     "geoid": "4208971344",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/41765428",
     "code_current_through": "2026-09-09",
-    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 09-09-2026.' New Laws: 'There are currently no known new laws for this Code.' 27-404 carries Ord. No. 269 of 9-9-2026",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 09-09-2026.' New Laws: 'There are currently no known new laws for this Code.' 27-402 and 27-404 carry Ord. No. 269 of 9-9-2026. Ord. No. 272 of 11-10-2026 (Enhanced Design Incentive) is posted on eCode360 as a PDF only. It is not in the codified chapter and was not read. It was passed after the code's currency date of 09-09-2026 and may amend Chapter 27",
     "checks": [
       "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, living quarters, caretaker, conversion) find only the residential conversion rules, multifamily conversions, a resort's employee living quarters and one row of the parking schedule. No district lists an ADU (27-309)",
-      "The parking schedule has a row 'Conversion and accessory dwelling units: 2 per dwelling unit' (27-404 Schedule II), but no use list names an accessory dwelling unit, so this row opens no path by itself",
+      "The parking schedule has a row 'Conversion and accessory dwelling units: 2 per dwelling unit' (27-402.6, Schedule II), but no use list names an accessory dwelling unit, so this row opens no path by itself",
       "R-1, R-2 and R-C permit 'One-family detached dwellings (1 per lot)' (27-309). R-2 and R-C also permit 'Two-family dwellings' by right and 'Residential conversions' as a conditional use. R-E permits one-family and two-family dwellings only as part of a resort. ED, M-1 and H-1 list no single-family house",
-      "A use not included in any district: 'the Board of Supervisors shall render a formal determination as to whether or not the use is permitted in a given district and if the use is permitted, it shall then process the application as a conditional use', judged by its similarity to listed uses (27-302.2). The rule does not reclassify a listed use, and two-family dwellings and residential conversions are listed in R-2 and R-C, so a second unit may be read as one of those. Not settled",
-      "Residential conversion (R-2 and R-C, conditional use): a one-family dwelling turned into not more than two units. At least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the second. The lot at least 75% greater than the one-family minimum. Two parking spaces per unit (27-511.6)",
-      "A detached accessory building 'shall not exceed one story in height and shall not have or contain any living space'. It may not exceed the house's footprint or 20% of the allowed building coverage, whichever is less, and stays 10 ft from side and rear lot lines (27-503.2). These terms are set for detached accessory buildings 'located in any required side or rear yard'. Whether they reach one outside those yards is not settled",
+      "A use not included in any district: 'the Board of Supervisors shall render a formal determination as to whether or not the use is permitted in a given district and if the use is permitted, it shall then process the application as a conditional use', judged by its similarity to listed uses. 'This provision shall not be used to reclassify uses that are already listed nor shall the Board of Supervisors allow any use which is not listed in a particular district if that use is already permitted in another district' (27-302.2). Two-family dwellings and residential conversions are listed in R-2 and R-C. So in R-1 a second unit has no path but a use variance, and in R-2 and R-C a second unit is most likely heard as one of those listed uses",
+      "Residential conversion (R-2 and R-C, conditional use): a one-family dwelling turned into not more than two units, 'without disturbing the architectural character of the house' (27-1002). At least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the second. The lot at least 75% greater than the one-family minimum. Two parking spaces per unit (27-511.6). 27-401.2 limits the dwelling units on a property to its adjusted tract area divided by the minimum lot area, which read literally would need twice the minimum",
+      "A detached accessory building in a required side or rear yard 'shall not exceed one story in height and shall not have or contain any living space'. It may not exceed the house's footprint or 20% of the allowed building coverage, whichever is less, and stays 10 ft from side and rear lot lines (27-503.2). Outside those yards 27-503 sets no rule, but a dwelling unit in a detached building would be a second dwelling on a lot limited to 'One-family detached dwellings (1 per lot)' (27-309), and the accessory uses listed are garages, tool houses and play houses",
       "An accessory building attached to the house is part of the house (27-503.1). No accessory building may stand nearer the road than the house (27-503.4)",
-      "Parking: two spaces per dwelling unit, also for 'Conversion and accessory dwelling units' (27-404 Schedule II). The schedule applies 'only to new construction or to new uses and to the enlarged section of any addition', and an applicant may use the ITE Parking Generation Manual instead",
-      "Floodplain (Chapter 8): any construction or development in the floodplain needs a conditional use permit after a hearing before the Board of Supervisors (8-103.2A, 8-104.2). Only the activities of 8-108, among them 'Accessory uses for residential purposes', are permitted, and anything else only by variance from the Board of Supervisors (8-109, 8-113). No new construction or development in the floodway or, without a floodway, within 50 ft landward of the top of bank (8-107.1B). On-lot sewage systems are prohibited in the floodplain (8-107.1C(5), 8-114.1G(3)). New construction and substantial improvement need the lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft (8-113.2E, 8-114.1A)",
-      "Existing buildings in the floodplain: a substantial improvement that expands the building perpendicular to the stream flow is prohibited, and work under 50% of market value is elevated to the greatest extent possible (8-111.1A, G)",
-      "Nonconforming unimproved lots may be built on if the yards are met, or with a variance (27-603)",
+      "Parking: two spaces per dwelling unit, also for 'Conversion and accessory dwelling units' (27-402.6, Schedule II). 'If the computation of required parking spaces results in a fraction, a full space shall be required for each fractional amount' (27-402.6). The schedule applies 'only to new construction or to new uses and to the enlarged section of any addition', and an applicant may use the ITE Parking Generation Manual instead. A conversion changes the use, so its spaces are required (27-402.2, 3). Side and rear yard parking stays 15 ft from the lot line (27-403.1L)",
+      "Floodplain (Chapter 8): any construction or development in the floodplain needs a conditional use permit after a hearing before the Board of Supervisors (8-103.2A, 8-104.2). Only the activities of 8-108, among them 'Accessory uses for residential purposes', are permitted, and anything else only by variance from the Board of Supervisors (8-109, 8-113). No new construction or development in the floodway or, without a floodway, within 50 ft landward of the top of bank (8-107.1B). New construction is a structure begun on or after May 2, 2013, with its later improvements (8-115). On-lot sewage systems are prohibited in the floodplain (8-107.1C(5), 8-114.1G(3)). New construction and substantial improvement need the lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft (8-113.2E, 8-114.1A). An accessory structure that is not elevated may not be used for human habitation and may have at most 200 sq ft of floor area (8-114.1D)",
+      "Existing buildings in the floodplain: a substantial improvement that expands the building perpendicular to the stream flow is prohibited, and work under 50% of market value is elevated to the greatest extent possible (8-111.1A, G). In the floodway no expansion may raise the base flood elevation (8-111.1B). Where no floodway is mapped, no expansion within 50 ft landward of the top of bank 'unless necessary permits are obtained from the Department of Environmental Protection Regional Office' (8-111.1D)",
+      "Floodplain variances (Board of Supervisors): none in the floodway that raises the base flood elevation, and none within 50 ft of the top of bank without DEP permits (8-113.2B, D). No variance for the developments of special concern of 8-107.1C, among them on-lot sewage systems (8-109, 8-113.2H), and none on a lot created after the chapter took effect (8-112.2C, 8-113.2I)",
+      "Nonconforming unimproved lots may be built on if the yards are met, or with a variance (27-603). This covers only unimproved lots. An existing house on a small lot gets no lot size relief for a conversion",
+      "A nonconforming use or structure may be enlarged only by special exception from the Zoning Hearing Board, by at most one third of its volume or floor area over its life (27-604.1A, C). Nonconformity dates from May 22, 1973 or a later amendment (27-601)",
       "Short-term rentals, bed and breakfasts and resort lodging have their own rules (27-306, 27-307, 27-511.1) and are not a path to a second home on a house lot",
-      "Variances: Zoning Hearing Board on the findings of 27-804.1A to D. No bar on a use variance was found"
+      "Variances: Zoning Hearing Board on the findings of 27-804.1A to D. No bar on a use variance was found",
+      "Dwelling size: every dwelling unit for permanent occupancy needs at least 576 sq ft (efficiency), 646 sq ft (one bedroom), 717 sq ft (two bedrooms) or 817 sq ft (three bedrooms, plus 100 sq ft for each bedroom over three). 'No dwelling unit shall be less than 24 feet in width and 24 feet in length' (27-401.1B)",
+      "Impervious cover (27-401.1C): R-1 25% without both central water and sewer, 30% with both. R-2 30% with neither, 35% with one, 40% with both. R-C has no impervious figure",
+      "Dwelling units per property: 'the maximum number of dwelling units permitted on any given property shall be limited to the adjusted tract acreage of the site divided by the minimum lot area(s)'. The adjusted area leaves out 10% of slopes of 15% to 25%, 75% of steeper slopes, 75% of wetlands, all floodways, 50% of the rest of the floodplain and all street rights-of-way and utility easements (27-401.2). A second unit needs the minimum lot area again, net of that land",
+      "Natural features (27-401.3): no structure in the floodplain except in strict compliance with Chapter 8 (C). No development in a wetland, at most 40% of a wetland margin altered, and no on-lot septic system or well in a wetland (D). At most 60% of slopes of 15% to 25% and 10% of slopes of 25% or more may be disturbed, and land development that disturbs very steep slopes, or on a lot that is 40% or more over 15% slope, is a conditional use (E). On a lot without central sewage room for a dwelling, a well and two septic drainfields must be shown, except on existing nonconforming lots (F)",
+      "Appalachian Trail Overlay: within 1,000 ft on each side of the center line of the Trail, 'Residential, commercial and industrial uses shall be prohibited', and no structure may be built except federal, state or municipal ones (27-401.3H(1), (5)(e))"
     ],
-    "notes": "Zoning office: Smithfield Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 27-302, 27-303, 27-309, 27-404, 27-503, 27-511 up to Subsection 21C, 27-603, 27-804, 27-1002 from 'Abandoned sign' to 'No-impact home-based business' (later definitions by element only), Chapter 8 Part 1 from 8-101 to 8-114.1L and code searches. Not read: 27-101 to 27-301, 27-304 to 27-308, 27-310, 27-401 to 27-403, 27-501, 27-502, 27-504 to 27-510, 27-512, 27-513, Parts 6 except 27-603, 7, 8 except 27-804, 9, 11 and 12, the end of 27-511 and 27-1002, 8-114M on and 8-115. Open points: whether 27-302.2 lets the Board of Supervisors hear a second unit as an unlisted use, given that two-family dwellings and residential conversions are listed; whether the 27-503.2 bar on living space reaches a detached accessory building outside the required yards; whether a two-family dwelling needs more than the one-family lot; the end of the residential conversion definition (read only to 'without disturbing the architectural char')."
+    "notes": "Zoning office: Smithfield Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 27-302, 27-303, 27-309, 27-401 to 27-404 with Schedule II, 27-502, 27-503, 27-511 up to Subsection 21C, Part 6, 27-804, 27-1002 from 'Abandoned sign' to 'No-impact home-based business' (later definitions by element only), Chapter 8 Part 1 from 8-101 to 8-114.1L, parts of 8-115 and code searches. Not read: 27-101 to 27-301, 27-304 to 27-308, 27-310, 27-501, 27-504 to 27-510, 27-512, 27-513, Parts 7, 8 except 27-804, 9, 11 and 12, the end of 27-511 and 27-1002, 8-114M on, the rest of 8-115 and Ord. No. 272 of 11-10-2026 (PDF only). Open points: Ord. No. 272 of 11-10-2026, passed after the code's currency date and not read. Whether 27-502.5 (two or more principal buildings on one parcel) lets a two-family building stand beside the house, which would need the lot figures of both. Whether 27-401.2 (twice the minimum lot for two units, net of constrained land) or 27-511.6B (75% more) sets the lot for a residential conversion. Whether the Board of Supervisors would hear a second unit in R-2 or R-C under 27-302.2 at all, given that two-family dwellings and residential conversions are listed there.",
+    "code_caution": "Ord. No. 272 of 11-10-2026 (Enhanced Design Incentive) is posted on eCode360 as a PDF only. It is not in the codified chapter and was not read. It was passed after the code's currency date of 09-09-2026 and may amend Chapter 27."
   },
   "adu": {
     "term": {
@@ -71,11 +81,11 @@
         "garage_conversion": "prohibited",
         "over_garage": "prohibited"
       },
-      "section": "27-503.2A",
-      "url": "https://ecode360.com/print/SM4779?guid=41765912",
-      "verified_on": "2026-11-17",
+      "section": "27-309, 27-401.2, 27-503.2A",
+      "url": "https://ecode360.com/print/SM4779?guid=41765668",
+      "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "A detached accessory building 'shall not exceed one story in height and shall not have or contain any living space'. The terms are set for detached accessory buildings 'located in any required side or rear yard', so whether they reach one outside those yards is not settled"
+      "note": "A dwelling unit in a detached building would be a second dwelling on a lot limited to 'One-family detached dwellings (1 per lot)' (27-309), and the accessory uses listed are 'Private garages, tool houses and play houses'. In a required side or rear yard a detached accessory building 'shall not exceed one story in height and shall not have or contain any living space' (27-503.2A). A garage attached to the house is part of the house (27-503.1), so a unit there is a conversion of the house, not this form"
     }
   },
   "approval": {
@@ -85,7 +95,7 @@
       "url": "https://ecode360.com/print/SM4779?guid=41767219",
       "verified_on": "2026-11-17",
       "confidence": "secondary",
-      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2), or a conditional use if the Board of Supervisors finds it a permitted unlisted use under 27-302.2. R-2 and R-C permit two-family dwellings by right and residential conversions as a conditional use (see the other paths)"
+      "note": "A second unit on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). In R-2 and R-C a second unit is most likely heard as a residential conversion (conditional use) or a two-family dwelling (by right), which are listed there (see the other paths). 27-302.2 does not let the Board of Supervisors allow in R-1 a use already permitted in another district"
     },
     "fallback_path": {
       "value": "variance",
@@ -99,21 +109,20 @@
       "value": "conditional_use",
       "section": "27-302.2",
       "url": "https://ecode360.com/print/SM4779?guid=41765452",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "The Board of Supervisors decides whether an unlisted use is permitted in a district and then hears it as a conditional use. The rule may not 'reclassify uses that are already listed'. Two-family dwellings and residential conversions are listed in R-2 and R-C, so a second unit may be read as one of those listed uses and not as an unlisted one"
+      "note": "The Board of Supervisors decides whether an unlisted use is permitted in a district and then hears it as a conditional use. 'This provision shall not be used to reclassify uses that are already listed nor shall the Board of Supervisors allow any use which is not listed in a particular district if that use is already permitted in another district.' Two-family dwellings and residential conversions are listed in R-2 and R-C, so a second unit there is most likely one of those listed uses"
     },
     "unlisted_use_districts": {
       "value": [
-        "R-1",
         "R-2",
         "R-C"
       ],
       "section": "27-302.2, 27-309",
       "url": "https://ecode360.com/print/SM4779?guid=41765452",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "The districts that permit a house outside a resort"
+      "note": "R-2 and R-C, where two-family dwellings and residential conversions are listed. Not R-1: a second unit there would be a two-family dwelling or a conversion, which are permitted in other districts, and 27-302.2 bars the Board from allowing in a district a use already permitted in another"
     },
     "unlisted_use_scope": {
       "value": "similar_only",
@@ -131,7 +140,7 @@
           "districts": [
             "R-2"
           ],
-          "conditions": "Conversion of an existing one-family dwelling into a dwelling with not more than two units. The building has at least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the added unit. The lot is at least 75% greater than the district minimum for a one-family dwelling. Two off-street parking spaces per unit. Board of Supervisors decides after a hearing",
+          "conditions": "Conversion of an existing one-family dwelling into a dwelling with not more than two units. The building has at least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the added unit. The lot is at least 75% greater than the district minimum for a one-family dwelling. Two off-street parking spaces per unit. Each unit also meets the dwelling sizes of 27-401.1B (576 sq ft for an efficiency, 646 sq ft for one bedroom, 717 sq ft for two) and is at least 24 ft by 24 ft. Board of Supervisors decides after a hearing",
           "min_lot_sqft": 70000,
           "min_lot_by_utility": [
             {
@@ -182,10 +191,44 @@
           "builds": [
             "internal"
           ],
-          "section": "27-309, 27-511.6, 27-1002 'Residential conversion', 27-404 Schedule II",
+          "section": "27-309, 27-511.6, 27-1002 'Residential conversion', 27-401.1B, 27-401.2, 27-402.6",
           "url": "https://ecode360.com/print/SM4779?guid=41766515",
           "confidence": "secondary",
-          "note": "A house divided into two units. The lot figures are 1.75 times the R-2 one-family minimum for each set of services"
+          "note": "A house divided into two units. The lot figures are 1.75 times the R-2 one-family minimum for each set of services. The building keeps the architectural character of the house (27-1002)",
+          "disputed_min_lot": {
+            "districts": [
+              "R-2"
+            ],
+            "min_lot_sqft": 20000,
+            "section": "27-401.2",
+            "note": "27-401.2 limits the dwelling units on a property to its adjusted tract area divided by the minimum lot area, so two units may need twice the one-family minimum, net of steep slopes, wetlands, floodplain and rights-of-way. 27-511.6B is the rule written for conversions",
+            "min_lot_by_utility": [
+              {
+                "when": "Central sewage and water",
+                "public_sewer": true,
+                "public_water": true,
+                "min_lot_sqft": 20000
+              },
+              {
+                "when": "Central sewage only",
+                "public_sewer": true,
+                "public_water": false,
+                "min_lot_sqft": 30000
+              },
+              {
+                "when": "Central water only",
+                "public_sewer": false,
+                "public_water": true,
+                "min_lot_sqft": 60000
+              },
+              {
+                "when": "On-site sewage and water",
+                "public_sewer": false,
+                "public_water": false,
+                "min_lot_sqft": 80000
+              }
+            ]
+          }
         },
         {
           "name": "Residential conversion (R-C)",
@@ -193,7 +236,7 @@
           "districts": [
             "R-C"
           ],
-          "conditions": "Conversion of an existing one-family dwelling into a dwelling with not more than two units. The building has at least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the added unit. The lot is at least 75% greater than the district minimum for a one-family dwelling. Two off-street parking spaces per unit. Board of Supervisors decides after a hearing",
+          "conditions": "Conversion of an existing one-family dwelling into a dwelling with not more than two units. The building has at least 1,000 sq ft of floor area for the first unit plus 600 sq ft for the added unit. The lot is at least 75% greater than the district minimum for a one-family dwelling. Two off-street parking spaces per unit. Each unit also meets the dwelling sizes of 27-401.1B (576 sq ft for an efficiency, 646 sq ft for one bedroom, 717 sq ft for two) and is at least 24 ft by 24 ft. Board of Supervisors decides after a hearing",
           "min_lot_sqft": 140000,
           "min_lot_by_utility": [
             {
@@ -244,10 +287,44 @@
           "builds": [
             "internal"
           ],
-          "section": "27-309, 27-511.6, 27-1002 'Residential conversion', 27-404 Schedule II",
+          "section": "27-309, 27-511.6, 27-1002 'Residential conversion', 27-401.1B, 27-401.2, 27-402.6",
           "url": "https://ecode360.com/print/SM4779?guid=41766515",
           "confidence": "secondary",
-          "note": "A house divided into two units. The lot figures are 1.75 times the R-C one-family minimum for each set of services"
+          "note": "A house divided into two units. The lot figures are 1.75 times the R-C one-family minimum for each set of services. The building keeps the architectural character of the house (27-1002)",
+          "disputed_min_lot": {
+            "districts": [
+              "R-C"
+            ],
+            "min_lot_sqft": 50000,
+            "section": "27-401.2",
+            "note": "27-401.2 limits the dwelling units on a property to its adjusted tract area divided by the minimum lot area, so two units may need twice the one-family minimum, net of steep slopes, wetlands, floodplain and rights-of-way. 27-511.6B is the rule written for conversions",
+            "min_lot_by_utility": [
+              {
+                "when": "Central sewage and water",
+                "public_sewer": true,
+                "public_water": true,
+                "min_lot_sqft": 50000
+              },
+              {
+                "when": "Central sewage only",
+                "public_sewer": true,
+                "public_water": false,
+                "min_lot_sqft": 160000
+              },
+              {
+                "when": "Central water only",
+                "public_sewer": false,
+                "public_water": true,
+                "min_lot_sqft": 160000
+              },
+              {
+                "when": "On-site sewage and water",
+                "public_sewer": false,
+                "public_water": false,
+                "min_lot_sqft": 160000
+              }
+            ]
+          }
         },
         {
           "name": "Two-family dwelling (R-2)",
@@ -255,36 +332,36 @@
           "districts": [
             "R-2"
           ],
-          "conditions": "A building for two families living independently. The schedule gives one lot figure for each district and set of services, so the district minimum applies. Two parking spaces per unit",
-          "min_lot_sqft": 40000,
+          "conditions": "A building for two families living independently. It holds two dwelling units, so the lot needs the district minimum for each unit, net of steep slopes, wetlands, floodplain and rights-of-way (27-401.2). Two parking spaces per unit. Each unit also meets the dwelling sizes of 27-401.1B (576 sq ft for an efficiency, 646 sq ft for one bedroom, 717 sq ft for two) and is at least 24 ft by 24 ft",
+          "min_lot_sqft": 80000,
           "min_lot_by_utility": [
             {
               "when": "Central sewage and water",
               "public_sewer": true,
               "public_water": true,
-              "min_lot_sqft": 10000,
-              "section": "27-309"
+              "min_lot_sqft": 20000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "Central sewage only",
               "public_sewer": true,
               "public_water": false,
-              "min_lot_sqft": 15000,
-              "section": "27-309"
+              "min_lot_sqft": 30000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "Central water only",
               "public_sewer": false,
               "public_water": true,
-              "min_lot_sqft": 30000,
-              "section": "27-309"
+              "min_lot_sqft": 60000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "On-site sewage and water",
               "public_sewer": false,
               "public_water": false,
-              "min_lot_sqft": 40000,
-              "section": "27-309"
+              "min_lot_sqft": 80000,
+              "section": "27-309, 27-401.2"
             }
           ],
           "requires": [
@@ -297,10 +374,10 @@
           "builds": [
             "detached_new"
           ],
-          "section": "27-309, 27-1002 'Dwelling', 27-404 Schedule II",
+          "section": "27-309, 27-401.2, 27-1002 'Dwelling', 27-402.6",
           "url": "https://ecode360.com/print/SM4779?guid=41765668",
           "confidence": "secondary",
-          "note": "The schedule gives no separate two-family lot figure, so the R-2 minimum is read as applying. Each lot holds 'One-family detached dwellings (1 per lot)', so the new building would take the place of the house"
+          "note": "The lot figures are twice the R-2 one-family minimum for each set of services (27-401.2). 'One-family detached dwellings (1 per lot)' caps one-family houses only. The two-family building takes the place of the house. Whether 27-502.5 lets it stand beside the house on a parcel big enough for both was not settled"
         },
         {
           "name": "Two-family dwelling (R-C)",
@@ -308,36 +385,36 @@
           "districts": [
             "R-C"
           ],
-          "conditions": "A building for two families living independently. The schedule gives one lot figure for each district and set of services, so the district minimum applies. Two parking spaces per unit",
-          "min_lot_sqft": 80000,
+          "conditions": "A building for two families living independently. It holds two dwelling units, so the lot needs the district minimum for each unit, net of steep slopes, wetlands, floodplain and rights-of-way (27-401.2). Two parking spaces per unit. Each unit also meets the dwelling sizes of 27-401.1B (576 sq ft for an efficiency, 646 sq ft for one bedroom, 717 sq ft for two) and is at least 24 ft by 24 ft",
+          "min_lot_sqft": 160000,
           "min_lot_by_utility": [
             {
               "when": "Central sewage and water",
               "public_sewer": true,
               "public_water": true,
-              "min_lot_sqft": 25000,
-              "section": "27-309"
+              "min_lot_sqft": 50000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "Central sewage only",
               "public_sewer": true,
               "public_water": false,
-              "min_lot_sqft": 80000,
-              "section": "27-309"
+              "min_lot_sqft": 160000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "Central water only",
               "public_sewer": false,
               "public_water": true,
-              "min_lot_sqft": 80000,
-              "section": "27-309"
+              "min_lot_sqft": 160000,
+              "section": "27-309, 27-401.2"
             },
             {
               "when": "On-site sewage and water",
               "public_sewer": false,
               "public_water": false,
-              "min_lot_sqft": 80000,
-              "section": "27-309"
+              "min_lot_sqft": 160000,
+              "section": "27-309, 27-401.2"
             }
           ],
           "requires": [
@@ -350,15 +427,15 @@
           "builds": [
             "detached_new"
           ],
-          "section": "27-309, 27-1002 'Dwelling', 27-404 Schedule II",
+          "section": "27-309, 27-401.2, 27-1002 'Dwelling', 27-402.6",
           "url": "https://ecode360.com/print/SM4779?guid=41765668",
           "confidence": "secondary",
-          "note": "The schedule gives no separate two-family lot figure, so the R-C minimum is read as applying. Each lot holds 'One-family detached dwellings (1 per lot)', so the new building would take the place of the house"
+          "note": "The lot figures are twice the R-C one-family minimum for each set of services (27-401.2). 'One-family detached dwellings (1 per lot)' caps one-family houses only. The two-family building takes the place of the house. Whether 27-502.5 lets it stand beside the house on a parcel big enough for both was not settled"
         }
       ],
-      "section": "27-309, 27-511.6",
+      "section": "27-309, 27-401.2, 27-511.6",
       "url": "https://ecode360.com/print/SM4779?guid=41765668",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "secondary"
     }
   },
@@ -391,7 +468,7 @@
       "value": [
         {
           "kind": "other",
-          "condition": "In the floodplain any construction or development needs a conditional use permit after a hearing before the Board of Supervisors. Only the activities of 8-108, among them accessory uses for residential purposes, are permitted, and others only by variance from the Board of Supervisors. New construction and substantial improvement need the lowest floor at or above the base flood elevation plus 1 1/2 ft. On-lot sewage systems are prohibited in the floodplain.",
+          "condition": "In the floodplain any construction or development needs a conditional use permit after a hearing before the Board of Supervisors. Only the activities of 8-108, among them accessory uses for residential purposes, are permitted, and others only by variance from the Board of Supervisors. New construction and substantial improvement need the lowest floor at or above the base flood elevation plus 1 1/2 ft. On-lot sewage systems are prohibited in the floodplain, and no variance may allow one.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -399,18 +476,17 @@
           "overlays": [
             "Floodplain"
           ],
-          "section": "8-103.2A, 8-104.2, 8-107.1C(5), 8-108, 8-109, 8-113.2E, 8-114.1A",
+          "section": "8-103.2A, 8-104.2, 8-107.1C(5), 8-108, 8-109, 8-113.2E, H, 8-114.1A",
           "url": "https://ecode360.com/print/SM4779?guid=41759901",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
         },
         {
           "kind": "other",
-          "condition": "'No new construction or development shall be permitted in any floodway area or, in the absence of a floodway area, within the area measured 50 feet landward from the top-of-bank of any watercourse'.",
+          "condition": "A new building in the floodplain is new construction. 'No new construction or development shall be permitted in any floodway area or, in the absence of a floodway area, within the area measured 50 feet landward from the top-of-bank of any watercourse' (8-107.1B). A variance there needs DEP permits and no rise in the base flood elevation.",
           "effect": "bars",
           "applies_to": [
-            "detached_new",
-            "attached"
+            "detached_new"
           ],
           "districts": null,
           "building_types": null,
@@ -419,14 +495,38 @@
           "overlays": [
             "Floodplain"
           ],
-          "section": "8-107.1B",
+          "section": "8-107.1B, 8-113.2B, D",
           "url": "https://ecode360.com/print/SM4779?guid=41759901",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
         },
         {
           "kind": "other",
-          "condition": "A substantial improvement of an existing building in the floodplain that expands it perpendicular to the stream flow is prohibited. Work under 50% of market value must be elevated to the greatest extent possible.",
+          "condition": "An addition to a house begun on or after May 2, 2013 is new construction, and no new construction may go in the floodway or, where no floodway is mapped, within 50 ft landward of the top of bank. For an older house the addition is an improvement under 8-111.1.",
+          "effect": "bars",
+          "applies_to": [
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "house_built_before",
+          "value_date": "2013-05-02",
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-107.1B, 8-115 'New construction'",
+          "url": "https://ecode360.com/print/SM4779?guid=41759901",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8",
+          "disputed_by": {
+            "section": "8-107.1B",
+            "url": "https://ecode360.com/print/SM4779?guid=41759901",
+            "note": "The bar reaches only the floodway and, where no floodway is mapped, the 50 ft landward of the top of bank. Elsewhere in the floodplain an addition to a newer house is allowed under the Chapter 8 rules"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "Work on an existing building in the floodplain: in the floodway no expansion that raises the base flood elevation. Where no floodway is mapped, no expansion within 50 ft landward of the top of bank without DEP permits. A substantial improvement that expands the building perpendicular to the stream flow is prohibited. Work under 50% of market value must be elevated to the greatest extent possible.",
           "effect": "condition",
           "applies_to": [
             "internal",
@@ -437,15 +537,43 @@
           "overlays": [
             "Floodplain"
           ],
-          "section": "8-111.1A, F, G",
+          "section": "8-111.1A, B, D, F, G",
           "url": "https://ecode360.com/print/SM4779?guid=41759901",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "Within 1,000 ft on each side of the center line of the Appalachian Trail residential uses are prohibited, and no structure may be built except federal, state or municipal ones.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Appalachian Trail Overlay"
+          ],
+          "section": "27-401.3H(1), (5)(e)",
+          "url": "https://ecode360.com/print/SM4779?guid=41765669",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Steep slopes: at most 60% of slopes of 15% to 25% and 10% of slopes of 25% or more may be disturbed. Land development that disturbs slopes of 25% or more, or on a lot that is 40% or more over 15% slope, is a conditional use. No development in a wetland, no more than 40% of a wetland margin altered, and no on-lot septic system or well in a wetland.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-401.3D(3), (4), E(1), (2)",
+          "url": "https://ecode360.com/print/SM4779?guid=41765669",
+          "confidence": "verified"
         }
       ],
-      "section": "Chapter 8",
+      "section": "Chapter 8, 27-401.3",
       "url": "https://ecode360.com/print/SM4779?guid=41759901",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "verified"
     }
   },
@@ -495,19 +623,27 @@
   "parking": {
     "spaces_required": {
       "value": 2,
-      "section": "27-404 Schedule II",
+      "section": "27-402.6, Schedule II",
       "url": "https://ecode360.com/print/SM4779?guid=41765780",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "secondary",
       "note": "'Conversion and accessory dwelling units: 2 per dwelling unit'. No use list names an accessory dwelling unit"
     },
     "total_on_site": {
       "value": 4,
-      "section": "27-404 Schedule II",
+      "section": "27-402.6, Schedule II",
       "url": "https://ecode360.com/print/SM4779?guid=41765780",
-      "verified_on": "2026-11-17",
+      "verified_on": "2026-11-18",
       "confidence": "secondary",
       "note": "Two spaces for each of two dwelling units"
+    },
+    "fraction_rounding": {
+      "value": "any_fraction_counts",
+      "section": "27-402.6",
+      "url": "https://ecode360.com/print/SM4779?guid=41765669",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'If the computation of required parking spaces results in a fraction, a full space shall be required for each fractional amount'"
     }
   },
   "districts": {
@@ -569,8 +705,9 @@
             "setback_side_ft": 30,
             "setback_rear_ft": 25,
             "max_building_coverage": 0.2,
-            "section": "27-309",
-            "setback_front_ft": 35
+            "section": "27-309, 27-401.1C",
+            "setback_front_ft": 35,
+            "max_impervious_coverage": 0.25
           },
           {
             "when": "Central water only (column B)",
@@ -580,7 +717,8 @@
             "setback_side_ft": 25,
             "setback_rear_ft": 25,
             "max_building_coverage": 0.2,
-            "section": "27-309"
+            "section": "27-309, 27-401.1C",
+            "max_impervious_coverage": 0.25
           },
           {
             "when": "Central sewage only (column C)",
@@ -590,14 +728,23 @@
             "setback_side_ft": 25,
             "setback_rear_ft": 25,
             "max_building_coverage": 0.2,
-            "section": "27-309"
+            "section": "27-309, 27-401.1C",
+            "max_impervious_coverage": 0.25
           }
         ],
         "section": "27-309 Schedule of District Regulations",
         "url": "https://ecode360.com/print/SM4779?guid=41765668",
-        "verified_on": "2026-11-17",
+        "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "A = On-site sewage and water, B = Central water only, C = Central sewage only, D = Central sewage and water"
+        "note": "A = On-site sewage and water, B = Central water only, C = Central sewage only, D = Central sewage and water. Impervious cover by 27-401.1C: Group A has neither central service, Group B one of them, Group C both"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-401.1C",
+        "url": "https://ecode360.com/print/SM4779?guid=41765669",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Group C, both central water and central sewage (column D). The utility rows hold the other groups"
       }
     },
     "R-2": {
@@ -657,7 +804,8 @@
             "setback_side_ft": 25,
             "setback_rear_ft": 25,
             "max_building_coverage": 0.25,
-            "section": "27-309"
+            "section": "27-309, 27-401.1C",
+            "max_impervious_coverage": 0.3
           },
           {
             "when": "Central water only (column B)",
@@ -667,7 +815,8 @@
             "setback_side_ft": 25,
             "setback_rear_ft": 25,
             "max_building_coverage": 0.3,
-            "section": "27-309"
+            "section": "27-309, 27-401.1C",
+            "max_impervious_coverage": 0.35
           },
           {
             "when": "Central sewage only (column C)",
@@ -677,14 +826,23 @@
             "setback_side_ft": 20,
             "setback_rear_ft": 20,
             "max_building_coverage": 0.3,
-            "section": "27-309"
+            "section": "27-309, 27-401.1C",
+            "max_impervious_coverage": 0.35
           }
         ],
         "section": "27-309 Schedule of District Regulations",
         "url": "https://ecode360.com/print/SM4779?guid=41765668",
-        "verified_on": "2026-11-17",
+        "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "A = On-site sewage and water, B = Central water only, C = Central sewage only, D = Central sewage and water"
+        "note": "A = On-site sewage and water, B = Central water only, C = Central sewage only, D = Central sewage and water. Impervious cover by 27-401.1C: Group A has neither central service, Group B one of them, Group C both"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "27-401.1C",
+        "url": "https://ecode360.com/print/SM4779?guid=41765669",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Group C, both central water and central sewage (column D). The utility rows hold the other groups"
       }
     },
     "R-C": {
@@ -781,6 +939,16 @@
         "confidence": "verified",
         "note": "A = On-site sewage and water, B = Central water only, C = Central sewage only, D = Central sewage and water"
       }
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": 576,
+      "section": "27-401.1B",
+      "url": "https://ecode360.com/print/SM4779?guid=41765669",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The minimum for an efficiency unit in 'all dwelling units designed for permanent occupancy'. 646 sq ft with one bedroom, 717 with two, 817 with three. 'No dwelling unit shall be less than 24 feet in width and 24 feet in length'. It binds the second unit of a conversion or a two-family dwelling"
     }
   }
 }

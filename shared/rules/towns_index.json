@@ -4839,8 +4839,8 @@
       "pop_rank": 348,
       "file": "pa_cumberland_camp_hill",
       "batch": 49,
-      "status": "drafted",
-      "checked_on": "2026-11-17",
+      "status": "verified",
+      "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/12763634",
       "plain_fetch": null,
@@ -4849,7 +4849,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 200-19 and 200-101 accessory dwelling unit for care of relative, family only (LDR, MDR, MDRO, MDRO1))"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the ADU counts as a dwelling unit for the lot area 'per DU' of 200-15 and 200-21 (shown as a condition), whether the 500 sq ft minimum of 200-46B reaches the ADU, whether a unit over an existing garage is by right, how 200-101J limits a unit in a garage, and whether the 200-29D(2)(e) habitation bar reaches an elevated accessory unit (shown as disputed). 200-29G and H were read only in part, and 200-30, 200-66, 200-80 to 200-88 and 200-119 were not read."
+      "status_note": "Verified 2026-11-18 (fix round). Open for a later check: the lot area 'per DU' of 200-15 and 200-21, read as not counting the ADU (200-4A) and shown only as a condition, a unit over an existing garage read as by right, an existing garage in the Floodplain Overlay shown as barred unless it is elevated (disputed), a second house or a two-family building beside the house in MDRO and MDRO1 under 200-52A (secondary), and the floodway bar on buildings, said only in text since the overlay is not split. 200-31 (Airport Overlay) and 200-32 were read only in part."
     },
     {
       "geoid": "4208971344",
@@ -4864,7 +4864,7 @@
       "file": "pa_monroe_smithfield",
       "batch": 49,
       "status": "drafted",
-      "checked_on": "2026-11-17",
+      "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/41765428",
       "plain_fetch": null,
@@ -4873,7 +4873,7 @@
       "why": [
         "added as batch 49 by population. Code Chapter 27 has no ADU text (27-511.6 residential conversion by conditional use and two-family by right in R-2 and R-C)"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether 27-302.2 lets the Board of Supervisors hear a second unit as an unlisted use while two-family dwellings and residential conversions are listed in R-2 and R-C, whether the 27-503.2A bar on living space reaches a detached accessory building outside the required yards (shown as prohibited, secondary), and whether a two-family dwelling needs more than the one-family lot. 27-501, 27-502, 27-402 and 8-115 were not read."
+      "status_note": "Drafted 2026-11-18 (fix round). Open: Ord. No. 272 of 11-10-2026 (Enhanced Design Incentive) is posted as a PDF only, was not read and may amend Chapter 27 after the code's 09-09-2026 currency date. Also open: whether 27-502.5 lets a two-family building stand beside the house, whether 27-401.2 (twice the minimum lot) or 27-511.6B (75% more) sets the lot for a conversion (shown as disputed), whether the Board of Supervisors would hear a second unit in R-2 or R-C under 27-302.2, and the floodplain bar on an addition to a house begun on or after 5-2-2013, shown as disputed since it reaches only the floodway and the 50 ft from the top of bank."
     },
     {
       "geoid": "4202919752",
@@ -4887,8 +4887,8 @@
       "pop_rank": 359,
       "file": "pa_chester_downingtown",
       "batch": 49,
-      "status": "drafted",
-      "checked_on": "2026-11-17",
+      "status": "verified",
+      "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6454989",
       "plain_fetch": null,
@@ -4897,7 +4897,7 @@
       "why": [
         "added as batch 49 by population. Code Chapter 287 has no ADU text (287-94 conversion of a large older house by special exception in R-3, R-4, C-1, two-family by right in R-3 and R-4)"
       ],
-      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the code has a rule for uses not provided for (none found, and a code search for it failed), the C-1 lot figures for a 287-94 conversion, and whether 150-6.02 bars an addition to an existing house in the floodplain (shown as disputed). Articles IX to XVD (commercial, industrial, OS, P, R/C and the overlays, among them the Historic Resources Overlay) and Chapter 150 Article IX were not read."
+      "status_note": "Verified 2026-11-18 (fix round). Open for a later check: 287-105B(1) on parking surfaces in the Floodplain District and 287-73E and 287-74 on accessory heights were not checked again, and SALDO 256-56.1 design standards for the Central Business Revitalization Overlay were not read. The lodger rule of 287-91B(5) is a check line, and the second house on a farm of five acres or more (287-95G) is an alternative that needs the agricultural use."
     },
     {
       "geoid": "4208531656",
