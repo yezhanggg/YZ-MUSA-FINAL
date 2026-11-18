@@ -1,0 +1,1019 @@
+{
+  "provenance": {
+    "jurisdiction": "Camp Hill borough",
+    "instrument": "Camp Hill Borough Zoning Ordinance (Chapter 200 Zoning, Ord. No. 2023-04 of 4-12-2023, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CA1048, Borough of Camp Hill, Cumberland County (200-13 'Borough': 'The Borough of Camp Hill, Cumberland County, Pennsylvania'). The borough website links its Borough Code to this eCode360 code. The use table (200-19) and the area and design tables (200-15, 200-21) are text in the codified chapter. The borough website also posts the 2023 ordinance and use table as PDFs, which were not opened. Floodplain, natural resources, heritage and design overlays are in Article VII of the zoning chapter. New Laws: five ordinances of 2026 on peddling, antidiscrimination, personnel, on-lot sewers (Chapter 168) and police interactions. None amends Chapter 200",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/CA1048",
+      "https://ecode360.com/CA1048/laws",
+      "https://ecode360.com/12763634",
+      "https://www.camphillborough.com/departments/codes_enforcement___zoning/zoning_code.php",
+      "https://www.camphillborough.com/departments/codes_enforcement___zoning/borough_code.php",
+      "https://ecode360.com/CA1048/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22temporary%20dwelling%22%20OR%20%22apartment%20addition%22%20OR%20%22living%20quarters%22%20OR%20caretaker%20OR%20conversion&scope=all&sortOrder=relevance",
+      "https://ecode360.com/CA1048/search?query=%22care%20of%20relative%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/CA1048/search?query=%22accessory%20apartment%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/CA1048?guid=12763850",
+      "https://ecode360.com/print/CA1048?guid=12763824",
+      "https://ecode360.com/print/CA1048?guid=12764137",
+      "https://ecode360.com/print/CA1048?guid=45491228",
+      "https://ecode360.com/print/CA1048?guid=45491150",
+      "https://ecode360.com/print/CA1048?guid=12763822",
+      "https://ecode360.com/print/CA1048?guid=12765057",
+      "https://ecode360.com/print/CA1048?guid=45490554",
+      "https://ecode360.com/print/CA1048?guid=45490775",
+      "https://ecode360.com/print/CA1048?guid=45491683",
+      "https://ecode360.com/print/CA1048?guid=12764402",
+      "https://ecode360.com/print/CA1048?guid=12764862",
+      "https://ecode360.com/print/CA1048?guid=12764870",
+      "https://ecode360.com/print/CA1048?guid=12763729",
+      "https://ecode360.com/print/CA1048?guid=12763734",
+      "https://ecode360.com/print/CA1048?guid=12765149",
+      "https://ecode360.com/print/CA1048?guid=12765183",
+      "https://ecode360.com/print/CA1048?guid=45490724",
+      "https://ecode360.com/print/CA1048?guid=45490730",
+      "https://ecode360.com/print/CA1048?guid=12764858"
+    ],
+    "verified_on": "2026-11-17",
+    "county": "Cumberland",
+    "municipality_type": "borough",
+    "geoid": "4204111000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/12763634",
+    "code_current_through": "2026-05-13",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-13-2026.' New Laws lists Ord. No. 2026-01, 2026-03, 2026-04, 2026-05 and 2026-06, none of them on Chapter 200",
+    "checks": [
+      "ADU: 'Accessory dwelling unit for care of relative' is an accessory use in LDR, MDR, MDRO and MDRO1. A unit 'Not involving a new detached accessory building' is permitted by right. A unit 'Involving a new detached accessory building' is a special exception from the Zoning Hearing Board (200-19B(1)(a)). The Park district reads N (not permitted). The table of nonresidential districts (CS, CG, DT, CN, LIN) does not list it",
+      "Who may live there: 'No more than two persons, who shall be close relatives of the owner of the principal single-family dwelling unit'. At least one must need care, such as an elderly person (generally 62 or older), a special needs adult or a person with a disability (200-101E). The owner must live on the premises (200-101D). The owner renews the permit each year on proof that a relative still lives in the unit (200-101M)",
+      "The unit must be designed so it can easily become part of the house again, with a written plan for that, and a legally binding mechanism must stop its use as a separate dwelling unit after the relative leaves (200-101F, G)",
+      "No more than two dwelling units on the lot in all (200-101B). The unit has its own kitchen, bathroom and living and sleeping space and access to the outside or a common hall (200-101C)",
+      "A unit inside the house: no change to the outside except a rear addition, and no new door or wall openings except as fire and safety rules need (200-101H). Fire escapes go at the rear or side, not on a wall facing a street (200-101I). A new accessory building for the unit must match the house in design, materials, colors and roof pitch (200-101K)",
+      "'Accessory dwelling units in accessory buildings shall not otherwise occupy ground floor off-street garage floor area, to avoid displacing required off-street parking spaces provided on the lot' (200-101J)",
+      "The ADU section sets no size cap. Each dwelling unit needs at least 500 sq ft of enclosed habitable floor area, or 800 sq ft with three or more bedrooms, unless Article VIII or XII provides otherwise (200-46B). Whether this minimum reaches the ADU is not settled",
+      "Accessory buildings: up to 25 ft or 2 stories, not in the front yard, 3 ft from side and rear lot lines, 5 ft from the house or else attached and counted as part of it (200-15 Tables, Note A, 200-36B). At most two accessory buildings on a house lot, and 'The gross floor area for all accessory buildings and similar structures shall not exceed 50% of gross floor area of the principal building' (200-36C(1)(a), (b))",
+      "Parking: 'Accessory dwelling unit for care of relative: 2 per dwelling unit as part of principal use, plus 1 per accessory dwelling unit' (200-79 Table 9-9). The ADU section waives the ADU's space if the applicant shows by credible evidence that its residents will not routinely drive (200-101L)",
+      "The area tables give the lot area 'per DU' (6,000 sq ft in LDR, 5,000 sq ft in MDR, MDRO and MDRO1). Whether the ADU counts as a DU for this test is not settled, so a lot of 12,000 or 10,000 sq ft may be needed",
+      "'Accessory apartment' is defined as a unit on an owner-occupied single-family detached lot (200-13), but the use table lists accessory apartments only with an allowed principal commercial use in DT and CN, and the standards are for that case (200-100A, 350 to 1,200 sq ft). So it is not a path for a house lot",
+      "Apartment conversion: in MDRO and MDRO1 a special exception, only in a single-family detached dwelling that had at least 3,000 sq ft of habitable floor area when the chapter was adopted (4-12-2023), with no added floor area, footprint or height. A two-unit conversion meets the two-family dimensional rules. Each unit at least 500 sq ft under 200-46, 600 sq ft under 200-95A(6). No unit in an accessory building except a unit for care of a relative (200-19 note *, 200-95A, 200-46). Two parking spaces per unit (200-79)",
+      "Two-family detached dwellings are permitted by right in LDR, MDR, MDRO and MDRO1 (200-19). That is a new building for two units. Turning the existing house into two units is an apartment conversion",
+      "Floodplain Overlay (200-29): a permit for any construction or development. No structures in the floodway except bridges and culverts. In an AE zone without a floodway, no new construction or development within 50 ft landward of the top of bank without a DEP permit. New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation, and basements are prohibited. An accessory structure that is not elevated may not be designed or used for human habitation and may have no sanitary facilities. Variances are limited (200-29H, read only in part)",
+      "Natural Resources Overlay (200-34): on natural slopes of 25% or more no structures, and limits on how much of a 15% to 25% slope may be disturbed. No buildings within 25 ft of the ordinary waterline of a perennial creek, and no structures within 25 ft of a non-tidal wetland",
+      "Heritage Conservation Overlay (200-33): a new principal building is a conditional use. Removing or covering historic details, or closing an original window or door visible from a street, on a principal building in the overlay built before 1-1-1945 is a partial demolition and needs conditional use approval from Borough Council",
+      "Development Compatibility Overlay (200-32): design standards for the features an application touches, such as front windows and doors, porches, fire escapes and garages. In DT, residential garages go behind the rear wall of the house",
+      "Nonconforming lot of record: a permitted use may be built though the lot is below the minimums (200-89A). The Zoning Officer may cut side or rear yards by up to 25% for a lot that lacks width or depth (200-89B(2)). A nonconforming structure may grow by up to 25% of its floor area if no new nonconformity results (200-90B)",
+      "Each lot in a residential district has one principal use and one principal structure unless the chapter permits more (200-52B). MDRO, MDRO1, DT, CN, CS, CG and LIN may have more than one (200-52A)",
+      "A use not provided for anywhere in the chapter may be allowed by Borough Council as a conditional use only if it is not permitted in any other district (200-4B). The ADU for care of a relative is listed, so this does not open it in other districts. The use table points to 200-5B for that process, but 200-5B is a public utility rule, so the reference is read as 200-4B"
+    ],
+    "notes": "Zoning office: Camp Hill Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-17. Read: 200-4, 200-5, 200-13 up to 'Floodplain' (later definitions by element only), 200-15, 200-19, 200-21, 200-29 up to G (G and H by element snippets only), 200-32, 200-33, 200-34, 200-36, 200-46, 200-52, 200-79, 200-89, 200-90, 200-95, 200-100, 200-101 and 200-118, and code searches. Not read: 200-1 to 200-3, 200-6 to 200-12, 200-14, 200-16 to 200-18, 200-20, 200-22 to 200-28, 200-30, 200-31, 200-35, 200-37 to 200-45, 200-47 to 200-51, 200-53 to 200-78, 200-80 to 200-88, 200-91 to 200-94, 200-96 to 200-99, 200-102 to 200-117, 200-119, the rest of 200-13 after 'Floodplain' and the 2023 ordinance PDFs on the borough website. Open points: whether the ADU counts as a dwelling unit for the lot area 'per DU' (read as a condition, not a bar), whether the 500 sq ft dwelling unit minimum of 200-46B reaches the ADU, whether a unit over an existing garage is 'not involving a new detached accessory building' (read as by right) and how 200-101J limits a unit in a garage."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit for care of relative",
+      "section": "200-13 'Accessory dwelling unit for care of relative', 200-19B(1)(a), 200-101",
+      "url": "https://ecode360.com/print/CA1048?guid=12763822",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'An accessory dwelling unit that is especially created for and limited to occupancy by a close relative of the residents of the principal dwelling unit, is necessary to provide needed care and supervision to such relative and meets the requirements for such use in Article XII, § 200-101'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "200-19B(1)(a), 200-101E",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "By right in LDR, MDR, MDRO and MDRO1 when the unit does not involve a new detached accessory building, and a special exception when it does. Only close relatives of the owner, at least one of whom needs care, may live in it"
+    },
+    "scope_districts": {
+      "value": [
+        "LDR",
+        "MDR",
+        "MDRO",
+        "MDRO1"
+      ],
+      "section": "200-19B(1)(a)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The residential use table lists the unit as P or SE in LDR, MDR and 'MDRO and MDRO1', and N in the Park district"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "200-19B(1)(b)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The nonresidential use table (CS, CG, DT, CN, LIN) does not list an ADU. DT and CN permit single-family detached dwellings. A use not listed is prohibited in that district (200-19B(2)), and the conditional use for uses not provided for reaches only a use not permitted in any other district (200-4B)"
+    },
+    "status_outside_by_district": {
+      "value": [
+        {
+          "districts": [
+            "P"
+          ],
+          "status": "prohibited",
+          "section": "200-19B(1)(a)",
+          "url": "https://ecode360.com/print/CA1048?guid=12763850",
+          "note": "The Park district column reads N, 'Not Permitted', for both rows of the accessory dwelling unit for care of relative"
+        }
+      ],
+      "section": "200-19B(1)(a)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "200-19B(1)(a)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit for care of relative' - 'Not involving a new detached accessory building': P (zoning decision by Zoning Officer). The owner renews the permit each year"
+    },
+    "form_paths": {
+      "value": [
+        {
+          "forms": [
+            "detached_new"
+          ],
+          "path": "special_exception",
+          "section": "200-19B(1)(a), 200-118E(3)",
+          "url": "https://ecode360.com/print/CA1048?guid=12763850",
+          "note": "'Involving a new detached accessory building': SE, decided by the Zoning Hearing Board on the criteria of 200-118E(3)(b)"
+        }
+      ],
+      "section": "200-19B(1)(a)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-118E(5)",
+      "url": "https://ecode360.com/print/CA1048?guid=45491683",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the hardship findings of 200-118E(5)(a) to (e). No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Apartment conversion (MDRO, MDRO1)",
+          "path": "special_exception",
+          "districts": [
+            "MDRO",
+            "MDRO1"
+          ],
+          "conditions": "Conversion of an existing single-family detached dwelling that had at least 3,000 sq ft of habitable floor area when the chapter was adopted (4-12-2023). No added floor area, footprint or height except for fire safety and disability access. A two-unit conversion meets the two-family detached dimensional rules (4,000 sq ft per dwelling unit and 80 ft wide). Each unit at least 600 sq ft, all units in the principal building, and the outside keeps its residential look. No new parking between the front of the house and the front lot line. Two parking spaces per unit. If the lot is next to Market Street, a new unit needs a street-level commercial use in the building",
+          "min_lot_by_district": {
+            "MDRO": 8000,
+            "MDRO1": 8000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family detached dwelling to convert",
+              "section": "200-95A(1)"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 3000,
+              "condition": "At least 3,000 sq ft of habitable floor area when the chapter was adopted",
+              "section": "200-95A(1), 200-19 note *"
+            },
+            {
+              "test": "house_built_before",
+              "value_date": "2023-04-12",
+              "condition": "The building existed when the chapter was adopted on 4-12-2023",
+              "section": "200-95A(1), 200-19 note *"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "200-19B(1)(a) and note *, 200-95A, 200-21 Table 4-2, 200-79",
+          "url": "https://ecode360.com/print/CA1048?guid=45490775",
+          "confidence": "secondary",
+          "note": "The lot figure reads the two-family rule of 4,000 sq ft per dwelling unit as 8,000 sq ft for two units. The adoption date of the chapter is used as its effective date, which was not read in 200-11"
+        },
+        {
+          "name": "Two-family detached dwelling (MDR, MDRO, MDRO1)",
+          "path": "by_right",
+          "districts": [
+            "MDR",
+            "MDRO",
+            "MDRO1"
+          ],
+          "conditions": "A building with two dwelling units, one over the other or side by side, with two side yards. 4,000 sq ft per dwelling unit and 80 ft wide (95 ft on a corner lot). Front 25 ft, side 5 ft, rear 25 ft, footprint 40%, impervious cover 60%. Two parking spaces per unit",
+          "min_lot_by_district": {
+            "MDR": 8000,
+            "MDRO": 8000,
+            "MDRO1": 8000
+          },
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building for two units. Turning the existing house into two units is an apartment conversion instead",
+              "section": "200-13 'Dwelling, two family detached', 'Apartment conversion'"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "200-19B(1)(a), 200-15 Table 3-3, 200-21 Table 4-2, 200-79",
+          "url": "https://ecode360.com/print/CA1048?guid=12763850",
+          "confidence": "secondary",
+          "note": "A residential lot has one principal structure (200-52B), so the duplex would take the place of the house"
+        },
+        {
+          "name": "Two-family detached dwelling (LDR)",
+          "path": "by_right",
+          "districts": [
+            "LDR"
+          ],
+          "conditions": "A building with two dwelling units, one over the other or side by side. LDR gives no two-family column, so the 'Other Uses' figures read as applying: 30,000 sq ft and 90 ft wide, front 25 ft, side 7 ft, rear 30 ft, footprint 30%, impervious cover 50%. Two parking spaces per unit",
+          "min_lot_sqft": 30000,
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building for two units. Turning the existing house into two units is an apartment conversion, which LDR does not permit",
+              "section": "200-13 'Dwelling, two family detached', 200-19 note *"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "200-19B(1)(a), 200-15 Table 3-2, 200-79",
+          "url": "https://ecode360.com/print/CA1048?guid=12763824",
+          "confidence": "secondary",
+          "note": "Whether the LDR 'Other Uses' column is the two-family figure is not settled"
+        }
+      ],
+      "section": "200-19, 200-95",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "LDR",
+        "MDR",
+        "MDRO",
+        "MDRO1"
+      ],
+      "section": "200-19B(1)(a)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached",
+        "semi_detached",
+        "attached"
+      ],
+      "section": "200-101A, 200-13",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'The principal use of the building and property must be a single-family dwelling.' The code defines single family detached, semidetached and attached dwellings, and the section does not name one type"
+    },
+    "lot_area_per_unit_sqft": {
+      "value": null,
+      "section": "200-15, 200-21",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "The figures are in the district rows"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "200-33",
+      "url": "https://ecode360.com/print/CA1048?guid=12764862",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The Heritage Conservation Overlay adds approvals for changes to older buildings. It gives no path for an ADU"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "DT",
+        "CN",
+        "CS",
+        "CG",
+        "LIN"
+      ],
+      "section": "200-19B(1)(b)",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The nonresidential use table lists no ADU. DT and CN permit single-family detached dwellings and twins, CS, CG and LIN do not"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "design",
+          "condition": "A unit inside the house may change the outside only by a rear addition, and may add no door or wall openings except as fire and safety rules need. The house must keep resembling the dwellings in the neighborhood.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-101H",
+          "url": "https://ecode360.com/print/CA1048?guid=45491228",
+          "confidence": "verified"
+        },
+        {
+          "kind": "design",
+          "condition": "A new accessory building for the unit must match the house in design, materials, colors and roof pitch.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-101K",
+          "url": "https://ecode360.com/print/CA1048?guid=45491228",
+          "confidence": "verified"
+        },
+        {
+          "kind": "parking",
+          "condition": "'Accessory dwelling units in accessory buildings shall not otherwise occupy ground floor off-street garage floor area, to avoid displacing required off-street parking spaces provided on the lot'.",
+          "effect": "condition",
+          "applies_to": [
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-101J",
+          "url": "https://ecode360.com/print/CA1048?guid=45491228",
+          "confidence": "verified"
+        },
+        {
+          "kind": "existing_structure",
+          "condition": "A unit over a garage built new for it involves a new detached accessory building, which is a special exception. A unit added over an existing garage reads as not involving one.",
+          "effect": "condition",
+          "applies_to": [
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-19B(1)(a)",
+          "url": "https://ecode360.com/print/CA1048?guid=12763850",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "size",
+          "condition": "Each dwelling unit needs at least 500 sq ft of enclosed habitable floor area, or 800 sq ft with three or more bedrooms, unless Article VIII or XII provides otherwise. The ADU section sets no size, so whether this minimum reaches the ADU is not settled.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-46B",
+          "url": "https://ecode360.com/print/CA1048?guid=12765149",
+          "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "On a house lot at most two accessory buildings, and the gross floor area of all accessory buildings together may not exceed 50% of the gross floor area of the house.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "200-36C(1)(a), (b)",
+          "url": "https://ecode360.com/print/CA1048?guid=12765057",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay any construction or development needs a permit. No structures in the floodway except bridges, culverts and the like. New construction and substantial improvement of a residential structure need the lowest floor at or above the regulatory flood elevation, and basements are prohibited. Work on an existing building is checked against its market value for substantial improvement.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPO"
+          ],
+          "section": "200-29A(3), B(2), B(3)(c), C(2)(a), D(2)(a), (c)",
+          "url": "https://ecode360.com/print/CA1048?guid=12764402",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE zone without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the DEP Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "FPO"
+          ],
+          "section": "200-29C(2)(b)[2][b]",
+          "url": "https://ecode360.com/print/CA1048?guid=12764402",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Overlay an accessory structure that is not elevated 'shall not be designed or used for human habitation', may have no sanitary facilities and at most 600 sq ft of floor area.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPO"
+          ],
+          "section": "200-29D(2)(e)",
+          "url": "https://ecode360.com/print/CA1048?guid=12764402",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "200-29D(2)(a)",
+            "url": "https://ecode360.com/print/CA1048?guid=12764402",
+            "note": "The rule is for accessory structures that are not elevated or floodproofed. A unit in an accessory building built and elevated as a residential structure under 200-29D(2)(a) may not be reached"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "Natural Resources Overlay: on natural slopes of 25% or more only uses without structures are permitted, and only part of a 15% to 25% slope may be disturbed. No buildings within 25 ft of the ordinary waterline of a perennial creek, and no structures within 25 ft of a non-tidal wetland.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "NRO"
+          ],
+          "section": "200-34D(3), D(5), E(2), E(3), F(2), F(4)",
+          "url": "https://ecode360.com/print/CA1048?guid=12764870",
+          "confidence": "verified"
+        },
+        {
+          "kind": "historic",
+          "condition": "Heritage Conservation Overlay: on a principal building built before 1-1-1945, removing or covering historic details, or closing an original window or door visible from a street, is a partial demolition that needs conditional use approval from Borough Council. A new principal building in the overlay is also a conditional use.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "HCO"
+          ],
+          "section": "200-33B(2), C(2), C(3), C(5), C(8)",
+          "url": "https://ecode360.com/print/CA1048?guid=12764862",
+          "confidence": "verified"
+        }
+      ],
+      "section": "200-101, 200-29, 200-33, 200-34, 200-36, 200-46",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "200-19B(1)(a), 200-101H, J, K",
+      "url": "https://ecode360.com/print/CA1048?guid=12763850",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "The table names units involving and not involving a new detached accessory building, and 200-101 speaks of units within the house, rear additions and units in accessory buildings"
+    },
+    "labels": {
+      "value": {
+        "attached": "rear addition to the house"
+      },
+      "section": "200-101H",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Only a rear addition may change the outside of the house"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "200-101",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "unverified",
+      "note": "The ADU section sets no size cap"
+    },
+    "min_sqft": {
+      "value": 500,
+      "section": "200-46B",
+      "url": "https://ecode360.com/print/CA1048?guid=12765149",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "'each dwelling unit shall include a minimum of 500 square feet of enclosed habitable floor area', 800 sq ft with three or more bedrooms, 'Unless otherwise provided for in Article VIII and Article XII'. Whether it reaches the ADU is not settled"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "200-15 Tables 3-2, 3-3, 200-21 Table 4-2",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Accessory use or structure: '25 feet or 2 stories, whichever is more restrictive'"
+    },
+    "max_height_stories": {
+      "value": 2,
+      "section": "200-15 Tables 3-2, 3-3, 200-21 Table 4-2",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "setback_side_ft": {
+      "value": 3,
+      "section": "200-15 Note A",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'A three feet wide minimum side and rear setback shall apply for a permitted detached structure that is accessory to a dwelling'"
+    },
+    "setback_rear_ft": {
+      "value": 3,
+      "section": "200-15 Note A",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "A vehicle garage stays at least five feet from the cartway of an alley"
+    },
+    "separation_ft": {
+      "value": 5,
+      "section": "200-36B",
+      "url": "https://ecode360.com/print/CA1048?guid=12765057",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'no closer than five feet to the closest point of any exterior wall of the principal building on the same lot; otherwise they shall be attached to the principal building and shall be considered as part of that principal building'"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "200-15 Tables 3-2, 3-3, 200-21 Table 4-2",
+      "url": "https://ecode360.com/print/CA1048?guid=12763824",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Accessory use or structure: 'Not permitted to be located within the front yard'"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "A garage, carport or similar structure with direct access to an alley stays at least 5 ft from the alley right-of-way or 15 ft from the alley center line, whichever is greater.",
+          "section": "200-36C(1)(d)",
+          "url": "https://ecode360.com/print/CA1048?guid=12765057"
+        }
+      ],
+      "section": "200-36C(1)(d)",
+      "url": "https://ecode360.com/print/CA1048?guid=12765057",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "200-101E, 200-13",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "occupancy": {
+      "value": "At most two persons who are close relatives of the owner of the house, and at least one of them needs care, such as an elderly person (generally 62 or older), a special needs adult or a person with a disability. The owner renews the permit each year on proof that a relative still lives in the unit. A binding mechanism stops use as a separate unit after the relative leaves.",
+      "section": "200-101E, G, M",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "200-101D",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'The owner must reside on the premises.'"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "200-101B",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'No more than a total of two dwelling units shall be permitted per lot.'"
+    },
+    "sale_apart_allowed": {
+      "value": false,
+      "section": "200-101G",
+      "url": "https://ecode360.com/print/CA1048?guid=45491228",
+      "verified_on": "2026-11-17",
+      "confidence": "secondary",
+      "note": "The unit may not be used as a separate dwelling unit after the relative leaves. The code does not speak of sale"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "200-79 Table 9-9, 200-101L",
+      "url": "https://ecode360.com/print/CA1048?guid=45490554",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "'2 per dwelling unit as part of principal use, plus 1 per accessory dwelling unit'. Not needed if the applicant shows by credible evidence that the unit's residents will not routinely drive (200-101L)"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "200-79 Table 9-9",
+      "url": "https://ecode360.com/print/CA1048?guid=45490554",
+      "verified_on": "2026-11-17",
+      "confidence": "verified",
+      "note": "Two for the house and one for the unit"
+    }
+  },
+  "districts": {
+    "LDR": {
+      "min_lot_sqft": {
+        "value": 6000,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'6,000 square feet per DU' for a single-family detached dwelling, 60 ft wide (75 ft on a corner lot)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 6000,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The table gives the lot area 'per DU'. The ADU section counts the unit toward 'a total of two dwelling units' per lot (200-101B), so a house with an ADU may need 12,000 sq ft. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Note I lets an unenclosed front porch reach up to 10 ft into the front yard"
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'7 feet each side from interior lot line'. 15 ft from a street right-of-way line. A lot that existed before 8-2-1943 and is under 60 ft wide needs 5 ft, 14 ft for both (Note E), and one under 50 ft wide 4 ft, 10 ft for both (Note G)"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A lot that existed before 8-2-1943 with a depth under 125 ft needs 20 ft (Note F), and under 100 ft 15 ft (Note H)"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "200-15 Table 3-2, 200-13 'Building footprint'",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Building footprint - maximum'. The footprint counts the ground area of all buildings, including roofed decks and porches"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Impervious lot coverage - maximum'. A special exception may raise it up to 95% with added landscaping and stormwater proof (Note J)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'35 feet or 3 stories, whichever is more restrictive'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-15 Table 3-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "200-15 Table 3-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'A three feet wide minimum side and rear setback shall apply for a permitted detached structure that is accessory to a dwelling'. A vehicle garage stays at least five feet from the cartway of an alley"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "200-15 Table 3-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Three feet. A vehicle garage stays at least five feet from the cartway of an alley"
+      }
+    },
+    "MDR": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5,000 square feet per DU' for a single-family detached dwelling, 50 ft wide (65 ft on a corner lot). A twin needs 4,000 sq ft"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The table gives the lot area 'per DU'. The ADU section counts the unit toward 'a total of two dwelling units' per lot (200-101B), so a house with an ADU may need 10,000 sq ft. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Note I lets an unenclosed front porch reach up to 10 ft into the front yard"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5 feet each side from interior lot line'. 12 ft from a street right-of-way line. A lot that existed before 8-2-1943 and is under 50 ft wide needs 4 ft, 10 ft for both (Note G)"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A lot that existed before 8-2-1943 with a depth under 100 ft needs 15 ft (Note H)"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "200-15 Table 3-3, 200-13 'Building footprint'",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Building footprint - maximum'. The footprint counts the ground area of all buildings, including roofed decks and porches"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Impervious lot coverage - maximum'. A special exception may raise it up to 95% with added landscaping and stormwater proof (Note J)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'35 feet or 3 stories, whichever is more restrictive'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-15 Table 3-3",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "200-15 Table 3-3 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'A three feet wide minimum side and rear setback shall apply for a permitted detached structure that is accessory to a dwelling'. A vehicle garage stays at least five feet from the cartway of an alley"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "200-15 Table 3-3 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12763824",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Three feet. A vehicle garage stays at least five feet from the cartway of an alley"
+      }
+    },
+    "MDRO": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5,000 square feet per DU' for a single-family detached dwelling, 50 ft wide (65 ft on a corner lot)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The table gives the lot area 'per DU'. The ADU section counts the unit toward 'a total of two dwelling units' per lot (200-101B), so a house with an ADU may need 10,000 sq ft. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Note I lets an unenclosed front porch reach up to 10 ft into the front yard"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5 feet each side from interior lot line'. 12 ft from a street right-of-way line. A lot that existed before 8-2-1943 and is under 50 ft wide needs 4 ft, 10 ft for both (Note G)"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A lot that existed before 8-2-1943 with a depth under 100 ft needs 15 ft (Note H)"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "200-21 Table 4-2, 200-13 'Building footprint'",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Building footprint - maximum'. The footprint counts the ground area of all buildings, including roofed decks and porches"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Impervious lot coverage - maximum'. A special exception may raise it up to 95% with added landscaping and stormwater proof (Note J)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'35 feet or 3 stories, whichever is more restrictive'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "200-21 Table 4-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'A three feet wide minimum side and rear setback shall apply for a permitted detached structure that is accessory to a dwelling'. A vehicle garage stays at least five feet from the cartway of an alley"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "200-21 Table 4-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Three feet. A vehicle garage stays at least five feet from the cartway of an alley"
+      }
+    },
+    "MDRO1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5,000 square feet per DU' for a single-family detached dwelling, 50 ft wide (65 ft on a corner lot)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 5000,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "secondary",
+        "note": "The table gives the lot area 'per DU'. The ADU section counts the unit toward 'a total of two dwelling units' per lot (200-101B), so a house with an ADU may need 10,000 sq ft. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Note I lets an unenclosed front porch reach up to 10 ft into the front yard"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'5 feet each side from interior lot line'. 12 ft from a street right-of-way line. A lot that existed before 8-2-1943 and is under 50 ft wide needs 4 ft, 10 ft for both (Note G)"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "A lot that existed before 8-2-1943 with a depth under 100 ft needs 15 ft (Note H)"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "200-21 Table 4-2, 200-13 'Building footprint'",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Building footprint - maximum'. The footprint counts the ground area of all buildings, including roofed decks and porches"
+      },
+      "max_impervious_coverage": {
+        "value": 0.6,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'Impervious lot coverage - maximum'. A special exception may raise it up to 95% with added landscaping and stormwater proof (Note J)"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'35 feet or 3 stories, whichever is more restrictive'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "200-21 Table 4-2",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "200-21 Table 4-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "'A three feet wide minimum side and rear setback shall apply for a permitted detached structure that is accessory to a dwelling'. A vehicle garage stays at least five feet from the cartway of an alley"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "200-21 Table 4-2 Note A",
+        "url": "https://ecode360.com/print/CA1048?guid=12764137",
+        "verified_on": "2026-11-17",
+        "confidence": "verified",
+        "note": "Three feet. A vehicle garage stays at least five feet from the cartway of an alley"
+      }
+    }
+  }
+}

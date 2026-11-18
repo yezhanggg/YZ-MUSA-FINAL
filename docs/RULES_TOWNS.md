@@ -4,7 +4,7 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 
 ## Status
 
-199 towns in the index, 199 with a rule file (Philadelphia and Pittsburgh included). Verified 127, drafted 72, in progress 0, todo 0.
+202 towns in the index, 202 with a rule file (Philadelphia and Pittsburgh included). Verified 127, drafted 75, in progress 0, todo 0.
 
 - Verified: independently reviewed against the code text, every finding resolved.
 - Drafted: independently reviewed, with an open point the code text does not settle (the status note).
@@ -212,6 +212,9 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | East Manchester township | York | verified | accessory dwelling unit | family only | by right (not addressed for detached new, garage conversion, over garage) | ADU rule only in CO, A, R-1, R-2, R-3, AO, V. occupancy (255-90 'Accessory dwelling unit (ADU)', 255-21D(2), (3)). family only (255-90 'Accessory dwelling unit (ADU)', 255-21D(2)). house type detached. other gate (255-9E(1), (4), 255-10E(1), (4), 255-21D). other ways (not ADUs): Residential conversion (R-2, R-3) (special exception, 255-12C(8), 255-13C(6), 255-33, 255-90 'Residential conversion'). Residential conversion (AO, V) (by right, 255-14B(6), 255-15B(9), 255-33). Duplex dwelling (R-2, R-3, AO, V) (by right, 255-12B(2), D, 255-13B(2), D, 255-14B(2), D, 255-15B(2), D, 255-90 'Dwelling, duplex', 'Residential conversion'). 3 parking spaces in total | 900 | no | not confirmed | 2026-11-17 |
 | Wilson borough | Northampton | drafted | in-law suite | special exception (detached new prohibited) | special exception (not addressed for over garage) | ADU rule only in R-1, R-2, TC. occupancy (170-23 'Dwelling' H(2), 170-83H(9)). 3 other gates (170-86A(1)(i), (4), (5)(b), (c), (8)(b)[2], 110-22E, 110-29, 170-86C(1)(b), (3)(a)). other ways (not ADUs): Two-family dwelling (R-2) (by right, 170-34C, 170-37C, 170-83B(2)) | 25% of the house | not confirmed | 1 | 2026-11-17 |
 | Canton township | Washington | verified | none | not in the code | variance | 4 other gates (27-501.2(1)A(3), B, 8-502(1), C(1), 8-801, 8-702A, D, 8-902 'New construction', 8-502(1)E). other ways (not ADUs): Single-family conversion (A-1, R-3) (by right, 27-304.1 (row 8), 27-2301.1.8, 27-203 'Dwelling single-family conversion', 27-305(2)). Single-family conversion (R-1, R-2) (by right, 27-304.1 (row 8), 27-2301.1.8, 27-105, 27-305(2)). Duplex housing (R-2, R-3) (by right, 27-401.1(3)A, (4)A, 27-305(2)) | not confirmed | not confirmed | not confirmed | 2026-11-17 |
+| Camp Hill borough | Cumberland | drafted | accessory dwelling unit for care of relative | family only | by right (special exception for detached new) | ADU rule only in LDR, MDR, MDRO, MDRO1. occupancy (200-101E, G, M). family only (200-101E, 200-13). owner on site (200-101D). house type detached, semi_detached, attached. LDR 6,000 sq ft per unit. MDR 5,000 sq ft per unit. MDRO 5,000 sq ft per unit. MDRO1 5,000 sq ft per unit. other gate (200-29D(2)(e)). other ways (not ADUs): Apartment conversion (MDRO, MDRO1) (special exception, 200-19B(1)(a) and note *, 200-95A, 200-21 Table 4-2, 200-79). Two-family detached dwelling (MDR, MDRO, MDRO1) (by right, 200-19B(1)(a), 200-15 Table 3-3, 200-21 Table 4-2, 200-79). Two-family detached dwelling (LDR) (by right, 200-19B(1)(a), 200-15 Table 3-2, 200-79). 3 parking spaces in total | not confirmed | yes | 1 | 2026-11-17 |
+| Smithfield township | Monroe | drafted | none | not in the code (detached new prohibited, garage conversion prohibited, over garage prohibited) | variance (unlisted-use path only in R-1, R-2, R-C) | other gate (8-107.1B). other ways (not ADUs): Residential conversion (R-2) (conditional use, 27-309, 27-511.6, 27-1002 'Residential conversion', 27-404 Schedule II). Residential conversion (R-C) (conditional use, 27-309, 27-511.6, 27-1002 'Residential conversion', 27-404 Schedule II). Two-family dwelling (R-2) (by right, 27-309, 27-1002 'Dwelling', 27-404 Schedule II). Two-family dwelling (R-C) (by right, 27-309, 27-1002 'Dwelling', 27-404 Schedule II). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-17 |
+| Downingtown borough | Chester | drafted | none | not in the code | variance | other gate (150-6.02, 287-12). other ways (not ADUs): Conversion of a single-family detached dwelling (R-3, R-4, C-1) (special exception, 287-94, 287-27C(6), 287-32C(7), 287-28B, 287-33B, 287-107D(1)(a)). Two-family dwelling (R-3) (by right, 287-27A(2), 287-28B, 287-107D(1)(a)). Two-family dwelling (R-4) (by right, 287-32A(2), 287-33B, 287-107D(1)(a)). 4 parking spaces in total | not confirmed | not confirmed | not confirmed | 2026-11-17 |
 
 ## Towns still to write
 
@@ -228,4 +231,4 @@ Made by `python tools/gen_rules.py towns > docs/RULES_TOWNS.md` from `shared/rul
 | 36 | 28.9% |
 | 48 | 31.7% |
 | 60 | 33.9% |
-| 197 | 49.1% |
+| 200 | 49.3% |

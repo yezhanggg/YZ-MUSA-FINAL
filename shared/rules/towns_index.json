@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 197,
-      "population": 6390876,
-      "share_of_pa": 0.4915
+      "towns_beyond_the_two_cities": 200,
+      "population": 6414865,
+      "share_of_pa": 0.4933
     }
   ],
   "towns": [
@@ -4826,6 +4826,78 @@
         "added as batch 48 by population. Code Chapter 27 has no ADU text (27-2301.1.8 single-family conversion to two or three units in A-1, R-1, R-2, R-3)"
       ],
       "status_note": "Verified 2026-11-17 (fix round). Open for a later check: whether a single-family conversion in R-1 and R-2 is by right (27-304.1, 27-105, MPC 603.1) or a conditional use (27-401.1, 27-2803(1)), shown as disputed, what the '0' acre single-family lot in A-1 and R-1 means, whether lot coverage counts only buildings, and the net developable area behind the on-lot sewage density (27-305(2)), said as a condition on the conversion paths since the tool cannot test it by the lot's services."
+    },
+    {
+      "geoid": "4204111000",
+      "geoid_aliases": [],
+      "name": "Camp Hill borough",
+      "county": "Cumberland",
+      "type": "borough",
+      "population": 8130,
+      "population_with_aliases": 8130,
+      "housing_units": 3535,
+      "pop_rank": 348,
+      "file": "pa_cumberland_camp_hill",
+      "batch": 49,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/12763634",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-13",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 200-19 and 200-101 accessory dwelling unit for care of relative, family only (LDR, MDR, MDRO, MDRO1))"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the ADU counts as a dwelling unit for the lot area 'per DU' of 200-15 and 200-21 (shown as a condition), whether the 500 sq ft minimum of 200-46B reaches the ADU, whether a unit over an existing garage is by right, how 200-101J limits a unit in a garage, and whether the 200-29D(2)(e) habitation bar reaches an elevated accessory unit (shown as disputed). 200-29G and H were read only in part, and 200-30, 200-66, 200-80 to 200-88 and 200-119 were not read."
+    },
+    {
+      "geoid": "4208971344",
+      "geoid_aliases": [],
+      "name": "Smithfield township",
+      "county": "Monroe",
+      "type": "township",
+      "population": 7967,
+      "population_with_aliases": 7967,
+      "housing_units": 3180,
+      "pop_rank": 355,
+      "file": "pa_monroe_smithfield",
+      "batch": 49,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/41765428",
+      "plain_fetch": null,
+      "code_current_through": "2026-09-09",
+      "code_note": null,
+      "why": [
+        "added as batch 49 by population. Code Chapter 27 has no ADU text (27-511.6 residential conversion by conditional use and two-family by right in R-2 and R-C)"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether 27-302.2 lets the Board of Supervisors hear a second unit as an unlisted use while two-family dwellings and residential conversions are listed in R-2 and R-C, whether the 27-503.2A bar on living space reaches a detached accessory building outside the required yards (shown as prohibited, secondary), and whether a two-family dwelling needs more than the one-family lot. 27-501, 27-502, 27-402 and 8-115 were not read."
+    },
+    {
+      "geoid": "4202919752",
+      "geoid_aliases": [],
+      "name": "Downingtown borough",
+      "county": "Chester",
+      "type": "borough",
+      "population": 7892,
+      "population_with_aliases": 7892,
+      "housing_units": 3520,
+      "pop_rank": 359,
+      "file": "pa_chester_downingtown",
+      "batch": 49,
+      "status": "drafted",
+      "checked_on": "2026-11-17",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/6454989",
+      "plain_fetch": null,
+      "code_current_through": "2026-07-01",
+      "code_note": null,
+      "why": [
+        "added as batch 49 by population. Code Chapter 287 has no ADU text (287-94 conversion of a large older house by special exception in R-3, R-4, C-1, two-family by right in R-3 and R-4)"
+      ],
+      "status_note": "Drafted 2026-11-17 (first reading). Open: whether the code has a rule for uses not provided for (none found, and a code search for it failed), the C-1 lot figures for a 287-94 conversion, and whether 150-6.02 bars an addition to an existing house in the floodplain (shown as disputed). Articles IX to XVD (commercial, industrial, OS, P, R/C and the overlays, among them the Historic Resources Overlay) and Chapter 150 Article IX were not read."
     }
   ]
 }

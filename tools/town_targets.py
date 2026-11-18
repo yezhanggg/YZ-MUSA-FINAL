@@ -1478,6 +1478,7 @@ FIXED_BATCH.update({g: 45 for g in ("4202982664", "4204515232", "4200708680")})
 FIXED_BATCH.update({g: 46 for g in ("4202968288", "4207121032", "4205571912")})
 FIXED_BATCH.update({g: 47 for g in ("4207182824", "4200361328", "4202954936")})
 FIXED_BATCH.update({g: 48 for g in ("4213321464", "4209585592", "4212511176")})
+FIXED_BATCH.update({g: 49 for g in ("4204111000", "4208971344", "4202919752")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1784,6 +1785,19 @@ EXTRAS = {
     "4213321464": "Code 255-21D accessory dwelling unit by right, family only (CO, A, R-1, R-2, R-3, AO, V)",
     "4209585592": "Code 170-83H(9) in-law suite by special exception (R-1, R-2, TC)",
     "4212511176": "batch 48 by population. Code Chapter 27 has no ADU text (27-2301.1.8 single-family conversion to two or three units in A-1, R-1, R-2, R-3)",
+    # Batch 49 (2026-11-17): the next towns by population without a rule file. Carnegie (Allegheny) was skipped (zoning
+    # ordinance No. 2445 and the code chapters only as PDFs on the borough website), Upper Nazareth (Northampton) (Ord. No.
+    # 207 of 9-16-2026, a Chapter 27 zoning amendment, not yet codified), Lock Haven (Clinton) (each district's table of lot
+    # and building dimensional requirements only in PDF attachments), Latrobe (Westmoreland) (Ord. No. 2025-1 and No.
+    # 2025-2 of 1-27-2025, Chapter 166 zoning amendments, not yet codified), Chippewa (Beaver) (zoning ordinance Chapter 27
+    # only as PDF parts on the township website), Valley (Chester) (Table 1, Design Standards for Single-Family Dwellings
+    # and Nonresidential Uses, and Table 2 only in PDF attachments), Spring (Centre) (district regulations tables only in a
+    # PDF attachment), Millersville (Lancaster) (Tables of Permitted Uses and Table of Dimensional Requirements only in PDF
+    # attachments), Buffalo (Butler) (zoning ordinance No. 135 and its amendments only as PDFs on the township website) and
+    # Center (Butler) (Chapter 20 zoning only as article PDFs on the township website).
+    "4204111000": "Code 200-19 and 200-101 accessory dwelling unit for care of relative, family only (LDR, MDR, MDRO, MDRO1)",
+    "4208971344": "batch 49 by population. Code Chapter 27 has no ADU text (27-511.6 residential conversion by conditional use and two-family by right in R-2 and R-C)",
+    "4202919752": "batch 49 by population. Code Chapter 287 has no ADU text (287-94 conversion of a large older house by special exception in R-3, R-4, C-1, two-family by right in R-3 and R-4)",
 }
 
 if __name__ == "__main__":
