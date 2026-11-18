@@ -4,8 +4,8 @@ title: "MUSA 6950 Results"
 
 Short version:
 
-- Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. After the Nov 12 to 14 training rounds, the best result is an ensemble of a DeepLabV3+ and an EfficientNet-B2 model: test mIoU 0.7089 and building IoU 0.6546. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.
-- In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help. The new ensemble missed the bar for replacing the lot model by 0.0003, so the lots keep the earlier model.
+- Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. After the Nov 12 to 18 training rounds, the best result is an ensemble of a DeepLabV3+, an EfficientNet-B2 and a ResNet-34 model, picked on validation: test mIoU 0.7093 and building IoU 0.6554. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.
+- In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help. The new ensemble passes the bar for replacing the lot model, but the lots still use the earlier model until the owner decides.
 - In Philadelphia the model cannot see trees or lawns in the 2022 spring photos (tree IoU about 0.26). The lot tool uses the city's 2018 land cover raster there instead.
 - The structure detector reaches garage AP50 0.469 (goal 0.50) with classes set by the label size rule. Its scores are agreement with unchecked labels, not accuracy.
 - The lot tool's fit test is a vector test on lot lines, buildings and streets with rule-based setbacks. Land cover adds context.
@@ -67,11 +67,11 @@ What it shows:
 - Urban boxes are the weak place type in every 4-class run.
 - The 5-class run pays for the extra class: "other" drops to 0.4714 once roads and paving leave it, and rural and suburban mIoU fall.
 
-### Later runs (Nov 12 to 14)
+### Later runs (Nov 12 to 18)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14", "18:00 Nov 14" and "Nov 17 to 18 night"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json, *_div7.json, *_night.json -->
 
-Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:55 Nov 14). Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
+Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | What changes | Val mIoU | Test mIoU | Building IoU |
 |---|---|---|---|---|
@@ -79,14 +79,17 @@ Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:
 | `effb2_c4_s1` | U-Net with an EfficientNet-B2 encoder | 0.7439 | 0.7038 | 0.6441 |
 | `effb2lov_c4_s1` | the same, Lovasz loss | 0.7458 | 0.7057 | 0.6506 |
 | ResNet-34 Lovasz ensemble | 3 models, seeds only | | 0.7035 | 0.6493 |
-| `dlv3lov` + `effb2lov` | ensemble of two model types, 8 views each | 0.7512 | **0.7089** | **0.6546** |
+| `dlv3lov` + `effb2lov` | ensemble of two model types, 8 views each | 0.7512 | 0.7089 | 0.6546 |
 | 5-class ensemble | `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views each | 0.7422 | 0.7009 | 0.6478 |
 | `r34c512lov_c4_s1` | ResNet-34, 512 px crops, Lovasz loss | 0.7464 | 0.705 | 0.6515 |
+| `dlv3c512lov_c4_s1` | DeepLabV3+, 512 px crops, Lovasz loss | 0.7464 | 0.7072 | 0.6548 |
+| `dlv3lov` + `effb2lov` + `r34c512lov` | best ensemble, picked on validation, 8 views each | 0.7517 | **0.7093** | **0.6554** |
 
 - Mixing model types helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.
-- Larger crops (512 px) helped a little (+0.0025 test with Lovasz loss), but that run was not in the ensemble search, so the best pick did not change.
+- Larger crops (512 px) helped a little (+0.0025 test with Lovasz loss). With that run added to the ensemble search, validation picked a new best of three models: test mIoU 0.7093.
+- `dlv3c512lov_c4_s1` is the best single model on test (0.7072), but adding it to the best pick does not raise validation.
 - Building IoU goal (0.65) met. mIoU goal (0.72) missed.
-- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571, so it was not adopted. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models, a miss of 0.0001). The 5-class ensemble scored 0.7085 and 0.7524.
+- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The lots still use `r34_c5_s0` until the owner decides.
 
 ## 2. Where and why the model fails
 

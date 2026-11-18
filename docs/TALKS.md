@@ -56,12 +56,13 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 | `dlv3lov_c4_s1` | DeepLabV3+ with Lovasz loss | 0.7031 | 0.6507 |
 | `effb2lov_c4_s1` | U-Net, EfficientNet-B2 encoder, Lovasz loss | 0.7057 | 0.6506 |
 | 3 ResNet-34 Lovasz models | ensemble, seeds only | 0.7035 | 0.6493 |
-| DeepLabV3+ and EfficientNet-B2 | ensemble, 8 views each, picked on validation | **0.7089** | **0.6546** |
+| DeepLabV3+ and EfficientNet-B2 | ensemble, 8 views each, picked on validation | 0.7089 | 0.6546 |
+| Adding a 512 px ResNet-34 (Nov 18) | ensemble, 8 views each, picked on validation | **0.7093** | **0.6554** |
 
 - Different model types helped where more seeds did not: +0.0054 test over the ResNet-only ensemble.
-- Building IoU target 0.65 met (0.6546). mIoU target 0.72 missed (0.7089).
-- Pittsburgh: the ensemble scored 0.7133 against the 0.7136 needed to replace the lot model. The closest pick scored 0.7135, a miss of 0.0001, so the lots keep `r34_c5_s0`.
-- The last runs used 512 px crops. They helped a little (best single model on validation) but did not change the best pick.
+- Building IoU target 0.65 met (0.6554). mIoU target 0.72 missed (0.7093).
+- Pittsburgh: the three-model ensemble scores 0.7147 against the 0.7136 needed to replace the lot model, so it passes. The lots keep `r34_c5_s0` until the owner decides.
+- The 512 px crop runs helped a little. Adding the 512 px ResNet-34 to the ensemble moved the best from 0.7089 to 0.7093.
 - Figures: `03_training_curve.png`, `03_unet_confusion.png`, `03_example_prediction.png`.
 
 ### 4. What the error analysis showed (1.5 min)

@@ -1,6 +1,6 @@
 # Model card: land cover U-Net
 
-<!-- sources: ~/musa-drive/models/<run>/result.json, test_scores.json, test_scores_single.json, city_<city>_scores.json, city_pittsburgh_scores_clean.json; ~/musa-drive/models/external/unet_v2_r34/; ~/musa-drive/processed/vision/class_shares.json, error_analysis.md, city/<city>/summary.json, city/philadelphia/diagnosis/diagnosis.md; ~/musa-drive/processed/<city>/cover_compare*.json; pipeline/build_lots.py (COVER_FILES_BY_PLACE, COVER_NOTES). Read on 2026-11-11. Later runs: ~/musa-drive/ops/logs/model-1112.md, read 2026-11-14. -->
+<!-- sources: ~/musa-drive/models/<run>/result.json, test_scores.json, test_scores_single.json, city_<city>_scores.json, city_pittsburgh_scores_clean.json; ~/musa-drive/models/external/unet_v2_r34/; ~/musa-drive/processed/vision/class_shares.json, error_analysis.md, city/<city>/summary.json, city/philadelphia/diagnosis/diagnosis.md; ~/musa-drive/processed/<city>/cover_compare*.json; pipeline/build_lots.py (COVER_FILES_BY_PLACE, COVER_NOTES). Read on 2026-11-11. Later runs: ~/musa-drive/ops/logs/model-1112.md, read 2026-11-18. -->
 
 ## What it is
 
@@ -15,7 +15,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 | Best 4-class run by test mIoU | `r34ndvi_c4_s1` (NDVI as a fifth input band), 0.7005 |
 | Run used for Pittsburgh lot cover | `r34_c5_s0` (5 classes), zero-shot on the city |
 | Reference run | `unet_v2_r34`, the earlier published model, scored again: 0.6985 |
-| Best result (final, Nov 14) | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+) and `effb2lov_c4_s1` (U-Net with EfficientNet-B2), test mIoU 0.7089, building IoU 0.6546. Not used for the lots (see "Later runs") |
+| Best result (Nov 18) | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+), `effb2lov_c4_s1` (U-Net with EfficientNet-B2) and `r34c512lov_c4_s1` (U-Net with ResNet-34, 512 px crops), 8 views each, picked on validation. Test mIoU 0.7093, building IoU 0.6554. It passes the Pittsburgh adoption bar, but the lots still use `r34_c5_s0` until the owner decides (see "Later runs") |
 
 ## What it is used for in the product
 
@@ -98,11 +98,11 @@ What the table says:
 - A test mIoU of 0.72 was not reached by any run in this table. No run here reached a building IoU of 0.65 either. The best here is 0.6451.
 - Building recall is higher than precision: the model calls some paving and flat roofs building.
 
-### Later runs (Nov 12 to 14)
+### Later runs (Nov 12 to 18)
 
-<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14" and "18:00 Nov 14"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json -->
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14", "18:00 Nov 14" and "Nov 17 to 18 night"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json, *_div7.json, *_night.json -->
 
-Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:55 Nov 14). Same test pixels, 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
+Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels, 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.
 
 | Run or pick | Val mIoU | Test mIoU | Building IoU | Tree IoU |
 |---|---|---|---|---|
@@ -110,14 +110,18 @@ Final for the Nov 12 to 14 rounds. Training is finished (the last runs ended 17:
 | `effb2_c4_s1` (EfficientNet-B2 encoder) | 0.7439 | 0.7038 | 0.6441 | 0.717 |
 | `effb2lov_c4_s1` (same, Lovasz loss) | 0.7458 | 0.7057 | 0.6506 | 0.7177 |
 | 3 ResNet-34 Lovasz models, ensemble | | 0.7035 | 0.6493 | |
-| `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | **0.7089** | **0.6546** | 0.7185 |
+| `dlv3lov` + `effb2lov`, 8 views each | 0.7512 | 0.7089 | 0.6546 | 0.7185 |
 | 5-class ensemble `effb2lov_c5_s0` + `r34lov_c5_s0`, 8 views | 0.7422 | 0.7009 | 0.6478 | 0.7097 |
 | `r34c512lov_c4_s1` (512 px crops, Lovasz loss), 8 views | 0.7464 | 0.705 | 0.6515 | |
+| `dlv3c512lov_c4_s1` (DeepLabV3+, 512 px crops, Lovasz loss), 8 views | 0.7464 | 0.7072 | 0.6548 | |
+| `dlv3lov` + `effb2lov` + `r34c512lov`, 8 views each (best, picked on validation) | 0.7517 | **0.7093** | **0.6554** | |
 
 - Two model types in one ensemble beat more seeds of one type: +0.0054 test mIoU over the ResNet-only ensemble.
-- Larger crops (512 px instead of 384) help a little: +0.0023 val and +0.0025 test with Lovasz loss. `r34c512lov_c4_s1` is the best single model on val. It was not in the ensemble search, so the best pick does not change.
-- Building IoU target 0.65: met (0.6546). mIoU target 0.72: missed (0.7089).
-- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The ensemble scored 0.7133 and 0.7571 (5 classes, "other" split by a 5-class model, water left out). mIoU missed by 0.0003. No pick reached 0.7136 on the clean Pittsburgh pixels. Closest: the 4-class pair above at 0.7133 (0.7135 with one pass of three models). The 5-class ensemble scored 0.7085 and 0.7524. The lots keep `r34_c5_s0`.
+- Larger crops (512 px instead of 384) help a little: +0.0023 val and +0.0025 test with Lovasz loss. Adding `r34c512lov_c4_s1` to the ensemble search gave a new best pick on validation (0.7517). It scores 0.7093 on test.
+- `dlv3c512lov_c4_s1` ties `r34c512lov_c4_s1` as the best single model on val and is the best single model on test (0.7072). Adding it to the 8-view pick does not raise val, so the best pick keeps three models.
+- An EfficientNet-B2 run with 512 px crops ran out of memory headroom on the 18 GB Mac and was not finished.
+- Building IoU target 0.65: met (0.6554). mIoU target 0.72: missed (0.7093).
+- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels (5 classes, "other" split by a 5-class model, water left out). The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The lots still use `r34_c5_s0` until the owner decides.
 
 ## Error analysis
 

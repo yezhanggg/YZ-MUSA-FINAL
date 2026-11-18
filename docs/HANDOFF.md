@@ -305,8 +305,8 @@ Also backups: `processed/<place>/<name>.prev.parquet` (the table before the last
   - The last scoring run read an older lot index. Score again once labels exist.
 - **Detector labels are unchecked.** Training is finished. The best garage AP50 is 0.469 (run `long640`, classes set by the size rule), against a target of 0.50. Pittsburgh alone reaches 0.504. This is agreement with first-pass labels from footprints and OSM, not true accuracy (`~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json`). Detections are not in the lot records. See [MODEL_CARD_detector.md](MODEL_CARD_detector.md).
 - **Land cover limits by city.** See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-  - Training is finished (last runs ended Nov 14, 17:55): best test mIoU 0.7089 and building IoU 0.6546, from a DeepLabV3+ and EfficientNet-B2 ensemble. Targets 0.72 and 0.65. Single models land near 0.70. The last runs with 512 px crops did not change the best.
-  - In Pittsburgh that ensemble scored 0.7133 against the 0.7136 needed to replace the lot model. The closest pick scored 0.7135, a miss of 0.0001. The lots keep `r34_c5_s0`.
+  - Best test mIoU 0.7093 and building IoU 0.6554 (Nov 18), from an ensemble of DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, picked on validation. Targets 0.72 and 0.65. Single models land near 0.70.
+  - In Pittsburgh that ensemble scores 0.7147 against the 0.7136 needed to replace the lot model, so it passes. The lots keep `r34_c5_s0` until the owner decides.
   - Allentown, Chester and Montgomery: no labels, so their land cover is not validated. 36 Centre County lots have no cover.
   - Philadelphia: the model cannot read trees from the spring 2022 photos (tree IoU about 0.26), so the 2018 city raster is used.
   - Pittsburgh: the per-lot check against the 2019 raster covers only 128 lots.
