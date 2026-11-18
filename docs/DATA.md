@@ -178,12 +178,12 @@ The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARC
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
-| Pittsburgh | `pittsburgh-20261114-7ae3f25d22` | 2026-11-14 09:43 (steep slope lines, refresh of the Nov 12 build) | 92,081 | 128 | 0 | 146,360,899 bytes, 72 tracts split into chunks |
+| Pittsburgh | `pittsburgh-20261118-c11c62f00e` | 2026-11-18 13:17 (land cover refresh: the three-model ensemble) | 92,081 | 128 | 0 | 147,647,223 bytes, 73 tracts split into chunks |
 | Philadelphia | `philadelphia-20261114-2a67293eaa` | 2026-11-14 10:11 (steep slope lines, refresh of the Nov 12 build) | 459,998 | 385 | 0 | 357,632,218 bytes, 50 tracts split into chunks |
 | Allentown | `allentown-20261116-b1e77f74ac` | 2026-11-16 07:55 (rule refresh: pass 15 to 17 record keys; 4 tracts rebuilt for lots with no district) | 29,158 | 31 | 0 | 101,754,615 bytes, 26 tracts split into chunks |
 | Chester County | `chester_county-20261116-aa5d870e34` | 2026-11-16 07:47 (rule refresh: pass 15 to 17 record keys; 4 tracts rebuilt for lots with no district) | 14,847 | 15 | 0 | 59,831,005 bytes, 11 tracts split into chunks |
 | Centre County | `centre_county-20261116-3f43ace3b4` | 2026-11-16 07:38 (rule refresh: pass 15 to 17 record keys; 1 tract rebuilt for a lot with no district) | 3,484 | 3 | 0 | 12,730,795 bytes, 2 tracts split into chunks |
-| Montgomery County | `montgomery_county-20261116-08642b411f` | 2026-11-16 07:46 (rule refresh: pass 15 to 17 record keys; 2 tracts rebuilt for lots with no district) | 26,119 | 28 | 0 | 74,779,656 bytes, 23 tracts split into chunks |
+| Montgomery County | `montgomery_county-20261118-e05e33d1ea` | 2026-11-18 12:10 (full rebuild with rules engine passes 18 to 28: Narberth footprint cap) | 26,119 | 28 | 0 | 78,061,700 bytes, 25 tracts split into chunks |
 
 625,687 lots in all.
 
@@ -303,7 +303,7 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 | City | File the lot builder reads | Source | Date of the picture | Lots with a row |
 |---|---|---|---|---|
 | Philadelphia | `processed/philadelphia/cover.parquet` | The 2018 city raster | 2017 photos, 2018 lidar | 459,998 |
-| Pittsburgh | `processed/pittsburgh/cover_model_r34_c5_s0.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022, not fine-tuned | 2022 | 92,039 |
+| Pittsburgh | `processed/pittsburgh/cover_model_div7_3m_tta.parquet` | Since 2026-11-18: the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), "other" split by `r34_c5_s0`. The earlier file `cover_model_r34_c5_s0.parquet` is the fallback | 2022 | 92,039 |
 | Allentown | `processed/allentown/cover.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022 | 2022 | 29,158 |
 | Chester County | `processed/chester_county/cover.parquet` | The same model | 2022 | 14,847 |
 | Centre County | `processed/centre_county/cover.parquet` | The same model | 2022 | 3,448 |
@@ -311,7 +311,7 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 
 - Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
 - 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
-- Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the model that was not fine-tuned. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
+- Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the ensemble file first, then `cover_model_r34_c5_s0.parquet`. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
 - Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. Since the Nov 15 rebuild their `spot_cover` is filled from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`, read by `pipeline/vision/cover_lookup.py`). So the spot figures have the same accuracy as the lot shares. 36 Centre County lots have no cover row. The assistant's lot tools give the accuracy note with the tree and paving shares, and with the figures inside the suggested spot.
 
 Known limits:

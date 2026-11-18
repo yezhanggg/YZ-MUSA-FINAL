@@ -179,7 +179,7 @@ const P: Record<string, Passage> = {
       'A U-Net model labels each pixel of 2022 NAIP aerial images (0.6 m) as building, tree, open ground, hard surface or other. It was trained on Chesapeake Bay Program land cover labels.',
       'On held-out test counties (Cumberland and Centre) single models score about 0.70 mean IoU, and the best three-model ensemble 0.7093, with building IoU 0.6554. The target was 0.72. Small buildings fail: building IoU is 0.28 under 50 m2.',
       'In the lot records land cover is context only: the share of the lot in tree, open ground, building and paving, and what lies inside the suggested spot. The unit is not moved to save trees.',
-      'Pittsburgh, Allentown and the three county places use the model r34_c5_s0. Philadelphia uses the city\'s 2018 land cover raster instead, because the model reads tree and open ground poorly there (early leaf, deep shade in rowhouse yards).',
+      'Pittsburgh uses the three-model ensemble (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34). Allentown and the three county places use the model r34_c5_s0. Philadelphia uses the city\'s 2018 land cover raster instead, because the model reads tree and open ground poorly there (early leaf, deep shade in rowhouse yards).',
       'Land cover in Allentown, Chester and Montgomery is not validated: there are no labels to check it against. Centre County lies in a test county.',
       'The object detector for garages, sheds and pools is not in the lot records yet. Garages and sheds come from building outlines.',
     ],

@@ -89,7 +89,7 @@ Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels and 8 flips an
 - Larger crops (512 px) helped a little (+0.0025 test with Lovasz loss). With that run added to the ensemble search, validation picked a new best of three models: test mIoU 0.7093.
 - `dlv3c512lov_c4_s1` is the best single model on test (0.7072), but adding it to the best pick does not raise validation.
 - Building IoU goal (0.65) met. mIoU goal (0.72) missed.
-- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The lots still use `r34_c5_s0` until the owner decides.
+- For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The Pittsburgh lots use the 8-view ensemble since 2026-11-18.
 
 ## 2. Where and why the model fails
 
@@ -160,11 +160,12 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 
 ### Per-lot agreement with the city rasters
 
-<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json. MAE in percentage points of lot area, r = correlation. Lots with at least 90 % raster coverage, outside the city train and validation boxes. -->
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, cover_compare_div7_3m_tta.json, ~/musa-drive/processed/philadelphia/cover_compare.json. MAE in percentage points of lot area, r = correlation. Lots with at least 90 % raster coverage, outside the city train and validation boxes. -->
 
 | | Lots | Tree MAE (r) | Open MAE (r) | Vegetation MAE (r) | Building MAE (r) | Tree, raster mean | Tree, model mean |
 |---|---|---|---|---|---|---|---|
-| Pittsburgh, `r34_c5_s0` against the 2019 raster | 128 | 8.41 (0.862) | 11.02 (0.844) | 8.16 (0.884) | 7.32 (0.86) | 18.6 % | 12.5 % |
+| Pittsburgh, `r34_c5_s0` against the 2019 raster (until Nov 18) | 128 | 8.41 (0.862) | 11.02 (0.844) | 8.16 (0.884) | 7.32 (0.86) | 18.6 % | 12.5 % |
+| Pittsburgh, three-model ensemble against the 2019 raster (since Nov 18) | 128 | 8.1 (0.863) | 12.81 (0.841) | 9.48 (0.878) | 6.98 (0.859) | 18.6 % | 13.2 % |
 | Philadelphia, `ft_c5_philadelphia` against the 2018 raster | 430,161 | 6.71 (0.622) | 12.02 (0.626) | 13.65 (0.76) | 17.66 (0.805) | 9.4 % | 5.3 % |
 
 - The Pittsburgh check has only 128 lots. The 2019 raster covers part of the city, and 801 lots inside train and validation boxes were left out. It is a small check.
@@ -205,7 +206,7 @@ The first Pittsburgh split placed some test boxes on top of training boxes: 34.8
 
 ## 5. How the models feed the lot tool
 
-- **Land cover:** each lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date). Records in all six lot places also give the cover inside the suggested spot. Pittsburgh: `model:r34_c5_s0`, 2022. Philadelphia: `landcover_2018`. Allentown and the three county places: `model:r34_c5_s0`, 2022, added Nov 14, with the spot cover from the same model since Nov 15. Only Centre County is a test county of the model (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so. 36 Centre County lots have no cover. The fit test does not use it. It tells the user how much canopy a unit might remove.
+- **Land cover:** each lot record has a `cover` block (building, tree, open ground, hard surface, impervious share, source, date). Records in all six lot places also give the cover inside the suggested spot. Pittsburgh: `model:div7_3m_tta` (the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each)), 2022, since Nov 18. Before that `model:r34_c5_s0`. Philadelphia: `landcover_2018`. Allentown and the three county places: `model:r34_c5_s0`, 2022, added Nov 14, with the spot cover from the same model since Nov 15. Only Centre County is a test county of the model (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so. 36 Centre County lots have no cover. The fit test does not use it. It tells the user how much canopy a unit might remove.
 - **Detector:** not used. Lot records carry an empty `objects` list. Garages and sheds come from building footprints by size (180 sq ft or more is a garage).
 - **Fit:** a vector test on the lot outline, edges labeled front, side and rear, building outlines, setbacks from the rule files, and the largest rectangle that fits. See the methods page.
 

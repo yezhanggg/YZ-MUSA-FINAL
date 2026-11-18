@@ -66,7 +66,7 @@ Land cover and the detector, by place:
 
 | | Philadelphia | Pittsburgh | Allentown and the three county places |
 |---|---|---|---|
-| Lot `cover` block | The city's 2018 land cover raster (`landcover_2018`), because the model is not reliable for tree and open ground on NAIP 2022 here | The land cover model `r34_c5_s0` on NAIP 2022 (`model:r34_c5_s0`), from `cover_model_r34_c5_s0.parquet` | The same model, from `cover.parquet` (Nov 14). Validated only in Centre County (a Chesapeake test county). 36 Centre County lots have none |
+| Lot `cover` block | The city's 2018 land cover raster (`landcover_2018`), because the model is not reliable for tree and open ground on NAIP 2022 here | The three-model land cover ensemble on NAIP 2022 (`model:div7_3m_tta`), from `cover_model_div7_3m_tta.parquet`, since 2026-11-18. Before that `r34_c5_s0` | The same model, from `cover.parquet` (Nov 14). Validated only in Centre County (a Chesapeake test county). 36 Centre County lots have none |
 | Cover inside the suggested spot (`spot_cover`) | From the same raster | From the same model maps | From the same model maps (since the Nov 15 rebuild) |
 | Detector objects | Not in the lot records (`objects` is empty) | Not in the lot records (`objects` is empty) | Not in the lot records |
 

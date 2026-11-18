@@ -13,14 +13,15 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 | Output, 4-class runs | other, building, tree, open ground |
 | Output, 5-class run | other, building, tree, open ground, hard surface (roads and paving split out of "other") |
 | Best 4-class run by test mIoU | `r34ndvi_c4_s1` (NDVI as a fifth input band), 0.7005 |
-| Run used for Pittsburgh lot cover | `r34_c5_s0` (5 classes), zero-shot on the city |
+| Run used for Pittsburgh lot cover | Since 2026-11-18 the three-model ensemble below (`model:div7_3m_tta`), with "other" split into water and hard surface by `r34_c5_s0`. Before that `r34_c5_s0` (5 classes), zero-shot on the city |
 | Reference run | `unet_v2_r34`, the earlier published model, scored again: 0.6985 |
-| Best result (Nov 18) | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+), `effb2lov_c4_s1` (U-Net with EfficientNet-B2) and `r34c512lov_c4_s1` (U-Net with ResNet-34, 512 px crops), 8 views each, picked on validation. Test mIoU 0.7093, building IoU 0.6554. It passes the Pittsburgh adoption bar, but the lots still use `r34_c5_s0` until the owner decides (see "Later runs") |
+| Best result (Nov 18) | Ensemble of `dlv3lov_c4_s1` (DeepLabV3+), `effb2lov_c4_s1` (U-Net with EfficientNet-B2) and `r34c512lov_c4_s1` (U-Net with ResNet-34, 512 px crops), 8 views each, picked on validation. Test mIoU 0.7093, building IoU 0.6554. It passes the Pittsburgh adoption bar, and the Pittsburgh lots use it since 2026-11-18 (see "Later runs") |
 
 ## What it is used for in the product
 
 - Lot records carry a `cover` block: building, tree, open ground and hard surface in sq ft and percent, plus impervious share, source and date. It also gives what lies inside the suggested spot (`spot_cover`), so the tool can say how much canopy a unit would remove.
-- In Pittsburgh, Allentown and the three county places the source is this model (`model:r34_c5_s0`, NAIP 2022). Their `spot_cover` comes from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`), so it has the same accuracy as the lot shares. The four town places have it since the Nov 15 rebuild.
+- In Pittsburgh the source is the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), on NAIP 2022 (`model:div7_3m_tta`). Its `spot_cover` comes from the ensemble's class maps (`processed/pittsburgh/cover_work/div7_3m_tta/tiles/`).
+- In Allentown and the three county places the source is `r34_c5_s0` (`model:r34_c5_s0`, NAIP 2022). Their `spot_cover` comes from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`), so it has the same accuracy as the lot shares. The four town places have it since the Nov 15 rebuild.
 - In Philadelphia the source is **not** this model. It is the city's 2018 land cover raster (`landcover_2018`). See "Transfer to the two cities" below for why.
 - Land cover is context only. The fit test is a vector test on lot, building and street data. It does not steer around trees.
 
@@ -121,7 +122,7 @@ Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels, 8 flips and t
 - `dlv3c512lov_c4_s1` ties `r34c512lov_c4_s1` as the best single model on val and is the best single model on test (0.7072). Adding it to the 8-view pick does not raise val, so the best pick keeps three models.
 - An EfficientNet-B2 run with 512 px crops ran out of memory headroom on the 18 GB Mac and was not finished.
 - Building IoU target 0.65: met (0.6554). mIoU target 0.72: missed (0.7093).
-- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels (5 classes, "other" split by a 5-class model, water left out). The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The lots still use `r34_c5_s0` until the owner decides.
+- Adoption for the Pittsburgh lots needs mIoU 0.7136 and building IoU 0.7435 on the clean city pixels (5 classes, "other" split by a 5-class model, water left out). The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The Pittsburgh lots use the 8-view ensemble since 2026-11-18. It was picked on validation, so the 8-view pick is used, not the one-pass pick with the higher city score.
 
 ## Error analysis
 
@@ -173,15 +174,16 @@ Decision: Philadelphia lot cover uses the city's 2018 raster. The model output i
 
 ### Per-lot agreement with the city rasters
 
-<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json. Lots with at least 90 % raster coverage, outside the city train and val boxes. MAE in percentage points of lot area. -->
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, cover_compare_div7_3m_tta.json, ~/musa-drive/processed/philadelphia/cover_compare.json. Lots with at least 90 % raster coverage, outside the city train and val boxes. MAE in percentage points of lot area. -->
 
 | Place, model against raster | Lots compared | Tree MAE (r) | Open MAE (r) | Vegetation MAE (r) | Building MAE (r) |
 |---|---|---|---|---|---|
-| Pittsburgh, `r34_c5_s0` against 2019 raster | 128 | 8.41 (0.862) | 11.02 (0.844) | 8.16 (0.884) | 7.32 (0.86) |
+| Pittsburgh, `r34_c5_s0` against 2019 raster (lot model until Nov 18) | 128 | 8.41 (0.862) | 11.02 (0.844) | 8.16 (0.884) | 7.32 (0.86) |
+| Pittsburgh, three-model ensemble against 2019 raster (lot model since Nov 18) | 128 | 8.1 (0.863) | 12.81 (0.841) | 9.48 (0.878) | 6.98 (0.859) |
 | Philadelphia, `ft_c5_philadelphia` against 2018 raster | 430,161 | 6.71 (0.622) | 12.02 (0.626) | 13.65 (0.76) | 17.66 (0.805) |
 
 - Pittsburgh has only 128 lots in this check. The 2019 raster covers part of the city, and 801 lots inside the train and val boxes were left out. Treat it as a small check, not a city-wide measure.
-- In Pittsburgh the model reads tree 6.1 points low on average (12.5 % against 18.6 %).
+- In Pittsburgh `r34_c5_s0` reads tree 6.1 points low on average (12.5 % against 18.6 %). The ensemble reads it 5.4 points low (13.2 %). It is closer on tree and building, but further off on open ground (36.3 % against 25.1 %) and vegetation. On 128 lots these gaps are small either way.
 - In Philadelphia the model reads vegetation 11.5 points low (20.2 % against 31.7 %), and worse on rowhouse lots.
 
 ## Limits

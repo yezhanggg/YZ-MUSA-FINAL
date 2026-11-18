@@ -33,7 +33,10 @@ the lots on the map.
 The app does not read `app/`, `index.parquet`, `lot_tract.parquet`, `parts/`, `qa/`, `progress.jsonl` or the
 `*.before_2272.*` files. They stay on the drive.
 
-<!-- source: file sizes under ~/musa-drive/host/, summed 2026-11-15 -->
+<!-- source: file sizes under ~/musa-drive/host/, summed 2026-11-15 and 2026-11-18 -->
+
+Nov 18: after the Montgomery County rebuild and the Pittsburgh land cover refresh the bundle is 999,918,964 bytes (999.9 MB, 1,738 files): Pittsburgh 188.2 MB, Montgomery County 107.8 MB. About 0.1 MB is left under the 1 GB Pages limit. Make room before the next lot data change.
+
 
 The bundle is 187.1 MB for Pittsburgh (320 files), 447.6 MB for Philadelphia (969 files), 110.9 MB for Allentown
 (146 files), 103.6 MB for Chester County (98 files), 29.7 MB for Centre County (44 files) and 101.7 MB for Montgomery

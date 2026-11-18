@@ -3,8 +3,8 @@
 Reads the best cover map per city:
 - Philadelphia: the 2018 UVM land cover raster (2 ft). The NAIP model is not
   reliable for tree and open there (see processed/vision/city/philadelphia/diagnosis).
-- Pittsburgh: the model class maps written by infer_lots.py (0.6 m, UTM 17N),
-  one GeoTIFF per tile, read through a VRT built on first use.
+- Pittsburgh: the class maps of the Nov 18 ensemble written by infer_lots.py (0.6 m,
+  UTM 17N), one GeoTIFF per tile, read through a VRT built on first use.
 - Allentown, Centre, Chester and Montgomery counties: the same model's class maps
   (0.6 m, UTM 18N), the same run as their lot-level cover (cover.parquet).
 
@@ -27,7 +27,7 @@ SQFT_PER_M2 = 10.7639
 # map value -> output class, per source
 RASTER_CLASSES = {1: "tree", 2: "open", 3: "open", 4: "other", 5: "building", 6: "hard_surface", 7: "hard_surface"}
 MODEL_CLASSES = {0: "other", 1: "building", 2: "tree", 3: "open", 4: "hard_surface"}
-PITTSBURGH_RUN = "r34_c5_s0"  # zero-shot run: the same model as the lot-level cover (cover_model_r34_c5_s0.parquet)
+PITTSBURGH_RUN = "div7_3m_tta"  # the Nov 18 ensemble, the same run as cover_model_div7_3m_tta.parquet
 # Places read from the model class maps, and the run (cover_work/<run>) that also gave their lot-level cover.
 MODEL_RUNS = {
     "pittsburgh": PITTSBURGH_RUN,

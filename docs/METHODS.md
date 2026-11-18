@@ -348,17 +348,18 @@ By area type (test mIoU):
 | Philadelphia, `r34_c5_s0` zero-shot | 12,000,000 | 0.4797 | 0.7072 | 0.2622 | 0.272 | 0.6775 | no water labeled |
 | Philadelphia, `ft_c5_philadelphia` fine-tuned | 12,000,000 | 0.5097 | 0.7386 | 0.2606 | 0.3226 | 0.717 | no water labeled |
 
-- **Pittsburgh.** The original model transfers well (about 0.70). The fine-tune did not help on clean pixels, and it lost the water class (IoU 0). The lot files use the zero-shot model `r34_c5_s0` (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`).
+- **Pittsburgh.** The original model transfers well (about 0.70). The fine-tune did not help on clean pixels, and it lost the water class (IoU 0). Until Nov 18 the lot files used the zero-shot model `r34_c5_s0`. Since 2026-11-18 the Pittsburgh lots use the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each) (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`). Its "other" class is split into water and hard surface by `r34_c5_s0`.
 - **Allentown and the three county places.** Lot cover comes from `r34_c5_s0` on NAIP 2022 (added Nov 14). Since the Nov 15 rebuild `spot_cover` comes from the same model's class maps. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery have no labels, so their cover is not validated. Each record says so in `quality.assumptions`. 36 Centre County lots have no cover.
 - **Philadelphia.** Tree and open ground are not reliable from NAIP 2022. The photos were flown 2022-04-30 to 2022-05-17, in early leaf, and rowhouse yards sit in deep shadow. No label bug was found. The fine-tune did not fix tree (0.2606). Philadelphia lot cover therefore uses the city's 2018 land cover raster (`landcover_2018`). A lot built in 2018 or later gets a flag that the raster may show the lot before the house.
 
 Per-lot agreement with a city raster:
 
-<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json and ~/musa-drive/processed/philadelphia/cover_compare.json. Lots at least 90 percent covered by the raster, lots inside city train and validation boxes left out -->
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, cover_compare_div7_3m_tta.json and ~/musa-drive/processed/philadelphia/cover_compare.json. Lots at least 90 percent covered by the raster, lots inside city train and validation boxes left out -->
 
 | City, model vs raster | Lots | Tree MAE (points) | Tree r | Open MAE | Vegetation MAE | Vegetation r | Building MAE | Tree mean, raster vs model |
 |---|---|---|---|---|---|---|---|---|
-| Pittsburgh, `r34_c5_s0` vs 2019 raster | 128 | 8.41 | 0.862 | 11.02 | 8.16 | 0.884 | 7.32 | 18.6 vs 12.5 percent |
+| Pittsburgh, `r34_c5_s0` vs 2019 raster (until Nov 18) | 128 | 8.41 | 0.862 | 11.02 | 8.16 | 0.884 | 7.32 | 18.6 vs 12.5 percent |
+| Pittsburgh, three-model ensemble vs 2019 raster (since Nov 18) | 128 | 8.1 | 0.863 | 12.81 | 9.48 | 0.878 | 6.98 | 18.6 vs 13.2 percent |
 | Philadelphia, model vs 2018 raster | 430,161 | 6.71 | 0.622 | 12.02 | 13.65 | 0.76 | 17.66 | 9.4 vs 5.3 percent |
 
 The Pittsburgh check rests on 128 lots, because the 2019 raster covers part of the city and 801 lots inside train and validation boxes were left out. It is a small check. The model reads less tree than the raster in both cities.
@@ -403,7 +404,7 @@ Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels and 8 flips an
 - 512 px crops help a little (+0.0025 test with Lovasz loss). Adding `r34c512lov_c4_s1` to the ensemble search gave a new best pick on validation (0.7517), which scores 0.7093 on test.
 - `dlv3c512lov_c4_s1` ties for the best single model on validation and is the best single model on test (0.7072). Adding it to the 8-view pick does not raise validation, so the best pick keeps three models.
 - Building IoU 0.6554 meets the 0.65 target. mIoU 0.7093 misses 0.72.
-- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The lots still use `r34_c5_s0` until the owner decides.
+- Pittsburgh adoption bar: a new model replaces `r34_c5_s0` in the lot files only if it reaches set scores on the clean Pittsburgh pixels: mIoU 0.7136 and building IoU 0.7435. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The Pittsburgh lots use the 8-view ensemble since 2026-11-18 (picked on validation). Across the city's lots the mean tree share moved from 24.7% to 24.9%, building from 46.1% to 46.0%, hard surface from 12.7% to 11.2% and open ground from 16.4% to 18.0%. No fit answer changed: the cover refresh does not rerun the fit.
 
 ## 4. Object detector
 

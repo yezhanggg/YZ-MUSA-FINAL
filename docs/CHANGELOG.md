@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-18, afternoon
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Lot places
+
+<!-- source: ~/musa-drive/lots/<place>/manifest.json and stats.json, index.parquet before (backups under ~/musa-drive/backups/lotdata10/) and after, ~/musa-drive/processed/pittsburgh/cover_compare_div7_3m_tta.json, notes in ~/Library/Caches/yz-musa/lotdata10/ -->
+
+- Montgomery County was rebuilt in full (`montgomery_county-20261118-e05e33d1ea`). The rules engine changes of passes 18 to 28, held for its three towns until now, reach its lot records. The three towns left the hold sets in `pipeline/rules.py`. The seven other lot towns stay held.
+- Narberth: the 600 sq ft footprint cap (500-802B(4)) now binds the new detached unit. It still fits on the same 996 lots. The largest unit is smaller on 764 of them (now 600 sq ft), and 3 lots in 5A and 5B gained room because they no longer take the general default yards. The median largest unit fell from 800 to 600 sq ft. A garage conversion fits on 142 lots, down from 159.
+- In all three towns a unit over a garage on a lot with no garage now takes the path of a new detached unit (today in Narberth and Upper Dublin, under HB 2186 in all three). The rule sentences of every Montgomery lot changed. No share in the README table moved: any legal path today stays 78.3%, a detached unit legal and fits today 25.6%, the same under HB 2186 86.0%.
+- Pittsburgh lot land cover now comes from the three-model ensemble (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), picked on validation, which passed the clean city test bar (`pittsburgh-20261118-c11c62f00e`, `model:div7_3m_tta`). It replaces `r34_c5_s0`. The spot cover reads the ensemble's class maps too.
+- Pittsburgh mean lot shares: tree 24.7% to 24.9%, building 46.1% to 46.0%, hard surface 12.7% to 11.2%, open ground 16.4% to 18.0%. Against the 2019 raster (128 lots) tree is off by 8.1 points (was 8.41) and building by 6.98 (was 7.32), but open ground by 12.81 (was 11.02). No fit answer changed: the cover refresh does not rerun the fit.
+- Lot tiles of Montgomery County were rebuilt. The Pittsburgh tiles carry no land cover and were not rebuilt.
+- The lot bundle grew from 995.6 MB to 999.9 MB and was pushed to the data repository. About 0.1 MB is left under the 1 GB Pages limit.
+
 ## 2026-11-18, morning
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
