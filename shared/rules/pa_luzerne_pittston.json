@@ -1,0 +1,600 @@
+{
+  "provenance": {
+    "jurisdiction": "Pittston city",
+    "instrument": "City of Pittston Zoning Code (Chapter 480 Zoning, Ord. No. 9-2019 of 11-20-2019, as amended by Ord. No. 14-2020 and Ord. No. 2-2024), with Chapter 270 Floodplain Management (Ord. No. 2-2024), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 PI3172, City of Pittston. 480-12 defines the City as 'The City of Pittston, Luzerne County, Pennsylvania', so this is Pittston city, Luzerne County, not Pittston Township. District use lists and bulk tables are text in Articles VIII to XIV. The one attachment is the zoning map. Chapter 480 sends floodplain matters to Chapter 270, and the stricter of the two applies. New Laws: Ord. No. 1-2026, 3-2026 and 8-2026 (Chapter 455), 2-2026 (Chapter 130), Res. No. 13214 (Chapter 30), Ord. No. 7-2026 (an agreement) and Ord. No. 6-2026 of 10-21-2026, a short-term rental license ordinance not yet codified, which names Chapter 480 zoning districts where a short-term rental license may issue",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/PI3172",
+      "https://ecode360.com/PI3172/laws",
+      "https://ecode360.com/PI3172/search?query=%22short-term%20rental%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PI3172/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22temporary%20dwelling%22%20OR%20%22guest%20house%22%20OR%20guesthouse%20OR%20%22household%20employee%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22care%20of%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/28469563",
+      "https://ecode360.com/print/PI3172?guid=45819170",
+      "https://ecode360.com/print/PI3172?guid=45819210",
+      "https://ecode360.com/print/PI3172?guid=45819217",
+      "https://ecode360.com/print/PI3172?guid=45819232",
+      "https://ecode360.com/print/PI3172?guid=45819254",
+      "https://ecode360.com/print/PI3172?guid=45819282",
+      "https://ecode360.com/print/PI3172?guid=45819327",
+      "https://ecode360.com/print/PI3172?guid=45819376",
+      "https://ecode360.com/45818753",
+      "https://ecode360.com/print/PI3172?guid=45819143",
+      "https://ecode360.com/print/PI3172?guid=45819541",
+      "https://ecode360.com/print/PI3172?guid=45819583",
+      "https://ecode360.com/print/PI3172?guid=45819801",
+      "https://ecode360.com/print/PI3172?guid=45819938",
+      "https://ecode360.com/print/PI3172?guid=28526138"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Luzerne",
+    "municipality_type": "city",
+    "geoid": "4207961048",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/28469563",
+    "code_current_through": null,
+    "code_current_through_note": "Chapter 480 history: Ord. No. 9-2019 of 11-20-2019, amended 10-21-2020 by Ord. No. 14-2020 and 2-15-2024 by Ord. No. 2-2024. eCode360 New Laws list Ord. No. 6-2026 (short-term rentals, 10-21-2026) as not yet codified. No currency date was shown on the pages read",
+    "code_caution": "Ord. No. 6-2026 of 10-21-2026 (short-term rental licenses) is adopted but not yet in the online code. Its search excerpt names zoning districts where a short-term rental license may issue. It was not read (PDF), so whether it changes Chapter 480 is not confirmed",
+    "checks": [
+      "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, guest house, household employee, supplemental dwelling, care of) find only 'accessory living quarters' in the definitions. R-1, R-2 and R-3 list as accessory uses 'Accessory uses on the same lot and incidental to the principal uses (garages, accessory living quarters)' (480-36B(1), 480-39B(1), 480-42B(1))",
+      "Accessory living quarters are 'An accessory building used solely as the temporary dwelling of guests of the occupants of the premises; such dwelling having no kitchen facilities and not rented or otherwise used as a separate sleeping unit' (480-12). That is a guest building without a kitchen, not a dwelling unit, so it is not an ADU. Adding a kitchen or renting it takes it outside the definition",
+      "R-1, R-2, R-3, NC and CB allow 'not more than one principal dwelling structure and not more than two accessory buildings' on a lot (480-37B, 480-40B, 480-43B, 480-46B, 480-49B). A family is persons related by birth, marriage or adoption residing together (480-12)",
+      "Conversion of an existing one-family dwelling to two dwelling units for two families is a special exception in R-3 only: the units meet the City Building Code, one off-street space per unit, and all units are reached through a common entrance in the wall facing the street (480-42D(6), 480-144A). More than two units needs 1,000 sq ft per unit (480-144B)",
+      "Two-family attached or semidetached dwellings (one family wholly or partly over the other, in a building with one or two party walls in common with adjacent buildings) are permitted by right in R-2 (4,000 sq ft lot, 50 ft wide) and R-3 (7,000 sq ft lot, 50 ft wide). No two-family detached dwelling is listed (480-12, 480-39A(3), 480-40, 480-42A(3), 480-43). Multifamily dwellings are by right in R-3 (1,000 sq ft per unit, 60 ft wide) and by special exception in NC and CB (480-42A(1), 480-43, 480-45C(9), 480-48C(1))",
+      "Accessory buildings in R-1, R-2 and R-3 stand in the rear and side yards only, 5 ft from the side and rear lines (10 ft where the line abuts an alley), 10 ft from the main building, and at most 18 ft tall (480-75, 480-76, 480-78)",
+      "Parking: 2 spaces per dwelling unit for a single-family dwelling, 1.5 per unit for a two-family dwelling, 1 per unit for multifamily, and 1 per unit for a conversion (480-64, 480-144A(2)). No rule for rounding a fraction of a space was found",
+      "Uses not provided for: in a nonresidential district (OS, NC, CB, I) a use not listed is prohibited unless the Zoning Hearing Board grants it as a special exception on proof that it is no more intensive than, and 'closely similar in impacts and character to', the uses permitted there (480-27). In R-1, R-2 and R-3 there is no such path. NC and CB list no single-family dwelling",
+      "Floodplain (Chapter 270, Ord. No. 2-2024): an accessory structure in the floodplain may not be designed or used for human habitation, no variance is granted for one over 600 sq ft, and in an AE zone without a floodway no new construction may be within 50 ft landward of the top of bank without a DEP permit. New construction is a structure begun on or after the chapter's effective date, with its later improvements (270-18B(2)(b), 270-23E, 270-33C, 270-35). The stricter of Chapter 480 and Chapter 270 applies (Chapter 480 history note)",
+      "Nonconforming: additions to nonconforming structures must conform, and a structure housing a nonconforming use may not be enlarged to increase that use (480-127D). No section on building on a nonconforming lot of record was found in Article XXX",
+      "CB sets a minimum building height of 45 ft for new or infill construction (Table 480-49). The Main Street Overlay District sets design standards (Article XV, not read)",
+      "Variances: Zoning Hearing Board on the findings of MPC 910.2 (480-22B). No bar on a use variance was found"
+    ],
+    "notes": "Zoning office: City of Pittston Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Article V (480-25 to 480-27 and Table 480-27, whose column order is not clear in text, so the district articles were used), Articles VIII to XIV (use lists and bulk tables), 480-12 definitions from 'Abandoned sign' to 'Real estate sign', 480-22, 480-64 (by search on the page), Article XVIII, Article XXX, Article XXXIII, and Chapter 270 by search on the page (270-18, 270-23E, 270-33, 270-35). Not read: Articles I, III, VI, VII, XV, XVII, XIX to XXIX, XXXI, XXXII, XXXIV, XXXV, 480-65, definitions after 'Real estate sign', the rest of Chapter 270, and Ord. No. 6-2026 (PDF, not opened)."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "480-12, 480-36B(1)",
+      "url": "https://ecode360.com/PI3172/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22temporary%20dwelling%22%20OR%20%22guest%20house%22%20OR%20guesthouse%20OR%20%22household%20employee%22%20OR%20%22supplemental%20dwelling%22%20OR%20%22care%20of%22&scope=code&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, guest house, household employee, supplemental dwelling and care of, and read the use lists of every district. The only near term is 'accessory living quarters', a guest building with no kitchen that may not be rented (480-12)"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "480-36, 480-39, 480-42, 480-12 'Accessory living quarters'",
+      "url": "https://ecode360.com/print/PI3172?guid=45819217",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a dwelling unit accessory to a house. Accessory living quarters are guest rooms in an accessory building with no kitchen, not a unit. R-3 allows the conversion of a one-family dwelling to two units by special exception (480-144A), and R-2 and R-3 permit two-family attached or semidetached dwellings"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "480-22B",
+      "url": "https://ecode360.com/print/PI3172?guid=45819143",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second dwelling unit on a house lot is not a listed use in R-1, R-2 or R-3, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). R-3 allows a conversion of a one-family dwelling to two units by special exception, and R-2 and R-3 permit two-family attached or semidetached dwellings (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "480-22B",
+      "url": "https://ecode360.com/print/PI3172?guid=45819143",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of MPC 910.2. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "480-27",
+      "url": "https://ecode360.com/print/PI3172?guid=45819170",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Only in a nonresidential district (OS, NC, CB, I): a use not listed may be a special exception if it is no more intensive than and closely similar to the uses permitted there. In R-2 and R-3 a second unit may be read as the listed two-family dwelling or conversion instead, and R-1, R-2 and R-3 have no unlisted-use path"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "OS",
+        "NC",
+        "CB",
+        "I"
+      ],
+      "section": "480-27",
+      "url": "https://ecode360.com/print/PI3172?guid=45819170",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'within any nonresidential zoning district'. OS, NC, CB and I are read as the nonresidential districts"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "quote": "The proposed use would be closely similar in impacts and character to uses permitted in that district",
+      "section": "480-27B",
+      "url": "https://ecode360.com/print/PI3172?guid=45819170",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion of a one-family dwelling to two dwelling units (R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "An existing one-family dwelling converted to two dwelling units for two families. The units meet the City Building Code. One off-street parking space for each unit. All units are reached through a common entrance in the wall of the building facing the street the lot fronts on",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing one-family dwelling to convert",
+              "section": "480-144A"
+            },
+            {
+              "test": null,
+              "condition": "A common entrance for both units in the wall facing the street",
+              "section": "480-144A(3)"
+            }
+          ],
+          "disputed_min_lot": {
+            "districts": [
+              "R-3"
+            ],
+            "min_lot_sqft": 7000,
+            "section": "Table 480-43",
+            "note": "The conversion section sets no lot size. Whether the 7,000 sq ft two-family lot of Table 480-43 applies to a converted house is not settled"
+          },
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "480-42D(6), 480-144A, 480-64",
+          "url": "https://ecode360.com/print/PI3172?guid=45819938",
+          "confidence": "secondary",
+          "note": "A special exception from the Zoning Hearing Board (480-22C)"
+        },
+        {
+          "name": "Two-family attached or semidetached dwelling (R-2, R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "A building for two families, one living wholly or partly over the other, with one or two party walls in common with adjacent buildings. R-2: lot 4,000 sq ft, 50 ft wide, front 10 ft, side 10 ft in all with one at least 5 ft, rear 20 ft. R-3: lot 7,000 sq ft, 50 ft wide, front 5 ft, side 10 ft in all with one at least 5 ft, rear 10 ft. Height 35 ft. 1.5 parking spaces per unit",
+          "min_lot_by_district": {
+            "R-2": 4000,
+            "R-3": 7000
+          },
+          "requires": [
+            {
+              "test": null,
+              "condition": "The building shares one or two party walls with adjacent buildings. A detached house is not a two-family attached or semidetached dwelling, and no two-family detached dwelling is listed",
+              "section": "480-12 'Dwelling, two-family attached', 'Dwelling, two-family semidetached'"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "480-39A(3), 480-40, 480-42A(3), 480-43, 480-64",
+          "url": "https://ecode360.com/print/PI3172?guid=45819232",
+          "confidence": "secondary",
+          "note": "Read as a twin or row building whose house is divided into two stacked units"
+        }
+      ],
+      "section": "480-144, 480-39, 480-42",
+      "url": "https://ecode360.com/print/PI3172?guid=45819938",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 480",
+      "url": "https://ecode360.com/28469563",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No historic preservation path was found in the articles read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "OS",
+        "R-1",
+        "R-2",
+        "R-3",
+        "NC",
+        "CB",
+        "I"
+      ],
+      "section": "480-34, 480-36, 480-39, 480-42, 480-45, 480-48, 480-52",
+      "url": "https://ecode360.com/print/PI3172?guid=45819217",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-1, R-2 and R-3 list accessory living quarters (guest rooms, no kitchen). R-2 and R-3 list two-family attached or semidetached dwellings, and R-3 the conversion of a one-family dwelling"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'There shall not be more than one principal dwelling structure and not more than two accessory buildings' on a lot.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "NC",
+            "CB"
+          ],
+          "building_types": null,
+          "section": "480-37B, 480-40B, 480-43B, 480-46B, 480-49B",
+          "url": "https://ecode360.com/print/PI3172?guid=45819217",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "An accessory structure in the floodplain 'shall not be designed or used for human habitation'. No variance is granted for an accessory structure over 600 sq ft.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "270-23E, 270-33C",
+          "url": "https://ecode360.com/print/PI3172?guid=28526138",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 270"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain new construction and substantial improvements are elevated to the regulatory flood elevation, nothing in the floodway may raise flood levels, and work of 50% or more of a building's market value is a substantial improvement. The stricter of Chapter 480 and Chapter 270 applies.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "270-18A, 270-23, 270-35",
+          "url": "https://ecode360.com/print/PI3172?guid=28526138",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 270"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE zone without a floodway no new construction or development may be located within 50 ft landward of the top of bank of a watercourse without a DEP permit.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "FP"
+          ],
+          "section": "270-18B(2)(b)",
+          "url": "https://ecode360.com/print/PI3172?guid=28526138",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 270"
+        }
+      ],
+      "section": "480-37B, 270-18, 270-23",
+      "url": "https://ecode360.com/print/PI3172?guid=45819217",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "480-36, 480-39, 480-42",
+      "url": "https://ecode360.com/print/PI3172?guid=45819217",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "front_yard_barred": {
+      "value": true,
+      "section": "480-76",
+      "url": "https://ecode360.com/print/PI3172?guid=45819583",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side yards only'. A garage may stand in the front yard of a steep lot (480-77)"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "480-75",
+      "url": "https://ecode360.com/print/PI3172?guid=45819583",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'All accessory buildings shall be separated from the main building by 10 feet'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 18,
+      "section": "480-78",
+      "url": "https://ecode360.com/print/PI3172?guid=45819583",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "480-78",
+      "url": "https://ecode360.com/print/PI3172?guid=45819583",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU rule, so whether the accessory height reaches a unit is not settled"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "480-64",
+      "url": "https://ecode360.com/print/PI3172?guid=45819541",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. Single-family 2 per dwelling unit, two-family 1.5 per dwelling unit, a conversion 1 per unit (480-144A(2))"
+    },
+    "reading": {
+      "value": "A conversion needs 1 space per unit, so 2 in all (480-144A(2)). A two-family dwelling needs 1.5 per unit, so 3 in all (480-64). No fraction rule was found",
+      "section": "480-64, 480-144A(2)",
+      "url": "https://ecode360.com/print/PI3172?guid=45819541",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "Table 480-37",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a single-family dwelling, 40 ft wide and 80 ft deep"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "Table 480-37",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Table 480-37 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'the minimum dimension above shall be divided for two side yards where one is not less than five feet'"
+      },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "Table 480-37 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Table 480-37",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "480-37A",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The code does not define lot coverage. Read here as building cover. Ask whether paving counts"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 480-37",
+        "url": "https://ecode360.com/print/PI3172?guid=45819217",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "10 ft where the side or rear line abuts an alley. A storage building of 120 sq ft or less without utilities may stand 3 ft from the lines"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "480-78",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory structures in all districts shall not exceed a maximum height of 18 feet'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "Table 480-40",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a single-family dwelling, 40 ft wide and 80 ft deep"
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "Table 480-40",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Table 480-40 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'the minimum dimension above shall be divided for two side yards where one is not less than five feet'"
+      },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "Table 480-40 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Table 480-40",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.6,
+        "section": "480-40A",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The code does not define lot coverage. Read here as building cover. Ask whether paving counts"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 480-40",
+        "url": "https://ecode360.com/print/PI3172?guid=45819232",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "10 ft where the side or rear line abuts an alley. A storage building of 120 sq ft or less without utilities may stand 3 ft from the lines"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "480-78",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory structures in all districts shall not exceed a maximum height of 18 feet'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 3200,
+        "section": "Table 480-43",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a single-family dwelling, 40 ft wide and 80 ft deep"
+      },
+      "setback_front_ft": {
+        "value": 5,
+        "section": "Table 480-43",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Table 480-43 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'the minimum dimension above shall be divided for two side yards where one is not less than five feet'"
+      },
+      "setback_sides_total_ft": {
+        "value": 10,
+        "section": "Table 480-43 note (b)",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Table 480-43",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "480-43A",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The code does not define lot coverage. Read here as building cover. Ask whether paving counts"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 480-43",
+        "url": "https://ecode360.com/print/PI3172?guid=45819254",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "10 ft where the side or rear line abuts an alley. A storage building of 120 sq ft or less without utilities may stand 3 ft from the lines"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "480-76",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 18,
+        "section": "480-78",
+        "url": "https://ecode360.com/print/PI3172?guid=45819583",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory structures in all districts shall not exceed a maximum height of 18 feet'"
+      }
+    }
+  }
+}

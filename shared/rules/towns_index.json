@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 203,
-      "population": 6438215,
-      "share_of_pa": 0.4951
+      "towns_beyond_the_two_cities": 206,
+      "population": 6460951,
+      "share_of_pa": 0.4969
     }
   ],
   "towns": [
@@ -4970,6 +4970,78 @@
         "added as batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)"
       ],
       "status_note": "Open points: the online code is complete only to April 2, 2017. Ordinances adopted since (2018-17, 2018-18, 2018-28, 2020-29 and 2023-11 to 2023-19) are posted only as PDFs and were not read, and the floodplain article cites a 1995 FIRM. Also open: where the Lincoln Way Transitional Zone lies, whether an existing R-4 house may become two units by right, and whether a second dwelling in C-1 or C-2 is a similar use."
+    },
+    {
+      "geoid": "4202921104",
+      "geoid_aliases": [],
+      "name": "East Fallowfield township",
+      "county": "Chester",
+      "type": "township",
+      "population": 7626,
+      "population_with_aliases": 7626,
+      "housing_units": 2812,
+      "pop_rank": 368,
+      "file": "pa_chester_east_fallowfield",
+      "batch": 51,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/30859926",
+      "plain_fetch": null,
+      "code_current_through": "2026-09-22",
+      "code_note": null,
+      "why": [
+        "added as batch 51 by population. Code Chapter 27 has no ADU text (27-1703.1E farm employee dwelling, 27-1723 residential conversion by conditional use in RA and VC)"
+      ],
+      "status_note": "First reading (batch 51). Open: 27-1723.1A sends the RA and VC residential conversion to the Zoning Hearing Board as a special exception while the use lists name a conditional use. The R-3 rows for a lot without public water and sewer read 'both ... are not available' strictly. Part 13, Part 25 and most of Chapter 8 Part 6 not read."
+    },
+    {
+      "geoid": "4207961048",
+      "geoid_aliases": [],
+      "name": "Pittston city",
+      "county": "Luzerne",
+      "type": "city",
+      "population": 7591,
+      "population_with_aliases": 7591,
+      "housing_units": 3903,
+      "pop_rank": 369,
+      "file": "pa_luzerne_pittston",
+      "batch": 51,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/28469563",
+      "plain_fetch": null,
+      "code_current_through": null,
+      "code_note": null,
+      "why": [
+        "added as batch 51 by population. Code Chapter 480 has no ADU text (accessory living quarters are guest rooms with no kitchen, 480-144A conversion to two units by special exception in R-3)"
+      ],
+      "status_note": "First reading (batch 51). Open: Ord. No. 6-2026 (short-term rentals, 10-21-2026) is not yet codified and was not read. Lot coverage is not defined and is read as building cover. Whether the 7,000 sq ft two-family lot binds a 480-144A conversion is not settled. Chapter 270 read only in part."
+    },
+    {
+      "geoid": "4213345152",
+      "geoid_aliases": [],
+      "name": "Lower Windsor township",
+      "county": "York",
+      "type": "township",
+      "population": 7519,
+      "population_with_aliases": 7519,
+      "housing_units": 3172,
+      "pop_rank": 373,
+      "file": "pa_york_lower_windsor",
+      "batch": 51,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/36205355",
+      "plain_fetch": null,
+      "code_current_through": "2026-02-12",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 470-52 accessory garage apartment or rental cottage by special exception (V))"
+      ],
+      "status_note": "First reading (batch 51). Open: the accessory garage apartment or rental cottage is SE in V only (Table 470-8), while 470-15H(5) says it 'shall be permitted' on a V site with area for two units. Development rights per unit, Article V (parking, accessory rules, lots of record), Article VIII and Chapter 235 floodplain not read."
     }
   ]
 }

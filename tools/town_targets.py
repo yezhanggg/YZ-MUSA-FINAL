@@ -1480,6 +1480,7 @@ FIXED_BATCH.update({g: 47 for g in ("4207182824", "4200361328", "4202954936")})
 FIXED_BATCH.update({g: 48 for g in ("4213321464", "4209585592", "4212511176")})
 FIXED_BATCH.update({g: 49 for g in ("4204111000", "4208971344", "4202919752")})
 FIXED_BATCH.update({g: 50 for g in ("4208531656", "4208308040", "4200384704")})
+FIXED_BATCH.update({g: 51 for g in ("4202921104", "4207961048", "4213345152")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1809,6 +1810,14 @@ EXTRAS = {
     "4208531656": "Code 156.059 accessory apartment in a garage or separate building, by special exception in R-1B and conditional use in R-2",
     "4208308040": "Code 220-8 and 220-23B(2)(e) guesthouse by special exception (R-1, R-2, R-3, C-1, C-2)",
     "4200384704": "batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)",
+    # Batch 51 (2026-11-18): the next towns by population without a rule file. Brecknock (Lancaster) was skipped (Ord.
+    # No. 240-2025 of 9-9-2025 and Ord. No. 242-2026 of 9-8-2026, Chapter 110 zoning amendments, and Ord. No. 239-2025, a
+    # zoning map amendment, not yet codified), Bedminster (Bucks) (the American Legal code adopts the zoning ordinance by
+    # reference only, 153.01, with no zoning text as web pages, and the township website was refused to the browser) and
+    # Robeson (Berks) (Chapter 27 zoning only as a PDF on the township website).
+    "4202921104": "batch 51 by population. Code Chapter 27 has no ADU text (27-1703.1E farm employee dwelling, 27-1723 residential conversion by conditional use in RA and VC)",
+    "4207961048": "batch 51 by population. Code Chapter 480 has no ADU text (accessory living quarters are guest rooms with no kitchen, 480-144A conversion to two units by special exception in R-3)",
+    "4213345152": "Code 470-52 accessory garage apartment or rental cottage by special exception (V)",
 }
 
 if __name__ == "__main__":

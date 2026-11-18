@@ -1,0 +1,677 @@
+{
+  "provenance": {
+    "jurisdiction": "Lower Windsor township",
+    "instrument": "Lower Windsor Township Zoning Ordinance (Chapter 470 Zoning, Ord. No. 2003-02 of 4-10-2003, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 LO4166, Township of Lower Windsor. 470-7B names the 'Lower Windsor Township, York County, Pennsylvania Zoning Map', so this is Lower Windsor township, York County. The use table (Table 470-8) and the density and dimensional table (Table 470-12) are text in Article III, and the attachments are figures and the map. Floodplain management is Chapter 235 (named in 470-18B(3)). New Laws: none",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/LO4166",
+      "https://ecode360.com/LO4166/laws",
+      "https://ecode360.com/36205355",
+      "https://ecode360.com/print/LO4166?guid=36205716",
+      "https://ecode360.com/36205716",
+      "https://ecode360.com/36205374",
+      "https://ecode360.com/print/LO4166?guid=36206251",
+      "https://ecode360.com/print/LO4166?guid=36206768"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213345152",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/36205355",
+    "code_current_through": "2026-02-12",
+    "code_current_through_note": "eCode360 shows the version date 2026-02-12 beside the Code link. New Laws: 'There are currently no known new laws for this Code.' Chapter 470 history: as amended through Ord. No. 2012-01 of 4-12-2012, later amendments noted where applicable",
+    "checks": [
+      "Accessory garage apartment or rental cottage: 'An accessory dwelling unit clearly incidental to the single-family detached dwelling located on the same lot' (470-6). Table 470-8 lists it only in the Village District (V), by special exception. 470-8: 'The uses listed as permitted in each district are the only uses permitted in that district'",
+      "Its standards: clearly accessory to the single-family detached dwelling, only one per lot, 'One development right is required for each accessory garage apartment or rental cottage', the building coverage of the house, accessory structures and the unit together within the district's maximum lot coverage, and one off-street space beyond the house's parking (470-52)",
+      "In V the unit is 'permitted on any building site having enough building site area to permit two or more dwelling units', may occupy at most 35% of the required rear yard, may be at most 50% of the total square footage of the principal structure, may not stand in front of the house's front facade or the front setback, and keeps 5 ft side and rear yards. A lawful existing nonconforming garage apartment may remain (470-15H(5))",
+      "Development rights: in V a parcel is granted rights at the base density of 2.0 per acre of adjusted tract area, up to 6.0 with transferred rights (470-15F, Table 470-12). Each dwelling unit uses one right. Whether a lot has a right left for the unit depends on the parcel's history. Ask the zoning officer",
+      "Two-family dwellings (2 units on 1 lot) are permitted by right in R, V and WR. A two-family residential conversion is by right in R, V and WR and by special exception in AG, and uses one development right per added unit, keeps the character of the existing building and meets parking and minimum habitable floor area (Table 470-8, 470-130). A caretaker or watchman dwelling accessory to an agricultural, professional, commercial or industrial use is a special exception in AG, V, WR and I (470-6, Table 470-8)",
+      "Accessory buildings may be 25 ft tall in every district (Table 470-12)",
+      "Restricted Development Overlay: slopes over 15%, wetlands and the 100-year floodplain. No site disturbance on slopes over 25%, and a grading plan for slopes of 15% to 25% (470-18). Floodplain rules are in Chapter 235 (not read)",
+      "Uses not provided for: 'Any use not specifically allowed elsewhere in this chapter shall be allowed by special exception in the district or districts where, and to the extent that, similar uses are permitted' (470-9). The accessory garage apartment is allowed in V, so outside V it is read as not listed there"
+    ],
+    "notes": "Zoning office: Lower Windsor Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-18: the Chapter 470 table of contents, Article III to the start of 470-18E(1)(b) (print view), Table 470-8 rows for dwellings, the accessory garage apartment and conversions (on the page, as the print view loses the columns), 470-6 dwelling and development right definitions, 470-52 and 470-130. Not read: Articles I, II (other definitions), IV, V (accessory structures 470-31, minimum habitable floor area 470-35, parking 470-36, lots of record 470-45, nonconforming 470-47, stream corridors 470-48), the rest of 470-18, 470-19 to 470-21, Articles VI (other sections), VII, VIII (variances 470-150, special exceptions 470-151), IX, and Chapter 235 Floodplain Management."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory garage apartment or rental cottage",
+      "section": "470-6 'Dwelling' A, 470-52",
+      "url": "https://ecode360.com/36205374",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "status": {
+      "value": "special_exception",
+      "section": "Table 470-8, 470-52",
+      "url": "https://ecode360.com/36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Listed only in V, by special exception"
+    },
+    "scope_districts": {
+      "value": [
+        "V"
+      ],
+      "section": "Table 470-8",
+      "url": "https://ecode360.com/36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Table 470-8 marks the use SE in the V column only"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "Table 470-8, 470-8",
+      "url": "https://ecode360.com/36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "AG, R, WR and I do not list the use, and 470-8 makes the listed uses the only uses permitted. A use variance is the path there"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "special_exception",
+      "section": "Table 470-8, 470-52",
+      "url": "https://ecode360.com/36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board (MPC 912.1)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "Article VIII",
+      "url": "https://ecode360.com/36205355",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Zoning Hearing Board on the findings of MPC 910.2. The variance section (470-150) was not read"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family residential conversion (R, V, WR)",
+          "path": "by_right",
+          "districts": [
+            "R",
+            "V",
+            "WR"
+          ],
+          "conditions": "An existing dwelling converted to a two-family dwelling. One development right for each added unit. The character of the existing building is kept, except a fire escape if needed. Parking, minimum habitable floor area and the other rules of the chapter are met",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing dwelling to convert",
+              "section": "470-130B"
+            },
+            {
+              "test": null,
+              "condition": "One development right is available for the added unit",
+              "section": "470-130A"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "Table 470-8, 470-130",
+          "url": "https://ecode360.com/print/LO4166?guid=36206768",
+          "confidence": "secondary",
+          "note": "The two-family lot area in Table 470-12 (per unit) may also apply. Ask the zoning officer"
+        },
+        {
+          "name": "Two-family residential conversion (AG)",
+          "path": "special_exception",
+          "districts": [
+            "AG"
+          ],
+          "conditions": "As in R, V and WR, but by special exception. One development right for each added unit, the character of the existing building kept, parking and minimum habitable floor area met",
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing dwelling to convert",
+              "section": "470-130B"
+            },
+            {
+              "test": null,
+              "condition": "One development right is available for the added unit. AG parcels have the permitted rights of Table 470-13D",
+              "section": "470-130A, 470-13D"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "Table 470-8, 470-130, 470-13D",
+          "url": "https://ecode360.com/print/LO4166?guid=36206768",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Two-family dwelling, two units on one lot (R, V, WR)",
+          "path": "by_right",
+          "districts": [
+            "R",
+            "V",
+            "WR"
+          ],
+          "conditions": "A dwelling with two units on one lot. Lot area per unit with public water and sewer: R 6,000 sq ft, V and WR 3,000 sq ft. With only one of the two: R 20,000, V and WR 15,000 sq ft per unit. With neither: 37,500 sq ft per unit. Lot width per unit with both services: R 30 ft, V and WR 25 ft",
+          "min_lot_by_district": {
+            "R": 12000,
+            "V": 6000,
+            "WR": 6000
+          },
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building designed for two dwelling units. Each unit uses a development right",
+              "section": "470-6, 470-13E(2), Table 470-12"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "Table 470-8, Table 470-12",
+          "url": "https://ecode360.com/print/LO4166?guid=36205716",
+          "confidence": "secondary",
+          "note": "Lot figures are for a lot with public water and sewer, two units at the per-unit minimum"
+        },
+        {
+          "name": "Caretaker or watchman dwelling (AG, V, WR, I)",
+          "path": "special_exception",
+          "districts": [
+            "AG",
+            "V",
+            "WR",
+            "I"
+          ],
+          "conditions": "A single-family detached dwelling unit accessory to an agricultural, professional, commercial or industrial use, for the owner or an employee and their immediate family, to care for and protect people, property, animals or equipment on the site, under the same ownership",
+          "requires": [
+            {
+              "test": null,
+              "condition": "An agricultural, professional, commercial or industrial principal use on the lot",
+              "section": "470-6 'Dwelling' B"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "470-6, Table 470-8, 470-77",
+          "url": "https://ecode360.com/36205374",
+          "confidence": "secondary",
+          "note": "The standards in 470-77 were not read"
+        }
+      ],
+      "section": "Table 470-8, 470-130",
+      "url": "https://ecode360.com/36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "One development right is required for the unit. In V a parcel holds rights at 2.0 per acre of adjusted tract area (up to 6.0 with transferred rights), and each dwelling uses one.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "V"
+          ],
+          "building_types": null,
+          "section": "470-52C, 470-15F, Table 470-12",
+          "url": "https://ecode360.com/print/LO4166?guid=36206251",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The unit is accessory to a single-family detached dwelling.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": [
+            "V"
+          ],
+          "building_types": [
+            "semi_detached",
+            "attached"
+          ],
+          "section": "470-52A, 470-6 'Dwelling' A",
+          "url": "https://ecode360.com/print/LO4166?guid=36206251",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The building coverage of the house, other accessory structures and the unit together may not exceed the district's maximum lot coverage.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "V"
+          ],
+          "building_types": null,
+          "section": "470-52D",
+          "url": "https://ecode360.com/print/LO4166?guid=36206251",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Restricted Development Overlay (slopes over 15%, wetlands, 100-year floodplain): no site disturbance on slopes over 25%, a grading plan for 15% to 25%. Floodplain rules are in Chapter 235.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "RDO"
+          ],
+          "section": "470-18B, E(1)",
+          "url": "https://ecode360.com/print/LO4166?guid=36205716",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "470-52, 470-18",
+      "url": "https://ecode360.com/print/LO4166?guid=36206251",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "470-6 'Dwelling' A, 470-52",
+      "url": "https://ecode360.com/36205374",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A garage apartment and a rental cottage, both accessory buildings to the house"
+    },
+    "types_not_addressed": {
+      "value": [
+        "internal",
+        "attached"
+      ],
+      "section": "470-6 'Dwelling' A",
+      "url": "https://ecode360.com/36205374",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code names only a garage apartment or a rental cottage"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "rental cottage",
+        "over_garage": "garage apartment"
+      },
+      "section": "470-6",
+      "url": "https://ecode360.com/36205374",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 1,
+      "section": "470-52B",
+      "url": "https://ecode360.com/print/LO4166?guid=36206251",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Only one accessory garage apartment or rental cottage shall be allowed per lot'"
+    }
+  },
+  "size": {
+    "max_share_of_house": {
+      "value": 0.5,
+      "section": "470-15H(5)(a)",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'No garage apartment or rental cottage shall be greater than 50% of the total square footage of the principal structure'"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 5,
+      "section": "470-15H(5)(a)[2]",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "setback_rear_ft": {
+      "value": 5,
+      "section": "470-15H(5)(a)[3]",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "470-15H(5)(a)[1]",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'shall not extend beyond or in front of the front facade of the primary habitable area of the principal structure or required minimum front setback, whichever is greater'"
+    },
+    "max_height_ft": {
+      "value": 25,
+      "section": "Table 470-12",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'Accessory Building 25 feet' in every district"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "The garage apartment or rental cottage may occupy at most 35% of the required rear yard",
+          "section": "470-15H(5)(a)"
+        }
+      ],
+      "section": "470-15H(5)(a)",
+      "url": "https://ecode360.com/print/LO4166?guid=36205716",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "470-52E",
+      "url": "https://ecode360.com/print/LO4166?guid=36206251",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'In addition to all parking requirements for the principal dwelling, a minimum of one off-street parking space'. The house's own count (470-36) was not read"
+    }
+  },
+  "districts": {
+    "V": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and public sewer (5,000 to 10,000 sq ft)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 3000,
+        "section": "470-15H(5)(a), Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The unit needs a site with area for two or more dwelling units. Read from the two-family lot area of 3,000 sq ft per unit with public water and sewer"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "lot_area_per_unit_sqft": 15000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "lot_area_per_unit_sqft": 15000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 37500,
+            "lot_area_per_unit_sqft": 37500,
+            "section": "Table 470-12"
+          }
+        ],
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "Table 470-15G",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Table 470-15G",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Table 470-15G",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Table 470-15G",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.55,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 470-12 'Maximum Lot Coverage'. The definitions read do not say whether it counts paving. 470-52D measures the house, accessory structures and the unit's building coverage against it, so it is read as building cover. 55% for single-family, semidetached and two-family dwellings"
+      }
+    },
+    "R": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and public sewer (10,000 to 15,000 sq ft)"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 20000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 20000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 37500,
+            "section": "Table 470-12"
+          }
+        ],
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.55,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 470-12 'Maximum Lot Coverage'. The definitions read do not say whether it counts paving. 470-52D measures the house, accessory structures and the unit's building coverage against it, so it is read as building cover"
+      }
+    },
+    "WR": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached with public water and public sewer (5,000 to 10,000 sq ft)"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 15000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Public water or public sewer, not both",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 15000,
+            "section": "Table 470-12"
+          },
+          {
+            "when": "Neither public water nor public sewer",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 37500,
+            "section": "Table 470-12"
+          }
+        ],
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.55,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 470-12 'Maximum Lot Coverage'. The definitions read do not say whether it counts paving. 470-52D measures the house, accessory structures and the unit's building coverage against it, so it is read as building cover"
+      }
+    },
+    "AG": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached (43,560 to 87,120 sq ft)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Table 470-12",
+        "url": "https://ecode360.com/print/LO4166?guid=36205716",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Table 470-12 'Maximum Lot Coverage'. The definitions read do not say whether it counts paving. 470-52D measures the house, accessory structures and the unit's building coverage against it, so it is read as building cover"
+      }
+    }
+  }
+}
