@@ -1,0 +1,511 @@
+{
+  "provenance": {
+    "jurisdiction": "DuBois city",
+    "instrument": "DuBois Zoning Ordinance (Chapter 450 Zoning, Ord. No. 1470 of 6-26-1989, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 DU2313, City of DuBois, linked from the city's Code Enforcement page. Chapter 215 says it is the floodplain ordinance of 'the City of DuBois, Clearfield County, Pennsylvania' (215-36), so this is DuBois city, Clearfield County. District use lists and area, yard and height rules are text in Articles VIII to XVI. The only zoning attachment is a list of zoning map amendments. The floodplain rules are in Chapter 215 (450-14 is reserved and points there). New Laws: none (0). The city's ordinances page could not be read in the browser, so recent ordinances there were not checked",
+    "effective_date": null,
+    "source_urls": [
+      "https://duboispa.gov/city-departments/code-enforcement/",
+      "https://ecode360.com/DU2313",
+      "https://ecode360.com/DU2313/laws",
+      "https://ecode360.com/14009952",
+      "https://ecode360.com/print/DU2313?guid=14009952",
+      "https://ecode360.com/print/DU2313?guid=14010269",
+      "https://ecode360.com/print/DU2313?guid=14010409",
+      "https://ecode360.com/print/DU2313?guid=14010480",
+      "https://ecode360.com/print/DU2313?guid=14010511",
+      "https://ecode360.com/print/DU2313?guid=14010535",
+      "https://ecode360.com/print/DU2313?guid=14010572",
+      "https://ecode360.com/print/DU2313?guid=14010590",
+      "https://ecode360.com/print/DU2313?guid=14010663",
+      "https://ecode360.com/print/DU2313?guid=14010687",
+      "https://ecode360.com/print/DU2313?guid=14010728",
+      "https://ecode360.com/print/DU2313?guid=14010864",
+      "https://ecode360.com/print/DU2313?guid=14010872",
+      "https://ecode360.com/print/DU2313?guid=34442657",
+      "https://ecode360.com/DU2313/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20caretaker%20OR%20%22temporary%20dwelling%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/DU2313/search?query=%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22household%20employee%22%20OR%20%22rental%20cottage%22%20OR%20%22supplemental%20dwelling%22%20OR%20lodgers%20OR%20%22care%20of%20relative%22%20OR%20conversion%20OR%20%22rear%20dwelling%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Clearfield",
+    "municipality_type": "city",
+    "geoid": "4203320136",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/14009952",
+    "code_current_through": "2025-07-09",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 07-09-2025.' New Laws: 'There are currently no known new laws for this Code.'",
+    "checks": [
+      "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, household employee, rental cottage, supplemental dwelling, care of relative, temporary dwelling, living quarters, guesthouse, caretaker, lodgers, conversion, rear dwelling) find only the conversion apartment (450-13), the boardinghouse and land development definitions and other uses",
+      "Rear dwellings: 'In a residence district, no building to the rear of and on the same lot with a main building shall be erected or used for residence purposes' (450-9B(1)). So a separate cottage or a unit in a garage behind the house is barred in R-1, R-2 and R-3",
+      "R-1 permits by right only the one-family detached dwelling, parks and accessory uses, 'for no other' purposes (450-39). R-3 permits single-family detached dwellings and accessory buildings, with 40,000 sq ft of lot per dwelling unit (450-60, 450-62). Neither lists a two-family dwelling or a conversion",
+      "Conversion apartments: 'Any building existing at the effective date of this chapter in a district permitting conversion apartments may be converted to a dwelling for more than one family', with lot area per family as the district requires, no outside change except for building or housing codes, fire escapes at the rear or side and parking under Article IV (450-13). R-2 and O-1 list the conversion apartment (450-52F, 450-94E). C-N permits 'All uses permitted in any residential district and subject to all controls and restrictions set forth therein' (450-73A)",
+      "Two-family detached dwellings are permitted by right in R-2 on a lot of at least 7,500 sq ft and 50 ft wide with public water and sewer (450-52C, 450-54B), and in O-1 (450-94B). The code defines a two-family detached dwelling once as two families 'with one family living over the other' and once as a duplex or a twin (450-107)",
+      "Multiple dwellings (three or more families) need a conditional use (450-3H). R-1 lists multiple-family dwellings of three or more units as a conditional use with 5,000 sq ft of lot per family (450-40B). Conditional uses go to City Council (450-20B(3), 450-23), though 450-40 says the Zoning Hearing Board authorizes them",
+      "Accessory buildings may not stand in a front or side yard unless authorized by a conditional use, and may stand in the rear yard no closer than 15 ft to the rear lot line (450-9B(2), 450-46). For all residential uses an accessory building may be at most 14 ft tall (450-6C)",
+      "R-1 rear yard: 'No dwelling shall be constructed less than 20% of the lot depth from the rear property line' (450-46). The tool cannot measure lot depth, so no rear yard figure is shown for R-1",
+      "Coverage counts buildings only: 'That portion or percentage of the plot or lot area covered by the building area', and building area includes all accessory buildings (450-107 'Coverage', 'Area, building')",
+      "Parking: two spaces for each family unit for one-family and two-family dwellings, and 'Fractional numbers of parking spaces shall be increased to the next whole number' (450-17A(1), (2)(a)). A garage, carport or driveway may count (450-17A(2)(b))",
+      "No permanent structure within 15 ft of any stream or existing natural drainage channel (450-11A)",
+      "Floodplain (Chapter 215): any construction needs a permit. In the floodway no new construction without a DEP permit and no encroachment that raises flood heights. In AE, A1-30 and A zones no new construction within 50 ft landward of the top of bank without a DEP permit (215-19). New residential construction or a substantial improvement must have its lowest floor at or above the base flood elevation plus 1 1/2 ft (215-23A, 215-35). An unelevated accessory structure may not be designed or used for human habitation, may have no sanitary facilities and may be at most 100 sq ft (215-23D). New construction means structures begun on or after December 1, 1978, with later improvements (215-35)",
+      "Floodplain variances are decided by the City under the 215-17 procedure, not the Zoning Hearing Board. None may raise the base flood elevation in the floodway, or more than one foot in a special floodplain area (215-32, 215-33)",
+      "Lots of record: a lot held in single and separate ownership at the chapter's effective date that is below the district minimum may be built on when authorized as a conditional use (450-8A). Reduced yards for slope, depth or width are also a conditional use (450-8B)",
+      "Minimum habitable floor area: 600 sq ft for a single-family detached dwelling, 400 sq ft per apartment, 300 sq ft for an apartment for one person (450-7)",
+      "A house in C is permitted only when accessory and incidental to a commercial use (450-67A). C-H permits only multifamily residential use of three or more units (450-81A(1)). I and IP-1 permit no dwellings (450-87, 450-102). O-1 lists no one-family detached dwelling (450-94). A house in those districts is a nonconforming use (450-5)",
+      "Variances: Zoning Hearing Board on the findings of MPC 910.2 (450-21). No bar on a use variance was found. No general rule lets a use not listed be approved, apart from uses of the same general character in C (450-67N, conditional use) and C-H (450-81A(7))"
+    ],
+    "notes": "Zoning office: City of DuBois Code Enforcement and Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: 450-1 to 450-19 (Articles I, II, IV and part of V), Article V, Articles VIII to XVI, Article XVII, Article XVIII and Chapter 215, and two code searches. Not read: Article VI (Amendments), Article VII (Enforcement), Article XIX (commercial extraction of natural gas), Article XX (wireless communications facilities), Chapter 390 (subdivision and land development) apart from search results, and the zoning map. The effective date of Chapter 450 is read as its adoption date, 6-26-1989."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 450",
+      "url": "https://ecode360.com/DU2313/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20caretaker%20OR%20%22temporary%20dwelling%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, household employee, rental cottage, supplemental dwelling, care of relative, temporary dwelling, living quarters, guesthouse, caretaker, lodgers, conversion and rear dwelling, and read every district's use list. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "450-39, 450-52, 450-60, 450-9B(1)",
+      "url": "https://ecode360.com/print/DU2313?guid=14010409",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot, and a dwelling behind the main building is barred in the residence districts (450-9B(1)). R-2, O-1 and C-N permit two-family dwellings and conversion apartments by right"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "450-21",
+      "url": "https://ecode360.com/print/DU2313?guid=14010269",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and R-1 lists its uses 'for no other' purpose, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). R-2, O-1 and C-N permit two-family dwellings and the conversion of an older building by right (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "450-21",
+      "url": "https://ecode360.com/print/DU2313?guid=14010269",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of MPC 910.2. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Conversion apartment (R-2, O-1, C-N)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "O-1",
+            "C-N"
+          ],
+          "conditions": "A building that existed on the chapter's effective date converted into a dwelling for more than one family. Lot area per family as the district requires. No outside sign of the change except as building or housing codes require. Fire escapes at the rear or side, not on a wall facing a street. Two parking spaces for each family unit. Each apartment at least 400 sq ft of habitable floor area, or 300 sq ft for one person",
+          "min_lot_sqft": 7500,
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building to convert",
+              "section": "450-13"
+            },
+            {
+              "test": "house_built_before",
+              "value_date": "1989-06-26",
+              "condition": "The building existed on the chapter's effective date. The chapter was adopted 6-26-1989, which is used here",
+              "section": "450-13, Chapter 450 history note"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "disputed_path": {
+            "path": "conditional_use",
+            "section": "450-3H, 450-107 'Apartment, conversion'",
+            "note": "A conversion apartment is defined as 'A multifamily dwelling constructed by converting an existing dwelling', and 450-3H says that where multiple housing is permitted, construction of or conversion to it needs a conditional use. Multiple dwellings are defined as three or more families, so a conversion into two units is read here as by right"
+          },
+          "section": "450-13, 450-52F, 450-94E, 450-73A, 450-54B, 450-7B, 450-17A",
+          "url": "https://ecode360.com/print/DU2313?guid=14009952",
+          "confidence": "secondary",
+          "note": "R-2 gives no lot area per family for two units. The lot figure read here is the R-2 two-family lot of 7,500 sq ft with public water and sewer (450-54B). C-N takes the residential district rules. O-1 sends its other area rules to the IP-1 district, which has no residential figures"
+        },
+        {
+          "name": "Two-family detached dwelling (R-2, O-1, C-N)",
+          "path": "by_right",
+          "districts": [
+            "R-2",
+            "O-1",
+            "C-N"
+          ],
+          "conditions": "A building for two families. In R-2 a lot of at least 7,500 sq ft and 50 ft wide at the building line with public water and sanitary sewers, front yard 30 ft, side yards 5 ft each and 12 ft together, rear yard 20 ft, buildings at most 30% of the lot, height 35 ft or three stories. Two parking spaces for each family unit",
+          "min_lot_sqft": 7500,
+          "requires": [
+            {
+              "test": null,
+              "condition": "One building for two families. A second building behind the house for a dwelling is barred in a residence district (450-9B(1))",
+              "section": "450-107 'Dwelling, two-family detached', 450-9B(1)"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "450-52C, 450-54B, 450-55, 450-56A, 450-94B, 450-73A, 450-17A(2)(a)",
+          "url": "https://ecode360.com/print/DU2313?guid=14010480",
+          "confidence": "secondary",
+          "note": "450-107 defines a two-family detached dwelling once as 'with one family living over the other' and once as a duplex or a twin"
+        }
+      ],
+      "section": "450-13, 450-52, 450-94, 450-73",
+      "url": "https://ecode360.com/print/DU2313?guid=14010480",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 450",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No historic district or historic path in the zoning chapter"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "C",
+        "C-N",
+        "C-H",
+        "I",
+        "O-1",
+        "IP-1"
+      ],
+      "section": "450-39, 450-52, 450-60, 450-67, 450-73, 450-81, 450-87, 450-94, 450-102",
+      "url": "https://ecode360.com/print/DU2313?guid=14010409",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit. R-2 and O-1 list two-family dwellings and conversion apartments, and C-N takes every use of the residential districts. The C-C district named in 450-1 has no article of its own"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'In a residence district, no building to the rear of and on the same lot with a main building shall be erected or used for residence purposes'.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "building_types": null,
+          "section": "450-9B(1)",
+          "url": "https://ecode360.com/print/DU2313?guid=14009952",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In all districts, no permanent structure within 15 ft of any stream or existing natural drainage channel.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "450-11A",
+          "url": "https://ecode360.com/print/DU2313?guid=14009952",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain any construction needs a permit. New residential construction or a substantial improvement (work of 50% or more of market value) must have its lowest floor at or above the base flood elevation plus 1 1/2 ft. An accessory structure that is not elevated may not be designed or used for human habitation, may have no sanitary facilities and may be at most 100 sq ft. In the floodway no new construction without a DEP permit and no encroachment that raises flood heights. A variance may not raise the base flood elevation.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "215-8, 215-19A, 215-23A, 215-23D, 215-31, 215-33A, 215-35",
+          "url": "https://ecode360.com/print/DU2313?guid=34442657",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 215"
+        },
+        {
+          "kind": "other",
+          "condition": "In AE, A1-30 and A zones 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless a permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "215-19B(2)(a), 215-19C(2)(a)",
+          "url": "https://ecode360.com/print/DU2313?guid=34442657",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 215"
+        }
+      ],
+      "section": "450-9B(1), 450-11A, 215-19, 215-23",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "450-39, 450-52, 450-60",
+      "url": "https://ecode360.com/print/DU2313?guid=14010409",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is only possible through the listed paths"
+    }
+  },
+  "size": {
+    "min_sqft": {
+      "value": null,
+      "section": "450-7",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. An apartment needs at least 400 sq ft of habitable floor area, or 300 sq ft for one person (450-7B)"
+    }
+  },
+  "envelope": {
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "450-9B(2)",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory buildings shall not be constructed within any front or side yard, unless authorized by a conditional use. Accessory buildings may be constructed in rear-yard areas but not closer than 15 feet to the rear lot line'"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 14,
+      "section": "450-6C",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'For all residential uses, accessory buildings shall not exceed 14 feet in height'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "450-17A(1), (2)(a)",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. One-family and two-family dwellings: 'two parking spaces for each family unit'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "450-17A(2)(a)",
+      "url": "https://ecode360.com/print/DU2313?guid=14009952",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Two spaces for each of two family units"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "450-41",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 7,500 square feet shall be required'. Lot width at least 60 ft at the street line (450-44)"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "450-43",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'at least 35 feet from the front line or 60 feet from the center line of the street or road, etc., whichever is greater'"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "450-45",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'two side yards, one on each side of the property, neither of which shall be less than five feet'"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "450-42, 450-107 'Coverage'",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The area of a building shall not exceed an area equal to 30% of the lot area'. Building area includes accessory buildings"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-47B",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "450-46, 450-9B(2)",
+        "url": "https://ecode360.com/print/DU2313?guid=14010409",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'no accessory or supplementary structure shall be constructed within 15 feet of the rear property line'. The house's own rear yard is 20% of the lot depth"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "450-54A",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a one-family detached dwelling, 50 ft wide at the building line, 'when served by both public water and sanitary sewers'. The code gives no figure without them"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-56A(1)",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "450-56A(2)",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'two in number, neither shall be less than five feet and the total for both side yards shall be not less than 12 feet'"
+      },
+      "setback_sides_total_ft": {
+        "value": 12,
+        "section": "450-56A(2)",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "450-56A(3)",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "450-55",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'All buildings, including accessory buildings, shall not cover more than 30% of the area of the lot'"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-53",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'three stories and/or 35 feet'"
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "450-53",
+        "url": "https://ecode360.com/print/DU2313?guid=14010480",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "450-9B(2)",
+        "url": "https://ecode360.com/print/DU2313?guid=14009952",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Accessory buildings in the rear yard 'not closer than 15 feet to the rear lot line'"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 40000,
+        "section": "450-62",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The lot area and lot area per dwelling unit shall be not less than 40,000 square feet'. Lot width at least 150 ft (450-63)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 40000,
+        "section": "450-62",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "450-64A",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "450-64B",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Side yards' (two) width: 30 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "450-64C",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "450-65A, 450-107 'Coverage'",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The coverage shall be no more than 20%', and at least 50% of the lot covered with vegetative material"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-61A",
+        "url": "https://ecode360.com/print/DU2313?guid=14010511",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "450-9B(2)",
+        "url": "https://ecode360.com/print/DU2313?guid=14009952",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Accessory buildings in the rear yard 'not closer than 15 feet to the rear lot line'"
+      }
+    }
+  }
+}

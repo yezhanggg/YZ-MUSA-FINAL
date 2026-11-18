@@ -1,0 +1,660 @@
+{
+  "provenance": {
+    "jurisdiction": "West Brandywine township",
+    "instrument": "West Brandywine Township Zoning Ordinance (Chapter 200 Zoning, adopted 9-6-1984, as amended) and Chapter 89 Flood Damage Prevention (Ord. No. 2017-03 of 9-21-2017), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 WE1756, Township of West Brandywine, linked from the township's Codes and Zoning page. The flood ordinance's deed notice names 'West Brandywine Township, Chester County, Pennsylvania' (89-802I), so this is West Brandywine township, Chester County. District use lists and area and bulk rules are text. The zoning attachments are diagrams (building line, dwelling classifications, parking lot, yard calculations, visibility). New Laws: none (0)",
+    "effective_date": "2001-10-04",
+    "source_urls": [
+      "https://www.wbrandywine.org/185/Codes-Zoning",
+      "https://ecode360.com/WE1756",
+      "https://ecode360.com/WE1756/laws",
+      "https://ecode360.com/7990904",
+      "https://ecode360.com/print/WE1756?guid=7990945",
+      "https://ecode360.com/print/WE1756?guid=7991045",
+      "https://ecode360.com/print/WE1756?guid=7991118",
+      "https://ecode360.com/print/WE1756?guid=7991202",
+      "https://ecode360.com/print/WE1756?guid=7991846",
+      "https://ecode360.com/print/WE1756?guid=7992411",
+      "https://ecode360.com/32738308",
+      "https://ecode360.com/print/WE1756?guid=32753721",
+      "https://ecode360.com/print/WE1756?guid=32753887",
+      "https://ecode360.com/print/WE1756?guid=32753926",
+      "https://ecode360.com/WE1756/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20%22guest%20house%22%20OR%20caretaker%20OR%20%22temporary%20dwelling%22%20OR%20%22tenant%20house%22%20OR%20%22elder%20cottage%22%20OR%20%22extended%20family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1756/search?query=%22country%20property%22%20OR%20%22country%20properties%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1756/search?query=%22housekeeping%22%20OR%20%22LOT%20COVERAGE%22%20OR%20%22BUILDING%20COVERAGE%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WE1756/search?query=%22flood%20plain%22%20OR%20floodplain%20OR%20%22flood%20hazard%22&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202982576",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/7990904",
+    "code_current_through": "2026-05-21",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 05-21-2026.' New Laws: 'There are currently no known new laws for this Code.' 200-14 and 200-19 carry Ord. No. 2026-03 of 3-5-2026",
+    "checks": [
+      "The ADU is a use of a 'country property': 'Accessory dwelling unit not exceeding 1,500 square feet in gross floor area, whether in the same structure as the principal residence or in a traditional outbuilding (such as a barn, stable, carriage house, or spring house)'. It needs conditional use approval by the Board of Supervisors on a lot of at least 10 acres that is restricted from subdivision into parcels under 10 acres, and the approval ends if such a subdivision is later approved (200-15B(3)). Country properties are a conditional use in R-1, R-2, R-3, R-4, RM and LI (200-14C(8), 200-19C(7), 200-23C(6), 200-28C(4), 200-37, 200-44)",
+      "One ADU on a lot of 10 acres or more in gross tract area, and one more for each additional 25 acres. The unit is designed to harmonize with vernacular rural buildings in the township's historic landscape, and it may not be subdivided off unless every resulting lot complies with the chapter (200-15B(3))",
+      "The definition says country properties are 'Properties exceeding 10 acres in gross' area (1-20 'Country properties'), while 200-15B(3) allows the unit on a lot 'greater than or equal to 10 acres'. A lot of exactly 10 acres is not settled",
+      "Residential conversion of a detached building or farm building is a special exception in R-2, R-3 and R-4, with a lot of 3 acres in R-2 and 2 acres in R-3 and R-4 (200-19B(1), 200-20B(1)(b), 200-23B(1), 200-24B(1)(b), 200-28B(1), 200-29B(1)(a)). Its standards (200-84) speak of converting a single-family dwelling into more units: each unit at least 800 sq ft, the district yard and building area rules applied to each unit, no outside change other than safety measures, separate entrances, kitchens and baths, County Health Department sewer and water, and the Zoning Hearing Board sets the number of families",
+      "Tenant farm dwellings accessory to the principal farmhouse meet the residential area and bulk rules of 200-16. Agriculture needs a tract of at least four acres, and on a farm all dwellings and buildings stand at least 50 ft from all property lines (200-15A(1), (3), (5)). Housing for farm workers on a qualifying farm is a special exception (200-14B(2), 200-86)",
+      "Two-family and multiple-family dwellings are possible only in the open space design option, a conditional use (200-14C(2), 200-19C(2), 200-23C(2), 200-28C(1), Article XXII, not read). Two-family dwellings were removed from R-3 in 1994 (200-23A editor's note)",
+      "Accessory buildings stand in side or rear yards (front yards only on corner lots, and not in the required front yard). Under 400 sq ft: 10 ft from side and rear lines. Over 400 sq ft of footprint: 20 ft. At most 25 ft tall, and at most 20% of any required yard. Accessory uses 'shall not be conducted as an independent principal use' (200-83A, C)",
+      "Front yards are 80 ft on Routes 322 and 82 and 60 ft on collector roads (Cedar Knoll, Reeceville, Hibernia, Springton, Swinehart, Little Washington Lyndell), in place of the district front yard (200-80)",
+      "Coverage: each district sets a building coverage and a total lot coverage, both measured on net lot area (1-20 'Building coverage', 'Lot coverage', definitions read only in search results). Lots on on-site sewage need a contiguous net area of 33,000 sq ft clear of street rights-of-way, the Flood Plain District, wetlands and the Severe Slope District (200-16C and the like)",
+      "Floodplain (Chapter 89): 'All structures with the exception of those specifically allowed in § 200-61A and B' are a prohibited activity in any identified floodplain area, and 'No variance shall be granted for prohibited activities' (89-601A(2), 89-802B). 200-61 is reserved, and 89-802I speaks of a variance 'to permit the erection of a structure in any identified floodplain area'. In AE zones without a floodway no new construction within 50 ft landward of the top of bank without a DEP permit (89-402B(2)(b))",
+      "Steep Slope District (Article XIII, read only in search results): one dwelling unit per two acres, building coverage 5% and impervious cover 10% or 6% (200-74)",
+      "Variances: Zoning Hearing Board on unnecessary hardship (200-145). No bar on a use variance was found"
+    ],
+    "notes": "Zoning office: West Brandywine Township Codes and Zoning. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: Articles IV to VII, Article XIV (200-77 to 200-96), 200-145 and 200-146, and 89-402, 89-601 and 89-802 of Chapter 89, with code searches. Not read: Article II and the Chapter 1 definitions (search snippets only), Articles VIII to XIII, XV to XVIII, XX to XXV (RM and LI read only in search results), the rest of Chapter 89, and 200-97 onward. The ADU text dates from Ord. No. 01-02 of 10-4-2001, used as the effective date."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory dwelling unit not exceeding 1,500 square feet in gross floor area' on a country property"
+    },
+    "status": {
+      "value": "conditional_use",
+      "section": "200-15B(3), 200-14C(8)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Where approved by the Board of Supervisors as a conditional use, the following uses shall be permitted on country properties'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "R-4",
+        "RM",
+        "LI"
+      ],
+      "section": "200-14C(8), 200-19C(7), 200-23C(6), 200-28C(4), 200-37, 200-44",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Country properties are a conditional use in these districts. RM (200-37) and LI (200-44) were read only in search results"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "Chapter 200",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "L-2 and MSI do not list country properties in the search results. Their use lists were not read"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "200-15B, 200-14C(8)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Board of Supervisors after a hearing under Article XXI"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "200-145",
+      "url": "https://ecode360.com/print/WE1756?guid=7992411",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on unnecessary hardship. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion of a detached building or farm building (R-2, R-3, R-4)",
+          "path": "special_exception",
+          "districts": [
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "Each unit at least 800 sq ft. The district's yard and building area rules apply to each unit and are not reduced. No outside change other than safety measures, with fire escapes at the rear. The Zoning Hearing Board sets the number of families. Separate entrances, kitchens and baths, firewalls between units, and County Health Department sewer and water. Parking for each unit",
+          "min_lot_by_district": {
+            "R-2": 130680,
+            "R-3": 87120,
+            "R-4": 87120
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing building to convert",
+              "section": "200-84"
+            }
+          ],
+          "covers_forms": [
+            "internal",
+            "garage_conversion"
+          ],
+          "builds": [
+            "internal",
+            "garage_conversion"
+          ],
+          "section": "200-84, 200-19B(1), 200-20B(1)(b), 200-23B(1), 200-24B(1)(b), 200-28B(1), 200-29B(1)(a)",
+          "url": "https://ecode360.com/print/WE1756?guid=7991846",
+          "confidence": "secondary",
+          "note": "The district lists name a 'detached building or farm building', while 200-84 speaks of converting a single-family dwelling, so both are read as covered. The lot figures are listed as 'Minimum lot area per use/unit', which may be read per unit"
+        },
+        {
+          "name": "Tenant farm dwelling on a farm (R-1, R-2, R-3, R-4)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "On a tract of at least four acres in agricultural use, a tenant farm dwelling accessory to the principal farmhouse meets the residential area and bulk rules of 200-16. All dwellings and buildings stand at least 50 ft from all property lines, and lot coverage on a farm is at most 15%",
+          "min_lot_sqft": 174240,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The tract is in agricultural use under 200-15",
+              "section": "200-15A(1)"
+            },
+            {
+              "test": null,
+              "condition": "The dwelling houses a tenant farmer and is accessory to the principal farmhouse",
+              "section": "200-15A(5)"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "200-15A(1), (3), (5), (6), 200-14A(1), 200-19A(3), 200-23A(4), 200-28A(3)",
+          "url": "https://ecode360.com/print/WE1756?guid=7990945",
+          "confidence": "secondary",
+          "note": "The code names tenant farm dwellings only in the agricultural use rules. It does not say how many, or whether each needs its own 1.5 acres under 200-16"
+        }
+      ],
+      "section": "200-84, 200-15A",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": null,
+      "section": "Article XXIII",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "Article XXIII (additional use opportunities for historic resources) was not read"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "lot_size",
+          "condition": "The unit is allowed on 'any legal building lot greater than or equal to 10 acres in gross tract area'. The definition of country properties reads 'Properties exceeding 10 acres in gross' area, so a lot of exactly 10 acres is not settled.",
+          "effect": "bars",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "test": "lot_sqft_at_least",
+          "value": 435600,
+          "section": "200-15B(3), 1-20 'Country properties'",
+          "url": "https://ecode360.com/print/WE1756?guid=7990945",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The country property is restricted from subdivision into parcels under 10 acres in gross area, and the owner agrees in the application that the approval ends if such a subdivision is later approved. The unit may not be subdivided off unless every resulting lot complies with the chapter.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-15B, 200-15B(3)",
+          "url": "https://ecode360.com/print/WE1756?guid=7990945",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "The unit is designed to harmonize with vernacular rural buildings in the township's historic landscape.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "200-15B(3)",
+          "url": "https://ecode360.com/print/WE1756?guid=7990945",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In any identified floodplain area 'All structures' other than those allowed in 200-61A and B are a prohibited activity, and 'No variance shall be granted for prohibited activities'.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "89-601A(2), 89-802B",
+          "url": "https://ecode360.com/print/WE1756?guid=32753887",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 89",
+          "no_variance": {
+            "section": "89-802B",
+            "url": "https://ecode360.com/print/WE1756?guid=32753926",
+            "quote": "No variance shall be granted for prohibited activities (Article VI)"
+          },
+          "disputed_by": {
+            "section": "89-802I, 200-59 to 200-67",
+            "url": "https://ecode360.com/print/WE1756?guid=32753926",
+            "note": "89-802I speaks of a variance 'to permit the erection of a structure in any identified floodplain area', and the 200-61A and B named in 89-601A(2) are reserved"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE zone without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "89-402B(2)(b)",
+          "url": "https://ecode360.com/print/WE1756?guid=32753721",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 89"
+        }
+      ],
+      "section": "200-15B, 89-601, 89-402",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion"
+      ],
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "'whether in the same structure as the principal residence or in a traditional outbuilding (such as a barn, stable, carriage house, or spring house)'. A new outbuilding is read as allowed when it is a traditional outbuilding"
+    },
+    "types_not_addressed": {
+      "value": [
+        "over_garage"
+      ],
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A unit over a modern garage is not named. A carriage house or barn is"
+    },
+    "labels": {
+      "value": {
+        "detached_new": "Unit in a new traditional outbuilding (barn, stable, carriage house or spring house)",
+        "garage_conversion": "Unit in an existing barn, stable, carriage house or spring house",
+        "internal": "Unit in the same structure as the house",
+        "attached": "Unit in an addition to the house"
+      },
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1500,
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'not exceeding 1,500 square feet in gross floor area'"
+    }
+  },
+  "use": {
+    "max_adus": {
+      "value": 1,
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "One on a lot of 10 acres or more"
+    },
+    "max_adus_by_lot_size": {
+      "value": [
+        {
+          "lot_sqft_at_least": 435600,
+          "max_adus": 1
+        },
+        {
+          "lot_sqft_at_least": 1524600,
+          "max_adus": 2
+        },
+        {
+          "lot_sqft_at_least": 2613600,
+          "max_adus": 3
+        }
+      ],
+      "section": "200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7990945",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'a maximum of one additional accessory dwelling unit for each additional 25 acres in gross tract area': one at 10 acres, two at 35 acres, three at 60 acres, and so on"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 10,
+      "section": "200-83A(1)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "10 ft for an accessory building under 400 sq ft. 20 ft over 400 sq ft of footprint (200-83A(2))"
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "200-83A(1)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "10 ft under 400 sq ft. 20 ft over 400 sq ft of footprint (200-83A(2))"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "200-83A(1), (2)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Accessory buildings 'shall be erected in side or rear yards and are permitted in front yard areas on corner lots only', and not in the required front yard"
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 25,
+      "section": "200-83A(1), (2)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'a maximum building height of 25 feet measured from the average grade to the highest point of the structure'"
+    },
+    "accessory_cap_binds_adu": {
+      "value": null,
+      "section": "200-83A, 200-15B(3)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "200-15B(3) sets no height for the unit, and a barn may be exempt from height limits when set back its height (200-82). Whether the 25 ft accessory height binds a unit in a barn is not settled"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building with a footprint greater than 400 sq ft",
+          "over_sqft": 400,
+          "setback_side_ft": 20,
+          "setback_rear_ft": 20,
+          "max_height_ft": 25,
+          "section": "200-83A(2)",
+          "url": "https://ecode360.com/print/WE1756?guid=7991846",
+          "note": "Accessory structures may occupy at most 20% of any required yard"
+        }
+      ],
+      "section": "200-83A(2)",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "200-101",
+      "url": "https://ecode360.com/print/WE1756?guid=7991846",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "200-101 (off-street parking) was not read"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 65340,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "1.5 acres for nonagricultural uses by right, 175 ft wide at the building line. A country property needs 10 acres for the ADU"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "80 ft on Routes 322 and 82 and 60 ft on collector roads (200-80)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard (each): 20 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured on net lot area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage (total)', read as all buildings and paving, measured on net lot area. The definition was read only in a search result"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-16A",
+        "url": "https://ecode360.com/print/WE1756?guid=7990945",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "1.0 acre, 150 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "80 ft on Routes 322 and 82 and 60 ft on collector roads (200-80)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard (each): 20 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured on net lot area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage (total)', read as all buildings and paving, measured on net lot area. The definition was read only in a search result"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-20A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991045",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "1.0 acre with or without public sewer and water, 150 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "80 ft on Routes 322 and 82 and 60 ft on collector roads (200-80)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard (each): 20 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured on net lot area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage (total)', read as all buildings and paving, measured on net lot area. The definition was read only in a search result"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-24A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991118",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "1.0 acre with or without public sewer and water, 150 ft wide at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "80 ft on Routes 322 and 82 and 60 ft on collector roads (200-80)"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard (each): 20 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured on net lot area"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Maximum lot coverage (total)', read as all buildings and paving, measured on net lot area. The definition was read only in a search result"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "200-29A",
+        "url": "https://ecode360.com/print/WE1756?guid=7991202",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}

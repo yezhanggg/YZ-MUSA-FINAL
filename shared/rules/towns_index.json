@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 206,
-      "population": 6460951,
-      "share_of_pa": 0.4969
+      "towns_beyond_the_two_cities": 209,
+      "population": 6483225,
+      "share_of_pa": 0.4986
     }
   ],
   "towns": [
@@ -5042,6 +5042,78 @@
         "named as a town with an ADU ordinance (Code 470-52 accessory garage apartment or rental cottage by special exception (V))"
       ],
       "status_note": "Verified. Points to ask the zoning officer, not settled by the code text: the site area the garage apartment needs (3,000 sq ft per unit on the two-family figure, 10,000 sq ft as two house lots, or 21,780 sq ft per unit by the base density), whether the parcel has a development right left, the minimum habitable floor area of the garage apartment, and the AG two-family conversion where Table 470-12 marks two-family dwellings Not Permitted. Not read: Articles IV, VII and IX, 470-20, 470-21, Chapters 335 and 355 (rental licensing) and the zoning map."
+    },
+    {
+      "geoid": "4203320136",
+      "geoid_aliases": [],
+      "name": "DuBois city",
+      "county": "Clearfield",
+      "type": "city",
+      "population": 7510,
+      "population_with_aliases": 7510,
+      "housing_units": 3823,
+      "pop_rank": 374,
+      "file": "pa_clearfield_dubois",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/14009952",
+      "plain_fetch": null,
+      "code_current_through": "2025-07-09",
+      "code_note": null,
+      "why": [
+        "added as batch 52 by population. Code Chapter 450 has no ADU text (450-9B(1) bars a rear dwelling in residence districts, 450-13 conversion apartment and two-family by right in R-2, O-1, C-N)"
+      ],
+      "status_note": "Not addressed. Open points: the conversion apartment path (450-13 by right against the 450-3H conditional use for conversion to multiple housing), the lot area per family for two units in R-2, and whether R-1 conditional uses go to City Council (450-23) or the Zoning Hearing Board (450-40). The city's ordinances page could not be read, so ordinances after 7-9-2025 were not checked"
+    },
+    {
+      "geoid": "4202922000",
+      "geoid_aliases": [],
+      "name": "East Vincent township",
+      "county": "Chester",
+      "type": "township",
+      "population": 7433,
+      "population_with_aliases": 7433,
+      "housing_units": 2610,
+      "pop_rank": 381,
+      "file": "pa_chester_east_vincent",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/37017570",
+      "plain_fetch": null,
+      "code_current_through": "2023-02-01",
+      "code_note": null,
+      "why": [
+        "added as batch 52 by population. Code Chapter 27 has no ADU text beyond a farm caretaker unit (27-1609.1A(5)), 27-1608 residential conversion by special exception in RC, LR, MR, HR"
+      ],
+      "status_note": "Not addressed. Open points: the online code is current only through 2-1-2023 (a zoning amendment proposed in November 2025 was not traced), the Chapter 8 floodplain bar on all structures with no variance against 8-502.1 and 8-801.1E, and the farm caretaker unit (27-1609.1A(5)) has no form, size or path of its own"
+    },
+    {
+      "geoid": "4202982576",
+      "geoid_aliases": [],
+      "name": "West Brandywine township",
+      "county": "Chester",
+      "type": "township",
+      "population": 7331,
+      "population_with_aliases": 7331,
+      "housing_units": 3061,
+      "pop_rank": 385,
+      "file": "pa_chester_west_brandywine",
+      "batch": 35,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/7990904",
+      "plain_fetch": null,
+      "code_current_through": "2026-05-21",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 200-15B(3) accessory dwelling unit on a country property of 10 acres or more by conditional use (R-1, R-2, R-3, R-4, RM, LI))"
+      ],
+      "status_note": "Conditional use on a country property of 10 acres or more. Open points: a lot of exactly 10 acres (1-20 'exceeding 10 acres' against 200-15B(3) 'greater than or equal to'), whether the 25 ft accessory height binds a unit in a barn, and the Chapter 89 floodplain bar that points to a reserved 200-61. RM, LI, the definitions and Article XXIII were read only in search results"
     }
   ]
 }

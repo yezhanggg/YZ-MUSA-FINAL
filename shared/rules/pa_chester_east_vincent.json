@@ -1,0 +1,957 @@
+{
+  "provenance": {
+    "jurisdiction": "East Vincent township",
+    "instrument": "East Vincent Township Zoning Ordinance of 2002 (Chapter 27 Zoning, Ord. No. 162 of 6-12-2002, as amended) and Chapter 8 Flood Hazard District (Ord. No. 232 of 7-5-2017), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 EA4240, Township of East Vincent, linked from the township's Code Book page. The zoning chapter names the Chester County Health Department and the Recorder of Deeds of Chester County (27-503.2C, 27-1608.1G), so this is East Vincent township, Chester County. District use lists and area and bulk rules are text in Parts 4 to 13 and 25 to 28. The attachments are a list of zoning map amendments, the zoning map and a Residential Density Table that the search shows is for TDR and planned densities. New Laws: none (0)",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.eastvincent.org/index.asp?SEC=79ABFB58-2310-411D-BE39-5D530AF6A08F&Type=B_BASIC",
+      "https://ecode360.com/EA4240",
+      "https://ecode360.com/EA4240/laws",
+      "https://ecode360.com/37017570",
+      "https://ecode360.com/print/EA4240?guid=37017598",
+      "https://ecode360.com/print/EA4240?guid=37017916",
+      "https://ecode360.com/print/EA4240?guid=37018002",
+      "https://ecode360.com/print/EA4240?guid=37018091",
+      "https://ecode360.com/print/EA4240?guid=37018185",
+      "https://ecode360.com/print/EA4240?guid=37018287",
+      "https://ecode360.com/print/EA4240?guid=37018549",
+      "https://ecode360.com/print/EA4240?guid=37018599",
+      "https://ecode360.com/print/EA4240?guid=37018804",
+      "https://ecode360.com/print/EA4240?guid=37018967",
+      "https://ecode360.com/print/EA4240?guid=37019097",
+      "https://ecode360.com/print/EA4240?guid=37019337",
+      "https://ecode360.com/print/EA4240?guid=37019546",
+      "https://ecode360.com/print/EA4240?guid=37019633",
+      "https://ecode360.com/print/EA4240?guid=37011706",
+      "https://ecode360.com/print/EA4240?guid=37011983",
+      "https://ecode360.com/print/EA4240?guid=37012013",
+      "https://ecode360.com/print/EA4240?guid=37012026",
+      "https://ecode360.com/EA4240/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20%22guest%20house%22%20OR%20caretaker%20OR%20%22temporary%20dwelling%22%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EA4240/search?query=%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22household%20employee%22%20OR%20%22rental%20cottage%22%20OR%20%22supplemental%20dwelling%22%20OR%20lodgers%20OR%20%22care%20of%20relative%22%20OR%20conversion%20OR%20%22apartment%22%20OR%20boarders&scope=all&sortOrder=relevance",
+      "https://ecode360.com/EA4240/search?query=%22single%20family%20detached%22%20OR%20%22single-family%20detached%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
+      "https://www.eastvincent.org/?sec=015e8651-3650-4039-87ba-9b4c74591337&de=9a8fa310-7715-4b81-88c7-fed34dfd73c4"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Chester",
+    "municipality_type": "township",
+    "geoid": "4202922000",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/37017570",
+    "code_current_through": "2023-02-01",
+    "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 02-01-2023.' New Laws: 'There are currently no known new laws for this Code.'",
+    "code_caution": "The online code is current only through 2-1-2023. No adopted zoning amendment since then was found: a 2025 data center amendment was shelved, and a Chester County review letter (ZA-11-25-18728) shows a further zoning amendment was proposed in November 2025 whose outcome was not found. Check with the township that the zoning text has not changed.",
+    "checks": [
+      "The code has no general accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, household employee, rental cottage, supplemental dwelling, care of relative, temporary dwelling, living quarters, guesthouse, caretaker, lodgers, boarders, apartment, conversion) find only the farm caretaker unit (27-1609.1A(5)), living quarters for watchmen and caretakers of commercial and industrial uses (27-1602.1D, 27-1302), the residential conversion (27-1608) and other uses",
+      "Each district lets a lot be used 'for only one of the following purposes as a use by right' (27-402.1, 27-502.1, 27-702.1, 27-802.1). Accessory uses are 'Customary residential and agricultural accessory uses' (27-602.4A and the like). A dwelling unit is for 'occupancy by only one family' with no enclosed space in common with another unit except halls and porches (27-202)",
+      "Residential conversion: the Zoning Hearing Board may authorize as a special exception 'the conversion of single family dwellings existing at the effective date of this chapter into a dwelling for not more than three families, where clearly necessary to permit reasonable use of the structure'. The house keeps the look of a single-family house with one front entrance, other entrances at the side or rear, the district area and bulk rules apply as for a single-family house, each unit at least 600 sq ft, and 25% of the lot kept as common open space (27-1608). It is a special exception in RC, LR, MR and HR, not in AP (27-502.2C, 27-602.2E, 27-702.2E, 27-802.2E)",
+      "Two-family dwellings are by right in HR (15,000 sq ft per unit with public sewer and water, one acre with on-lot sewer or water, 27-802.1B, 27-803.1A, C) and in NC (one acre, 27-1002.1H, 27-1003). In NC more than one principal use on a lot, including any use permitted by right, is a conditional use (27-1002.3B). The open space design option allows two-family and multi-family dwellings in planned developments (conditional use in LR and MR, by right in HR, Part 9, not read)",
+      "Farms: 'There shall be only one single-family dwelling unit per farm, except for one additional accessory dwelling unit for a caretaker' (27-1609.1A(5)). A farm needs at least 20 acres in AP and RC and 10 acres in other districts (27-1609.1A(1))",
+      "Historic Resource Overlay (properties with Class I or Class II historic resources): by conditional use the Board of Supervisors may allow any use permitted in the district as a second principal use and the residential conversion of a historic building other than a house into one or more dwelling units, mainly inside the historic structures, where 'necessary to the preservation of the historic resource(s)' (27-1403.3B(2)(a), (k), D(2)). Area and bulk rules may be modified by the same conditional use (27-1403.3C)",
+      "Accessory buildings stand to the side or rear of the house, set back from side and rear lot lines a distance equal to their height and at least 10 ft, and at least 10 ft from any other building unless attached (27-1602.2A, C, D)",
+      "Coverage: building coverage counts all buildings plus roof overhangs and decks, and impervious cover counts buildings, paving and decks, measured on net tract area (27-202 'Building coverage', 'Impervious cover'). Lots on an on-site sewage system need a contiguous net area of 30,000 sq ft clear of street rights-of-way, the Flood Hazard District and wetlands (27-603.1B and the like)",
+      "Parking: 'For all residential dwelling units there shall be provided two off street parking spaces per unit' (27-1709.1C). Parking for fewer than five vehicles may be in the front yard on a residential lot (27-1709.1A(2))",
+      "Minimum habitable floor area: 1,000 sq ft for a principal dwelling unit, 600 sq ft for apartments (27-1714)",
+      "Flood Hazard District (Chapter 8 through 27-1501): any construction needs a permit. 'Within any Flood Hazard District any new construction or substantial improvements shall be prohibited' except listed open uses, and 'All structures' are a prohibited activity for which 'No variance shall be granted' (8-502.1, 8-601.1A(2), 8-802.1B). Yet 8-502.1 and 8-801.1E speak of a variance for new construction outside the floodway. No expansion of an existing building may take more space in the district than it did, basements and fill are prohibited, and no structure may stand within 50 ft of the district boundary (8-702.1B, 8-502.1C(1), 8-503.1A(1), 8-501.4C)",
+      "Steep slopes: 'The erection of buildings ... on land sloping greater than 25% shall be prohibited' (27-1502.2). Building on 15% to 25% slopes needs a Township Engineer review of grading, site and architectural plans (27-1502.6, .7). Woodland and riparian buffer rules of the subdivision ordinance (22-429.2, 22-429.3, not read) apply to building permits, with relief by special exception (27-1503, 27-1504)",
+      "French Creek Scenic Corridor Overlay: base district uses and area and bulk rules, plus siting below ridge lines, a landscape plan and a 20% limit on tree clearing for any new principal use or expansion needing a building permit (27-1402)",
+      "Nonconforming lots: a lot of record may be built on if it meets the district standards other than lot size or the contiguous net area, and a setback or coverage shortfall needs a variance (27-1805.1). HR lots in cluster subdivisions recorded before 6-12-2002 keep the 1984 yards: front 30 ft, rear 25 ft, side 10 ft, impervious cover 35% (27-1807)",
+      "Variances: Zoning Hearing Board on the findings of MPC 910.2 (27-2003.1C, 27-2010). No bar on a use variance was found, and no general rule for uses not provided for was found"
+    ],
+    "notes": "Zoning office: East Vincent Township Code Enforcement Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: 27-202 (A to 'Non-conforming structure'), Parts 4 to 8, Part 10, 27-1102.1, Part 14, Part 15, Part 16, 27-1707 to 27-1709.1C and 27-1713 to 27-1715, Part 18, Part 20, Chapter 8 Parts 1 to 8 (to 8-503.1K), and three code searches. Not read: Parts 1, 3, 9, 12, 13, 19, 21 to 28 apart from search results, 27-1102.2 onward, the rest of 27-202, 27-1709.1D and the rest of Part 17, 8-503.1L to Part 9 of Chapter 8, and SALDO 22-429.2, 22-429.3. The chapter's effective date is read as its adoption date, 6-12-2002."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/EA4240/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20%22guest%20house%22%20OR%20caretaker%20OR%20%22temporary%20dwelling%22%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, household employee, rental cottage, supplemental dwelling, care of relative, temporary dwelling, living quarters, guesthouse, caretaker, lodgers, boarders, apartment and conversion. The only 'accessory dwelling unit' is one for a farm caretaker (27-1609.1A(5)), listed apart"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "27-402, 27-502, 27-602, 27-702, 27-802, 27-1002",
+      "url": "https://ecode360.com/print/EA4240?guid=37018091",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot apart from a caretaker unit on a farm. A house that existed in 2002 may be converted to up to three units by special exception in RC, LR, MR and HR, and HR and NC permit two-family dwellings by right"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "27-2010",
+      "url": "https://ecode360.com/print/EA4240?guid=37019633",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and each district permits 'only one' of its listed uses on a lot, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A house that existed in 2002 may be converted by special exception in RC, LR, MR and HR, and HR and NC permit two-family dwellings (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2003.1C, 27-2010",
+      "url": "https://ecode360.com/print/EA4240?guid=37019633",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of MPC 910.2. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Residential conversion (RC, LR, MR, HR)",
+          "path": "special_exception",
+          "districts": [
+            "RC",
+            "LR",
+            "MR",
+            "HR"
+          ],
+          "conditions": "A single-family dwelling that existed on the chapter's effective date converted into a dwelling for not more than three families, where clearly necessary to permit reasonable use of the structure. It keeps the look of a single-family detached dwelling with one front entrance, other entrances at the side or rear, and outside changes kept to a minimum. The district's area and bulk rules apply as for a single-family dwelling. Each unit at least 600 sq ft with its own kitchen and bath, with County Health Department and DEP approvals. 25% of the lot kept as common open space for the residents. Two parking spaces per unit",
+          "min_lot_by_district": {
+            "RC": 108900,
+            "LR": 65340,
+            "MR": 25000,
+            "HR": 20000
+          },
+          "requires": [
+            {
+              "test": "house_exists",
+              "condition": "An existing single-family dwelling to convert",
+              "section": "27-1608.1"
+            },
+            {
+              "test": "house_built_before",
+              "value_date": "2002-06-12",
+              "condition": "The house existed on the chapter's effective date. The chapter was adopted 6-12-2002, which is used here",
+              "section": "27-1608.1, Ord. 162"
+            },
+            {
+              "test": null,
+              "condition": "The Zoning Hearing Board finds the conversion clearly necessary to permit reasonable use of the structure",
+              "section": "27-1608.1"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "27-1608, 27-502.2C, 27-602.2E, 27-702.2E, 27-802.2E, 27-1709.1C",
+          "url": "https://ecode360.com/print/EA4240?guid=37019097",
+          "confidence": "secondary",
+          "note": "The lot figures are the single-family minimums with public sewer and water where the district sets them apart (MR 25,000 sq ft, HR 20,000 sq ft). With on-lot sewer or water both need one acre. RC 2.5 acres, LR 1.5 acres"
+        },
+        {
+          "name": "Two-family dwelling (HR)",
+          "path": "by_right",
+          "districts": [
+            "HR"
+          ],
+          "conditions": "A twin or duplex. With public sewer and water: 15,000 sq ft per unit, 75 ft wide, front 40 ft, sides 20 ft each, rear 35 ft, building coverage 20%, impervious cover 30%, height 35 ft. With on-lot sewer or water: one acre, 150 ft wide, front 50 ft, sides 25 ft, rear 40 ft, building coverage 10%, impervious cover 20%. Two parking spaces per unit",
+          "min_lot_sqft": 30000,
+          "min_lot_by_utility": [
+            {
+              "when": "Public sewer and public water",
+              "public_sewer": true,
+              "public_water": true,
+              "min_lot_sqft": 30000
+            },
+            {
+              "when": "Public water, on-lot sewer",
+              "public_sewer": false,
+              "public_water": true,
+              "min_lot_sqft": 43560
+            },
+            {
+              "when": "Public sewer, on-lot water",
+              "public_sewer": true,
+              "public_water": false,
+              "min_lot_sqft": 43560
+            },
+            {
+              "when": "Neither public sewer nor public water",
+              "public_sewer": false,
+              "public_water": false,
+              "min_lot_sqft": 43560
+            }
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building for two units. Turning the existing house into more units is the residential conversion instead",
+              "section": "27-202 'Dwelling or dwelling unit' B, 27-1608"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "27-802.1B, 27-803.1A, C, 27-1709.1C",
+          "url": "https://ecode360.com/print/EA4240?guid=37018287",
+          "confidence": "secondary",
+          "note": "Read as 15,000 sq ft for each of two units. The figures are written for 'each new lot'"
+        },
+        {
+          "name": "Two-family dwelling (NC)",
+          "path": "by_right",
+          "districts": [
+            "NC"
+          ],
+          "conditions": "Single-family detached and two-family dwellings are by right in NC. One acre, 100 ft wide at the street, front 35 ft, side 15 ft, rear 30 ft, impervious cover 40%, height 35 ft. Two parking spaces per unit",
+          "min_lot_sqft": 43560,
+          "requires": [
+            {
+              "test": null,
+              "condition": "A building for two units",
+              "section": "27-202 'Dwelling or dwelling unit' B"
+            }
+          ],
+          "builds": [
+            "attached"
+          ],
+          "section": "27-1002.1H, 27-1003.1, 27-1709.1C",
+          "url": "https://ecode360.com/print/EA4240?guid=37018549",
+          "confidence": "secondary",
+          "note": "27-1003.1F reads 'Maximum rear yard: 30 feet', read here as the rear yard"
+        },
+        {
+          "name": "More than one principal use on a lot (NC)",
+          "path": "conditional_use",
+          "districts": [
+            "NC"
+          ],
+          "conditions": "More than one principal use on a single lot or tract, including any use permitted by right in NC, such as a second single-family detached or two-family dwelling. Board of Supervisors after a hearing under Part 19. The NC area and bulk rules apply",
+          "min_lot_sqft": 43560,
+          "builds": [
+            "detached_new"
+          ],
+          "section": "27-1002.3B, 27-1003.1",
+          "url": "https://ecode360.com/print/EA4240?guid=37018549",
+          "confidence": "secondary",
+          "note": "The code does not give a lot area for each principal use. One acre is the NC lot minimum for all uses"
+        },
+        {
+          "name": "Additional use of a historic resource (Historic Resource Overlay)",
+          "path": "conditional_use",
+          "districts": null,
+          "overlays": [
+            "Historic Resource Overlay District"
+          ],
+          "conditions": "On a property with a Class I or Class II historic resource, the Board of Supervisors may allow any use permitted in the district as a second principal use, and the conversion of a historic building other than a house into one or more dwelling units, meeting 27-1608C, D, F, G and H (entrances at side or rear, few outside changes, units of at least 600 sq ft, own kitchen and bath, parking). New uses are to be mainly inside the historic structures. The approval must be necessary to preserve the historic resource, and Historical Commission and Planning Commission review comes first. Area and bulk rules may be modified to the least degree needed",
+          "requires": [
+            {
+              "test": null,
+              "condition": "The property holds a Class I or Class II historic resource on the township's Historic Resources Inventory",
+              "section": "27-1403.2, 27-1403.3A"
+            },
+            {
+              "test": null,
+              "condition": "The Board finds the approval necessary to preserve the historic resource",
+              "section": "27-1403.3D(2)"
+            }
+          ],
+          "covers_forms": [
+            "garage_conversion"
+          ],
+          "builds": [
+            "garage_conversion"
+          ],
+          "section": "27-1403.3B(2)(a), (k), C, D",
+          "url": "https://ecode360.com/print/EA4240?guid=37018804",
+          "confidence": "secondary"
+        },
+        {
+          "name": "Accessory dwelling unit for a farm caretaker",
+          "path": "by_right",
+          "districts": [
+            "AP",
+            "RC",
+            "LR",
+            "MR",
+            "HR"
+          ],
+          "adu_listing": true,
+          "no_standards": true,
+          "conditions": "On a farm, one single-family dwelling unit plus one additional accessory dwelling unit for a caretaker. A farm needs at least 20 acres in AP and RC and 10 acres elsewhere. Farm buildings 75 ft from the front line, 50 ft from the sides and 100 ft from the rear, and no dwelling closer to an abutting property than the district setbacks",
+          "min_lot_sqft": 435600,
+          "min_lot_by_district": {
+            "AP": 871200,
+            "RC": 871200,
+            "LR": 435600,
+            "MR": 435600,
+            "HR": 435600
+          },
+          "requires": [
+            {
+              "test": null,
+              "condition": "The property is in agricultural use under 27-1609",
+              "section": "27-1609.1A(1)"
+            },
+            {
+              "test": null,
+              "condition": "The unit is for a caretaker of the farm",
+              "section": "27-1609.1A(5)"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "27-1609.1A(1), (2), (3), (5), 27-402.1A, 27-502.1A, 27-602.1B, 27-702.1B, 27-802.1E",
+          "url": "https://ecode360.com/print/EA4240?guid=37019097",
+          "confidence": "secondary",
+          "note": "The code names no form, size or standards for the caretaker unit beyond the farm rules. It is read as part of agriculture, which is by right in these districts. Existing lots under 20 acres in AP and RC may also be used for agriculture (27-403.1A, 27-503.1A)"
+        }
+      ],
+      "section": "27-1608, 27-802, 27-1002, 27-1403, 27-1609",
+      "url": "https://ecode360.com/print/EA4240?guid=37019097",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "27-1403.3",
+      "url": "https://ecode360.com/print/EA4240?guid=37018804",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The Historic Resource Overlay allows added uses by conditional use (listed as another path). No historic path for an ADU"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "AP",
+        "RC",
+        "LR",
+        "MR",
+        "HR",
+        "NC",
+        "GC"
+      ],
+      "section": "27-402, 27-502, 27-602, 27-702, 27-802, 27-1002, 27-1102",
+      "url": "https://ecode360.com/print/EA4240?guid=37018091",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit apart from the farm caretaker unit of 27-1609. RC, LR, MR and HR list residential conversion by special exception, HR and NC list two-family dwellings, GC lists only units above a first-floor commercial use"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "In the Flood Hazard District 'All structures' other than those listed in 8-501E are a prohibited activity, and 'No variance shall be granted' for it. New construction and substantial improvements are prohibited there, and no existing building may be enlarged to take more space in the district than it did.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Flood Hazard District"
+          ],
+          "section": "8-502.1, 8-601.1A(2), 8-702.1B, 8-802.1B, 27-1501",
+          "url": "https://ecode360.com/print/EA4240?guid=37011983",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8",
+          "no_variance": {
+            "section": "8-601.1, 8-802.1B",
+            "url": "https://ecode360.com/print/EA4240?guid=37011983",
+            "quote": "the following activities shall be prohibited within any Flood Hazard District. No variance shall be granted."
+          },
+          "disputed_by": {
+            "section": "8-502.1, 8-801.1E",
+            "url": "https://ecode360.com/print/EA4240?guid=37011706",
+            "note": "8-502.1 sets rules 'If a variance is obtained for new construction or substantial improvements in the Flood Hazard District', and 8-801.1E speaks of a variance 'to permit the erection of a structure in the Flood Hazard District (outside of the floodway where they are prohibited)'"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the Flood Hazard District any construction needs a permit. Basements and fill are prohibited, work of 50% or more of a building's market value is a substantial improvement, and an existing nonconforming building may be continued, repaired and floodproofed.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Flood Hazard District"
+          ],
+          "section": "8-302, 8-502.1C(1), 8-503.1A(1), 8-701, 8-702.1C",
+          "url": "https://ecode360.com/print/EA4240?guid=37011706",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE zone without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Flood Hazard District"
+          ],
+          "section": "8-402.1B(2)(b)",
+          "url": "https://ecode360.com/print/EA4240?guid=37011706",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "On a lot next to the Flood Hazard District, up to half of the required side and rear yards may lie in it, 'provided that no structure shall be placed closer than 50 feet from any Flood Hazard District boundary'.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "8-501.4C",
+          "url": "https://ecode360.com/print/EA4240?guid=37011706",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "'The erection of buildings ... on land sloping greater than 25% shall be prohibited'. On slopes of 15% to 25% grading and clearing are kept to a minimum and the Township Engineer reviews grading, site and architectural plans before a permit.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "section": "27-1502.2, 27-1502.6, 27-1502.7",
+          "url": "https://ecode360.com/print/EA4240?guid=37018967",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "French Creek Scenic Corridor Overlay: a new principal use or an expansion needing a building permit is sited below the nearest ridge line where feasible, needs a landscape plan, and may clear at most 20% of any tree mass, treeline or hedgerow without replacement planting.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "French Creek Scenic Corridor Overlay District"
+          ],
+          "section": "27-1402.3A, B",
+          "url": "https://ecode360.com/print/EA4240?guid=37018804",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "An HR lot in a lot averaging or cluster subdivision recorded before 6-12-2002 under the 1984 ordinance, with its house and streets built or under way by that date, may build and add under the 1984 figures: front yard 30 ft, rear yard 25 ft, side yard 10 ft, impervious cover 35%.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "HR"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "supersedes_district_figures": true,
+          "section": "27-1807",
+          "url": "https://ecode360.com/print/EA4240?guid=37019546",
+          "confidence": "verified"
+        }
+      ],
+      "section": "8-502, 8-601, 8-402, 8-501, 27-1402, 27-1502, 27-1807",
+      "url": "https://ecode360.com/print/EA4240?guid=37011706",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "27-402, 27-502, 27-602, 27-702, 27-802",
+      "url": "https://ecode360.com/print/EA4240?guid=37018091",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use on a house lot. A second unit is only possible through the listed paths"
+    }
+  },
+  "envelope": {
+    "setback_side_ft": {
+      "value": 10,
+      "section": "27-1602.2C",
+      "url": "https://ecode360.com/print/EA4240?guid=37019097",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "An accessory building is set back from side and rear lot lines 'a minimum distance equal to the height of the accessory buildings and structures, provided such setback shall not be less than 10 feet'"
+    },
+    "setback_rear_ft": {
+      "value": 10,
+      "section": "27-1602.2C",
+      "url": "https://ecode360.com/print/EA4240?guid=37019097",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "At least the accessory building's height, never less than 10 ft"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "27-1602.2A",
+      "url": "https://ecode360.com/print/EA4240?guid=37019097",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory uses, buildings and structures shall be located to the side or rear of the principal building'"
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "27-1602.2D",
+      "url": "https://ecode360.com/print/EA4240?guid=37019097",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'The minimum distance between any accessory building and any other accessory building or any principal building shall be 10 feet, unless such buildings are abutting and/or attached'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "27-1709.1C",
+      "url": "https://ecode360.com/print/EA4240?guid=37019337",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. 'For all residential dwelling units there shall be provided two off street parking spaces per unit'"
+    },
+    "total_on_site": {
+      "value": 4,
+      "section": "27-1709.1C",
+      "url": "https://ecode360.com/print/EA4240?guid=37019337",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Two spaces for each of two units"
+    }
+  },
+  "districts": {
+    "AP": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-403.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre for a single-family detached dwelling, 150 ft wide. A farm needs 20 acres (27-403.1A)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-403.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum setback at building setback line'"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-403.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard: 25 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-403.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "27-403.2B, 27-202 'Impervious cover'",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings, paving and decks, measured on net tract area"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-403.2B, 27-202 'Building coverage'",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings plus roof overhangs and decks"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-403.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37017916",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "RC": {
+      "min_lot_sqft": {
+        "value": 108900,
+        "section": "27-503.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "2.5 acres for a single-family detached dwelling, 150 ft wide. A single-family house may be built on an existing lot under five acres (27-503.2A(2))"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-503.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum setback at building setback line'"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-503.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard: 25 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-503.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "27-503.2B, 27-202 'Impervious cover'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings, paving and decks, measured on net tract area"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-503.2B, 27-202 'Building coverage'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings plus roof overhangs and decks"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-503.2B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018002",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "LR": {
+      "min_lot_sqft": {
+        "value": 65340,
+        "section": "27-603.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "1.5 acres for uses by right, 150 ft wide. Other uses five acres (27-603.2)"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-603.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum setback at building setback line'"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-603.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard: 25 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "27-603.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "27-603.1A, 27-202 'Impervious cover'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings, paving and decks, measured on net tract area"
+      },
+      "max_building_coverage": {
+        "value": 0.1,
+        "section": "27-603.1A, 27-202 'Building coverage'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings plus roof overhangs and decks"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-603.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018091",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "MR": {
+      "min_lot_sqft": {
+        "value": 25000,
+        "section": "27-703.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "With public sewer and water, 100 ft wide. One acre with on-lot sewer or water (27-703.1B)"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-703.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum setback at building setback line'"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-703.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard: 20 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-703.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-703.1A, 27-202 'Impervious cover'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings, paving and decks, measured on net tract area"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-703.1A, 27-202 'Building coverage'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings plus roof overhangs and decks"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-703.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-703.1B",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          },
+          {
+            "when": "Public sewer, on-lot water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-703.1B",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          },
+          {
+            "when": "Public water, on-lot sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-703.1B",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          }
+        ],
+        "section": "27-703.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018185",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Figures with on-lot sewer or water. The row holds the figures with public sewer and water"
+      }
+    },
+    "HR": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-803.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a single-family detached dwelling with public sewer and water, 100 ft wide. One acre with on-lot sewer or water (27-803.1C)"
+      },
+      "setback_front_ft": {
+        "value": 40,
+        "section": "27-803.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum setback at building setback line'"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "27-803.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum side yard: 20 feet each'"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-803.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.25,
+        "section": "27-803.1B, 27-202 'Impervious cover'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings, paving and decks, measured on net tract area"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "27-803.1B, 27-202 'Building coverage'",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings plus roof overhangs and decks"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-803.1B",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-803.1C",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          },
+          {
+            "when": "Public sewer, on-lot water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-803.1C",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          },
+          {
+            "when": "Public water, on-lot sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 50,
+            "setback_side_ft": 25,
+            "setback_rear_ft": 40,
+            "max_building_coverage": 0.1,
+            "max_impervious_coverage": 0.2,
+            "section": "27-803.1C",
+            "note": "One acre. 'Where individual on-lot sewer or water service is provided'"
+          }
+        ],
+        "section": "27-803.1C",
+        "url": "https://ecode360.com/print/EA4240?guid=37018287",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Figures with on-lot sewer or water. The row holds the figures with public sewer and water"
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-1003.1A",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre for all uses, 100 ft wide at the street"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-1003.1D",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "27-1003.1E",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-1003.1F",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "The code reads 'Maximum rear yard: 30 feet', read here as the rear yard"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "27-1003.1C",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1003.1G",
+        "url": "https://ecode360.com/print/EA4240?guid=37018549",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}

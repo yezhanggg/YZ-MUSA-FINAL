@@ -1818,6 +1818,18 @@ EXTRAS = {
     "4202921104": "batch 51 by population. Code Chapter 27 has no ADU text (27-1703.1E farm employee dwelling, 27-1723 residential conversion by conditional use in RA and VC)",
     "4207961048": "batch 51 by population. Code Chapter 480 has no ADU text (accessory living quarters are guest rooms with no kitchen, 480-144A conversion to two units by special exception in R-3)",
     "4213345152": "Code 470-52 accessory garage apartment or rental cottage by special exception (V)",
+    # Batch 52 (2026-11-18): the next towns by population without a rule file. New Cumberland (Cumberland) was skipped
+    # (zoning ordinance No. 727 only as a PDF on the borough website, no codified zoning found as web pages), Southampton
+    # (Cumberland) (Ord. No. 2026-2, a Chapter 350 zoning amendment, and a zoning map not yet codified), Lawrence
+    # (Clearfield) (the township says Ord. No. 2026-01 amending zoning is not yet on eCode360), Polk (Monroe) (Schedule of
+    # Uses and Schedule of Development Standards only in PDF attachments), West Cocalico (Lancaster) (Ord. No. 162 of
+    # 7-21-2026, a Chapter 27 zoning amendment, not yet codified), Delaware (Pike) (zoning ordinance No. 110 and its
+    # amendments only as documents on the township website, no codified code), East Buffalo (Union) (code chapters only as
+    # PDFs on the township website), Frankstown (Blair) (zoning ordinance No. 100207-A only as a PDF on the township
+    # website) and Summit (Erie) (zoning ordinance No. 2021-02 only as a PDF on the township website).
+    "4203320136": "batch 52 by population. Code Chapter 450 has no ADU text (450-9B(1) bars a rear dwelling in residence districts, 450-13 conversion apartment and two-family by right in R-2, O-1, C-N)",
+    "4202922000": "batch 52 by population. Code Chapter 27 has no ADU text beyond a farm caretaker unit (27-1609.1A(5)), 27-1608 residential conversion by special exception in RC, LR, MR, HR",
+    "4202982576": "Code 200-15B(3) accessory dwelling unit on a country property of 10 acres or more by conditional use (R-1, R-2, R-3, R-4, RM, LI)",
 }
 
 if __name__ == "__main__":
