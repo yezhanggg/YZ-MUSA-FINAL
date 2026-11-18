@@ -4,7 +4,7 @@
     "instrument": "Ambridge Zoning Ordinance of 1955 (Chapter 310 Zoning, Ord. No. 648 of 9-12-1955, as amended), with Chapter 140 Floodplain Management (Ord. No. 1271 of 6-9-2015), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 AM2259, Borough of Ambridge, PA. 310-36 places the Ambridge Historic District in the 'Borough of Ambridge, Beaver County, Pennsylvania', so this is Ambridge borough, Beaver County. The district use lists and figures are web text. Attachment 7 (Final District Profiles) and the zoning maps are PDF attachments that were not opened. New Laws lists only Ord. Nos. 1313 to 1319 of 2019 and 2020 (pensions and taxes), no zoning",
+    "status_detail": "eCode360 AM2259, Borough of Ambridge, PA. 310-36 places the Ambridge Historic District in the 'Borough of Ambridge, Beaver County, Pennsylvania', so this is Ambridge borough, Beaver County. The district use lists and figures are web text. Attachment 7 (Final District Profiles) and the zoning maps are PDF attachments that were not opened. New Laws lists only Ord. Nos. 1313 and 1316 to 1319 of 2019 and 2020 (pensions and taxes), no zoning. The borough site posts a 2016 zoning map and no newer zoning ordinance",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/AM2259",
@@ -30,20 +30,23 @@
     "code_url": "https://ecode360.com/15265289",
     "code_current_through": "2018-11-13",
     "code_current_through_note": "eCode360 shows 'Includes legislation adopted through 11-13-2018.' New Laws lists ordinances to 12-8-2020, none on zoning",
-    "code_caution": "The online code includes legislation only through 11-13-2018, and its New Laws list stops in December 2020. No later zoning amendment was found, but one may exist. Ask the borough office whether Chapter 310 has changed since 2018",
+    "code_caution": "The online code includes legislation only through 11-13-2018, and its New Laws list stops in December 2020. Ord. Nos. 1314 and 1315 of 2019 are not listed, and council minutes from 2023 to 2026 that mention the zoning ordinance could not be read. No later zoning amendment was found, but one may exist. Ask the borough office whether Chapter 310 has changed since 2018",
     "checks": [
-      "The code has no accessory dwelling unit use. The definitions (310-3) have no ADU term. The nearest uses are the conversion apartment, 'A multifamily dwelling constructed by converting an existing dwelling into apartments for more than one family without substantially altering the exterior of the building', and the apartment house, a building for 'two or more families living independently of one another'. A multifamily dwelling is for 'more than two families'. A family is 'Any number of individuals living together as a single housekeeping unit', and a dwelling unit has 'permanent facilities for sleeping, cooking and eating and sanitary facilities' (310-3)",
-      "R Residential permits its uses 'and for no other': single-family detached and semidetached dwellings, single-family attached dwellings, 'multiple-family dwelling; apartments, conversion apartments or garden apartment', and accessory uses (310-11). C Commercial permits every R use under the Article IV rules (310-22A). The CBD and Midtown subdistricts permit apartments on the second story and above, and Gateway South permits apartments and, by conditional use, the conversion of nonresidential buildings to residential use (310-135C, 310-136C, 310-137C). C2 and P mark every residential use 'X', not permitted (310-90, 310-107). M, S and H list no dwelling (310-8, 310-30, 310-39)",
-      "R figures: 3,000 sq ft per family for a single-family detached or semidetached dwelling (310-12). Apartment houses, conversion apartments and other multiple dwellings 'including three dwelling units or more' need a 3,000 sq ft lot and 1,000 sq ft per dwelling unit (310-14). Height 3 1/2 stories and 40 ft for a single-family dwelling 'or a building accessory thereto' (310-13), building area at most 50% (310-16), front yard 20 ft (310-17), side yards 3 ft each for a detached house, 6 ft for a semidetached house, 12 ft each for other buildings (310-18), rear yard 15 ft (310-19). Where most of a block was built with shallower front yards, the front yard may match them (310-67)",
+      "The code has no accessory dwelling unit use. The definitions (310-3) have no ADU term. The nearest uses are the conversion apartment, 'A multifamily dwelling constructed by converting an existing dwelling into apartments for more than one family without substantially altering the exterior of the building', and the apartment house, a building for 'two or more families living independently of one another'. A multifamily dwelling is for 'more than two families'. A dwelling is 'A building designed or used exclusively as the living quarters for one or more families'. A family is 'Any number of individuals living together as a single housekeeping unit', and a dwelling unit has 'permanent facilities for sleeping, cooking and eating and sanitary facilities' (310-3)",
+      "R Residential permits its uses 'and for no other': single-family detached and semidetached dwellings, single-family attached dwellings, multiple-family dwellings, apartments, conversion apartments and garden apartments, and accessory uses (310-11). C Commercial permits every R use under the Article IV rules (310-22A). The CBD and Midtown subdistricts permit apartments on the second story and above, and Gateway South permits apartments and, by conditional use, the conversion of nonresidential buildings to residential use (310-135C, 310-136C, 310-137C). C2 and P mark every residential use 'X', not permitted (310-90, 310-107). M, S and H list no dwelling (310-8, 310-30, 310-39)",
+      "R figures: 3,000 sq ft per family for a single-family detached or semidetached dwelling (310-12). Apartment houses, conversion apartments and other multiple dwellings 'including three dwelling units or more' need a 3,000 sq ft lot and 1,000 sq ft per dwelling unit (310-14). Height 3 1/2 stories and 40 ft for a single-family dwelling 'or a building accessory thereto' (310-13), and eight stories and 85 ft for other buildings (310-15). Building area at most 50% (310-16), front yard 20 ft, or 10% of the lot width on the long side of a corner lot (310-17). Side yards 3 ft each for a detached house, 6 ft for a semidetached house, none set for an attached house, and 12 ft each for other buildings, 4 ft more for each 10 ft above 40 ft of height (310-18). Rear yard 15 ft (310-19). Where most of a block was built with shallower front yards, the front yard may match them (310-67). Building area leaves out eaves up to 18 in., bay windows up to 5 ft, one-story open porches up to 10 ft, steps and balconies, and a lot's area is measured to the street line only (310-3)",
       "Accessory buildings: one may stand in one side yard or in the rear yard if entirely separated from the main building and at least 10 ft farther back from the front street line than the rear of the main building, and along an alley at least 20 ft from the alley's center line (310-69, 310-70). In the CBD, Midtown and Gateway South subdistricts accessory structures are at most 24 ft tall, cover at most 15% of the lot, and stand at least 2 ft from property lines and 5 ft from any adjoining building (310-135D, 310-136D, 310-137D)",
-      "Access: 'No dwelling shall hereafter be erected or altered unless there is direct access to it through an open space on the same lot', at least 12 ft wide, to a public street or a private street at least 50 ft wide, and 'an alley shall not constitute a public street or highway' (310-77)",
+      "Access: 'No dwelling shall hereafter be erected or altered unless there is direct access to it through an open space on the same lot', at least 12 ft wide, to a public street or a private street at least 50 ft wide, and 'an alley shall not constitute a public street or highway' (310-77). It reaches a house altered for a second unit too",
       "Parking: 'one vehicle per family unit' for dwellings, apartments and conversion apartments in R (310-20A). One off-street space per dwelling unit in the CBD, Midtown and Gateway South, which may be off site with proof of a lease (310-135E(3), 310-136E(3), 310-137E(3))",
-      "Floodplain, Chapter 140 Part 1 (Ord. No. 1271 of 6-9-2015, FIRM of 8-17-2015): 'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited', unless the Borough grants a variance under Article VIIA (140-24). No new construction or development within 50 ft landward of the top of bank of any watercourse (140-23D). Fill and manufactured homes are prohibited in the floodplain (140-25A, 140-28A). An accessory structure 'shall not be designed or used for human habitation', is at most 200 sq ft and has no sanitary facilities (140-24E). No expansion of an existing structure may raise the base flood elevation (140-28.4A), and work of 50% or more of market value is a substantial improvement in full compliance (140-28.4B). Residential lowest floors go at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft (140-24A, 140-28.8). New construction is a structure begun on or after August 17, 2015, with its later improvements, and work begun after February 1, 1980 follows the ordinance in force at its permit (140-28.8). The floodplain also takes in community-identified flood hazard areas (140-18A(2)). Variances are granted by the Borough of Ambridge, and none that would raise the base flood elevation (140-28.5, 140-28.6A). Appeals of the Floodplain Administrator go to the Zoning Hearing Board (140-17)",
-      "Lots: a lot held in single and separate ownership when the chapter took effect and smaller than the district minimum may be built on by special exception (310-74). Open spaces may be reduced by special exception for unusual depth or width (310-75). Nonconforming uses continue and may be extended only by special exception (310-80)",
+      "Floodplain, Chapter 140 Part 1 (Ord. No. 1271 of 6-9-2015, FIRM of 8-17-2015): 'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited', unless a variance is obtained under Article VIIA (140-24). No new construction or development within 50 ft landward of the top of bank of any watercourse (140-23D), and development includes the renovation, expansion or alteration of buildings (140-28.8). Fill and manufactured homes are prohibited in the floodplain unless a variance is granted (140-25A, 140-28A), and manufactured homes are never allowed within 50 ft of the top of bank (140-28C). An accessory structure 'shall not be designed or used for human habitation', is at most 200 sq ft and has no sanitary facilities (140-24E). Enclosed space below the lowest floor, used only for parking, access or storage, must let floodwaters in and out (140-24C). No expansion of an existing structure may raise the base flood elevation (140-28.4A), and work of 50% or more of market value is a substantial improvement in full compliance (140-28.4B). Residential lowest floors go at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft (140-24A, 140-28.8). New construction is a structure begun on or after August 17, 2015, with its later improvements, and work begun after February 1, 1980 follows the ordinance in force at its permit (140-28.8). The floodplain also takes in community-identified flood hazard areas (140-18A(2)). Any construction or development in the floodplain needs a permit from the Floodplain Administrator (140-3A). No variance may raise the base flood elevation or be granted for development that may endanger human life, and all structures must resist the one-percent-annual-chance flood (140-28.6A, B, H). The Zoning Hearing Board hears floodplain variances: 140-28.6 has the Borough consider them by the procedures of 140-17, which sends appeals to the Board, and the Board passes on floodplain variances (140-40A). A dispute over a Part 1 floodplain boundary goes to Borough Council (140-21), and one over a Part 2 district boundary to the Zoning Hearing Board (140-36)",
+      "Lots: a lot held in single and separate ownership when the chapter took effect and smaller than the district minimum may be built on by special exception (310-74). Open spaces may be reduced by special exception for unusual depth or width (310-75). Nonconforming uses continue and may be extended or enlarged only by special exception. A nonconforming building may be extended on its lot by special exception, and a nonconforming use may change only to one of the same or a more restricted class (310-80, A, B). A house in the CBD or Midtown subdistrict, which list no single-family dwelling, may be such a use",
       "Variances: the Zoning Hearing Board authorizes variances where 'a literal enforcement of the provisions of this chapter will result in unnecessary hardship' (310-56C). No bar on a use variance was found. A special exception or variance lapses without a building permit within six months (310-60)",
-      "Historic District (Old Economy Area): no permit for any erection, alteration or demolition until Borough Council issues a certificate of appropriateness after review by the Board of Historical Architectural Review (310-44 to 310-50). Article VII lists only limited commercial uses within existing structures and sheds as accessory uses (310-39, 310-41)"
+      "Historic District (Old Economy Area): no permit for any erection, alteration or demolition until Borough Council issues a certificate of appropriateness after review by the Board of Historical Architectural Review (310-44 to 310-50). Article VII lists only limited commercial uses within existing structures and sheds as accessory uses (310-39, 310-41)",
+      "Floodplain districts, Chapter 140 Part 2 (Ord. No. 982 of 4-21-1980): the Floodway (FW) and Flood-Fringe (FF) districts overlay the zoning districts, and the more restrictive rule applies (140-33). In the Floodway District no development is permitted unless its effect on flood heights is fully offset, the permitted uses need no structures, fill or storage, and only structures accessory to them, not mobile homes, may be a special exception (140-38). No special exception or variance may be granted in the floodway for anything that raises flood levels (140-40A(1)), and an existing structure there may not be expanded or enlarged unless the effect is fully offset (140-41A). No building site for a dwelling is permitted in a floodway (140-54B). In the Flood-Fringe District the underlying district's rules apply with floodproofing (140-39)",
+      "Uses not listed: 'A use not expressly listed as permitted in any zoning district may be permitted as a conditional use in the M Manufacturing and Industrial District' by Borough Council, if it meets the other M requirements (310-31). C permits 'A use of the same general character as any of the above permitted uses' (310-22N), and C2 and P allow uses similar to their listed uses when Borough Council authorizes them (310-94, 310-111), where every residential use is marked not permitted. Neither is read as a path for a second unit",
+      "Other housing listings: Midtown and Gateway South permit live/work units, a single studio, loft or one-bedroom unit whose resident also runs its commercial part, as the occupant's primary dwelling (310-3, 310-136C, 310-137C). In C2 and P a temporary structure may be used as a dwelling only with a temporary zoning permit, for at most one year (310-93, 310-110). A planned unit development in C is a conditional use on at least 20 acres, at up to 16 units per acre (310-22.1A). None is a second unit on a house lot"
     ],
-    "notes": "Zoning office: Ambridge Borough Code Enforcement/Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Chapter 310 Articles I to VII, X, XI, XII and XVI, 310-30 and 310-107, and Chapter 140 Part 1 to the definitions in 140-28.8. Not read: Articles VIII, IX, XIII, XV, XVII, 310-31 and the rest of Article XIV, the PDF attachments (zoning maps, district profiles), Chapter 140 Parts 2 and 3, Chapter 270 (subdivision) and Chapter 258 (storm water). Saved text in the batch 55 cache."
+    "notes": "Zoning office: Ambridge Borough Code Enforcement/Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: all of Chapter 310 in one print page and all three parts of Chapter 140. Not read: the PDF attachments (zoning maps, district profiles), Chapter 270 (subdivision) and Chapter 258 (storm water). Saved text in the batch 55 cache."
   },
   "adu": {
     "term": {
@@ -70,7 +73,7 @@
       "url": "https://ecode360.com/print/AM2259?guid=15265289",
       "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "A second unit on a house lot is not an accessory use the code lists, so as an ADU the path is a use variance from the Zoning Hearing Board (MPC 910.2). In R and C a house may instead be converted into apartments by right as a conversion apartment (see the other paths)"
+      "note": "A second unit on a house lot is not an accessory use the code lists, so as an ADU the path is a use variance from the Zoning Hearing Board (MPC 910.2). In R and C a house may instead be converted into apartments by right as a conversion apartment (see the other paths). In M a use not listed anywhere may be a conditional use (310-31)"
     },
     "fallback_path": {
       "value": "variance",
@@ -79,6 +82,35 @@
       "verified_on": "2026-11-18",
       "confidence": "verified",
       "note": "Zoning Hearing Board on unnecessary hardship. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "conditional_use",
+      "section": "310-31",
+      "url": "https://ecode360.com/print/AM2259?guid=15265289",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Borough Council decides after the Planning Commission's review and a hearing. The use must not endanger public health and safety or create nuisances, and must meet the other M requirements. M lists no dwelling, so a house there is likely a nonconforming use. In R and C a second unit may be read as a conversion apartment instead (see the other paths)"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "M"
+      ],
+      "section": "310-31",
+      "url": "https://ecode360.com/print/AM2259?guid=15265289",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Only the M Manufacturing and Industrial District takes uses not listed anywhere. C's use of the same general character (310-22N) and the similar uses of C2 and P (310-94, 310-111) are not read as reaching a dwelling"
+    },
+    "unlisted_use_scope": {
+      "value": "any_unlisted",
+      "section": "310-31",
+      "url": "https://ecode360.com/print/AM2259?guid=15265289",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "quote": "A use not expressly listed as permitted in any zoning district may be permitted as a conditional use in the M Manufacturing and Industrial District",
+      "districts": [
+        "M"
+      ]
     },
     "alternatives": {
       "value": [
@@ -89,7 +121,7 @@
             "R",
             "C"
           ],
-          "conditions": "Converting an existing dwelling into apartments for more than one family 'without substantially altering the exterior of the building' is a permitted use in R and, under the Article IV rules, in C. With three or more units the lot needs 3,000 sq ft and 1,000 sq ft per dwelling unit (310-14). Side yards for a building other than a single-family dwelling are 12 ft each (310-18). One parking space per family unit on the premises (310-20A). Each dwelling unit has its own sleeping, cooking, eating and sanitary facilities (310-3)",
+          "conditions": "Converting an existing dwelling into apartments for more than one family 'without substantially altering the exterior of the building' is a permitted use in R and, under the Article IV rules, in C. With three or more units the lot needs 3,000 sq ft and 1,000 sq ft per dwelling unit (310-14). Side yards for a building other than a single-family dwelling are 12 ft each, more if it is over 40 ft tall (310-18). Height up to eight stories and 85 ft (310-15). One parking space per family unit on the premises (310-20A). Each dwelling unit has its own sleeping, cooking, eating and sanitary facilities (310-3). In the floodplain, work within 50 ft of the top of bank may be development that 140-23D bars",
           "min_lot_sqft": 3000,
           "covers_forms": [
             "internal"
@@ -97,10 +129,17 @@
           "builds": [
             "internal"
           ],
-          "section": "310-3 'Conversion apartment', 310-11B, 310-14, 310-18, 310-20A, 310-22A",
+          "section": "310-3 'Conversion apartment', 'Apartment house', 310-11B, 310-14, 310-15, 310-18, 310-20A, 310-22A",
           "url": "https://ecode360.com/print/AM2259?guid=15265289",
           "confidence": "secondary",
-          "note": "The definition calls it 'A multifamily dwelling', which 310-3 defines as more than two families, while the same definition says 'apartments for more than one family'. Whether two units qualify is not settled. 310-14 sets the lot area only for buildings of three units or more. A house on a semidetached or detached lot keeps its side yards of 6 ft or 3 ft only as a single-family dwelling, so a converted house may not meet the 12 ft side yards of 310-18"
+          "note": "The definition calls it 'A multifamily dwelling', which 310-3 defines as more than two families, while the same definition says 'apartments for more than one family'. An apartment house is a building for two or more families living independently, and 310-11B lists plain apartments too, so a two-unit house may be read as one. Whether two units qualify is not settled. 310-14 sets the lot area only for buildings of three units or more",
+          "requires": [
+            {
+              "test": null,
+              "condition": "Only a building that can keep two side yards of at least 12 ft each, as a building other than a single-family dwelling needs them. A rowhouse or twin with a party wall cannot meet this without a variance",
+              "section": "310-18"
+            }
+          ]
         },
         {
           "name": "Apartments (Gateway South)",
@@ -165,11 +204,9 @@
       "value": [
         {
           "kind": "other",
-          "condition": "'No dwelling shall hereafter be erected or altered unless there is direct access to it through an open space on the same lot', at least 12 ft wide, leading to a public street or a private street at least 50 ft wide. An alley does not count as a street.",
+          "condition": "'No dwelling shall hereafter be erected or altered unless there is direct access to it through an open space on the same lot', at least 12 ft wide, leading to a public street or a private street at least 50 ft wide. An alley does not count as a street. This reaches a house altered for a second unit too.",
           "effect": "condition",
-          "applies_to": [
-            "detached_new"
-          ],
+          "applies_to": null,
           "districts": null,
           "building_types": null,
           "section": "310-77",
@@ -178,7 +215,7 @@
         },
         {
           "kind": "other",
-          "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited', unless the Borough grants a variance under Article VIIA. Fill is prohibited too. No variance may raise the base flood elevation.",
+          "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited', unless a variance is obtained under Article VIIA. Fill and manufactured homes are prohibited too unless a variance is granted, and a manufactured home never within 50 ft of the top of bank. No variance may raise the base flood elevation, and all structures must resist the one-percent-annual-chance flood. The Zoning Hearing Board hears floodplain variances (140-17, 140-40A).",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -188,18 +225,19 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "140-24, 140-25A, 140-28.5, 140-28.6A",
+          "section": "140-24, 140-25A, 140-28A, C, 140-28.5, 140-28.6A, H, 140-40A",
           "url": "https://ecode360.com/print/AM2259?guid=15267900",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 140"
         },
         {
           "kind": "other",
-          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse'.",
+          "condition": "'Within any identified floodplain area, no new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse'. No permit lifts this bar.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
-            "attached"
+            "attached",
+            "over_garage"
           ],
           "districts": null,
           "building_types": null,
@@ -212,6 +250,31 @@
           "url": "https://ecode360.com/print/AM2259?guid=15267900",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 140"
+        },
+        {
+          "kind": "other",
+          "condition": "Within the identified floodplain no new construction or development may be within 50 ft landward of the top of bank of any watercourse, and development includes the renovation, expansion or alteration of buildings.",
+          "effect": "bars",
+          "applies_to": [
+            "internal",
+            "garage_conversion"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "140-23D, 140-28.8",
+          "url": "https://ecode360.com/print/AM2259?guid=15267900",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 140",
+          "disputed_by": {
+            "section": "140-23D",
+            "url": "https://ecode360.com/print/AM2259?guid=15267900",
+            "note": "The bar is on development located within 50 ft of the bank. Whether a conversion inside an existing house or garage, which adds no ground cover, is development located there is not settled"
+          }
         },
         {
           "kind": "other",
@@ -238,7 +301,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the identified floodplain no expansion of an existing structure may raise the base flood elevation. Work of 50% or more of market value is a substantial improvement, which is prohibited without a variance and must then fully comply, with the lowest floor at or above the regulatory flood elevation (the base flood elevation plus 1 1/2 ft). Smaller work is elevated or floodproofed as far as possible. New construction is a structure begun on or after August 17, 2015, with its later improvements.",
+          "condition": "In the identified floodplain no expansion of an existing structure may raise the base flood elevation. Work of 50% or more of market value is a substantial improvement, which is prohibited without a variance and must then fully comply, with the lowest floor at or above the regulatory flood elevation (the base flood elevation plus 1 1/2 ft). Smaller work is elevated or floodproofed as far as possible. Enclosed space below the lowest floor, used only for parking, access or storage, must let floodwaters in and out. New construction is a structure begun on or after August 17, 2015, with its later improvements.",
           "effect": "condition",
           "applies_to": [
             "internal",
@@ -249,13 +312,33 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "140-24A, 140-28.4, 140-28.8",
+          "section": "140-24A, C, 140-28.4, 140-28.8",
+          "url": "https://ecode360.com/print/AM2259?guid=15267900",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 140"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodway District (FW) and the floodway area no development is permitted unless its effect on flood heights is fully offset, and only structures accessory to uses that need no structures may be a special exception. No building site for a dwelling is permitted in a floodway, and an existing structure in the Floodway District may not be expanded or enlarged unless the effect is fully offset. New construction or development needs a DEP permit, and no special exception or variance may be granted in the floodway for anything that raises flood levels.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway",
+            "FW"
+          ],
+          "section": "140-19A, 140-28.4D, 140-38, 140-40A(1), 140-41A, 140-54B",
           "url": "https://ecode360.com/print/AM2259?guid=15267900",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 140"
         }
       ],
-      "section": "310-77, 140-23D, 140-24, 140-28.4",
+      "section": "310-77, 140-23D, 140-24, 140-28.4, 140-38",
       "url": "https://ecode360.com/print/AM2259?guid=15267900",
       "verified_on": "2026-11-18",
       "confidence": "verified"
@@ -345,7 +428,7 @@
         "url": "https://ecode360.com/print/AM2259?guid=15265289",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "Two side yards of at least 3 ft for a single-family detached dwelling. A building other than a single-family dwelling needs 12 ft on each side"
+        "note": "Two side yards of at least 3 ft for a single-family detached dwelling. The code sets no side yard for a single-family attached dwelling, and a building other than a single-family dwelling needs 12 ft on each side"
       },
       "setback_side_semi_ft": {
         "value": 6,
@@ -354,6 +437,16 @@
         "verified_on": "2026-11-18",
         "confidence": "verified",
         "note": "'one side yard which shall be at least six feet wide'"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "attached": 0
+        },
+        "section": "310-18",
+        "url": "https://ecode360.com/print/AM2259?guid=15265289",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "310-18 sets side yards only for detached and semidetached single-family dwellings and for buildings other than single-family dwellings. A rowhouse shares its party walls, so no side yard is set"
       },
       "setback_rear_ft": {
         "value": 15,
@@ -417,7 +510,7 @@
         "url": "https://ecode360.com/print/AM2259?guid=15265289",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "Two side yards of at least 3 ft for a single-family detached dwelling. A building other than a single-family dwelling needs 12 ft on each side"
+        "note": "Two side yards of at least 3 ft for a single-family detached dwelling. The code sets no side yard for a single-family attached dwelling, and a building other than a single-family dwelling needs 12 ft on each side"
       },
       "setback_side_semi_ft": {
         "value": 6,
@@ -426,6 +519,16 @@
         "verified_on": "2026-11-18",
         "confidence": "verified",
         "note": "'one side yard which shall be at least six feet wide'"
+      },
+      "setback_side_ft_by_type": {
+        "value": {
+          "attached": 0
+        },
+        "section": "310-18",
+        "url": "https://ecode360.com/print/AM2259?guid=15265289",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "310-18 sets side yards only for detached and semidetached single-family dwellings and for buildings other than single-family dwellings. A rowhouse shares its party walls, so no side yard is set"
       },
       "setback_rear_ft": {
         "value": 15,

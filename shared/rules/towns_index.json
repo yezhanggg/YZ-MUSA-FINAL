@@ -5273,7 +5273,7 @@
       "pop_rank": 405,
       "file": "pa_lawrence_ellwood_city",
       "batch": 55,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/ellwoodcity/latest/ellwoodcity_pa/0-0-0-7830",
@@ -5283,7 +5283,7 @@
       "why": [
         "added as batch 55 by population. Code Part Twelve Title Six has no ADU text (two-family by special exception in R-1 and by right in R-2, 1266.04)"
       ],
-      "status_note": "Not addressed. 'Any use not expressly listed for a district is prohibited in that district' (1266.04), so a second unit on a house lot is a use variance, with two-family dwellings by special exception in R-1 and by right in R-2. Open: Table 1266.04(B) side yards (10 ft, 24 ft total) against the text above it (5 ft on one side, 15 ft total), the 'Minimum Number of Stories' row, whether 1272.35 compatible uses reach R-1 and R-2, and who hears a floodplain variance (1482.33 the Borough, 1264.02(a)(3) the Zoning Hearing Board)"
+      "status_note": "For a later check: whether Table 1266.04(B)'s lot area per family (10,000 sq ft for a two-family dwelling in R-1, 8,000 sq ft in R-2, 10,000 sq ft for a Gateway North duplex) or the flat figure in the text governs, Table B side yards (10 ft, 24 ft in all) against the text (5 ft, 15 ft in all), whether 1272.35 compatible uses reach R-1 and R-2 against the 1266.04 bar on uses not listed, the 'Accessory uses' conditional use listing in R-1, R-2, C-1 and C-2, and whether 1268.05 reaches a house that is a nonconforming use in C-1, C-2, CC or GW. Not addressed. 'Any use not expressly listed for a district is prohibited in that district' (1266.04), so a second unit on a house lot is a use variance, with two-family dwellings by special exception in R-1 and by right in R-2. Floodplain variances go to the Zoning Hearing Board (1264.02(a)(3), 1482.33(b))"
     },
     {
       "geoid": "4200702288",
@@ -5307,7 +5307,7 @@
       "why": [
         "added as batch 55 by population. Code Chapter 310 has no ADU text (conversion apartments and multiple-family dwellings by right in R and C, 310-11)"
       ],
-      "status_note": "Not addressed. R permits conversion apartments and multiple-family dwellings by right (310-11B), and C takes the R uses (310-22A). Open: whether a two-unit conversion apartment qualifies (310-3 calls it multifamily, more than two families, 310-14 sets lot area only for three units or more), C building area 50% (310-16 by 310-22A) against 70% (310-25), whether the 140-24E floodplain accessory structure rules reach a garage conversion, and code currency (eCode360 through 11-13-2018)"
+      "status_note": "Open: code currency (eCode360 through 11-13-2018, Ord. Nos. 1314 and 1315 of 2019 not seen, council minutes from 2023 to 2026 that mention the zoning ordinance not readable), so the borough office must confirm Chapter 310 has not changed. Also open: whether a two-unit conversion apartment qualifies (310-3 calls it multifamily, more than two families, while an apartment house is two or more), C building area 50% (310-16 by 310-22A) against 70% (310-25), and whether the 140-24E accessory rules and the 140-23D top of bank bar reach a conversion inside an existing building. Not addressed. R permits conversion apartments and multiple-family dwellings by right (310-11B), and C takes the R uses (310-22A). A use not listed anywhere may be a conditional use in M (310-31)"
     },
     {
       "geoid": "4204576576",
@@ -5321,7 +5321,7 @@
       "pop_rank": 413,
       "file": "pa_delaware_thornbury",
       "batch": 55,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30828967",
@@ -5331,7 +5331,7 @@
       "why": [
         "added as batch 55 by population. Code Chapter 27 has no ADU text (27-2108 conversion to two-family use by special exception in R-1 and R-2, 27-2807 historic resource conversion by conditional use)"
       ],
-      "status_note": "Not addressed. R-1 and R-2 allow their uses 'and for no other' (27-402.1, 27-502.1), so a new second building is a use variance. A house may be converted to two-family use by special exception (27-2108, lot area waiver for a relative, then no renting), and a resource on the Historic Resource Inventory may gain a residential conversion, such as a barn to an apartment, by conditional use (27-2807.1A(1)). Open: the I, IR, LI, C, Q, MHP, RW and PRD use lists were not read, and the full family definition (27-201)"
+      "status_note": "For a later check: 27-1511.1 (any improvement elevated) against 27-1511.4D (work under 50% elevated as far as possible) in the floodplain, whether the 27-2108 lot area per unit binds a historic conversion under 27-2807, the riparian buffer width (outside Chapter 27), and the Official Sewage Facilities Plan of Res. No. 13-2026. Not addressed. R-1 and R-2 allow their uses 'and for no other' (27-402.1, 27-502.1), so a new second building is a use variance. A house may be converted to two-family use by special exception on 174,000 sq ft in R-1 or 120,000 sq ft in R-2, or smaller if the Board waives the lot area for a relative, and then no renting (27-2108). A resource on the Historic Resource Inventory may gain a residential conversion, such as a barn to an apartment, by conditional use (27-2807.1A(1))"
     }
   ]
 }

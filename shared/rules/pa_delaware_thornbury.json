@@ -4,7 +4,7 @@
     "instrument": "Thornbury Township Zoning Ordinance (Chapter 27 Zoning and Planned Residential Development, Ord. 2-1976 of 2-3-1976, as amended), with Article 15 Floodplain Conservation District (Ord. 3-2015 of 8-19-2015), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 TH3682, Township of Thornbury, PA. 27-1509.2C names 'the Zoning Ordinance of Thornbury Township, Delaware County, Pennsylvania', so this is Thornbury township, Delaware County. eCode360 TH1634 is Thornbury Township, Chester County, a different place. The district use lists and figures read are web text. The sign tables and the zoning map are PDF attachments that were not opened",
+    "status_detail": "eCode360 TH3682, Township of Thornbury, PA. 27-1509.2C names 'the Zoning Ordinance of Thornbury Township, Delaware County, Pennsylvania', so this is Thornbury township, Delaware County. eCode360 TH1634 is Thornbury Township, Chester County, a different place. The district use lists and figures read are web text. The sign tables and the zoning map are PDF attachments that were not opened. The chapter shows amendments up to Ord. No. 1-2025 of 6-18-2025 (forestry, 27-2206) and Ord. No. 1-2024 (C district). New Laws lists only resolutions after that, through Res. No. 13-2026 of 7-15-2026 (Official Sewage Facilities Plan), no zoning ordinance",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/TH3682",
@@ -20,7 +20,8 @@
       "https://ecode360.com/print/TH3682?guid=30949372",
       "https://ecode360.com/print/TH3682?guid=30949696",
       "https://ecode360.com/print/TH3682?guid=30949977",
-      "https://ecode360.com/print/TH3682?guid=30950640"
+      "https://ecode360.com/print/TH3682?guid=30950640",
+      "https://ecode360.com/print/TH3682?guid=30828967"
     ],
     "verified_on": "2026-11-18",
     "county": "Delaware",
@@ -32,17 +33,19 @@
     "code_current_through_note": "eCode360 shows 'Includes legislation through 03-18-2026.' New Laws lists only Res. Nos. 9-2026 to 13-2026 (appointments, the Delaware County consortium, a land development approval and the sewage facilities plan), no zoning",
     "checks": [
       "The code has no accessory dwelling unit use. A search for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, two-family, tenant house, elder cottage and temporary dwelling found the conversion of a dwelling to two-family use (27-2108), the R-1 and R-2 listings of it (27-402.1E(3), 27-502.1E(3)), the historic resource adaptive reuse (27-2807) and definitions",
-      "R-1 and R-2 permit their uses 'and for no other': a single-family detached dwelling, conservation and farm uses, and accessory uses. Conversion of a single-family dwelling 'to a two-or multi-family use' is a special exception from the Zoning Hearing Board under 27-2108 (27-402.1E(3), 27-502.1E(3)). PA permits apartment developments on 5 acres and townhouses on 20 acres, and no single-family dwelling (27-602, 27-603, 27-604). R-3 is a development district for a variety of housing on public water and sewer, at most 4 units per acre (27-1901, 27-1902)",
-      "A dwelling unit is 'a room or a series of connected rooms wholly used for residential purposes and containing living, cooking, sleeping, and sanitary facilities for one housekeeping unit', self-contained and not sharing facilities with another housekeeping unit. A two-family dwelling is a building on a lot for two families living independently of one another (27-201). Every single-family dwelling other than a mobile home has at least 1,150 sq ft of floor area (27-2112)",
-      "R-1: lot 87,000 sq ft, width 200 ft. R-2: lot 60,000 sq ft, width 150 ft. In both, buildings and other impervious cover at most 15% of the lot (a pool not counted), front yard 85 ft, two side yards of at least 45 ft and 100 ft together, rear yard 45 ft, height three stories or 35 ft (27-403, 27-404, 27-503, 27-504). An accessory building meets those yards, or 25 ft from the side and rear lines if it stands wholly behind a line through the rear of the main building (27-403.7, 27-503.7)",
+      "R-1 and R-2 permit their uses 'and for no other': a single-family detached dwelling, conservation and farm uses, and accessory uses. Conversion of a single-family dwelling 'to a two-or multi-family use' is a special exception from the Zoning Hearing Board under 27-2108 (27-402.1E(3), 27-502.1E(3)). PA permits apartment developments on 5 acres and townhouses on 20 acres, and no single-family dwelling (27-602, 27-603, 27-604). R-3 is a development district for a variety of housing on public water and sewer, at most 4 units per acre (27-1901, 27-1902). PRD-1 and PRD-2 and the residential cluster lots of Articles 11 and 12 allow their uses 'for no other' and do not list the 27-2108 conversion. A cluster lot may have one accessory building for household storage of at most 120 sq ft and 10 ft tall (27-1102.1B(3), 27-1202.1B(3))",
+      "A dwelling unit is 'a room or a series of connected rooms wholly used for residential purposes and containing living, cooking, sleeping, and sanitary facilities for one housekeeping unit', self-contained and not sharing facilities with another housekeeping unit. A two-family dwelling is a building on a lot for two families living independently of one another. A family lives and cooks as a single housekeeping unit of persons related by blood, marriage or law, with domestics, one unrelated person and up to four foster children. An accessory building attached to the main building is part of the main building. Using a lot for more than one principal building is a subdivision, with a plan under the Subdivision and Land Development Ordinance (27-201). No zoning permit is issued without written proof that sewage and water facilities are approved (27-201 'Permit, zoning'). Every single-family dwelling other than a mobile home has at least 1,150 sq ft of floor area (27-2112)",
+      "R-1: lot 87,000 sq ft, width 200 ft. R-2: lot 60,000 sq ft, width 150 ft. In both, buildings and other impervious cover at most 15% of the lot (a pool not counted), front yard 85 ft, two side yards of at least 45 ft and 100 ft together, rear yard 45 ft, height three stories or 35 ft (27-403, 27-404, 27-503, 27-504). An accessory building meets those yards, or 25 ft from the side and rear lines if its forward-most part stands behind a line parallel to the street through the rear-most part of the main building (27-403.7, 27-503.7)",
       "Steep slopes: no building or impervious surface on land with a slope over 20%, unless the Zoning Hearing Board grants a special exception because compliance is impractical or confiscatory. No special exception is needed for an encroachment of less than 50 ft (27-2115.2B). New lots in R-1 and R-2 need at least half their minimum area under 20% slope, or 130,000 sq ft (27-2115.2A)",
       "Parking: 'Dwellings. Two spaces per dwelling unit', on any lot where a dwelling is erected or converted, and never fewer (27-2104.2). No parking in the front yard setback without a special exception, and never within 20 ft of the right-of-way (27-2106.1D)",
-      "Floodplain Conservation District (Article 15, Ord. 3-2015 of 8-19-2015, FIRM of 11-18-2009, with alluvial soils): 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds crops, pasture, nurseries, permeable parking and sewer lines, no building (27-1505). On-site sewage systems and wells, and any new construction in a riparian buffer, are prohibited, and the Board may not grant a use variance for those prohibited uses (27-1507.1E, J, 27-1508.2). A new or improved residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor (27-1503, 27-1511.1, 3). An accessory structure 'shall not be designed or used for human habitation', is at most 100 sq ft and has no sanitary facilities (27-1511.5). No expansion in the floodway may raise the base flood elevation, and work of 50% or more of market value must fully comply (27-1511.4). New construction is a structure begun on or after the article's effective date, and work begun after April 27, 1973 follows the ordinance in force at its permit (27-1503). Variances go to the Zoning Hearing Board under MPC 910.2 (27-1508)",
-      "Historic resources: a resource on the Historic Resource Inventory may, after review by the Historical Commission and the Planning Commission and conditional use approval from the Board of Supervisors, gain a 'Residential conversion of the resource notwithstanding any other residential use or structure on the subject property, e.g., conversion of a barn to an apartment', where it is not part of a subdivision or land development (27-2807.1A(1))",
-      "Nonconforming lots: a vacant lot held in single and separate ownership when the chapter took effect may be built on if the yards are met, and otherwise needs a variance. An owner of adjoining land must combine the lots first (27-2101.F)",
-      "Variances: the Zoning Hearing Board on the five findings of the MPC (27-2310). No bar on a use variance was found outside the floodplain (27-1508.2). Special exceptions meet the standards of 27-2309"
+      "Floodplain Conservation District (Article 15, Ord. 3-2015 of 8-19-2015, FIRM of 11-18-2009, with alluvial soils): 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds crops, pasture, nurseries, permeable parking and sewer lines, no building. In the floodway nothing may raise flood heights, and up to 3/4 of a required setback of a contiguous lot may lie in the district, but not for a septic system or well (27-1505.1, H). On-site sewage systems and wells, a manufactured home in the floodway and any new construction in a riparian buffer are prohibited, where there is no floodway no new development may raise the base flood elevation more than one foot with all other development, and the Board may not grant a use variance for the prohibited uses (27-1507.1E, F, J, K, 27-1508.2). Residential lowest floors go at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor (27-1503, 27-1511.1, 3). 27-1511.1 asks this for 'any new construction of or improvement to an existing residential structure', while 27-1511.4D lets work under 50% of market value be elevated or floodproofed to the greatest extent possible, so the code conflicts on smaller work. An accessory structure 'shall not be designed or used for human habitation', is at most 100 sq ft and has no sanitary facilities (27-1511.5). No expansion in the floodway may raise the base flood elevation, and work of 50% or more of market value must fully comply (27-1511.4). New construction is a structure begun on or after the article's effective date, and work begun after April 27, 1973 follows the ordinance in force at its permit (27-1503). A building allowed there by special exception or variance carries a notice to buyers and lessees and a deed notation (27-1509.2). Variances go to the Zoning Hearing Board under MPC 910.2 (27-1508), and boundary appeals too (27-1504.4C). Chapter 27 sets no riparian buffer width",
+      "Historic resources: a resource on the Historic Resource Inventory may, after review by the Historical Commission and the Planning Commission and conditional use approval from the Board of Supervisors, gain a 'Residential conversion of the resource notwithstanding any other residential use or structure on the subject property, e.g., conversion of a barn to an apartment', where it is not part of a subdivision or land development (27-2807.1A(1)). A home occupation or a bed and breakfast is open the same way (27-2807.1A(2), (3)). The reuse otherwise meets the chapter's bulk and area rules (27-2807.1C), and the Board may modify lot area, yards or other bulk rules for the resource only, by at most 25%, where that is needed to preserve it (27-2808, 27-2809C). The applicant shows the approval is needed to preserve the resource and that water and sewage are adequate, and the Board may require the Secretary of the Interior's rehabilitation standards (27-2809B, D, G). The Zoning Hearing Board may waive the limits on extending a nonconforming structure on the inventory by special exception (27-2101.1H). Whether the 27-2108 lot area per unit also binds a historic conversion is not settled",
+      "Nonconforming lots: a vacant lot held in single and separate ownership when the chapter took effect may be built on if the yards are met, and otherwise needs a variance. An owner of adjoining land must combine the lots first (27-2101.1F). A nonconforming use may be extended by special exception, by at most 25% of its floor area and only once (27-2101.1C). A nonconforming structure may be extended by at most 25% of its floor area if the extension meets the area and bulk rules (27-2101.1E(2))",
+      "Variances: the Zoning Hearing Board on the five findings of the MPC (27-2310). No bar on a use variance was found outside the floodplain (27-1508.2). Special exceptions meet the standards of 27-2309 and 27-2311. A special exception or variance is void after 12 months unless a permit or approval is applied for (27-2314)",
+      "Other districts: I permits living accommodations needed by an institution, including single-family residences for its caretakers, staff or employees and their families, sited by the R-1 area rules (27-702.3). IR permits housing of all types for staff and employees of institutions under common ownership, at most 2 1/2 units per acre of the tract (27-802). C permits living accommodations or sleeping quarters for the proprietor or a watchman as an accessory use, and any use of the same general character as its listed uses by special exception (27-1002). M permits only municipal services and rental offices in existing buildings (27-712). LI, Q-1, Q-2 and MHP list no second dwelling. The chapter sets no use or area rules for RW, the Ridley Creek Watershed District (27-315)",
+      "A bed and breakfast may be a conditional use in any residential district (27-2116). Res. No. 13-2026 adopted an Official Sewage Facilities Plan, which may change where public sewer reaches. A conversion needs added sewage capacity under state rules (27-2108.1C)"
     ],
-    "notes": "Zoning office: Thornbury Township (Delaware County) Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Chapter 27 Articles 3, 4, 5, 6, 15 (to 27-1515.2), 19 and 21 (to 27-2117.5B), 27-2806, 27-2807, 27-2309, 27-2310, and parts of 27-201. Not read: Articles 1, 7 to 14, 16 to 18, 20, 22, 24 to 27, the rest of Articles 15, 21, 23 and 28 and of 27-201 (the family definition in full), the PDF attachments, Chapter 22 (subdivision), Chapter 19 (storm water) and any riparian buffer rule. Saved text in the batch 55 cache."
+    "notes": "Zoning office: Thornbury Township (Delaware County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: all of Chapter 27 in one print page (Articles 1 to 28, 27-201 in full). Not read: the PDF attachments, Chapter 22 (subdivision), Chapter 19 (storm water) and any riparian buffer rule outside Chapter 27. Saved text in the batch 55 cache."
   },
   "adu": {
     "term": {
@@ -69,7 +72,7 @@
       "url": "https://ecode360.com/print/TH3682?guid=30948778",
       "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "A second unit in a new building on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A unit inside the house may be a conversion to two-family use by special exception (27-2108, see the other paths). On a property with a resource on the Historic Resource Inventory, a residential conversion of the resource, such as a barn to an apartment, is a conditional use (27-2807)"
+      "note": "A second unit in a new building on a house lot is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A second principal building on a lot is also a subdivision, with a plan under the Subdivision and Land Development Ordinance (27-201 'Lot'). A unit inside the house may be a conversion to two-family use by special exception (27-2108, see the other paths). On a property with a resource on the Historic Resource Inventory, a residential conversion of the resource, such as a barn to an apartment, is a conditional use (27-2807)"
     },
     "fallback_path": {
       "value": "variance",
@@ -78,6 +81,32 @@
       "verified_on": "2026-11-18",
       "confidence": "verified",
       "note": "Zoning Hearing Board on the five MPC findings. No bar on a use variance outside the floodplain"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "27-1002.1H",
+      "url": "https://ecode360.com/print/TH3682?guid=30828967",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "In C the Zoning Hearing Board may allow a use of the same general character as a listed use, if it does not harm the health, safety and general welfare of the community. C also lists living quarters for the proprietor or a watchman (see the other paths). In R-1 and R-2 a unit inside the house may be the listed conversion to two-family use instead"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C"
+      ],
+      "section": "27-1002.1H",
+      "url": "https://ecode360.com/print/TH3682?guid=30828967",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Only C lists a use of the same general character. The other districts allow their uses and no other"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "27-1002.1H",
+      "url": "https://ecode360.com/print/TH3682?guid=30828967",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "quote": "Any use of the same general character as any of the uses specifically permitted when authorized as a special exception by the Zoning Hearing Board"
     },
     "historic_path": {
       "value": "conditional_use",
@@ -96,27 +125,42 @@
             "R-1",
             "R-2"
           ],
-          "conditions": "The Zoning Hearing Board may authorize as a special exception the conversion of a dwelling in a Residential District from single-family to two-family or multiple-dwelling occupancy. The lot area per dwelling unit may not drop below the lot area for a single-family dwelling in the district (87,000 sq ft in R-1, 60,000 sq ft in R-2, so twice that for two units). Each family unit has at least 600 sq ft of gross habitable floor area, not counting stairs and corridors, and the added unit needs added sewage capacity under state rules. Where the conversion is to house a relative or relatives of the owner and occupant, the Board may waive the lot area rule, and the converted unit may then not be leased or rented. Two parking spaces per dwelling unit (27-2104.2A(1))",
+          "conditions": "The Zoning Hearing Board may authorize as a special exception the conversion of a dwelling in a Residential District from single-family to two-family or multiple-dwelling occupancy. The lot area per dwelling unit may not drop below the lot area for a single-family dwelling in the district, so two units need 174,000 sq ft in R-1 and 120,000 sq ft in R-2. Each family unit has at least 600 sq ft of gross habitable floor area, not counting stairs and corridors, and the added unit needs added sewage capacity under state rules. Where the conversion is to house a relative or relatives of the owner and occupant, the Board may waive the lot area rule at its sole discretion, and the converted unit may then not be leased or rented. The special exception standards of 27-2309 and 27-2311 apply, and the approval is void after 12 months without a permit application (27-2314). Two parking spaces per dwelling unit (27-2104.2A(1)). In the Floodplain Conservation District a new on-site sewage system is prohibited and no use variance may be granted for it (27-1507.1E, 27-1508.2). Not on a lot in an approved residential cluster development, whose own use list does not name it",
           "covers_forms": [
             "internal"
           ],
           "builds": [
             "internal"
           ],
+          "section": "27-402.1E(3), 27-502.1E(3), 27-2108, 27-2309, 27-2311, 27-2104.2A(1)",
+          "url": "https://ecode360.com/print/TH3682?guid=30949696",
+          "confidence": "verified",
+          "note": "Below 174,000 sq ft in R-1 or 120,000 sq ft in R-2 the conversion is open only if the Board waives the lot area rule for a relative of the owner and occupant, and the unit then may not be rented (27-2108.1D). The family definition counts related persons, domestics and one unrelated person living and cooking as one unit (27-201)",
+          "min_lot_by_district": {
+            "R-1": 174000,
+            "R-2": 120000
+          }
+        },
+        {
+          "name": "Living quarters for the proprietor or a watchman (C)",
+          "path": "by_right",
+          "districts": [
+            "C"
+          ],
+          "conditions": "Living accommodations or sleeping quarters for the proprietor or a watchman are a permitted accessory use in C",
           "requires": [
             {
               "test": null,
-              "condition": "A lot of at least 174,000 sq ft in R-1 or 120,000 sq ft in R-2 for two units, unless the Board waives the lot area rule for a relative of the owner and occupant",
-              "section": "27-2108.1A, D"
+              "condition": "Only for the proprietor or a watchman of the commercial use on the lot, not a unit for anyone else",
+              "section": "27-1002.1G(4)"
             }
           ],
-          "section": "27-402.1E(3), 27-502.1E(3), 27-2108, 27-2104.2A(1)",
-          "url": "https://ecode360.com/print/TH3682?guid=30949696",
-          "confidence": "verified",
-          "note": "The lot area rule is waived only at the Board's discretion for a relative of the owner and occupant, and the unit then may not be rented"
+          "section": "27-1002.1G(4)",
+          "url": "https://ecode360.com/print/TH3682?guid=30828967",
+          "confidence": "secondary"
         }
       ],
-      "section": "27-2108",
+      "section": "27-2108, 27-1002.1G(4)",
       "url": "https://ecode360.com/print/TH3682?guid=30949696",
       "verified_on": "2026-11-18",
       "confidence": "verified"
@@ -144,19 +188,29 @@
         "R-1",
         "R-2",
         "PA",
-        "R-3"
+        "R-3",
+        "I",
+        "IR",
+        "LI",
+        "Q-1",
+        "Q-2",
+        "MHP",
+        "M",
+        "PRD-1",
+        "PRD-2",
+        "FPC"
       ],
-      "section": "27-402, 27-502, 27-602, 27-1902",
+      "section": "27-402, 27-502, 27-602, 27-702, 27-712, 27-802, 27-902, 27-1302, 27-1402, 27-1604, 27-1703, 27-1803, 27-1902, 27-1505",
       "url": "https://ecode360.com/print/TH3682?guid=30948778",
       "verified_on": "2026-11-18",
       "confidence": "verified",
-      "note": "None lists an accessory dwelling unit. R-1 and R-2 list the conversion to two-family use by special exception. The I, IR, LI, C, Q-1, Q-2, MHP, RW, PRD-1 and PRD-2 use lists were not read"
+      "note": "None lists an accessory dwelling unit. R-1 and R-2 list the conversion to two-family use by special exception. I and IR list staff housing for institutions, and C lists quarters for a proprietor or watchman. The chapter sets no use rules for RW"
     },
     "gates": {
       "value": [
         {
           "kind": "other",
-          "condition": "Floodplain Conservation District: 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds no building. On-site sewage systems and wells are prohibited there, and new construction in a riparian buffer is prohibited.",
+          "condition": "Floodplain Conservation District: 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds no building. In the floodway nothing may raise flood heights, and where there is no floodway no new development may raise the base flood elevation more than one foot with all other development. A building allowed by special exception or variance carries a notice to buyers and lessees and a deed notation.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
@@ -167,9 +221,34 @@
           "overlays": [
             "FPC"
           ],
-          "section": "27-1505, 27-1507.1E, J",
+          "section": "27-1505.1, 27-1507.1K, 27-1509.2",
           "url": "https://ecode360.com/print/TH3682?guid=30949260",
-          "confidence": "verified"
+          "confidence": "verified",
+          "not_districts": [
+            "FPC"
+          ]
+        },
+        {
+          "kind": "utilities",
+          "condition": "In the Floodplain Conservation District new on-site sewage systems and wells, a manufactured home in the floodway and new construction in any riparian buffer are prohibited, and the Zoning Hearing Board may not grant a use variance for them. A unit that needs added on-site sewage capacity or a new well there cannot get one. Chapter 27 sets no riparian buffer width.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FPC"
+          ],
+          "section": "27-1507.1E, F, J, 27-2108.1C",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified",
+          "no_variance": {
+            "section": "27-1508.2",
+            "url": "https://ecode360.com/print/TH3682?guid=30949260",
+            "quote": "The Board shall not grant any use variance for uses listed under § 27-1507 of this article"
+          },
+          "not_districts": [
+            "FPC"
+          ]
         },
         {
           "kind": "other",
@@ -186,11 +265,14 @@
           ],
           "section": "27-1511.5A, B, G",
           "url": "https://ecode360.com/print/TH3682?guid=30949260",
-          "confidence": "verified"
+          "confidence": "verified",
+          "not_districts": [
+            "FPC"
+          ]
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain Conservation District a new or improved residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor. No expansion in the floodway may raise the base flood elevation. Work of 50% or more of market value must fully comply. New construction is a structure begun on or after the article's effective date (Ord. 3-2015 of 8-19-2015), with its later improvements.",
+          "condition": "In the Floodplain Conservation District any new construction of or improvement to an existing residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor, while work under 50% of market value is elevated or floodproofed to the greatest extent possible, so the code conflicts on smaller work. No expansion in the floodway may raise the base flood elevation. Work of 50% or more of market value must fully comply. New construction is a structure begun on or after the article's effective date (Ord. 3-2015 of 8-19-2015), with its later improvements.",
           "effect": "condition",
           "applies_to": [
             "internal"
@@ -200,6 +282,74 @@
           "overlays": [
             "FPC"
           ],
+          "section": "27-1503, 27-1511.1, 3, 4",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified",
+          "not_districts": [
+            "FPC"
+          ]
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain Conservation District: 'The following uses and no others (unless by special exception or variance granted by the Zoning Hearing Board) are permitted', and the list holds no building. In the floodway nothing may raise flood heights, and where there is no floodway no new development may raise the base flood elevation more than one foot with all other development. A building allowed by special exception or variance carries a notice to buyers and lessees and a deed notation.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": [
+            "FPC"
+          ],
+          "building_types": null,
+          "section": "27-1505.1, 27-1507.1K, 27-1509.2",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified"
+        },
+        {
+          "kind": "utilities",
+          "condition": "In the Floodplain Conservation District new on-site sewage systems and wells, a manufactured home in the floodway and new construction in any riparian buffer are prohibited, and the Zoning Hearing Board may not grant a use variance for them. A unit that needs added on-site sewage capacity or a new well there cannot get one. Chapter 27 sets no riparian buffer width.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "FPC"
+          ],
+          "building_types": null,
+          "section": "27-1507.1E, F, J, 27-2108.1C",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified",
+          "no_variance": {
+            "section": "27-1508.2",
+            "url": "https://ecode360.com/print/TH3682?guid=30949260",
+            "quote": "The Board shall not grant any use variance for uses listed under § 27-1507 of this article"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District an accessory structure 'shall not be designed or used for human habitation', is limited to parking or storage, has at most 100 sq ft of floor area and no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "FPC"
+          ],
+          "building_types": null,
+          "section": "27-1511.5A, B, G",
+          "url": "https://ecode360.com/print/TH3682?guid=30949260",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In the Floodplain Conservation District any new construction of or improvement to an existing residential structure has its lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft, with no enclosed space below the lowest floor, while work under 50% of market value is elevated or floodproofed to the greatest extent possible, so the code conflicts on smaller work. No expansion in the floodway may raise the base flood elevation. Work of 50% or more of market value must fully comply. New construction is a structure begun on or after the article's effective date (Ord. 3-2015 of 8-19-2015), with its later improvements.",
+          "effect": "condition",
+          "applies_to": [
+            "internal"
+          ],
+          "districts": [
+            "FPC"
+          ],
+          "building_types": null,
           "section": "27-1503, 27-1511.1, 3, 4",
           "url": "https://ecode360.com/print/TH3682?guid=30949260",
           "confidence": "verified"
@@ -223,18 +373,33 @@
         },
         {
           "kind": "other",
-          "condition": "The resource must be on the Historic Resource Inventory, the Historical Commission and the Planning Commission review the proposal, and the Board of Supervisors approves it as a conditional use. The conversion may not be part of a subdivision or land development.",
+          "condition": "The resource must be on the Historic Resource Inventory, the Historical Commission and the Planning Commission review the proposal, and the Board of Supervisors approves it as a conditional use. The conversion may not be part of a subdivision or land development. It otherwise meets the chapter's bulk and area rules, which the Board may modify for the resource by at most 25% where that is needed to preserve it. The applicant shows the approval is needed to preserve the resource and that water supply and sewage disposal are adequate, and the Board may require the Secretary of the Interior's rehabilitation standards.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
           "building_types": null,
           "when": "historic",
-          "section": "27-2807.1A",
+          "section": "27-2807.1A, C, 27-2808, 27-2809B, D, G",
           "url": "https://ecode360.com/print/TH3682?guid=30950640",
           "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "On a lot in an approved residential cluster development the cluster's own use list applies, for no other uses. It does not list the conversion to two-family use, and allows one accessory building for household storage of at most 120 sq ft and 10 ft tall.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "building_types": null,
+          "test": "in_planned_development",
+          "section": "27-1102.1, 27-1202.1",
+          "url": "https://ecode360.com/print/TH3682?guid=30828967",
+          "confidence": "verified"
         }
       ],
-      "section": "27-1505, 27-1511, 27-2115, 27-2807",
+      "section": "27-1505, 27-1507, 27-1511, 27-2115, 27-2807, 27-1102",
       "url": "https://ecode360.com/print/TH3682?guid=30949260",
       "verified_on": "2026-11-18",
       "confidence": "verified"
@@ -290,15 +455,16 @@
     "accessory_rules_where": {
       "value": [
         {
-          "where": "An accessory building wholly behind a line parallel to the street through the rear of the main building",
+          "where": "An accessory building not wholly behind a line parallel to the street through the rear-most part of the main building",
           "districts": [
             "R-1",
             "R-2"
           ],
-          "setback_side_ft": 25,
-          "setback_rear_ft": 25,
+          "setback_side_ft": 45,
+          "setback_rear_ft": 45,
           "section": "27-403.7, 27-503.7",
-          "note": "Otherwise an accessory building meets the district's front, side and rear yards"
+          "note": "Behind that line it may stand 25 ft from the side and rear lines",
+          "setback_front_ft": 85
         }
       ],
       "section": "27-403.7, 27-503.7",
@@ -388,19 +554,20 @@
         "confidence": "verified"
       },
       "accessory_setback_side_ft": {
-        "value": 45,
+        "value": 25,
         "section": "27-403.7",
         "url": "https://ecode360.com/print/TH3682?guid=30948778",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "An accessory building meets the district yards, or 25 ft from the side and rear lines if it stands wholly behind the rear of the main building"
+        "note": "25 ft from the side and rear lines for an accessory building whose forward-most part stands behind a line parallel to the street through the rear-most part of the main building. One that does not meets the district's 85 ft front, 45 ft side and 45 ft rear yards"
       },
       "accessory_setback_rear_ft": {
-        "value": 45,
+        "value": 25,
         "section": "27-403.7",
         "url": "https://ecode360.com/print/TH3682?guid=30948778",
         "verified_on": "2026-11-18",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "25 ft from the side and rear lines for an accessory building whose forward-most part stands behind a line parallel to the street through the rear-most part of the main building. One that does not meets the district's 85 ft front, 45 ft side and 45 ft rear yards"
       },
       "accessory_structure_max_height_ft": {
         "value": 35,
@@ -473,19 +640,20 @@
         "confidence": "verified"
       },
       "accessory_setback_side_ft": {
-        "value": 45,
+        "value": 25,
         "section": "27-503.7",
         "url": "https://ecode360.com/print/TH3682?guid=30948831",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "An accessory building meets the district yards, or 25 ft from the side and rear lines if it stands wholly behind the rear of the main building"
+        "note": "25 ft from the side and rear lines for an accessory building whose forward-most part stands behind a line parallel to the street through the rear-most part of the main building. One that does not meets the district's 85 ft front, 45 ft side and 45 ft rear yards"
       },
       "accessory_setback_rear_ft": {
-        "value": 45,
+        "value": 25,
         "section": "27-503.7",
         "url": "https://ecode360.com/print/TH3682?guid=30948831",
         "verified_on": "2026-11-18",
-        "confidence": "verified"
+        "confidence": "verified",
+        "note": "25 ft from the side and rear lines for an accessory building whose forward-most part stands behind a line parallel to the street through the rear-most part of the main building. One that does not meets the district's 85 ft front, 45 ft side and 45 ft rear yards"
       },
       "accessory_structure_max_height_ft": {
         "value": 35,
