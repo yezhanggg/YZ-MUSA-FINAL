@@ -34,17 +34,19 @@
     "code_caution": "The online code includes legislation only through 12-17-2019. Its New Laws list is empty, and no later zoning amendment was found, but one may exist. Ask the borough office whether Chapter 340 has changed since 2019",
     "checks": [
       "The code has no accessory dwelling unit use. A search for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, two-family, granny, elder cottage, temporary dwelling and apartment found the dwelling and conversion definitions, the R-2 and R-3 two-family listings and the I district conversion of industrial buildings (340-53C)",
-      "R-1 is used 'by right only' for a single-family detached dwelling and municipal uses, with schools, religious uses, day care, clubs and cluster development by special exception (340-14, 340-15). R-2 adds semidetached, attached (at most five in a row) and two-family dwellings of three kinds, including 'Two-family detached or a duplex dwelling containing no more than two single-family dwellings' (340-19). R-3 adds multifamily dwellings on one acre (340-24). The RCZ cluster option is a special exception on a tract of one acre (340-28 to 340-31). RCD permits recreation uses, with low-density single-family dwellings at seven units per acre by special exception (340-35, 340-36). C-1, C-2 and I list no dwelling",
-      "Accessory uses in the residential districts are parking and private garages, 'Utility sheds, toolsheds and similar accessory structures', pools, signs, home occupations and decks (340-16, 340-21, 340-26). A dwelling unit is 'One or more rooms designed constituting a separate housekeeping unit which, at a minimum, must include cooking, sleeping and sanitary facilities'. A family is persons related by blood, marriage or adoption, or no more than three unrelated persons, living as a single housekeeping unit (340-12)",
-      "Accessory structures cover at most 5% of the lot in residential districts, are at most one story or 14 ft tall, stand at least 3 ft from the side and rear lines 'and behind the rearmost portion of the principal building', and on a corner lot no closer to the side street than the house (340-80). The district sections keep them out of the required front yard and 5 ft from any property line, reducible to 3 ft by special exception (340-17I, 340-22J, 340-27J)",
-      "Lot area: 5,000 sq ft per single-family detached dwelling in R-1, 3,000 sq ft per dwelling unit for residential uses in R-2, the R-2 figure in R-3 except 1,500 sq ft per unit for attached and multifamily uses (340-17A, 340-22A, 340-27A). A lot held in single and separate ownership when the chapter took effect may be built on below the minimum area or width if the use, yard, setback and density rules are met (340-102)",
+      "R-1 is used 'by right only' for a single-family detached dwelling and municipal uses, with schools, religious uses, day care, clubs and cluster development by special exception (340-14, 340-15). R-2 adds semidetached, attached (at most five in a row) and two-family dwellings of three kinds, including 'Two-family detached or a duplex dwelling containing no more than two single-family dwellings' (340-19). R-3 adds multifamily dwellings on one acre (340-24). The RCZ cluster option is a special exception in R-1, R-2 and R-3 on a tract of at least one acre in single and separate ownership, for the residential uses R-1, R-2 and R-3 permit by right, with no structure within 30 ft of a lot line and no more units than the underlying district allows (340-15E, 340-28A, 340-29, 340-31, see the other paths). RCD permits recreation uses, with low-density single-family dwellings at seven units per acre by special exception (340-35, 340-36). C-1, C-2 and I list no dwelling",
+      "Accessory uses in the residential districts are parking and private garages, 'Utility sheds, toolsheds and similar accessory structures', pools, signs, home occupations and decks (340-16, 340-21, 340-26). A dwelling unit is 'One or more rooms designed constituting a separate housekeeping unit which, at a minimum, must include cooking, sleeping and sanitary facilities'. A family is persons related by blood, marriage or adoption, or no more than three unrelated persons, living as a single housekeeping unit (340-12). A lot is 'A parcel of land on which a main building and any accessory buildings are or may be placed', and an accessory building is one 'customarily incidental and subordinate to the principal building' (340-12). A detached dwelling is not a customary accessory building, so a second detached dwelling would be a second main building on the lot. A conversion is 'Any change of use or physical layout of a structure from which it was originally intended' (340-12), and a change of use needs a permit and must conform to the chapter (340-75A, 340-92A)",
+      "Accessory structures together cover at most 5% of the lot in residential districts, so 250 sq ft on a 5,000 sq ft lot (340-80A(1)). They are at most one story or 14 ft tall, stand at least 3 ft from the side and rear lines 'and behind the rearmost portion of the principal building', and on a corner lot no closer to the side street than the house (340-80). The district sections keep them out of the required front yard and 5 ft from any property line, reducible to 3 ft by special exception (340-17I, 340-22J, 340-27J). The district sections were amended later, in 2019, so their 5 ft is the yard by right, and 3 ft is the least the Board may grant",
+      "Lot area: 5,000 sq ft per single-family detached dwelling in R-1, 3,000 sq ft per dwelling unit for residential uses in R-2, the R-2 figure in R-3 except 1,500 sq ft per unit for attached and multifamily uses (340-17A, 340-22A, 340-27A). In R-1 'for all other uses' the minimum is 10,000 sq ft. Side yards for a detached house are two, with an aggregate of 20 ft and neither under 8 ft. In R-2 a semidetached house and the end unit of an attached row have one side yard of at least 12 ft, in R-3 10 ft. An interior unit of a row has no side yard (340-17G, 340-22G, 340-27G). A lot held in single and separate ownership when the chapter took effect may be built on below the minimum area or width if the use, yard, setback and density rules are met (340-102). Since the density rules must still be met, a two-family dwelling on such a lot is read to need 3,000 sq ft per unit",
       "Parking: 'Single-family dwelling, 2 per dwelling unit', and for multifamily and townhouses 1 space for an efficiency, 2 for one or two bedrooms and 3 for three or more. Only a fraction of 1/2 or more counts as a space. The table has no two-family row. Parking is on the same lot except in C-1. A use changed or extended so that it needs more parking provides the added spaces (340-67C, 340-68)",
-      "Floodplain (Chapter 165, FIRM of November 18, 2009, applied through 340-8): new construction and substantial improvements of residential structures are elevated to the base flood elevation plus 1 1/2 ft, basements are prohibited, and an accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit. Manufactured homes are prohibited unless a variance is granted, and never within 50 ft of the top of bank. The Borough decides floodplain variances, and appeals of the Floodplain Administrator go to the Zoning Hearing Board (165-17, 165-19, 165-24, 165-28, 165-33, 165-34)",
-      "Riparian buffer: 'The riparian buffer shall be maintained within 100 feet of the top of stream bank and shall remain as open, undeveloped area' (340-87G). Steep slopes (over 15%), wetlands and riparian buffers are deducted from the area used for total improvement coverage (340-12). No steep slope or wetland chapter was found in Chapter 340",
+      "Floodplain (Chapter 165, FIRM of November 18, 2009, applied through 340-8): a permit is needed for any construction or development anywhere in the borough, and development includes renovation, repair, expansion or alteration of buildings. New construction and substantial improvements of residential structures are elevated to the base flood elevation plus 1 1/2 ft, basements are prohibited, and an accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit. Manufactured homes are prohibited unless a variance is granted, and never within 50 ft of the top of bank. Floodplain variances are considered by the Borough under the procedure of 165-17, which sends appeals to the Zoning Hearing Board. The code does not name the body outright. No variance may raise the base flood elevation (165-8, 165-17, 165-19, 165-24, 165-28, 165-33, 165-34, 165-36 'Development')",
+      "Riparian buffer: 'The riparian buffer shall be maintained within 100 feet of the top of stream bank and shall remain as open, undeveloped area' (340-87G). The buffer reaches 100 ft from the top of bank 'or to the limit of the 100-year floodplain, whichever distance is greater' (340-12 'Riparian buffers'). Stormwater easements, rights-of-way, surface water, wetlands and steep slopes (over 15%) are deducted in full, and riparian buffers and wetland buffers by half, from the area used for total improvement coverage (340-12 'Total improvement area'). No steep slope or wetland chapter was found in Chapter 340",
       "Special exceptions are granted only where the district article provides for them, with an environmental impact assessment and a traffic impact study (340-114, 340-90, 340-90.1). A use variance also needs an environmental impact assessment (340-90A). Variances go to the Zoning Hearing Board on the MPC findings, and lapse without a building permit within six months (340-105C, 340-109A, 340-111). No bar on a use variance was found",
-      "Nonconforming uses and structures may be enlarged by special exception once, by at most 50%, within the district's area, height and setback rules (340-98). In I, the conversion of existing industrial buildings to residential units is a special exception (340-53C)"
+      "Nonconforming uses and structures may be enlarged by special exception once, by at most 50%, within the district's area, height and setback rules (340-98). In I, the conversion of existing industrial buildings to residential units is a special exception (340-53C). A nonconforming structure or use may also get a temporary permit by special exception for up to two years (340-92F). That is not a path for a second unit",
+      "Side yards: the tool says 'at least 8 ft on one side, 20 ft for both sides together' for a detached house. The code means at least 8 ft on each side, with 20 ft for both together (340-17G, 340-22G, 340-27G)",
+      "Attached houses: 340-22G (R-2, 12 ft) and 340-27G (R-3, 10 ft) give one side yard only to the end unit of a row. An interior row house has no side yard. The tool shows the end unit's figure for every attached house"
     ],
-    "notes": "Zoning office: Clifton Heights Borough Code Enforcement. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 340 Articles I to X, XII to XIV and XVII to XIX, and Chapter 165 in full. Not read: Article XI (signs), XV (administration), XVI (amendments), the PDF attachments and Chapter 300 (subdivision). Saved text in the batch 56 cache."
+    "notes": "Zoning office: Clifton Heights Borough Code Enforcement. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 340 Articles I to X, XII to XIV and XVII to XIX, and Chapter 165 in full. Articles XI (signs), XV (administration) and XVI (amendments) were read later in the same saved whole-chapter text. Not read: the PDF attachments and Chapter 300 (subdivision). Saved text in the batch 56 cache."
   },
   "adu": {
     "term": {
@@ -116,7 +118,7 @@
             "R-2",
             "R-3"
           ],
-          "conditions": "R-2 permits by right a 'Two-family detached or a duplex dwelling containing no more than two single-family dwellings', a two-family semidetached dwelling and a two-family attached dwelling, and R-3 permits every R-2 use. The lot needs 3,000 sq ft per dwelling unit, so 6,000 sq ft for two units, and a two-family detached dwelling 50 ft of width. Two side yards of 8 ft and 20 ft together, front 20 ft, rear 25 ft, building coverage 30% in R-2 and 50% in R-3, height 35 ft. Parking is 2 spaces per single-family dwelling unit and the table has no two-family row. A changed or extended use provides the added parking. Each unit has its own cooking, sleeping and sanitary facilities",
+          "conditions": "R-2 permits by right a 'Two-family detached or a duplex dwelling containing no more than two single-family dwellings', a two-family semidetached dwelling and a two-family attached dwelling, and R-3 permits every R-2 use. The lot needs 3,000 sq ft per dwelling unit, so 6,000 sq ft for two units, and a two-family detached dwelling 50 ft of width. A two-family detached dwelling has two side yards, neither under 8 ft and 20 ft together. A two-family semidetached dwelling and the end unit of a two-family attached row have one side yard, 12 ft in R-2 and 10 ft in R-3. Front 20 ft, rear 25 ft, building coverage 30% in R-2 and 50% in R-3, height 35 ft. Parking is 2 spaces per single-family dwelling unit and the table has no two-family row. A changed or extended use provides the added parking. Each unit has its own cooking, sleeping and sanitary facilities",
           "min_lot_sqft": 6000,
           "covers_forms": [
             "internal"
@@ -124,10 +126,26 @@
           "builds": [
             "internal"
           ],
-          "section": "340-19D to F, 340-22, 340-24A, 340-27A, 340-12 'Dwelling unit', 340-67C, 340-68A",
+          "section": "340-19D to F, 340-22, 340-24A, 340-27A, 340-12 'Dwelling unit', 'Conversion', 340-67C, 340-68A, 340-75A, 340-92A",
           "url": "https://ecode360.com/print/CL3044?guid=16213818",
           "confidence": "secondary",
-          "note": "The code has no conversion section, so whether an existing house may be changed into a two-family dwelling under these listings is read from 340-75A (a change of use in conformity with the chapter). Ask the zoning officer"
+          "note": "The code has no conversion section. It defines a conversion as 'Any change of use or physical layout of a structure from which it was originally intended' (340-12), and a change of use must conform to the chapter and needs a permit (340-75A, 340-92A). So whether an existing house may be changed into a two-family dwelling under these listings is read from those sections. Ask the zoning officer"
+        },
+        {
+          "name": "RCZ cluster development (R-1, R-2, R-3)",
+          "path": "special_exception",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3"
+          ],
+          "conditions": "The cluster option is 'permitted by special exception as an option in the R-1, R-2, and R-3 Residential Districts'. It may hold the residential uses R-1, R-2 and R-3 permit by right, so in R-1 also the two-family dwellings of R-2. The tract is at least one acre in single and separate ownership. No structure stands within 30 ft of any lot line, the underlying district's height applies, and the number of units may not exceed what the underlying district allows (in R-1 5,000 sq ft per single-family detached dwelling and 10,000 sq ft for all other uses). Open space is set aside for perpetual preservation. The Zoning Hearing Board needs an environmental impact assessment and a traffic impact study",
+          "min_lot_sqft": 43560,
+          "min_lot_is_tract": true,
+          "section": "340-15E, 340-28A, 340-29, 340-31, 340-32, 340-17A, 340-114",
+          "url": "https://ecode360.com/print/CL3044?guid=16213818",
+          "confidence": "secondary",
+          "note": "A cluster development of a whole tract, not a unit added to one house lot. Ask the zoning officer"
         }
       ],
       "section": "340-19",
@@ -157,7 +175,7 @@
       "value": [
         {
           "kind": "other",
-          "condition": "In the identified floodplain an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', is limited to parking or storage, has at most 200 sq ft of floor area and no sanitary facilities or permanently affixed utility equipment. Floodplain variances are decided by the Borough under Chapter 165, with no variance that raises the base flood elevation.",
+          "condition": "In the identified floodplain an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', is limited to parking or storage, has at most 200 sq ft of floor area and no sanitary facilities or permanently affixed utility equipment. Floodplain variances are considered by the Borough under the procedure of 165-17, which sends appeals to the Zoning Hearing Board, and no variance may raise the base flood elevation.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
@@ -170,7 +188,7 @@
             "Identified floodplain area"
           ],
           "unless_elevated": true,
-          "section": "165-24E(1), (2), (6), (7), 165-33, 165-34A",
+          "section": "165-24E(1), (2), (6), (7), 165-17, 165-33, 165-34A",
           "url": "https://ecode360.com/print/CL3044?guid=16212414",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 165"
@@ -215,7 +233,7 @@
         },
         {
           "kind": "other",
-          "condition": "'The riparian buffer shall be maintained within 100 feet of the top of stream bank and shall remain as open, undeveloped area.' A new building or addition for the unit cannot stand within 100 ft of the top of a stream bank.",
+          "condition": "'The riparian buffer shall be maintained within 100 feet of the top of stream bank and shall remain as open, undeveloped area.' A new building or addition for the unit cannot stand within 100 ft of the top of a stream bank. The buffer is the greater of 100 ft from the top of bank or the limit of the 100-year floodplain, so where the 100-year floodplain reaches farther, the buffer does too.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
@@ -228,9 +246,61 @@
           "section": "340-87G, 340-12 'Riparian buffers'",
           "url": "https://ecode360.com/print/CL3044?guid=16214309",
           "confidence": "secondary"
+        },
+        {
+          "kind": "other",
+          "condition": "A riparian buffer reaches 'to the limit of the 100-year floodplain' where that is farther than 100 ft from the top of bank, and the buffer 'shall remain as open, undeveloped area'. On a lot in the identified floodplain a new building or addition for the unit may stand in the buffer, where it is barred.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "340-12 'Riparian buffers', 340-87G, 165-18A",
+          "url": "https://ecode360.com/print/CL3044?guid=16214309",
+          "confidence": "secondary",
+          "disputed_by": {
+            "section": "340-12 'Riparian buffers'",
+            "url": "https://ecode360.com/print/CL3044?guid=16213818",
+            "note": "Only the land within 100 ft of the top of bank, or out to the limit of the 100-year floodplain, is buffer. A lot in the identified floodplain may still have its building spot outside the floodplain and more than 100 ft from the top of bank, and there the buffer does not reach it"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In R-2 the one side yard of at least 12 ft is for the end unit of an attached row. An interior unit of a row has no side yard, and the figure shown is the end unit's.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-2"
+          ],
+          "building_types": [
+            "attached"
+          ],
+          "section": "340-22G",
+          "url": "https://ecode360.com/print/CL3044?guid=16213818",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In R-3 the one side yard of at least 10 ft is for the end unit of an attached row. An interior unit of a row has no side yard, and the figure shown is the end unit's.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "R-3"
+          ],
+          "building_types": [
+            "attached"
+          ],
+          "section": "340-27G",
+          "url": "https://ecode360.com/print/CL3044?guid=16213818",
+          "confidence": "verified"
         }
       ],
-      "section": "165-19, 165-24, 340-87G",
+      "section": "165-19, 165-24, 340-12, 340-22G, 340-27G, 340-87G",
       "url": "https://ecode360.com/print/CL3044?guid=16212414",
       "verified_on": "2026-11-18",
       "confidence": "verified"
@@ -290,7 +360,7 @@
       "url": "https://ecode360.com/print/CL3044?guid=16213818",
       "verified_on": "2026-11-18",
       "confidence": "verified",
-      "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+      "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
     },
     "setback_rear_ft": {
       "value": 5,
@@ -298,7 +368,20 @@
       "url": "https://ecode360.com/print/CL3044?guid=16213818",
       "verified_on": "2026-11-18",
       "confidence": "verified",
-      "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+      "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "Every accessory structure on a lot in a residential district counts toward one cap: all of them together cover at most 5% of the lot",
+          "section": "340-80A(1)",
+          "note": "'All uses in residential districts and multifamily dwellings with five or more units: 5% maximum.' The tool has no field for this lot share, so it is not tested"
+        }
+      ],
+      "section": "340-80A",
+      "url": "https://ecode360.com/print/CL3044?guid=16214309",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
     }
   },
   "parking": {
@@ -326,7 +409,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'for single-family detached dwellings, 5,000 square feet minimum per dwelling'. Width 50 ft, frontage 20 ft. R-1 permits only a single-family detached dwelling and municipal uses by right (340-14)"
+        "note": "'for single-family detached dwellings, 5,000 square feet minimum per dwelling', and 'for all other uses, 10,000 square feet minimum'. Width 50 ft, frontage 20 ft. R-1 permits only a single-family detached dwelling and municipal uses by right (340-14)"
       },
       "setback_front_ft": {
         "value": 20,
@@ -341,7 +424,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "Two side yards, neither less than 8 ft"
+        "note": "Two side yards, neither less than 8 ft, so at least 8 ft on each side"
       },
       "setback_sides_total_ft": {
         "value": 20,
@@ -371,7 +454,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements, less the deductions in the 340-12 definition (wetlands, steep slopes, half of riparian buffers)"
+        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements. Stormwater easements, rights-of-way, surface water, wetlands and steep slopes are deducted from the area in full, and riparian and wetland buffers by half (340-12)"
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -387,7 +470,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_setback_rear_ft": {
         "value": 5,
@@ -395,7 +478,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_structure_max_height_ft": {
         "value": 14,
@@ -443,7 +526,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "Two side yards, neither less than 8 ft"
+        "note": "Two side yards, neither less than 8 ft, so at least 8 ft on each side"
       },
       "setback_sides_total_ft": {
         "value": 20,
@@ -473,7 +556,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements, less the deductions in the 340-12 definition (wetlands, steep slopes, half of riparian buffers)"
+        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements. Stormwater easements, rights-of-way, surface water, wetlands and steep slopes are deducted from the area in full, and riparian and wetland buffers by half (340-12)"
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -489,7 +572,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_setback_rear_ft": {
         "value": 5,
@@ -497,7 +580,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_structure_max_height_ft": {
         "value": 14,
@@ -523,7 +606,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "One side yard for a semidetached dwelling and for the end unit of an attached row"
+        "note": "One side yard of at least 12 ft for a semidetached dwelling, and for the end unit of an attached row only. An interior unit of a row has no side yard"
       },
       "lot_area_per_unit_sqft": {
         "value": 3000,
@@ -556,7 +639,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "Two side yards, neither less than 8 ft"
+        "note": "Two side yards, neither less than 8 ft, so at least 8 ft on each side"
       },
       "setback_sides_total_ft": {
         "value": 20,
@@ -586,7 +669,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements, less the deductions in the 340-12 definition (wetlands, steep slopes, half of riparian buffers)"
+        "note": "'Total improvement coverage': structures, paved parking and driveways and other improvements. Stormwater easements, rights-of-way, surface water, wetlands and steep slopes are deducted from the area in full, and riparian and wetland buffers by half (340-12)"
       },
       "principal_max_height_ft": {
         "value": 35,
@@ -602,7 +685,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_setback_rear_ft": {
         "value": 5,
@@ -610,7 +693,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft from any side or rear lot line. The 5 ft figure is the stricter one and is shown"
+        "note": "'Accessory buildings shall not be located in the required front yard or within five feet of any property line', and the Zoning Hearing Board may reduce the side and rear figure to 3 ft by special exception with fencing and landscaping. 340-80C says 3 ft. The district sections were amended later (2019) and make 3 ft a special exception, so 5 ft is the yard by right and 3 ft the least the Board may grant"
       },
       "accessory_structure_max_height_ft": {
         "value": 14,
@@ -636,7 +719,7 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "One side yard for a semidetached dwelling and for the end unit of an attached row"
+        "note": "One side yard of at least 10 ft for a semidetached dwelling, and for the end unit of a row or cluster of attached dwellings only. An interior unit has no side yard"
       },
       "lot_area_per_unit_sqft": {
         "value": 3000,

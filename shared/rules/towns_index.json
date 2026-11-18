@@ -5355,7 +5355,7 @@
       "why": [
         "added as batch 56 by population. Code Chapter 340 has no ADU text (two-family dwellings by right in R-2 and R-3, 340-19)"
       ],
-      "status_note": "Not addressed. R-1 is used 'by right only' for a single-family detached dwelling (340-14), so a second unit is a use variance, while R-2 and R-3 permit two-family dwellings by right on 3,000 sq ft per unit (340-19, 340-22A). Open: code currency (eCode360 through 12-17-2019, empty New Laws), whether a house may become a two-family dwelling without a conversion section, accessory yards of 5 ft (340-17I, 340-22J, 340-27J) against 3 ft (340-80C), the 100 ft riparian buffer read as a bar on new buildings (340-87G), and the end-unit side yard said for every attached house in R-2 and R-3"
+      "status_note": "Not addressed. R-1 is used 'by right only' for a single-family detached dwelling (340-14), so a second unit is a use variance. R-2 and R-3 permit two-family dwellings by right on 3,000 sq ft per unit (340-19, 340-22A), and the RCZ cluster option is a special exception on a tract of one acre (340-28 to 340-31). Open: the tool says an attached house has its own side yard of 12 ft in R-2 (10 ft in R-3), while 340-22G and 340-27G give that yard only to the end unit of a row, and it says 'at least 8 ft on one side' where 340-17G means at least 8 ft on each side. Also open: code currency (eCode360 through 12-17-2019, empty New Laws), whether a house may become a two-family dwelling with no conversion section (340-12 'Conversion', 340-75A), and the 5% lot cap on accessory structures (340-80A), which is said but not tested"
     },
     {
       "geoid": "4213311432",
@@ -5379,7 +5379,7 @@
       "why": [
         "added as batch 56 by population. Code Chapter 450 has no ADU text beyond the accessory apartment units of a TND development (450-380E(1)(b)), 450-382 two-family conversion by special exception in RS-1, RS-2, RS-3 and by right in MU-1"
       ],
-      "status_note": "Not addressed. The Table of Land Uses lists no ADU and 'No mark indicates not permitted' (450-212). Accessory apartment units are a residential use only inside a TND development of 70 acres (450-380E(1)(b)), and a house that had 2,000 sq ft may be converted to two units (450-382). Open: the chapter's effective date for the 450-382 size test, whether a TND accessory apartment counts in TND density or as an accessory use, its parking (no schedule row, 450-416E), whether the 400-22E floodplain accessory rules reach a garage conversion, and the rest of 450-211 and Article 3, not read"
+      "status_note": "Not addressed. The Table of Land Uses lists no ADU and 'No mark indicates not permitted' (450-212). Accessory apartment units are a residential use inside a TND development of 70 acres, counted in its density (450-380E, F), and a house that had 2,000 sq ft may be converted to two units (450-382). Open: on a TND lot the tool still shows the MU-1 accessory height of 25 ft, the 8,000 sq ft district minimum and the MU-1 yards in its headline line, where the TND gives 35 ft, 5,000 sq ft and 2 ft side and 5 ft rear accessory yards (450-380H to J). Also open: the chapter's effective date for 450-382 (9-13-2021 under Ord. No. 2021-250, or 9-27-2006 or earlier under 450-706), whether the conversion and a second principal dwelling (450-409) take the per-unit lot size and the density of 2.5 units per acre, TND apartment parking (no schedule row, 450-416E), and whether the 400-22E floodplain accessory rules reach a garage conversion"
     },
     {
       "geoid": "4201949056",
@@ -5403,7 +5403,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 175-95.1 accessory dwelling unit by special exception (AG-A, AG-B, R-1, R-2, R-AG))"
       ],
-      "status_note": "Special exception in AG-A, AG-B, R-1, R-2 and R-AG (175-95.1, Ord. No. 138 of 12-20-2023): one unit, 400 to 1,200 sq ft or 50% of the house, 1 added parking space. Open: whether a unit inside or attached to the house is allowed, since 175-95.1A says 'as an accessory structure' while 175-8 covers both, whether the unit takes accessory or dwelling side yards (25 ft in AG-A, AG-B, R-AG), the 25 ft accessory height on lots of two acres or more (shown as a condition beside 15 ft), and the commercial, town center and corridor districts, not read"
+      "status_note": "Special exception in AG-A, AG-B, R-1, R-2 and R-AG (175-95.1, Ord. No. 138 of 12-20-2023): one unit, 400 to 1,200 sq ft or 50% of the house, 1 added parking space. Open: on a lot of two acres or more in AG-A, AG-B and R-AG the tool shows the 15 ft accessory cap, while 175-15I(2)(b) allows 25 ft (said only as a condition). Also open: whether a unit inside or attached to the house is allowed (175-95.1A 'as an accessory structure' against 175-8), whether a detached unit is allowed in R-1, where all dwelling units must be in the one principal structure (175-12D), and whether the unit takes accessory or dwelling side yards (10 or 25 ft in AG-A, AG-B and R-AG, 10 or 15 ft in R-2)"
     }
   ]
 }

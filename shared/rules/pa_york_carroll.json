@@ -1,7 +1,7 @@
 {
   "provenance": {
     "jurisdiction": "Carroll township",
-    "instrument": "Carroll Township Zoning Ordinance (Chapter 450 Zoning, Ord. No. 2006-178 of 9-27-2006, as amended), with Chapter 400 Floodplain Management (Ord. No. 2015-234 of 12-14-2015), as published on eCode360",
+    "instrument": "Carroll Township Zoning Ordinance (Chapter 450 Zoning, adopted 9-27-2006 by Ord. No. 2006-178 and amended in its entirety 9-13-2021 by Ord. No. 2021-250, as amended), with Chapter 400 Floodplain Management (Ord. No. 2015-234 of 12-14-2015), as published on eCode360",
     "kind": "place",
     "status": "in_force",
     "status_detail": "eCode360 CA3667, Township of Carroll, PA. 450-111 cites the 'Official Comprehensive Plan, Carroll Township, York County, PA' and 450-112C 'Lot of record' the Recorder of Deeds for York County, so this is Carroll township, York County. eCode360 also hosts a Carroll Township in Washington County, a different place. The Table of Land Uses by District (450-212, revised 1-9-2023) and the dimensional tables are web text. The only attachment is the zoning map, not opened. The township website posts an older zoning ordinance (amended March 8, 2010) as PDFs, not used",
@@ -19,7 +19,8 @@
       "https://ecode360.com/print/CA3667?guid=37611307",
       "https://ecode360.com/print/CA3667?guid=37611331",
       "https://ecode360.com/print/CA3667?guid=31969279",
-      "https://www.carrolltownship.com/zoning-ordinance/"
+      "https://www.carrolltownship.com/zoning-ordinance/",
+      "https://ecode360.com/print/CA3667?guid=31947744"
     ],
     "verified_on": "2026-11-18",
     "county": "York",
@@ -31,18 +32,21 @@
     "code_current_through_note": "eCode360 shows 'Includes legislation through 09-09-2024.' New Laws lists only a Subdivision and Land Development Plan Review Policy and Procedure of 6-9-2025, no zoning",
     "checks": [
       "The code has no general accessory dwelling unit use. A search for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, granny, elder cottage, temporary dwelling, caretaker and tenant house found the two-family conversion (450-382), the accessory apartment units of a TND development (450-380E(1)(b)) and definitions",
-      "Table of Land Uses by District (450-212): a single-family detached dwelling is permitted by right in AC, RA, RS-1, RS-2, RS-3, MU-1 and MU-2, a semidetached dwelling in RS-2, RS-3 and MU-1. A two-family conversion is a special exception in RS-1, RS-2 and RS-3 and permitted in MU-1. A TND development is a conditional use in RS-3 and C and permitted in MU-1. 'No mark indicates not permitted'. A use neither permitted nor prohibited may be a special exception if it is of the same general character as the zone's uses and permitted in no other zone (450-107)",
-      "A dwelling must be connected to approved public or on-lot sewer and water. A family is persons related by blood, marriage or adoption, including foster care, in one household, and the residents of a group home. A single-family detached dwelling contains one dwelling unit for one family (450-112C). More than one principal use may be on a lot if each structure meets the density, lot and yard rules as though on its own lot, possibly with a land development plan and its own sewage and water (450-409). A dwelling unit has at least 700 sq ft of livable floor area, a conversion apartment 400 sq ft (450-414)",
+      "Table of Land Uses by District (450-212): a single-family detached dwelling is permitted by right in AC, RA, RS-1, RS-2, RS-3, MU-1 and MU-2, a semidetached dwelling in RS-2, RS-3 and MU-1. A two-family conversion is a special exception in RS-1, RS-2 and RS-3 and permitted in MU-1. A TND development is a conditional use in RS-3 and C and permitted in MU-1. 'No mark indicates not permitted'. A use neither permitted nor prohibited may be a special exception if it is of the same general character as the zone's uses and permitted in no other zone (450-107). The table also lists multiple-family dwellings as a conditional use in RS-3 and MU-1, a manufactured home park as a conditional use in RS-3, a live-work unit ('A first floor professional office, retail sales, or restaurant use of no more than 2,000 square feet within the same structure as a residential dwelling') as a conditional use in MU-1, and short-term rentals as a special exception in AC, RA and RS-1. None is an ADU. An apartment conversion ('Creation of two or more living units by conversion of an existing structure') is defined but has no row in the table (450-112C)",
+      "A dwelling must be connected to approved public or on-lot sewer and water. A family is persons related by blood, marriage or adoption, including foster care, in one household, and the residents of a group home. A single-family detached dwelling contains one dwelling unit for one family (450-112C). More than one principal use may be on a lot if each structure meets the density, lot and yard rules as though on its own lot, possibly with a land development plan and its own sewage and water (450-409, see the other paths). A dwelling unit has at least 700 sq ft of livable floor area, a conversion apartment 400 sq ft (450-414)",
       "Accessory buildings and structures up to 200 sq ft stand at least 10 ft from the side and rear lines. Larger ones meet the principal building setbacks of the zone (450-403I and the zone tables). In AC, RA and RS-1 to RS-3 none may stand between the house and the street unless 100 ft back, in RS-3 and MU-1 none between the front building face and the street, and in MU-2 none in the front yard. In RS-2, RS-3, MU-1 and MU-2 each accessory structure is set back at least its height from the side and rear lines. Accessory height is 25 ft in AC, RA, RS-1, RS-2 and MU-1, 35 ft in RS-3 and MU-2 (450-201 to 450-207)",
       "Lot coverage is 'Any portion of a lot occupied by an impervious surface', with gravel, stone and block counted (450-112C). The table figures are impervious cover",
-      "Parking: a single-family detached dwelling needs 3 spaces, a two-family conversion 2 spaces per added unit beyond the house's, a two-family side-by-side dwelling 2 per unit. The schedule has no row for an accessory apartment, so the Zoning Officer uses the closest standard. A driveway in the front yard of a one-family or two-family residence counts as one space (450-416C, E)",
-      "Floodplain (Chapter 400, FIRM of December 16, 2015, through 450-210): new construction and substantial improvements are prohibited unless a variance is granted, fill and manufactured homes too. An accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit, and in an AE area without a floodway nothing new within 50 ft of the top of bank without a DEP permit. The Township decides floodplain variances under 400-31 and 400-32, and zoning variances in the floodplain follow Chapter 400 (450-605C(6))",
+      "Parking: a single-family detached dwelling needs 3 spaces, a two-family conversion 2 spaces per added unit beyond the house's, a two-family side-by-side dwelling 2 per unit. The schedule has no row for an accessory apartment, so the Zoning Officer uses the closest standard. A driveway in the front yard of a one-family or two-family residence counts as one space, except on a corner lot (450-416C, E)",
+      "Floodplain (Chapter 400, FIRM of December 16, 2015, through 450-210): new construction and substantial improvements are prohibited unless a variance is granted, fill and manufactured homes too. An accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit, and in an AE area without a floodway nothing new within 50 ft of the top of bank without a DEP permit. No part of an on-lot sewage system may be in the identified floodplain except in strict compliance with state and local rules (450-420B). Floodplain variances are considered under the procedure of 400-15, an appeal to the Zoning Hearing Board, and the Board applies the Chapter 400 standards to variances in the floodplain (400-31, 400-32A, 400-15, 450-605C(6))",
       "Nonconforming lots: in any district where dwellings are permitted a single-family dwelling may be built on a lot of record irrespective of its area, width or depth, with sewage, water and driveway approvals, and with reduced side and rear yards (450-505). A nonconforming use may be expanded by special exception by at most 35% (450-502A)",
       "A use 'neither specifically permitted nor prohibited' may be a special exception if it is of the same general character as the zone's permitted uses and 'Is not permitted in any other zone by the chapter' (450-107A). Accessory apartment units are permitted in a TND development (MU-1) and two-family conversions in MU-1, so this path is not shown for an ADU. Ask the zoning officer",
       "Variances go to the Zoning Hearing Board on the MPC findings (450-605C). No bar on a use variance was found. Special exceptions meet the Article 3 criteria and 450-605B",
-      "Conservation subdivision options (450-211) and TND developments (450-380) set their own lot sizes and yards on approved plans. Only part of 450-211 was read"
+      "Conservation subdivision options (450-211) and TND developments (450-380) set their own lot sizes and yards on approved plans. Only part of 450-211 was read",
+      "Agricultural setback: in AC, RA, RS-1 and RS-2 'no residential structures shall be placed within 100 feet of any land used for the commercial raising and keeping of animals'. In MU-1 no accessory residential structure or fence is placed within 10 ft of land used for agricultural purposes (450-201E, 450-202E, 450-203C, 450-204C, 450-206C)",
+      "Chapter 450 was amended in its entirety on 9-13-2021 by Ord. No. 2021-250. It is 'a continuation of, and not a repeal of existing regulations', and its provisions are 'in full force and effect as of the date such regulations were initially enacted' (450-706). So 'the effective date of this chapter' in the two-family conversion rule may be read as 9-13-2021 or as the date the rule was first enacted, 9-27-2006 or earlier (450-382, 450-706)",
+      "A TND lot follows the TND's own yards, height, lot size and coverage (450-380H to K), but the tool shows the district row's figures on such a lot: in MU-1 an accessory building height of 25 ft and a lot minimum of 8,000 sq ft, where the TND gives 35 ft and 5,000 sq ft for a single-family detached lot"
     ],
-    "notes": "Zoning office: Carroll Township (York County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 450 Articles 1, 2 (450-211 in part), 450-380, 450-382, Article 4 (signs in part), Articles 5 and 6, and Chapter 400. Not read: the rest of Article 3, Article 7, the zoning map and Chapter 435 (subdivision). Saved text in the batch 56 cache."
+    "notes": "Zoning office: Carroll Township (York County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 450 Articles 1, 2 (450-211 in part), 450-380, 450-382, Article 4 (signs in part), Articles 5 and 6, and Chapter 400. The rest of Article 3 and Article 7 were read later in the saved whole-chapter text (print view of Chapter 450). Not read: the zoning map and Chapter 435 (subdivision). Saved text in the batch 56 cache."
   },
   "adu": {
     "term": {
@@ -87,8 +91,8 @@
           "districts": [
             "MU-1"
           ],
-          "section": "450-212, 450-380B, C, E(1)(b), E(4), E(5), H, I",
-          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment",
+          "section": "450-212, 450-380B, C, E(1), E(4), E(5), F, H, I, J, K, 450-414",
+          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment. The TND's residential uses also include two-family dwellings (3,000 sq ft per unit). A house lot in the TND has 10 ft front, 5 ft side and 20 ft rear yards (26 ft along a lane), a single-family detached lot is at least 5,000 sq ft, and lot coverage is at most 75% outside the neighborhood commercial center (450-380E(1)(d), H(1), J, K)",
           "adu_listing": true,
           "forms": [
             "internal",
@@ -115,7 +119,7 @@
           ],
           "url": "https://ecode360.com/print/CA3667?guid=37603679",
           "confidence": "secondary",
-          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). Whether the apartment is an accessory use on the house lot or a dwelling counted in the TND's density is not settled"
+          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). The apartment counts among the TND's residential units: the 450-380E(5) shares are 'based on number of residential units/total number of residential units' and list the accessory apartment as one type. So it counts toward the TND density of 4.0 dwelling units per acre of the gross tract, 6.75 with design incentives (450-380F)"
         },
         {
           "name": "Accessory apartment unit in a TND development (RS-3, C)",
@@ -124,8 +128,8 @@
             "RS-3",
             "C"
           ],
-          "section": "450-212, 450-380B, C, E(1)(b), E(4), E(5), H, I",
-          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment",
+          "section": "450-212, 450-380B, C, E(1), E(4), E(5), F, H, I, J, K, 450-414",
+          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment. The TND's residential uses also include two-family dwellings (3,000 sq ft per unit). A house lot in the TND has 10 ft front, 5 ft side and 20 ft rear yards (26 ft along a lane), a single-family detached lot is at least 5,000 sq ft, and lot coverage is at most 75% outside the neighborhood commercial center (450-380E(1)(d), H(1), J, K)",
           "adu_listing": true,
           "forms": [
             "internal",
@@ -152,7 +156,7 @@
           ],
           "url": "https://ecode360.com/print/CA3667?guid=37603679",
           "confidence": "secondary",
-          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). Whether the apartment is an accessory use on the house lot or a dwelling counted in the TND's density is not settled"
+          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). The apartment counts among the TND's residential units: the 450-380E(5) shares are 'based on number of residential units/total number of residential units' and list the accessory apartment as one type. So it counts toward the TND density of 4.0 dwelling units per acre of the gross tract, 6.75 with design incentives (450-380F)"
         },
         {
           "name": "Two-family conversion (RS-1, RS-2, RS-3)",
@@ -162,7 +166,7 @@
             "RS-2",
             "RS-3"
           ],
-          "conditions": "'A detached single-family dwelling that existed on the effective date of this chapter, and contained (at that time) at least 2,000 square feet, may be converted into two dwelling units', with an approved water supply and sewage disposal, no extension or change to the outside that would alter its residential character, a permanent direct means of escape to ground level from every floor above and below grade, and any required land development approval. The zone's Article 2 rules apply. Each conversion apartment has at least 400 sq ft of livable floor area. Two spaces per added dwelling unit in addition to the house's spaces. The Zoning Hearing Board decides it under the special exception standards. In MU-1 the same conversion is permitted by right",
+          "conditions": "'A detached single-family dwelling that existed on the effective date of this chapter, and contained (at that time) at least 2,000 square feet, may be converted into two dwelling units', with an approved water supply and sewage disposal, no extension or change to the outside that would alter its residential character, a permanent direct means of escape to ground level from every floor above and below grade, and any required land development approval. The zone's Article 2 rules apply, so the lot meets the zone's lot minimum (14,000 sq ft in RS-1, 10,000 sq ft in RS-2 and RS-3), and one reading also applies the per-unit lot size and density to the two units. Each conversion apartment has at least 400 sq ft of livable floor area. Two spaces per added dwelling unit in addition to the house's spaces. The Zoning Hearing Board decides it under the special exception standards. In MU-1 the same conversion is permitted by right",
           "covers_forms": [
             "internal"
           ],
@@ -173,19 +177,38 @@
             {
               "test": "house_sqft_at_least",
               "value": 2000,
-              "condition": "The house had at least 2,000 sq ft when the chapter took effect",
+              "condition": "The house had at least 2,000 sq ft on the chapter's effective date. The tool tests the house's size today",
               "section": "450-382"
             },
             {
+              "test": "house_built_before",
+              "value_date": "2021-09-13",
+              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date, read as 9-13-2021, when Chapter 450 was amended in its entirety by Ord. No. 2021-250",
+              "section": "450-382, Chapter 450 history"
+            },
+            {
               "test": null,
-              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date",
-              "section": "450-382"
+              "condition": "The chapter continues earlier rules 'as of the date such regulations were initially enacted', so the effective date may instead be read as 9-27-2006 (Ord. No. 2006-178) or earlier. Read that way, a house built after that date, or one that had less than 2,000 sq ft then, does not qualify",
+              "section": "450-706"
             }
           ],
-          "section": "450-212, 450-382, 450-414, 450-416E 'Two-family conversion', 450-605B",
+          "section": "450-212, 450-382, 450-203F, 450-204F, 450-205E, 450-414, 450-416E 'Two-family conversion', 450-605B, 450-706",
           "url": "https://ecode360.com/print/CA3667?guid=37602586",
-          "confidence": "verified",
-          "note": "The 2,000 sq ft test is the house's size on the chapter's effective date, which the tool reads from today's house size. The chapter's effective date was not seen in the text read"
+          "confidence": "secondary",
+          "min_lot_by_district": {
+            "RS-1": 14000,
+            "RS-2": 10000,
+            "RS-3": 10000
+          },
+          "disputed_min_lot": {
+            "districts": [
+              "RS-2",
+              "RS-3"
+            ],
+            "min_lot_sqft": 34848,
+            "section": "450-382, 450-204F, 450-205E",
+            "note": "The conversion is 'subject to the provisions of Article 2'. Read with the zone's per-unit lot size and density, two units need 20,000 sq ft at 10,000 sq ft per dwelling unit (16,000 sq ft in MU-1 at 8,000) and 34,848 sq ft at 2.5 dwelling units per acre, density counted on the gross tract (450-204F, 450-205E, 450-206J note 1). Whether the conversion of an existing house takes these figures is not settled"
+          }
         },
         {
           "name": "Two-family conversion (MU-1, by right)",
@@ -193,7 +216,7 @@
           "districts": [
             "MU-1"
           ],
-          "conditions": "The same 450-382 conversion of a detached single-family dwelling that had at least 2,000 sq ft on the chapter's effective date, permitted by right in MU-1. Two spaces per added unit beyond the house's",
+          "conditions": "The same 450-382 conversion of a detached single-family dwelling that had at least 2,000 sq ft on the chapter's effective date, permitted by right in MU-1. It is subject to Article 2, so the lot meets the MU-1 minimum of 8,000 sq ft, and one reading also applies the per-unit lot size and density to the two units. Two spaces per added unit beyond the house's",
           "covers_forms": [
             "internal"
           ],
@@ -204,21 +227,86 @@
             {
               "test": "house_sqft_at_least",
               "value": 2000,
-              "condition": "The house had at least 2,000 sq ft when the chapter took effect",
+              "condition": "The house had at least 2,000 sq ft on the chapter's effective date. The tool tests the house's size today",
               "section": "450-382"
             },
             {
+              "test": "house_built_before",
+              "value_date": "2021-09-13",
+              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date, read as 9-13-2021, when Chapter 450 was amended in its entirety by Ord. No. 2021-250",
+              "section": "450-382, Chapter 450 history"
+            },
+            {
               "test": null,
-              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date",
-              "section": "450-382"
+              "condition": "The chapter continues earlier rules 'as of the date such regulations were initially enacted', so the effective date may instead be read as 9-27-2006 (Ord. No. 2006-178) or earlier. Read that way, a house built after that date, or one that had less than 2,000 sq ft then, does not qualify",
+              "section": "450-706"
             }
           ],
-          "section": "450-212, 450-382",
+          "section": "450-212, 450-382, 450-206J, 450-706",
           "url": "https://ecode360.com/print/CA3667?guid=37602586",
-          "confidence": "verified"
+          "confidence": "secondary",
+          "min_lot_sqft": 8000,
+          "disputed_min_lot": {
+            "districts": [
+              "MU-1"
+            ],
+            "min_lot_sqft": 34848,
+            "section": "450-382, 450-206J",
+            "note": "The conversion is 'subject to the provisions of Article 2'. Read with the zone's per-unit lot size and density, two units need 20,000 sq ft at 10,000 sq ft per dwelling unit (16,000 sq ft in MU-1 at 8,000) and 34,848 sq ft at 2.5 dwelling units per acre, density counted on the gross tract (450-204F, 450-205E, 450-206J note 1). Whether the conversion of an existing house takes these figures is not settled"
+          }
+        },
+        {
+          "name": "Second principal dwelling on the lot (450-409)",
+          "path": "by_right",
+          "districts": [
+            "AC",
+            "RA",
+            "RS-1",
+            "RS-2",
+            "RS-3",
+            "MU-1",
+            "MU-2"
+          ],
+          "conditions": "'More than one principal use may be erected on a single lot, provided that all density, lot and yard requirements, standards, and other requirements of this chapter shall be met for each structure, as though it were on an individual lot.' A second single-family detached dwelling, permitted by right in these zones, so needs the zone's lot area twice over and its own yards, and each dwelling has its own approved sewage disposal and water supply. Such proposals may need a land development plan. In RS-2, RS-3 and MU-1 the density of 2.5 dwelling units per acre also applies",
+          "min_lot_by_district": {
+            "AC": 174240,
+            "RA": 87120,
+            "RS-1": 28000,
+            "RS-2": 20000,
+            "RS-3": 20000,
+            "MU-1": 16000,
+            "MU-2": 60000
+          },
+          "disputed_min_lot": {
+            "districts": [
+              "RS-2",
+              "RS-3",
+              "MU-1"
+            ],
+            "min_lot_sqft": 34848,
+            "section": "450-409, 450-204F, 450-205E, 450-206J",
+            "note": "The zone's density of 2.5 dwelling units per acre, counted on the gross tract, puts two dwellings at 34,848 sq ft"
+          },
+          "covers_forms": [
+            "detached_new"
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "Each dwelling has its own individually approved sewage disposal and water supply",
+              "section": "450-409, 450-420A"
+            }
+          ],
+          "section": "450-409, 450-212, 450-201 to 450-207",
+          "url": "https://ecode360.com/print/CA3667?guid=37610855",
+          "confidence": "secondary",
+          "note": "A second house, not an accessory unit. Each house meets the lot, yard and density rules as though on its own lot. Ask the zoning officer"
         }
       ],
-      "section": "450-380, 450-382",
+      "section": "450-380, 450-382, 450-409",
       "url": "https://ecode360.com/print/CA3667?guid=37603679",
       "verified_on": "2026-11-18",
       "confidence": "verified"
@@ -247,7 +335,7 @@
       "value": [
         {
           "kind": "other",
-          "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited' unless a variance is obtained, and then the lowest floor goes at or above the regulatory flood elevation. Fill and manufactured homes are prohibited there unless a variance is granted. No variance may raise the base flood elevation. New construction is a structure begun on or after December 15, 2015, with its later improvements.",
+          "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited' unless a variance is obtained, and then the lowest floor goes at or above the regulatory flood elevation. Fill and manufactured homes are prohibited there unless a variance is granted. No variance may raise the base flood elevation. The Zoning Hearing Board hears floodplain variances under the 400-15 procedure and applies Chapter 400 to them. New construction is a structure begun on or after December 15, 2015, with its later improvements.",
           "effect": "bars",
           "applies_to": [
             "detached_new"
@@ -257,7 +345,7 @@
           "overlays": [
             "Identified floodplain area"
           ],
-          "section": "400-22, 400-23A, 400-26A, 400-32A(1), 400-34 'New construction'",
+          "section": "400-22, 400-23A, 400-26A, 400-32A(1), 400-15, 450-605C(6), 400-34 'New construction'",
           "url": "https://ecode360.com/print/CA3667?guid=31969279",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 400"
@@ -370,9 +458,74 @@
           "section": "450-420A, 450-112C 'Dwelling'",
           "url": "https://ecode360.com/print/CA3667?guid=37610855",
           "confidence": "verified"
+        },
+        {
+          "kind": "utilities",
+          "condition": "No part of an on-site sewage system may be located in the identified floodplain except in strict compliance with all state and local rules for such systems, and it must be placed to avoid impairment or contamination during a flood.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "450-420B",
+          "url": "https://ecode360.com/print/CA3667?guid=37610855",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In AC, RA, RS-1 and RS-2 'no residential structures shall be placed within 100 feet of any land used for the commercial raising and keeping of animals'. A new building or addition for the unit stays 100 ft from such land.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": [
+            "AC",
+            "RA",
+            "RS-1",
+            "RS-2"
+          ],
+          "building_types": null,
+          "section": "450-201E, 450-202E, 450-203C, 450-204C",
+          "url": "https://ecode360.com/print/CA3667?guid=37602398",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "In MU-1, on a separate nonfarm parcel, no accessory residential structure or fence is placed within 10 ft of any land used for agricultural purposes.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": [
+            "MU-1"
+          ],
+          "building_types": null,
+          "section": "450-206C",
+          "url": "https://ecode360.com/print/CA3667?guid=37602398",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "On a lot in an approved TND development the TND's own figures replace the district's. An accessory building stands 2 ft from the side line and 5 ft from the rear line (26 ft along a lane), and no nearer the street than the house. A house has 10 ft front, 5 ft side and 20 ft rear yards (26 ft along a lane). Buildings are at most 35 ft tall (65 ft in the neighborhood commercial center), a single-family detached lot is at least 5,000 sq ft, and lot coverage is at most 75% (90% in the neighborhood commercial center).",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": [
+            "MU-1",
+            "RS-3",
+            "C"
+          ],
+          "building_types": null,
+          "test": "designated_on_plan",
+          "supersedes_district_figures": true,
+          "section": "450-380B, H, I, J, K",
+          "url": "https://ecode360.com/print/CA3667?guid=37603679",
+          "confidence": "secondary"
         }
       ],
-      "section": "400-17, 400-22, 400-30, 450-420, 450-424",
+      "section": "400-17, 400-22, 400-30, 450-201E to 450-206C, 450-380, 450-420, 450-424",
       "url": "https://ecode360.com/print/CA3667?guid=31969279",
       "verified_on": "2026-11-18",
       "confidence": "verified"
