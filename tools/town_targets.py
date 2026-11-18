@@ -1484,6 +1484,7 @@ FIXED_BATCH.update({g: 51 for g in ("4202921104", "4207961048", "4213345152")})
 FIXED_BATCH.update({g: 53 for g in ("4204529720", "4208718944", "4204372200")})
 FIXED_BATCH.update({g: 54 for g in ("4207939792", "4202921008", "4200117640")})
 FIXED_BATCH.update({g: 55 for g in ("4207323304", "4200702288", "4204576576")})
+FIXED_BATCH.update({g: 56 for g in ("4204514264", "4213311432", "4201949056")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1868,6 +1869,15 @@ EXTRAS = {
     "4207323304": "batch 55 by population. Code Part Twelve Title Six has no ADU text (two-family by special exception in R-1 and by right in R-2, 1266.04)",
     "4200702288": "batch 55 by population. Code Chapter 310 has no ADU text (conversion apartments and multiple-family dwellings by right in R and C, 310-11)",
     "4204576576": "batch 55 by population. Code Chapter 27 has no ADU text (27-2108 conversion to two-family use by special exception in R-1 and R-2, 27-2807 historic resource conversion by conditional use)",
+    # Batch 56 (2026-11-18): the next towns by population without a rule file. Washington (Westmoreland) was skipped
+    # (the township planning page says the township does not have zoning laws, only a subdivision and land development
+    # ordinance), Monessen (Westmoreland) (eCode360 code through 10-11-2021, and Ord. No. 1265 of 11-21-2022, a zoning
+    # amendment, listed only as a PDF in New Laws, not yet codified), Clay (Lancaster) (zoning ordinance only as article
+    # PDFs on the township website) and Huntingdon (Huntingdon) (the Table of Allowed Uses and the Table of Dimensional
+    # Requirements, 27-306 and 27-307, only as PDF attachments).
+    "4204514264": "batch 56 by population. Code Chapter 340 has no ADU text (two-family dwellings by right in R-2 and R-3, 340-19)",
+    "4213311432": "batch 56 by population. Code Chapter 450 has no ADU text beyond the accessory apartment units of a TND development (450-380E(1)(b)), 450-382 two-family conversion by special exception in RS-1, RS-2, RS-3 and by right in MU-1",
+    "4201949056": "Code 175-95.1 accessory dwelling unit by special exception (AG-A, AG-B, R-1, R-2, R-AG)",
 }
 
 if __name__ == "__main__":

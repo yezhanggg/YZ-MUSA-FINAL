@@ -1,0 +1,952 @@
+{
+  "provenance": {
+    "jurisdiction": "Carroll township",
+    "instrument": "Carroll Township Zoning Ordinance (Chapter 450 Zoning, Ord. No. 2006-178 of 9-27-2006, as amended), with Chapter 400 Floodplain Management (Ord. No. 2015-234 of 12-14-2015), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 CA3667, Township of Carroll, PA. 450-111 cites the 'Official Comprehensive Plan, Carroll Township, York County, PA' and 450-112C 'Lot of record' the Recorder of Deeds for York County, so this is Carroll township, York County. eCode360 also hosts a Carroll Township in Washington County, a different place. The Table of Land Uses by District (450-212, revised 1-9-2023) and the dimensional tables are web text. The only attachment is the zoning map, not opened. The township website posts an older zoning ordinance (amended March 8, 2010) as PDFs, not used",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/CA3667",
+      "https://ecode360.com/CA3667/laws",
+      "https://ecode360.com/31947744",
+      "https://ecode360.com/CA3667/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22granny%22%20OR%20%22elder%20cottage%22%20OR%20%22temporary%20dwelling%22%20OR%20%22caretaker%22%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/CA3667?guid=37602037",
+      "https://ecode360.com/print/CA3667?guid=37602398",
+      "https://ecode360.com/print/CA3667?guid=37602586",
+      "https://ecode360.com/print/CA3667?guid=37603679",
+      "https://ecode360.com/print/CA3667?guid=37610855",
+      "https://ecode360.com/print/CA3667?guid=37611307",
+      "https://ecode360.com/print/CA3667?guid=37611331",
+      "https://ecode360.com/print/CA3667?guid=31969279",
+      "https://www.carrolltownship.com/zoning-ordinance/"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "York",
+    "municipality_type": "township",
+    "geoid": "4213311432",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/31947744",
+    "code_current_through": "2024-09-09",
+    "code_current_through_note": "eCode360 shows 'Includes legislation through 09-09-2024.' New Laws lists only a Subdivision and Land Development Plan Review Policy and Procedure of 6-9-2025, no zoning",
+    "checks": [
+      "The code has no general accessory dwelling unit use. A search for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, granny, elder cottage, temporary dwelling, caretaker and tenant house found the two-family conversion (450-382), the accessory apartment units of a TND development (450-380E(1)(b)) and definitions",
+      "Table of Land Uses by District (450-212): a single-family detached dwelling is permitted by right in AC, RA, RS-1, RS-2, RS-3, MU-1 and MU-2, a semidetached dwelling in RS-2, RS-3 and MU-1. A two-family conversion is a special exception in RS-1, RS-2 and RS-3 and permitted in MU-1. A TND development is a conditional use in RS-3 and C and permitted in MU-1. 'No mark indicates not permitted'. A use neither permitted nor prohibited may be a special exception if it is of the same general character as the zone's uses and permitted in no other zone (450-107)",
+      "A dwelling must be connected to approved public or on-lot sewer and water. A family is persons related by blood, marriage or adoption, including foster care, in one household, and the residents of a group home. A single-family detached dwelling contains one dwelling unit for one family (450-112C). More than one principal use may be on a lot if each structure meets the density, lot and yard rules as though on its own lot, possibly with a land development plan and its own sewage and water (450-409). A dwelling unit has at least 700 sq ft of livable floor area, a conversion apartment 400 sq ft (450-414)",
+      "Accessory buildings and structures up to 200 sq ft stand at least 10 ft from the side and rear lines. Larger ones meet the principal building setbacks of the zone (450-403I and the zone tables). In AC, RA and RS-1 to RS-3 none may stand between the house and the street unless 100 ft back, in RS-3 and MU-1 none between the front building face and the street, and in MU-2 none in the front yard. In RS-2, RS-3, MU-1 and MU-2 each accessory structure is set back at least its height from the side and rear lines. Accessory height is 25 ft in AC, RA, RS-1, RS-2 and MU-1, 35 ft in RS-3 and MU-2 (450-201 to 450-207)",
+      "Lot coverage is 'Any portion of a lot occupied by an impervious surface', with gravel, stone and block counted (450-112C). The table figures are impervious cover",
+      "Parking: a single-family detached dwelling needs 3 spaces, a two-family conversion 2 spaces per added unit beyond the house's, a two-family side-by-side dwelling 2 per unit. The schedule has no row for an accessory apartment, so the Zoning Officer uses the closest standard. A driveway in the front yard of a one-family or two-family residence counts as one space (450-416C, E)",
+      "Floodplain (Chapter 400, FIRM of December 16, 2015, through 450-210): new construction and substantial improvements are prohibited unless a variance is granted, fill and manufactured homes too. An accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit, and in an AE area without a floodway nothing new within 50 ft of the top of bank without a DEP permit. The Township decides floodplain variances under 400-31 and 400-32, and zoning variances in the floodplain follow Chapter 400 (450-605C(6))",
+      "Nonconforming lots: in any district where dwellings are permitted a single-family dwelling may be built on a lot of record irrespective of its area, width or depth, with sewage, water and driveway approvals, and with reduced side and rear yards (450-505). A nonconforming use may be expanded by special exception by at most 35% (450-502A)",
+      "A use 'neither specifically permitted nor prohibited' may be a special exception if it is of the same general character as the zone's permitted uses and 'Is not permitted in any other zone by the chapter' (450-107A). Accessory apartment units are permitted in a TND development (MU-1) and two-family conversions in MU-1, so this path is not shown for an ADU. Ask the zoning officer",
+      "Variances go to the Zoning Hearing Board on the MPC findings (450-605C). No bar on a use variance was found. Special exceptions meet the Article 3 criteria and 450-605B",
+      "Conservation subdivision options (450-211) and TND developments (450-380) set their own lot sizes and yards on approved plans. Only part of 450-211 was read"
+    ],
+    "notes": "Zoning office: Carroll Township (York County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 450 Articles 1, 2 (450-211 in part), 450-380, 450-382, Article 4 (signs in part), Articles 5 and 6, and Chapter 400. Not read: the rest of Article 3, Article 7, the zoning map and Chapter 435 (subdivision). Saved text in the batch 56 cache."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 450",
+      "url": "https://ecode360.com/CA3667/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22guest%20house%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22granny%22%20OR%20%22elder%20cottage%22%20OR%20%22temporary%20dwelling%22%20OR%20%22caretaker%22%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, second dwelling, ECHO, guest house, living quarters, conversion, granny, elder cottage, temporary dwelling, caretaker and tenant house. No general ADU use. 'Accessory apartment units' are listed only as a residential use of a TND development (450-380E(1)(b), see the other paths)"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "450-212",
+      "url": "https://ecode360.com/print/CA3667?guid=37602586",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The Table of Land Uses by District lists no accessory dwelling unit, and 'No mark indicates not permitted'. A TND development may include accessory apartment units, and a house of at least 2,000 sq ft may be converted to two units"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "450-212, 450-605C",
+      "url": "https://ecode360.com/print/CA3667?guid=37602586",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot outside a TND development is not a listed use, so the path is a use variance from the Zoning Hearing Board (MPC 910.2). A house that had 2,000 sq ft may be converted to two units (450-382, see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "450-605C",
+      "url": "https://ecode360.com/print/CA3667?guid=37611331",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the MPC findings. No bar on a use variance was found"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Accessory apartment unit in a TND development (MU-1)",
+          "path": "by_right",
+          "districts": [
+            "MU-1"
+          ],
+          "section": "450-212, 450-380B, C, E(1)(b), E(4), E(5), H, I",
+          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment",
+          "adu_listing": true,
+          "forms": [
+            "internal",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "builds": [
+            "detached_new",
+            "garage_conversion",
+            "internal"
+          ],
+          "land_development": true,
+          "max_sqft": null,
+          "owner_occupancy": false,
+          "family_only": false,
+          "parking_spaces": null,
+          "requires": [
+            {
+              "test": "designated_on_plan",
+              "condition": "Only a lot in an approved TND development under its overall master plan",
+              "section": "450-380C, D"
+            }
+          ],
+          "url": "https://ecode360.com/print/CA3667?guid=37603679",
+          "confidence": "secondary",
+          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). Whether the apartment is an accessory use on the house lot or a dwelling counted in the TND's density is not settled"
+        },
+        {
+          "name": "Accessory apartment unit in a TND development (RS-3, C)",
+          "path": "conditional_use",
+          "districts": [
+            "RS-3",
+            "C"
+          ],
+          "section": "450-212, 450-380B, C, E(1)(b), E(4), E(5), H, I",
+          "conditions": "A TND development is a mixed neighborhood on a tract of at least 70 acres under one overall master plan, on public water and sewer and in the growth area, with land development plan approval. Smaller sites contiguous with or across a street from an existing or approved TND may be considered. Its residential uses include 'Accessory apartment units (an apartment located in an accessory structure, or located in the primary structure with mutually exclusive livable areas and provided with a separate entrance)'. At most 25% of the single-family detached dwellings may include one, and accessory apartments are at most 10% of all units. Accessory building yards are 2 ft side and 5 ft rear (26 ft along a lane), none nearer the street than the house, and buildings are at most 35 ft tall. The section sets no size cap and no owner or family rule for the apartment. The chapter's minimum livable floor area for a dwelling unit is 700 sq ft, 400 sq ft for a conversion apartment",
+          "adu_listing": true,
+          "forms": [
+            "internal",
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "builds": [
+            "detached_new",
+            "garage_conversion",
+            "internal"
+          ],
+          "land_development": true,
+          "max_sqft": null,
+          "owner_occupancy": false,
+          "family_only": false,
+          "parking_spaces": null,
+          "requires": [
+            {
+              "test": "designated_on_plan",
+              "condition": "Only a lot in an approved TND development under its overall master plan",
+              "section": "450-380C, D"
+            }
+          ],
+          "url": "https://ecode360.com/print/CA3667?guid=37603679",
+          "confidence": "secondary",
+          "note": "The parking schedule has no row for an accessory apartment, so the Zoning Officer uses the standard that best approximates it (450-416E). Whether the apartment is an accessory use on the house lot or a dwelling counted in the TND's density is not settled"
+        },
+        {
+          "name": "Two-family conversion (RS-1, RS-2, RS-3)",
+          "path": "special_exception",
+          "districts": [
+            "RS-1",
+            "RS-2",
+            "RS-3"
+          ],
+          "conditions": "'A detached single-family dwelling that existed on the effective date of this chapter, and contained (at that time) at least 2,000 square feet, may be converted into two dwelling units', with an approved water supply and sewage disposal, no extension or change to the outside that would alter its residential character, a permanent direct means of escape to ground level from every floor above and below grade, and any required land development approval. The zone's Article 2 rules apply. Each conversion apartment has at least 400 sq ft of livable floor area. Two spaces per added dwelling unit in addition to the house's spaces. The Zoning Hearing Board decides it under the special exception standards. In MU-1 the same conversion is permitted by right",
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "requires": [
+            {
+              "test": "house_sqft_at_least",
+              "value": 2000,
+              "condition": "The house had at least 2,000 sq ft when the chapter took effect",
+              "section": "450-382"
+            },
+            {
+              "test": null,
+              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date",
+              "section": "450-382"
+            }
+          ],
+          "section": "450-212, 450-382, 450-414, 450-416E 'Two-family conversion', 450-605B",
+          "url": "https://ecode360.com/print/CA3667?guid=37602586",
+          "confidence": "verified",
+          "note": "The 2,000 sq ft test is the house's size on the chapter's effective date, which the tool reads from today's house size. The chapter's effective date was not seen in the text read"
+        },
+        {
+          "name": "Two-family conversion (MU-1, by right)",
+          "path": "by_right",
+          "districts": [
+            "MU-1"
+          ],
+          "conditions": "The same 450-382 conversion of a detached single-family dwelling that had at least 2,000 sq ft on the chapter's effective date, permitted by right in MU-1. Two spaces per added unit beyond the house's",
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "requires": [
+            {
+              "test": "house_sqft_at_least",
+              "value": 2000,
+              "condition": "The house had at least 2,000 sq ft when the chapter took effect",
+              "section": "450-382"
+            },
+            {
+              "test": null,
+              "condition": "The house is a detached single-family dwelling that existed on the chapter's effective date",
+              "section": "450-382"
+            }
+          ],
+          "section": "450-212, 450-382",
+          "url": "https://ecode360.com/print/CA3667?guid=37602586",
+          "confidence": "verified"
+        }
+      ],
+      "section": "450-380, 450-382",
+      "url": "https://ecode360.com/print/CA3667?guid=37603679",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "districts_read_no_listing": {
+      "value": [
+        "AC",
+        "RA",
+        "RS-1",
+        "RS-2",
+        "RS-3",
+        "MU-1",
+        "MU-2",
+        "C",
+        "I"
+      ],
+      "section": "450-212",
+      "url": "https://ecode360.com/print/CA3667?guid=37602586",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The table lists no accessory dwelling unit. RS-3, MU-1 and C list a TND development, which may include accessory apartment units, and RS-1 to RS-3 and MU-1 the two-family conversion"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "'Within any identified floodplain area, any new construction or substantial improvements shall be prohibited' unless a variance is obtained, and then the lowest floor goes at or above the regulatory flood elevation. Fill and manufactured homes are prohibited there unless a variance is granted. No variance may raise the base flood elevation. New construction is a structure begun on or after December 15, 2015, with its later improvements.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "400-22, 400-23A, 400-26A, 400-32A(1), 400-34 'New construction'",
+          "url": "https://ecode360.com/print/CA3667?guid=31969279",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 400"
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain an accessory structure that is not elevated or floodproofed 'shall not be designed or used for human habitation', is limited to parking or storage, has at most 200 sq ft of floor area and no sanitary facilities or permanently affixed utility equipment.",
+          "effect": "bars",
+          "applies_to": [
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "400-22E(1), (2), (6), (7)",
+          "url": "https://ecode360.com/print/CA3667?guid=31969279",
+          "confidence": "secondary",
+          "outside_zoning_chapter": "Chapter 400",
+          "disputed_by": {
+            "section": "400-22",
+            "url": "https://ecode360.com/print/CA3667?guid=31969279",
+            "note": "These accessory structure rules are set as the terms that apply once a variance is obtained for new construction or a substantial improvement. Whether they reach the conversion of an existing garage that is not a substantial improvement is not settled"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the identified floodplain no expansion of an existing structure may raise the base flood elevation, and work of 50% or more of market value is a substantial improvement, prohibited without a variance and then fully compliant. A nonconforming structure there may not be expanded.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "400-22, 400-30A, C, 450-502A(7), (8)",
+          "url": "https://ecode360.com/print/CA3667?guid=31969279",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 400"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodway no encroachment is permitted unless it causes no increase in flood levels, and no new construction or development without a DEP permit.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodway"
+          ],
+          "section": "400-17A(1), (2), 400-30E",
+          "url": "https://ecode360.com/print/CA3667?guid=31969279",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 400"
+        },
+        {
+          "kind": "other",
+          "condition": "In an AE area without a floodway 'No new construction or development shall be located within the area measured 50 feet landward from the top-of-bank of any watercourse, unless the appropriate permit is obtained from the Department of Environmental Protection Regional Office.' Outside such an area this rule does not apply.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Identified floodplain area"
+          ],
+          "section": "400-17B(2)(b), 400-30F",
+          "url": "https://ecode360.com/print/CA3667?guid=31969279",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 400"
+        },
+        {
+          "kind": "other",
+          "condition": "In AC, RA, RS-1, RS-2 and RS-3 the ground within 10 ft of a property line (not a right-of-way line) may not be altered to a slope over 15%, and existing slopes over 15% there may not be altered.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": [
+            "AC",
+            "RA",
+            "RS-1",
+            "RS-2",
+            "RS-3"
+          ],
+          "building_types": null,
+          "section": "450-424",
+          "url": "https://ecode360.com/print/CA3667?guid=37610855",
+          "confidence": "verified"
+        },
+        {
+          "kind": "utilities",
+          "condition": "A use that relies on on-lot sewage must test for and secure a disposal site and an alternate site, both approved by the sewage enforcement officer, and the lot minimum may be raised to keep nitrate-nitrogen at an acceptable level. Every dwelling connects to approved sewer and water.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "450-420A, 450-112C 'Dwelling'",
+          "url": "https://ecode360.com/print/CA3667?guid=37610855",
+          "confidence": "verified"
+        }
+      ],
+      "section": "400-17, 400-22, 400-30, 450-420, 450-424",
+      "url": "https://ecode360.com/print/CA3667?guid=31969279",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "450-212",
+      "url": "https://ecode360.com/print/CA3667?guid=37602586",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No general ADU use. A unit is possible in a TND development, as a two-family conversion of a large existing house, or by a use variance"
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 25,
+      "section": "450-201C to 450-207D",
+      "url": "https://ecode360.com/print/CA3667?guid=37602398",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The code has no ADU height. Accessory buildings and structures may be 25 ft tall in AC, RA, RS-1, RS-2 and MU-1 and 35 ft in RS-3 and MU-2"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "450-403I, 450-414",
+      "url": "https://ecode360.com/print/CA3667?guid=37610855",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "An accessory building over 200 sq ft meets the zone's principal building setbacks, and a dwelling unit has at least 700 sq ft of livable floor area, so a building holding a unit takes the principal yards. Small accessory buildings up to 200 sq ft stand 10 ft from the side and rear lines"
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "450-201G to 450-207I notes",
+      "url": "https://ecode360.com/print/CA3667?guid=37602398",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "No accessory building (except a sign) between the house and the street unless it is set back at least 100 ft from the right-of-way. In RS-3 and MU-1 none between the front building face and the street, and in MU-2 accessory buildings are 'Not permitted' in the front yard"
+    },
+    "accessory_rules_where": {
+      "value": [
+        {
+          "where": "An accessory building over 200 sq ft: the zone's principal building setbacks",
+          "section": "450-403I",
+          "note": "'Buildings and structures greater than 200 square feet must meet the required principal setback for the zone'"
+        },
+        {
+          "where": "In RS-2, RS-3, MU-1 and MU-2 each accessory structure stands back from each side and rear line at least its own height, and never less than 10 ft",
+          "districts": [
+            "RS-2",
+            "RS-3",
+            "MU-1",
+            "MU-2"
+          ],
+          "section": "450-204F, 450-205E, 450-206J, 450-207I notes"
+        }
+      ],
+      "section": "450-403I, 450-204F to 450-207I",
+      "url": "https://ecode360.com/print/CA3667?guid=37610855",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "450-416E",
+      "url": "https://ecode360.com/print/CA3667?guid=37610855",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use and no accessory apartment row in the parking schedule"
+    },
+    "reading": {
+      "value": "No ADU use. A single-family detached dwelling needs 3 spaces. A two-family conversion needs 2 spaces per added unit beyond the house's, so 5 in all. For an accessory apartment in a TND the Zoning Officer uses the closest standard",
+      "section": "450-416E",
+      "url": "https://ecode360.com/print/CA3667?guid=37610855",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "districts": {
+    "AC": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two acres for a single-family detached dwelling, and more where the on-lot sewage site and an alternate site need it (note 1, 450-420A). Width 200 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "450-201C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "RA": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre for a single-family detached dwelling, and more where the on-lot sewage site and an alternate site need it (note 1, 450-420A). Width 150 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "450-202C, G",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "RS-1": {
+      "min_lot_sqft": {
+        "value": 14000,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached dwelling. Width 100 ft at the building line. Public sewer and water where the lot is smaller than the DEP minimum (450-203E)"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "450-203D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "RS-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Per dwelling unit, single-family detached, at most 2.5 units per acre of the gross tract. Semidetached 9,000 sq ft per unit. Public water and sewer required (450-204E)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "450-204D, F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 10000,
+        "section": "450-204F",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Minimum Lot Size (per d.u.)' for a single-family detached dwelling"
+      }
+    },
+    "RS-3": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached, at most 2.5 units per acre. Semidetached 9,000 sq ft, multifamily 3,500 sq ft per unit. Public water and sewer required (450-205D)"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.35,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 50,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 35,
+        "section": "450-205C, E",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "MU-1": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached, at most 2.5 units per acre, subject to modification under Article 3. Table amended 1-9-2023 by Ord. No. 2022-252"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "450-206D, J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "MU-2": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached. Width 100 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft from the right-of-way of a major thoroughfare (arterial or collector street)"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Each side"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum lot coverage', and lot coverage is 'Any portion of a lot occupied by an impervious surface' (450-112C), with gravel, stone and block counted as impervious"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 35,
+        "section": "450-207D, I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Accessory buildings and structures'"
+      }
+    },
+    "C": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "450-208I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "All uses. Width 120 ft at the building line"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "450-208I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "450-208I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "450-208I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.5,
+        "section": "450-208I",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "65% with the architectural design incentives (450-404)"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "450-208D",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "I": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "450-209J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre for all uses"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "450-209J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "450-209J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "450-209J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.55,
+        "section": "450-209J",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "70% with the architectural design incentives"
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "450-209D",
+        "url": "https://ecode360.com/print/CA3667?guid=37602398",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "A building over 35 ft is set back at least its height"
+      }
+    }
+  }
+}

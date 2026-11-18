@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 218,
-      "population": 6547596,
-      "share_of_pa": 0.5036
+      "towns_beyond_the_two_cities": 221,
+      "population": 6568132,
+      "share_of_pa": 0.5051
     }
   ],
   "towns": [
@@ -5332,6 +5332,78 @@
         "added as batch 55 by population. Code Chapter 27 has no ADU text (27-2108 conversion to two-family use by special exception in R-1 and R-2, 27-2807 historic resource conversion by conditional use)"
       ],
       "status_note": "For a later check: 27-1511.1 (any improvement elevated) against 27-1511.4D (work under 50% elevated as far as possible) in the floodplain, whether the 27-2108 lot area per unit binds a historic conversion under 27-2807, the riparian buffer width (outside Chapter 27), and the Official Sewage Facilities Plan of Res. No. 13-2026. Not addressed. R-1 and R-2 allow their uses 'and for no other' (27-402.1, 27-502.1), so a new second building is a use variance. A house may be converted to two-family use by special exception on 174,000 sq ft in R-1 or 120,000 sq ft in R-2, or smaller if the Board waives the lot area for a relative, and then no renting (27-2108). A resource on the Historic Resource Inventory may gain a residential conversion, such as a barn to an apartment, by conditional use (27-2807.1A(1))"
+    },
+    {
+      "geoid": "4204514264",
+      "geoid_aliases": [],
+      "name": "Clifton Heights borough",
+      "county": "Delaware",
+      "type": "borough",
+      "population": 6863,
+      "population_with_aliases": 6863,
+      "housing_units": 2882,
+      "pop_rank": 416,
+      "file": "pa_delaware_clifton_heights",
+      "batch": 56,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/16213818",
+      "plain_fetch": null,
+      "code_current_through": "2019-12-17",
+      "code_note": null,
+      "why": [
+        "added as batch 56 by population. Code Chapter 340 has no ADU text (two-family dwellings by right in R-2 and R-3, 340-19)"
+      ],
+      "status_note": "Not addressed. R-1 is used 'by right only' for a single-family detached dwelling (340-14), so a second unit is a use variance, while R-2 and R-3 permit two-family dwellings by right on 3,000 sq ft per unit (340-19, 340-22A). Open: code currency (eCode360 through 12-17-2019, empty New Laws), whether a house may become a two-family dwelling without a conversion section, accessory yards of 5 ft (340-17I, 340-22J, 340-27J) against 3 ft (340-80C), the 100 ft riparian buffer read as a bar on new buildings (340-87G), and the end-unit side yard said for every attached house in R-2 and R-3"
+    },
+    {
+      "geoid": "4213311432",
+      "geoid_aliases": [],
+      "name": "Carroll township",
+      "county": "York",
+      "type": "township",
+      "population": 6853,
+      "population_with_aliases": 6853,
+      "housing_units": 2545,
+      "pop_rank": 418,
+      "file": "pa_york_carroll",
+      "batch": 56,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/31947744",
+      "plain_fetch": null,
+      "code_current_through": "2024-09-09",
+      "code_note": null,
+      "why": [
+        "added as batch 56 by population. Code Chapter 450 has no ADU text beyond the accessory apartment units of a TND development (450-380E(1)(b)), 450-382 two-family conversion by special exception in RS-1, RS-2, RS-3 and by right in MU-1"
+      ],
+      "status_note": "Not addressed. The Table of Land Uses lists no ADU and 'No mark indicates not permitted' (450-212). Accessory apartment units are a residential use only inside a TND development of 70 acres (450-380E(1)(b)), and a house that had 2,000 sq ft may be converted to two units (450-382). Open: the chapter's effective date for the 450-382 size test, whether a TND accessory apartment counts in TND density or as an accessory use, its parking (no schedule row, 450-416E), whether the 400-22E floodplain accessory rules reach a garage conversion, and the rest of 450-211 and Article 3, not read"
+    },
+    {
+      "geoid": "4201949056",
+      "geoid_aliases": [],
+      "name": "Middlesex township",
+      "county": "Butler",
+      "type": "township",
+      "population": 6820,
+      "population_with_aliases": 6820,
+      "housing_units": 2719,
+      "pop_rank": 420,
+      "file": "pa_butler_middlesex",
+      "batch": 56,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/11233654",
+      "plain_fetch": null,
+      "code_current_through": "2024-10-16",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 175-95.1 accessory dwelling unit by special exception (AG-A, AG-B, R-1, R-2, R-AG))"
+      ],
+      "status_note": "Special exception in AG-A, AG-B, R-1, R-2 and R-AG (175-95.1, Ord. No. 138 of 12-20-2023): one unit, 400 to 1,200 sq ft or 50% of the house, 1 added parking space. Open: whether a unit inside or attached to the house is allowed, since 175-95.1A says 'as an accessory structure' while 175-8 covers both, whether the unit takes accessory or dwelling side yards (25 ft in AG-A, AG-B, R-AG), the 25 ft accessory height on lots of two acres or more (shown as a condition beside 15 ft), and the commercial, town center and corridor districts, not read"
     }
   ]
 }
