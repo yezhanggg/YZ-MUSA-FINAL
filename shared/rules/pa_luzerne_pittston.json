@@ -334,6 +334,18 @@
       "confidence": "verified",
       "note": "'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side yards only'. A garage may stand in the front yard of a steep lot (480-77)"
     },
+    "front_yard_barred_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3"
+      ],
+      "section": "480-76",
+      "url": "https://ecode360.com/print/PI3172?guid=45819583",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side yards only'. The bar is not stated for OS, NC, CB or I"
+    },
     "separation_ft": {
       "value": 10,
       "section": "480-75",

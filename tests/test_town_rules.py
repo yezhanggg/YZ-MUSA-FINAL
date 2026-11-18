@@ -4700,3 +4700,84 @@ def test_over_garage_with_no_garage_is_a_new_detached_building(tmp_path, monkeyp
     assert out3["approval_by_type"]["detached_new"] == out3["approval_by_type"]["over_garage"] == "variance"
     monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", {name})
     assert rules.resolve(name, "today", lot)["approval_by_type"]["over_garage"] == "variance"
+
+
+def test_front_yard_bar_scoped_by_district(tmp_path, monkeypatch):
+    """Pass 26: envelope.front_yard_barred_districts. A front yard bar the code states for some districts only
+    (Pittston 480-76: 'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side
+    yards only') was said on a lot in any district, NC included. Now it holds only in the listed districts, and a lot
+    whose district was not given reads which districts it holds in."""
+    body = _base()
+    body["form"] = {"types_allowed": _leaf(["internal", "detached_new"], "3")}
+    body["envelope"] = {
+        "front_yard_barred": _leaf(True, "480-76"),
+        "front_yard_barred_districts": _leaf(["R-1", "R-2"], "480-76"),
+        "setback_front_ft": _leaf(25, "480-40"),
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_frontscope", body)
+
+    def front(district):
+        out = rules.resolve(name, "today", {**DET, "zoning_district": district, "lot_sqft": 9000})
+        return out, [c["condition"] for c in out["conditions"] if c["kind"] == "front_yard"]
+
+    out, said = front("R-1")
+    assert said and said[0].startswith("An accessory building may not stand in the front yard")
+    assert "It holds only in" not in said[0]
+    assert out["setback_front_ft"] is None
+    out, said = front("NC")
+    assert said == []
+    assert out["setback_front_ft"] == 25
+    _, said = front(None)
+    assert said[0] == (
+        "An accessory building may not stand in the front yard, between the house and the street. It is a bar, not a "
+        "setback number. It holds only in R-1 and R-2"
+    )
+
+
+def test_pittston_front_yard_bar_only_in_residential_districts():
+    """Pass 26: Pittston 480-76 bars accessory structures from the front yard in R-1, R-2 and R-3 only."""
+    pit = rules.resolve("pa_luzerne_pittston", "today", {**DET, "zoning_district": "NC", "lot_sqft": 9000})
+    assert not [c for c in pit["conditions"] if c["kind"] == "front_yard"]
+    pit = rules.resolve("pa_luzerne_pittston", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 9000})
+    assert [c for c in pit["conditions"] if c["kind"] == "front_yard"]
+
+
+def test_tract_minimum_by_district_reads_as_the_tract():
+    """Pass 26: min_lot_is_tract with min_lot_by_district. The farm employee dwelling's minimum is of the farm tract
+    (East Fallowfield 27-1703.1E: 20 acres in RA, 10 in R-1 to R-3), and it read "In RA it needs a lot of at least
+    871,200 sq ft". The district figure now reads as the tract's, and an unknown tract size is said."""
+    lot = {**DET, "zoning_district": "RA", "lot_sqft": 30000}
+    flat = json.dumps(rules.resolve("pa_chester_east_fallowfield", "today", lot))
+    assert "In RA it needs a lot of at least 871,200 sq ft" not in flat
+    assert (
+        "In RA the 871,200 sq ft minimum is for the development tract, not the lot. Applies only if the tract is that "
+        "large: the tract size (tract_sqft) was not given"
+    ) in flat
+    flat = json.dumps(rules.resolve("pa_chester_east_fallowfield", "today", {**lot, "tract_sqft": 1000000}))
+    assert "In RA the 871,200 sq ft minimum is for the development tract, not the lot. Applies only if:" in flat
+    flat = json.dumps(rules.resolve("pa_chester_east_fallowfield", "today", {**lot, "zoning_district": "R-1"}))
+    assert "In R-1 the 435,600 sq ft minimum is for the development tract, not the lot" in flat
+
+
+def test_status_follows_a_district_hearing(monkeypatch):
+    """Pass 26: a district path that is another hearing than the town status (Grove City 156.038: a conditional use
+    in R-2, while the town status is a special exception from R-1B). adu_status read special exception on an R-2 lot
+    whose path is a conditional use. Now it follows the district, and the status line is town-wide. Held for the ten
+    lot towns."""
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 9000}
+    out = rules.resolve("pa_mercer_grove_city", "today", lot)
+    assert (out["adu_status"], out["approval_path"]) == ("conditional_use", "conditional_use")
+    assert (
+        "In R-2 the district path is conditional use (156.038, 156.055(B)). The code's ADU status elsewhere is special "
+        "exception (156.037, 156.038, 156.059)"
+    ) in out["reasons"]
+    line = [c["condition"] for c in out["conditions"] if c["kind"] == "adu_status"][0]
+    assert line.startswith("Town-wide, the code's ADU status is special exception.")
+    assert line.endswith("In R-2 the path is conditional use")
+    r1b = rules.resolve("pa_mercer_grove_city", "today", {**lot, "zoning_district": "R-1B"})
+    assert r1b["adu_status"] == "special_exception"
+    assert "The code's ADU status is special exception (156.037, 156.038, 156.059)" in r1b["reasons"]
+    monkeypatch.setattr(rules, "PASS26_HOLD_TOWNS", {"pa_mercer_grove_city"})
+    held = rules.resolve("pa_mercer_grove_city", "today", lot)
+    assert held["adu_status"] == "special_exception"
+    assert not [c for c in held["conditions"] if c["condition"].startswith("Town-wide")]

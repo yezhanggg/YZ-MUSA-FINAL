@@ -427,6 +427,16 @@ How the resolver reads a file now (pass 7):
 - `PASS25_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the footprint cap, the overlay case of a failed house test, the headline line and the new garage path.
 - Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
 
+## More fields (pass 26)
+
+- `envelope.front_yard_barred_districts` (`leaf_list`): the districts where `front_yard_barred` holds, when the code limits it. Elsewhere the bar is not said and a detached unit keeps its front yard number. On a lot whose district was not given the bar is said with "It holds only in R-1, R-2 and R-3". Pittston 480-76: 'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side yards only'. Added: Pittston.
+- An alternative's lot minimum by public sewer and water is `min_lot_by_utility` on the alternative (pass 9). It picks the figure by the lot's services and names every figure when they were not given. Lower Windsor two-family. Nothing new.
+- `min_lot_is_tract` now reaches `min_lot_by_district` too: the district's figure reads "In RA the 871,200 sq ft minimum is for the development tract, not the lot", never "it needs a lot of at least". East Fallowfield 27-1703.1E. Nothing to change in the file.
+- A district path that is another hearing than the town status (`approval.district_paths`, Grove City R-2 conditional use, the town a special exception from R-1B) is now the lot's status. The answer says "In R-2 the district path is conditional use", and the status line reads town-wide. Nothing to change in the file.
+- `PASS26_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the district hearing status. No lot town file has a hearing status with such a district path today.
+- Not done: a bar on adding a listed use to a lot that holds a nonconforming use (Bradford 220-123C(3), 220-12D). No lot fact says a house is a nonconforming use. Where the district settles it, put it in `status_outside_by_district` (Bradford C-1 and C-2).
+- Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

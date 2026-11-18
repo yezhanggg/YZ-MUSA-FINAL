@@ -1351,3 +1351,30 @@ describe('get_rule_text pass 25 fields', () => {
     expect(out).toContain('Allowed only if the house was built before 1977-03-10. It depends on the year the house was built, which is not known here.');
   });
 });
+
+describe('get_rule_text pass 26 fields', () => {
+  it('says the front yard bar only in the districts the code names (Pittston 480-76)', async () => {
+    const bar = 'may not stand in the front yard';
+    const nc = JSON.stringify(await town6('pa_luzerne_pittston', 'status', 'NC'));
+    expect(nc).not.toContain(bar);
+    expect(nc).not.toContain('Not in the front yard: a bar');
+    const r2 = JSON.stringify(await town6('pa_luzerne_pittston', 'status', 'R-2'));
+    expect(r2).toContain(bar);
+    expect(r2).not.toContain('It holds only in');
+    const any = JSON.stringify(await town6('pa_luzerne_pittston', 'status'));
+    expect(any).toContain('It is a bar, not a setback number. It holds only in R-1, R-2 and R-3');
+  });
+
+  it('reads a farm tract minimum set by district as the tract, not the lot (East Fallowfield 27-1703.1E)', async () => {
+    const out = JSON.stringify(await town6('pa_chester_east_fallowfield', 'approval', 'RA'));
+    expect(out).toContain('Development tract minimum by district, not the lot: RA 871,200 sq ft');
+    expect(out).not.toContain('Lot minimum by district: RA 871,200 sq ft');
+  });
+
+  it('gives the district hearing as the status where it is another one (Grove City R-2)', async () => {
+    const r2 = await town6('pa_mercer_grove_city', 'status', 'R-2');
+    expect(r2.adu.status_in_district).toMatchObject({ value: 'conditional_use', district: 'R-2', town_status: 'special_exception' });
+    const r1b = await town6('pa_mercer_grove_city', 'status', 'R-1B');
+    expect(r1b.adu.status_in_district).toBeUndefined();
+  });
+});

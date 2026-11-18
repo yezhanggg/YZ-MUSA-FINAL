@@ -1069,6 +1069,23 @@ PASS25_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 26 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
+# adu_status follows a district path that is another hearing than the town status (Grove City R-2: conditional use,
+# the town a special exception). No lot town file has a hearing status with such a district path today, so nothing
+# stored changes at a rebuild. The other pass 26 changes need fields no lot town file uses
+# (envelope.front_yard_barred_districts, an alternative's min_lot_is_tract with min_lot_by_district).
+PASS26_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
@@ -2072,6 +2089,7 @@ def _town_conditions(
     hold18: bool = False,
     hold22: bool = False,
     hold25: bool = False,
+    hold26: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
@@ -2079,7 +2097,8 @@ def _town_conditions(
     hold15: a lot town whose pass 15 sentence fix waits for its next lot rebuild (PASS15_HOLD_TOWNS).
     hold18: a lot town whose pass 18 sentence fix waits for its next lot rebuild (PASS18_HOLD_TOWNS).
     hold22: a lot town whose pass 22 services row fix waits for its next lot rebuild (PASS22_HOLD_TOWNS).
-    hold25: a lot town whose pass 25 fixes wait for its next lot rebuild (PASS25_HOLD_TOWNS)."""
+    hold25: a lot town whose pass 25 fixes wait for its next lot rebuild (PASS25_HOLD_TOWNS).
+    hold26: a lot town whose pass 26 status line waits for its next lot rebuild (PASS26_HOLD_TOWNS)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -2113,6 +2132,11 @@ def _town_conditions(
             text += ". On this lot the historic path applies"
         else:
             text = f"The code's ADU status is {words}. {note}".strip()
+        dp_path = (picked.get(("approval", "path")) or ({}, ""))[0].get("value") if how == "district" else None
+        if not hold26 and status["value"] in BOARDS and dp_path in BOARDS and dp_path != status["value"]:
+            # pass 26: the district's hearing is another one (Grove City R-2), so the town status is town-wide only
+            text = f"Town-wide, the code's ADU status is {words}. {note}".strip().rstrip(".")
+            text += f". In {lot.get('zoning_district')} the path is {dp_path.replace('_', ' ')}"
         out.append(_cond("adu_status", text, status))
     if how == "historic":
         hist = _must_leaf(data, ("approval", "historic_path"))
@@ -2518,7 +2542,7 @@ def _town_conditions(
         )
         c["bill_overrides"] = True  # HB 2186: no parking for the ADU
         out.append(c)
-    bar = picked.get(("envelope", "front_yard_barred"))
+    bar = picked.get(("envelope", "front_yard_barred")) if _front_bar_here(data, lot) else None  # pass 26
     rear = picked.get(("envelope", "accessory_rear_yard_only")) if _rear_only_here(data, lot) else None  # pass 17
     if rear and rear[0].get("value") is True:  # pass 8: rear yard only rules out the side yards too
         out.append(
@@ -2535,7 +2559,9 @@ def _town_conditions(
             _cond(
                 "front_yard",
                 "An accessory building may not stand in the front yard, between the house and the street. "
-                "It is a bar, not a setback number" + (f". {bar[0]['note']}" if bar[0].get("note") else ""),
+                "It is a bar, not a setback number"
+                + _front_bar_scope_tail(data, lot)
+                + (f". {bar[0]['note']}" if bar[0].get("note") else ""),
                 bar[0],
                 applies_to=DETACHED_TYPES,
             )
@@ -3052,9 +3078,16 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
         if (a.get("min_units") or 0) > 2:
             flags.append(f"Needs {a['min_units']} or more units in all, so it is not a path for one added unit")
             applies = False
-        if a.get("min_lot_is_tract") and a.get("min_lot_sqft"):
+        # pass 26: a minimum set by district (min_lot_by_district) is a tract size too (East Fallowfield 27-1703.1E)
+        tract_fig = min_lot if a.get("min_lot_by_district") and min_lot is not None else a.get("min_lot_sqft")
+        tract_by_d = tract_fig is not None and tract_fig == min_lot and tract_fig != a.get("min_lot_sqft")
+        if a.get("min_lot_is_tract") and tract_fig:
             flags.append(
-                f"The {a['min_lot_sqft']:,.0f} sq ft minimum is for the development tract"
+                (
+                    f"In {d} the {tract_fig:,.0f} sq ft minimum is for the development tract, not the lot"
+                    if tract_by_d
+                    else f"The {tract_fig:,.0f} sq ft minimum is for the development tract"
+                )
                 + (
                     ". Applies only if the tract is that large: the tract size (tract_sqft) was not given"
                     if tract_open
@@ -3071,7 +3104,12 @@ def _alternatives(data: dict[str, Any], lot: dict[str, Any]) -> list[dict[str, A
             flags.append(_alt_min_dispute_open(d, dm_figs, hi, dm, area, lot_ok))
         elif hi is not None and min_lot is not None:  # pass 20: both figures said, and which of them this lot meets
             flags.append(_alt_min_dispute(d, min_lot, hi, dm, area))
-        elif a.get("min_lot_by_district") and min_lot is not None and min_lot != a.get("min_lot_sqft"):
+        elif (
+            a.get("min_lot_by_district")
+            and min_lot is not None
+            and min_lot != a.get("min_lot_sqft")
+            and not a.get("min_lot_is_tract")
+        ):
             flags.append(f"In {d} it needs a lot of at least {min_lot:,.0f} sq ft")
         open_tests = [text for m, text in tests if m is None]
         if open_tests and applies is None:
@@ -3858,6 +3896,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         place in PASS18_HOLD_TOWNS,
         place in PASS22_HOLD_TOWNS,
         place in PASS25_HOLD_TOWNS,
+        place in PASS26_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     chapter_bars: list[dict[str, Any]] = []
@@ -4057,6 +4096,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             how == "district"
             and status in BOARDS
             and PATH_ORDER.index(picked[("approval", "path")][0]["value"]) < PATH_ORDER.index(status)
+        ) or (  # pass 26: a district whose hearing is another one leads too (Grove City R-2 conditional use)
+            how == "district"
+            and status in BOARDS
+            and picked[("approval", "path")][0]["value"] in BOARDS
+            and picked[("approval", "path")][0]["value"] != status
+            and place not in PASS26_HOLD_TOWNS
         )
         if dp_less:  # pass 8: the district path is less demanding than the town status, so it leads
             dp0 = picked[("approval", "path")][0]
@@ -4386,7 +4431,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         if heights["detached_new"] is None and out["max_height_ft"] is not None:
             out["max_height_ft"] = None
             citations.pop("max_height_ft", None)
-    front_bar = picked.get(("envelope", "front_yard_barred"))
+    front_bar = picked.get(("envelope", "front_yard_barred")) if _front_bar_here(data, lot) else None  # pass 26
     detached_ok = any(t in types_allowed for t in DETACHED_TYPES)
     if not state and not detached_ok and not hold and out.get("separation_ft") is not None:
         # pass 10: a separation is between the house and an accessory building. No detached form, no separation
@@ -4639,6 +4684,15 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     dp_path = dp[0]["value"] if dp else None
     if not state and status in BOARDS and dp_path and PATH_ORDER.index(dp_path) < PATH_ORDER.index(status):
         out["adu_status"] = "allowed_by_right" if dp_path == "by_right" else dp_path  # pass 8: the district leads
+    if (
+        not state
+        and status in BOARDS
+        and dp_path in BOARDS
+        and dp_path != status
+        and out["adu_status"] == status
+        and place not in PASS26_HOLD_TOWNS
+    ):  # pass 26: a district whose hearing is another one (Grove City R-2 conditional use, the town a special exception)
+        out["adu_status"] = dp_path
     hp = hist_leaf["value"] if _usable(hist_leaf) else None
     if (
         not state and how == "historic" and status in NO_ADU_STATUSES and allowed and (hp == "by_right" or hp in BOARDS)
@@ -5295,6 +5349,28 @@ def _rear_only_here(data: dict[str, Any], lot: dict[str, Any]) -> bool:
     scope = (_leaf(data, ("envelope", "accessory_rear_yard_only_districts")) or {}).get("value")
     d = lot.get("zoning_district")
     return not (scope and d and _match_code(d, scope) is None)
+
+
+def _front_bar_scope(data: dict[str, Any]) -> list[str]:
+    """Pass 26: envelope.front_yard_barred_districts, the districts where the front yard bar holds (Pittston 480-76)."""
+    scope = (_leaf(data, ("envelope", "front_yard_barred_districts")) or {}).get("value")
+    return [d for d in scope if isinstance(d, str)] if isinstance(scope, list) else []
+
+
+def _front_bar_here(data: dict[str, Any], lot: dict[str, Any]) -> bool:
+    """Pass 26: False when front_yard_barred_districts leaves out the lot's district."""
+    scope = _front_bar_scope(data)
+    d = lot.get("zoning_district")
+    return not (scope and d and _match_code(d, scope) is None)
+
+
+def _front_bar_scope_tail(data: dict[str, Any], lot: dict[str, Any]) -> str:
+    """Pass 26: on a lot whose district was not given, the bar names the districts it holds in."""
+    scope = _front_bar_scope(data)
+    if not scope or lot.get("zoning_district"):
+        return ""
+    names = scope[0] if len(scope) == 1 else ", ".join(scope[:-1]) + " and " + scope[-1]
+    return f". It holds only in {names}"
 
 
 def _state_town_fixes(

@@ -377,6 +377,14 @@ function inDistricts(file: Obj, key: string, district: string | null): boolean {
   const list = Array.isArray(l?.value) ? (l!.value as Json[]).filter((d): d is string => typeof d === 'string') : null;
   return !(list && list.length && district && !districtIn(list, district));
 }
+/** Pass 26 (pipeline/rules.py _front_bar_scope_tail): with no district given, the front yard bar names the districts it holds in. */
+function frontBarTail(file: Obj, district: string | null): string {
+  const l = leafAt(file, 'envelope', 'front_yard_barred_districts');
+  const list = Array.isArray(l?.value) ? (l!.value as Json[]).filter((d): d is string => typeof d === 'string') : [];
+  if (!list.length || district) return '';
+  const names = list.length === 1 ? list[0] : `${list.slice(0, -1).join(', ')} and ${list[list.length - 1]}`;
+  return `. It holds only in ${names}`;
+}
 const LIMITED: Record<string, string> = {
   family_only: 'Limited: family members only',
   conversion_only: 'Limited: only inside an existing building',
@@ -667,14 +675,15 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     const secs = [...new Set([rate.section, rounding!.section].filter((x): x is string => typeof x === 'string' && !!x))].join(', ');
     out.push(cond('parking', `The code asks ${rate.value} off-street spaces for the unit, and ${fr[0]}${said === null || said === n ? `, so ${n} ${n === 1 ? 'space' : 'spaces'}` : ''} (${secs})`, rate, { bill_overrides: true }));
   }
-  const bar = leafAt(file, 'envelope', 'front_yard_barred');
+  // Pass 26: envelope.front_yard_barred_districts limits the front yard bar by district (Pittston 480-76).
+  const bar = inDistricts(file, 'front_yard_barred_districts', district) ? leafAt(file, 'envelope', 'front_yard_barred') : null;
   // Pass 8: rear yard only rules out the side yards too (pipeline/rules.py accessory_rear_yard_only).
   // Pass 17: envelope.accessory_rear_yard_only_districts limits it by district.
   const rearOnly = inDistricts(file, 'accessory_rear_yard_only_districts', district) ? leafAt(file, 'envelope', 'accessory_rear_yard_only') : null;
   if (rearOnly && rearOnly.value === true)
     out.push(cond('front_yard', `An accessory building may stand only in the rear yard: not in the front yard and not in a side yard. It is a bar, not a setback number${rearOnly.note ? `. ${rearOnly.note}` : ''}`, rearOnly, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
   else if (bar && bar.value === true)
-    out.push(cond('front_yard', `An accessory building may not stand in the front yard, between the house and the street. It is a bar, not a setback number${bar.note ? `. ${bar.note}` : ''}`, bar, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
+    out.push(cond('front_yard', `An accessory building may not stand in the front yard, between the house and the street. It is a bar, not a setback number${frontBarTail(file, district)}${bar.note ? `. ${bar.note}` : ''}`, bar, { applies_to: ['detached_new', 'garage_conversion', 'over_garage'] }));
   const si = leafAt(file, 'size', 'max_share_internal');
   if (si && typeof si.value === 'number') out.push(cond('size', `A unit inside or attached to the house: at most ${pct(si.value)} of the house`, si));
   // No ADU rule here: no ADU parking, except on a historic path that has its own rule (pipeline/rules.py, pass 6).
@@ -830,7 +839,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const inside = !list || list.some((x) => x === 'internal' || x === 'attached');
   const accessory = !list || list.some((x) => x === 'detached_new' || x === 'garage_conversion' || x === 'over_garage');
   const labels = leafAt(file, 'form', 'labels');
-  const bar = leafAt(file, 'envelope', 'front_yard_barred');
+  const bar = inDistricts(file, 'front_yard_barred_districts', district) ? leafAt(file, 'envelope', 'front_yard_barred') : null;
   const rearOnly = inDistricts(file, 'accessory_rear_yard_only_districts', district) ? leafAt(file, 'envelope', 'accessory_rear_yard_only') : null;
   const frontBar =
     rearOnly && rearOnly.value === true
@@ -1116,7 +1125,12 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
   let status = st?.value as string | undefined;
   let effective = (dpath ?? path?.value) as string | undefined;
   // Pass 8: a district path less demanding than the town status leads (pipeline/rules.py adu_status).
-  const dpLess = typeof dpath === 'string' && typeof status === 'string' && status in BOARDS && OK_PATHS.has(dpath) && PATH_ORDER.indexOf(dpath) < PATH_ORDER.indexOf(status);
+  // Pass 26: a district whose hearing is another one leads too (Grove City R-2 conditional use, the town a special exception).
+  const dpLess =
+    typeof dpath === 'string' &&
+    typeof status === 'string' &&
+    status in BOARDS &&
+    ((OK_PATHS.has(dpath) && PATH_ORDER.indexOf(dpath) < PATH_ORDER.indexOf(status)) || (dpath in BOARDS && dpath !== status));
   const townStatus = status;
   if (dpLess) status = dpath === 'by_right' ? 'allowed_by_right' : (dpath as string);
   if (inScope === false) {
@@ -1322,7 +1336,8 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
             ? `Whether it reaches ${(a.disputed_districts.districts as string[]).join(', ')} is disputed: ${a.disputed_districts.section ?? ''}: ${String(a.disputed_districts.note ?? '').replace(/\.$/, '')}. Ask the zoning officer`
             : null,
           // Pass 7 (pipeline/rules.py _alternatives): per-district lots, overlays and other tests. Never "applies" unchecked.
-          isObj(a.min_lot_by_district) ? `Lot minimum by district: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
+          // Pass 26 (pipeline/rules.py _alternatives): min_lot_is_tract makes the district figures tract sizes too.
+          isObj(a.min_lot_by_district) ? `${a.min_lot_is_tract === true ? 'Development tract minimum by district, not the lot' : 'Lot minimum by district'}: ${Object.entries(a.min_lot_by_district).map(([d, v]) => `${d} ${num(v)} sq ft`).join(', ')}` : null,
           // Pass 20 (pipeline/rules.py _alt_min_dispute): another reading puts the lot minimum higher in some districts.
           isObj(a.disputed_min_lot) && Array.isArray(a.disputed_min_lot.districts)
             ? `In ${(a.disputed_min_lot.districts as string[]).join(', ')} the lot minimum is not settled: another reading gives ${dmFigs(a.disputed_min_lot)} (${a.disputed_min_lot.section ?? ''}). ${String(a.disputed_min_lot.note ?? '').replace(/\.$/, '')}`

@@ -498,6 +498,10 @@
           "$ref": "#/$defs/leaf_list",
           "description": "Pass 17: districts where accessory_rear_yard_only applies, when the code limits it. Elsewhere front_yard_barred, if set, is the bar said."
         },
+        "front_yard_barred_districts": {
+          "$ref": "#/$defs/leaf_list",
+          "description": "Pass 26: districts where front_yard_barred applies, when the code limits it (Pittston 480-76: 'Accessory structures in R-1, R-2, and R-3 districts shall be permitted in the rear and side yards only'). Elsewhere the bar is not said and the unit keeps its front yard number. Where the lot's district is not given, the bar names these districts."
+        },
         "adu_yards_bind_all_forms": {
           "$ref": "#/$defs/leaf_bool",
           "description": "Pass 18: true when the ADU side and rear yards in this envelope (setback_side_ft, setback_rear_ft) bind every form, a unit in or attached to the house as well as one in a separate building (New Garden 200-413E(11)(a), (b)). An attached unit then takes the larger of the district yard and this one, and a unit in the house takes this one."
