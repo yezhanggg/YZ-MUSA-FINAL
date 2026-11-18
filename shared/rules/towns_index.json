@@ -4983,7 +4983,7 @@
       "pop_rank": 368,
       "file": "pa_chester_east_fallowfield",
       "batch": 51,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30859926",
@@ -4993,7 +4993,7 @@
       "why": [
         "added as batch 51 by population. Code Chapter 27 has no ADU text (27-1703.1E farm employee dwelling, 27-1723 residential conversion by conditional use in RA and VC)"
       ],
-      "status_note": "First reading (batch 51). Open: 27-1723.1A sends the RA and VC residential conversion to the Zoning Hearing Board as a special exception while the use lists name a conditional use. The R-3 rows for a lot without public water and sewer read 'both ... are not available' strictly. Part 13, Part 25 and most of Chapter 8 Part 6 not read."
+      "status_note": "Verified. Points to ask the zoning officer, not settled by the code text: whether a residential conversion in RA and VC is a conditional use (the use lists) or a special exception (27-1723.1A), the lot a conversion needs (in RA two units may need 20 acres of the 2002 parcel under the N = A/10 density, in VC 60,000 sq ft on on-lot services if the second unit counts as an added use), whether MH takes the R-3 two-family conditional use, how the R-3 rows read 'both ... are not available', and whether the farm employee dwelling reaches a farm in O-I. Not read: Part 13, Part 25, Chapter 8 Part 6, the PDF use and lot tables and map, the 2026-05 sewer connection ordinance, and whether the Township has a certified historic district."
     },
     {
       "geoid": "4207961048",
@@ -5012,12 +5012,12 @@
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/28469563",
       "plain_fetch": null,
-      "code_current_through": null,
+      "code_current_through": "2026-01-21",
       "code_note": null,
       "why": [
         "added as batch 51 by population. Code Chapter 480 has no ADU text (accessory living quarters are guest rooms with no kitchen, 480-144A conversion to two units by special exception in R-3)"
       ],
-      "status_note": "First reading (batch 51). Open: Ord. No. 6-2026 (short-term rentals, 10-21-2026) is not yet codified and was not read. Lot coverage is not defined and is read as building cover. Whether the 7,000 sq ft two-family lot binds a 480-144A conversion is not settled. Chapter 270 read only in part."
+      "status_note": "Drafted 2026-11-18 after the fix round. Open: the accessory front-yard bar of 480-76 (R-1 to R-3 only) also prints on lots in other districts until the engine scopes it by district. Ord. No. 6-2026 (short-term rentals, 10-21-2026) is not yet codified and was not read (PDF). Points to ask the zoning officer, not settled by the code text: whether lot coverage counts paving (read as building cover), whether the 7,000 sq ft two-family lot binds a 480-144A conversion, and whether a house in NC is a special exception (Table 480-27) or not listed (480-45). Not read: 480-65 (CB parking), Article XV and Chapter 270 Articles I to III and VI in full."
     },
     {
       "geoid": "4213345152",
@@ -5031,7 +5031,7 @@
       "pop_rank": 373,
       "file": "pa_york_lower_windsor",
       "batch": 51,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/36205355",
@@ -5041,7 +5041,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 470-52 accessory garage apartment or rental cottage by special exception (V))"
       ],
-      "status_note": "First reading (batch 51). Open: the accessory garage apartment or rental cottage is SE in V only (Table 470-8), while 470-15H(5) says it 'shall be permitted' on a V site with area for two units. Development rights per unit, Article V (parking, accessory rules, lots of record), Article VIII and Chapter 235 floodplain not read."
+      "status_note": "Verified. Points to ask the zoning officer, not settled by the code text: the site area the garage apartment needs (3,000 sq ft per unit on the two-family figure, 10,000 sq ft as two house lots, or 21,780 sq ft per unit by the base density), whether the parcel has a development right left, the minimum habitable floor area of the garage apartment, and the AG two-family conversion where Table 470-12 marks two-family dwellings Not Permitted. Not read: Articles IV, VII and IX, 470-20, 470-21, Chapters 335 and 355 (rental licensing) and the zoning map."
     }
   ]
 }

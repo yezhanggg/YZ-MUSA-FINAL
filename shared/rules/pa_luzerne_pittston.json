@@ -26,7 +26,11 @@
       "https://ecode360.com/print/PI3172?guid=45819583",
       "https://ecode360.com/print/PI3172?guid=45819801",
       "https://ecode360.com/print/PI3172?guid=45819938",
-      "https://ecode360.com/print/PI3172?guid=28526138"
+      "https://ecode360.com/print/PI3172?guid=28526138",
+      "https://ecode360.com/45819170",
+      "https://ecode360.com/print/PI3172?guid=45818753",
+      "https://ecode360.com/print/PI3172?guid=45819622",
+      "https://ecode360.com/print/PI3172?guid=45819626"
     ],
     "verified_on": "2026-11-18",
     "county": "Luzerne",
@@ -34,24 +38,26 @@
     "geoid": "4207961048",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/28469563",
-    "code_current_through": null,
-    "code_current_through_note": "Chapter 480 history: Ord. No. 9-2019 of 11-20-2019, amended 10-21-2020 by Ord. No. 14-2020 and 2-15-2024 by Ord. No. 2-2024. eCode360 New Laws list Ord. No. 6-2026 (short-term rentals, 10-21-2026) as not yet codified. No currency date was shown on the pages read",
+    "code_current_through": "2026-01-21",
+    "code_current_through_note": "eCode360 shows the version date 2026-01-21 beside the Code link, with New Laws (8). Chapter 480 history: Ord. No. 9-2019 of 11-20-2019, amended 10-21-2020 by Ord. No. 14-2020 and 2-15-2024 by Ord. No. 2-2024. The New Laws list Ord. No. 6-2026 (short-term rentals, 10-21-2026) as not yet codified",
     "code_caution": "Ord. No. 6-2026 of 10-21-2026 (short-term rental licenses) is adopted but not yet in the online code. Its search excerpt names zoning districts where a short-term rental license may issue. It was not read (PDF), so whether it changes Chapter 480 is not confirmed",
     "checks": [
       "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, guest house, household employee, supplemental dwelling, care of) find only 'accessory living quarters' in the definitions. R-1, R-2 and R-3 list as accessory uses 'Accessory uses on the same lot and incidental to the principal uses (garages, accessory living quarters)' (480-36B(1), 480-39B(1), 480-42B(1))",
-      "Accessory living quarters are 'An accessory building used solely as the temporary dwelling of guests of the occupants of the premises; such dwelling having no kitchen facilities and not rented or otherwise used as a separate sleeping unit' (480-12). That is a guest building without a kitchen, not a dwelling unit, so it is not an ADU. Adding a kitchen or renting it takes it outside the definition",
+      "Accessory living quarters are 'An accessory building used solely as the temporary dwelling of guests of the occupants of the premises; such dwelling having no kitchen facilities and not rented or otherwise used as a separate sleeping unit' (480-12). That is a guest building without a kitchen, not a dwelling unit, so it is not an ADU. Adding a kitchen or renting it takes it outside the definition. 'Temporary' means 'Lasting or designed to last not more than 90 days', so guests stay at most that long. A sleeping unit may have sanitation or a kitchen 'but not both' (480-12), while accessory living quarters may not be used 'as a separate sleeping unit'. The stronger reading: guests of the household only, with no kitchen",
       "R-1, R-2, R-3, NC and CB allow 'not more than one principal dwelling structure and not more than two accessory buildings' on a lot (480-37B, 480-40B, 480-43B, 480-46B, 480-49B). A family is persons related by birth, marriage or adoption residing together (480-12)",
       "Conversion of an existing one-family dwelling to two dwelling units for two families is a special exception in R-3 only: the units meet the City Building Code, one off-street space per unit, and all units are reached through a common entrance in the wall facing the street (480-42D(6), 480-144A). More than two units needs 1,000 sq ft per unit (480-144B)",
       "Two-family attached or semidetached dwellings (one family wholly or partly over the other, in a building with one or two party walls in common with adjacent buildings) are permitted by right in R-2 (4,000 sq ft lot, 50 ft wide) and R-3 (7,000 sq ft lot, 50 ft wide). No two-family detached dwelling is listed (480-12, 480-39A(3), 480-40, 480-42A(3), 480-43). Multifamily dwellings are by right in R-3 (1,000 sq ft per unit, 60 ft wide) and by special exception in NC and CB (480-42A(1), 480-43, 480-45C(9), 480-48C(1))",
       "Accessory buildings in R-1, R-2 and R-3 stand in the rear and side yards only, 5 ft from the side and rear lines (10 ft where the line abuts an alley), 10 ft from the main building, and at most 18 ft tall (480-75, 480-76, 480-78)",
-      "Parking: 2 spaces per dwelling unit for a single-family dwelling, 1.5 per unit for a two-family dwelling, 1 per unit for multifamily, and 1 per unit for a conversion (480-64, 480-144A(2)). No rule for rounding a fraction of a space was found",
-      "Uses not provided for: in a nonresidential district (OS, NC, CB, I) a use not listed is prohibited unless the Zoning Hearing Board grants it as a special exception on proof that it is no more intensive than, and 'closely similar in impacts and character to', the uses permitted there (480-27). In R-1, R-2 and R-3 there is no such path. NC and CB list no single-family dwelling",
-      "Floodplain (Chapter 270, Ord. No. 2-2024): an accessory structure in the floodplain may not be designed or used for human habitation, no variance is granted for one over 600 sq ft, and in an AE zone without a floodway no new construction may be within 50 ft landward of the top of bank without a DEP permit. New construction is a structure begun on or after the chapter's effective date, with its later improvements (270-18B(2)(b), 270-23E, 270-33C, 270-35). The stricter of Chapter 480 and Chapter 270 applies (Chapter 480 history note)",
+      "Parking: 2 spaces per dwelling unit for a single-family dwelling, 1.5 per unit for a two-family dwelling, 1 per unit for multifamily, and 1 per unit for a conversion (480-64, 480-144A(2)). A fraction counts as a space: 'any fractional parking space is computed as a whole space' (480-64A). The parking table does not apply in the Central Business District (480-64B)",
+      "Uses not provided for: in a nonresidential district (OS, NC, CB, I) a use not listed is prohibited unless the Zoning Hearing Board grants it as a special exception on proof that it is no more intensive than, and 'closely similar in impacts and character to', the uses permitted there (480-27). In R-1, R-2 and R-3 there is no such path. NC: the use chart (Table 480-27) lists single-family detached and single-family attached or semidetached dwellings by special exception, while the NC use list (480-45) does not name them. The code conflicts. CB lists no single-family dwelling",
+      "Floodplain (Chapter 270, Ord. No. 2-2024): the floodplain is the FIRM of June 20, 2024 or its latest revision and any community-identified flood hazard areas (270-17). An accessory structure in the floodplain may not be designed or used for human habitation, no variance is granted for one over 600 sq ft, and in an AE zone without a floodway no new construction may be within 50 ft landward of the top of bank without a DEP permit and no variance may raise the base flood elevation more than one foot in all. The regulatory flood elevation is the base flood elevation plus 1 1/2 ft. New construction is a structure begun on or after the chapter's effective date, with its later improvements (270-18B(2)(b), 270-23E, 270-33B, C, 270-35). The stricter of Chapter 480 and Chapter 270 applies (Chapter 480 history note)",
+      "Every residential building needs a passageway at least 6 ft wide from the public way to the outside entrance of each dwelling unit, 2 ft wider for each story over two (480-93). There must be 10 ft of clear space between a main building and an accessory building, and 20 ft between a residential building and another main building on the lot (480-94). A project that needs more sewer, water or other services gets the providing agency's approval first, and permits may be denied where the services are not available (480-96)",
+      "Land development includes 'a group of two or more residential or nonresidential buildings, whether proposed initially or cumulatively' (480-12)",
       "Nonconforming: additions to nonconforming structures must conform, and a structure housing a nonconforming use may not be enlarged to increase that use (480-127D). No section on building on a nonconforming lot of record was found in Article XXX",
       "CB sets a minimum building height of 45 ft for new or infill construction (Table 480-49). The Main Street Overlay District sets design standards (Article XV, not read)",
       "Variances: Zoning Hearing Board on the findings of MPC 910.2 (480-22B). No bar on a use variance was found"
     ],
-    "notes": "Zoning office: City of Pittston Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Article V (480-25 to 480-27 and Table 480-27, whose column order is not clear in text, so the district articles were used), Articles VIII to XIV (use lists and bulk tables), 480-12 definitions from 'Abandoned sign' to 'Real estate sign', 480-22, 480-64 (by search on the page), Article XVIII, Article XXX, Article XXXIII, and Chapter 270 by search on the page (270-18, 270-23E, 270-33, 270-35). Not read: Articles I, III, VI, VII, XV, XVII, XIX to XXIX, XXXI, XXXII, XXXIV, XXXV, 480-65, definitions after 'Real estate sign', the rest of Chapter 270, and Ord. No. 6-2026 (PDF, not opened)."
+    "notes": "Zoning office: City of Pittston Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Article V (480-25 to 480-27 and Table 480-27, whose column order is not clear in text, so the district articles were used), Articles VIII to XIV (use lists and bulk tables), 480-12 definitions from 'Abandoned sign' to 'Real estate sign', 480-22, 480-64 (by search on the page), Article XVIII, Article XXX, Article XXXIII, and Chapter 270 by search on the page (270-18, 270-23E, 270-33, 270-35). Read on a second check the same day: the Table 480-27 columns on the regular page, the 480-12 definitions to 'Use, principal', 480-64 in full, Articles XXIV and XXV (480-93 to 480-96), and Chapter 270 sections 270-16 to 270-18, 270-22, 270-23, 270-31 to 270-33 and 270-35. Not read: Articles I, III, VI, VII, XV, XVII, XIX to XXIII, XXVI to XXIX, XXXI, XXXII, XXXIV, XXXV, 480-65, definitions after 'Real estate sign', the rest of Chapter 270, and Ord. No. 6-2026 (PDF, not opened)."
   },
   "adu": {
     "term": {
@@ -125,7 +131,7 @@
           "districts": [
             "R-3"
           ],
-          "conditions": "An existing one-family dwelling converted to two dwelling units for two families. The units meet the City Building Code. One off-street parking space for each unit. All units are reached through a common entrance in the wall of the building facing the street the lot fronts on",
+          "conditions": "An existing one-family dwelling converted to two dwelling units for two families. The units meet the City Building Code. One off-street parking space for each unit. All units are reached through a common entrance in the wall of the building facing the street the lot fronts on. A passageway at least 6 ft wide from the public way to the entrance (480-93). The sewer and water providers approve the added unit (480-96)",
           "requires": [
             {
               "test": "house_exists",
@@ -152,7 +158,7 @@
           "builds": [
             "internal"
           ],
-          "section": "480-42D(6), 480-144A, 480-64",
+          "section": "480-42D(6), 480-144A, 480-64, 480-93, 480-96",
           "url": "https://ecode360.com/print/PI3172?guid=45819938",
           "confidence": "secondary",
           "note": "A special exception from the Zoning Hearing Board (480-22C)"
@@ -164,7 +170,7 @@
             "R-2",
             "R-3"
           ],
-          "conditions": "A building for two families, one living wholly or partly over the other, with one or two party walls in common with adjacent buildings. R-2: lot 4,000 sq ft, 50 ft wide, front 10 ft, side 10 ft in all with one at least 5 ft, rear 20 ft. R-3: lot 7,000 sq ft, 50 ft wide, front 5 ft, side 10 ft in all with one at least 5 ft, rear 10 ft. Height 35 ft. 1.5 parking spaces per unit",
+          "conditions": "A building for two families, one living wholly or partly over the other, with one or two party walls in common with adjacent buildings. R-2: lot 4,000 sq ft, 50 ft wide, front 10 ft, side 10 ft in all with one at least 5 ft, rear 20 ft. R-3: lot 7,000 sq ft, 50 ft wide, front 5 ft, side 10 ft in all with one at least 5 ft, rear 10 ft. Height 35 ft. 1.5 parking spaces per unit, 3 in all. A passageway at least 6 ft wide from the public way to the outside entrance of each unit (480-93)",
           "min_lot_by_district": {
             "R-2": 4000,
             "R-3": 7000
@@ -182,7 +188,7 @@
           "builds": [
             "internal"
           ],
-          "section": "480-39A(3), 480-40, 480-42A(3), 480-43, 480-64",
+          "section": "480-39A(3), 480-40, 480-42A(3), 480-43, 480-64, 480-93",
           "url": "https://ecode360.com/print/PI3172?guid=45819232",
           "confidence": "secondary",
           "note": "Read as a twin or row building whose house is divided into two stacked units"
@@ -242,7 +248,7 @@
         },
         {
           "kind": "other",
-          "condition": "An accessory structure in the floodplain 'shall not be designed or used for human habitation'. No variance is granted for an accessory structure over 600 sq ft.",
+          "condition": "In the floodplain an accessory structure that is not elevated 'shall not be designed or used for human habitation' and may have at most 200 sq ft of floor area. No variance is granted for an accessory structure over 600 sq ft, and a variance needs a signed nonconversion agreement.",
           "effect": "bars",
           "applies_to": [
             "garage_conversion",
@@ -253,14 +259,19 @@
           "overlays": [
             "FP"
           ],
-          "section": "270-23E, 270-33C",
+          "section": "270-23E(1), (2), 270-33C",
           "url": "https://ecode360.com/print/PI3172?guid=28526138",
           "confidence": "secondary",
-          "outside_zoning_chapter": "Chapter 270"
+          "outside_zoning_chapter": "Chapter 270",
+          "disputed_by": {
+            "section": "270-23A(1), 270-31C",
+            "url": "https://ecode360.com/print/PI3172?guid=28526138",
+            "note": "270-23E is the rule for an accessory structure that is not elevated or floodproofed. A garage raised so its lowest floor is at or above the regulatory flood elevation, and built as a residential structure, may not be reached. Work of 50% or more of its market value must fully comply (270-31C)"
+          }
         },
         {
           "kind": "other",
-          "condition": "In the floodplain new construction and substantial improvements are elevated to the regulatory flood elevation, nothing in the floodway may raise flood levels, and work of 50% or more of a building's market value is a substantial improvement. The stricter of Chapter 480 and Chapter 270 applies.",
+          "condition": "In the floodplain (the FIRM of June 20, 2024 or its latest revision, and any community-identified flood hazard areas) new construction and substantial improvements have the lowest floor at or above the regulatory flood elevation, the base flood elevation plus 1 1/2 ft. Nothing in the floodway may raise flood levels, and in an AE area without a floodway no variance may raise the base flood elevation more than one foot in all. Work of 50% or more of a building's market value, with improvements added up over the period the code sets, is a substantial improvement that must fully comply, and smaller work is elevated or floodproofed to the greatest extent possible. The stricter of Chapter 480 and Chapter 270 applies.",
           "effect": "condition",
           "applies_to": [
             "internal",
@@ -272,7 +283,7 @@
           "overlays": [
             "FP"
           ],
-          "section": "270-18A, 270-23, 270-35",
+          "section": "270-17, 270-18A, 270-23A(1), 270-31C, G, 270-33B, 270-35",
           "url": "https://ecode360.com/print/PI3172?guid=28526138",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 270"
@@ -357,8 +368,8 @@
       "note": "No ADU use. Single-family 2 per dwelling unit, two-family 1.5 per dwelling unit, a conversion 1 per unit (480-144A(2))"
     },
     "reading": {
-      "value": "A conversion needs 1 space per unit, so 2 in all (480-144A(2)). A two-family dwelling needs 1.5 per unit, so 3 in all (480-64). No fraction rule was found",
-      "section": "480-64, 480-144A(2)",
+      "value": "A conversion needs 1 space per unit, so 2 in all (480-144A(2)). A two-family dwelling needs 1.5 per unit, so 3 in all (480-64). Any fraction of a space counts as a whole space (480-64A). The parking table does not apply in the Central Business District (480-64B)",
+      "section": "480-64A, B, 480-144A(2)",
       "url": "https://ecode360.com/print/PI3172?guid=45819541",
       "verified_on": "2026-11-18",
       "confidence": "secondary"
