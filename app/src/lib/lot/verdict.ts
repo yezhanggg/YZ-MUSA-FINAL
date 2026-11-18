@@ -50,7 +50,7 @@ export interface UnitInput {
 
 export type CheckKey =
   | 'allowed' | 'type_allowed' | 'min_lot_size' | 'units' | 'room' | 'setbacks' | 'separation'
-  | 'size_cap' | 'min_size' | 'share_of_house' | 'height' | 'building_coverage' | 'impervious';
+  | 'size_cap' | 'footprint_cap' | 'min_size' | 'share_of_house' | 'height' | 'building_coverage' | 'impervious';
 
 export interface VerdictCheck {
   key: CheckKey;
@@ -320,6 +320,9 @@ export function houseSqft(lot: LotRecord): { sqft: number | null; estimated: boo
 }
 
 export const NO_GARAGE = 'No garage or outbuilding was found on this lot.';
+/** Rules pass 25: a unit over a garage on a lot with no garage (pipeline/rules.py _new_garage_line). */
+export const NEW_GARAGE = 'A new garage with the unit over it is a new detached building, so it takes the path of a new detached unit.';
+const NEW_BUILDING_PATHS: ReadonlySet<string> = new Set(['by_right', 'administrator_exception', 'special_exception', 'conditional_use']);
 const GARAGE_TYPES: ReadonlySet<AduType> = new Set(['garage_conversion', 'over_garage']);
 /** Rule notes that allow a garage conversion, in records that list the type as off when the lot has no garage. */
 const CONVERSION_ALLOWED = /garage conversion is by right|converting an existing garage/i;
@@ -354,6 +357,12 @@ export function lotCondition(lot: LotRecord, scenario: Scenario, type: AduType):
   const path = rules?.rule_path_by_type?.[type];
   if (!rules || !fact || !path || path === 'not_allowed') return null;
   const text = /garage or outbuilding/i.test(fact) ? NO_GARAGE : fact.replace(/\.?$/, '.');
+  // Rules pass 25 (pipeline/rules.py _new_garage_line): over a garage with no garage on the lot means a new garage, a
+  // new detached building, so the record gives it the detached new unit's path. Older records hold a variance there.
+  const own = rules.approval_by_type?.over_garage;
+  if (type === 'over_garage' && text === NO_GARAGE && own && own === rules.approval_by_type?.detached_new && NEW_BUILDING_PATHS.has(own)) {
+    return { approval: approvalInfo(own, 'by_type', rules.citations_by_type?.detached_new ?? rules.citations.approval_path ?? null), text: `${NO_GARAGE} ${NEW_GARAGE}` };
+  }
   return { approval: approvalInfo(path, 'by_type', rules.citations_by_type?.[type] ?? rules.citations.approval_path ?? null), text };
 }
 
@@ -652,13 +661,23 @@ function shareCheck(lot: LotRecord, rules: Rules, s: Sizes, stored: FitResult | 
   return check(rules, { ...base, limit: null, pass: null, text: `${what}. Depends on the house size, not checked: no living area on file.${outline}` });
 }
 
-function sizeChecks(lot: LotRecord, rules: Rules, s: Sizes, height: { limit: number | null; key: string }, stored: FitResult | undefined): VerdictCheck[] {
+function sizeChecks(lot: LotRecord, rules: Rules, unit: UnitInput, s: Sizes, height: { limit: number | null; key: string }, stored: FitResult | undefined): VerdictCheck[] {
   const out: VerdictCheck[] = [];
   const cap = rules.max_size_sqft;
   out.push(check(rules, {
     key: 'size_cap', label: 'Size cap', pass: !isNum(cap) || s.floor <= cap + 0.5, value: s.floor, limit: cap, unit: 'sqft', rule_key: 'max_size_sqft',
     text: isNum(cap) ? `${sqftText(s.floor)} of floor area. The cap is ${sqftText(cap)}.` : `${sqftText(s.floor)} of floor area. No size cap on file.`,
   }));
+  // Rules pass 25 (pipeline/rules.py _footprint_cap): a cap on the ground the unit's building covers, apart from the
+  // floor area cap. A new unit's footprint, or the garage's for a garage unit. Not for a unit inside the house.
+  const fpCap = rules.max_footprint_sqft;
+  const fp = unit.type === 'detached_new' ? s.footprint : unit.type === 'internal' ? null : s.floor;
+  if (isNum(fpCap) && isNum(fp)) {
+    out.push(check(rules, {
+      key: 'footprint_cap', label: 'Footprint cap', pass: fp <= fpCap + 0.5, value: fp, limit: fpCap, unit: 'sqft', rule_key: 'max_footprint_sqft',
+      text: `${sqftText(fp)} of ground covered${unit.type === 'detached_new' ? '' : ' by the garage'}. The footprint cap is ${sqftText(fpCap)}, apart from the floor area cap.`,
+    }));
+  }
   const min = rules.min_size_sqft;
   if (isNum(min)) {
     out.push(check(rules, { key: 'min_size', label: 'Smallest size', pass: s.floor >= min - 0.5, value: s.floor, limit: min, unit: 'sqft', rule_key: 'min_size_sqft', text: `The smallest unit allowed is ${sqftText(min)}.` }));
@@ -777,6 +796,7 @@ function warningsFor(lot: LotRecord, rules: Rules, unit: UnitInput, stored: FitR
 export const RULE_KEY_NAME: Record<string, string> = {
   max_adus: 'the number of units',
   max_size_sqft: 'the size cap',
+  max_footprint_sqft: 'the footprint cap',
   min_size_sqft: 'the smallest size',
   max_share_of_house: 'the cap tied to the house size',
   min_lot_sqft: 'the smallest lot',
@@ -833,6 +853,7 @@ const LIMIT_TEXT: Record<string, (r: Rules, f: FitResult | undefined) => string>
   yard_space: (_r, f) => `The open yard is the limit. The largest spot is about ${sqftText(f?.largest_sqft)}.`,
   no_room: () => 'There is no open space left in the yard after setbacks and the distance from the house.',
   size_cap: (r) => `The size cap of ${sqftText(r.max_size_sqft)} is the limit.`,
+  footprint_cap: (r) => `The footprint cap of ${sqftText(r.max_footprint_sqft)} is the limit.`,
   share_of_house: (r, f) => {
     if (isNum(r.max_share_of_house)) return `The cap of ${pctText(r.max_share_of_house)} of the house size is the limit.`;
     const lim = f?.checks.share_of_house?.limit;
@@ -868,10 +889,10 @@ const PLACE_NOTES: Record<string, Partial<Record<AduType, string>>> = {
 };
 
 // ------------------------------------------------------------------ the verdict
-const CHECK_ORDER: CheckKey[] = ['allowed', 'type_allowed', 'min_lot_size', 'units', 'room', 'setbacks', 'separation', 'size_cap', 'min_size', 'share_of_house', 'height', 'building_coverage', 'impervious'];
+const CHECK_ORDER: CheckKey[] = ['allowed', 'type_allowed', 'min_lot_size', 'units', 'room', 'setbacks', 'separation', 'size_cap', 'footprint_cap', 'min_size', 'share_of_house', 'height', 'building_coverage', 'impervious'];
 const BLOCKERS: ReadonlySet<CheckKey> = new Set(['allowed', 'type_allowed', 'min_lot_size', 'units']);
 /** Which failure is named as the reason: a rule limit before the room in the yard, since the rule is what the user must meet. */
-const LIMIT_ORDER: CheckKey[] = ['allowed', 'type_allowed', 'min_lot_size', 'units', 'size_cap', 'min_size', 'share_of_house', 'height', 'building_coverage', 'impervious', 'room', 'setbacks', 'separation'];
+const LIMIT_ORDER: CheckKey[] = ['allowed', 'type_allowed', 'min_lot_size', 'units', 'size_cap', 'footprint_cap', 'min_size', 'share_of_house', 'height', 'building_coverage', 'impervious', 'room', 'setbacks', 'separation'];
 
 /** What would fix one failed check, in a short sentence. null when no simple change does. */
 function changeFor(c: VerdictCheck, lot: LotRecord, s: Sizes): string | null {
@@ -882,6 +903,9 @@ function changeFor(c: VerdictCheck, lot: LotRecord, s: Sizes): string | null {
       return isNum(c.limit) && c.limit > 0 ? `Make it ${sqftText(Math.floor(c.limit))} of floor area or less.` : null;
     case 'min_size':
       return isNum(c.limit) ? `Make it at least ${sqftText(Math.ceil(c.limit))}.` : null;
+    case 'footprint_cap':
+      // A garage's footprint is fixed: no simple change.
+      return s.footprint > 0 && isNum(c.limit) ? `Make the footprint ${sqftText(Math.floor(c.limit))} or less.` : null;
     case 'height':
       return isNum(c.limit) ? `Keep it ${ftText(c.limit)} tall or less.` : null;
     case 'building_coverage':
@@ -1011,7 +1035,7 @@ export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
 
   const ground = unit.type === 'detached_new' ? groundChecks(lot, rules, unit, stored, s) : null;
   const room = ground ? ground.checks : [unit.type === 'internal' ? houseRoomCheck(lot, rules, stored, s) : garageRoomCheck(rules, stored)];
-  let checks = [...ruleChecks(lot, rules, unit), ...room, ...sizeChecks(lot, rules, s, heightRule(rules, unit.type, stored), stored)].sort((a, b) => CHECK_ORDER.indexOf(a.key) - CHECK_ORDER.indexOf(b.key));
+  let checks = [...ruleChecks(lot, rules, unit), ...room, ...sizeChecks(lot, rules, unit, s, heightRule(rules, unit.type, stored), stored)].sort((a, b) => CHECK_ORDER.indexOf(a.key) - CHECK_ORDER.indexOf(b.key));
   // No unit allowed: the yard was cut with placeholder setbacks (often 0 ft, "not checked"), so it is not a pass.
   if (!rules.allowed) checks = checks.map((c) => (YARD_KEYS.has(c.key) ? { ...c, pass: null, text: NO_UNIT_HERE } : c));
   const warnings = warningsFor(lot, rules, unit, stored, ground?.lotLine ?? null);

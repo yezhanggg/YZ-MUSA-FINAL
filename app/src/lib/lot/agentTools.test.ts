@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { FIXTURE_NAMES, fixture, type FixtureName } from './__fixtures__';
-import { FIT_NOT_TESTED, LOT_TOOLS, SITE_QUESTIONS_RULE, compact, whyNotAllowed, makeLotExecutors, scenarioFrom, type LotAgentProvider, type LotToolName, type ToolInput } from './agentTools';
+import { FIT_NOT_TESTED, LOT_TOOLS, getLotRules, SITE_QUESTIONS_RULE, compact, whyNotAllowed, makeLotExecutors, scenarioFrom, type LotAgentProvider, type LotToolName, type ToolInput } from './agentTools';
 import type { LotRecord, Scenario } from './types';
 
 const RENTS = { b0: 1050, b1: 1250, b2: 1500, b3: 1800 };
@@ -310,5 +310,21 @@ describe('no placeholders', () => {
         }
       }
     }
+  });
+});
+
+describe('get_lot_rules pass 25: whose height and setbacks the top-level figures are', () => {
+  it('says the top-level height is for a unit in an accessory building where the house forms differ (Phoenixville)', () => {
+    const out = getLotRules(fixture('phx_share'), 'today') as Record<string, unknown>;
+    expect(out.max_height_ft).toBe(23);
+    expect(out.max_height_by_type).toMatchObject({ [Object.keys(out.max_height_by_type as object)[0]]: 23 });
+    expect(Object.values(out.max_height_by_type as object)).toEqual(expect.arrayContaining([23, 35]));
+    expect(out.height_and_setbacks_for).toMatch(/^The max_height_ft and setbacks_ft above are for a unit in an accessory building\./);
+  });
+
+  it('adds nothing where every allowed form has the same height', () => {
+    const out = getLotRules(fixture('easy_fit'), 'today') as Record<string, unknown>;
+    expect(out.height_and_setbacks_for).toBeUndefined();
+    expect(out.max_height_by_type).toBeUndefined();
   });
 });

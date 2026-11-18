@@ -7,7 +7,7 @@ import { ASSUMPTIONS } from '../money';
 import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView } from './citations';
 import { lotMoney, type MoneyOptions } from './summary';
 import { lotTownOf } from './towns';
-import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type Scenario } from './types';
+import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type RuleType, type Rules, type Scenario } from './types';
 import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict';
 import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words';
 
@@ -245,6 +245,22 @@ export function getLotFacts(lot: LotRecord) {
 export const FIT_NOT_TESTED =
   "Not tested here. Rules only. Before saying whether a unit could go on this lot, call test_unit_on_lot with the type and scenario (leave the size out to test the unit on screen or the lot's suggested unit) and give its status.";
 
+/**
+ * Rules pass 25 (pipeline/rules.py _headline_scope_line): the top-level height and setbacks are a unit's in an
+ * accessory building. Where a unit inside the house or an addition is also allowed with its own height, say so and
+ * give each allowed form's height. The record keeps no yards by form, so the addition's yards are not given here.
+ */
+function headlineScope(r: Rules, typesAllowed: readonly string[]): Record<string, unknown> {
+  const hb = r.max_height_by_type ?? {};
+  const detached = typesAllowed.some((t) => t === 'detached_new' || t === 'garage_conversion' || t === 'over_garage');
+  const other = (['internal', 'attached'] as const).filter((t) => typesAllowed.includes(t) && t in hb && (hb[t as RuleType] ?? null) !== (r.max_height_ft ?? null));
+  if (!detached || !other.length) return {};
+  return {
+    max_height_by_type: Object.fromEntries(typesAllowed.filter((t) => t in hb).map((t) => [t in TYPE_TITLE ? TYPE_TITLE[t as AduType] : t, hb[t as RuleType] ?? 'not on file'])),
+    height_and_setbacks_for: 'The max_height_ft and setbacks_ft above are for a unit in an accessory building. A unit inside the house or an addition takes the height in max_height_by_type and the house\'s own yards.',
+  };
+}
+
 export function getLotRules(lot: LotRecord, scenario: Scenario) {
   const r = lot.rules[scenario];
   if (!r) return compact({ lot_id: lot.lot.id, scenario, error: 'No rules on file for this scenario.' });
@@ -264,6 +280,7 @@ export function getLotRules(lot: LotRecord, scenario: Scenario) {
     max_share_of_house: r.max_share_of_house ?? 'none on file',
     max_height_ft: r.max_height_ft ?? 'not on file, so not checked',
     setbacks_ft: { front: r.setback_front_ft, side: r.setback_side_ft, rear: r.setback_rear_effective_ft ?? (lot.lot.alley ? r.setback_rear_alley_ft : r.setback_rear_ft) },
+    ...headlineScope(r, typesAllowed),
     distance_from_house_ft: r.separation_ft,
     max_building_coverage: r.max_building_coverage ?? 'none on file',
     owner_must_live_on_site: r.owner_occupancy ?? 'not on file',

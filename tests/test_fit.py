@@ -314,3 +314,25 @@ def test_rounded_street_corner():
     assert e.corner
     front = e.edges[e.front[0]].line
     assert front.length > 30
+
+
+def test_footprint_cap_apart_from_floor_area():
+    """Rules pass 25: a footprint cap apart from the floor area cap (Narberth 500-802B(4): 600 sq ft of ground, 800 sq
+    ft of floor area). The largest unit is held to the footprint cap, an asked unit over it fails, two stories may
+    use the floor area. A garage over the cap fails as a unit. Without the key no footprint check is made."""
+    lot, blds = standard_lot()
+    capped = {**default_rules(setback_front_ft=10.0, max_size_sqft=800.0), "max_footprint_sqft": 600.0}
+    res = fit_adu(lot, blds, capped, "detached_new")
+    assert res.fits and res.limiting == "footprint_cap" and res.largest_sqft == pytest.approx(600.0)
+    asked = fit_adu(lot, blds, capped, "detached_new", {"footprint_sqft": 602.0})
+    assert not asked.fits and not asked.checks["footprint_cap"].ok and asked.checks["size_cap"].ok
+    two = fit_adu(lot, blds, capped, "detached_new", {"footprint_sqft": 400.0, "stories": 2})
+    assert two.checks["footprint_cap"].ok and two.checks["size_cap"].ok
+    plain = fit_adu(lot, blds, default_rules(setback_front_ft=10.0, max_size_sqft=800.0), "detached_new")
+    assert "footprint_cap" not in plain.checks and plain.limiting == "size_cap"
+    lot_poly = box(0, 0, 50, 140)
+    house, garage = box(10, 10, 40, 50), box(10, 100, 40, 130)  # 30 x 30 = 900 sq ft
+    glot = LotShape(lot_poly, classify_edges(lot_poly, STREET, None, house))
+    gb = [Building(house, "main"), Building(garage, "garage", height_ft=14.0)]
+    g = fit_adu(glot, gb, {**default_rules(max_size_sqft=1000.0), "max_footprint_sqft": 600.0}, "garage_conversion")
+    assert not g.fits and g.limiting == "footprint_cap" and "600 sq ft footprint cap" in g.note

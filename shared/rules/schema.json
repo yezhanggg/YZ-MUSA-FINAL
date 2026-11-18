@@ -339,6 +339,10 @@
           "$ref": "#/$defs/leaf_bool",
           "description": "true when the code says max_sqft or max_share_of_house, whichever is GREATER. Otherwise the two are the lesser of."
         },
+        "max_footprint_sqft": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 25: a cap on the ground the unit's building covers, apart from the floor area cap (Narberth 500-802B(4): footprint 600 sq ft, floor area 800 sq ft). It binds a unit in an accessory building (new detached, garage conversion, over a garage; for a garage unit the garage's footprint), today only (under a bill the town's accessory caps give way). The lot record keeps it as rules.max_footprint_sqft and the unit test says a unit over it does not fit. Leave it out when the code caps only floor area."
+        },
         "max_share_is_less_than": {
           "$ref": "#/$defs/leaf_bool",
           "description": "Pass 19: true when the code caps the unit at LESS THAN max_share_of_house ('shall be less than 70% that of the primary dwelling'), so a unit of exactly that share does not qualify. The sentence says 'Less than 70% of the house', and the number for a known house is the largest whole sq ft under the share. Only the general share is strict, not a share for one form or the bill's floor."

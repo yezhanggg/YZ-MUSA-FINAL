@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { FIXTURE_NAMES, fixture } from './__fixtures__';
 import { areaFeet, centroid, frameOf } from './geometry';
 import type { LotRecord } from './types';
-import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput } from './verdict';
+import { NEW_GARAGE, NO_GARAGE, approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput } from './verdict';
 
 const cottage = (over: Partial<UnitInput> = {}): UnitInput => ({ type: 'detached_new', width_ft: 20, depth_ft: 30, position: 'best', scenario: 'today', ...over });
 
@@ -129,6 +129,34 @@ describe('unitVerdict on real lots', () => {
     const tall = unitVerdict(lot, { ...cottage(), type: 'over_garage', height_ft: 32 });
     expect(tall.status).toBe('fits_with_changes');
     expect(tall.limit?.code).toBe('height');
+  });
+
+  it('rules pass 25: a garage over the footprint cap does not fit as a unit, one under it does (no cap: no check)', () => {
+    const lot = fixture('garage');
+    expect(unitVerdict(lot, { ...cottage(), type: 'garage_conversion' }).checks.some((c) => c.key === 'footprint_cap')).toBe(false);
+    lot.rules.today!.max_footprint_sqft = 300;
+    const v = unitVerdict(lot, { ...cottage(), type: 'garage_conversion' });
+    expect(v.status).toBe('does_not_fit');
+    expect(v.limit).toEqual({ code: 'footprint_cap', text: '353 sq ft of ground covered by the garage. The footprint cap is 300 sq ft, apart from the floor area cap.' });
+    expect(v.changes).toEqual([]);
+    expect(unitVerdict(lot, { ...cottage(), type: 'internal', width_ft: 20, depth_ft: 20 }).checks.some((c) => c.key === 'footprint_cap')).toBe(false);
+    lot.rules.today!.max_footprint_sqft = 600;
+    expect(unitVerdict(lot, { ...cottage(), type: 'over_garage' }).checks.find((c) => c.key === 'footprint_cap')?.pass).toBe(true);
+  });
+
+  it('rules pass 25: over a garage on a lot with no garage takes the new detached unit path', () => {
+    const lot = fixture('nar_detached');
+    const r = lot.rules.today!;
+    const old = unitVerdict(fixture('nar_detached'), { ...cottage(), type: 'over_garage' });
+    expect(old.limit?.text).toBe(NO_GARAGE);
+    // A record built after pass 25: the over-garage path is the detached path (pipeline/rules.py _new_garage_line).
+    r.approval_by_type = { ...r.approval_by_type, over_garage: 'special_exception', detached_new: 'special_exception' };
+    r.citations_by_type = { ...r.citations_by_type, detached_new: { section: '500-802', confidence: 'verified' } };
+    const v = unitVerdict(lot, { ...cottage(), type: 'over_garage' });
+    expect(v.status).toBe('does_not_fit');
+    expect(v.limit?.text).toBe(`${NO_GARAGE} ${NEW_GARAGE}`);
+    expect(v.approval.path).toBe('special_exception');
+    expect(v.approval.citation?.section).toBe('500-802');
   });
 
   it('garage: no room for a new cottage on the same lot', () => {

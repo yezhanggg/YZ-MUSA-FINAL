@@ -307,6 +307,14 @@
     }
   },
   "size": {
+    "max_footprint_sqft": {
+      "value": 600,
+      "section": "500-802B(4)",
+      "url": "https://ecode360.com/print/NA0447?guid=52005162",
+      "verified_on": "2026-11-13",
+      "confidence": "verified",
+      "note": "Footprint at most 600 sq ft, apart from the 800 sq ft habitable floor area cap (500-802C(1)). The same 600 sq ft is the limit for converting an existing nonconforming accessory building (500-802B(5))."
+    },
     "max_sqft": {
       "value": 800,
       "section": "500-802C(1)",

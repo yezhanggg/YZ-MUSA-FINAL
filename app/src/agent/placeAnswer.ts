@@ -294,6 +294,8 @@ async function ruleDetails(r: PlaceRow) {
     max_sqft_inside_or_attached: insCap,
     max_share_accessory_building: leafOut(acc.max_share_of_house),
     max_share_inside_or_attached: leafOut(ins.max_share_of_house),
+    // Pass 25: a footprint cap apart from the floor area cap (size.max_footprint_sqft), only where the file holds one.
+    ...(leafOut(acc.max_footprint_sqft) ? { max_footprint_accessory_building: leafOut(acc.max_footprint_sqft), footprint_rule_accessory_building: (acc.max_footprint_sqft as Obj).rule ?? null } : {}),
     size_rule_accessory_building: capText(acc.size_rule, accCap),
     size_rule_inside_or_attached: capText(ins.size_rule, insCap),
     // Pass 8: a share of a named part of the house the tool cannot measure (size.max_share_of_part).

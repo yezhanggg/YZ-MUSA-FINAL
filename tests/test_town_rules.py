@@ -4517,3 +4517,186 @@ def test_requires_item_only_without_a_service():
         "(27-305(2)). It reaches only a lot without public sewer, and whether this lot has it was not given"
         in unknown["note"]
     )
+
+
+def test_footprint_cap_apart_from_floor_area(monkeypatch):
+    """Pass 25: Narberth 500-802B(4) caps the unit's footprint at 600 sq ft, apart from the 800 sq ft floor area cap
+    (size.max_footprint_sqft). A 14 x 43 ft unit (602 sq ft) read "fits". The resolver now gives the cap, cited, with
+    its line, and the lot build keeps it for the fit and the app. Today only, and held for the ten lot towns."""
+    from pipeline import build_lots
+
+    lot = {**DET, "zoning_district": "3B", "lot_sqft": 6000, "house_sqft": 1800}
+    held = rules.resolve("pa_montgomery_narberth", "today", lot)
+    assert "max_footprint_sqft" not in held
+    monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", set())
+    out = rules.resolve("pa_montgomery_narberth", "today", lot, extra=True)
+    assert out["max_footprint_sqft"] == 600 and out["max_size_sqft"] == 800
+    assert out["citations"]["max_footprint_sqft"]["section"] == "500-802B(4)"
+    assert (
+        "The unit's building may cover at most 600 sq ft of ground (500-802B(4)). This footprint cap is apart from the "
+        "floor area cap, so a unit over it does not fit"
+    ) in out["reasons"]
+    kept = build_lots.town_extras_to_reasons(out)
+    assert kept["max_footprint_sqft"] == 600
+    assert "max_footprint_sqft" not in rules.resolve("pa_montgomery_narberth", "state_reform", lot)
+    assert "max_footprint_sqft" not in rules.resolve("pa_montgomery_lower_merion", "today", lot)
+
+
+def test_floodplain_bar_by_house_date(tmp_path, monkeypatch):
+    """Pass 25: a floodplain bar keyed to the house's date against the floodplain ordinance (Camp Hill 200-13 'New
+    construction': a structure begun on or after March 10, 1977, with its later improvements). A bars gate with
+    house_built_before, applies_to internal and attached, in an overlay. An older house passes, a newer one is barred
+    for those forms only, and an unknown year reads "only if". A house built in the year of the date read "which was
+    not given", and a newer house on a lot whose overlays were not given read a plain "by right"."""
+    gate = {
+        "kind": "other",
+        "condition": "In the Floodplain Overlay a unit in or added to a house that is new construction, a structure "
+        "begun on or after March 10, 1977 with its later improvements, is not allowed",
+        "effect": "bars",
+        "applies_to": ["internal", "attached"],
+        "districts": None,
+        "building_types": None,
+        "test": "house_built_before",
+        "value_date": "1977-03-10",
+        "overlays": ["FPO"],
+        "section": "200-13, 200-29A(4)",
+        "url": "https://ecode360.com/1",
+        "confidence": "verified",
+    }
+    body = _base()
+    body["form"] = {"types_allowed": _leaf(["internal", "attached", "detached_new"], "3")}
+    body["eligibility"] = {"gates": _leaf([gate], "200-29")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_flooddate", body)
+
+    def run(year=None, overlays=("FPO",)):
+        lot = {**DET, "zoning_district": "R-1", "lot_sqft": 8000, "house_exists": True}
+        lot["overlays"] = list(overlays) if overlays is not None else None
+        if year is not None:
+            lot["house_year_built"] = year
+        return rules.resolve(name, "today", lot)
+
+    old = run(1960)
+    assert old["approval_by_type"]["internal"] == "by_right" and old["approval_qualifier"] is None
+    new = run(1990)
+    assert (new["approval_by_type"]["internal"], new["approval_by_type"]["attached"]) == ("variance", "variance")
+    assert new["approval_by_type"]["detached_new"] == "by_right"
+    assert any(r.endswith("(200-13, 200-29A(4)). Not allowed here: internal, attached") for r in new["reasons"])
+    unknown = run()
+    assert unknown["approval_by_type"]["internal"] == "by_right"
+    assert unknown["approval_qualifier"] == "depends_on_lot_facts"
+    assert unknown["reasons"][0] == (
+        "By right for internal, attached only if: " + gate["condition"] + ". Depends on the year the house was built "
+        "(house_year_built), which was not given (200-13, 200-29A(4))"
+    )
+    same = run(1977)
+    assert same["approval_qualifier"] == "depends_on_lot_facts"
+    assert same["reasons"][0].endswith(
+        "The house was built in 1977, the year of the March 10, 1977 date, so the exact date it was built decides "
+        "(200-13, 200-29A(4))"
+    )
+    assert "which was not given" not in same["reasons"][0]
+    open_ov = run(1990, overlays=None)
+    assert open_ov["approval_by_type"]["internal"] == "by_right"
+    assert open_ov["approval_qualifier"] == "depends_on_lot_facts"
+    assert open_ov["reasons"][0] == (
+        "By right for internal, attached only if the lot is not in the FPO overlay, where the code bars it "
+        "(200-13, 200-29A(4))"
+    )
+    assert run(1990, overlays=())["approval_by_type"]["internal"] == "by_right"
+    monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", {name})
+    assert run(1990, overlays=None)["approval_qualifier"] is None
+
+
+def test_headline_yards_and_height_name_their_form(tmp_path, monkeypatch):
+    """Pass 25: the top-level yards and height are a unit's in an accessory building (Camp Hill: 3 ft side and rear,
+    25 ft). An addition takes the house's yards and height, and a unit inside the house the house's height, so where
+    they are allowed and differ the reasons say whose figures the top-level ones are and give the others. Held for
+    the ten lot towns."""
+    body = _base()
+    body["form"] = {"types_allowed": _leaf(["detached_new", "internal", "attached"], "3")}
+    body["envelope"] = {
+        "max_height_ft": _leaf(25, "200-15 Note"),
+        "setback_side_ft": _leaf(3, "200-15 Note A"),
+        "setback_rear_ft": _leaf(3, "200-15 Note A"),
+        "internal_uses_district_height": _leaf(True, "200-15"),
+    }
+    body["districts"] = {
+        "LDR": {
+            "setback_front_ft": _leaf(25, "Table 3-2"),
+            "setback_side_ft": _leaf(7, "Table 3-2"),
+            "setback_rear_ft": _leaf(30, "Table 3-2"),
+            "principal_max_height_ft": _leaf(35, "Table 3-2"),
+        }
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_headline", body)
+    lot = {**DET, "zoning_district": "LDR", "lot_sqft": 8000, "house_sqft": 1600}
+    out = rules.resolve(name, "today", lot)
+    assert (out["setback_side_ft"], out["setback_rear_ft"], out["max_height_ft"]) == (3, 3, 25)
+    assert out["setbacks_by_type"]["attached"] == {"setback_front_ft": 25, "setback_side_ft": 7, "setback_rear_ft": 30}
+    assert out["max_height_by_type"]["internal"] == 35
+    line = (
+        "The yards and height given here (front 25 ft, side 3 ft, rear 3 ft, height 25 ft) are for a unit in an "
+        "accessory building, not for every form. An addition to the house: front 25 ft, side 7 ft, rear 30 ft, height "
+        "35 ft. "
+        "A unit inside the house adds no building, so no yards of its own, height 35 ft"
+    )
+    assert line in out["reasons"]
+    detached_only = _fixture(
+        tmp_path, monkeypatch, "pa_test_headline2", {**body, "form": {"types_allowed": _leaf(["detached_new"], "3")}}
+    )
+    assert not [r for r in rules.resolve(detached_only, "today", lot)["reasons"] if r.startswith("The yards and")]
+    monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", {name})
+    assert line not in rules.resolve(name, "today", lot)["reasons"]
+
+
+def test_over_garage_with_no_garage_is_a_new_detached_building(tmp_path, monkeypatch):
+    """Pass 25: a unit over a garage on a lot with no garage or outbuilding means a new garage with the unit over it,
+    a new detached building. It takes the detached new unit's path (Camp Hill 200-19B(1)(a): by right over an existing
+    garage, a special exception with a new detached building). It read as a variance. A bar on the new building bars
+    it too. Held for the ten lot towns."""
+    body = _base()
+    body["approval"]["detached_in_yard_path"] = _leaf("special_exception", "200-19B(1)(a)")
+    body["form"] = {"types_allowed": _leaf(["internal", "detached_new", "over_garage"], "200-101")}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_newgarage", body)
+    lot = {**LOT, "has_accessory_building": False}
+    out = rules.resolve(name, "today", lot, extra=True)
+    assert out["approval_by_type"]["over_garage"] == "special_exception"
+    assert out["rule_path_by_type"]["over_garage"] == "by_right"
+    assert out["lot_conditions_by_type"]["over_garage"] == "No garage or outbuilding on this lot"
+    assert (
+        "Over a garage: no garage or outbuilding on this lot. A new garage with the unit over it is a new detached "
+        "building, so it takes the path of a new detached unit"
+    ) in out["reasons"]
+    garage = rules.resolve(name, "today", {**LOT, "has_accessory_building": True})
+    assert garage["approval_by_type"]["over_garage"] == "by_right"
+    assert not [r for r in garage["reasons"] if r.startswith("Over a garage")]
+    no_detached = _fixture(
+        tmp_path,
+        monkeypatch,
+        "pa_test_newgarage2",
+        {**body, "form": {"types_allowed": _leaf(["internal", "over_garage"], "200-101")}},
+    )
+    assert rules.resolve(no_detached, "today", lot)["approval_by_type"]["over_garage"] == "variance"
+    barred = dict(body)
+    barred["eligibility"] = {
+        "gates": _leaf(
+            [
+                {
+                    "kind": "lot_size",
+                    "condition": "A new detached building needs 20,000 sq ft",
+                    "effect": "bars",
+                    "applies_to": ["detached_new"],
+                    "test": "lot_sqft_at_least",
+                    "value": 20000,
+                    "section": "9",
+                    "url": None,
+                }
+            ],
+            "9",
+        )
+    }
+    name3 = _fixture(tmp_path, monkeypatch, "pa_test_newgarage3", barred)
+    out3 = rules.resolve(name3, "today", lot)
+    assert out3["approval_by_type"]["detached_new"] == out3["approval_by_type"]["over_garage"] == "variance"
+    monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", {name})
+    assert rules.resolve(name, "today", lot)["approval_by_type"]["over_garage"] == "variance"

@@ -48,4 +48,26 @@ describe('Montgomery County lots (a county place with several towns)', () => {
     expect(testUnitOnLot(lot, cottage)).toMatchObject({ town: 'Narberth borough', status: 'fits' });
     expect(lotPlacesText()).toMatch(/Montgomery County \(Lower Merion Township, Narberth, Upper Dublin Township\)/);
   });
+
+  it('rules pass 25: a unit over the footprint cap does not fit, though its floor area is under the floor area cap', () => {
+    // Narberth 500-802B(4): footprint at most 600 sq ft, floor area at most 800 sq ft. A record built after pass 25
+    // keeps the footprint cap as rules.max_footprint_sqft (the fixture predates it, so it is set here).
+    const lot = fixture('nar_detached');
+    lot.rules.today!.max_footprint_sqft = 600;
+    lot.rules.today!.citations.max_footprint_sqft = { section: '500-802B(4)', url: null, verified_on: '2026-11-13', confidence: 'verified', source_file: 'pa_montgomery_narberth' };
+    const long = { ...cottage, width_ft: 14, depth_ft: 43 };
+    const v = unitVerdict(lot, long);
+    expect(v.status).not.toBe('fits');
+    const fp = v.checks.find((c) => c.key === 'footprint_cap');
+    expect(fp).toMatchObject({ pass: false, value: 602, limit: 600 });
+    expect(fp?.citation?.section).toBe('500-802B(4)');
+    expect(v.checks.find((c) => c.key === 'size_cap')?.pass).toBe(true);
+    expect(v.changes).toContain('Make the footprint 600 sq ft or less.');
+    expect(testUnitOnLot(lot, long)).not.toMatchObject({ status: 'fits' });
+    // Two stories on a 600 sq ft footprint: the footprint cap holds, the 800 sq ft floor area cap fails.
+    const two = unitVerdict(lot, { ...cottage, stories: 2 });
+    expect(two.checks.find((c) => c.key === 'footprint_cap')?.pass).toBe(true);
+    expect(two.checks.find((c) => c.key === 'size_cap')?.pass).toBe(false);
+    expect(unitVerdict(lot, cottage).status).toBe('fits');
+  });
 });

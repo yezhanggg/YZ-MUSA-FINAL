@@ -201,6 +201,9 @@ export interface Rules {
   approval_qualifier?: ApprovalQualifier | null;
   /** The unit's cap as a share of the house (0 to 1), per unit type. Null for a type with no share cap. */
   max_share_by_type?: Partial<Record<RuleType, number | null>> | null;
+  // Added in rules pass 25 (town lots). Only where the town file holds one. Records built before it lack it.
+  /** A cap on the ground the unit's building covers, apart from the floor area cap (a garage unit: the garage). */
+  max_footprint_sqft?: number;
 }
 
 /** Why a town lot's path is qualified (rules.<scenario>.approval_qualifier). */
@@ -392,7 +395,7 @@ export const LOT_KEYS = {
     'setback_rear_alley_ft', 'separation_ft', 'max_building_coverage', 'max_impervious', 'owner_occupancy',
     'parking_spaces', 'citations', 'assumed', 'approval_by_type', 'max_height_by_type', 'setback_rear_effective_ft',
     'rear_setback_rule', 'state_limits', 'fire_separation', 'historic_path', 'rule_path_by_type',
-    'lot_conditions_by_type', 'citations_by_type', 'approval_qualifier', 'max_share_by_type',
+    'lot_conditions_by_type', 'citations_by_type', 'approval_qualifier', 'max_share_by_type', 'max_footprint_sqft',
   ]),
   buildable: keysOf<Buildable>()(['keep', 'keep_sqft', 'clear', 'clear_sqft', 'front_sqft']),
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),

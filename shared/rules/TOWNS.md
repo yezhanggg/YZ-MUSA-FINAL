@@ -418,6 +418,15 @@ How the resolver reads a file now (pass 7):
 - `PASS24_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the default yards change.
 - Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
 
+## More fields (pass 25)
+
+- `size.max_footprint_sqft` (number): a cap on the ground the unit's building covers, apart from the floor area cap. It binds a unit in an accessory building (a new detached unit, and for a garage unit the garage's footprint), today only (under a bill the town's accessory caps give way, as the other accessory caps do). The answer says it ("The unit's building may cover at most 600 sq ft of ground (500-802B(4)). This footprint cap is apart from the floor area cap, so a unit over it does not fit"), the lot record keeps it as `rules.max_footprint_sqft`, and the unit test says a unit over it does not fit. Set it only when the code caps the footprint on its own. Narberth 500-802B(4): footprint 600 sq ft, floor area 800 sq ft. Added: Narberth.
+- A floodplain bar keyed to the house's date against the floodplain ordinance (new construction is a structure begun on or after a date, with its later improvements): a bars gate with `test: house_built_before`, `value_date` the ordinance date, `applies_to` the forms it reaches (an addition, a unit inside the house) and `overlays` the floodplain overlay. An older house passes, a newer one is barred for those forms, and an unknown year reads "only if". A house built in the year of the date says the exact date decides, and a newer house on a lot whose overlays were not given reads "only if the lot is not in" the overlay. Nothing new in the file.
+- The top-level yards and height are a unit's in an accessory building. Where an addition or a unit inside the house is also allowed with its own yards or height, the answer says whose figures they are and gives the others (Camp Hill: 3 ft side and rear and 25 ft, an addition 25, 7 and 30 ft and 35 ft). Nothing to change in the file.
+- A unit over a garage on a lot with no garage or outbuilding is a new garage with the unit over it, a new detached building. It takes the path of a new detached unit, not a variance. Camp Hill 200-19B(1)(a). Nothing to change in the file. If the code says otherwise for that case, put it in a gate.
+- `PASS25_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the footprint cap, the overlay case of a failed house test, the headline line and the new garage path.
+- Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

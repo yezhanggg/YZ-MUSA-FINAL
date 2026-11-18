@@ -217,7 +217,9 @@
                                "description": "Town lots (rules pass 17): the path holds only under one reading of the code (conditional_on_reading) or only if a lot fact that was not given holds (depends_on_lot_facts). Null when plain. Records built before pass 17 lack it"},
         "max_share_by_type": {"type": ["object", "null"], "propertyNames": {"$ref": "#/$defs/rule_type"},
                               "additionalProperties": {"$ref": "#/$defs/num_or_null"},
-                              "description": "Town lots (rules pass 17): the unit's cap as a share of the house, per ADU type (0 to 1). Null for a type with no share cap or not allowed. Records built before pass 17 lack it"}
+                              "description": "Town lots (rules pass 17): the unit's cap as a share of the house, per ADU type (0 to 1). Null for a type with no share cap or not allowed. Records built before pass 17 lack it"},
+        "max_footprint_sqft": {"type": "number",
+                               "description": "Town lots (rules pass 25): a cap on the ground the unit's building covers, apart from the floor area cap (size.max_footprint_sqft). It binds a new detached unit and a unit in a garage (the garage's footprint). Present only where the town file holds one, today only"}
       }
     },
     "per_scenario_rules": {

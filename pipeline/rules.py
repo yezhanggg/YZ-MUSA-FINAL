@@ -745,10 +745,12 @@ def _with_extra(out: dict[str, Any], place: str, scenario: str, lot: dict[str, A
         else _resolve_city(place, scenario, bare)
     )
     rule_paths = base["approval_by_type"]
+    new_garage = any(r.startswith("Over a garage: no garage") for r in out["reasons"])  # pass 25: a new garage
     lot_cond = {
         t: NO_OUTBUILDING
         for t in ALL_TYPES
-        if lot.get("has_accessory_building") is False and out["approval_by_type"][t] != rule_paths[t]
+        if lot.get("has_accessory_building") is False
+        and (out["approval_by_type"][t] != rule_paths[t] or (t == "over_garage" and new_garage))
     }
     cites = {t: _path_citation(place, scenario, lot, rule_paths[t], t) for t in ALL_TYPES}
     return {**out, "rule_path_by_type": rule_paths, "lot_conditions_by_type": lot_cond, "citations_by_type": cites}
@@ -1040,6 +1042,22 @@ PASS23_HOLD_TOWNS: set[str] = {
 # yards. The other pass 24 changes need fields no lot town file uses (envelope.setbacks_by_form, a gate's no_variance,
 # a requires item's only_without, principal yard_tiers with district_yards_bind_accessory).
 PASS24_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
+# Pass 25 holds its changes that could reach stored lot records, for the ten lot towns until their next lot rebuild:
+# the footprint cap apart from the floor area cap (size.max_footprint_sqft, Narberth 500-802B(4)), kept in the record
+# as rules.max_footprint_sqft with its reason line and tested by the fit. The other pass 25 changes reach keys the lot
+# record does not keep or need facts and fields no lot town file uses.
+PASS25_HOLD_TOWNS: set[str] = {
     "pa_lehigh_allentown",
     "pa_centre_college",
     "pa_chester_west_chester",
@@ -1777,6 +1795,31 @@ def _form_types_town(picked: Picked, lot: dict[str, Any]) -> list[str]:
     return [t for t in ALL_TYPES if t in types]
 
 
+def _new_garage_line(
+    picked: Picked,
+    lot: dict[str, Any],
+    by_type: dict[str, str],
+    allowed_forms: list[str],
+    eligible: bool,
+    place: str,
+) -> str | None:
+    """Pass 25: a unit over a garage on a lot with no garage or outbuilding. A new garage with the unit over it is a
+    new detached building, so it takes the detached new unit's path (Camp Hill: by right over an existing garage, a
+    special exception with a new detached building). It read as a variance. Only where the rules allow both forms
+    with a garage on the lot. None for a lot town held by PASS25_HOLD_TOWNS until its next lot rebuild."""
+    if place in PASS25_HOLD_TOWNS or lot.get("has_accessory_building") is not False or not eligible:
+        return None
+    with_garage = _form_types_town(picked, {**lot, "has_accessory_building": None})
+    if "over_garage" not in with_garage or "detached_new" not in allowed_forms:
+        return None
+    if by_type["detached_new"] not in OK_PATHS:
+        return None
+    return (
+        "Over a garage: no garage or outbuilding on this lot. A new garage with the unit over it is a new detached "
+        "building, so it takes the path of a new detached unit"
+    )
+
+
 def _gate_overlay(g: dict[str, Any], lot: dict[str, Any]) -> bool | None:
     """Pass 10: is the lot in one of the gate's overlays (eligibility.gates[].overlays)? None when the lot's
     overlays were not given."""
@@ -1832,13 +1875,25 @@ def _built_years_ago(year: Any, years: Any) -> bool | None:
     return None if int(year) == cut else int(year) < cut
 
 
-def _age_open(test: Any, value: Any, lot: dict[str, Any]) -> str:
-    """Pass 21: why a rolling-age test is open: the year was not given, or it is the year the count falls on."""
+def _age_open(test: Any, value: Any, lot: dict[str, Any], date: Any = None) -> str:
+    """Pass 21: why a rolling-age test is open: the year was not given, or it is the year the count falls on. Pass 25:
+    a date test (house_built_before, accessory_building_built_before) on a building built in the year of the date
+    said the year "was not given". It was: the month decides."""
     year = lot.get("house_year_built")
     if test in ("house_built_more_than_years_ago", "house_built_within_years") and year is not None:
         return (
             f". The house was built in {int(year)}, {int(value)} years back from this year, "
             "so the month it was finished decides"
+        )
+    what = {
+        "house_built_before": ("house", "house_year_built"),
+        "accessory_building_built_before": ("accessory building", "accessory_building_year_built"),
+    }.get(test)
+    if what and date and lot.get(what[1]) is not None:
+        day = datetime.date.fromisoformat(str(date))
+        return (
+            f". The {what[0]} was built in {int(lot[what[1]])}, the year of the {day:%B} {day.day}, {day.year} date, "
+            "so the exact date it was built decides"
         )
     return f". Depends on {HOUSE_TESTS[test]}, which was not given"
 
@@ -2016,13 +2071,15 @@ def _town_conditions(
     hold15: bool = False,
     hold18: bool = False,
     hold22: bool = False,
+    hold25: bool = False,
 ) -> list[dict[str, Any]]:
     """Who may live there, owner rule, existing-building-only, type, district and lot gates, each cited.
     hold: a lot town whose pass 10 sentence fixes wait for its next lot rebuild (LOT_RECORD_TOWNS).
     hold14: a lot town whose pass 14 sentence fixes wait for its next lot rebuild (PASS14_HOLD_TOWNS).
     hold15: a lot town whose pass 15 sentence fix waits for its next lot rebuild (PASS15_HOLD_TOWNS).
     hold18: a lot town whose pass 18 sentence fix waits for its next lot rebuild (PASS18_HOLD_TOWNS).
-    hold22: a lot town whose pass 22 services row fix waits for its next lot rebuild (PASS22_HOLD_TOWNS)."""
+    hold22: a lot town whose pass 22 services row fix waits for its next lot rebuild (PASS22_HOLD_TOWNS).
+    hold25: a lot town whose pass 25 fixes wait for its next lot rebuild (PASS25_HOLD_TOWNS)."""
     out = []
     status = _leaf(data, ("adu", "status"))
     if scope["districts"] and scope["in_scope"] is not True:
@@ -2515,6 +2572,10 @@ def _town_conditions(
                 c["overlay_open"] = True
                 if effect == "bars" and not g.get("test"):  # pass 12: named for depends_on
                     c["overlay_names"] = " or ".join(g["overlays"])
+                elif effect == "bars" and c["met"] is False and not hold25:
+                    # pass 25: the lot fails the gate's own test (a house begun after the floodplain ordinance), so
+                    # the overlay alone decides. It was dropped as if the bar could not reach the lot
+                    c["overlay_names"] = " or ".join(g["overlays"])
                 ov_tail = (
                     f". Applies only if the lot is in the {' or '.join(g['overlays'])} overlay. "
                     "The lot's overlays were not given"
@@ -2572,7 +2633,9 @@ def _town_conditions(
                     + " or ".join(g["planned_development_kinds"])
                 )
             elif c["test"] in HOUSE_TESTS and c["met"] is None:
-                c["condition"] = c["condition"].rstrip(".") + _age_open(c["test"], g.get("value"), lot)
+                c["condition"] = c["condition"].rstrip(".") + _age_open(
+                    c["test"], g.get("value"), lot, g.get("value_date")
+                )
             elif c["test"] == "top_of_bank_ft_over" and c["met"] is not None:  # pass 19: the distance was given
                 c["condition"] = c["condition"].rstrip(".") + (
                     f". At {lot['top_of_bank_ft']:,.0f} ft from the top of bank {_bank_subject(c['applies_to'])} is "
@@ -3460,8 +3523,14 @@ def _depends_on(conditions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     out = []
     for c in conditions:
         test = c.get("test")
-        if c.get("overlay_open") and c["effect"] == "bars" and not test:
-            # pass 12: a bar only inside an overlay, on a lot whose overlays were not given
+        if (
+            c.get("overlay_open")
+            and c["effect"] == "bars"
+            and c.get("overlay_names")
+            and (not test or c["met"] is False)
+        ):
+            # pass 12: a bar only inside an overlay, on a lot whose overlays were not given. Pass 25: also a gate
+            # with a test the lot fails, so the overlay alone decides
             out.append(
                 {
                     "fact": f"whether the lot is in the {c['overlay_names']} overlay (overlays)",
@@ -3735,6 +3804,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         elif eligible and t in not_named and t not in allowed_forms and path not in OK_PATHS:
             path = "not_addressed"  # pass 7: the code does not name this form. Not a firm no
         by_type[t] = path
+    new_garage = _new_garage_line(picked, lot, by_type, allowed_forms, eligible, place)
+    if new_garage:  # pass 25: no garage on the lot, so a unit over a garage means a new garage, a new building
+        by_type["over_garage"] = by_type["detached_new"]
+        reasons.append(new_garage)
     barred_forms = [] if state or not by_form else [t for t in ALL_TYPES if by_form.get(t) == "prohibited"]
     no_rule_lot = status in NO_ADU_STATUSES and how not in ("district", "historic")
     form_line_at = None if form_bar or not (barred_forms and by_form_leaf) else len(reasons)  # pass 24
@@ -3784,6 +3857,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         place in PASS15_HOLD_TOWNS,
         place in PASS18_HOLD_TOWNS,
         place in PASS22_HOLD_TOWNS,
+        place in PASS25_HOLD_TOWNS,
     )
     overridden: list[dict[str, Any]] = []
     chapter_bars: list[dict[str, Any]] = []
@@ -3824,6 +3898,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     else:
         n_fails = len(fails)
         gate_bars = _apply_gates(by_type, conditions, fallback, fails, place in PASS18_HOLD_TOWNS)
+        if new_garage and by_type["detached_new"] not in OK_PATHS:  # pass 25: a bar on a new building bars it too
+            by_type["over_garage"] = by_type["detached_new"]
         if form_line_at is not None and by_form_leaf:  # pass 24: a barred form a no-variance bar reaches
             _no_variance_form_line(reasons, form_line_at, barred_forms, by_type, gate_bars, by_form_leaf, no_rule_lot)
         # pass 17: the lot fails only bars from another chapter of the code. Relief follows that chapter's own appeal
@@ -4293,6 +4369,9 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             f"so the town's story limit gives way too ({', '.join(t.replace('_', ' ') for t in lifted)})"
         ]
     out["reasons"] += notes
+    footprint = _footprint_cap(today, by_type, state, place, citations)
+    if footprint is not None:
+        out["reasons"].append(footprint[1])
     out["max_height_ft"] = heights["detached_new"]
     if heights["detached_new"] is None:
         citations.pop("max_height_ft", None)
@@ -4378,6 +4457,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         citations.pop("setback_rear_alley_ft", None)
         if "setback_rear_alley_ft" in assumed:
             assumed.remove("setback_rear_alley_ft")
+    if allowed and detached_ok and place not in PASS25_HOLD_TOWNS:
+        scope_line = _headline_scope_line(out, setbacks, heights, types_allowed)
+        if scope_line:
+            out["reasons"].append(scope_line)
     _, d_row = _district_row(data, lot)
     min_h = None if state else d_row.get("min_height_ft")
     if _usable(min_h) and min_h.get("value") is not None:  # pass 17: every building in the district at least this tall
@@ -4571,7 +4654,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if state and allowed and status and status != "allowed_by_right":
         # The bill overrides the town's status (conditions_overridden says so). Today's status is in the reasons.
         out["adu_status"] = "allowed_by_right"
-    return {k: out[k] for k in OUTPUT_KEYS + TOWN_KEYS}
+    res = {k: out[k] for k in OUTPUT_KEYS + TOWN_KEYS}
+    if footprint is not None:  # pass 25: only where the file holds a footprint cap, so other outputs keep their keys
+        res["max_footprint_sqft"] = footprint[0]
+    return res
 
 
 def _form_scoped(c: dict[str, Any], by_type: dict[str, str], types_allowed: list[str], approval: str) -> bool:
@@ -4970,6 +5056,28 @@ def _acc_cap(picked: Picked) -> dict[str, Any]:
         "binds": binds[0].get("value") if binds else None,
         "binds_leaf": binds[0] if binds else None,
     }
+
+
+def _footprint_cap(
+    today: Picked, by_type: dict[str, str], state: bool, place: str, citations: dict[str, Any]
+) -> tuple[float, str] | None:
+    """Pass 25: size.max_footprint_sqft, a cap on the ground the unit's building covers, apart from the floor area
+    cap (Narberth 500-802B(4): footprint 600 sq ft, floor area 800 sq ft). It binds the forms in an accessory
+    building (a new detached unit, a garage conversion, a unit over a garage), where one of them is allowed. Today
+    only: under a bill the town's accessory caps give way, as the other accessory caps do here. None for a lot town
+    held by PASS25_HOLD_TOWNS until its next lot rebuild. The cap and its sentence, or None."""
+    hit = today.get(("size", "max_footprint_sqft"))
+    if state or place in PASS25_HOLD_TOWNS or not hit or hit[0].get("value") is None:
+        return None
+    if not any(by_type[t] in OK_PATHS for t in DETACHED_TYPES):
+        return None
+    cap = hit[0]["value"]
+    citations["max_footprint_sqft"] = _citation(*hit)
+    line = (
+        f"The unit's building may cover at most {cap:,.0f} sq ft of ground ({hit[0]['section']}). This footprint cap "
+        "is apart from the floor area cap, so a unit over it does not fit"
+    )
+    return cap, line
 
 
 def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = False, state: bool = False) -> list[str]:
@@ -5490,6 +5598,47 @@ def _town_setbacks(
             yards[k] = v
         out[t] = yards
     return out
+
+
+def _headline_scope_line(
+    out: dict[str, Any], setbacks: dict[str, dict[str, Any]], heights: dict[str, Any], types_allowed: list[str]
+) -> str | None:
+    """Pass 25: the top-level yards and height are a unit's in an accessory building. Where an addition or a unit
+    inside the house is also allowed and its own yards or height differ (Camp Hill: 3 ft side and rear and 25 ft for an
+    accessory building, the house's 25, 7 and 30 ft yards and 35 ft for an addition), say whose figures they are and
+    give the other forms' own. None when every allowed form has the same figures."""
+
+    def ft(v: Any) -> str:
+        return "not on file" if v is None else f"{v:g} ft"
+
+    def yard_words(y: dict[str, Any], with_front: bool) -> list[str]:
+        keys = [("setback_front_ft", "front")] if with_front else []
+        keys += [("setback_side_ft", "side"), ("setback_rear_ft", "rear")]
+        return [f"{label} {ft(y.get(k))}" for k, label in keys]
+
+    head = {k: out.get(k) for k in ("setback_front_ft", "setback_side_ft", "setback_rear_ft")}
+    parts = []
+    for t in ("attached", "internal"):
+        if t not in types_allowed:
+            continue
+        own = setbacks.get(t) or {}
+        if t == "internal":
+            if heights.get(t) == out.get("max_height_ft") and all(v is None for v in head.values()):
+                continue
+            parts.append(
+                f"A unit inside the house adds no building, so no yards of its own, height {ft(heights.get(t))}"
+            )
+            continue
+        if heights.get(t) == out.get("max_height_ft") and all(own.get(k) == head[k] for k in head):
+            continue
+        parts.append(f"An addition to the house: {', '.join(yard_words(own, True))}, height {ft(heights.get(t))}")
+    if not parts:
+        return None
+    figs = yard_words(head, head["setback_front_ft"] is not None) + [f"height {ft(out.get('max_height_ft'))}"]
+    return (
+        f"The yards and height given here ({', '.join(figs)}) are for a unit in an accessory building, not for every "
+        "form. " + ". ".join(parts)
+    )
 
 
 def _town_parking(

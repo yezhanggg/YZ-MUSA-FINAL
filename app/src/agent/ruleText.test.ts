@@ -1325,3 +1325,29 @@ describe('get_rule_text pass 24', () => {
     expect(out).toContain('(27-305(2)). It reaches only a lot without public sewer');
   });
 });
+
+describe('get_rule_text pass 25 fields', () => {
+  it('gives a footprint cap apart from the floor area cap (Narberth 500-802B(4))', async () => {
+    const out = await town6('pa_montgomery_narberth', 'size', '3B');
+    expect(out.forms.accessory_building.max_footprint_sqft).toMatchObject({ key: 'size.max_footprint_sqft', value: 600, section: '500-802B(4)' });
+    expect(out.forms.accessory_building.max_footprint_sqft.rule).toBe(
+      "The unit's building may cover at most 600 sq ft of ground (500-802B(4)). This footprint cap is apart from the floor area cap, so a unit over it does not fit",
+    );
+    expect(out.forms.accessory_building.max_sqft.value).toBe(800);
+    const other = await town6('pa_montgomery_lower_merion', 'size');
+    expect(other.forms.accessory_building.max_footprint_sqft).toBeUndefined();
+  });
+
+  it('says a floodplain bar keyed to the house date reaches only the forms it names, and depends on the year', async () => {
+    const gate = {
+      kind: 'other', effect: 'bars', applies_to: ['internal', 'attached'], test: 'house_built_before', value_date: '1977-03-10', overlays: ['FPO'],
+      condition: 'In the Floodplain Overlay a unit in or added to a house begun on or after March 10, 1977 is not allowed', section: '200-13, 200-29A(4)',
+    };
+    const src: TownSource = {
+      index: async () => TOWNS,
+      town: async () => ({ ...(FAKE_FILES.pa_testing_testville as object), eligibility: { gates: leaf([gate], '200-29') } }) as never,
+    };
+    const out = JSON.stringify(await getRuleText({ place: 'Testville', topic: 'eligibility' }, src));
+    expect(out).toContain('Allowed only if the house was built before 1977-03-10. It depends on the year the house was built, which is not known here.');
+  });
+});

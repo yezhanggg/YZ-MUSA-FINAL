@@ -900,6 +900,13 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const ruleIn = withPart(rule('max_sqft_internal', 'max_sqft', 'max_share_internal', 'max_share_of_house'), firstNum('max_sqft_internal', 'max_sqft'));
   const ruleAcc = withPart(rule('max_sqft_accessory_building', 'max_sqft', 'max_share_accessory_building', 'max_share_of_house'), firstNum('max_sqft_accessory_building', 'max_sqft'));
   const partOut: Obj = part && !lifted ? { max_share_of_part: ruleOut('size.max_share_of_part', partLeaf!) } : {};
+  // Pass 25 (pipeline/rules.py _footprint_cap): a cap on the ground the unit's building covers, apart from the floor
+  // area cap. A unit over it does not fit even when its floor area is under max_sqft.
+  const fpLeaf = leafAt(file, 'size', 'max_footprint_sqft');
+  const footprintOut: Obj =
+    fpLeaf && typeof fpLeaf.value === 'number' && !lifted
+      ? { max_footprint_sqft: { ...ruleOut('size.max_footprint_sqft', fpLeaf), rule: `The unit's building may cover at most ${num(fpLeaf.value)} sq ft of ground (${fpLeaf.section ?? 'rule file'}). This footprint cap is apart from the floor area cap, so a unit over it does not fit` } }
+      : {};
   const liftNote: Obj | null = lifted ? { value: null, ...cite(lifted), note: `No ADU size maximum in ${rowKey}${lifted.note ? `. ${lifted.note}` : ''}` } : null;
   const sizePick = (...keys: string[]) => liftNote ?? (keys.includes('max_sqft') && rowCap ? (pick('size', ...keys.slice(0, keys.indexOf('max_sqft'))) ?? rowCap) : pick('size', ...keys));
   const byForm = leafAt(file, 'size', 'max_sqft_by_form');
@@ -948,6 +955,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
       ...(ruleAcc && !lifted ? { size_rule: ruleAcc } : {}),
       ...partOut,
       ...formCaps,
+      ...footprintOut,
       ...(general ? { general_accessory_caps: general } : {}),
       max_height_ft: detachedHeight,
       garage_max_height_ft: noAdu ? null : pick('envelope', 'max_height_garage_ft'),

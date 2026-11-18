@@ -829,6 +829,7 @@ FIRST_CHECKS = ("allowed", "type_allowed", "min_lot_size")
 NOTES = {
     "yard_space": "the room in the yard",
     "size_cap": "the size cap",
+    "footprint_cap": "the footprint cap",
     "share_of_house": "the cap as a share of the house",
     "building_coverage": "the building coverage limit",
     "impervious": "the impervious surface limit",
@@ -901,6 +902,9 @@ def _size_limits(
     lim["size_cap"] = None if cap is None else cap / stories
     share = rules["max_share_of_house"]
     lim["share_of_house"] = None if share is None else share * _house_sqft(lot, buildings, assumed) / stories
+    if new_footprint and rules.get("max_footprint_sqft") is not None:
+        # Pass 25: a cap on the ground the building covers, apart from the floor area cap (not split by stories).
+        lim["footprint_cap"] = float(rules["max_footprint_sqft"])
     if new_footprint:
         cover = _existing_cover(lot, buildings)
         cov = rules["max_building_coverage"]
@@ -982,6 +986,8 @@ def _fit_detached(
     asked = float(want.get("footprint_sqft", footprint))
     checks["room"] = Check(bool(room >= max(asked, smallest) - 1e-6), room, None, "largest rectangle in the yard")
     checks["size_cap"] = _ok_limit(asked * stories, rules["max_size_sqft"], "floor area")
+    if rules.get("max_footprint_sqft") is not None:  # pass 25: only when the rules hold a footprint cap
+        checks["footprint_cap"] = _ok_limit(asked, rules["max_footprint_sqft"], "footprint")
     checks["min_size"] = Check(
         asked * stories >= min_size - 1e-6, asked * stories, rules["min_size_sqft"], "floor area"
     )
@@ -1090,6 +1096,8 @@ def _fit_garage(
     lim = _size_limits(rules, lot, buildings, 1, assumed, new_footprint=False)
     checks["room"] = Check(True, area, None, "the garage footprint")
     checks["size_cap"] = _ok_limit(area, rules["max_size_sqft"], "garage footprint")
+    if rules.get("max_footprint_sqft") is not None:  # pass 25: the garage is the unit's building
+        checks["footprint_cap"] = _ok_limit(area, rules["max_footprint_sqft"], "garage footprint")
     min_size = rules["min_size_sqft"]
     checks["min_size"] = Check(min_size is None or area >= min_size, area, min_size, "garage footprint")
     checks["share_of_house"] = _ok_limit(area, lim["share_of_house"], "garage against the house")
@@ -1114,6 +1122,8 @@ def _fit_garage(
     failed = _first_failure(checks)
     if failed == "size_cap":
         note = f"garage is {area:.0f} sq ft, over the {checks['size_cap'].limit:.0f} sq ft cap"
+    elif failed == "footprint_cap":
+        note = f"garage is {area:.0f} sq ft, over the {checks['footprint_cap'].limit:.0f} sq ft footprint cap"
     elif failed == "min_size":
         note = f"garage is {area:.0f} sq ft, under the {min_size:.0f} sq ft minimum"
     elif failed:
