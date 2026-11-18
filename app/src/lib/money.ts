@@ -2,7 +2,7 @@
 // Same model as pipeline/money.py, line for line, reading the same shared/assumptions.json.
 // tests/fixtures/money_cases.json holds cases both must agree on to the cent.
 // Pure functions, so the screen can rerun them on every slider move.
-import ASSUMPTIONS_JSON from '../../../shared/assumptions.json';
+import ASSUMPTIONS_JSON from '../../../shared/assumptions.json' with { type: 'json' };
 
 export type Case = 'low' | 'mid' | 'high';
 export const CASES: Case[] = ['low', 'mid', 'high'];

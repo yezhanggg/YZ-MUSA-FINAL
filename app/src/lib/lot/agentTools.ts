@@ -3,13 +3,13 @@
 // Two rules hold for every tool:
 //   - the scenario is the one the user chose on screen unless the call names another, and the result says which
 //   - text never carries "NaN", "undefined" or "?" placeholders. A missing value is null or "not on file".
-import { ASSUMPTIONS } from '../money';
-import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView } from './citations';
-import { lotMoney, type MoneyOptions } from './summary';
-import { lotTownOf } from './towns';
-import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type RuleType, type Rules, type Scenario } from './types';
-import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict';
-import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words';
+import { ASSUMPTIONS } from '../money.js';
+import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView } from './citations.js';
+import { lotMoney, type MoneyOptions } from './summary.js';
+import { lotTownOf } from './towns.js';
+import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type RuleType, type Rules, type Scenario } from './types.js';
+import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict.js';
+import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words.js';
 
 type JsonSchema = Record<string, unknown>;
 /** Same as ToolDef in agent/schema.ts. */

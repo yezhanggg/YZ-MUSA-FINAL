@@ -1,6 +1,6 @@
 // The ADU being tested: does it fit on a lot, how many tract lots have room, and does it pay off.
 // Pure functions, so they are easy to test (adu.test.ts).
-import { BASE, BED_LABEL, CLOSE_BAND, COST_PSF, OPEX, RATE, SOFT, YEARS, type Adu } from './numbers';
+import { BASE, BED_LABEL, CLOSE_BAND, COST_PSF, OPEX, RATE, SOFT, YEARS, type Adu } from './numbers.js';
 
 export type Pays = 'yes' | 'maybe' | 'no';
 export type Fit = 'yes' | 'trees' | 'no';

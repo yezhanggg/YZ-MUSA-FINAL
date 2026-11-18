@@ -1,8 +1,8 @@
 // The places with lot records, for the assistant's wording. Read from the lot loader's registry (lib/lot/load.ts
 // PLACE_BY_COUNTY, the same list the map and app/src/tool/test/placeData.ts use), so a new city needs no text change here.
 // A county place holds several towns (lib/lot/towns.ts): its name is followed by its towns.
-import { PLACE_BY_COUNTY } from '../lib/lot/load';
-import { lotTownByGeoid, townShortName, townsOfPlace } from '../lib/lot/towns';
+import { PLACE_BY_COUNTY } from '../lib/lot/load.js';
+import { lotTownByGeoid, townShortName, townsOfPlace } from '../lib/lot/towns.js';
 
 /** Place keys with lot records, in registry order ("pittsburgh", "philadelphia", "allentown", "chester_county", ...). */
 export const LOT_PLACES: readonly string[] = [...new Set(Object.values(PLACE_BY_COUNTY))];

@@ -1,9 +1,9 @@
 // Data for the tool (app/public/data, made by app/build_data.py) and the small geometry helpers that test a spot
 // in the browser: point in polygon for the tract and town, nearest lot within 40 m.
 import { LOT_TRACTS } from 'virtual:lot-index';
-import type { TractRoomFields } from '../lib/adu';
-import type { LotRule, TownRule } from '../lib/rules';
-import { annual } from '../lib/format';
+import type { TractRoomFields } from '../lib/adu.js';
+import type { LotRule, TownRule } from '../lib/rules.js';
+import { annual } from '../lib/format.js';
 
 export type LngLat = [number, number];
 export const PA_BBOX: [number, number, number, number] = [-80.52, 39.72, -74.69, 42.27];

@@ -10,7 +10,7 @@
 // or not the host sends Content-Encoding. GitHub Pages sends .json.gz as application/gzip, with no
 // Content-Encoding and no CORS header on a 404 (docs/HOSTING.md). A tract the manifest does not list is
 // reported as not_found without trusting the failed request.
-import { SCHEMA_VERSION, type AreaGeom, type LotRecord } from './types';
+import { SCHEMA_VERSION, type AreaGeom, type LotRecord } from './types.js';
 
 export const DEFAULT_LOT_DATA_URL = '/data/lots2/';
 /** Tracts kept in memory. A tract head file is up to 1.5 MB gzipped. */

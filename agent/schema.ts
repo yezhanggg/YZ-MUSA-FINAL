@@ -1,12 +1,12 @@
 // "Ask about this site": the agent's contract, shared by the server (api/agent.ts) and the browser
 // (app/src/agent). Claude picks tools, the browser runs them with the same code as the report.
-import { LOT_TOOLS } from '../app/src/lib/lot/agentTools';
-import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText';
-import { AREA_STATS_TOOL, FIND_LOT_TOOL } from '../app/src/agent/areaTools';
-import { LIST_TEXT_PLACES_TOOL, SEARCH_TEXT_TOOL } from '../app/src/agent/zoningText';
-import { PLACE_ANSWER_TOOL } from '../app/src/agent/placeAnswer';
-import { lotPlacesText } from '../app/src/agent/lotPlaces';
-import type { Scenario } from '../app/src/lib/lot/types';
+import { LOT_TOOLS } from '../app/src/lib/lot/agentTools.js';
+import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText.js';
+import { AREA_STATS_TOOL, FIND_LOT_TOOL } from '../app/src/agent/areaTools.js';
+import { LIST_TEXT_PLACES_TOOL, SEARCH_TEXT_TOOL } from '../app/src/agent/zoningText.js';
+import { PLACE_ANSWER_TOOL } from '../app/src/agent/placeAnswer.js';
+import { lotPlacesText } from '../app/src/agent/lotPlaces.js';
+import type { Scenario } from '../app/src/lib/lot/types.js';
 
 export const MAX_ROUNDS = 6;
 export const DEFAULT_MODEL = 'claude-haiku-5-5';

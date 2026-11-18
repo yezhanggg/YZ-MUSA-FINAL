@@ -2,23 +2,23 @@
 // section, link, check date, confidence and note of each value. No free text search: a place or bill without a rule
 // file gets a plain "not in my data" answer, plus the statewide baseline for a Pennsylvania town.
 // Town files (pa_<county>_<town>.json) and the town index are loaded on demand, each as its own chunk.
-import type { ToolDef } from '../lib/lot/agentTools';
-import { NOTICE } from '../lib/lot/citations';
+import type { ToolDef } from '../lib/lot/agentTools.js';
+import { NOTICE } from '../lib/lot/citations.js';
 
 /** Rule files by the name the tool takes. `building_code` is default.json (fallback values, not a town's law). */
 const FILES = {
-  philadelphia: () => import('../../../shared/rules/philadelphia.json'),
-  pittsburgh: () => import('../../../shared/rules/pittsburgh.json'),
-  bill250042: () => import('../../../shared/rules/bill250042.json'),
-  hb2186: () => import('../../../shared/rules/hb2186.json'),
-  sb1346: () => import('../../../shared/rules/sb1346.json'),
-  building_code: () => import('../../../shared/rules/default.json'),
+  philadelphia: () => import('../../../shared/rules/philadelphia.json', { with: { type: 'json' } }),
+  pittsburgh: () => import('../../../shared/rules/pittsburgh.json', { with: { type: 'json' } }),
+  bill250042: () => import('../../../shared/rules/bill250042.json', { with: { type: 'json' } }),
+  hb2186: () => import('../../../shared/rules/hb2186.json', { with: { type: 'json' } }),
+  sb1346: () => import('../../../shared/rules/sb1346.json', { with: { type: 'json' } }),
+  building_code: () => import('../../../shared/rules/default.json', { with: { type: 'json' } }),
 } as const;
 export type RulePlace = keyof typeof FILES;
 export const RULE_PLACES = Object.keys(FILES) as RulePlace[];
 
 /** shared/rules/towns_index.json, made by tools/town_targets.py. */
-const loadIndex = () => import('../../../shared/rules/towns_index.json');
+const loadIndex = () => import('../../../shared/rules/towns_index.json', { with: { type: 'json' } });
 /** One town file or pa_statewide, by its name after `pa_`. Vite turns this into one lazy chunk per file. */
 const loadPa = (rest: string) => import(`../../../shared/rules/pa_${rest}.json`);
 

@@ -5,10 +5,10 @@
 // so dragging a size gives an answer at once without a server. The box test is fitBox.ts on the saved
 // buildable polygon. Distances to lot lines and the house only explain a failure. They never overrule the
 // polygon, which went through the exact geometry in the pipeline.
-import { fitBox, type BoxSpec } from '../fitBox';
-import { areaFeet, boxToArea, boxToLine, centroid, bounds, frameOf, lineAngle, lineFeet, longSideAngle, type Frame, type Poly, type Pt } from './geometry';
-import { APPROVAL_PATHS, type AduType, type ApprovalPath, type Citation, type FitResult, type LotRecord, type Rules, type Scenario, SCENARIOS } from './types';
-import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_LABEL, ftText, isNum, pctText, sqftText } from './words';
+import { fitBox, type BoxSpec } from '../fitBox.js';
+import { areaFeet, boxToArea, boxToLine, centroid, bounds, frameOf, lineAngle, lineFeet, longSideAngle, type Frame, type Poly, type Pt } from './geometry.js';
+import { APPROVAL_PATHS, type AduType, type ApprovalPath, type Citation, type FitResult, type LotRecord, type Rules, type Scenario, SCENARIOS } from './types.js';
+import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_LABEL, ftText, isNum, pctText, sqftText } from './words.js';
 
 // Mirrors pipeline/fit.py so the browser and the pipeline agree.
 /** Peak height used when the user gives none. */

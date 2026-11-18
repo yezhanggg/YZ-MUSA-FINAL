@@ -3,7 +3,7 @@
 // browser (with the report's own code), and their results come back in the next request. No key in the client.
 import Anthropic from '@anthropic-ai/sdk';
 import type { MessageParam, Tool, ToolUseBlock, TextBlock } from '@anthropic-ai/sdk/resources/messages';
-import { DEFAULT_MODEL, MAX_ROUNDS, SYSTEM_PROMPT, TOOLS, type AgentContext, type AgentResponse } from '../agent/schema';
+import { DEFAULT_MODEL, MAX_ROUNDS, SYSTEM_PROMPT, TOOLS, type AgentContext, type AgentResponse } from '../agent/schema.js';
 
 interface Req {
   method?: string;

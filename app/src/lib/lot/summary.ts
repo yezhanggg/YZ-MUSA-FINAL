@@ -1,10 +1,10 @@
 // Data for the one-page lot report, and the rows of the "lots in view" export.
 // Pure data, no rendering: the report component and a print view lay it out.
-import { proForma, type FinancingInput, type ProForma, type RentByBedroom as MoneyRents, type Scenario as MoneyScenario } from '../money';
-import { NOTICE, sourcesOf, verdictCitations, type CitationView } from './citations';
-import { SCENARIOS, type LotRecord, type RentByBedroom, type Scenario } from './types';
-import { compareScenarios, unitVerdict, approvalFor, type UnitInput, type UnitVerdict, type VerdictCheck, type VerdictWarning } from './verdict';
-import { SCENARIO_TITLE, TYPE_TITLE, dateText, ftText, isNum, sqftText, usdText } from './words';
+import { proForma, type FinancingInput, type ProForma, type RentByBedroom as MoneyRents, type Scenario as MoneyScenario } from '../money.js';
+import { NOTICE, sourcesOf, verdictCitations, type CitationView } from './citations.js';
+import { SCENARIOS, type LotRecord, type RentByBedroom, type Scenario } from './types.js';
+import { compareScenarios, unitVerdict, approvalFor, type UnitInput, type UnitVerdict, type VerdictCheck, type VerdictWarning } from './verdict.js';
+import { SCENARIO_TITLE, TYPE_TITLE, dateText, ftText, isNum, sqftText, usdText } from './words.js';
 
 export interface Fact {
   label: string;

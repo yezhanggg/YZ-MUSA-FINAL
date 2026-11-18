@@ -3,12 +3,12 @@
 //                              (lib/lot/addressIndex.ts), else from the lot records the provider can list
 //   get_area_stats(level, ...) rents, growth, payoff, lots that fit and the ADU forecast of a tract, town, county or the state
 // Pure functions. The provider (browser or Node) hands over the data.
-import type { ToolDef } from '../lib/lot/agentTools';
-import type { CountyProps, FC, TownProps, TractProps } from '../tool/geo';
-import HEADLINE from '../lib/headline.json';
-import { tractRoom, type TractRoomFields } from '../lib/adu';
-import { lotPlaceTitle, lotPlacesText } from './lotPlaces';
-import type { AddressHit, AddressLookup } from '../lib/lot/addressIndex';
+import type { ToolDef } from '../lib/lot/agentTools.js';
+import type { CountyProps, FC, TownProps, TractProps } from '../tool/geo.js';
+import HEADLINE from '../lib/headline.json' with { type: 'json' };
+import { tractRoom, type TractRoomFields } from '../lib/adu.js';
+import { lotPlaceTitle, lotPlacesText } from './lotPlaces.js';
+import type { AddressHit, AddressLookup } from '../lib/lot/addressIndex.js';
 
 // ------------------------------------------------------------------ find_lot
 export const FIND_LOT_TOOL: ToolDef = {

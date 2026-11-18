@@ -1,8 +1,8 @@
 // Rule citations for display: section, link, "checked on" date and how sure we are.
 // Every number on the lot screens points back to one of these, or to an assumption key.
-import type { Citation, CitationConfidence } from './types';
-import type { UnitVerdict } from './verdict';
-import { dateText } from './words';
+import type { Citation, CitationConfidence } from './types.js';
+import type { UnitVerdict } from './verdict.js';
+import { dateText } from './words.js';
 
 /** Shown under every lot answer, the report and the assistant's rule answers. */
 export const NOTICE =

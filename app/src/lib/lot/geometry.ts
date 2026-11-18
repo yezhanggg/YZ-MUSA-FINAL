@@ -1,8 +1,8 @@
 // Small plane geometry in local feet for the unit test on one lot. The box-in-area test itself is
 // fitBox.ts. These add what it does not export: distances from the unit to lot lines and buildings,
 // and the center of a polygon. Everything shares one origin per lot (the first lot vertex).
-import { boxCorners, originOf, projector, toFeet, type BoxSpec, type Poly, type Pt } from '../fitBox';
-import type { AreaGeom, LineStringGeom, LotRecord } from './types';
+import { boxCorners, originOf, projector, toFeet, type BoxSpec, type Poly, type Pt } from '../fitBox.js';
+import type { AreaGeom, LineStringGeom, LotRecord } from './types.js';
 
 export type { Poly, Pt };
 

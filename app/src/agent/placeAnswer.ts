@@ -8,11 +8,11 @@
 //   5 baseline             what Pennsylvania law gives every town, who zones here, the bills, who to ask
 // The ladder row per place is app/public/data/pa_places.json (pipeline/places_index.py; contract in
 // <data root>/ops/logs/pa-places.md). Rule details come from get_rule_text, quotes from search_zoning_text.
-import type { ToolDef } from '../lib/lot/agentTools';
-import { NOTICE } from '../lib/lot/citations';
-import { dependsFact, getRuleText, hearingText, pct as sharePct, townKey } from './ruleText';
-import { searchZoningText, type ZoningTextSource } from './zoningText';
-import { lotPlaceOfTown, lotPlacesText } from './lotPlaces';
+import type { ToolDef } from '../lib/lot/agentTools.js';
+import { NOTICE } from '../lib/lot/citations.js';
+import { dependsFact, getRuleText, hearingText, pct as sharePct, townKey } from './ruleText.js';
+import { searchZoningText, type ZoningTextSource } from './zoningText.js';
+import { lotPlaceOfTown, lotPlacesText } from './lotPlaces.js';
 
 // ------------------------------------------------------------------ data
 export type Tier = 'verified' | 'drafted' | 'reported' | 'text_search' | 'baseline';
@@ -418,7 +418,7 @@ export interface PlaceAnswerDeps {
 const STATEWIDE_KEYS = ['who_zones', 'zoning_officer', 'path_special_exception', 'path_conditional_use', 'path_variance', 'building_code', 'sewage_planning', 'onlot_septic', 'private_restrictions', 'state_bill_hb2186', 'state_bill_sb1346'];
 const NO_ZONING_KEYS = ['building_code', 'sewage_planning', 'onlot_septic', 'private_restrictions'];
 const loadStatewide = async () => {
-  const mod = (await import('../../../shared/rules/pa_statewide.json')) as unknown as { default?: { statewide: Obj }; statewide?: Obj };
+  const mod = (await import('../../../shared/rules/pa_statewide.json', { with: { type: 'json' } })) as unknown as { default?: { statewide: Obj }; statewide?: Obj };
   return ((mod.default ?? mod) as { statewide: Obj }).statewide as Record<string, { value?: unknown; section?: unknown; url?: unknown }>;
 };
 

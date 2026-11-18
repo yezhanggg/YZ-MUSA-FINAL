@@ -1,8 +1,8 @@
 // The municipalities that have lot records. A city place (pittsburgh) is one town. A county place (chester_county)
 // holds several towns, and each of its lots follows its own town's rule file: the town of a lot is that rule file.
 // Names, GEOIDs and code links are shared/rules/towns_index.json's (towns.test.ts checks them against it).
-import { PLACE_BY_COUNTY } from './load';
-import type { LotRecord } from './types';
+import { PLACE_BY_COUNTY } from './load.js';
+import type { LotRecord } from './types.js';
 
 export interface LotTown {
   /** Rule file (shared/rules/<file>.json), the key a lot's citations name. */

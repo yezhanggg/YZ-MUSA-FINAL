@@ -11,8 +11,8 @@
 //   <base>text/<text_id>.json.gz    {v, id, docs: [{url, fetched_on, last_modified, pages, ocr}], chunks: [[doc, section, heading, p0, p1, text]]}
 // The base URL comes from VITE_ZONING_TEXT_URL, else the lot data URL with lots/ replaced by zoning_text/, else
 // /data/zoning_text/.
-import type { ToolDef } from '../lib/lot/agentTools';
-import { townKey } from './ruleText';
+import type { ToolDef } from '../lib/lot/agentTools.js';
+import { townKey } from './ruleText.js';
 
 // ------------------------------------------------------------------ wording
 export const TIER_B_LABEL =

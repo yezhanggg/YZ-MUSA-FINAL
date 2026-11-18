@@ -1,6 +1,6 @@
 // Shared wording and number text for the lot screens, the report and the assistant.
 // Every number goes through these helpers, so a missing value reads "unknown" and never "NaN".
-import type { RuleType, Scenario } from './types';
+import type { RuleType, Scenario } from './types.js';
 
 export const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
 

@@ -6,8 +6,8 @@
 //
 // A lookup reads the index file of each place (5 to 40 KB) and one shard per matching street (under 35 KB).
 // The normalisation is the same as pipeline/address_index.py (shared cases: tests/fixtures/address_norm_cases.json).
-import { PLACE_BY_COUNTY, fetchLotFile, type LoadOptions } from './load';
-import { townShortName, townsOfPlace } from './towns';
+import { PLACE_BY_COUNTY, fetchLotFile, type LoadOptions } from './load.js';
+import { townShortName, townsOfPlace } from './towns.js';
 
 // ------------------------------------------------------------------ normalising
 /** Street words to their short form. Same table as WORD in pipeline/address_index.py. */

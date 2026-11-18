@@ -1,8 +1,8 @@
 // Numbers in one place. The MUSA 5500 headline values come from app/src/lib/headline.json, which
 // app/build_data.py writes from the tract outputs (pipeline/tract/*.py), so the text cannot drift from them.
 // The payoff constants are shared/assumptions.json tract.payoff.* (pipeline/tract/payoff.py reads the same).
-import ASSUMPTIONS_JSON from '../../../shared/assumptions.json';
-import HEADLINE from './headline.json';
+import ASSUMPTIONS_JSON from '../../../shared/assumptions.json' with { type: 'json' };
+import HEADLINE from './headline.json' with { type: 'json' };
 
 const items = ASSUMPTIONS_JSON.items as Record<string, { value?: number | null; low?: number | null; mid?: number | null; high?: number | null }>;
 const val = (k: string) => items[k].value as number;
