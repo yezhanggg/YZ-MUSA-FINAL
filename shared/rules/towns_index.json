@@ -5007,7 +5007,7 @@
       "pop_rank": 369,
       "file": "pa_luzerne_pittston",
       "batch": 51,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/28469563",
@@ -5017,7 +5017,7 @@
       "why": [
         "added as batch 51 by population. Code Chapter 480 has no ADU text (accessory living quarters are guest rooms with no kitchen, 480-144A conversion to two units by special exception in R-3)"
       ],
-      "status_note": "Drafted 2026-11-18 after the fix round. Open: the accessory front-yard bar of 480-76 (R-1 to R-3 only) also prints on lots in other districts until the engine scopes it by district. Ord. No. 6-2026 (short-term rentals, 10-21-2026) is not yet codified and was not read (PDF). Points to ask the zoning officer, not settled by the code text: whether lot coverage counts paving (read as building cover), whether the 7,000 sq ft two-family lot binds a 480-144A conversion, and whether a house in NC is a special exception (Table 480-27) or not listed (480-45). Not read: 480-65 (CB parking), Article XV and Chapter 270 Articles I to III and VI in full."
+      "status_note": "Verified 2026-11-18 after the fix round and engine pass 26 (the 480-76 front-yard bar now holds only in R-1 to R-3). Open: Ord. No. 6-2026 (short-term rentals, 10-21-2026) is not yet codified and was not read (PDF). Points to ask the zoning officer, not settled by the code text: whether lot coverage counts paving (read as building cover), whether the 7,000 sq ft two-family lot binds a 480-144A conversion, and whether a house in NC is a special exception (Table 480-27) or not listed (480-45). Not read: 480-65 (CB parking), Article XV and Chapter 270 Articles I to III and VI in full."
     },
     {
       "geoid": "4213345152",
