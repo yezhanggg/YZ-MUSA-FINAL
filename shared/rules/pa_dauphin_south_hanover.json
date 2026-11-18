@@ -1,0 +1,1192 @@
+{
+  "provenance": {
+    "jurisdiction": "South Hanover township",
+    "instrument": "Township of South Hanover Zoning Ordinance (Chapter 27 Zoning, Ord. No. 2-1995 of 4-11-1995, as amended), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 SO2457, Township of South Hanover, PA. 27-1401 names 'the Township of South Hanover Dauphin County, Pennsylvania', and the township website (southhanover.org, Code of Ordinances) links its code to eCode360, so this is South Hanover township, Dauphin County. Every district's uses and figures are text in Chapter 27. The one attachment is a sign table. New Laws: none listed",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/SO2457",
+      "https://ecode360.com/SO2457/laws",
+      "https://ecode360.com/34457097",
+      "https://www.southhanover.org/government/code_of_ordinances.php",
+      "https://ecode360.com/SO2457/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22temporary%20dwelling%22%20OR%20%22guest%20house%22%20OR%20guesthouse%20OR%20%22household%20employee%22%20OR%20lodgers%20OR%20%22care%20of%22%20OR%20conversion%20OR%20%22living%20quarters%22%20OR%20%22two-family%22%20OR%20%22accessory%20living%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/print/SO2457?guid=34457111",
+      "https://ecode360.com/print/SO2457?guid=34457554",
+      "https://ecode360.com/print/SO2457?guid=34457599",
+      "https://ecode360.com/print/SO2457?guid=34457641",
+      "https://ecode360.com/print/SO2457?guid=34457671",
+      "https://ecode360.com/print/SO2457?guid=34457703",
+      "https://ecode360.com/print/SO2457?guid=34457744",
+      "https://ecode360.com/print/SO2457?guid=34457782",
+      "https://ecode360.com/print/SO2457?guid=34457791",
+      "https://ecode360.com/print/SO2457?guid=34457851",
+      "https://ecode360.com/print/SO2457?guid=34457974",
+      "https://ecode360.com/print/SO2457?guid=34458037",
+      "https://ecode360.com/print/SO2457?guid=34458459",
+      "https://ecode360.com/print/SO2457?guid=34458701",
+      "https://ecode360.com/print/SO2457?guid=34458724",
+      "https://ecode360.com/print/SO2457?guid=34458736",
+      "https://ecode360.com/print/SO2457?guid=34458740",
+      "https://ecode360.com/print/SO2457?guid=34458802",
+      "https://ecode360.com/print/SO2457?guid=34458979",
+      "https://ecode360.com/print/SO2457?guid=34459058"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Dauphin",
+    "municipality_type": "township",
+    "geoid": "4204372200",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/34457097",
+    "code_current_through": "2023-10-10",
+    "code_current_through_note": "eCode360 shows 'Includes legislation through 10-10-2023'. New Laws: 'There are currently no known new laws for this Code'",
+    "code_caution": "The online code includes legislation only through 10-10-2023, and the Township's own page warns that amendments may have been enacted since. It also posts a draft Data Center Ordinance for advertisement. No zoning amendment adopted after 2023 was found, but ask the Township office before relying on these rules",
+    "checks": [
+      "Accessory apartment: a conditional use in R-A, ESC, R-S, R-U and R-C (in R-C 'when associated with a single-family detached dwelling'), decided by the Board of Supervisors after public notice and hearing and Planning Commission review (27-403.3, 27-4A03.1, 27-503.1, 27-603.1, 27-1003.4, 27-2109). It is created inside a single-family detached dwelling, 'incorporated within an existing single-family detached dwelling without any substantial external modification' (27-1502.15, 27-203 'Apartment, accessory')",
+      "The apartment is one complete and separate housekeeping unit 'to be used/occupied by a person or persons related by marriage or blood relative only'. The owner lives in one of the units except for bona fide temporary absences. The building keeps the look of a single-family detached dwelling. At most 30% of the structure's total floor area and not over 400 sq ft, at least 300 sq ft. At least three off-street spaces in all for owner and tenant (27-1502.15). 27-1509 also sets 300 sq ft for 'conversion/accessory apartments', but 150 sq ft for apartments 'designed for and occupied extensively by one person'",
+      "Guesthouse (a dwelling unit for visitors, attached or detached, 'not ... offered for occupancy for compensation', Ord. No. 5-2021) and domestic employee quarters (for maids, butlers, cooks and the like of the household, attached or detached) are conditional uses in R-A, ESC, R-S, R-U, R-M, V and R-C. 27-1502.27 allows them 'on a lot in any residential district' as accessory uses to a single-family detached dwelling: two acres when detached, more if needed for on-lot sewage or water, handled as a land development with a land development plan, and a recorded covenant that they are never subdivided off (27-203, 27-1502.27)",
+      "Country estates (conditional use in R-A, lots of five acres or more) may hold 'an accessory apartment, guesthouse or servants quarters which shall be considered accessory uses' but no second principal dwelling (27-1502.29G)",
+      "Two-family dwellings: R-M permits 'Two-family detached (duplex dwellings)', one unit over the other, with both public sewer and water, 7,000 sq ft per unit, 80 ft wide, front 25 ft, side 10 ft, rear 25 ft, 30% coverage (27-702.1E, 27-705.1C, 27-203). V permits 'single- and two-family' residential uses: two-family detached 7,200 sq ft per unit and 50 ft wide, two-family semi-detached 4,500 sq ft per unit and 60 ft wide, 30% coverage, both with public sewer and water (27-802.1A, 27-805.1A). Two spaces per dwelling, plus one for each bedroom beyond three in a dwelling with four or more (27-1802)",
+      "Coverage in every district is 'Total coverage', the building area and impervious material together (27-203 'Coverage'). Accessory buildings are at most 14 ft tall in every residential district, may stand only in one side yard or the rear yard, at least 5 ft from the side or rear line and 10 ft from the house (5 ft with no windows in facing walls), 20 ft from an alley center line, and never in a front yard (27-404, 27-504, 27-604, 27-704, 27-804, 27-1004, 27-1508.1C(3), D(4)). A lot without both public water and public sewer needs one acre and 100 ft of width (27-1507.1). No dwelling unit under 600 sq ft (27-1509)",
+      "Floodplain District (Zones AE and A1-30 on the FIRM of 8-2-2012): residential dwellings are permitted if floodproofed per the building code. An accessory structure there 'shall not be designed or used for human habitation', is at most 100 sq ft and has no sanitary facilities. In special and approximate floodplain areas no new construction within 50 ft landward of the top of bank. New construction or a substantial improvement of a residence has its lowest floor at or above the regulatory flood elevation. Work of 50% or more of market value fully complies. No variance for anything in a floodway that raises the base flood elevation (27-1403.1, 27-1403.2, 27-1408.2, 27-1409.2.1, 27-1409.2.4, 27-1411.2, 27-1412.2.2)",
+      "A use 'neither specifically permitted or denied' is referred to the Zoning Hearing Board, which may permit it if it is 'similar to and compatible with permitted uses in the district' (27-1505). Variances: the Zoning Hearing Board on the findings of 27-2112.1C, which follow MPC 910.2. No bar on a use variance was found",
+      "The online code includes legislation only through 10-10-2023. The Township's Code of Ordinances page says amendments may be enacted after the last revision of the electronic code, and posts a draft Data Center Ordinance for advertisement. Ask the Township office whether any zoning ordinance adopted since then changes these rules"
+    ],
+    "notes": "Zoning office: South Hanover Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Articles IV, IVA, V, VI, VII, VIII, IX, X and XIII in full, Article XI by page search for dwellings, Article XIV (Floodplain District) in full, Article XV 27-1501 to 27-1503, 27-1505, 27-1507 to 27-1509, the 27-1802 parking table, 27-2108, 27-2109 and 27-2112, and the 27-203 definitions of accessory apartment, coverage, domestic employees quarters, dwelling types, dwelling unit and guesthouse (by screenshots). Not read: Article XII (OP), Article XVI (nonconforming), Articles XVII, XIX and XX, 27-1504, 27-1506, 27-1510 to 27-1516, the rest of 27-203 (family among them) and the draft Data Center Ordinance (a document, not opened). Saved text in the batch 53 cache."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory apartment",
+      "section": "27-203 'Apartment, accessory', 27-1502.15",
+      "url": "https://ecode360.com/print/SO2457?guid=34457111",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'An independent dwelling unit, incorporated within an existing single-family detached dwelling without any substantial external modification, established for the purpose of providing an independent living unit for a person or persons related by marriage or blood relative'"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "27-1502.15, 27-403.3, 27-4A03.1, 27-503.1, 27-603.1, 27-1003.4",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "A unit inside an existing single-family detached house for relatives by marriage or blood, with the owner living on the premises, by conditional use in R-A, ESC, R-S, R-U and R-C"
+    },
+    "scope_districts": {
+      "value": [
+        "R-A",
+        "ESC",
+        "R-S",
+        "R-U",
+        "R-C"
+      ],
+      "section": "27-403.3, 27-4A03.1, 27-503.1, 27-603.1, 27-1003.4",
+      "url": "https://ecode360.com/print/SO2457?guid=34457554",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The conditional use lists of these districts name the accessory apartment. R-M, V, R-MH, IP and CH do not"
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "27-703, 27-803, 27-902, 27-1104, 27-1303",
+      "url": "https://ecode360.com/print/SO2457?guid=34457703",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "R-M and V list guesthouses and domestic employee quarters by conditional use and permit two-family dwellings, R-MH only mobile homes in a park, and IP and CH no dwellings (see the other paths)"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "conditional_use",
+      "section": "27-1502.15, 27-403.3, 27-4A03.1, 27-503.1, 27-603.1, 27-1003.4, 27-2109",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The Board of Supervisors decides after public notice and hearing, with Planning Commission review (27-2109, 27-1503)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "27-2112.1B(5), C",
+      "url": "https://ecode360.com/print/SO2457?guid=34459058",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board on the findings of 27-2112.1C. No bar on a use variance"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "27-1505",
+      "url": "https://ecode360.com/print/SO2457?guid=34458724",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A use the code neither permits nor denies may be permitted by the Zoning Hearing Board if it is similar to and compatible with permitted uses in the district. R-M and V permit two-family dwellings and list guesthouses and domestic employee quarters, so a second unit there may be read as one of those listed uses, not an unlisted one",
+      "code_term": "Zoning Hearing Board permit for a use not provided for"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "R-M",
+        "V",
+        "R-MH"
+      ],
+      "section": "27-1505, 27-703, 27-803, 27-902",
+      "url": "https://ecode360.com/print/SO2457?guid=34458724",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "27-1505",
+      "url": "https://ecode360.com/print/SO2457?guid=34458724",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "quote": "The use may be permitted if it is similar to and compatible with permitted uses in the district"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Guesthouse or domestic employee quarters inside or attached to the house",
+          "path": "conditional_use",
+          "districts": [
+            "R-A",
+            "ESC",
+            "R-S",
+            "R-U",
+            "R-M",
+            "V",
+            "R-C"
+          ],
+          "conditions": "A guesthouse (a dwelling unit for visitors, never offered for occupancy for compensation) or domestic employee quarters (for domestic employees of the household), as an accessory use to a single-family detached dwelling. Handled as a land development, with a land development plan, and a recorded covenant that it is never subdivided off. All other district standards apply. No lot minimum beyond the district's for a unit attached to the house",
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "Occupied by visitors, never for compensation (guesthouse), or by domestic employees of the household (domestic employee quarters)",
+              "section": "27-203 'Guesthouse', 'Domestic employees quarters'"
+            }
+          ],
+          "covers_forms": [
+            "internal",
+            "attached"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "disputed_districts": {
+            "districts": [
+              "R-MH"
+            ],
+            "section": "27-1502.27, 27-902",
+            "note": "27-1502.27 allows a guesthouse or domestic employee quarters 'on a lot in any residential district', while R-MH lists no conditional uses and permits only mobile homes in a park"
+          },
+          "section": "27-1502.27, 27-203 'Guesthouse', 'Domestic employees quarters', 27-403.5, 27-403.7, 27-4A03, 27-503, 27-603, 27-703, 27-803, 27-1003",
+          "url": "https://ecode360.com/print/SO2457?guid=34458459",
+          "confidence": "secondary",
+          "note": "A guesthouse may not be rented out, so it is not a rental unit"
+        },
+        {
+          "name": "Detached guesthouse or domestic employee quarters (two acres)",
+          "path": "conditional_use",
+          "districts": [
+            "R-A",
+            "ESC",
+            "R-S",
+            "R-U",
+            "R-M",
+            "V",
+            "R-C"
+          ],
+          "conditions": "A guesthouse (a dwelling unit for visitors, never offered for occupancy for compensation) or domestic employee quarters (for domestic employees of the household), as an accessory use to a single-family detached dwelling. Handled as a land development, with a land development plan, and a recorded covenant that it is never subdivided off. All other district standards apply. A detached unit needs a lot of at least two acres, more if needed for on-lot sewage or water. An accessory building may be at most 14 ft tall, in a side or rear yard",
+          "min_lot_sqft": 87120,
+          "land_development": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "Occupied by visitors, never for compensation (guesthouse), or by domestic employees of the household (domestic employee quarters)",
+              "section": "27-203 'Guesthouse', 'Domestic employees quarters'"
+            }
+          ],
+          "covers_forms": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "builds": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "disputed_districts": {
+            "districts": [
+              "R-MH"
+            ],
+            "section": "27-1502.27, 27-902",
+            "note": "27-1502.27 allows a guesthouse or domestic employee quarters 'on a lot in any residential district', while R-MH lists no conditional uses and permits only mobile homes in a park"
+          },
+          "accessory_max_height_ft": 14,
+          "section": "27-1502.27, 27-203 'Guesthouse', 'Domestic employees quarters', 27-403.5, 27-403.7, 27-4A03, 27-503, 27-603, 27-703, 27-803, 27-1003, 27-1508.1D(4)",
+          "url": "https://ecode360.com/print/SO2457?guid=34458459",
+          "confidence": "secondary",
+          "note": "Two acres is 87,120 sq ft. A guesthouse may not be rented out"
+        },
+        {
+          "name": "Two-family detached dwelling (duplex) (R-M)",
+          "path": "by_right",
+          "districts": [
+            "R-M"
+          ],
+          "conditions": "A building for two families, one unit over the other, with two side yards. Both public sewer and public water. 7,000 sq ft of lot per unit, 80 ft wide, front 25 ft, side 10 ft, rear 25 ft, coverage 30%. Two parking spaces per dwelling",
+          "min_lot_sqft": 14000,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "27-705.1C"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "27-705.1C"
+            }
+          ],
+          "covers_forms": [
+            "internal"
+          ],
+          "builds": [
+            "internal"
+          ],
+          "section": "27-702.1E, 27-705.1C, 27-203 'Dwelling, two-family, detached (duplex)', 27-1802",
+          "url": "https://ecode360.com/print/SO2457?guid=34457703",
+          "confidence": "secondary",
+          "note": "14,000 sq ft is two units at 7,000. Whether reworking an existing house into one unit over another counts as a duplex is not settled"
+        },
+        {
+          "name": "Two-family dwelling (V)",
+          "path": "by_right",
+          "districts": [
+            "V"
+          ],
+          "conditions": "'single- and two-family' residential uses. With both public sewer and water: two-family detached 7,200 sq ft of lot per unit and 50 ft wide, two-family semi-detached 4,500 sq ft per unit and 60 ft wide, coverage 30%. Front 20 ft, sides 5 ft, rear 20 ft. Two parking spaces per dwelling",
+          "min_lot_sqft": 14400,
+          "requires": [
+            {
+              "test": "public_sewer",
+              "condition": "Public sewer",
+              "section": "27-805.1A"
+            },
+            {
+              "test": "public_water",
+              "condition": "Public water",
+              "section": "27-805.1A"
+            }
+          ],
+          "covers_forms": [
+            "internal",
+            "attached"
+          ],
+          "builds": [
+            "internal",
+            "attached"
+          ],
+          "section": "27-802.1A, 27-805.1A, 27-806, 27-1802",
+          "url": "https://ecode360.com/print/SO2457?guid=34457744",
+          "confidence": "secondary",
+          "note": "14,400 sq ft is two units of a two-family detached dwelling at 7,200. A two-family semi-detached building needs 9,000 sq ft. Whether adding a unit to an existing house makes a two-family dwelling is not settled"
+        }
+      ],
+      "section": "27-1502.27, 27-705.1C, 27-805.1A",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary"
+    }
+  },
+  "eligibility": {
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "27-1502.15, 27-203 'Apartment, accessory'",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Only in a single-family detached dwelling"
+    },
+    "existing_structure_only": {
+      "value": true,
+      "section": "27-203 'Apartment, accessory'",
+      "url": "https://ecode360.com/print/SO2457?guid=34457111",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'incorporated within an existing single-family detached dwelling without any substantial external modification'"
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 27",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The zoning chapter has no historic path"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-M",
+        "V",
+        "R-MH",
+        "IP"
+      ],
+      "section": "27-702, 27-703, 27-802, 27-803, 27-902, 27-1102, 27-1104",
+      "url": "https://ecode360.com/print/SO2457?guid=34457703",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "No accessory apartment. R-M and V list guesthouses and domestic employee quarters and permit two-family dwellings. R-MH permits only mobile homes in a park. IP lists no dwelling (read by page search)"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "family",
+          "condition": "One apartment 'to be used/occupied by a person or persons related by marriage or blood relative only'.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1502.15B",
+          "confidence": "verified",
+          "url": "https://ecode360.com/print/SO2457?guid=34458459"
+        },
+        {
+          "kind": "design",
+          "condition": "The apartment is a complete and separate housekeeping unit that can be isolated from the original unit, made without any substantial external modification, and the building keeps, as far as feasible, the look of a single-family detached dwelling.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "section": "27-1502.15A, D, 27-203 'Apartment, accessory'",
+          "confidence": "verified",
+          "url": "https://ecode360.com/print/SO2457?guid=34458459"
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain District: an accessory structure 'shall not be designed or used for human habitation', is at most 100 sq ft and has no sanitary facilities.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "27-1409.2.4",
+          "confidence": "verified",
+          "url": "https://ecode360.com/print/SO2457?guid=34458037"
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain District: in special and approximate floodplain areas no new construction or development within 50 ft landward of the top of bank of any watercourse.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "test": "top_of_bank_ft_over",
+          "value": 50,
+          "overlays": [
+            "FP"
+          ],
+          "section": "27-1408.2B(2)(a), C(2)(a)",
+          "confidence": "verified",
+          "url": "https://ecode360.com/print/SO2457?guid=34458037"
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain District: residential dwellings are floodproofed per the building code, and new construction or a substantial improvement of a residence has its lowest floor at or above the regulatory flood elevation. Work of 50% or more of market value fully complies, smaller work is elevated or floodproofed as far as possible. No expansion in a floodway that raises the base flood elevation, and no variance for it.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FP"
+          ],
+          "section": "27-1403.2B, 27-1409.2.1, 27-1411.2, 27-1412.2.2",
+          "confidence": "verified",
+          "url": "https://ecode360.com/print/SO2457?guid=34458037"
+        }
+      ],
+      "section": "27-1502.15, 27-1408, 27-1409",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal"
+      ],
+      "section": "27-1502.15, 27-203 'Apartment, accessory'",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'created in a single-family detached dwelling'"
+    },
+    "types_not_addressed": {
+      "value": [
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "27-203 'Apartment, accessory'",
+      "url": "https://ecode360.com/print/SO2457?guid=34457111",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The accessory apartment sits inside an existing house 'without any substantial external modification'. A guesthouse or domestic employee quarters may be attached or detached (see the other paths)"
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 400,
+      "section": "27-1502.15F",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'no more than 30% of the structure's total floor area, not greater than 400 square feet'"
+    },
+    "max_share_of_house": {
+      "value": 0.3,
+      "section": "27-1502.15F",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "30% of the structure's total floor area, the apartment included"
+    },
+    "min_sqft": {
+      "value": 300,
+      "section": "27-1502.15G, 27-1509",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'A minimum of 300 square feet of floor area shall be required'. 27-1509 allows 150 sq ft for an apartment 'designed for and occupied extensively by one person'"
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "27-1502.15B",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "owner_occupancy": {
+      "value": true,
+      "section": "27-1502.15C",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'The owner(s) of the residence in which the accessory unit is created shall occupy at least one of the dwelling units on the premises except for bona fide temporary absences'"
+    },
+    "occupancy": {
+      "value": "Relatives of the household by marriage or blood only, with the owner living in one of the units",
+      "section": "27-1502.15B, C",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "27-1502.15B",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'One apartment will be created within a single-family detached dwelling unit'"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 1,
+      "section": "27-1502.15H, 27-1802",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Three spaces in all for owner and tenant, against two for a single-family dwelling (27-1802)"
+    },
+    "total_on_site": {
+      "value": 3,
+      "section": "27-1502.15H",
+      "url": "https://ecode360.com/print/SO2457?guid=34458459",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'At least a total of three off-street parking spaces are available for use by the owner-occupant and tenant'"
+    }
+  },
+  "districts": {
+    "R-A": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-405",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "27-405",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Density of residential units shall be not greater than one dwelling unit per acre'. An accessory apartment is 'An independent dwelling unit', so a house with one may need two acres. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-407.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "27-407.1B",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "25 ft each on an interior lot, 50 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-407.1C",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "27-408, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-404",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-404",
+        "url": "https://ecode360.com/print/SO2457?guid=34457554",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet', farm buildings exempt"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-S": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-505",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "27-505",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Density of residential units shall be not greater than one dwelling unit per acre'. An accessory apartment is 'An independent dwelling unit', so a house with one may need two acres. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-507.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "27-507.1B",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "12 ft each on an interior lot, 35 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-507.1C",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-508, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-504",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-504",
+        "url": "https://ecode360.com/print/SO2457?guid=34457641",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet', farm buildings exempt"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-U": {
+      "min_lot_sqft": {
+        "value": 20000,
+        "section": "27-605.1A(2)",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "With both public sewer and water. One acre with an on-lot sewage system (27-605.1A(1))"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-605.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "27-605.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "35 ft on the street side of a corner lot (27-605.1C)"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-605.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-606, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-604",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-604",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet', farm buildings exempt"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-605.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide for a lot with an on-lot sewage system, with a well or public water"
+          },
+          {
+            "when": "Public water without public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-605.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide for a lot with an on-lot sewage system, with a well or public water"
+          },
+          {
+            "when": "Public sewer without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-605.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide for a lot with an on-lot sewage system, with a well or public water"
+          }
+        ],
+        "section": "27-605.1A(1), 27-1507.1",
+        "url": "https://ecode360.com/print/SO2457?guid=34457671",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "The row holds the figures with both public sewer and public water"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-M": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "27-705.1A(2)",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Single-family detached lot with both public sewer and water. One acre with an on-lot sewage system (27-705.1A(1))"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "27-705.1A(2)",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-705.1A(2)",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "25 ft on the street side of a corner lot (27-705.3)"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "27-705.1A(2)",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-705.1A(3), 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-704",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-704",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-705.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide, front 35 ft, side 12 ft, rear 35 ft, for a lot with an on-lot sewage system"
+          },
+          {
+            "when": "Public water without public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-705.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide, front 35 ft, side 12 ft, rear 35 ft, for a lot with an on-lot sewage system"
+          },
+          {
+            "when": "Public sewer without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "setback_front_ft": 35,
+            "setback_side_ft": 12,
+            "setback_rear_ft": 35,
+            "section": "27-705.1A(1), 27-1507.1",
+            "note": "One acre and 100 ft wide, front 35 ft, side 12 ft, rear 35 ft, for a lot with an on-lot sewage system"
+          }
+        ],
+        "section": "27-705.1A(1), 27-1507.1",
+        "url": "https://ecode360.com/print/SO2457?guid=34457703",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "The row holds the figures with both public sewer and public water"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "V": {
+      "min_lot_sqft": {
+        "value": 7200,
+        "section": "27-805.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a single-family detached dwelling with both public sewer and water"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 7200,
+        "section": "27-805.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "Lot area per dwelling unit. V lists no accessory apartment, so this applies to a two-family dwelling (7,200 sq ft per unit for two-family detached, 4,500 for two-family semi-detached)"
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "27-806.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "27-806.1B",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "5 ft each, 20 ft on the street side of a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "27-806.1C",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-805.1A, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-804",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-804",
+        "url": "https://ecode360.com/print/SO2457?guid=34457744",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet'"
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Neither public sewer nor public water",
+            "public_sewer": false,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "27-1507.1",
+            "note": "V's table gives figures only where both public sewerage and water are provided. 'Lots not serviced by both a public water system and a public sanitary sewer system shall be not less than 100 feet wide at the building setback line and shall contain an area of not less than one acre'"
+          },
+          {
+            "when": "Public water without public sewer",
+            "public_sewer": false,
+            "public_water": true,
+            "min_lot_sqft": 43560,
+            "section": "27-1507.1",
+            "note": "V's table gives figures only where both public sewerage and water are provided. 'Lots not serviced by both a public water system and a public sanitary sewer system shall be not less than 100 feet wide at the building setback line and shall contain an area of not less than one acre'"
+          },
+          {
+            "when": "Public sewer without public water",
+            "public_sewer": true,
+            "public_water": false,
+            "min_lot_sqft": 43560,
+            "section": "27-1507.1",
+            "note": "V's table gives figures only where both public sewerage and water are provided. 'Lots not serviced by both a public water system and a public sanitary sewer system shall be not less than 100 feet wide at the building setback line and shall contain an area of not less than one acre'"
+          }
+        ],
+        "section": "27-805.1A, 27-1507.1",
+        "url": "https://ecode360.com/print/SO2457?guid=34458736",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "The row holds the figures with both public sewer and water"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "R-C": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "27-1005.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre (Ord. No. 7-2022, 3-2023). The cluster option by conditional use allows 10,000 sq ft lots on a tract of 50 acres with public sewer and water (27-1010)"
+      },
+      "lot_area_per_unit_sqft": {
+        "value": 43560,
+        "section": "27-1005.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "'Density of residential units shall be not greater than one dwelling unit per acre'. An accessory apartment is 'An independent dwelling unit', so a house with one may need two acres. Not settled"
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "27-1005.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 12,
+        "section": "27-1005.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "35 ft on the street side of a corner lot (27-1005.3). Cluster lots: 25 ft front, 10 ft sides, 25 ft rear (27-1010G)"
+      },
+      "setback_rear_ft": {
+        "value": 35,
+        "section": "27-1005.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.3,
+        "section": "27-1006, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1004",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-1004",
+        "url": "https://ecode360.com/print/SO2457?guid=34457791",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet', farm buildings exempt"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(e)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building may stand in one side yard or the rear yard, at least 5 ft from the side or rear lot line and 10 ft from the house (5 ft with no windows in the facing walls). None in a front yard (27-1508.1C(3))"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "27-1508.1D(4)(d)",
+        "url": "https://ecode360.com/print/SO2457?guid=34458740",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "ESC": {
+      "min_lot_sqft": {
+        "value": 2178000,
+        "section": "27-4A05",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 acres"
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "27-4A07.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "50 ft or half the adjacent street right-of-way, whichever is greater"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "27-4A07.1C",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "27-4A07.1B",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.15,
+        "section": "27-4A08, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "27-4A04",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 14,
+        "section": "27-4A04",
+        "url": "https://ecode360.com/print/SO2457?guid=34457599",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'The height of an accessory building shall not exceed 14 feet', farm buildings exempt"
+      }
+    },
+    "CH": {
+      "setback_front_ft": {
+        "value": 60,
+        "section": "27-1304.1A",
+        "url": "https://ecode360.com/print/SO2457?guid=34457974",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "27-1304.1B",
+        "url": "https://ecode360.com/print/SO2457?guid=34457974",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "27-1304.1C",
+        "url": "https://ecode360.com/print/SO2457?guid=34457974",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "27-1309, 27-203 'Coverage'",
+        "url": "https://ecode360.com/print/SO2457?guid=34457974",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Total coverage' is the share of the lot covered by building area and impervious material (27-203 'Coverage')"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "27-1306",
+        "url": "https://ecode360.com/print/SO2457?guid=34457974",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}

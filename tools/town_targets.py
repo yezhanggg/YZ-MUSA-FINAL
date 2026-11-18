@@ -1481,6 +1481,7 @@ FIXED_BATCH.update({g: 48 for g in ("4213321464", "4209585592", "4212511176")})
 FIXED_BATCH.update({g: 49 for g in ("4204111000", "4208971344", "4202919752")})
 FIXED_BATCH.update({g: 50 for g in ("4208531656", "4208308040", "4200384704")})
 FIXED_BATCH.update({g: 51 for g in ("4202921104", "4207961048", "4213345152")})
+FIXED_BATCH.update({g: 53 for g in ("4204529720", "4208718944", "4204372200")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1830,6 +1831,14 @@ EXTRAS = {
     "4203320136": "batch 52 by population. Code Chapter 450 has no ADU text (450-9B(1) bars a rear dwelling in residence districts, 450-13 conversion apartment and two-family by right in R-2, O-1, C-N)",
     "4202922000": "batch 52 by population. Code Chapter 27 has no ADU text beyond a farm caretaker unit (27-1609.1A(5)), 27-1608 residential conversion by special exception in RC, LR, MR, HR",
     "4202982576": "Code 200-15B(3) accessory dwelling unit on a country property of 10 acres or more by conditional use (R-1, R-2, R-3, R-4, RM, LI)",
+    # Batch 53 (2026-11-18): the next towns by population without a rule file. East Marlborough (Chester) was skipped
+    # (Ord. No. 2026-02 of 10-14-2026, a Chapter 450 zoning amendment, not yet codified on eCode360), Archbald
+    # (Lackawanna) (zoning ordinance of 3-15-2023 only as PDFs on the borough website, no codified zoning found as web
+    # pages, and the browser was refused the borough zoning page) and Indiana (Allegheny) (no zoning text found as web
+    # pages, the township website links no zoning ordinance or online code).
+    "4204529720": "batch 53 by population. Code Chapter 162 has no ADU text (R-1 one single-family detached dwelling, R-3 apartment buildings of three or more units)",
+    "4208718944": "Code 215-69 ECHO housing by conditional use, family only (A, R, LDR, MDR, HDR)",
+    "4204372200": "Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C)",
 }
 
 if __name__ == "__main__":

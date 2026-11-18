@@ -39,9 +39,9 @@
       "share_of_pa": 0.3394
     },
     {
-      "towns_beyond_the_two_cities": 209,
-      "population": 6483225,
-      "share_of_pa": 0.4986
+      "towns_beyond_the_two_cities": 212,
+      "population": 6504869,
+      "share_of_pa": 0.5003
     }
   ],
   "towns": [
@@ -5114,6 +5114,78 @@
         "named as a town with an ADU ordinance (Code 200-15B(3) accessory dwelling unit on a country property of 10 acres or more by conditional use (R-1, R-2, R-3, R-4, RM, LI))"
       ],
       "status_note": "Conditional use on a country property of 10 acres or more. Open points: a lot of exactly 10 acres (1-20 'exceeding 10 acres' against 200-15B(3) 'greater than or equal to'), whether the 25 ft accessory height binds a unit in a barn, and the Chapter 89 floodplain bar that points to a reserved 200-61. RM, LI, the definitions and Article XXIII were read only in search results"
+    },
+    {
+      "geoid": "4204529720",
+      "geoid_aliases": [],
+      "name": "Glenolden borough",
+      "county": "Delaware",
+      "type": "borough",
+      "population": 7223,
+      "population_with_aliases": 7223,
+      "housing_units": 3130,
+      "pop_rank": 389,
+      "file": "pa_delaware_glenolden",
+      "batch": 53,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/10762245",
+      "plain_fetch": null,
+      "code_current_through": "2025-12-16",
+      "code_note": null,
+      "why": [
+        "added as batch 53 by population. Code Chapter 162 has no ADU text (R-1 one single-family detached dwelling, R-3 apartment buildings of three or more units)"
+      ],
+      "status_note": "Not addressed. Open points: the use variance as the only path on an R-1 or R-2 lot (each district allows its uses 'and no other', 162-12B, 162-13B), whether the floodplain bar on new buildings (162-39A) leaves room for an attached addition by special exception (162-39B(7), 162-40H), and the Chapter 162 Articles VIII, XI to XIII and Chapter 16A, which were not read"
+    },
+    {
+      "geoid": "4208718944",
+      "geoid_aliases": [],
+      "name": "Derry township",
+      "county": "Mifflin",
+      "type": "township",
+      "population": 7212,
+      "population_with_aliases": 7212,
+      "housing_units": 3246,
+      "pop_rank": 390,
+      "file": "pa_mifflin_derry",
+      "batch": 53,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/9226785",
+      "plain_fetch": null,
+      "code_current_through": "2025-12-30",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 215-69 ECHO housing by conditional use, family only (A, R, LDR, MDR, HDR))"
+      ],
+      "status_note": "Family only (ECHO housing by conditional use in A, R, LDR, MDR, HDR). Open points: whether the 15 ft accessory height binds the elder cottage, whether a farm lot needs the 10 acre figure twice (215-69C), the two-family conversion parking (four spaces in 215-108D against 3 per unit in 215-38C(2)(h)), whether a duplex by right in R, MDR and HDR can be made from an existing house, and 215-25 (PRD), 215-133 and Article VII, which were not read"
+    },
+    {
+      "geoid": "4204372200",
+      "geoid_aliases": [],
+      "name": "South Hanover township",
+      "county": "Dauphin",
+      "type": "township",
+      "population": 7209,
+      "population_with_aliases": 7209,
+      "housing_units": 2887,
+      "pop_rank": 391,
+      "file": "pa_dauphin_south_hanover",
+      "batch": 53,
+      "status": "drafted",
+      "checked_on": "2026-11-18",
+      "code_host": "ecode360",
+      "code_url": "https://ecode360.com/34457097",
+      "plain_fetch": null,
+      "code_current_through": "2023-10-10",
+      "code_note": null,
+      "why": [
+        "named as a town with an ADU ordinance (Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C))"
+      ],
+      "status_note": "Family only (accessory apartment by conditional use inside a house in R-A, ESC, R-S, R-U, R-C). Open points: the online code is current only through 10-10-2023 and the Township posts a draft data center ordinance, whether the one dwelling unit per acre density in R-A, R-S and R-C counts the apartment, the minimum apartment size (300 sq ft in 27-1502.15G against 150 sq ft for one person in 27-1509), whether the guesthouse path reaches R-MH, and Article XII (OP) and Article XVI, which were not read"
     }
   ]
 }

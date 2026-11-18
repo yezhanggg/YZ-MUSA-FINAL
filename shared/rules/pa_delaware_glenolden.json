@@ -1,0 +1,586 @@
+{
+  "provenance": {
+    "jurisdiction": "Glenolden borough",
+    "instrument": "Glenolden Borough Zoning Ordinance (Chapter 162 Zoning, Ord. No. 814 of 8-9-1979, as amended), with Chapter 84 Floodplain Management (Ord. No. 2105 of 8-18-2015), as published on eCode360",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "eCode360 GL0688, Borough of Glenolden, PA, tagged Delaware County. 162-36.2 defines the Borough as 'The Borough of Glenolden, Delaware County, Pennsylvania', so this is Glenolden borough, Delaware County. Every district's uses and figures are text in Chapter 162, with no PDF tables. New Laws: none listed",
+    "effective_date": null,
+    "source_urls": [
+      "https://ecode360.com/GL0688",
+      "https://ecode360.com/GL0688/laws",
+      "https://ecode360.com/10762245",
+      "https://ecode360.com/print/GL0688?guid=10762245",
+      "https://ecode360.com/print/GL0688?guid=10762548",
+      "https://ecode360.com/print/GL0688?guid=10762567",
+      "https://ecode360.com/print/GL0688?guid=10762585",
+      "https://ecode360.com/print/GL0688?guid=10762708",
+      "https://ecode360.com/print/GL0688?guid=10762838",
+      "https://ecode360.com/print/GL0688?guid=10762873",
+      "https://ecode360.com/print/GL0688?guid=27087074",
+      "https://ecode360.com/print/GL0688?guid=27087339",
+      "https://ecode360.com/print/GL0688?guid=27087348",
+      "https://ecode360.com/print/GL0688?guid=27087367",
+      "https://ecode360.com/GL0688/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22temporary%20dwelling%22%20OR%20%22guest%20house%22%20OR%20guesthouse%20OR%20%22household%20employee%22%20OR%20lodgers%20OR%20%22care%20of%22%20OR%20conversion%20OR%20%22living%20quarters%22%20OR%20%22two-family%22%20OR%20apartment&scope=all&sortOrder=relevance"
+    ],
+    "verified_on": "2026-11-18",
+    "county": "Delaware",
+    "municipality_type": "borough",
+    "geoid": "4204529720",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10762245",
+    "code_current_through": "2025-12-16",
+    "code_current_through_note": "eCode360 shows 'Includes legislation through 12-16-2025'. New Laws: 'There are currently no known new laws for this Code'",
+    "checks": [
+      "The code has no accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, guest house, household employee, lodgers, care of, conversion, living quarters, two-family, apartment) find in the zoning chapter only the dwelling definition, the R-3 apartments and other definitions. No district lists a two-family dwelling or a conversion",
+      "Each district lists its uses 'and no other'. R-1 allows 'One single-family detached dwelling' and customary residential accessory uses (162-12B). R-2 adds 'One single-family semidetached dwelling (twin)' (162-13B). R-3 allows only apartments and townhouses (162-14B). B-1, B-2, LOL and I-1 list no dwelling (162-16, 162-23, 162-29.3, 162-31)",
+      "A dwelling is 'Any structure or part thereof designed to be occupied as living quarters as a single housekeeping unit'. A family is one person, relatives, or 'Not more than three unrelated persons' keeping a common household (162-4). A private garage is 'Used only for storage purposes' (162-4 'Garage, private')",
+      "R-3 apartments: an apartment building has three or more units (162-4 'Multiple dwelling'). A lot of at least 15,000 sq ft, at most 12 units per building, building cover 30%, 75 ft of width, front yard 60 ft, side yards 10 ft, rear yard 25 ft, and 1 1/2 off-street spaces per apartment unit apart from driveways (162-14C(1)). Townhouses come in clusters of four to eight, 2,500 sq ft each (162-4, 162-14C(2))",
+      "Residential lots: 60 ft of frontage on an improved public street with sanitary sewers, and a depth of at least 125 ft, for a detached house. A twin lot needs 30 ft of frontage and 125 ft of depth (162-12C(1), 162-13C(1)). The code sets no lot area for R-1 or R-2 apart from these. At least two off-street parking places of 9 by 18 ft, which may be part of the driveway (162-12C(7), 162-13C(7)). Driveways are at most 10 ft wide (162-12C(6))",
+      "Accessory buildings in R-1, R-2, R-3, B-1 and B-2: a garage is at most 600 sq ft and 15 ft tall with an A-frame roof (10 ft with a flat roof), other accessory buildings at most 200 sq ft. In R-1, R-2 and B-1 an accessory building may stand 3 ft from one side line and 3 ft from the rear line (162-12C(8), 162-12D, 162-13C(8), 162-13D, 162-14D, 162-17G, 162-24B). Height is measured from the average finished grade, to the mean height between eaves and ridge for a pitched roof (162-4)",
+      "Floodplain Conservation District, an overlay on every district (162-38E): 'The following uses and no others are permitted', and none of them is a building (162-39A). A structure that existed in the floodplain when the chapter was enacted may be altered or extended by special exception, by at most 25% of its volume or area over its life (162-39B(7), 162-40H). New construction or a substantial improvement of a residential structure has its lowest floor at least 1/2 ft above the base flood elevation under 162-40L(1), and at or above the regulatory flood elevation (base flood plus 1 1/2 ft) under 84-24A(1), with no basement (84-24C(1)). New construction is a structure begun on or after November 11, 1981, with its later improvements (162-37.1). Work of 50% or more of market value is a substantial improvement that must fully comply, and smaller work is elevated or floodproofed as far as possible (162-41D, 84-35)",
+      "No variance may be granted for any construction or use in a floodway that would raise the 100-year flood elevation (162-41C(3)). Chapter 84 Floodplain Management (Ord. No. 2105 of 8-18-2015, FIRM of 9-2-2015) also applies, the stricter rule winning (84-4). It requires a permit for any construction anywhere in the Borough (84-8), bars manufactured homes in the floodway and within 50 ft of the top of bank in the floodplain (84-28A, B), and allows Borough relief for exceptional hardship (84-36, 84-37)",
+      "Nonconforming lots: a building may not be erected, altered or extended on a lot of record below the required area or width unless the Zoning Hearing Board grants a special exception and the owner has no adjoining land to add (162-50). A building housing a nonconforming use may be extended by special exception (162-49B). Rearranging partitions in a nonconforming residential building may not create added dwelling units (162-4 'Alterations')",
+      "Special exceptions in the residential districts are for religious uses (with a dwelling auxiliary to the religious use), schools, playgrounds and home occupations (162-9). B-1 allows 'Any use substantially similar to the above-enumerated uses' by special exception (162-16N(1)), and I-1 'Other substantially similar uses' (162-31I). Neither lists a dwelling, and a second dwelling is not read here as similar to those commercial and industrial uses",
+      "Variances: the Zoning Hearing Board has the powers of the Pennsylvania Municipalities Planning Code (162-57). No bar on a use variance was found. A special exception or variance lapses without a building permit within six months (162-59)"
+    ],
+    "notes": "Zoning office: Glenolden Borough Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18. Read: Chapter 162 Articles I to VII, IX and X in full, and Chapter 84 Articles I to V, VII, VIII and IX. Not read: Chapter 162 Article VIII (signs), Article XI (administration and permits), Articles XII and XIII (antennas and towers), Chapter 84 Article VI to 84-33C and Article X, and Chapter 16A (Historical Commission). Saved text in the batch 53 cache."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "Chapter 162",
+      "url": "https://ecode360.com/GL0688/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22tenant%20house%22%20OR%20%22temporary%20dwelling%22%20OR%20%22guest%20house%22%20OR%20guesthouse%20OR%20%22household%20employee%22%20OR%20lodgers%20OR%20%22care%20of%22%20OR%20conversion%20OR%20%22living%20quarters%22%20OR%20%22two-family%22%20OR%20apartment&scope=all&sortOrder=relevance",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Searched for accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, temporary dwelling, guest house, household employee, lodgers, care of, conversion, living quarters, two-family and apartment, and read the use list of every district. No ADU use"
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "162-12B, 162-13B, 162-14B, 162-16, 162-23, 162-29.3, 162-31",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No district lists a second unit on a house lot. R-1 allows one single-family detached dwelling, R-2 also a twin, R-3 only apartments and townhouses, and the business and industrial districts no dwelling. Each list allows its uses 'and no other'"
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "162-12B, 162-13B, 162-57",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "A second unit on a house lot is not a listed use, and each district allows its uses 'and no other', so the path is a use variance from the Zoning Hearing Board (MPC 910.2). R-3 allows apartment buildings of three or more units on 15,000 sq ft (see the other paths)"
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "162-57",
+      "url": "https://ecode360.com/print/GL0688?guid=10762873",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "Zoning Hearing Board under the Municipalities Planning Code. No bar on a use variance"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Apartment building (R-3)",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "An apartment building of three or more units and not more than four stories. A lot of at least 15,000 sq ft and 75 ft wide, at most 12 units per building, building cover at most 30%, front yard 60 ft, side yards 10 ft, rear yard 25 ft, and 1 1/2 off-street spaces per apartment unit apart from driveways. Screening from a contiguous R-1 or R-2 use (162-53A)",
+          "min_lot_sqft": 15000,
+          "min_units": 3,
+          "section": "162-14B(1), 162-14C(1), 162-4 'Multiple dwelling', 162-53A",
+          "url": "https://ecode360.com/print/GL0688?guid=10762245",
+          "confidence": "verified"
+        }
+      ],
+      "section": "162-14",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "eligibility": {
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 162",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "The zoning chapter has no historic path. Chapter 16A (Historical Commission) was not read"
+    },
+    "districts_read_no_listing": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-3",
+        "B-1",
+        "B-2",
+        "LOL",
+        "I-1"
+      ],
+      "section": "162-12B, 162-13B, 162-14B, 162-16, 162-23, 162-29.3, 162-31",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "None lists an accessory dwelling unit, a two-family dwelling or a conversion"
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "other",
+          "condition": "Floodplain Conservation District: 'The following uses and no others are permitted', and the list holds crops, pasture, nurseries, yards, parking and utilities, no building. Structures with high flood damage potential not connected with open space uses are prohibited. No variance may be granted for construction in a floodway that would raise the 100-year flood elevation.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FCD"
+          ],
+          "section": "162-38E, 162-39A, 162-40D, 162-41C(3)",
+          "url": "https://ecode360.com/print/GL0688?guid=10762708",
+          "confidence": "verified"
+        },
+        {
+          "kind": "other",
+          "condition": "Floodplain Conservation District: a structure that existed in the floodplain when the chapter was enacted may be altered, extended or substantially improved only by special exception, and any increase in volume or area may not exceed 25% in all over the life of the structure. Work of 50% or more of market value must fully comply. A new or substantially improved residential structure has its lowest floor at or above the regulatory flood elevation, which is the base flood plus 1 1/2 ft (84-24A(1)), and no basement. New construction is a structure begun on or after November 11, 1981, with its later improvements.",
+          "effect": "condition",
+          "applies_to": [
+            "internal",
+            "attached",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "FCD"
+          ],
+          "section": "162-37.1, 162-39B(7), 162-40H, 162-40L, 162-41D, 84-24A, C, 84-35",
+          "url": "https://ecode360.com/print/GL0688?guid=10762708",
+          "confidence": "secondary"
+        }
+      ],
+      "section": "162-39, 162-40, 162-41",
+      "url": "https://ecode360.com/print/GL0688?guid=10762708",
+      "verified_on": "2026-11-18",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "162-12B, 162-13B",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "No ADU use. A second unit is possible only by a use variance"
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "162-12C(7)",
+      "url": "https://ecode360.com/print/GL0688?guid=10762245",
+      "verified_on": "2026-11-18",
+      "confidence": "unverified",
+      "note": "No ADU use. 'There shall be provided at least two off-street parking places consisting of a hard-surfaced area of not less than nine feet by 18 feet. Said parking places may be part of the driveway'"
+    }
+  },
+  "districts": {
+    "R-1": {
+      "setback_front_ft": {
+        "value": 25,
+        "section": "162-12C(3)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "A corner lot's front yard on the long side may be 12 ft"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "162-12C(4)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards, each at least 10 ft, except on a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "162-12C(5)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "162-12C(2)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Not more than 30% of the area of any lot shall be occupied or covered by buildings, including accessory structures'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "162-12C(2), 162-4 'Lot coverage'",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings may cover at most 30% of the lot and paved parking, driveways, sidewalks and other paved areas at most 10%, with at least 60% in grass and planted areas. The code's 'lot coverage' counts buildings and paved parking and driveways (162-4). 30% for buildings plus 10% for paving gives at most 40% in all"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "162-10",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured from the lowest point of grade to the highest part of the building"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "162-12C(8)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building 'may have one side yard of not less than three feet and a rear yard of not less than three feet'. A garage is at most 600 sq ft and 15 ft tall with an A-frame roof or 10 ft with a flat roof. Other accessory buildings are at most 200 sq ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "162-12C(8)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "162-12D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a garage with an A-frame roof. A garage with a flat roof is at most 10 ft. The code gives no height for other accessory buildings, which are at most 200 sq ft"
+      }
+    },
+    "R-2": {
+      "setback_front_ft": {
+        "value": 25,
+        "section": "162-13C, 162-12C(3)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "A corner lot's front yard on the long side may be 12 ft"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "162-13C, 162-12C(4)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "A detached house in R-2 follows 162-12C: two side yards, each at least 10 ft, except on a corner lot"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "162-13C, 162-12C(5)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "162-13C, 162-12C(2)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Not more than 30% of the area of any lot shall be occupied or covered by buildings, including accessory structures'"
+      },
+      "max_impervious_coverage": {
+        "value": 0.4,
+        "section": "162-13C, 162-12C(2), 162-4 'Lot coverage'",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings may cover at most 30% of the lot and paved parking, driveways, sidewalks and other paved areas at most 10%, with at least 60% in grass and planted areas. The code's 'lot coverage' counts buildings and paved parking and driveways (162-4). 30% for buildings plus 10% for paving gives at most 40% in all"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "162-10",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Measured from the lowest point of grade to the highest part of the building"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "162-13C, 162-12C(8)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building 'may have one side yard of not less than three feet and a rear yard of not less than three feet'. A garage is at most 600 sq ft and 15 ft tall with an A-frame roof or 10 ft with a flat roof. Other accessory buildings are at most 200 sq ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "162-13C, 162-12C(8)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "162-13D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a garage with an A-frame roof. A garage with a flat roof is at most 10 ft. The code gives no height for other accessory buildings, which are at most 200 sq ft"
+      },
+      "setback_side_semi_ft": {
+        "value": 10,
+        "section": "162-13C(4)",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'every semidetached dwelling shall have one side yard, which shall be not less than 10 feet'. A twin lot needs 30 ft of frontage and 125 ft of depth (162-13C(1))"
+      }
+    },
+    "R-3": {
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "162-10",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "162-14D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a garage with an A-frame roof, 10 ft with a flat roof. A garage is at most 600 sq ft and other accessory buildings 200 sq ft"
+      }
+    },
+    "B-1": {
+      "min_lot_sqft": {
+        "value": 5000,
+        "section": "162-17A",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "162-17D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "162-17E",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'A building shall have at least one side yard not less than 10 feet'"
+      },
+      "setback_rear_ft": {
+        "value": 15,
+        "section": "162-17F",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "162-17B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.8,
+        "section": "162-17B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Buildings at most 40% and parking, driveways, sidewalks and other paved areas at most 40%, with at least 20% in grass and planted areas"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "162-18",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 3,
+        "section": "162-17G",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "An accessory building needs one side yard of at least 3 ft and a rear yard of at least 3 ft. A garage is at most 600 sq ft, other accessory buildings 200 sq ft"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 3,
+        "section": "162-17G",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "162-17G",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a garage with an A-frame roof, 10 ft with a flat roof"
+      }
+    },
+    "B-2": {
+      "min_lot_sqft": {
+        "value": 87120,
+        "section": "162-25A",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two acres"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "162-25C",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "162-25D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3333,
+        "section": "162-25B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building area at most 33 1/3% of the lot, paved areas at most 33 1/3%, at least 33 1/3% in grass. The code gives no front yard for B-2"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "162-26",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "162-24B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762245",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "For a garage with an A-frame roof, 10 ft with a flat roof"
+      }
+    },
+    "LOL": {
+      "min_lot_sqft": {
+        "value": 90000,
+        "section": "162-29.4A",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "162-29.4D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "162-29.4E",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "162-29.4F",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "162-29.4B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_impervious_coverage": {
+        "value": 0.65,
+        "section": "162-29.4B",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "162-29.5",
+        "url": "https://ecode360.com/print/GL0688?guid=10762567",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    },
+    "I-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "162-32A",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "One acre"
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "162-32D",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Building setback line"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "162-32E",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "162-32F",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "162-32C",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "162-32G",
+        "url": "https://ecode360.com/print/GL0688?guid=10762585",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      }
+    }
+  }
+}
