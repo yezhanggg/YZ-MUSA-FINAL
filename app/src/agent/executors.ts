@@ -7,6 +7,7 @@ import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
 import { getRuleText, listRulePlaces } from './ruleText';
 import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
 import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
+import { getMethods } from './methods';
 import { tractTownsOut, type TractTownsSource } from './tractTowns';
 import { areaStats, findLotIndexResult, findLotResult, forecast, matchAddress, roomOut, type AddressEntry, type AreaData } from './areaTools';
 import type { AddressIndexSource } from '../lib/lot/addressIndex';
@@ -244,6 +245,9 @@ export function makeExecutors(p: DataProvider) {
     },
     async list_text_places(input: { county?: unknown }) {
       return listTextPlaces(input, p.zoningText);
+    },
+    async get_methods(input: { topic?: unknown; question?: unknown }) {
+      return getMethods(input);
     },
     async list_rule_places(input: { county?: unknown; with_file_only?: unknown }) {
       return listRulePlaces(input);

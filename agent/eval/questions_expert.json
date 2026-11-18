@@ -1,0 +1,3696 @@
+{
+ "about": "Expert questions, hand-written: how Pennsylvania towns regulate ADUs, the bills, site and size rules, confidence labels, how the tool works, places with no rule file, tricks, out-of-scope asks and follow-ups. Facts come from get_place_answer, get_rule_text and get_methods results.",
+ "generated_at": "2026-11-18",
+ "data_roots": {},
+ "data_versions": {},
+ "questions": [
+  {
+   "id": "exp-01",
+   "category": "expert",
+   "question": "What is the difference between a special exception and a conditional use for an ADU in Pennsylvania?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "approval_paths"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "special exception: Zoning Hearing Board",
+     "accept": [
+      "zoning hearing board"
+     ],
+     "evidence": "Zoning Hearing Board"
+    },
+    {
+     "kind": "behaviour",
+     "label": "conditional use: governing body",
+     "accept": [
+      "governing body",
+      "council",
+      "supervisors",
+      "commissioners"
+     ],
+     "evidence": "governing body"
+    },
+    {
+     "kind": "behaviour",
+     "label": "both are hearings",
+     "accept": [
+      "hearing"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Special exception: Zoning Hearing Board, at a hearing, under set standards. Conditional use: the governing body holds the hearing and decides."
+  },
+  {
+   "id": "exp-02",
+   "category": "expert",
+   "question": "My township says a second home on my lot needs a use variance. What does that mean, and is it easy to get?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "approval_paths"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "hardship test",
+     "accept": [
+      "hardship"
+     ],
+     "evidence": "unnecessary hardship"
+    },
+    {
+     "kind": "behaviour",
+     "label": "hard to get",
+     "accept": [
+      "hard to get",
+      "difficult",
+      "hard to win",
+      "not easy",
+      "rarely",
+      "high bar",
+      "tough"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "A use variance needs unnecessary hardship from the lot's unique conditions and is hard to get."
+  },
+  {
+   "id": "exp-03",
+   "category": "expert",
+   "question": "How long does the Zoning Hearing Board have to hear and decide a special exception for an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "approval_paths"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "first hearing within days",
+     "value": 60,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "number",
+     "label": "decision within days",
+     "value": 45,
+     "tol_pct": 0,
+     "unit": "count"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "First hearing within 60 days of a complete application, written decision within 45 days after the last hearing (MPC 908)."
+  },
+  {
+   "id": "exp-04",
+   "category": "expert",
+   "question": "In Upper Darby township the ADU is 'family only'. Who can live in it, and could I rent it to anyone?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Upper Darby township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "relatives only",
+     "accept": [
+      "related by blood",
+      "relatives",
+      "family members",
+      "related to"
+     ],
+     "evidence": "related by blood"
+    },
+    {
+     "kind": "number",
+     "label": "at most two people",
+     "value": 2,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "behaviour",
+     "label": "hearing",
+     "accept": [
+      "special exception",
+      "zoning hearing board"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "section",
+     "label": "550-17B(2)",
+     "value": "550-17B(2)"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Family only: relatives of the main house occupants, at most two people, by special exception. Not a general rental."
+  },
+  {
+   "id": "exp-05",
+   "category": "expert",
+   "question": "In Plum borough, Allegheny County, can I build a detached backyard cottage? If not, what can I build?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Plum borough",
+      "unit_type": "detached"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "detached: variance only",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "Not allowed today except by variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "inside or attached: conditional use",
+     "accept": [
+      "conditional use"
+     ],
+     "evidence": "conditional use"
+    },
+    {
+     "kind": "behaviour",
+     "label": "governing body hears it",
+     "accept": [
+      "governing body",
+      "council"
+     ],
+     "evidence": "governing body"
+    },
+    {
+     "kind": "behaviour",
+     "label": "owner must live there",
+     "accept": [
+      "owner"
+     ],
+     "evidence": "owner occupied"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Detached not allowed except by variance. Inside or attached: conditional use before the governing body, owner occupied (406B)."
+  },
+  {
+   "id": "exp-06",
+   "category": "expert",
+   "question": "I want a two-story backyard ADU with 1,000 sq ft of floor area in Narberth borough. Does that work?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Narberth",
+      "unit_type": "detached",
+      "size_sqft": 1000
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "floor area cap",
+     "value": 800,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "number",
+     "label": "footprint cap",
+     "value": 600,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "does not fit",
+     "accept": [
+      "does not fit",
+      "doesn't fit",
+      "too big",
+      "too large",
+      "over the",
+      "exceeds",
+      "larger than",
+      "above the"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "500-802C(1)",
+     "value": "500-802C(1)"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Narberth caps floor area at 800 sq ft (500-802C(1)) and footprint at 600 sq ft (500-802B(4)). 1,000 sq ft is over the floor area cap."
+  },
+  {
+   "id": "exp-07",
+   "category": "expert",
+   "question": "Do I need a hearing to build an ADU in Scranton city? And how much parking does it need?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Scranton city"
+     }
+    },
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Scranton city",
+      "topic": "parking"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "by right, no hearing",
+     "accept": [
+      "by right",
+      "no hearing",
+      "zoning permit"
+     ],
+     "evidence": "by right"
+    },
+    {
+     "kind": "behaviour",
+     "label": "one parking space",
+     "accept": [
+      "one off-street",
+      "1 off-street",
+      "one parking",
+      "1 parking",
+      "one space",
+      "1 space",
+      "one extra",
+      "one additional"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "445-41W",
+     "value": "445-41W"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "By right in most districts (zoning permit). One off-street space per ADU (445-41W(1))."
+  },
+  {
+   "id": "exp-08",
+   "category": "expert",
+   "question": "Does the owner have to live on the property to have an ADU in Scranton city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Scranton city",
+      "topic": "owner_occupancy"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no owner occupancy rule found",
+     "accept": [
+      "no owner occupancy",
+      "does not require",
+      "doesn't require",
+      "not required",
+      "no requirement",
+      "no rule",
+      "does not have an owner",
+      "no owner-occupancy"
+     ],
+     "evidence": "No owner occupancy rule for ADUs found"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "owner must live",
+     "why": "invents an owner occupancy rule"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The rule file found no owner occupancy rule for Scranton ADUs."
+  },
+  {
+   "id": "exp-09",
+   "category": "expert",
+   "question": "Glenolden borough's code has no ADU rule. What does that mean for me as an owner?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Glenolden"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "use variance",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "or a code change",
+     "accept": [
+      "code change",
+      "change the code",
+      "change to the code",
+      "amend",
+      "ordinance change",
+      "change the ordinance",
+      "rezon"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "verified",
+     "accept": [
+      "checked rule file",
+      "verified"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Not addressed: a use variance (hardship) or a code change. Verified file."
+  },
+  {
+   "id": "exp-10",
+   "category": "expert",
+   "question": "Could I build a new backyard cottage in Lancaster city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Lancaster city",
+      "unit_type": "detached"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no ADU rule in the code",
+     "accept": [
+      "no adu rule",
+      "does not mention",
+      "doesn't mention",
+      "no accessory dwelling",
+      "not addressed",
+      "has no rule"
+     ],
+     "evidence": "The code does not mention ADUs"
+    },
+    {
+     "kind": "behaviour",
+     "label": "path to ask: special exception",
+     "accept": [
+      "special exception"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "section",
+     "label": "300-17",
+     "value": "300-17"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "allowed by right",
+     "why": "Lancaster has no by-right ADU"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Lancaster's code has no ADU rule. A use not listed may be authorized by special exception (300-17), a hearing with no set ADU standards."
+  },
+  {
+   "id": "exp-11",
+   "category": "expert",
+   "question": "Since Reading city's rules are only a rough draft, I can probably build an ADU there by right, right?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Reading city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "corrects: verified, not a draft",
+     "accept": [
+      "verified",
+      "checked rule file"
+     ],
+     "evidence": "Checked rule file"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bars ADUs",
+     "accept": [
+      "bars adus",
+      "prohibit",
+      "not allowed",
+      "bans"
+     ],
+     "evidence": "The code bars ADUs"
+    },
+    {
+     "kind": "behaviour",
+     "label": "variance is the path",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Wrong premise: Reading's file is verified. The code bars ADUs. Only a use variance."
+  },
+  {
+   "id": "exp-12",
+   "category": "expert",
+   "question": "How sure is the tool about Lower Paxton township's ADU rules? Is anything unsettled?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Lower Paxton township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "drafted",
+     "accept": [
+      "first reading",
+      "drafted",
+      "open point"
+     ],
+     "evidence": "First reading"
+    },
+    {
+     "kind": "behaviour",
+     "label": "names the parking open point",
+     "accept": [
+      "parking"
+     ],
+     "evidence": "203-903"
+    },
+    {
+     "kind": "behaviour",
+     "label": "names the garage open point",
+     "accept": [
+      "garage"
+     ],
+     "evidence": "203-314C(2)"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Drafted: first reading with open points: garage conversion under 203-314C(2) and parking under 203-903."
+  },
+  {
+   "id": "exp-13",
+   "category": "expert",
+   "question": "Is the Erie city ADU answer verified? What is still open?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Erie city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "drafted, not verified",
+     "accept": [
+      "first reading",
+      "drafted",
+      "not verified",
+      "not yet verified",
+      "open point"
+     ],
+     "evidence": "First reading"
+    },
+    {
+     "kind": "behaviour",
+     "label": "lot area open point",
+     "accept": [
+      "lot area"
+     ],
+     "evidence": "lot area per family"
+    },
+    {
+     "kind": "number",
+     "label": "size cap",
+     "value": 720,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Drafted. Open: whether the ADU counts toward lot area per family (205) and the one principal use rule (204). By right, 720 sq ft cap (205.9)."
+  },
+  {
+   "id": "exp-14",
+   "category": "expert",
+   "question": "What are the ADU rules in Windsor township, York County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Windsor township",
+      "county": "York"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "ECHO elder cottage",
+     "accept": [
+      "echo",
+      "elder cottage"
+     ],
+     "evidence": "ECHO"
+    },
+    {
+     "kind": "behaviour",
+     "label": "names the inventory",
+     "accept": [
+      "york county planning commission",
+      "planning commission",
+      "inventory"
+     ],
+     "evidence": "York County Planning Commission"
+    },
+    {
+     "kind": "behaviour",
+     "label": "not checked",
+     "accept": [
+      "not checked",
+      "not been checked",
+      "not verified",
+      "unverified"
+     ],
+     "evidence": "Not checked against the code here"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "DCED[^.]{0,60}\\(2024\\)|DCED[^.]{0,80}ECHO",
+     "why": "credits the inventory to DCED"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Reported tier: a York County Planning Commission inventory (2024) lists ECHO units by special exception. Not checked against the code."
+  },
+  {
+   "id": "exp-15",
+   "category": "expert",
+   "question": "There is no zoning in White township, Indiana County, right? So I can build any ADU I want?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "White township",
+      "county": "Indiana"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no zoning ordinance",
+     "accept": [
+      "no zoning"
+     ],
+     "evidence": "no zoning ordinance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "building permit still",
+     "accept": [
+      "building permit",
+      "building code",
+      "ucc",
+      "uniform construction code"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "sewage still",
+     "accept": [
+      "sewage",
+      "septic"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "deeds and HOA",
+     "accept": [
+      "deed",
+      "hoa",
+      "covenant",
+      "homeowners"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "DCED lists no zoning ordinance, so zoning does not limit an ADU. Building code, sewage permits, deeds and HOA rules still apply."
+  },
+  {
+   "id": "exp-16",
+   "category": "expert",
+   "question": "Who sets the zoning rules in Somerset township, Somerset County, and what do they say about ADUs?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Somerset township",
+      "county": "Somerset"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "county zoning",
+     "accept": [
+      "somerset county zoning",
+      "county zoning ordinance",
+      "county ordinance",
+      "county's zoning",
+      "zoned by the county",
+      "county zoning"
+     ],
+     "evidence": "Somerset County zoning ordinance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "baseline, not the town code",
+     "accept": [
+      "statewide baseline",
+      "not this town's code",
+      "not checked",
+      "not in my data",
+      "no local rule file"
+     ],
+     "evidence": "Statewide baseline"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Zoned under the Somerset County ordinance. Rules not checked here: statewide baseline and who to ask."
+  },
+  {
+   "id": "exp-17",
+   "category": "expert",
+   "question": "What is the maximum ADU size in Upper Moreland township? I just need the number.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Upper Moreland township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not in data",
+     "accept": [
+      "not in my data",
+      "no section",
+      "not on file",
+      "no local rule file",
+      "no rule file",
+      "isn't in my data",
+      "is not in my data"
+     ],
+     "evidence": "Statewide baseline"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "Upper Moreland[^.]{0,80}\\b\\d{3,4} ?(sq|square)",
+     "why": "invents a size cap"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No rule file: no size number on file. Say so, give the baseline and who to ask."
+  },
+  {
+   "id": "exp-18",
+   "category": "expert",
+   "question": "What is the difference between 'verified' and 'drafted' in your answers?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "answer_ladder"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "verified: checked a second time",
+     "accept": [
+      "second time",
+      "checked twice",
+      "second check",
+      "value by value",
+      "second review",
+      "independent"
+     ],
+     "evidence": "checked a second time"
+    },
+    {
+     "kind": "behaviour",
+     "label": "drafted: open points",
+     "accept": [
+      "open point"
+     ],
+     "evidence": "open point"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Verified: rule file checked a second time against the code. Drafted: first reading with open points."
+  },
+  {
+   "id": "exp-19",
+   "category": "expert",
+   "question": "What does 'statewide baseline' mean in your answers? Is it my town's law?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "answer_ladder"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not the town's code",
+     "accept": [
+      "not the town's",
+      "not this town's",
+      "not your town's",
+      "not its own",
+      "not your town",
+      "not the town code",
+      "not local"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "state law items",
+     "accept": [
+      "mpc",
+      "municipalities planning code",
+      "state law",
+      "pennsylvania law",
+      "building code"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Baseline: what Pennsylvania law gives every town (MPC, building code, sewage, bills), not the town's own code."
+  },
+  {
+   "id": "exp-20",
+   "category": "expert",
+   "question": "How many Pennsylvania places does the tool cover, and how many lots can it test one by one?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "coverage"
+     }
+    },
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "answer_ladder"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "place rows",
+     "value": 2572,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "number",
+     "label": "lots",
+     "value": 625687,
+     "tol_pct": 1,
+     "unit": "count"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "2,572 place rows on the ladder. 625,687 lots in six lot places."
+  },
+  {
+   "id": "exp-21",
+   "category": "expert",
+   "question": "Now that HB 2186 is law, my town can't make me live on site anymore, right?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_rules",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "state_bills"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "has not passed",
+      "hasn't passed",
+      "not been enacted",
+      "not enacted",
+      "is a bill",
+      "only a bill",
+      "still a bill",
+      "pending"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "would bar owner occupancy rules",
+     "accept": [
+      "could not require",
+      "cannot require",
+      "can't require",
+      "would not let",
+      "could not make",
+      "would bar",
+      "would not allow",
+      "couldn't require",
+      "would stop",
+      "would ban"
+     ],
+     "evidence": "cannot require owner occupancy"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\bHB ?2186 (is|became) (now )?law\\b",
+     "why": "says the bill is law"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Corrects the premise: HB 2186 passed the House, not the Senate. Not law. If passed, towns could not require owner occupancy."
+  },
+  {
+   "id": "exp-22",
+   "category": "expert",
+   "question": "If the Senate does nothing, when does HB 2186 die?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_rules"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "state_bills"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "Nov 30, 2026",
+     "accept": [
+      "november 30",
+      "nov 30",
+      "nov. 30",
+      "11/30"
+     ],
+     "evidence": "Nov 30, 2026"
+    },
+    {
+     "kind": "behaviour",
+     "label": "must start over",
+     "accept": [
+      "introduced again",
+      "reintroduced",
+      "start over",
+      "re-introduced",
+      "new bill"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The session ends Nov 30, 2026. A bill not passed by then dies and must be introduced again."
+  },
+  {
+   "id": "exp-23",
+   "category": "expert",
+   "question": "Under HB 2186, how close to the side lot line could a backyard ADU be?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "hb2186",
+      "topic": "setbacks"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "side setback at most",
+     "value": 4,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "6305(6)",
+     "value": "6305(6)"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "has not passed",
+      "hasn't passed",
+      "not been enacted",
+      "not enacted",
+      "is a bill",
+      "only a bill",
+      "still a bill",
+      "pending"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "HB 2186 would cap side and rear setbacks at 4 ft (6305(6)). Not law."
+  },
+  {
+   "id": "exp-24",
+   "category": "expert",
+   "question": "Would SB 1346 let me build an ADU in Philadelphia?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_rules",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "state_bills"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "would not reach Philadelphia",
+     "accept": [
+      "would not",
+      "not cover",
+      "does not reach",
+      "wouldn't",
+      "doesn't cover",
+      "does not cover",
+      "not apply",
+      "no,"
+     ],
+     "evidence": "would not cover Philadelphia"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "has not passed",
+      "hasn't passed",
+      "not been enacted",
+      "not enacted",
+      "is a bill",
+      "only a bill",
+      "still a bill",
+      "pending"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "SB 1346 works through the MPC, so it would not cover Philadelphia or Pittsburgh. Not law."
+  },
+  {
+   "id": "exp-25",
+   "category": "expert",
+   "question": "In Plum borough, how would HB 2186 change things for a detached backyard cottage compared with today?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text",
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Plum borough",
+      "unit_type": "detached"
+     }
+    },
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "state_bills"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "today: variance",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill: by right",
+     "accept": [
+      "by right"
+     ],
+     "evidence": "By right"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "has not passed",
+      "hasn't passed",
+      "not been enacted",
+      "not enacted",
+      "is a bill",
+      "only a bill",
+      "still a bill",
+      "pending"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Today a detached unit needs a use variance in Plum. HB 2186 would make one ADU by right. Not law."
+  },
+  {
+   "id": "exp-26",
+   "category": "expert",
+   "question": "My lot in Canonsburg borough is in the floodplain next to a creek. How far back from the creek would a new building have to be?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Canonsburg"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "top of bank distance",
+     "value": 50,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "99-23D",
+     "value": "99-23D"
+    },
+    {
+     "kind": "behaviour",
+     "label": "only in the floodplain area",
+     "accept": [
+      "floodplain"
+     ],
+     "evidence": "Identified floodplain area"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "More than 50 ft landward of the top of bank in an identified floodplain area (99-23D). Canonsburg has no ADU rule."
+  },
+  {
+   "id": "exp-27",
+   "category": "expert",
+   "question": "Can I add an ADU to my house in Glenolden borough if the lot is in the floodplain?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Glenolden",
+      "unit_type": "attached"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "Floodplain Conservation District",
+     "accept": [
+      "floodplain conservation district",
+      "fcd"
+     ],
+     "evidence": "Floodplain Conservation District"
+    },
+    {
+     "kind": "behaviour",
+     "label": "no ADU rule: variance",
+     "accept": [
+      "variance"
+     ],
+     "evidence": "variance"
+    },
+    {
+     "kind": "number",
+     "label": "growth limit",
+     "value": 25,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No ADU rule (use variance). In the Floodplain Conservation District an existing structure can grow only by special exception and at most 25%."
+  },
+  {
+   "id": "exp-28",
+   "category": "expert",
+   "question": "Does East Coventry township have rules about building near streams or in riparian buffers that could affect an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "East Coventry township",
+      "topic": "eligibility"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "riparian buffer rule",
+     "accept": [
+      "riparian"
+     ],
+     "evidence": "riparian buffer"
+    },
+    {
+     "kind": "behaviour",
+     "label": "drafted",
+     "accept": [
+      "first reading",
+      "drafted",
+      "open point",
+      "confirm with the town"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The file holds a riparian buffer disturbance rule. Drafted file, confirm with the town."
+  },
+  {
+   "id": "exp-29",
+   "category": "expert",
+   "question": "My Pittsburgh lot is on a steep hillside. Does that stop me from building an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_lot_rules",
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "pittsburgh",
+      "topic": "steep_slopes"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not a bar",
+     "accept": [
+      "not a bar",
+      "does not stop",
+      "doesn't stop",
+      "not bar",
+      "does not by itself",
+      "doesn't by itself",
+      "not banned",
+      "does not ban",
+      "doesn't ban",
+      "not automatically",
+      "not prohibit",
+      "no, ",
+      "condition"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "cut slope limit",
+     "value": 25,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "section",
+     "label": "915.02",
+     "value": "915.02"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "(?<!not )(?<!n't )\\b(prohibited|banned) on steep",
+     "why": "turns a condition into a bar"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Steep slope rules are conditions, not a bar: grading rules (915.02) apply. Geotechnical report for steeper cuts."
+  },
+  {
+   "id": "exp-30",
+   "category": "expert",
+   "question": "On a lot report, what makes the tool show a flood flag, and does it change whether the ADU fits?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "site_constraints"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "flood share",
+     "value": 10,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "does not change the fit",
+     "accept": [
+      "does not change",
+      "doesn't change",
+      "do not change",
+      "don't change",
+      "not change the fit",
+      "no effect on the fit",
+      "does not affect",
+      "doesn't affect"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Flood flag at 10 percent or more of the lot in the flood layer. Flags do not change the fit."
+  },
+  {
+   "id": "exp-31",
+   "category": "expert",
+   "question": "What does a 'moderate' slope mean on my lot report?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "site_constraints"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "moderate from",
+     "value": 15,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "number",
+     "label": "steep from",
+     "value": 25,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "more site work",
+     "accept": [
+      "retaining",
+      "stepped",
+      "grading"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "15 to 25 percent: stepped foundations, retaining walls or more grading. Over 25 steep."
+  },
+  {
+   "id": "exp-32",
+   "category": "expert",
+   "question": "What does 'whichever is less' mean in a size cap like '1,000 sq ft or 50% of the house'?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "dimensional"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "smaller limit wins",
+     "accept": [
+      "smaller",
+      "lower",
+      "lesser",
+      "the less"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "needs the house size",
+     "accept": [
+      "house size",
+      "size of the house",
+      "house's size",
+      "floor area of the house",
+      "how big the house",
+      "house's floor area",
+      "house is"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The smaller of the two limits wins. A share of the house needs the house size."
+  },
+  {
+   "id": "exp-33",
+   "category": "expert",
+   "question": "Why does the tool assume a 10 ft gap between the ADU and my house?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "dimensional"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "separation",
+     "value": 10,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "planning default",
+     "accept": [
+      "planning default",
+      "default",
+      "assum"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "no zoning text sets it",
+     "accept": [
+      "no zoning text",
+      "does not set",
+      "doesn't set",
+      "neither",
+      "not set by",
+      "no code",
+      "not in the zoning"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No zoning text in either city sets a separation, so the fit uses a 10 ft planning default and lists it as assumed."
+  },
+  {
+   "id": "exp-34",
+   "category": "expert",
+   "question": "How does the tool decide whether a backyard ADU fits on my lot?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "fit_test"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "largest rectangle",
+     "accept": [
+      "rectangle"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "setbacks",
+     "accept": [
+      "setback"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "limits of the test",
+     "accept": [
+      "not a survey",
+      "no measured accuracy",
+      "not measured",
+      "survey"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Geometry test: setbacks and separation cut away, largest rectangle, smallest of the bounds. Not a survey, no measured accuracy."
+  },
+  {
+   "id": "exp-35",
+   "category": "expert",
+   "question": "How accurate is your land cover model, and does it decide where the ADU goes?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "land_cover"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "mean IoU about",
+     "value": 0.7,
+     "tol_pct": 2,
+     "unit": "none"
+    },
+    {
+     "kind": "behaviour",
+     "label": "context only",
+     "accept": [
+      "context",
+      "does not move",
+      "doesn't move",
+      "does not decide",
+      "doesn't decide",
+      "not part of the fit",
+      "does not use",
+      "doesn't use",
+      "does not place",
+      "doesn't place"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "About 0.70 mean IoU on test counties (best ensemble 0.7093). Land cover is context only: the fit does not use it."
+  },
+  {
+   "id": "exp-36",
+   "category": "expert",
+   "question": "How does the tool decide whether an ADU 'pays' on my lot?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "money_lot"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "debt coverage",
+     "value": 1.2,
+     "tol_pct": 1,
+     "unit": "none"
+    },
+    {
+     "kind": "behaviour",
+     "label": "cash flow",
+     "accept": [
+      "cash flow"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "rent source",
+     "accept": [
+      "fair market rent",
+      "safmr",
+      "hud"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "With a loan: pays when mid-cost cash flow is 0 or more and debt coverage at least 1.20. Rent from HUD SAFMR."
+  },
+  {
+   "id": "exp-37",
+   "category": "expert",
+   "question": "On the Explore map, what does 'maybe' mean for whether an ADU pays off?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "money_tract"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "close band",
+     "value": 10,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "low cost case",
+     "accept": [
+      "low cost",
+      "low build cost",
+      "low-cost",
+      "lower cost"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Maybe: rent after costs covers the low-cost payment, or comes within 10 percent of the mid-cost payment."
+  },
+  {
+   "id": "exp-38",
+   "category": "expert",
+   "question": "What are the Build steps in the tool, and does it tell me how long each takes?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "build_steps"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "survey",
+     "accept": [
+      "survey"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "building permit",
+     "accept": [
+      "building permit"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "certificate of occupancy",
+     "accept": [
+      "certificate of occupancy",
+      "occupancy"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "time: ask the city",
+     "accept": [
+      "ask the city",
+      "ask the town",
+      "no waiting times",
+      "does not give times",
+      "doesn't give",
+      "not say how long",
+      "no times"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Ordered checklist from confirming rules to the rental license. No waiting times: each step says to ask the city."
+  },
+  {
+   "id": "exp-39",
+   "category": "expert",
+   "question": "What is the difference between Explore and Test Project?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "app_views"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "Test Project: one lot",
+     "accept": [
+      "one lot",
+      "a single lot",
+      "a lot"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "Explore: tracts, towns, counties",
+     "accept": [
+      "tracts",
+      "counties"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Test Project: one lot, rules, fit, Build steps. Explore: tracts, towns and counties statewide."
+  },
+  {
+   "id": "exp-40",
+   "category": "expert",
+   "question": "My census tract is split between two towns. Whose rules does the map show for it?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_place_answer",
+     "get_area_stats"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "tract_towns"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the clicked town",
+     "accept": [
+      "clicked",
+      "where you click",
+      "you clicked",
+      "picked on the map",
+      "selected on the map",
+      "where the map was"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "each town has its own rules",
+     "accept": [
+      "each town",
+      "its own",
+      "every town"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The tract answer is the clicked town's. get_area_stats lists every town in the tract with its rule."
+  },
+  {
+   "id": "exp-41",
+   "category": "expert",
+   "question": "Can you test whether a backyard cottage fits on my lot in Lancaster city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_methods",
+     "find_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Lancaster city",
+      "unit_type": "detached"
+     }
+    },
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "coverage"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no lot records there",
+     "accept": [
+      "no lot record",
+      "lot records",
+      "not one of the lot places",
+      "lot-level",
+      "lot by lot",
+      "can't test",
+      "cannot test",
+      "can't run",
+      "cannot run",
+      "only in",
+      "not available"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "town rule: special exception path",
+     "accept": [
+      "special exception"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No lot records in Lancaster city, so no lot fit test. The town answer: no ADU rule, special exception path (300-17)."
+  },
+  {
+   "id": "exp-42",
+   "category": "expert",
+   "question": "What is the permit fee for an ADU in Erie city?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text",
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Erie city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "not in data",
+     "accept": [
+      "not in my data",
+      "not on file",
+      "no fee",
+      "don't have",
+      "do not have",
+      "isn't in",
+      "is not in",
+      "no permit fee"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\$\\s?\\d",
+     "why": "invents a fee"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No Erie fee on file. Say so and give who to ask."
+  },
+  {
+   "id": "exp-43",
+   "category": "expert",
+   "question": "Will the Zoning Hearing Board approve my garage conversion ADU in Upper Darby township?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Upper Darby township",
+      "unit_type": "garage"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "cannot predict",
+     "accept": [
+      "can't predict",
+      "cannot predict",
+      "can't say",
+      "cannot say",
+      "can't tell",
+      "cannot tell",
+      "can't promise",
+      "cannot promise",
+      "no guarantee",
+      "not guaranteed",
+      "can't guarantee",
+      "cannot guarantee",
+      "up to the board",
+      "board decides",
+      "decides"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "special exception",
+     "accept": [
+      "special exception"
+     ],
+     "evidence": "special exception"
+    },
+    {
+     "kind": "behaviour",
+     "label": "family only",
+     "accept": [
+      "family",
+      "relative",
+      "related"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(will|would) (likely |probably )?(be approved|approve it|grant it)\\b",
+     "why": "predicts a decision"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Cannot predict a board decision. Garage conversion is a special exception, family only. Next step."
+  },
+  {
+   "id": "exp-44",
+   "category": "expert",
+   "question": "Who is the zoning officer in Scranton city? Give me their name and email.",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Scranton city"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no names on file",
+     "accept": [
+      "don't have",
+      "do not have",
+      "not in my data",
+      "no names",
+      "isn't in",
+      "is not in",
+      "not have names",
+      "doesn't include",
+      "does not include",
+      "not on file"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "contact office",
+     "accept": [
+      "city office",
+      "570"
+     ],
+     "evidence": "City office"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "[\\w.]+@[\\w-]+\\.[a-z]{2,}",
+     "why": "gives an email address"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No personal names or emails. Give the city office phone and website."
+  },
+  {
+   "id": "exp-45",
+   "category": "expert",
+   "question": "Which bank gives the best loan for building an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [],
+   "calls": [],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "declines, stays on topic",
+     "accept": [
+      "can't recommend",
+      "cannot recommend",
+      "don't recommend",
+      "not able to recommend",
+      "outside",
+      "only help with",
+      "can help with",
+      "not something",
+      "can't advise",
+      "cannot advise",
+      "don't have",
+      "do not have"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "Wells Fargo|Chase|Rocket|Bank of America|PNC|Citizens|Truist",
+     "why": "names a lender"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Out of scope: no lender advice. Offer the money model help."
+  },
+  {
+   "id": "exp-46",
+   "category": "expert",
+   "question": "Pittsburgh banned ADUs last month, didn't it?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rules",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Pittsburgh"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "corrects the premise",
+     "accept": [
+      "no,",
+      "not banned",
+      "did not ban",
+      "didn't ban",
+      "not true",
+      "that's not",
+      "that is not",
+      "not correct",
+      "incorrect"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "allowed",
+     "accept": [
+      "allowed",
+      "by right"
+     ],
+     "evidence": "Allowed by right"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Wrong premise: Pittsburgh allows ADUs by right (a detached unit in a side or rear yard needs an administrator exception)."
+  },
+  {
+   "id": "exp-47",
+   "category": "expert",
+   "question": "How long will it take to get a permit for an ADU in Narberth borough?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_methods",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Narberth"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "timing not in data",
+     "accept": [
+      "not in my data",
+      "not on file",
+      "doesn't have",
+      "does not have",
+      "don't have",
+      "do not have",
+      "no timeline",
+      "no time",
+      "isn't in",
+      "is not in",
+      "ask the borough",
+      "ask the zoning"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "by right, no hearing",
+     "accept": [
+      "by right",
+      "zoning permit",
+      "no hearing"
+     ],
+     "evidence": "by right"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b\\d+\\s*(to \\d+ )?(weeks|months)\\b",
+     "why": "invents a timeline"
+    }
+   ],
+   "scenario": null,
+   "rubric": "No permit time on file. By right (zoning permit). Ask the borough."
+  },
+  {
+   "id": "exp-48",
+   "category": "expert",
+   "question": "What if it is attached to the house instead?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_rule_text"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Plum borough",
+      "unit_type": "attached"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "conditional use",
+     "accept": [
+      "conditional use"
+     ],
+     "evidence": "conditional use"
+    },
+    {
+     "kind": "behaviour",
+     "label": "governing body",
+     "accept": [
+      "governing body",
+      "council"
+     ],
+     "evidence": "governing body"
+    },
+    {
+     "kind": "behaviour",
+     "label": "owner occupied",
+     "accept": [
+      "owner"
+     ],
+     "evidence": "owner occupied"
+    },
+    {
+     "kind": "behaviour",
+     "label": "gives a next step",
+     "accept": [
+      "next step",
+      "ask the",
+      "call the",
+      "contact the",
+      "check with"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Follow-up on Plum: an attached addition needs conditional use before the governing body, owner occupied.",
+   "history": [
+    {
+     "role": "user",
+     "content": "Can I build a detached backyard cottage in Plum borough, Allegheny County?"
+    },
+    {
+     "role": "assistant",
+     "content": "Plum borough, Allegheny County. Not allowed today except by variance for a detached backyard cottage (Table 12, 406). Source: Plum Borough Zoning Ordinance, 2026-11-13. Confidence: Checked rule file, verified on 2026-11-13."
+    }
+   ]
+  },
+  {
+   "id": "exp-49",
+   "category": "expert",
+   "question": "And how much parking does it need?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_rule_text",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_rule_text",
+     "input": {
+      "place": "Scranton city",
+      "topic": "parking"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "one parking space",
+     "accept": [
+      "one off-street",
+      "1 off-street",
+      "one parking",
+      "1 parking",
+      "one space",
+      "1 space",
+      "one extra",
+      "one additional"
+     ]
+    },
+    {
+     "kind": "section",
+     "label": "445-41W",
+     "value": "445-41W"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Follow-up on Scranton: one off-street space per ADU (445-41W(1)).",
+   "history": [
+    {
+     "role": "user",
+     "content": "Are ADUs allowed in Scranton city?"
+    },
+    {
+     "role": "assistant",
+     "content": "Scranton city, Lackawanna County. Allowed by right in most districts with a zoning permit (445-12, 445-38). Source: City of Scranton Zoning Ordinance, 2026-11-11. Confidence: Checked rule file, verified on 2026-11-11."
+    }
+   ]
+  },
+  {
+   "id": "exp-50",
+   "category": "expert",
+   "question": "Has it passed yet?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods",
+     "get_rule_text",
+     "get_rules",
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "state_bills"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "House votes for",
+     "value": 139,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "number",
+     "label": "House votes against",
+     "value": 62,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "behaviour",
+     "label": "bill is not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "has not passed",
+      "hasn't passed",
+      "not been enacted",
+      "not enacted",
+      "is a bill",
+      "only a bill",
+      "still a bill",
+      "pending"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Follow-up on HB 2186: passed the House 139-62 on June 1, 2026, waiting in the Senate. Not law.",
+   "history": [
+    {
+     "role": "user",
+     "content": "What would HB 2186 do for ADUs?"
+    },
+    {
+     "role": "assistant",
+     "content": "HB 2186 would allow one ADU per residential lot by right in every town with zoning, Philadelphia and Pittsburgh included. Towns could still set reasonable size, height and setback limits. It is a bill, not law."
+    }
+   ]
+  }
+ ]
+}

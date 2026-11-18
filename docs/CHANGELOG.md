@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-18, morning
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Ask assistant
+
+- New read-only tool `get_methods` (`app/src/agent/methods.ts`): short checked passages on approval paths, town ADU statuses, the answer ladder and confidence labels, coverage, the bills, scenarios, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking, owner occupancy, the fit test, land cover, money, Build steps, Explore and Test Project, tracts that cross town lines, text search, places with no zoning, the building code and the limits. The text ships inside the Ask function. A test checks every number in a passage against its source document.
+- System prompt: general questions go to `get_methods`, a missing figure (fee, wait time, a name) is said as "not in my data" with who to ask, no prediction of a board decision, and follow-ups keep the place and unit.
+- `get_place_answer` fixes: a reported status from a planning agency inventory (York County, 27 places) named DCED as its source, and a town with no ADU rule that names a hearing path (Lancaster city, a special exception) got "a variance or a code change" in its proposal check.
+- Eval: 50 new questions in `agent/eval/questions_expert.json` (category expert), with follow-ups that carry earlier turns (`history`). A test fails when a relative import in the `api/agent.ts` graph has no extension (`agent/askImports.test.ts`).
+- The live eval could not run on Nov 18: the API key on file was refused (401). The new set passes the tool-level test and a dry run.
+
 ## 2026-11-18, early morning
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.

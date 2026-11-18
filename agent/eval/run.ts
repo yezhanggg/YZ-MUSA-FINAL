@@ -241,7 +241,7 @@ async function runOne(q: EvalQuestion, model: string, key: string | null, dry: b
   let ok = false;
   let error: string | null = null;
   try {
-    const out = await Promise.race([ask(q.question, [], agentContext(q.context), providerFor(q.context), { fetcher }), timeout]);
+    const out = await Promise.race([ask(q.question, q.history ?? [], agentContext(q.context), providerFor(q.context), { fetcher }), timeout]);
     if (out === 'timeout') error = `timeout after ${timeoutS} s`;
     else {
       answer = out.text;

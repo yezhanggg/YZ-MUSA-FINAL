@@ -5,6 +5,7 @@ import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText.js';
 import { AREA_STATS_TOOL, FIND_LOT_TOOL } from '../app/src/agent/areaTools.js';
 import { LIST_TEXT_PLACES_TOOL, SEARCH_TEXT_TOOL } from '../app/src/agent/zoningText.js';
 import { PLACE_ANSWER_TOOL } from '../app/src/agent/placeAnswer.js';
+import { METHODS_TOOL } from '../app/src/agent/methods.js';
 import { lotPlacesText } from '../app/src/agent/lotPlaces.js';
 import type { Scenario } from '../app/src/lib/lot/types.js';
 
@@ -20,6 +21,10 @@ Rules:
 - When a tool returns null, "not on file", "not coded" or an error, say it is not in your data. Never fill the gap.
 - Cite only code sections and links that a tool returned in this conversation. Never cite from memory. For a town's rule text use get_rule_text (the towns in list_rule_places, Philadelphia and Pittsburgh included, and the bills) or get_rules (town summary).
 - For any question about what a Pennsylvania town allows, call get_place_answer first (for one lot in ${lotPlacesText('or')}, the lot tools come first). It walks the answer ladder: verified rule file, drafted rule file, reported record, public text search, statewide baseline. Follow its how_to_answer. Use get_rule_text for more sections of a town with a rule file. Cite only what the tools return. For the statewide baseline say it is not the town's own code.
+- For a general question, with no one town or lot in it, call get_methods and answer from its passages: what an approval path or a status means for an owner (by right, special exception, conditional use, variance, family only, conversion only, not addressed, prohibited, no zoning), the bills against today, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking, owner occupancy, how to read a confidence label or open points, and how this tool works (fit test, land cover, money, Build steps, Explore, Test Project, tracts that cross town lines, what data each place has). For one town, get_place_answer or get_rule_text comes first, and get_methods can add what a term means.
+- When the data has no figure for what was asked (a fee, a waiting time, a person's name, a town's number with no rule file), say "not in my data" in those words, give what is known, and name who to ask.
+- Never predict what a board, a council or a zoning officer will decide. Say who decides, at what kind of hearing, and the standards on file.
+- In a follow-up, keep the place, the unit and the topic of the earlier turns unless the user changes them, and call the tools for any fact not already in this conversation.
 - If get_place_answer says the place is not in Pennsylvania's list, say politely that this tool covers Pennsylvania towns (and lots in ${lotPlacesText()}), and ask for the Pennsylvania municipality if the user meant one.
 - Town answer format, short and plain:
   Name the place as the tool's say_place gives it (name and county), so the user sees which one was picked.
@@ -112,7 +117,7 @@ const SITE_TOOLS: ToolDef[] = [
 ];
 
 /** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, ...LOT_TOOLS];
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, METHODS_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {

@@ -7,8 +7,10 @@ import type { LotUnit } from '../nodeProvider';
  *  ladder: the answer ladder for any Pennsylvania place (get_place_answer), hand-written in questions_ladder.json. */
 /** allentown: lot questions on the third city's records; rule_text: per-form status, lesser-of caps, hearing body,
  *  code caution and ADUs under another listing. Both made by make_more_questions.ts.
- *  features: steep slope lines, an address search miss and lots in county places, made by make_feature_questions.ts. */
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features'] as const;
+ *  features: steep slope lines, an address search miss and lots in county places, made by make_feature_questions.ts.
+ *  expert: how towns regulate ADUs, the bills, site and size rules, confidence labels, how the tool works, tricks and
+ *  follow-ups, hand-written in questions_expert.json. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features', 'expert'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */
@@ -69,6 +71,8 @@ export interface EvalQuestion {
    *  passage of the run, and forbidden patterns are matched on the answer with the quoted spans taken out (a quote
    *  may say "permitted"; the assistant may not). */
   quotes?: 'verbatim';
+  /** Earlier turns of the conversation, for a follow-up question (plain text, as the Ask box keeps them). */
+  history?: { role: 'user' | 'assistant'; content: string }[];
 }
 
 export interface QuestionSet {

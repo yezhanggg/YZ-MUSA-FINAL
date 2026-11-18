@@ -53,11 +53,13 @@ export const ALLENTOWN_FILE = resolve(EVAL_DIR, 'questions_allentown.json');
 export const RULE_TEXT_FILE = resolve(EVAL_DIR, 'questions_rule_text.json');
 /** Made by make_feature_questions.ts: steep slope lines, an address search miss, lots in county places. */
 export const FEATURES_FILE = resolve(EVAL_DIR, 'questions_features.json');
+/** Hand-written expert questions: town paths, bills, site and size rules, confidence, the tool, tricks, follow-ups. */
+export const EXPERT_FILE = resolve(EVAL_DIR, 'questions_expert.json');
 
 export function readSet(file = QUESTIONS_FILE): QuestionSet {
   const set = JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
   if (file === QUESTIONS_FILE)
-    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE])
+    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE, EXPERT_FILE])
       if (existsSync(f)) {
         const extra = JSON.parse(readFileSync(f, 'utf8')) as Partial<QuestionSet> & { questions: QuestionSet['questions'] };
         set.questions = [...set.questions, ...extra.questions];

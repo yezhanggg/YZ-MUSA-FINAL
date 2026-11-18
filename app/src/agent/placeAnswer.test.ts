@@ -54,6 +54,18 @@ describe('the ladder', () => {
     expect(confidenceOf(ROWS[6])).toMatch(/^First reading/);
     expect(confidenceOf(ROWS[1])).toMatch(/DCED Municipal Statistics \(2026\) lists Beta township as having no zoning ordinance. Not checked against the code here/);
     expect(confidenceOf(ROWS[0])).toBe("Statewide baseline, not this town's code.");
+    // A status from a planning agency inventory names the inventory, not DCED (which only says who zones).
+    const inv = row({ name: 'Gamma township', status: 'limited', status_detail: 'ECHO special exception', tier: 'reported', source: { name: 'York County Planning Commission inventory', url: 'https://ycpc', date: '2024-09' } });
+    expect(confidenceOf(inv)).toBe('York County Planning Commission inventory (2024) lists Gamma township as ECHO special exception. Not checked against the code here.');
+  });
+
+  it('a code with no ADU rule that names a hearing path: the proposal check says that path, not a variance', async () => {
+    const lan = row({ geoid: '4207141216', name: 'Lancaster city', county: 'Lancaster', status: 'not_addressed', tier: 'verified', approval: 'special_exception', unit_types: [], rule_file: 'pa_lancaster_lancaster' });
+    const out = (await getPlaceAnswer({ place: 'Lancaster city', unit_type: 'detached' }, { ...deps, places: memoryPlaces([lan]) })) as Out;
+    const check = (out.proposal as { check: { fits_zoning: string; why: string[] } }).check;
+    expect(check.fits_zoning).toBe('not_addressed');
+    expect(check.why.join(' ')).toMatch(/path to ask about is a special exception \(Zoning Hearing Board hearing\)/);
+    expect(check.why.join(' ')).not.toMatch(/variance/);
   });
 
   it('baseline: no town rule, the statewide items, who to ask and the question', async () => {

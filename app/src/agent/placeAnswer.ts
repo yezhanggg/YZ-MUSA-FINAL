@@ -123,7 +123,8 @@ export function confidenceOf(r: PlaceRow): string {
       return `First reading of the town's code (${date}), with open points. Confirm with the town.`;
     case 'reported': {
       const year = date.slice(0, 4);
-      const pub = r.zoning_source === 'dced' ? 'Pennsylvania DCED Municipal Statistics' : r.source?.name ?? 'A public record';
+      // zoning_source says who zones. A status from a planning agency inventory names that inventory, not DCED.
+      const pub = r.zoning_source === 'dced' && r.status === 'no_zoning' ? 'Pennsylvania DCED Municipal Statistics' : r.source?.name ?? 'A public record';
       return `${pub} (${year}) lists ${r.name} as ${r.status === 'no_zoning' ? 'having no zoning ordinance' : (r.status_detail ?? r.status)}. Not checked against the code here.`;
     }
     case 'text_search':
@@ -330,6 +331,10 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   // A form with its own status in the code (adu.status_by_form) is answered for that form.
   const formStatus = unit && rule ? rule.status_by_form[FORM_OF[unit]] : undefined;
   if (formStatus === 'prohibited') return { fits_zoning: 'no', why: [`The proposal is ${UNIT_TEXT[unit!]}. ${formVerdict(rule!.path_by_form[FORM_OF[unit!]] === 'not_allowed' ? 'not_allowed' : 'variance', 'prohibited', rule!.status_by_form_section)}.`] };
+  // A code with no ADU rule may still name a hearing path for a use it does not list (Lancaster city: a special
+  // exception, 300-17). Say that path, as the verdict does, not "a variance".
+  const askPath = r.status === 'not_addressed' && r.approval && !['variance', 'not_allowed', 'by_right'].includes(r.approval) ? r.approval : null;
+  if (askPath) return { fits_zoning: 'not_addressed', why: [`The code has no ADU rule. The path to ask about is ${APPROVAL_TEXT[askPath] ?? askPath}. Not a firm yes or no. Ask the zoning officer.`] };
   if (r.status === 'prohibited' || r.status === 'not_addressed') {
     why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule. A variance or a code change would be needed.');
     return { fits_zoning: 'no', why };
