@@ -4791,7 +4791,7 @@
       "pop_rank": 342,
       "file": "pa_northampton_wilson",
       "batch": 48,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-17",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11718930",
@@ -4801,7 +4801,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 170-83H(9) in-law suite by special exception (R-1, R-2, TC))"
       ],
-      "status_note": "Drafted 2026-11-17 (fix round). Open: setbacks by form: the tool shows the district 8/25 ft for a garage conversion, the code gives 4 ft (170-83H(3)(d)), until the engine holds setbacks by form. Also open: whether the code's accessory dwelling unit definition (170-23 'Dwelling' H: 800 sq ft, two people, owner occupancy) binds an H-9 in-law suite (not applied), whether the Board will require relatives (170-83H(9) states only an intent), whether the suite counts toward the average lot area per dwelling unit (not applied), and whether an addition in the floodplain is a barred new structure with no variance (170-86A(5)(c), (8)(b)[2]) or an improvement (170-86A(6)(d)[1]). The Table of Use Regulations and Table 2 parking are PDFs read only as search snippets, so 'prohibited' outside R-1, R-2 and TC rests on 170-79, 170-80D and the snippet."
+      "status_note": "Verified 2026-11-18 after the fix round and engine pass 24 (garage conversion yards by form, no floodplain variance). Open: whether the code's accessory dwelling unit definition (170-23 'Dwelling' H: 800 sq ft, two people, owner occupancy) binds an H-9 in-law suite (not applied), whether the Board will require relatives (170-83H(9) states only an intent), whether the suite counts toward the average lot area per dwelling unit (not applied), and whether an addition in the floodplain is a barred new structure with no variance (170-86A(5)(c), (8)(b)[2]) or an improvement (170-86A(6)(d)[1]). The Table of Use Regulations and Table 2 parking are PDFs read only as search snippets, so 'prohibited' outside R-1, R-2 and TC rests on 170-79, 170-80D and the snippet."
     },
     {
       "geoid": "4212511176",
