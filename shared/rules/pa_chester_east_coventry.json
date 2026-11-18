@@ -217,8 +217,12 @@
           "section": "27-11.101.2D, 27-11.101.3, 27-11.103.1E, 27-11.104.3, 27-11.105.1, 27-11.105.2, 27-11.105.3B, 27-503.1C",
           "url": "https://ecode360.com/print/EA2224?guid=44845928",
           "confidence": "secondary",
-          "note": "The four development options are permitted by right, through a subdivision plan. Option 4 sets no owner rule, no family rule, no share of the house and no parking for the unit. The in-law suite's 40% share, its 1,000 sq ft cap inside the house, its family rule and its parking space are not Option 4 rules, even where they are shown with this listing. Every dwelling has at least 600 sq ft of habitable floor area (27-1311), and a unit in its own outbuilding may be read as a dwelling",
-          "accessory_max_height_ft": 35
+          "note": "The four development options are permitted by right, through a subdivision plan. Option 4 sets no owner rule, no family rule, no share of the house and no parking for the unit. The in-law suite's 40% share, its 1,000 sq ft cap inside the house, its family rule and its parking space are not Option 4 rules. Its unit 'shall not exceed 1,500 square feet' of gross floor area (27-11.104.3B). Every dwelling has at least 600 sq ft of habitable floor area (27-1311), and a unit in its own outbuilding may be read as a dwelling",
+          "accessory_max_height_ft": 35,
+          "max_sqft": 1500,
+          "owner_occupancy": false,
+          "family_only": false,
+          "parking_spaces": null
         },
         {
           "name": "Two-family and attached dwellings in a 25 acre development (R-3)",
@@ -322,6 +326,7 @@
           "building_types": null,
           "test": "house_exists",
           "section": "27-202 'In-law suite', 27-1515.1C",
+          "adu_rule_only": true,
           "url": "https://ecode360.com/print/EA2224?guid=31114184",
           "confidence": "verified"
         },
@@ -333,6 +338,7 @@
           "districts": null,
           "building_types": null,
           "section": "27-1515.1D, 27-202 'In-law suite'",
+          "adu_rule_only": true,
           "url": "https://ecode360.com/print/EA2224?guid=31116217",
           "confidence": "verified",
           "bill_overrides": true
@@ -345,6 +351,7 @@
           "districts": null,
           "building_types": null,
           "section": "27-1515.1F(2)",
+          "adu_rule_only": true,
           "url": "https://ecode360.com/print/EA2224?guid=31116217",
           "confidence": "verified"
         },
@@ -464,18 +471,6 @@
       "confidence": "verified",
       "note": "'a maximum of 40% of the size of the primary housekeeping unit and no larger than 1,000 square feet'"
     },
-    "max_sqft_by_form": {
-      "value": {
-        "detached_new": 1500,
-        "garage_conversion": 1500,
-        "over_garage": 1500
-      },
-      "section": "27-11.104.3B",
-      "url": "https://ecode360.com/print/EA2224?guid=44845928",
-      "verified_on": "2026-11-18",
-      "confidence": "verified",
-      "note": "These forms are only open through the Option 4 country property listing, whose unit 'shall not exceed 1,500 square feet' of gross floor area. The in-law suite's 40% share cap does not reach that listing"
-    },
     "min_sqft": {
       "value": null,
       "section": "27-1311",
@@ -516,20 +511,6 @@
       "verified_on": "2026-11-18",
       "confidence": "verified",
       "note": "'Only one second housekeeping unit shall be permitted within the building.'"
-    },
-    "owner_occupancy_by_form": {
-      "value": {
-        "internal": true,
-        "attached": true,
-        "detached_new": false,
-        "garage_conversion": false,
-        "over_garage": false
-      },
-      "section": "27-1515.1A, 27-11.104.3",
-      "url": "https://ecode360.com/print/EA2224?guid=44845928",
-      "verified_on": "2026-11-18",
-      "confidence": "verified",
-      "note": "The owner rule is the in-law suite's (27-1515.1A). A unit in an outbuilding is open only through the Option 4 listing, which sets no owner rule (27-11.104.3)"
     }
   },
   "parking": {

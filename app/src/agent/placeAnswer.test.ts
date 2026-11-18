@@ -274,3 +274,13 @@ describe('rule text from the resolver', () => {
     expect((await ask2({ place: 'McCandless township' })).lot_records).toBeUndefined();
   });
 });
+
+describe('get_place_answer pass 28', () => {
+  it('a code that defines an ADU no district lists says so in the proposal check (Kingston township 27-202)', async () => {
+    const kt = row({ geoid: '4207939736', name: 'Kingston township', county: 'Luzerne', status: 'not_addressed', tier: 'drafted', approval: 'variance', unit_types: [], rule_file: 'pa_luzerne_kingston_township' });
+    const out = (await getPlaceAnswer({ place: 'Kingston township', unit_type: 'detached' }, { ...deps, places: memoryPlaces([kt]) })) as Out;
+    const check = (out.proposal as { check: { fits_zoning: string; why: string[] } }).check;
+    expect(check.fits_zoning).toBe('no');
+    expect(check.why[0]).toBe('The code defines an ADU but no district permits it. A variance or a code change would be needed.');
+  });
+});

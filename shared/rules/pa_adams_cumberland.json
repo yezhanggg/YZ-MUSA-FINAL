@@ -215,8 +215,9 @@
           "conditions": "A two-family dwelling 'built on a lot existing prior to August 22, 2023'. A tract of at least 40,000 sq ft, at most 12 units per developable acre, buildings at most 60% and impervious cover 80% of the tract, height 45 ft, 25 ft from a local street. Central water and sewer are required except on a lot existing on August 1, 2020 with not more than one single-family detached dwelling (27-603). In the floodplain no new building is permitted (27-1102.8, 27-1102.9A), so there only a conversion inside an existing house can be considered. Two parking spaces per unit (27-1302)",
           "requires": [
             {
-              "test": null,
-              "condition": "The lot existed before August 22, 2023",
+              "test": "lot_created_before",
+              "value_date": "2023-08-22",
+              "condition": "The lot existed before August 22, 2023: 'built on a lot existing prior to August 22, 2023'",
               "section": "27-602"
             },
             {
@@ -777,6 +778,14 @@
         "verified_on": "2026-11-18",
         "confidence": "verified",
         "note": "16 ft and 1 1/2 stories ('Maximum Height - Accessory Structures (stories) 1.5')"
+      },
+      "accessory_structure_max_stories": {
+        "value": 1.5,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum Height - Accessory Structures (stories) 1.5'"
       }
     },
     "RMH": {
@@ -871,6 +880,14 @@
         "verified_on": "2026-11-18",
         "confidence": "verified",
         "note": "16 ft and 1 1/2 stories ('Maximum Height - Accessory Structures (stories) 1.5')"
+      },
+      "accessory_structure_max_stories": {
+        "value": 1.5,
+        "section": "27-503.1",
+        "url": "https://ecode360.com/print/CU3685?guid=31051467",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "'Maximum Height - Accessory Structures (stories) 1.5'"
       }
     },
     "VMX": {

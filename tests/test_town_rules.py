@@ -4870,3 +4870,223 @@ def test_floodplain_bar_unless_elevated(tmp_path, monkeypatch):
     name = _fixture(tmp_path, monkeypatch, "pa_test_elevated2", body)
     out = rules.resolve(name, "today", {**DET, "zoning_district": "R-1", "lot_sqft": 9000, "overlays": ["FP"]})
     assert out["approval_by_type"]["detached_new"] != "by_right"
+
+
+# ------------------------------------------------------------------ pass 28
+
+
+def test_defined_not_listed_says_the_code_defines_an_adu(tmp_path, monkeypatch):
+    """Pass 28: a not_addressed town whose code defines an ADU that no district lists read "The code has no ADU rule
+    here" (Kingston township 27-202). adu.defined_not_listed makes the lead true. Held for the ten lot towns."""
+    body = _base("not_addressed", "variance")
+    body["adu"]["defined_not_listed"] = _leaf(True, "27-202")
+    body["form"] = {"types_allowed": _leaf([], "27-503.1")}
+    body["districts"] = {"R-1": {"min_lot_sqft": _leaf(15000, "27-503.3")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_defined", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 10000}
+    out = rules.resolve(name, "today", lot)
+    assert out["path_to_ask"]["note"].startswith(
+        "The code defines an ADU but no district permits it. The path is a use variance from the Zoning Hearing Board"
+    )
+    assert not [r for r in out["reasons"] if "no ADU rule" in r]
+    small = [c for c in out["conditions"] if c["kind"] == "district_lot_rule"]
+    assert small and small[0]["condition"].endswith(
+        "The code defines an ADU but no district permits it, so the path is the same use variance"
+    )
+    monkeypatch.setattr(rules, "PASS28_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert held["path_to_ask"]["note"].startswith("The code has no ADU rule here. The path is a use variance")
+
+
+def test_kingston_township_defines_an_adu_no_district_lists():
+    """Pass 28: Kingston township 27-202 defines 'Dwelling unit, accessory', and no district lists it."""
+    out = rules.resolve("pa_luzerne_kingston_township", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 20000})
+    assert out["path_to_ask"]["note"] == (
+        "The code defines an ADU but no district permits it. The path is a use variance from the Zoning Hearing Board "
+        "(27-705, 27-706.1E, MPC 910.2). The owner must show unnecessary hardship"
+    )
+    assert not [r for r in out["reasons"] if "no ADU rule" in r]
+
+
+def _listing_body(**own):
+    body = _base("family_only", "special_exception")
+    body["form"] = {"types_allowed": _leaf(["internal", "attached"], "5")}
+    body["size"] = {
+        "max_sqft": _leaf(1000, "5B"),
+        "max_share_of_part": _leaf({"share": 0.4, "part": "primary housekeeping unit"}, "5B"),
+    }
+    body["use"] = {"owner_occupancy": _leaf(True, "5A"), "family_only": _leaf(True, "5B")}
+    body["parking"] = {"spaces_required": _leaf(1, "5E")}
+    alt = {
+        "name": "Accessory dwelling unit on a country property",
+        "path": "by_right",
+        "districts": ["R-1"],
+        "conditions": "One unit, at most 1,500 sq ft",
+        "adu_listing": True,
+        "forms": ["internal", "detached_new"],
+        "requires": [{"test": "designated_on_plan", "condition": "A country property lot", "section": "11.103"}],
+        "section": "11.104",
+        "url": "https://ecode360.com/2",
+        "confidence": "verified",
+        **own,
+    }
+    body["approval"]["alternatives"] = _leaf([alt], "11.104")
+    gate = {"kind": "design", "condition": "No new front entrance.", "effect": "condition", "applies_to": None}
+    gate.update(section="5D", url="https://ecode360.com/1", confidence="verified", adu_rule_only=True)
+    body["eligibility"] = {"gates": _leaf([gate], "5D")}
+    return body
+
+
+def test_listing_own_size_owner_family_parking(tmp_path, monkeypatch):
+    """Pass 28: an adu_listing alternative's own max_sqft, owner_occupancy, family_only and a null parking_spaces.
+    The main listing's share cap, size cap and parking printed on the forms that open only through it (East Coventry
+    Option 4, 27-11.104.3). A gate marked adu_rule_only no longer reaches them either."""
+    own = {"max_sqft": 1500, "owner_occupancy": False, "family_only": False, "parking_spaces": None}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_ownrules", _listing_body(**own))
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 500000, "house_sqft": 2500, "designated_on_plan": True}
+    out = rules.resolve(name, "today", lot)
+    assert out["approval_by_type"]["detached_new"] == "by_right"
+    assert out["max_size_by_type"]["detached_new"] == 1500 and out["max_size_by_type"]["internal"] == 1500
+    assert out["max_size_by_type"]["attached"] == 1000
+    assert out["size_rule_by_type"]["detached_new"] == (
+        "At most 1,500 sq ft, the cap of the other listing that opens this form (11.104). The ADU rule's size and "
+        "share caps do not reach it"
+    )
+    assert "primary housekeeping unit" in out["size_rule_by_type"]["attached"]
+    assert (
+        "Parking for detached new, internal: Accessory dwelling unit on a country property sets no parking for the "
+        "unit (11.104). The ADU rule's 1 space does not reach it"
+    ) in out["reasons"]
+    assert [
+        r
+        for r in out["reasons"]
+        if "Its own rules: at most 1,500 sq ft for the unit with no share of the house, "
+        "no owner rule, no family rule and no parking rule for the unit" in r
+    ]
+    design = [c for c in out["conditions"] if c["kind"] == "design"]
+    assert design and "detached_new" not in design[0]["applies_to"] and "internal" not in design[0]["applies_to"]
+    owner = [c for c in out["conditions"] if c["kind"] == "owner_occupancy"]
+    assert owner and "detached_new" not in owner[0]["applies_to"] and "attached" in owner[0]["applies_to"]
+    assert out["parking_spaces"] == 1 and out["owner_occupancy"] is True  # the attached form keeps the ADU rule
+    # Not designated: nothing is freed, the ADU rule's figures stand
+    plain = rules.resolve(name, "today", {**lot, "designated_on_plan": False})
+    assert plain["max_size_by_type"]["internal"] == 1000
+    # Held for the ten lot towns: the pass 18 reading
+    monkeypatch.setattr(rules, "PASS28_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert "primary housekeeping unit" in held["size_rule_by_type"]["detached_new"]
+    assert [c for c in held["conditions"] if c["kind"] == "design"][0]["applies_to"] is None
+
+
+def test_listing_own_rules_lead_when_every_form_opens_through_it(tmp_path, monkeypatch):
+    """Pass 28: every allowed form opens through the listing alone (no attached form), so its own size, owner and
+    parking figures are the headline. A listing owner rule set true is said for its forms."""
+    own = {"max_sqft": 1500, "owner_occupancy": False, "parking_spaces": None, "family_only": True}
+    body = _listing_body(**own)
+    body["form"] = {"types_allowed": _leaf(["internal"], "5")}
+    body["approval"]["alternatives"]["value"][0]["forms"] = ["internal", "attached", "detached_new"]
+    name = _fixture(tmp_path, monkeypatch, "pa_test_ownlead", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 500000, "house_sqft": 2500, "designated_on_plan": True}
+    out = rules.resolve(name, "today", lot)
+    assert out["max_size_sqft"] == 1500 and out["owner_occupancy"] is False and out["parking_spaces"] is None
+    assert out["citations"]["max_size_sqft"]["section"] == "11.104"
+    fam = [c for c in out["conditions"] if c["kind"] == "family" and "under" in c["condition"]]
+    assert (
+        len(fam) == 1
+        and fam[0]["condition"]
+        == "Occupants must be family members under Accessory dwelling unit on a country property"
+    )
+    assert set(fam[0]["applies_to"]) == {"internal", "attached", "detached_new"}
+
+
+def test_east_coventry_option4_own_rules():
+    """Pass 28: East Coventry Option 4 country property ADU (27-11.104.3): 1,500 sq ft only, no owner, family or
+    parking rule. The in-law suite's 40% share, owner rule, parking and 27-1515 standards stay on the attached form."""
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 500000, "house_sqft": 2500, "designated_on_plan": True}
+    out = rules.resolve("pa_chester_east_coventry", "today", lot)
+    for t in ("detached_new", "garage_conversion", "over_garage", "internal"):
+        assert out["approval_by_type"][t] == "by_right"
+        assert out["max_size_by_type"][t] == 1500
+        assert "primary housekeeping unit" not in (out["size_rule_by_type"][t] or "")
+    assert out["approval_by_type"]["attached"] == "special_exception"
+    assert "primary housekeeping unit" in out["size_rule_by_type"]["attached"]
+    for kind in ("owner_occupancy", "family", "existing_structure", "design"):
+        hit = [c for c in out["conditions"] if c["kind"] == kind]
+        assert hit and hit[0]["applies_to"] == ["attached"], kind
+    assert [r for r in out["reasons"] if r.startswith("Parking for detached new, garage conversion, over garage")]
+    assert out["max_height_by_type"]["detached_new"] == 35
+    assert out["setbacks_by_type"]["detached_new"] == {
+        "setback_front_ft": 50,
+        "setback_side_ft": 30,
+        "setback_rear_ft": 50,
+    }
+
+
+def test_accessory_story_cap_by_district_gives_way_under_the_bill(tmp_path, monkeypatch):
+    """Pass 28: accessory_structure_max_stories beside the feet cap, scoped like it (Kingston 27-343.3A(1): 1 1/2
+    stories or 15 ft, except in A-1). Today it binds a unit where the caps bind the ADU. Under the bill it gives way."""
+    body = _base()
+    body["form"] = {"types_allowed": _leaf(["detached_new"], "3")}
+    body["envelope"] = {
+        "accessory_structure_max_height_ft": _leaf(15, "343.3A(1)"),
+        "accessory_structure_max_stories": _leaf(1.5, "343.3A(1)"),
+        "accessory_height_cap_districts": _leaf(["R-1"], "343.3A(1)"),
+        "accessory_cap_binds_adu": _leaf(True, "343.3A"),
+    }
+    body["districts"] = {"R-2": {"accessory_structure_max_stories": _leaf(2, "503.1")}}
+    name = _fixture(tmp_path, monkeypatch, "pa_test_stories", body)
+    lot = {**DET, "zoning_district": "R-1", "lot_sqft": 9000}
+    today = rules.resolve(name, "today", lot)
+    assert today["max_stories_by_type"]["detached_new"] == 1.5
+    assert [r for r in today["reasons"] if r.startswith("Accessory structures are capped at 15 ft and 1.5 stories (")]
+    bill = rules.resolve(name, "state_reform", lot)
+    assert not (bill["max_stories_by_type"] or {}).get("detached_new")
+    line = [r for r in bill["reasons"] if r.startswith("Accessory structures are capped at 15 ft and 1.5 stories")]
+    assert line and "Under HB 2186 (not law) the 1.5 story limit gives way for the unit" in line[0]
+    other = rules.resolve(name, "today", {**lot, "zoning_district": "A-1"})
+    assert not [r for r in other["reasons"] if "stories" in r and r.startswith("Accessory structures")]
+    r2 = rules.resolve(name, "today", {**lot, "zoning_district": "R-2"})
+    assert r2["max_stories_by_type"]["detached_new"] == 2
+
+
+def test_kingston_and_cumberland_story_caps_under_the_bill():
+    """Pass 28: Kingston township 27-343.3A(1) and Cumberland 27-503.1 (R, RMH) say the 1.5 story cap with the feet
+    cap under the bill, and that it gives way there. Kingston A-1 has no cap."""
+    k = rules.resolve(
+        "pa_luzerne_kingston_township", "state_reform", {**DET, "zoning_district": "R-2", "lot_sqft": 20000}
+    )
+    assert (
+        "Accessory structures are capped at 15 ft and 1.5 stories (27-343.3A(1)). Under HB 2186 (not law) the 1.5 story "
+        "limit gives way for the unit, as the height cap does, up to the bill's height floor"
+    ) in k["reasons"]
+    a1 = rules.resolve(
+        "pa_luzerne_kingston_township", "state_reform", {**DET, "zoning_district": "A-1", "lot_sqft": 200000}
+    )
+    assert not [r for r in a1["reasons"] if r.startswith("Accessory structures are capped")]
+    for d in ("R", "RMH"):
+        c = rules.resolve("pa_adams_cumberland", "state_reform", {**DET, "zoning_district": d, "lot_sqft": 20000})
+        assert [
+            r
+            for r in c["reasons"]
+            if r.startswith("Accessory structures are capped at 16 ft and 1.5 stories (27-503.1)")
+        ]
+
+
+def test_lot_created_before_cumberland_mx():
+    """Pass 28: requires test lot_created_before (lot fact lot_year_created). Cumberland 27-602: a two-family dwelling
+    in MX only on a lot existing before August 22, 2023. It was a fact the tool could not know."""
+    base = {**DET, "zoning_district": "MX", "lot_sqft": 50000}
+
+    def mx(lot):
+        out = rules.resolve("pa_adams_cumberland", "today", lot)
+        return next(a for a in out["alternatives"] if a["name"].startswith("Two-family dwelling on a lot existing"))
+
+    assert mx({**base, "lot_year_created": 1990})["applies"] is True
+    assert mx({**base, "lot_year_created": 2024})["applies"] is False
+    same = mx({**base, "lot_year_created": 2023})
+    assert (
+        same["applies"] is None and "The lot was created in 2023, the year of the August 22, 2023 date" in same["note"]
+    )
+    open_ = mx(base)
+    assert open_["applies"] is None
+    assert "Depends on the year the lot was created (lot_year_created), which was not given" in open_["note"]

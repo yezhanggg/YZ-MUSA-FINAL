@@ -69,6 +69,14 @@
       "verified_on": "2026-11-18",
       "confidence": "secondary",
       "note": "The code defines an accessory dwelling unit but no district use list names it, and only one principal building may stand on a lot (27-332). A permitted use is 'Any use which is specifically permitted in a particular zoning district' (27-202 'Permitted use'), so the definition alone does not clearly make the unit a permitted use, though its words 'shall be permitted only if it conforms' cut the other way. The chapter has no definition of an accessory use. R-2 permits duplexes, R-3 group housing and A-1 two-family dwellings by right"
+    },
+    "defined_not_listed": {
+      "value": true,
+      "section": "27-202 'Dwelling unit, accessory', 27-501 to 27-510",
+      "url": "https://ecode360.com/print/KI2368?guid=14428745",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "27-202 defines 'Dwelling unit, accessory' as 'A separate second dwelling unit which may be located within a structure in which the principal use is for a single-family dwelling'. None of the district use lists of 27-501 to 27-510 names it"
     }
   },
   "approval": {
@@ -384,6 +392,14 @@
       "verified_on": "2026-11-18",
       "confidence": "verified",
       "note": "'Maximum height: 1 1/2 stories or 15 feet, except in A-1 Districts'. Both limits hold"
+    },
+    "accessory_structure_max_stories": {
+      "value": 1.5,
+      "section": "27-343.3A(1)",
+      "url": "https://ecode360.com/print/KI2368?guid=14429020",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Maximum height: 1 1/2 stories or 15 feet, except in A-1 Districts'. The cap districts (accessory_height_cap_districts) leave out A-1"
     },
     "accessory_height_cap_districts": {
       "value": [

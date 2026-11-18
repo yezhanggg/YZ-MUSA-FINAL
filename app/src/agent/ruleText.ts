@@ -262,6 +262,8 @@ const FACT_TEXT: Record<string, string> = {
   house_built_more_than_years_ago: 'only if the house was built more than',
   house_built_within_years: 'only if the house was built no more than',
   accessory_building_built_before: 'only if the accessory building was built before',
+  // Pass 28: the lot existed before a date (Cumberland 27-602).
+  lot_created_before: 'only if the lot was created before',
   house_exists: 'only if a lawful house already stands on the lot',
   public_sewer: 'only if the lot has public sewer',
   public_water: 'only if the lot has public water',
@@ -285,6 +287,7 @@ const DEPENDS_FACT: Record<string, string> = {
   house_built_more_than_years_ago: 'the year the house was built',
   house_built_within_years: 'the year the house was built',
   accessory_building_built_before: 'the year the accessory building was built',
+  lot_created_before: 'the year the lot was created',
   house_exists: 'whether a lawful house already stands on the lot',
   public_sewer: 'whether the lot has public sewer',
   public_water: 'whether the lot has public water',
@@ -296,12 +299,20 @@ const DEPENDS_FACT: Record<string, string> = {
   // Pass 22: dependsFact names the building by the forms the gate reaches.
   top_of_bank_ft_over: 'how far the new building stands from the top of bank of the watercourse',
 };
-/** Pass 18 (pipeline/rules.py _alt_own_figures): an alternative's own accessory height and parking, in words. */
+/** Pass 18 (pipeline/rules.py _alt_own_figures): an alternative's own accessory height and parking, in words. Pass 28:
+ * and its own size, owner, family and parking rules (max_sqft, owner_occupancy, family_only, a null parking_spaces). */
 const altOwnFigures = (a: Obj): string => {
   const figs: string[] = [];
   if (typeof a.accessory_max_height_ft === 'number') figs.push(`an accessory building up to ${num(a.accessory_max_height_ft)} ft tall`);
   if (typeof a.parking_spaces === 'number') figs.push(`${num(a.parking_spaces)} parking space${a.parking_spaces === 1 ? '' : 's'} for the unit beyond the house's`);
-  return figs.length ? `Its own figures: ${figs.join(' and ')}` : '';
+  const own = ['max_sqft', 'owner_occupancy', 'family_only'].some((k) => k in a);
+  if ('max_sqft' in a) figs.push(typeof a.max_sqft === 'number' ? `at most ${num(a.max_sqft)} sq ft for the unit with no share of the house` : 'no size cap');
+  if ('owner_occupancy' in a) figs.push(a.owner_occupancy === true ? 'the owner lives on the lot' : 'no owner rule');
+  if ('family_only' in a) figs.push(a.family_only === true ? 'family occupants only' : 'no family rule');
+  if ('parking_spaces' in a && a.parking_spaces === null) figs.push('no parking rule for the unit');
+  if (!figs.length) return '';
+  const words = figs.length === 1 ? figs[0] : `${figs.slice(0, -1).join(', ')} and ${figs[figs.length - 1]}`;
+  return `${own ? 'Its own rules' : 'Its own figures'}: ${words}`;
 };
 /** Pass 22 (pipeline/rules.py _dm_figure): the other reading's lot minimum, by services when it has rows for them. */
 const dmFigs = (dm: Obj): string => {
@@ -354,6 +365,9 @@ export const pct = (v: number) => {
   return Math.abs(p - Math.round(p)) < 1e-6 ? `${Math.round(p)}%` : `${p.toFixed(1)}%`;
 };
 const NO_ADU = new Set(['not_addressed', 'prohibited']);
+/** Pass 28 (pipeline/rules.py _defined_not_listed): the code defines an ADU, while no district lists it (adu.defined_not_listed). */
+export const DEFINED_NOT_LISTED = 'The code defines an ADU but no district permits it';
+const definedNotListed = (file: Obj): boolean => leafAt(file, 'adu', 'status')?.value === 'not_addressed' && leafAt(file, 'adu', 'defined_not_listed')?.value === true;
 // Pass 15 (pipeline/rules.py OCCUPANT_KINDS): conditions a form allowed under another listing is not held to.
 const LISTING_FREE = new Set(['adu_status', 'family', 'occupancy', 'owner_occupancy', 'age', 'care', 'sponsor', 'building_type', 'district', 'scope']);
 // Pass 15 (pipeline/rules.py NAMES_BUILDING): a where text that names the accessory building itself.
@@ -582,7 +596,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
           ? cond('lot_size', `${code}: the ADU needs a lot that meets the district minimum of ${num(m.value)} sq ft (${conf.section ?? ''})`, m, { district: code, effect: 'bars' })
           : // A bare district minimum is a rule for creating lots, not an ADU rule: the bill does not touch it
             // (pipeline/rules.py kind district_lot_rule, not in BILL_OVERRIDES).
-            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft${typeFigs('min_lot_sqft_by_type', 'sq ft')}, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. ${noRule ? 'The code has no ADU rule here, so the lot size does not change the path' : 'Ask the zoning officer whether an ADU is allowed on it'}${pdMin ? `. A lot in a planned or cluster development takes that development's own lot minimum instead (${pdMin.section ?? ''})` : ''}`, m, { district: code }),
+            cond('district_lot_rule', `${code}: the district's minimum lot is ${num(m.value)} sq ft${typeFigs('min_lot_sqft_by_type', 'sq ft')}, a rule for creating lots, not an ADU rule. A smaller existing lot may be a nonconforming lot. ${noRule ? `${definedNotListed(file) ? DEFINED_NOT_LISTED : 'The code has no ADU rule here'}, so the lot size does not change the path` : 'Ask the zoning officer whether an ADU is allowed on it'}${pdMin ? `. A lot in a planned or cluster development takes that development's own lot minimum instead (${pdMin.section ?? ''})` : ''}`, m, { district: code }),
       );
     }
     // District figures that change with public sewer and water (pipeline/rules.py _utility_conditions, pass 7).
@@ -1297,6 +1311,8 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     adu: {
       status: st ? ruleOut('adu.status', st) : null,
       term: term ? ruleOut('adu.term', term) : null,
+      // Pass 28: the code defines an ADU that no district lists (adu.defined_not_listed).
+      ...(definedNotListed(file) ? { defined_not_listed: ruleOut('adu.defined_not_listed', leafAt(file, 'adu', 'defined_not_listed')!) } : {}),
       ...(byForm && isObj(byForm.value) && inScope !== false ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}),
       // Pass 7: a district whose path is a hearing never reads "allowed by right" (pipeline/rules.py adu_status).
       ...(dpLess ? { status_in_district: { value: status ?? null, district, town_status: townStatus ?? null, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
@@ -1388,7 +1404,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       }),
     };
   }
-  const lead = status === 'prohibited' ? 'The code bars ADUs here' : 'The code has no ADU rule here';
+  const lead = status === 'prohibited' ? 'The code bars ADUs here' : definedNotListed(file) ? DEFINED_NOT_LISTED : 'The code has no ADU rule here';
   // No ADU rule here and a hearing path for a use the code does not list: a path to ask for, not an ADU allowed.
   if (((status && NO_ADU.has(status) && !dpath) || inScope === false) && effective && !NOT_OK.has(effective)) {
     const ask = (inScope === false || askLeaf ? askLeaf : null) ?? path;

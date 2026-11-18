@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { TOOLS } from '../../../agent/schema';
 import { makeExecutors, runTool } from './executors';
-import { RULE_PLACES, RULE_TOPICS, UNLESS_ELEVATED, findTown, getRuleText, listRulePlaces, rulePlaceOf, siteLines, siteRowMet, townIndex, unlessElevatedSplit, type TownEntry, type TownSource } from './ruleText';
+import { RULE_PLACES, RULE_TOPICS, UNLESS_ELEVATED, dependsFact, findTown, getRuleText, listRulePlaces, rulePlaceOf, siteLines, siteRowMet, townIndex, unlessElevatedSplit, type TownEntry, type TownSource } from './ruleText';
 
 const RULES = resolve(import.meta.dirname, '../../../shared/rules');
 const file = (name: string) => JSON.parse(readFileSync(resolve(RULES, `${name}.json`), 'utf8'));
@@ -1397,5 +1397,24 @@ describe('get_rule_text pass 27 fields', () => {
     expect(det.disputed_by).toBeUndefined();
     expect(det.condition).toBe(`An accessory structure that is not elevated may not be used for human habitation. ${UNLESS_ELEVATED}.`);
     expect(unlessElevatedSplit([{ ...gate, unless_elevated: false }])).toHaveLength(1);
+  });
+});
+
+describe('get_rule_text pass 28 fields', () => {
+  it('says the code defines an ADU but no district permits it (Kingston township 27-202, adu.defined_not_listed)', async () => {
+    const out = await town6('pa_luzerne_kingston_township', 'status', 'R-1');
+    expect(out.path_to_ask.note).toBe('The code defines an ADU but no district permits it. The path is a use variance from the Zoning Hearing Board (27-705, 27-706.1E, MPC 910.2). The owner must show unnecessary hardship');
+    expect(out.adu.defined_not_listed).toMatchObject({ value: true });
+    expect(JSON.stringify(out)).not.toContain('The code has no ADU rule here');
+  });
+
+  it("says an ADU listing's own size, owner, family and parking rules (East Coventry Option 4, 27-11.104.3)", async () => {
+    const out = await town6('pa_chester_east_coventry', 'status', 'R-1');
+    const opt4 = (out.other_ways_to_add_a_unit.options as Any6[]).find((a) => String(a.name).startsWith('Accessory dwelling unit on an Option 4'));
+    expect(opt4?.reads_as).toContain('Its own rules: an accessory building up to 35 ft tall, at most 1,500 sq ft for the unit with no share of the house, no owner rule, no family rule and no parking rule for the unit');
+  });
+
+  it('names the year the lot was created for the lot_created_before test (Cumberland 27-602)', () => {
+    expect(dependsFact('lot_created_before')).toBe('the year the lot was created');
   });
 });

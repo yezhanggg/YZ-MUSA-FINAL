@@ -260,6 +260,8 @@ async function ruleDetails(r: PlaceRow) {
   const byType = (approval.by_form_today ?? {}) as Record<string, string>;
   const overall = ((out.adu as Obj | undefined)?.status as Obj | undefined)?.value;
   const noRule = overall === 'not_addressed' || overall === 'prohibited' ? (overall as string) : null;
+  // Pass 28 (adu.defined_not_listed): the code defines an ADU, while no district lists it.
+  const definedNotListed = overall === 'not_addressed' && !!(out.adu as Obj | undefined)?.defined_not_listed;
   // Pass 9 (pipeline/rules.py form.types_in_conflict): a form whose text conflicts reads "not settled", not "not named".
   const conflict = Array.isArray(approval.forms_in_conflict) ? (approval.forms_in_conflict as string[]) : [];
   const conflictSec = (approval.forms_in_conflict_section as string | undefined) ?? null;
@@ -289,6 +291,7 @@ async function ruleDetails(r: PlaceRow) {
     }));
   return {
     summary: (out.summary as string) ?? null,
+    ...(definedNotListed ? { adu_defined_not_listed: true } : {}),
     code_caution: typeof out.code_caution === 'string' ? out.code_caution : null,
     approval_path: leafOut(approval.path),
     max_sqft_accessory_building: accCap,
@@ -336,7 +339,7 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   const askPath = r.status === 'not_addressed' && r.approval && !['variance', 'not_allowed', 'by_right'].includes(r.approval) ? r.approval : null;
   if (askPath) return { fits_zoning: 'not_addressed', why: [`The code has no ADU rule. The path to ask about is ${APPROVAL_TEXT[askPath] ?? askPath}. Not a firm yes or no. Ask the zoning officer.`] };
   if (r.status === 'prohibited' || r.status === 'not_addressed') {
-    why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : 'The code has no ADU rule. A variance or a code change would be needed.');
+    why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : `${rule?.adu_defined_not_listed ? 'The code defines an ADU but no district permits it.' : 'The code has no ADU rule.'} A variance or a code change would be needed.`);
     return { fits_zoning: 'no', why };
   }
   const formPath = unit && rule ? rule.path_by_form[FORM_OF[unit]] : undefined;

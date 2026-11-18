@@ -173,6 +173,10 @@
         },
         "scope_by_use": {
           "$ref": "#/$defs/leaf_scope_by_use"
+        },
+        "defined_not_listed": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 28. With status not_addressed: the code defines an ADU, but no district use list names it (Kingston township 27-202). The path to ask then says the code defines an ADU but no district permits it, never that the code has no ADU rule."
         }
       }
     },
@@ -457,6 +461,10 @@
         "accessory_structure_max_height_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "The general accessory structure height, when the ADU text sets its own height in max_height_ft."
+        },
+        "accessory_structure_max_stories": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 28: the general accessory structure height in stories, beside accessory_structure_max_height_ft (Kingston township 27-343.3A(1): '1 1/2 stories or 15 feet, except in A-1 Districts'). It has the same district scope (accessory_height_cap_districts) and is said with the feet cap. Where the caps bind the ADU (accessory_cap_binds_adu), a unit in an accessory building takes it as its story limit today. Under a state bill it gives way to the bill's height floor, and the line says so."
         },
         "accessory_cap_binds_adu": {
           "$ref": "#/$defs/leaf_bool",
@@ -1372,6 +1380,10 @@
           "$ref": "#/$defs/leaf_num",
           "description": "Pass 12: the general accessory building height cap in this district, when it differs from envelope.accessory_structure_max_height_ft (for example 20 ft in R-1 and R-2, 15 ft in R-3 and R-4). It replaces the town-wide figure for a lot in the district. Whether it binds a unit in an accessory building is still envelope.accessory_cap_binds_adu."
         },
+        "accessory_structure_max_stories": {
+          "$ref": "#/$defs/leaf_num",
+          "description": "Pass 28: the general accessory building height in stories in this district (Cumberland 27-503.1: 1 1/2 stories in R and RMH). It replaces envelope.accessory_structure_max_stories for a lot in the district and reads as that field does."
+        },
         "setback_front_ft_by_type": {
           "$ref": "#/$defs/leaf_num_by_type",
           "description": "Pass 13: the front yard (ft) by the house type of the lot, keyed by building type, when one district row sets it apart for a house type (for example a twin's own yards). For a lot of a listed type it replaces setback_front_ft for the house and an attached unit. Otherwise setback_front_ft applies."
@@ -1597,7 +1609,7 @@
     },
     "leaf_gates": {
       "type": "object",
-      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate. Pass 13: no_accessory_building, the inverse of has_accessory_building, is met on a lot with no accessory building (for 'Accessory structures shall not be permitted'). A bar with disputed_by and no test, scoped by districts, building_types or overlays, reaches a lot in its scope as a failed bar, so the answer depends on the reading and never reads a plain variance. Pass 21: house_built_more_than_years_ago and house_built_within_years (value in years, counted back from today, lot fact house_year_built) and not_alley_only_access (met when the lot fact alley_only_access is false: the lot has public street frontage, not only an alley).",
+      "description": "Conditions that limit where or how an ADU is allowed. Scope: applies_to (ADU types, null = all), districts and building_types (null = everywhere), when (always, historic, not_historic). test names the lot fact that decides it (has_alley, has_accessory_building), null when no lot fact can. effect bars: in scope and the test fails (or there is no test), those types are not allowed. effect condition: shown to the user, never decides. lot_sqft_at_least and lot_sqft_below compare the lot area with value. Pass 7 tests on the house and services: house_sqft_at_least, house_sqft_over (value), house_built_before, accessory_building_built_before (value_date), house_exists, public_sewer, public_water. An unknown fact never bars: the answer says it depends on it. Also lot_width_at_least, lot_width_below (value, the lot fact lot_width_ft) and designated_on_plan (lot fact designated_on_plan). Pass 10: in_planned_development (lot fact in_planned_development, a planned or cluster development the code names); overlays, confidence and supersedes_district_figures per gate. Pass 13: no_accessory_building, the inverse of has_accessory_building, is met on a lot with no accessory building (for 'Accessory structures shall not be permitted'). A bar with disputed_by and no test, scoped by districts, building_types or overlays, reaches a lot in its scope as a failed bar, so the answer depends on the reading and never reads a plain variance. Pass 21: house_built_more_than_years_ago and house_built_within_years (value in years, counted back from today, lot fact house_year_built) and not_alley_only_access (met when the lot fact alley_only_access is false: the lot has public street frontage, not only an alley). Pass 28: lot_created_before (value_date, the lot fact lot_year_created): the lot existed before the date (Cumberland 27-602).",
       "required": [
         "value",
         "section",
@@ -1711,6 +1723,7 @@
                   "house_sqft_over",
                   "house_built_before",
                   "accessory_building_built_before",
+                  "lot_created_before",
                   "house_built_more_than_years_ago",
                   "house_built_within_years",
                   "house_exists",
@@ -1845,6 +1858,10 @@
                   "variance"
                 ],
                 "description": "Pass 16: the approval the forms in applies_to (every form when null) need on a lot the gate reaches, when it is more demanding than the ADU path (for example a special exception for any new building in a floodplain overlay). Applied only when the lot is known to be in the gate's overlay or district and its test is met. Otherwise the condition is said and the path stays. Use effect condition. Not applied under a state bill."
+              },
+              "adu_rule_only": {
+                "type": "boolean",
+                "description": "Pass 28: true when the gate is a standard of the ADU rule itself (East Coventry 27-1515, the in-law suite's conversion, entrance and on-site sewer standards), not of the land. A form that another ADU listing opens on the lot (an alternative with adu_listing and forms) is then free of it, as it is of the ADU rule's family and occupancy conditions."
               },
               "outside_zoning_chapter": {
                 "type": "string",
@@ -2172,6 +2189,7 @@
                         "house_sqft_over",
                         "house_built_before",
                         "accessory_building_built_before",
+                        "lot_created_before",
                         "house_built_more_than_years_ago",
                         "house_built_within_years",
                         "house_exists",
@@ -2416,9 +2434,28 @@
                 "description": "Pass 18: the height an accessory building may reach under this listing, when the listing sets its own (Mount Joy Village Design Option 135-353J(7)(b): 25 ft). It is said with the listing. Where the listing reaches the lot and covers a detached form (forms), that form takes this height."
               },
               "parking_spaces": {
-                "type": "number",
+                "type": [
+                  "number",
+                  "null"
+                ],
                 "minimum": 0,
-                "description": "Pass 18: off-street parking spaces for the unit under this listing, beyond the house's own, when the listing sets its own (Mount Joy Village Design Option 135-353E(2)(e): two). It is said with the listing."
+                "description": "Pass 18: off-street parking spaces for the unit under this listing, beyond the house's own, when the listing sets its own (Mount Joy Village Design Option 135-353E(2)(e): two). It is said with the listing. Pass 28: null means the listing sets no parking for the unit (East Coventry Option 4, 27-11.104.3). Either way, on an adu_listing, the ADU rule's spaces do not reach the forms it opens on the lot, a line says the listing's own, and where every allowed form opens through it alone its figure replaces the ADU rule's."
+              },
+              "max_sqft": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "description": "Pass 28, adu_listing only: the listing's own floor area cap for the unit (East Coventry Option 4, 27-11.104.3B: 1,500 sq ft). The forms it opens on the lot take this cap, and the ADU rule's size and share caps do not reach them. null means the listing sets no size cap."
+              },
+              "owner_occupancy": {
+                "type": "boolean",
+                "description": "Pass 28, adu_listing only: the listing's own owner rule. The ADU rule's owner condition already does not reach the forms the listing opens. true says the listing's own owner rule for them. false says it has none, and where every allowed form opens through it alone, owner_occupancy is false."
+              },
+              "family_only": {
+                "type": "boolean",
+                "description": "Pass 28, adu_listing only: the listing's own family rule. true says it for the forms the listing opens. false says it has none."
               }
             }
           }
