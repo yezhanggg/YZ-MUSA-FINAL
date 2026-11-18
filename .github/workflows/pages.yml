@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  TOOL_URL: https://yz-musa-final-iota.vercel.app
+  TOOL_URL: https://pa-adu.vercel.app
 
 permissions:
   contents: read

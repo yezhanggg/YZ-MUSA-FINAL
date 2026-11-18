@@ -3,8 +3,8 @@
 A lot-level check for accessory dwelling units (ADUs, backyard homes) in Pennsylvania.
 Pick a lot. The tool says which kinds of ADU the law allows there, whether a unit fits in the yard, what it could cost and rent for, and what would change if a pending bill passed.
 
-- Website and tool: https://yz-musa-final-iota.vercel.app
-- Class site (Quarto): https://yz-musa-final-iota.vercel.app/quarto/
+- Website and tool: https://pa-adu.vercel.app
+- Class site (Quarto): https://pa-adu.vercel.app/quarto/
 - Final project for MUSA 5500 (geospatial data science in Python) and MUSA 6950 (remote sensing and deep learning), Fall 2026
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.

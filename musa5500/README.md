@@ -5,7 +5,7 @@ MUSA 5500 Geospatial Data Science in Python, Fall 2026
 This half asks: is there demand, and does an ADU pay off?
 The MUSA 6950 half (`../musa6950/`) asks if there is room on the lot.
 
-- Website and tool: https://yz-musa-final-iota.vercel.app
+- Website and tool: https://pa-adu.vercel.app
 - Class pages: Proposal, Data, Methods and Results under "MUSA 5500" on the class site (`docs/` here)
 
 ## Run it
