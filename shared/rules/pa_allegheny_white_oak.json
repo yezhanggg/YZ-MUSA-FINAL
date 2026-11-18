@@ -6,7 +6,7 @@
     "status": "in_force",
     "status_detail": "American Legal Publishing code library 'whiteoak', White Oak, Pennsylvania (Allegheny County). The overview names the address as 2280 Lincoln Way, White Oak. Each residence district article states its uses and its area regulations as web text. Floodplain districts are an overlay in Article 1339 of the zoning code",
     "effective_date": null,
-    "code_caution": "The online code is shown as 'Complete to April 2, 2017' (version 2019 S-0), and its floodplain article still cites a Flood Insurance Rate Map dated October 4, 1995. Later zoning or floodplain ordinances, if any, were not seen. Ask the borough whether the zoning text changed after April 2017.",
+    "code_caution": "The online code is shown as 'Complete to April 2, 2017' (version 2019 S-0), and its floodplain article still cites a Flood Insurance Rate Map dated October 4, 1995. The borough website lists ordinances adopted since then that are not yet in the online code, posted only as PDFs that were not read: among them 2018-17 (medical marijuana), 2018-18 (oil and gas), 2018-28 (stormwater management), 2020-29 (chickens) and the listed 2023 ordinances numbered 2023-11 to 2023-19 (including occupancy permit requirements). Some may change the zoning text. Ask the borough whether the zoning or floodplain rules changed after April 2017.",
     "source_urls": [
       "https://codelibrary.amlegal.com/codes/whiteoak/latest/overview",
       "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7310",
@@ -24,7 +24,14 @@
       "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15024",
       "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10275",
       "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
-      "https://codelibrary.amlegal.com/search"
+      "https://codelibrary.amlegal.com/search",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8694",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8814",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15025",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-10033",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14237",
+      "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-9585",
+      "https://whiteoakpa.gov/services/codified-ordinances/"
     ],
     "verified_on": "2026-11-18",
     "county": "Allegheny",
@@ -35,17 +42,20 @@
     "code_current_through": "2017-04-02",
     "code_current_through_note": "American Legal overview: 'Complete to April 2, 2017'. Version shown: 2019 S-0 (current)",
     "checks": [
-      "ADU: the code has no accessory dwelling unit term. A search of the code for accessory dwelling, in-law, accessory apartment, guest house, caretaker, second dwelling, garage apartment, elder cottage, temporary dwelling and family member found none of them in the zoning text. Each residence district lists its uses 'and no other' (1323.02, 1325.02, 1327.02, 1329.02), and none lists a second unit on a house lot, so the path is a use variance (1309.06)",
+      "ADU: the code has no accessory dwelling unit term. A search of the code for accessory dwelling, in-law, accessory apartment, guest house, caretaker, second dwelling, garage apartment, elder cottage, temporary dwelling and family member found none of them in the zoning text. Each residence district lists its uses 'and no other' (1323.02, 1325.02, 1327.02, 1329.02), and none lists a second unit on a house lot, so the path there is a use variance (1309.06)",
       "'No part of a detached private garage shall be used for habitable purposes' (1371.07(b)), and a storage shed may not be used for any habitable purpose (1371.08(a))",
       "'No dwelling shall hereafter be erected, placed or constructed on the rear portion of any lot so that the front or main entrance shall front or open on any alley' (1371.13)",
       "Lot area is set per family: 13,500 sq ft in R-1, 6,000 sq ft in R-2, 4,500 sq ft in R-3 and 3,500 sq ft in R-4 'for every building hereafter erected or used in whole or in part as a dwelling'. A second household on the lot would need twice the figure",
       "Conversion: in R-3 an existing dwelling built more than 40 years ago with at least 1,600 sq ft may be converted into units for two or more families by special exception, on 4,500 sq ft per family, without converting the garage or basement (1327.02(b)(1)C). In R-2 the same conversion is a special exception only in the Lincoln Way Transitional Zone, on 6,000 sq ft per family (1325.02(c)(1)B). Special exceptions need a Planning Commission advisory report first (1309.07(b))",
-      "Two-family detached dwellings and multiple dwellings are permitted by right in R-4, on 3,500 sq ft per family (1329.02, 1329.03). Townhouses and garden apartments are special exceptions in R-1 to R-3 under Article 1351, which was not read",
+      "Two-family detached dwellings and multiple dwellings are permitted by right in R-4, on 3,500 sq ft per family (1329.02, 1329.03). The code calls a building with two units one above the other a 'Duplex', a kind of two-family dwelling (1301.04). Garden apartments, townhouses and groups of dwellings are designed multiple dwelling projects, by special exception with a development plan on a tract of at least five acres (1351.01, 1351.02)",
+      "Farms: R-1 permits 'Farms, including dwellings and farm buildings' by right (1323.02(a)(1)A), and R-2 permits every R-1 use by right (1325.02(a)(1)A). A farm is 'a tract of land containing not less than five acres' kept in farm use (1301.04(30)). R-3 and R-4 exclude farms",
+      "C-1 and C-2: no single-family or two-family dwelling is listed, so a house there is a nonconforming use. A use 'of the same general character as any of the uses permitted by right or special exception in this District' is a special exception there (1331.02(b)(1)D, 1333.02). The only dwelling listed is a multiple dwelling in combination with business use. A nonconforming use may be expanded only by special exception (1371.03(b))",
+      "Parking: at least one space in a garage for each one-family dwelling and each unit of a two-family dwelling (1363.02(a)). The conversions ask two spaces per family unit",
       "A detached private garage stands to the rear of the main building, at least 3 ft from a property line and 5 ft from an alley line, and may be at most 18 ft tall (1371.07(a), (c)). The lot coverage of all buildings may not exceed the district maximum (1371.07(d))",
-      "Floodplain districts (FW, FF, FA, overlays on the 1995 FIRM): a zoning permit for all construction and development, including alterations of existing structures. No new construction or development without a DEP Water Obstruction and Encroachment permit, and no new construction within 50 ft landward of the top of bank without one. The lowest floor of a residential structure at or above the 100 year flood elevation (1339.03(d), 1339.04(a), 1339.06(a))",
+      "Floodplain districts (FW, FF, FA, overlays on the 1995 FIRM): a zoning permit for all construction and development, including alterations of existing structures. No new construction or development without a DEP Water Obstruction and Encroachment permit, and no new construction within 50 ft landward of the top of bank without one. The lowest floor of a residential structure at or above the 100 year flood elevation, which is the regulatory flood elevation here with no added freeboard (1339.03(d), 1339.04(a), 1339.06(a), 1339.08(m)). Work on an existing structure under 50% of its market value is elevated or floodproofed to the greatest extent possible, and work of 50% or more fully complies (1339.05(b), (c)). New construction is a structure begun on or after August 20, 1979 (1339.08(k)). No variance may allow any rise in the 100 year flood elevation in the floodway (1339.07(a))",
       "Variances: the Zoning Hearing Board on the hardship findings of 1309.06(a) to (e). No bar on a use variance was seen"
     ],
-    "notes": "Zoning office: White Oak Borough Zoning Officer. Read in a browser on the American Legal code library, one page at a time, on 2026-11-18. Read: 1301.01 to 1301.03, parts of 1301.04 (dwelling types, dwelling unit, building coverage and other definitions by screenshot and element snippets), 1309.06, 1309.07, 1321.01, 1321.02, Article 1323 (R-1), Article 1325 (R-2), Article 1327 (R-3), Article 1329 (R-4), 1339.01 to 1339.06, 1371.01 to 1371.15, and a keyword search of the code. Not read: Articles 1305, 1313, 1317, 1319, 1331 to 1337 (C-1, C-2, I-1, I-2), 1341, 1351, 1355, 1359, 1363 (parking), 1367, 1375, 1371.16 to 1371.27, 1339.07 to 1339.10, the rest of 1301.04 and 1309, and Title Seven. Open points: whether the code text is current (complete to April 2, 2017, floodplain article on a 1995 FIRM), where the Lincoln Way Transitional Zone lies, and whether C-1 or C-2 permit dwellings."
+    "notes": "Zoning office: White Oak Borough Zoning Officer. Read in a browser on the American Legal code library, one page at a time, on 2026-11-18. Read: 1301.01 to 1301.03, parts of 1301.04 (dwelling types, dwelling unit, building coverage and other definitions by screenshot and element snippets), 1309.06, 1309.07, 1321.01, 1321.02, Article 1323 (R-1), Article 1325 (R-2), Article 1327 (R-3), Article 1329 (R-4), 1339.01 to 1339.06, 1371.01 to 1371.15, and a keyword search of the code. Not read: Articles 1305, 1313, 1317, 1319, 1331 to 1337 (C-1, C-2, I-1, I-2), 1341, 1351, 1355, 1359, 1363 (parking), 1367, 1375, 1371.16 to 1371.27, 1339.07 to 1339.10, the rest of 1301.04 and 1309, and Title Seven. Also read later: the rest of 1301.04, 1309.05, 1331.02 (C-1), parts of 1333.02 (C-2), 1339.07 to 1339.09, 1351.01, 1351.02, 1363.01 to 1363.03 and 1371.16 to 1371.23, and the borough's list of ordinances not yet in the online code. Not read: I-1 and I-2 use lists, the text of the unposted ordinances, the zoning map and Title Seven. Open points: whether the code text is current (complete to April 2, 2017, with later ordinances posted only as PDFs, and the floodplain article on a 1995 FIRM), where the Lincoln Way Transitional Zone lies, whether an existing R-4 house may become two units by right, and whether a second dwelling beside a house in C-1 or C-2 is of the same general character as a listed use."
   },
   "adu": {
     "term": {
@@ -83,7 +93,7 @@
       "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-14282",
       "verified_on": "2026-11-18",
       "confidence": "secondary",
-      "note": "A second unit on a house lot is not a listed use, and each district lists its uses 'and no other', so the path is a use variance from the Zoning Hearing Board (MPC 910.2). R-3 and R-2 (Lincoln Way Transitional Zone) allow conversions of older houses by special exception, and R-4 permits two-family dwellings (see the other paths)"
+      "note": "A second unit on a house lot is not a listed use, and each residence district lists its uses 'and no other', so the path there is a use variance from the Zoning Hearing Board (MPC 910.2). In C-1 and C-2 a use of the same general character as a listed use is a special exception. R-3 and R-2 (Lincoln Way Transitional Zone) allow conversions of older houses by special exception, R-4 permits two-family dwellings, and R-1 and R-2 permit farms with dwellings (see the other paths)"
     },
     "fallback_path": {
       "value": "variance",
@@ -164,7 +174,7 @@
           "section": "1325.02(c)(1)B",
           "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8374",
           "confidence": "secondary",
-          "note": "The code does not describe where the Lincoln Way Transitional Zone lies. It is read as an area shown on the zoning map. R-3 lots in the zone may also use this listing (1327.02(c))"
+          "note": "The code does not describe where the Lincoln Way Transitional Zone lies. It is read as an area shown on the zoning map. R-3 lots in the zone may also use this listing (1327.02(c)). In the zone a house may also be converted to a dwelling unit combined with specialty retail or a professional office in place of one unit, each unit at least 800 sq ft (1325.02(c)(1)D)"
         },
         {
           "name": "Two-family detached dwelling (R-4)",
@@ -172,18 +182,73 @@
           "districts": [
             "R-4"
           ],
-          "conditions": "A permitted use in R-4, with 3,500 sq ft of lot per family and 35 ft of width. Single-family or two-family semi-detached dwellings are permitted when the dwellings sharing party walls are built at the same time",
+          "conditions": "A permitted use in R-4, with 3,500 sq ft of lot per family and 35 ft of width. Single-family or two-family semi-detached dwellings are permitted when the dwellings sharing party walls are built at the same time. At least one parking space in a garage for each unit",
           "min_lot_sqft": 7000,
-          "section": "1329.02(a)(1)B, C, 1329.03(a)",
+          "section": "1329.02(a)(1)B, C, 1329.03(a), 1363.02(a)",
           "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8606",
           "confidence": "secondary",
-          "note": "Read as a new building for two units. R-4 does not carry over the R-3 special exception for converting dwellings (1329.02(b)(1)A), so whether an existing house may be turned into a two-family dwelling by right is not settled"
+          "note": "Read as a new building for two units. The code counts a 'Duplex', two units one above the other, as a two-family dwelling (1301.04), and R-4 leaves out the R-3 special exception for converting dwellings (1329.02(b)(1)A). So an existing house made into two units in R-4 is likely a two-family dwelling by right. Ask the zoning officer",
+          "builds": [
+            "detached_new"
+          ]
+        },
+        {
+          "name": "Farm dwellings (R-1, R-2)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2"
+          ],
+          "conditions": "A farm is permitted by right in R-1, 'including dwellings and farm buildings', and R-2 permits every R-1 use by right. A farm is a tract of at least five acres where livestock, horses, crops or produce are kept or grown for sale or use on the property",
+          "min_lot_sqft": 217800,
+          "min_lot_is_tract": true,
+          "requires": [
+            {
+              "test": null,
+              "condition": "The tract is in farm use as the code defines it",
+              "section": "1301.04(30)"
+            }
+          ],
+          "builds": [
+            "detached_new"
+          ],
+          "section": "1323.02(a)(1)A, 1325.02(a)(1)A, 1301.04(30)",
+          "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8257",
+          "confidence": "secondary",
+          "note": "The code does not say how many dwellings a farm may hold or give figures for them. R-3 and R-4 exclude farms"
         }
       ],
-      "section": "1325.02(c), 1327.02(b), 1329.02",
+      "section": "1323.02, 1325.02(c), 1327.02(b), 1329.02, 1301.04(30)",
       "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8540",
       "verified_on": "2026-11-18",
       "confidence": "secondary"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "1331.02(b)(1)D, 1333.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8694",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "Its impact must be no greater than a listed use, and it must meet the standards of the similar use, the performance standards and the ordinance's intent. The only dwelling listed there is a multiple dwelling in combination with business use, and a house there is a nonconforming use, so whether a second dwelling beside it qualifies is doubtful. Two-family dwellings are listed only in R-4. The C-2 text was read only in part"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C-1",
+        "C-2"
+      ],
+      "section": "1331.02(b)(1)D, 1333.02",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8694",
+      "verified_on": "2026-11-18",
+      "confidence": "secondary",
+      "note": "I-1 and I-2 were not read"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "section": "1331.02(b)(1)D",
+      "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-8694",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "quote": "Any use of the same general character as any of the uses permitted by right or special exception in this District"
     }
   },
   "eligibility": {
@@ -231,7 +296,7 @@
         },
         {
           "kind": "other",
-          "condition": "In the Floodplain Districts (FW, FF, FA) a zoning permit is needed for all construction and development, including the alteration, repair, remodeling or improvement of existing structures. No new construction or development without a Water Obstruction and Encroachment permit from DEP. The lowest floor, including basement, of a residential structure must be at or above the 100 year flood elevation, with no fully enclosed space below it. An existing structure in the floodway may not be enlarged unless the effect on flood heights is fully offset.",
+          "condition": "In the Floodplain Districts (FW, FF, FA) a zoning permit is needed for all construction and development, including the alteration, repair, remodeling or improvement of existing structures. No new construction or development without a Water Obstruction and Encroachment permit from DEP. The lowest floor, including basement, of a residential structure must be at or above the 100 year flood elevation, with no fully enclosed space below it. The code adds no freeboard. Work on an existing structure under 50% of its market value is elevated or floodproofed as far as possible, and work of 50% or more fully complies. An existing structure in the floodway may not be enlarged unless the effect on flood heights is fully offset.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -241,9 +306,14 @@
             "FF",
             "FA"
           ],
-          "section": "1339.03(d)(1), 1339.04(a), 1339.05, 1339.06(a)",
+          "section": "1339.03(d)(1), 1339.04(a), 1339.05, 1339.06(a), 1339.08(k), (m)",
           "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15024",
-          "confidence": "verified"
+          "confidence": "verified",
+          "no_variance": {
+            "section": "1339.07(a)",
+            "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15025",
+            "quote": "No variance shall be granted for any construction, development, use or activity within any designated Floodway (FW) District that would cause any increase in the 100 year flood elevation"
+          }
         },
         {
           "kind": "other",
@@ -267,7 +337,7 @@
           "confidence": "verified"
         }
       ],
-      "section": "1371.07, 1371.13, 1339.03 to 1339.06",
+      "section": "1371.07, 1371.13, 1339.03 to 1339.08",
       "url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-15126",
       "verified_on": "2026-11-18",
       "confidence": "verified"

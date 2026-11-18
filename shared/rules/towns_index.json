@@ -4911,7 +4911,7 @@
       "pop_rank": 361,
       "file": "pa_mercer_grove_city",
       "batch": 50,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/grovecitybor/latest/grovecityb_pa/0-0-0-5717",
@@ -4921,7 +4921,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 156.059 accessory apartment in a garage or separate building, by special exception in R-1B and conditional use in R-2)"
       ],
-      "status_note": "First reading, not yet reviewed. Open: whether the 900 sq ft garage allowance of 156.107(B) reaches a garage with an apartment, how coverage is measured under the 156.146 'Coverage' definition (gross floor area over lot area), whether R-2 allows more than one accessory apartment, and whether a new duplex may stand beside an existing house."
+      "status_note": "Verified. Points to ask the zoning officer, not settled by the code text: whether the 900 sq ft garage allowance of 156.107(B) reaches a garage that holds the apartment (the district yards are shown), how coverage is measured (on the words of 156.146 every floor counts), whether R-2 allows more than one apartment, and whether a separate apartment building needs a land development plan under Chapter 155. Later ordinances on the borough website could not be read."
     },
     {
       "geoid": "4208308040",
@@ -4945,7 +4945,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 220-8 and 220-23B(2)(e) guesthouse by special exception (R-1, R-2, R-3, C-1, C-2))"
       ],
-      "status_note": "First reading, not yet reviewed. Open: whether the guesthouse (220-8, a small separate house 'used for accommodating guests', special exception) may be rented as a separate home, whether it takes the garage yards of 220-94C(7) or the district yards, whether it may sit over a garage, and whether the C-1 and C-2 listings reach a house lot."
+      "status_note": "Open points: whether a guesthouse, 'used for accommodating guests', may ever be let as a home of its own (the code's words and 127-10 point to guests of the household only), and whether Chapter 191, not read, exempts a guesthouse beside a house from land development review. Chapter 125 historic review and the zoning map were not read either."
     },
     {
       "geoid": "4200384704",
@@ -4969,7 +4969,7 @@
       "why": [
         "added as batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)"
       ],
-      "status_note": "First reading, not yet reviewed. Open: the online code is complete only to 4-2-2017 and its floodplain article cites a 1995 FIRM, so later amendments may be missing. Also where the Lincoln Way Transitional Zone lies, whether C-1 or C-2 permit dwellings (not read), and the R-4 conversion reading."
+      "status_note": "Open points: the online code is complete only to April 2, 2017. Ordinances adopted since (2018-17, 2018-18, 2018-28, 2020-29 and 2023-11 to 2023-19) are posted only as PDFs and were not read, and the floodplain article cites a 1995 FIRM. Also open: where the Lincoln Way Transitional Zone lies, whether an existing R-4 house may become two units by right, and whether a second dwelling in C-1 or C-2 is a similar use."
     }
   ]
 }
