@@ -1427,6 +1427,14 @@
         "yards_abutting_residential_ft": {
           "$ref": "#/$defs/leaf_num",
           "description": "Pass 18: the side and rear yard a principal building needs only where the yard abuts a residential district, with none otherwise (Lansdowne GB 330-17D(2), (3): 10 ft). The lot fact abuts_residential_district picks it. Not given, the yards are not shown and a condition says both cases. A side or rear figure of the row's own wins."
+        },
+        "setback_side_is_each_side": {
+          "$ref": "#/$defs/leaf_bool",
+          "description": "Pass 29: true when setback_side_ft is the least side yard on each side, beside setback_sides_total_ft (for example 'two side yards, neither of which shall be less than eight feet', Clifton Heights 340-17G). The side yards line then says 'at least 8 ft on each side' in place of 'on one side'."
+        },
+        "accessory_structure_max_height_by_lot_size": {
+          "$ref": "#/$defs/leaf_acc_height_by_lot",
+          "description": "Pass 29: the accessory building height cap by lot size in this district (leaf_acc_height_by_lot). Keep accessory_structure_max_height_ft as the base figure."
         }
       }
     },
@@ -1888,10 +1896,12 @@
                   "enum": [
                     "yards",
                     "building_coverage",
-                    "impervious_coverage"
+                    "impervious_coverage",
+                    "accessory_height",
+                    "min_lot"
                   ]
                 },
-                "description": "Pass 17: with supersedes_district_figures, the district figures the gate replaces. Others stay those of the district. Without it every district figure is replaced (Lower Pottsgrove Sanatoga Village overlay 250-125B: yards only, impervious cover stays the base district's)."
+                "description": "Pass 17: with supersedes_district_figures, the district figures the gate replaces. Others stay those of the district. Without it every district figure is replaced (Lower Pottsgrove Sanatoga Village overlay 250-125B: yards only, impervious cover stays the base district's). Pass 29: accessory_height (the district row's accessory building height and story caps) and min_lot (the district lot minimum, for a gate with the test designated_on_plan or in_planned_development). Without the list a planned-development gate with either test replaces those too, the lot fact true."
               },
               "keeps_accessory_yards": {
                 "type": "boolean",
@@ -3571,6 +3581,17 @@
             "string",
             "null"
           ]
+        },
+        "end_unit_only": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "attached"
+            ]
+          },
+          "description": "Pass 29: in setback_side_ft_by_type, the house types whose figure is for the end unit of a row only (Clifton Heights 340-22G: one side yard of at least 12 ft for the end unit of an attached row). The side yards line says the figure is the end unit's and that an interior unit of a row has no side yard."
         }
       }
     },
@@ -5315,7 +5336,7 @@
     },
     "leaf_figures_in_dispute": {
       "type": "object",
-      "description": "Pass 16: district figures in dispute. value: {row field: the other reading's figure}. The note says why the readings differ. Coverage as a share of the lot.",
+      "description": "Pass 16: district figures in dispute. value: {row field: the other reading's figure}. The note says why the readings differ. Coverage as a share of the lot. Pass 29: also the total for both sides (setback_sides_total_ft) and the row's accessory yards (accessory_setback_front_ft, accessory_setback_side_ft, accessory_setback_rear_ft).",
       "required": [
         "value",
         "section",
@@ -5363,6 +5384,22 @@
               "minimum": 0
             },
             "principal_max_stories": {
+              "type": "number",
+              "minimum": 0
+            },
+            "setback_sides_total_ft": {
+              "type": "number",
+              "minimum": 0
+            },
+            "accessory_setback_front_ft": {
+              "type": "number",
+              "minimum": 0
+            },
+            "accessory_setback_side_ft": {
+              "type": "number",
+              "minimum": 0
+            },
+            "accessory_setback_rear_ft": {
               "type": "number",
               "minimum": 0
             }
@@ -5511,6 +5548,103 @@
                     "null"
                   ]
                 }
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_acc_height_by_lot": {
+      "type": "object",
+      "description": "Pass 29: the accessory building height cap that changes with lot size, in a district row. Each item: max_height_ft and its lot area bounds, any of lot_sqft_over, lot_sqft_at_least, lot_sqft_below, lot_sqft_at_most. The first item whose bounds hold gives the cap for the lot and replaces accessory_structure_max_height_ft (Middlesex 175-15I(2): 15 ft under two acres, 25 ft on two acres or more). Without the lot area, or where no item reaches the lot, the row's accessory_structure_max_height_ft is shown and the sentence lists the tiers.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "max_height_ft"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "max_height_ft": {
+                "type": "number",
+                "minimum": 0
+              },
+              "lot_sqft_over": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_least": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_below": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "lot_sqft_at_most": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
             }
           }

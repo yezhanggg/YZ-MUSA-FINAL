@@ -791,7 +791,19 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   // Pass 16 (pipeline/rules.py): the accessory building height cap (the district's first) that binds the unit is the
   // height on file, never "no height number".
   const capBinds = leafAt(file, 'envelope', 'accessory_cap_binds_adu');
-  const capRow = fromRow('accessory_structure_max_height_ft');
+  // Pass 29 (pipeline/rules.py _acc_height_by_lot): the accessory building cap by lot size. No lot facts here, so the
+  // base figure is shown and every tier is named. A planned development whose own figures replace the district's
+  // accessory cap (pipeline/rules.py _pd_cap_line) is named too.
+  const capTiers = row && isObj(row.accessory_structure_max_height_by_lot_size) && Array.isArray((row.accessory_structure_max_height_by_lot_size as Obj).value) ? (row.accessory_structure_max_height_by_lot_size as Obj) : null;
+  const capPlanned = rowKey
+    ? (Array.isArray(leafAt(file, 'eligibility', 'gates')?.value) ? (leafAt(file, 'eligibility', 'gates')!.value as Json[]).filter(isObj) : []).filter((g) => g.supersedes_district_figures === true && (g.test === 'designated_on_plan' || g.test === 'in_planned_development') && !(Array.isArray(g.overlays) && g.overlays.length) && (!Array.isArray(g.supersedes_figures) || g.supersedes_figures.includes('accessory_height')) && (!Array.isArray(g.districts) || g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(rowKey))))
+    : [];
+  const capExtra = [
+    capTiers ? `By lot size: ${(capTiers.value as Json[]).filter(isObj).map((t) => `${num(t.max_height_ft as number)} ft on ${lotBounds(t)}`).join(', ')} (${capTiers.section ?? ''}). The lot size decides, so the base figure is shown` : '',
+    capPlanned.length ? `It applies only outside a planned or cluster development, whose own figures replace it (${capPlanned.map((g) => String(g.section ?? '')).join(', ')})` : '',
+  ].filter(Boolean).join('. ');
+  const capRowBase = fromRow('accessory_structure_max_height_ft');
+  const capRow = capRowBase && capExtra ? { ...capRowBase, ...(capTiers ? { by_lot_size: capTiers.value } : {}), cap_note: capExtra, note: ownerText(`${capRowBase.note ? `${String(capRowBase.note).replace(/\.$/, '')}. ` : ''}${capExtra}`) } : capRowBase;
   // Pass 17: envelope.accessory_height_cap_districts limits the town's cap by district (a district's own cap stays).
   const capLeaf = inDistricts(file, 'accessory_height_cap_districts', district) ? leafAt(file, 'envelope', 'accessory_structure_max_height_ft') : null;
   const capH = capRow && isObj(capRow) && typeof capRow.value === 'number' ? capRow : capLeaf && typeof capLeaf.value === 'number' ? ruleOut('envelope.accessory_structure_max_height_ft', capLeaf) : null;
@@ -802,7 +814,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
       (accApplies && accApplies.value === false
         ? { ...(isObj(districtHeight) ? districtHeight : { value: districtHeight }), note: 'No accessory height rule reaches an ADU here' }
         : capBinding
-          ? { ...capBinding, note: 'The accessory building height cap, which also binds a unit in an accessory building' }
+          ? { ...capBinding, note: `The accessory building height cap, which also binds a unit in an accessory building${typeof capBinding.cap_note === 'string' ? `. ${capBinding.cap_note}` : ''}` }
           : accStories
             ? { ...accStories, unit: 'stories', note: `At most ${accStories.value} stories. The code gives no feet figure` }
             : 'No height number on file. Ask the zoning officer');
@@ -815,7 +827,9 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const sidesOnly = sidesTotal && typeof sidesTotal.value === 'number' && !fromRow('setback_side_ft') ? { ...sidesTotal, value: null, sides_total_ft: sidesTotal.value, note: `${num(sidesTotal.value)} ft for both sides together. The code gives no single side figure` } : null;
   // Pass 10 (pipeline/rules.py): a row with both a single side and a total says both.
   const oneSide = fromRow('setback_side_ft');
-  const sidesBoth = sidesTotal && typeof sidesTotal.value === 'number' && oneSide && typeof oneSide.value === 'number' ? { ...oneSide, sides_total_ft: sidesTotal.value, note: `At least ${num(oneSide.value)} ft on one side, ${num(sidesTotal.value)} ft for both sides together` } : null;
+  // Pass 29 (pipeline/rules.py): districts.<code>.setback_side_is_each_side, the figure is the least yard on each side.
+  const eachSide = fromRow('setback_side_is_each_side')?.value === true;
+  const sidesBoth = sidesTotal && typeof sidesTotal.value === 'number' && oneSide && typeof oneSide.value === 'number' ? { ...oneSide, sides_total_ft: sidesTotal.value, note: `At least ${num(oneSide.value)} ft on ${eachSide ? 'each side' : 'one side'}, ${num(sidesTotal.value)} ft for both sides together` } : null;
   // Pass 10: a gate whose development figures replace the district row (supersedes_district_figures): no lot facts
   // here, so the district yards depend on whether the lot is in that development (pipeline/rules.py _planned_development_yards).
   const gatesLeaf = leafAt(file, 'eligibility', 'gates');
@@ -868,7 +882,18 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     const bt = fromRow(`${k}_by_type`);
     if (!bt || !isObj(bt) || !isObj(bt.value) || !isObj(base)) return base;
     const total = typeof base.sides_total_ft === 'number' ? base.sides_total_ft : null;
-    const figs = Object.entries(bt.value).filter(([, v]) => typeof v === 'number').map(([t, v]) => (total !== null ? `For ${/^[aeiou]/.test(t) ? 'an' : 'a'} ${label(t)} house: its own side yard of ${num(v)} ft. The ${num(total)} ft total for both sides is not for it` : `For a ${label(t)} house: ${num(v)} ft`)).join('. ');
+    // Pass 29 (pipeline/rules.py _own_side_line): end_unit_only, the figure is for the end unit of a row only.
+    const rawBt = row && isObj(row[`${k}_by_type`]) ? (row[`${k}_by_type`] as Obj) : null;
+    const endOnly = rawBt && Array.isArray(rawBt.end_unit_only) ? (rawBt.end_unit_only as Json[]) : [];
+    const figs = Object.entries(bt.value)
+      .filter(([, v]) => typeof v === 'number')
+      .map(([t, v]) => {
+        const who = `${/^[aeiou]/.test(t) ? 'an' : 'a'} ${label(t)} house`;
+        const tail = total !== null ? `. The ${num(total)} ft total for both sides is not for it` : '';
+        if (k === 'setback_side_ft' && endOnly.includes(t)) return `For ${who} that is the end unit of a row: its own side yard of ${num(v)} ft. An interior unit of a row has no side yard${tail}`;
+        return total !== null ? `For ${who}: its own side yard of ${num(v)} ft${tail}` : `For a ${label(t)} house: ${num(v)} ft`;
+      })
+      .join('. ');
     return figs ? { ...base, by_type: bt.value, by_type_section: bt.section ?? null, note: ownerText(`${base.note ? `${String(base.note).replace(/\.$/, '')}. ` : ''}${figs} (${bt.section ?? ''})`) } : base;
   };
   const insideRear = (() => {

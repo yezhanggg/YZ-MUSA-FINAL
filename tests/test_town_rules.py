@@ -5098,3 +5098,263 @@ def test_lot_created_before_cumberland_mx():
     open_ = mx(base)
     assert open_["applies"] is None
     assert "Depends on the year the lot was created (lot_year_created), which was not given" in open_["note"]
+
+
+# ------------------------------------------------------------------ pass 29
+
+
+def test_pass29_hold_towns_are_the_ten_lot_towns():
+    """Pass 29 holds its changes for all ten lot towns (the three Montgomery towns rebuilt on Nov 18 included)."""
+    assert rules.PASS29_HOLD_TOWNS == LOT_TOWNS
+    for name in LOT_TOWNS:  # no lot town uses a pass 29 field
+        text = (RULES / f"{name}.json").read_text()
+        for key in ("setback_side_is_each_side", "end_unit_only", "accessory_structure_max_height_by_lot_size"):
+            assert key not in text, (name, key)
+
+
+def _side_body(**row):
+    body = _base("special_exception", "special_exception")
+    body["districts"] = {
+        "R-2": {
+            "setback_side_ft": _leaf(8, "340-22G"),
+            "setback_sides_total_ft": _leaf(20, "340-22G"),
+            **row,
+        }
+    }
+    return body
+
+
+def test_side_yards_each_side(tmp_path, monkeypatch):
+    """Pass 29: 'neither of which shall be less than eight feet' is at least 8 ft on each side, never 'on one side'
+    (Clifton Heights 340-22G). Without the field the pass 10 wording stays."""
+    body = _side_body(setback_side_is_each_side=_leaf(True, "340-22G"))
+    name = _fixture(tmp_path, monkeypatch, "pa_test_eachside", body)
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 6000}
+    out = rules.resolve(name, "today", lot)
+    line = "Side yards for R-2: at least 8 ft on each side, 20 ft for both sides together (340-22G)"
+    assert line in out["reasons"]
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert "Side yards for R-2: at least 8 ft on one side, 20 ft for both sides together (340-22G)" in held["reasons"]
+
+
+def test_attached_side_yard_end_unit_only(tmp_path, monkeypatch):
+    """Pass 29: setback_side_ft_by_type.end_unit_only. The attached figure is the end unit's, and an interior unit
+    of a row has no side yard (Clifton Heights 340-22G). A twin keeps the pass 20 line."""
+    by_t = _leaf({"semi_detached": 12, "attached": 12}, "340-22G", end_unit_only=["attached"])
+    name = _fixture(tmp_path, monkeypatch, "pa_test_endunit", _side_body(setback_side_ft_by_type=by_t))
+    lot = {"zoning_district": "R-2", "lot_sqft": 6000, "building_type": "attached"}
+    out = rules.resolve(name, "today", lot)
+    assert (
+        "Side yards for R-2: an attached house that is the end unit of a row has its own side yard of 12 ft "
+        "(340-22G). An interior unit of a row has no side yard. The 20 ft total for both sides is not for it"
+    ) in out["reasons"]
+    twin = rules.resolve(name, "today", {**lot, "building_type": "semi_detached"})
+    assert (
+        "Side yards for R-2: a semi detached house has its own side yard of 12 ft (340-22G). The 20 ft total for "
+        "both sides is not for it"
+    ) in twin["reasons"]
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert not [r for r in held["reasons"] if "end unit" in r]
+
+
+def test_clifton_heights_side_yards():
+    """Pass 29: Clifton Heights reads each side (340-17G) and the end unit of a row (340-22G, 340-27G)."""
+    det = rules.resolve("pa_delaware_clifton_heights", "today", {**DET, "zoning_district": "R-1", "lot_sqft": 6000})
+    assert "Side yards for R-1: at least 8 ft on each side, 20 ft for both sides together (340-17G)" in det["reasons"]
+    row = rules.resolve(
+        "pa_delaware_clifton_heights",
+        "today",
+        {"zoning_district": "R-3", "lot_sqft": 6000, "building_type": "attached"},
+    )
+    assert (
+        "Side yards for R-3: an attached house that is the end unit of a row has its own side yard of 10 ft "
+        "(340-27G). An interior unit of a row has no side yard. The 20 ft total for both sides is not for it"
+    ) in row["reasons"]
+
+
+def _tnd_body(**gate_extra):
+    body = _base("allowed_by_right", "by_right")
+    body["form"] = {"types_allowed": _leaf(["detached_new", "internal"], "1")}
+    body["envelope"] = {"accessory_cap_binds_adu": _leaf(True, "3")}
+    body["districts"] = {
+        "MU-1": {
+            "min_lot_sqft": _leaf(8000, "450-206D"),
+            "setback_side_ft": _leaf(10, "450-206D"),
+            "setback_rear_ft": _leaf(25, "450-206D"),
+            "accessory_structure_max_height_ft": _leaf(25, "450-206D"),
+        }
+    }
+    gate = {
+        "kind": "other",
+        "condition": "On a TND lot the TND's own figures replace the district's.",
+        "effect": "condition",
+        "applies_to": None,
+        "districts": ["MU-1"],
+        "test": "designated_on_plan",
+        "supersedes_district_figures": True,
+        "section": "450-380H",
+        "url": "https://ecode360.com/1",
+        "confidence": "verified",
+        **gate_extra,
+    }
+    body["eligibility"] = {"gates": _leaf([gate], "450-380")}
+    return body
+
+
+def test_planned_development_replaces_headline_cap_and_minimum(tmp_path, monkeypatch):
+    """Pass 29: on a lot in a planned development (test designated_on_plan) whose own figures replace the district's,
+    the headline scope line gives no district yards, the district accessory cap does not bind and the line that the
+    lot is below the district minimum is not said (Carroll TND 450-380H to J)."""
+    name = _fixture(tmp_path, monkeypatch, "pa_test_tnd", _tnd_body())
+    lot = {**DET, "zoning_district": "MU-1", "lot_sqft": 6000, "designated_on_plan": True}
+    out = rules.resolve(name, "today", lot)
+    assert out["max_height_by_type"]["detached_new"] is None
+    assert (
+        "Accessory height for MU-1: this lot is in the development the code names, whose own figures replace the "
+        "district's (450-380H). The district's 25 ft cap for accessory buildings does not apply. See the conditions"
+    ) in out["reasons"]
+    assert not [r for r in out["reasons"] if r.startswith("The yards and height given here")]
+    assert not [r for r in out["reasons"] if r.startswith("Accessory structures are capped")]
+    assert not [c for c in out["conditions"] if c["kind"] == "district_lot_rule"]
+    outside = rules.resolve(name, "today", {**lot, "designated_on_plan": False})
+    assert outside["max_height_by_type"]["detached_new"] == 25
+    assert [c for c in outside["conditions"] if c["kind"] == "district_lot_rule"]
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert held["max_height_by_type"]["detached_new"] == 25
+    assert [r for r in held["reasons"] if r.startswith("The yards and height given here (side 10 ft, rear 25 ft")]
+    assert [c for c in held["conditions"] if c["kind"] == "district_lot_rule"]
+
+
+def test_planned_development_figures_named(tmp_path, monkeypatch):
+    """Pass 29: supersedes_figures without accessory_height or min_lot keeps those district figures."""
+    name = _fixture(tmp_path, monkeypatch, "pa_test_tnd2", _tnd_body(supersedes_figures=["yards"]))
+    lot = {**DET, "zoning_district": "MU-1", "lot_sqft": 6000, "designated_on_plan": True}
+    out = rules.resolve(name, "today", lot)
+    assert out["max_height_by_type"]["detached_new"] == 25
+    assert [c for c in out["conditions"] if c["kind"] == "district_lot_rule"]
+    both = rules.resolve(
+        _fixture(tmp_path, monkeypatch, "pa_test_tnd3", _tnd_body(supersedes_figures=["accessory_height", "min_lot"])),
+        "today",
+        lot,
+    )
+    assert both["max_height_by_type"]["detached_new"] is None
+    assert not [c for c in both["conditions"] if c["kind"] == "district_lot_rule"]
+
+
+def test_carroll_tnd_lot():
+    """Pass 29: a Carroll MU-1 lot in an approved TND shows none of the MU-1 accessory height, yards or minimum."""
+    lot = {**DET, "zoning_district": "MU-1", "lot_sqft": 6000, "designated_on_plan": True}
+    out = rules.resolve("pa_york_carroll", "today", lot)
+    said = " ".join(out["reasons"] + [c["condition"] for c in out["conditions"]])
+    assert "Accessory height for MU-1: this lot is in the development the code names" in said
+    assert "25 ft limit" not in said and "capped at 25 ft" not in said
+    assert "below the district minimum" not in said
+    assert not [r for r in out["reasons"] if r.startswith("The yards and height given here")]
+
+
+def test_accessory_height_by_lot_size(tmp_path, monkeypatch):
+    """Pass 29: districts.<code>.accessory_structure_max_height_by_lot_size (Middlesex 175-15I(2): 15 ft, 25 ft on
+    two acres or more). The lot's tier is the cap. Without the lot size the base figure is shown and the tiers said."""
+    body = _base("special_exception", "special_exception")
+    body["form"] = {"types_allowed": _leaf(["detached_new"], "1")}
+    body["envelope"] = {"accessory_cap_binds_adu": _leaf(True, "175-95.1A")}
+    tiers = [{"max_height_ft": 15, "lot_sqft_below": 87120}, {"max_height_ft": 25, "lot_sqft_at_least": 87120}]
+    body["districts"] = {
+        "AG-A": {
+            "accessory_structure_max_height_ft": _leaf(15, "175-15I(2)"),
+            "accessory_structure_max_height_by_lot_size": _leaf(tiers, "175-15I(2)"),
+        }
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_acc_tiers", body)
+    big = rules.resolve(name, "today", {**DET, "zoning_district": "AG-A", "lot_sqft": 100000})
+    assert big["max_height_by_type"]["detached_new"] == 25
+    small = rules.resolve(name, "today", {**DET, "zoning_district": "AG-A", "lot_sqft": 40000})
+    assert small["max_height_by_type"]["detached_new"] == 15
+    blind = rules.resolve(name, "today", {**DET, "zoning_district": "AG-A"})
+    assert blind["max_height_by_type"]["detached_new"] == 15
+    assert (
+        "Accessory building height for AG-A depends on lot size: 15 ft on a lot under 87,120 sq ft (2 acres), 25 ft "
+        "on a lot of at least 87,120 sq ft (2 acres) (175-15I(2)). The lot size was not given, so the district's base "
+        "figure of 15 ft is shown"
+    ) in blind["reasons"]
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", {**DET, "zoning_district": "AG-A", "lot_sqft": 100000})
+    assert held["max_height_by_type"]["detached_new"] == 15
+
+
+def test_middlesex_two_acre_accessory_height():
+    """Pass 29: Middlesex AG-A on two acres or more takes the 25 ft cap (175-15I(2)(b))."""
+    out = rules.resolve("pa_butler_middlesex", "today", {**DET, "zoning_district": "AG-A", "lot_sqft": 100000})
+    assert out["max_height_ft"] == 25 and out["max_height_by_type"]["detached_new"] == 25
+    one = rules.resolve("pa_butler_middlesex", "today", {**DET, "zoning_district": "AG-A", "lot_sqft": 50000})
+    assert one["max_height_by_type"]["detached_new"] == 15
+
+
+def test_unlisted_use_outside_the_adu_scope(tmp_path, monkeypatch):
+    """Pass 29: outside the districts the ADU rule reaches, the unlisted-use line names the district, since the code
+    does list ADUs elsewhere (Middlesex C-1 comparable uses, 175-12A, 175-105)."""
+    body = _base("special_exception", "special_exception")
+    body["adu"]["scope_districts"] = _leaf(["R-1"], "175-28")
+    body["adu"]["status_outside"] = _leaf("not_addressed", "175-12A")
+    body["approval"]["unlisted_use_path"] = _leaf("special_exception", "175-12A, 175-105")
+    body["approval"]["unlisted_use_districts"] = _leaf(["C-1"], "175-105")
+    name = _fixture(tmp_path, monkeypatch, "pa_test_unlisted29", body)
+    lot = {**DET, "zoning_district": "C-1", "lot_sqft": 10000}
+    out = rules.resolve(name, "today", lot)
+    said = [c["condition"] for c in out["conditions"] if c["kind"] == "other"]
+    assert said and said[0].startswith("The code does not list ADUs in C-1. A use not provided for may be approved")
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert [c for c in held["conditions"] if c["condition"].startswith("The code does not list ADUs. ")]
+
+
+def test_middlesex_comparable_uses():
+    """Pass 29: Middlesex C-1 has the comparable-use special exception, never 'The code does not list ADUs.'"""
+    out = rules.resolve("pa_butler_middlesex", "today", {**DET, "zoning_district": "C-1", "lot_sqft": 10000})
+    assert out["path_to_ask"]["path"] == "special_exception"
+    said = " ".join(c["condition"] for c in out["conditions"])
+    assert "The code does not list ADUs in C-1. A use similar in nature" in said
+    assert "The code does not list ADUs. " not in said
+
+
+def test_accessory_yard_in_dispute(tmp_path, monkeypatch):
+    """Pass 29: figures_in_dispute holds the row's accessory yards and the total for both sides (Middlesex AG-A: the
+    10 ft accessory side yard or the dwelling's 25 ft, 175-95.1A)."""
+    body = _base("special_exception", "special_exception")
+    body["form"] = {"types_allowed": _leaf(["detached_new"], "1")}
+    body["districts"] = {
+        "AG-A": {
+            "setback_side_ft": _leaf(25, "175-15F(1)"),
+            "setback_sides_total_ft": _leaf(50, "175-15F(1)"),
+            "accessory_setback_side_ft": _leaf(10, "175-15F(2)"),
+            "figures_in_dispute": _leaf(
+                {"accessory_setback_side_ft": 25, "setback_sides_total_ft": 60},
+                "175-95.1A",
+                note="The unit is both a dwelling and an accessory structure",
+            ),
+        }
+    }
+    name = _fixture(tmp_path, monkeypatch, "pa_test_acc_dispute", body)
+    lot = {**DET, "zoning_district": "AG-A", "lot_sqft": 50000}
+    out = rules.resolve(name, "today", lot)
+    assert (
+        "Figures for AG-A are not settled (175-95.1A). The unit is both a dwelling and an accessory structure. Shown: "
+        "accessory side yard 10 ft, side yards for both sides together 50 ft. The other reading: accessory side yard "
+        "25 ft, side yards for both sides together 60 ft. Ask the zoning officer which governs"
+    ) in out["reasons"]
+    monkeypatch.setattr(rules, "PASS29_HOLD_TOWNS", {name})
+    held = rules.resolve(name, "today", lot)
+    assert not [r for r in held["reasons"] if r.startswith("Figures for AG-A")]
+
+
+def test_middlesex_accessory_side_yard_dispute():
+    """Pass 29: Middlesex R-2 says the 10 ft and the 15 ft readings of the unit's side yard (175-201F)."""
+    out = rules.resolve("pa_butler_middlesex", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 12000})
+    line = [r for r in out["reasons"] if r.startswith("Figures for R-2 are not settled")]
+    assert line and line[0].endswith(
+        "Shown: accessory side yard 10 ft. The other reading: accessory side yard 15 ft. Ask the zoning officer which "
+        "governs"
+    )

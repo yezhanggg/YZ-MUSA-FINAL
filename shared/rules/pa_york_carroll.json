@@ -43,8 +43,7 @@
       "Variances go to the Zoning Hearing Board on the MPC findings (450-605C). No bar on a use variance was found. Special exceptions meet the Article 3 criteria and 450-605B",
       "Conservation subdivision options (450-211) and TND developments (450-380) set their own lot sizes and yards on approved plans. Only part of 450-211 was read",
       "Agricultural setback: in AC, RA, RS-1 and RS-2 'no residential structures shall be placed within 100 feet of any land used for the commercial raising and keeping of animals'. In MU-1 no accessory residential structure or fence is placed within 10 ft of land used for agricultural purposes (450-201E, 450-202E, 450-203C, 450-204C, 450-206C)",
-      "Chapter 450 was amended in its entirety on 9-13-2021 by Ord. No. 2021-250. It is 'a continuation of, and not a repeal of existing regulations', and its provisions are 'in full force and effect as of the date such regulations were initially enacted' (450-706). So 'the effective date of this chapter' in the two-family conversion rule may be read as 9-13-2021 or as the date the rule was first enacted, 9-27-2006 or earlier (450-382, 450-706)",
-      "A TND lot follows the TND's own yards, height, lot size and coverage (450-380H to K), but the tool shows the district row's figures on such a lot: in MU-1 an accessory building height of 25 ft and a lot minimum of 8,000 sq ft, where the TND gives 35 ft and 5,000 sq ft for a single-family detached lot"
+      "Chapter 450 was amended in its entirety on 9-13-2021 by Ord. No. 2021-250. It is 'a continuation of, and not a repeal of existing regulations', and its provisions are 'in full force and effect as of the date such regulations were initially enacted' (450-706). So 'the effective date of this chapter' in the two-family conversion rule may be read as 9-13-2021 or as the date the rule was first enacted, 9-27-2006 or earlier (450-382, 450-706)"
     ],
     "notes": "Zoning office: Carroll Township (York County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 450 Articles 1, 2 (450-211 in part), 450-380, 450-382, Article 4 (signs in part), Articles 5 and 6, and Chapter 400. The rest of Article 3 and Article 7 were read later in the saved whole-chapter text (print view of Chapter 450). Not read: the zoning map and Chapter 435 (subdivision). Saved text in the batch 56 cache."
   },
@@ -542,14 +541,6 @@
     }
   },
   "envelope": {
-    "max_height_ft": {
-      "value": 25,
-      "section": "450-201C to 450-207D",
-      "url": "https://ecode360.com/print/CA3667?guid=37602398",
-      "verified_on": "2026-11-18",
-      "confidence": "secondary",
-      "note": "The code has no ADU height. Accessory buildings and structures may be 25 ft tall in AC, RA, RS-1, RS-2 and MU-1 and 35 ft in RS-3 and MU-2"
-    },
     "district_yards_bind_accessory": {
       "value": true,
       "section": "450-403I, 450-414",

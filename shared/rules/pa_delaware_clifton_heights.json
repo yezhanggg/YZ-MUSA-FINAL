@@ -42,9 +42,7 @@
       "Floodplain (Chapter 165, FIRM of November 18, 2009, applied through 340-8): a permit is needed for any construction or development anywhere in the borough, and development includes renovation, repair, expansion or alteration of buildings. New construction and substantial improvements of residential structures are elevated to the base flood elevation plus 1 1/2 ft, basements are prohibited, and an accessory structure that is not elevated is not used for habitation and is at most 200 sq ft. In the floodway nothing may raise flood levels and new construction needs a DEP permit. Manufactured homes are prohibited unless a variance is granted, and never within 50 ft of the top of bank. Floodplain variances are considered by the Borough under the procedure of 165-17, which sends appeals to the Zoning Hearing Board. The code does not name the body outright. No variance may raise the base flood elevation (165-8, 165-17, 165-19, 165-24, 165-28, 165-33, 165-34, 165-36 'Development')",
       "Riparian buffer: 'The riparian buffer shall be maintained within 100 feet of the top of stream bank and shall remain as open, undeveloped area' (340-87G). The buffer reaches 100 ft from the top of bank 'or to the limit of the 100-year floodplain, whichever distance is greater' (340-12 'Riparian buffers'). Stormwater easements, rights-of-way, surface water, wetlands and steep slopes (over 15%) are deducted in full, and riparian buffers and wetland buffers by half, from the area used for total improvement coverage (340-12 'Total improvement area'). No steep slope or wetland chapter was found in Chapter 340",
       "Special exceptions are granted only where the district article provides for them, with an environmental impact assessment and a traffic impact study (340-114, 340-90, 340-90.1). A use variance also needs an environmental impact assessment (340-90A). Variances go to the Zoning Hearing Board on the MPC findings, and lapse without a building permit within six months (340-105C, 340-109A, 340-111). No bar on a use variance was found",
-      "Nonconforming uses and structures may be enlarged by special exception once, by at most 50%, within the district's area, height and setback rules (340-98). In I, the conversion of existing industrial buildings to residential units is a special exception (340-53C). A nonconforming structure or use may also get a temporary permit by special exception for up to two years (340-92F). That is not a path for a second unit",
-      "Side yards: the tool says 'at least 8 ft on one side, 20 ft for both sides together' for a detached house. The code means at least 8 ft on each side, with 20 ft for both together (340-17G, 340-22G, 340-27G)",
-      "Attached houses: 340-22G (R-2, 12 ft) and 340-27G (R-3, 10 ft) give one side yard only to the end unit of a row. An interior row house has no side yard. The tool shows the end unit's figure for every attached house"
+      "Nonconforming uses and structures may be enlarged by special exception once, by at most 50%, within the district's area, height and setback rules (340-98). In I, the conversion of existing industrial buildings to residential units is a special exception (340-53C). A nonconforming structure or use may also get a temporary permit by special exception for up to two years (340-92F). That is not a path for a second unit"
     ],
     "notes": "Zoning office: Clifton Heights Borough Code Enforcement. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 340 Articles I to X, XII to XIV and XVII to XIX, and Chapter 165 in full. Articles XI (signs), XV (administration) and XVI (amendments) were read later in the same saved whole-chapter text. Not read: the PDF attachments and Chapter 300 (subdivision). Saved text in the batch 56 cache."
   },
@@ -268,36 +266,6 @@
             "url": "https://ecode360.com/print/CL3044?guid=16213818",
             "note": "Only the land within 100 ft of the top of bank, or out to the limit of the 100-year floodplain, is buffer. A lot in the identified floodplain may still have its building spot outside the floodplain and more than 100 ft from the top of bank, and there the buffer does not reach it"
           }
-        },
-        {
-          "kind": "other",
-          "condition": "In R-2 the one side yard of at least 12 ft is for the end unit of an attached row. An interior unit of a row has no side yard, and the figure shown is the end unit's.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-2"
-          ],
-          "building_types": [
-            "attached"
-          ],
-          "section": "340-22G",
-          "url": "https://ecode360.com/print/CL3044?guid=16213818",
-          "confidence": "verified"
-        },
-        {
-          "kind": "other",
-          "condition": "In R-3 the one side yard of at least 10 ft is for the end unit of an attached row. An interior unit of a row has no side yard, and the figure shown is the end unit's.",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": [
-            "R-3"
-          ],
-          "building_types": [
-            "attached"
-          ],
-          "section": "340-27G",
-          "url": "https://ecode360.com/print/CL3044?guid=16213818",
-          "confidence": "verified"
         }
       ],
       "section": "165-19, 165-24, 340-12, 340-22G, 340-27G, 340-87G",
@@ -433,6 +401,14 @@
         "verified_on": "2026-11-18",
         "confidence": "verified"
       },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "340-17G",
+        "url": "https://ecode360.com/print/CL3044?guid=16213818",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards with an aggregate of 20 ft, 'neither of which shall be less than eight feet'"
+      },
       "setback_rear_ft": {
         "value": 25,
         "section": "340-17H",
@@ -535,6 +511,14 @@
         "verified_on": "2026-11-18",
         "confidence": "verified"
       },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "340-22G",
+        "url": "https://ecode360.com/print/CL3044?guid=16213818",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards with an aggregate of 20 ft, 'neither of which shall be less than eight feet'"
+      },
       "setback_rear_ft": {
         "value": 25,
         "section": "340-22H",
@@ -606,7 +590,10 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "One side yard of at least 12 ft for a semidetached dwelling, and for the end unit of an attached row only. An interior unit of a row has no side yard"
+        "note": "One side yard of at least 12 ft for a semidetached dwelling, and for the end unit of an attached row only. An interior unit of a row has no side yard",
+        "end_unit_only": [
+          "attached"
+        ]
       },
       "lot_area_per_unit_sqft": {
         "value": 3000,
@@ -647,6 +634,14 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "340-27G",
+        "url": "https://ecode360.com/print/CL3044?guid=16213818",
+        "verified_on": "2026-11-18",
+        "confidence": "verified",
+        "note": "Two side yards with an aggregate of 20 ft, 'neither of which shall be less than eight feet'"
       },
       "setback_rear_ft": {
         "value": 25,
@@ -719,7 +714,10 @@
         "url": "https://ecode360.com/print/CL3044?guid=16213818",
         "verified_on": "2026-11-18",
         "confidence": "verified",
-        "note": "One side yard of at least 10 ft for a semidetached dwelling, and for the end unit of a row or cluster of attached dwellings only. An interior unit has no side yard"
+        "note": "One side yard of at least 10 ft for a semidetached dwelling, and for the end unit of a row or cluster of attached dwellings only. An interior unit has no side yard",
+        "end_unit_only": [
+          "attached"
+        ]
       },
       "lot_area_per_unit_sqft": {
         "value": 3000,

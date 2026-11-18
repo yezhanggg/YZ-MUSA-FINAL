@@ -1418,3 +1418,40 @@ describe('get_rule_text pass 28 fields', () => {
     expect(dependsFact('lot_created_before')).toBe('the year the lot was created');
   });
 });
+
+describe('get_rule_text pass 29 fields', () => {
+  const src29 = (row: Record<string, unknown>): TownSource => ({
+    index: async () => TOWNS,
+    town: async () =>
+      ({
+        ...(FAKE_FILES.pa_testing_testville as object),
+        approval: { path: leaf('by_right', '1') },
+        districts: { 'R-2': { setback_side_ft: leaf(8, '340-22G'), setback_sides_total_ft: leaf(20, '340-22G'), ...row } },
+      }) as never,
+  });
+
+  it('says at least 8 ft on each side when the code means each side (Clifton Heights 340-22G)', async () => {
+    const r2 = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-2' }, src29({ setback_side_is_each_side: leaf(true, '340-22G') }))) as Any6;
+    expect(r2.forms.inside_or_attached.attached_yards.side.note).toBe('At least 8 ft on each side, 20 ft for both sides together');
+    const plain = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-2' }, src29({}))) as Any6;
+    expect(plain.forms.inside_or_attached.attached_yards.side.note).toBe('At least 8 ft on one side, 20 ft for both sides together');
+  });
+
+  it('gives an attached side yard to the end unit of a row only (Clifton Heights 340-22G)', async () => {
+    const byType = { ...leaf({ semi_detached: 12, attached: 12 }, '340-22G'), end_unit_only: ['attached'] };
+    const r2 = (await getRuleText({ place: 'Testville', topic: 'size', district: 'R-2' }, src29({ setback_side_ft_by_type: byType }))) as Any6;
+    expect(r2.forms.inside_or_attached.attached_yards.side.note).toBe(
+      'At least 8 ft on one side, 20 ft for both sides together. For a semi detached house: its own side yard of 12 ft. The 20 ft total for both sides is not for it. For an attached house that is the end unit of a row: its own side yard of 12 ft. An interior unit of a row has no side yard. The 20 ft total for both sides is not for it (340-22G)',
+    );
+  });
+
+  it('names the accessory height tiers by lot size (Middlesex 175-15I(2))', async () => {
+    const ag = await town6('pa_butler_middlesex', 'height', 'AG-A');
+    expect(JSON.stringify(ag)).toContain('The accessory building height cap, which also binds a unit in an accessory building. By lot size: 15 ft on a lot under 87,120 sq ft (2 acres), 25 ft on a lot of at least 87,120 sq ft (2 acres) (175-15I(2)). The lot size decides, so the base figure is shown');
+  });
+
+  it('says the other reading of an accessory side yard (Middlesex 175-95.1A, 175-15F)', async () => {
+    const ag = await town6('pa_butler_middlesex', 'size', 'AG-A');
+    expect(JSON.stringify(ag)).toContain('Not settled. The other reading gives 25 ft (175-95.1A, 175-15F). Ask the zoning officer which governs');
+  });
+});

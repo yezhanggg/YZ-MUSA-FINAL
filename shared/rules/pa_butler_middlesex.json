@@ -48,7 +48,6 @@
       "Temporary dwellings are permitted only during construction with the Board of Supervisors' permission (175-147). A planned residential development is a conditional use in R-1, R-2 and R-AG under Article X, which was not read",
       "In AG-A, AG-B and R-AG farm buildings may share a lot with a single-family dwelling, but 'Two single-family dwellings shall not occupy the same lot unless all applicable requirements of the Subdivision and Land Development Ordinance are met' (175-12C). In R-1 'a single-family dwelling or two-family dwelling shall be the only principal structure on the lot. All dwelling units shall be located within the same principal structure' (175-12D)",
       "R-2 also permits garden apartments, quad-plexes and townhouses by right, on 43,560 sq ft for 'All other uses' (175-200A(1), 175-201A(3)). A family includes 'No more than four unrelated individuals occupying a premises and living as single housekeeping unit' (175-8)",
-      "Accessory height: on a lot of two acres or more in AG-A, AG-B and R-AG accessory structures may be 25 ft (175-15I(2)(b), 175-22I(2)(b), 175-245I(2)(b)). The tool still shows the 15 ft cap on such a lot, with the 25 ft as a condition",
       "Side yards for the unit: 175-95.1A sends the unit to 'all applicable setback ... requirements of the zoning district'. AG-A, AG-B and R-AG give 'Dwellings: 25 feet each side' and 'Accessory structures: 10 feet each side', and the unit is both. R-2 gives 10 ft for a single-family dwelling and 'All other uses: 15 feet each side'. R-1 sets side yards for principal structures only. The code does not settle which side yard binds the unit"
     ],
     "notes": "Zoning office: Middlesex Township (Butler County) Zoning Officer. Read in a browser on eCode360 (print view) on 2026-11-18: Chapter 175 Articles I and II, IV to VI, XI (to 175-107), XII (to 175-155.2), XIII, XV, XVI, XIX and XXIII, and Chapter 84. Articles VII to IX, XIV, XVII, XVIII and XX to XXIV were read later in the saved whole-chapter text (print view of Chapter 175), and Article X only searched for ADU words. Not read: Chapter 150 (subdivision). Saved text in the batch 56 cache."
@@ -108,6 +107,37 @@
       "verified_on": "2026-11-18",
       "confidence": "verified",
       "note": "Zoning Hearing Board on the MPC findings. No bar on a use variance was found"
+    },
+    "unlisted_use_path": {
+      "value": "special_exception",
+      "section": "175-12A, 175-105",
+      "url": "https://ecode360.com/print/MI2094?guid=44794976",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "'Any use not expressly listed for a zoning district is not permitted in that district', unless the Zoning Hearing Board authorizes it as a comparable use where the district lists comparable uses by special exception"
+    },
+    "unlisted_use_districts": {
+      "value": [
+        "C-1",
+        "C-2",
+        "I-1",
+        "TC",
+        "C-3"
+      ],
+      "section": "175-105, 175-210",
+      "url": "https://ecode360.com/print/MI2094?guid=44794976",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "C-1, C-2, I-1, TC and C-3 list 'Comparable uses not specifically listed' by special exception. AG-A, AG-B, R-1, R-2 and R-AG do not"
+    },
+    "unlisted_use_scope": {
+      "value": "similar_only",
+      "quote": "Comparable uses not specifically listed",
+      "section": "175-12A, 175-105",
+      "url": "https://ecode360.com/print/MI2094?guid=44794976",
+      "verified_on": "2026-11-18",
+      "confidence": "verified",
+      "note": "The Zoning Hearing Board may authorize a use of the same general character as the district's listed uses. Whether an ADU is such a use is not settled"
     },
     "alternatives": {
       "value": [
@@ -329,42 +359,6 @@
         },
         {
           "kind": "other",
-          "condition": "The side yard shown for a unit in an accessory building is the 10 ft for accessory structures. The unit is also a dwelling, and the district gives 'Dwellings: 25 feet each side'. The code does not settle which holds, and 25 ft is the safe reading.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "AG-A",
-            "AG-B",
-            "R-AG"
-          ],
-          "building_types": null,
-          "section": "175-95.1A, 175-15F, 175-22F, 175-245F",
-          "url": "https://ecode360.com/print/MI2094?guid=11233654",
-          "confidence": "secondary"
-        },
-        {
-          "kind": "other",
-          "condition": "The side yard shown for a unit in an accessory building is the 10 ft for a single-family dwelling. Read under 'All other uses: 15 feet each side' it is 15 ft. The code does not settle which holds, and 15 ft is the safe reading.",
-          "effect": "condition",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-2"
-          ],
-          "building_types": null,
-          "section": "175-95.1A, 175-201F",
-          "url": "https://ecode360.com/print/MI2094?guid=11233654",
-          "confidence": "secondary"
-        },
-        {
-          "kind": "other",
           "condition": "In R-2 accessory structures are at most 15 ft or one story, and the unit is an accessory structure. A unit over a garage is a second story, so it cannot be built there.",
           "effect": "bars",
           "applies_to": [
@@ -437,27 +431,27 @@
     }
   },
   "envelope": {
-    "max_height_ft": {
+    "accessory_structure_max_height_ft": {
       "value": 15,
       "section": "175-15I(2), 175-22I(2), 175-29I(2), 175-201G(2), 175-245I(2)",
       "url": "https://ecode360.com/print/MI2094?guid=11234159",
       "verified_on": "2026-11-18",
       "confidence": "verified",
-      "note": "The unit is an accessory structure that meets the district's area and bulk rules (175-95.1A). Accessory structures are 15 ft tall, 25 ft on a lot of two acres or more in AG-A, AG-B and R-AG, and one story in R-2"
+      "note": "Accessory structures are 15 ft tall in every district the ADU rule reaches, 25 ft on a lot of two acres or more in AG-A, AG-B and R-AG (each district row), and one story in R-2"
     },
-    "max_height_where": {
+    "accessory_height_cap_districts": {
       "value": [
-        {
-          "max_height_ft": 25,
-          "where": "on a lot of two acres or more in AG-A, AG-B or R-AG",
-          "section": "175-15I(2)(b), 175-22I(2)(b), 175-245I(2)(b)",
-          "note": "'Two or more acres: 25 feet'"
-        }
+        "AG-A",
+        "AG-B",
+        "R-1",
+        "R-2",
+        "R-AG"
       ],
-      "section": "175-15I, 175-22I, 175-245I",
-      "url": "https://ecode360.com/print/MI2094?guid=11233993",
+      "section": "175-15I(2), 175-22I(2), 175-29I(2), 175-201G(2), 175-245I(2)",
+      "url": "https://ecode360.com/print/MI2094?guid=11234159",
       "verified_on": "2026-11-18",
-      "confidence": "verified"
+      "confidence": "verified",
+      "note": "The 15 ft figure was read in these districts only"
     },
     "accessory_cap_binds_adu": {
       "value": true,
@@ -609,6 +603,24 @@
         "confidence": "verified",
         "note": "Accessory structures on a lot of less than two acres. 25 ft on two acres or more"
       },
+      "accessory_structure_max_height_by_lot_size": {
+        "value": [
+          {
+            "max_height_ft": 15,
+            "lot_sqft_below": 87120,
+            "note": "Accessory structures on a lot of less than two acres"
+          },
+          {
+            "max_height_ft": 25,
+            "lot_sqft_at_least": 87120,
+            "note": "'Two or more acres: 25 feet'"
+          }
+        ],
+        "section": "175-15I(2)",
+        "url": "https://ecode360.com/print/MI2094?guid=11233993",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
       "utility_rows": {
         "value": [
           {
@@ -630,6 +642,16 @@
         "url": "https://ecode360.com/print/MI2094?guid=11233993",
         "verified_on": "2026-11-18",
         "confidence": "verified"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "accessory_setback_side_ft": 25
+        },
+        "section": "175-95.1A, 175-15F",
+        "url": "https://ecode360.com/print/MI2094?guid=11233993",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "175-95.1A sends the unit to the district's setbacks. The district gives 'Accessory structures: 10 feet each side' and 'Dwellings: 25 feet each side', and the unit is both. The code does not settle which holds, and 25 ft is the safe reading"
       }
     },
     "AG-B": {
@@ -711,6 +733,34 @@
         "verified_on": "2026-11-18",
         "confidence": "verified",
         "note": "Accessory structures on a lot of less than two acres. 25 ft on two acres or more"
+      },
+      "accessory_structure_max_height_by_lot_size": {
+        "value": [
+          {
+            "max_height_ft": 15,
+            "lot_sqft_below": 87120,
+            "note": "Accessory structures on a lot of less than two acres"
+          },
+          {
+            "max_height_ft": 25,
+            "lot_sqft_at_least": 87120,
+            "note": "'Two or more acres: 25 feet'"
+          }
+        ],
+        "section": "175-22I(2)",
+        "url": "https://ecode360.com/print/MI2094?guid=11234078",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "accessory_setback_side_ft": 25
+        },
+        "section": "175-95.1A, 175-22F",
+        "url": "https://ecode360.com/print/MI2094?guid=11234078",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "175-95.1A sends the unit to the district's setbacks. The district gives 'Accessory structures: 10 feet each side' and 'Dwellings: 25 feet each side', and the unit is both. The code does not settle which holds, and 25 ft is the safe reading"
       }
     },
     "R-AG": {
@@ -793,6 +843,24 @@
         "confidence": "verified",
         "note": "Accessory structures on a lot of less than two acres. 25 ft on two acres or more"
       },
+      "accessory_structure_max_height_by_lot_size": {
+        "value": [
+          {
+            "max_height_ft": 15,
+            "lot_sqft_below": 87120,
+            "note": "Accessory structures on a lot of less than two acres"
+          },
+          {
+            "max_height_ft": 25,
+            "lot_sqft_at_least": 87120,
+            "note": "'Two or more acres: 25 feet'"
+          }
+        ],
+        "section": "175-245I(2)",
+        "url": "https://ecode360.com/print/MI2094?guid=27331182",
+        "verified_on": "2026-11-18",
+        "confidence": "verified"
+      },
       "utility_rows": {
         "value": [
           {
@@ -814,6 +882,16 @@
         "url": "https://ecode360.com/print/MI2094?guid=27331182",
         "verified_on": "2026-11-18",
         "confidence": "verified"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "accessory_setback_side_ft": 25
+        },
+        "section": "175-95.1A, 175-245F",
+        "url": "https://ecode360.com/print/MI2094?guid=27331182",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "175-95.1A sends the unit to the district's setbacks. The district gives 'Accessory structures: 10 feet each side' and 'Dwellings: 25 feet each side', and the unit is both. The code does not settle which holds, and 25 ft is the safe reading"
       }
     },
     "R-1": {
@@ -983,6 +1061,16 @@
         "url": "https://ecode360.com/print/MI2094?guid=11235676",
         "verified_on": "2026-11-18",
         "confidence": "verified"
+      },
+      "figures_in_dispute": {
+        "value": {
+          "accessory_setback_side_ft": 15
+        },
+        "section": "175-95.1A, 175-201F",
+        "url": "https://ecode360.com/print/MI2094?guid=11235676",
+        "verified_on": "2026-11-18",
+        "confidence": "secondary",
+        "note": "175-95.1A sends the unit to the district's setbacks. 175-201F gives 'Single-family dwellings: 10 feet each side' and 'All other uses: 15 feet each side', and no separate side yard for accessory structures. The code does not settle which holds for the unit, and 15 ft is the safe reading"
       }
     }
   }
