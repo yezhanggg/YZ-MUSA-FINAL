@@ -196,7 +196,8 @@ def test_resolve_town_file(name):
     if rules.validate(raw(name)):
         pytest.skip(f"{name} is not valid yet")
     out = rules.resolve(name, "today", {"building_type": "detached", "lot_sqft": 6000, "house_sqft": 1500})
-    assert list(out) == rules.OUTPUT_KEYS + rules.TOWN_KEYS
+    # pass 25: max_footprint_sqft comes last, only where the file holds a footprint cap (Narberth)
+    assert [k for k in out if k != "max_footprint_sqft"] == rules.OUTPUT_KEYS + rules.TOWN_KEYS
     for key, cite in out["citations"].items():
         assert cite["section"], f"{name} {key}"
 
@@ -3278,7 +3279,9 @@ def test_services_row_said_once():
     rows = [c["condition"] for c in ud["conditions"] if c["kind"] == "utilities"]
     assert len(rows) == 2 and rows[0] != rows[1]
     with pytest.MonkeyPatch.context() as mp:  # the hold mechanism stays for a later pass
+        # pass 22 (same rows said once) left Upper Dublin with its Nov 18 rebuild, so both holds bring the old rows back
         mp.setattr(rules, "PASS15_HOLD_TOWNS", {"pa_montgomery_upper_dublin"})
+        mp.setattr(rules, "PASS22_HOLD_TOWNS", {"pa_montgomery_upper_dublin"})
         held = rules.resolve("pa_montgomery_upper_dublin", "today", ud_lot)
     rows = [c["condition"] for c in held["conditions"] if c["kind"] == "utilities"]
     assert len(rows) == 3 and rows[1] == rows[2]
@@ -3721,12 +3724,14 @@ def test_second_principal_building_bars_the_unlisted_path():
 
 
 def test_gate_bar_line_drops_its_own_full_stop_held_for_lot_towns(monkeypatch):
-    """A gate's bar line never reads ". (" before its sections. Held for the ten lot towns (PASS18_HOLD_TOWNS)."""
+    """A gate's bar line never reads ". (" before its sections. Held for the lot towns (PASS18_HOLD_TOWNS) until their
+    next rebuild. The Montgomery towns left the set at their Nov 18 rebuild."""
     lot = {**DET, "zoning_district": "R-2", "lot_sqft": 12000}
     mj = rules.resolve("pa_lancaster_mount_joy", "today", lot)
     assert any(r.endswith("existing dwelling (135-225C, D). Not allowed here: detached new") for r in mj["reasons"])
     assert not any(". (" in r for r in mj["reasons"])
-    assert len(rules.PASS18_HOLD_TOWNS) == 10 and "pa_lehigh_allentown" in rules.PASS18_HOLD_TOWNS
+    assert len(rules.PASS18_HOLD_TOWNS) == 7 and "pa_lehigh_allentown" in rules.PASS18_HOLD_TOWNS
+    assert "pa_montgomery_narberth" not in rules.PASS18_HOLD_TOWNS
     al = {"zoning_district": "N3", "building_type": "detached", "lot_sqft": 6000, "has_alley": False}
     line = "A corner lot with a side street also qualifies"
     held = rules.resolve("pa_lehigh_allentown", "today", al)
@@ -4276,7 +4281,7 @@ def test_habitation_bar_reaches_accessory_building_conversion():
 
 def test_share_not_a_whole_percent_keeps_one_decimal(monkeypatch):
     """Pass 23: a share that is not a whole percent prints with one decimal, so North Coventry's 6.8% cap on a 10 acre
-    RC lot no longer reads as the looser 7%. A whole percent stays whole. The ten lot towns keep whole percents until
+    RC lot no longer reads as the looser 7%. A whole percent stays whole. The lot towns keep whole percents until
     their next lot rebuild (PASS23_HOLD_TOWNS): Malvern R1 building coverage is 7.5%."""
     lot = {**DET, "zoning_district": "RC", "lot_sqft": 450000}
     out = rules.resolve("pa_chester_north_coventry", "today", lot)
@@ -4292,7 +4297,7 @@ def test_share_not_a_whole_percent_keeps_one_decimal(monkeypatch):
         out = rules.resolve("pa_chester_malvern", "state_reform", {**DET, "zoning_district": "R1"})
         return next(r for r in out["reasons"] if "Building coverage" in r)
 
-    assert len(rules.PASS23_HOLD_TOWNS) == 10 and "pa_chester_malvern" in rules.PASS23_HOLD_TOWNS
+    assert len(rules.PASS23_HOLD_TOWNS) == 7 and "pa_chester_malvern" in rules.PASS23_HOLD_TOWNS
     assert "Building coverage 8% (220-402)" in malvern()
     monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", set())
     assert "Building coverage 7.5% (220-402)" in malvern()
@@ -4522,10 +4527,13 @@ def test_requires_item_only_without_a_service():
 def test_footprint_cap_apart_from_floor_area(monkeypatch):
     """Pass 25: Narberth 500-802B(4) caps the unit's footprint at 600 sq ft, apart from the 800 sq ft floor area cap
     (size.max_footprint_sqft). A 14 x 43 ft unit (602 sq ft) read "fits". The resolver now gives the cap, cited, with
-    its line, and the lot build keeps it for the fit and the app. Today only, and held for the ten lot towns."""
+    its line, and the lot build keeps it for the fit and the app. Today only. Held for the lot towns until their next
+    rebuild: Narberth's records were rebuilt with it on Nov 18, so the hold is shown with the town put back in the set."""
     from pipeline import build_lots
 
     lot = {**DET, "zoning_district": "3B", "lot_sqft": 6000, "house_sqft": 1800}
+    assert "pa_montgomery_narberth" not in rules.PASS25_HOLD_TOWNS
+    monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", {"pa_montgomery_narberth"})
     held = rules.resolve("pa_montgomery_narberth", "today", lot)
     assert "max_footprint_sqft" not in held
     monkeypatch.setattr(rules, "PASS25_HOLD_TOWNS", set())

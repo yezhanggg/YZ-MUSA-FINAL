@@ -948,6 +948,8 @@ PASS16_HOLD_TOWNS: set[str] = set()
 # qualified), and the tracts of the 13 lots with no district were rebuilt (variance to the qualified path). Keep the
 # set for a later pass.
 PASS17_HOLD_TOWNS: set[str] = set()
+# Lot data 10 (Nov 18): the three Montgomery County towns (Lower Merion, Narberth, Upper Dublin) were rebuilt with every
+# held change of passes 18 to 28 and left these sets. The seven other lot towns stay held until their own rebuild.
 # Pass 18 holds its change that can reach stored lot records, for the ten lot towns until their next lot rebuild: a
 # gate's bar line drops the condition's own closing full stop before its sections ("... no other use (330-23B). Not
 # allowed here: ..." in place of "... no other use. (330-23B). Not allowed here: ..."). The lot build keeps that
@@ -961,9 +963,6 @@ PASS18_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 19 holds nothing: no pass 19 change reaches a stored lot record of the ten lot towns. Its new fields
 # (size.max_share_is_less_than, parking.spaces_rate, parking.fraction_rounding, gates[].waives_figures, the gate test
@@ -984,9 +983,6 @@ PASS20_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 21 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
 # no stop after a quote that ends with one ("... max.'. semi_detached" reads "... max.' semi_detached"). Allentown's
@@ -1000,9 +996,6 @@ PASS21_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 22 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
 # services rows with the same words and figures, said once with one closing clause (Upper Dublin has services rows).
@@ -1016,9 +1009,6 @@ PASS22_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 23 holds its changes that could reach stored lot records, for the ten lot towns until their next lot rebuild: a
 # share that is not a whole percent printed with one decimal (Malvern R1 7.5%, Phoenixville 66.7%) in place of a whole
@@ -1033,9 +1023,6 @@ PASS23_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 24 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild: a
 # lot in a district the file has no row for gets no general default side and rear yard (default.json) as the unit's
@@ -1049,9 +1036,6 @@ PASS24_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 25 holds its changes that could reach stored lot records, for the ten lot towns until their next lot rebuild:
 # the footprint cap apart from the floor area cap (size.max_footprint_sqft, Narberth 500-802B(4)), kept in the record
@@ -1065,9 +1049,6 @@ PASS25_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 26 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
 # adu_status follows a district path that is another hearing than the town status (Grove City R-2: conditional use,
@@ -1082,9 +1063,6 @@ PASS26_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 27 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild:
 # envelope.accessory_rules_where items are said under the bill in a town with no ADU rule (Glenolden 162-12C(8)). No
@@ -1098,9 +1076,6 @@ PASS27_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 # Pass 28 holds its changes that could reach stored lot records, for the ten lot towns until their next lot rebuild.
 # Each needs a field no lot town file uses: adu.defined_not_listed, an adu_listing alternative's own max_sqft,
@@ -1114,9 +1089,6 @@ PASS28_HOLD_TOWNS: set[str] = {
     "pa_chester_west_vincent",
     "pa_chester_malvern",
     "pa_chester_east_brandywine",
-    "pa_montgomery_lower_merion",
-    "pa_montgomery_narberth",
-    "pa_montgomery_upper_dublin",
 }
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
