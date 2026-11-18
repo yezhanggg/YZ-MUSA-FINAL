@@ -5127,7 +5127,7 @@
       "pop_rank": 389,
       "file": "pa_delaware_glenolden",
       "batch": 53,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10762245",
@@ -5137,7 +5137,7 @@
       "why": [
         "added as batch 53 by population. Code Chapter 162 has no ADU text (R-1 one single-family detached dwelling, R-3 apartment buildings of three or more units)"
       ],
-      "status_note": "Not addressed. Open points: the use variance as the only path on an R-1 or R-2 lot (each district allows its uses 'and no other', 162-12B, 162-13B), whether the floodplain bar on new buildings (162-39A) leaves room for an attached addition by special exception (162-39B(7), 162-40H), and the Chapter 162 Articles VIII, XI to XIII and Chapter 16A, which were not read"
+      "status_note": "Not addressed. Each district allows its uses 'and no other' (162-12B, 162-13B), so a second unit on a house lot is a use variance. For a later check: the zoning map, the full text of 93-5 (only an excerpt was read), and which enactment date makes a floodplain structure an existing one under 162-39B(7) and 162-40H"
     },
     {
       "geoid": "4208718944",
@@ -5151,7 +5151,7 @@
       "pop_rank": 390,
       "file": "pa_mifflin_derry",
       "batch": 53,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9226785",
@@ -5161,7 +5161,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 215-69 ECHO housing by conditional use, family only (A, R, LDR, MDR, HDR))"
       ],
-      "status_note": "Family only (ECHO housing by conditional use in A, R, LDR, MDR, HDR). Open points: whether the 15 ft accessory height binds the elder cottage, whether a farm lot needs the 10 acre figure twice (215-69C), the two-family conversion parking (four spaces in 215-108D against 3 per unit in 215-38C(2)(h)), whether a duplex by right in R, MDR and HDR can be made from an existing house, and 215-25 (PRD), 215-133 and Article VII, which were not read"
+      "status_note": "Points for a later check: whether the elder cottage may stand in the Floodplain Zone as an accessory structure under 215-24G(5) (shown as in dispute), whether the MDR and HDR maximum density is a test on one lot, whether farmworker housing reaches farms in LI, Q and F, whether a duplex by right can be made from an existing house, and the zoning map and Natural Features Map, which were not checked"
     },
     {
       "geoid": "4204372200",
@@ -5185,7 +5185,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C))"
       ],
-      "status_note": "Family only (accessory apartment by conditional use inside a house in R-A, ESC, R-S, R-U, R-C). Open points: the online code is current only through 10-10-2023 and the Township posts a draft data center ordinance, whether the one dwelling unit per acre density in R-A, R-S and R-C counts the apartment, the minimum apartment size (300 sq ft in 27-1502.15G against 150 sq ft for one person in 27-1509), whether the guesthouse path reaches R-MH, and Article XII (OP) and Article XVI, which were not read"
+      "status_note": "Open points: the online code stops at 10-10-2023, and a data center overlay ordinance with its own overlay map was advertised with a vote set for March 24, 2026. Whether it was adopted, its text and which residential land it covers were not confirmed. Also open: whether the base district's conditional uses still apply inside the FP District (27-301, 27-302, 27-1403), the parking count for the apartment (3 under 27-1502.15H or 4 under 27-1802), whether density counts the apartment in R-A, R-S and R-C, whether an apartment may be added on an R-C cluster lot (27-1010.1A), the minimum apartment size (300 sq ft, or 150 sq ft for one person under 27-1509) and whether the guesthouse path reaches R-MH"
     }
   ]
 }
