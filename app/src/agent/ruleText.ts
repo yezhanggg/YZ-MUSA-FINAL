@@ -227,6 +227,8 @@ const leafAt = (file: Obj, part: string, key: string): Obj | null => {
 const cite = (leaf: Obj | null): Obj => (leaf ? { section: leaf.section ?? null, url: leaf.url ?? null, checked_on: leaf.verified_on ?? null, confidence: leaf.confidence ?? null } : {});
 const cond = (kind: string, condition: string, leaf: Obj | null, extra: Obj = {}): Obj => ({ kind, condition: ownerText(condition), ...cite(leaf), ...extra });
 const NOT_OK = new Set(['variance', 'not_allowed']);
+// Pass 24 (pipeline/rules.py ROW_FACTS): a requires item that reaches only a lot without this service (only_without).
+const SERVICE_WORDS: Record<string, string> = { public_sewer: 'public sewer', public_water: 'public water' };
 /** ADU forms and approval paths, least to most demanding (pipeline/rules.py ALL_TYPES, PATH_ORDER, OK_PATHS). */
 export const ADU_FORMS = ['detached_new', 'garage_conversion', 'over_garage', 'internal', 'attached'] as const;
 // not_addressed (pass 7): a form the code does not name (form.types_not_addressed). Not a firm no.
@@ -570,7 +572,7 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
     if (want && Array.isArray(g.districts) && !g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     if (want && Array.isArray(g.not_districts) && g.not_districts.some((d) => typeof d === 'string' && dkey(d) === dkey(want))) continue;
     const scope: Obj = {};
-    for (const k of ['applies_to', 'districts', 'not_districts', 'overlays', 'building_types', 'when', 'effect', 'test', 'value', 'value_date', 'only_below_lot_sqft', 'supersedes_district_figures', 'supersedes_figures', 'outside_zoning_chapter', 'path']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
+    for (const k of ['applies_to', 'districts', 'not_districts', 'overlays', 'building_types', 'when', 'effect', 'test', 'value', 'value_date', 'only_below_lot_sqft', 'supersedes_district_figures', 'supersedes_figures', 'outside_zoning_chapter', 'path', 'no_variance']) if (g[k] !== undefined && g[k] !== null) scope[k] = g[k];
     // No lot facts here, so a gate with a lot test is always an "allowed only if".
     // Pass 10 (pipeline/rules.py _gate_scope): an overlay-only gate applies only on a lot in the overlay, never a bar unseen.
     const overlayOnly = Array.isArray(g.overlays) && g.overlays.length && !Array.isArray(g.districts);
@@ -623,6 +625,17 @@ function conditionsOf(file: Obj, district: string | null): Obj[] {
           ? `${whereOnly.charAt(0).toUpperCase()}${whereOnly.slice(1)}`
           : `For an accessory building, ${whereOnly}`;
       out.push({ kind: 'other', condition: ownerText(`${accText}${it.note ? `. ${it.note}` : ''}`), section: it.section ?? accWhere!.section ?? null, url: it.url ?? accWhere!.url ?? null, checked_on: accWhere!.verified_on ?? null, confidence: accWhere!.confidence ?? null, applies_to: ['detached_new', 'garage_conversion', 'over_garage'], ...(Array.isArray(it.districts) ? { districts: it.districts } : {}) });
+    }
+  // Pass 24 (pipeline/rules.py envelope.setbacks_by_form): yards one form keeps, said for that form only.
+  const byFormYards = leafAt(file, 'envelope', 'setbacks_by_form');
+  if (!noAduHere && byFormYards && isObj(byFormYards.value))
+    for (const [t, it] of Object.entries(byFormYards.value as Obj)) {
+      if (!isObj(it)) continue;
+      const figs = ([['setback_front_ft', 'front'], ['setback_side_ft', 'side'], ['setback_rear_ft', 'rear']] as const)
+        .filter(([k]) => typeof it[k] === 'number')
+        .map(([k, l]) => `${l} ${num(it[k])} ft`);
+      if (figs.length)
+        out.push({ kind: 'other', condition: ownerText(`Yards for ${t.replace(/_/g, ' ')}: ${figs.join(', ')}. Only for that form, not the other forms${it.note ? `. ${it.note}` : ''}`), section: byFormYards.section ?? null, url: byFormYards.url ?? null, checked_on: byFormYards.verified_on ?? null, confidence: byFormYards.confidence ?? null, applies_to: [t] });
     }
   // Pass 10: an accessory building cap as a share of a named part of the house, and garage height exceptions.
   const partLeaf10 = leafAt(file, 'envelope', 'accessory_share_of_house_part');
@@ -745,6 +758,7 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
   const tiersLeaf = (row && isObj(row.yard_tiers) ? (row.yard_tiers as Obj) : null) ?? leafAt(file, 'envelope', 'yard_tiers');
   const tiers = Array.isArray(tiersLeaf?.value) && tiersLeaf!.value.length ? tiersLeaf!.value : null;
   const tierNote = tiers ? { depends_on_lot_tier: true, section: tiersLeaf!.section ?? null, tiers } : null;
+  const bindsAcc = leafAt(file, 'envelope', 'district_yards_bind_accessory')?.value === true;
   // Pass 9: side yards given only as a total for both sides (districts.<code>.setback_sides_total_ft): no single figure.
   const sidesTotal = fromRow('setback_sides_total_ft');
   const sidesOnly = sidesTotal && typeof sidesTotal.value === 'number' && !fromRow('setback_side_ft') ? { ...sidesTotal, value: null, sides_total_ft: sidesTotal.value, note: `${num(sidesTotal.value)} ft for both sides together. The code gives no single side figure` } : null;
@@ -772,6 +786,9 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
     // Pass 20 (pipeline/rules.py _own_side_line): a house type with its own side yard. The total is not for it.
     if (k === 'setback_side_ft' && sidesBoth && (attached || !fromRow('accessory_setback_side_ft')) && (attached || !pick('envelope', k))) return attached ? byTypeYard(k, sidesBoth) : sidesBoth;
     if (tierNote && tiers!.some((x) => isObj(x) && k in x && (x.applies_to ?? 'accessory') === (attached ? 'principal' : 'accessory'))) return tierNote;
+    // Pass 24 (pipeline/rules.py _apply_yard_tiers): where the district yards bind the unit, a principal tier is the
+    // detached unit's yard too, unless the row has an accessory yard of its own.
+    if (tierNote && !attached && bindsAcc && !fromRow(`accessory_${k}`) && tiers!.some((x) => isObj(x) && k in x && x.applies_to === 'principal')) return tierNote;
     if (attached) return byTypeYard(k, bindAllYard(k, fromRow(k)) ?? pick('envelope', k));
     // Pass 13 (pipeline/rules.py _rear_yard_only_yards): the town's accessory side and rear yards hold only inside the
     // rear yard. Elsewhere the district yards, which are the figures shown (none without a district row).
@@ -1306,7 +1323,7 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
           // Pass 18 (pipeline/rules.py _alt_land_bars): an overlay bar reaches the path when it bars every form the path builds.
           ...landBars(a),
           Array.isArray(a.requires) && a.requires.length
-            ? `Applies only if: ${a.requires.filter(isObj).map((r) => `${r.condition}${r.section ? ` (${r.section})` : ''}`).join('. ')}`
+            ? `Applies only if: ${a.requires.filter(isObj).map((r) => `${r.condition}${r.section ? ` (${r.section})` : ''}${typeof r.only_without === 'string' && r.only_without in SERVICE_WORDS ? `. It reaches only a lot without ${SERVICE_WORDS[r.only_without]}` : ''}`).join('. ')}`
             : null,
         ].filter(Boolean);
         // Pass 9: another passage gives the listing a different path. Both are said; the code does not settle which.

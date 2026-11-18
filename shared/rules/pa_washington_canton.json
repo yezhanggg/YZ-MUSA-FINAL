@@ -103,7 +103,8 @@
             {
               "test": null,
               "condition": "On a lot with an on-lot sewage system, one dwelling unit per two net developable acres, so about four acres (174,240 sq ft) for two units and six for three",
-              "section": "27-305(2)"
+              "section": "27-305(2)",
+              "only_without": "public_sewer"
             }
           ],
           "covers_forms": [
@@ -134,7 +135,8 @@
             {
               "test": null,
               "condition": "On a lot with an on-lot sewage system, one dwelling unit per two net developable acres, so about four acres (174,240 sq ft) for two units and six for three",
-              "section": "27-305(2)"
+              "section": "27-305(2)",
+              "only_without": "public_sewer"
             }
           ],
           "covers_forms": [
@@ -295,6 +297,29 @@
           "url": "https://ecode360.com/print/CA2579?guid=32086374",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain the use of fill is prohibited and manufactured homes are prohibited, and for each 'No variance shall be granted'. A variance for new construction cannot allow fill or a manufactured home there.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "attached"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "8-503(1)A, 8-506",
+          "url": "https://ecode360.com/print/CA2579?guid=32086374",
+          "confidence": "verified",
+          "outside_zoning_chapter": "Chapter 8",
+          "no_variance": {
+            "section": "8-503(1)A, 8-506",
+            "url": "https://ecode360.com/print/CA2579?guid=32086374",
+            "quote": "No variance shall be granted."
+          }
         }
       ],
       "section": "27-501.2, 8-502, 8-702, 8-902",

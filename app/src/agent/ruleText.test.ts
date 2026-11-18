@@ -1297,3 +1297,31 @@ describe('get_rule_text pass 23 heights', () => {
     expect(out).not.toContain('the lower one is the safe reading');
   });
 });
+
+describe('get_rule_text pass 24', () => {
+  it('says a form-level yard for that form only (Wilson garage conversion 4 ft)', async () => {
+    const out = JSON.stringify(await town6('pa_northampton_wilson', 'eligibility', 'R-2'));
+    expect(out).toContain('Yards for garage conversion: side 4 ft, rear 4 ft. Only for that form, not the other forms');
+    expect(out).toContain('"applies_to":["garage_conversion"]');
+  });
+
+  it('carries a bar gate that allows no variance (West Caln floodplain)', async () => {
+    const out = (await town6('pa_chester_west_caln', 'eligibility', 'RR')) as Any6;
+    const g = (out.conditions as Any6[]).find((c) => String(c.section).startsWith('350-1002A(4)(b)'))!;
+    expect(g.effect).toBe('bars');
+    expect(g.no_variance.section).toBe('350-1002A(7)(b)[1][c]');
+  });
+
+  it('gives a detached unit the principal yard tiers where the district yards bind it (West Manheim Farming)', async () => {
+    const out = (await town6('pa_york_west_manheim', 'size', 'Farming')) as Any6;
+    const yards = out.forms.accessory_building.yards;
+    expect(yards.side.depends_on_lot_tier).toBe(true);
+    expect(yards.rear.depends_on_lot_tier).toBe(true);
+    expect(out.forms.inside_or_attached.attached_yards.side.depends_on_lot_tier).toBe(true);
+  });
+
+  it('says a requires item reaches only a lot without public sewer (Canton conversion)', async () => {
+    const out = JSON.stringify(await town6('pa_washington_canton', 'approval', 'A-1'));
+    expect(out).toContain('(27-305(2)). It reaches only a lot without public sewer');
+  });
+});

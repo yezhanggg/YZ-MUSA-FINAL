@@ -501,6 +501,9 @@
         "accessory_yards_districts": {
           "$ref": "#/$defs/leaf_list",
           "description": "Pass 18: districts where the accessory side and rear yards in this envelope (setback_side_ft, setback_rear_ft, setback_rear_alley_ft) apply, when the code limits them (Nanticoke 500-302C: unattached accessory structures in R zones). Elsewhere they are not used: a district row's accessory yards win, then its principal yards, and with neither no figure is given."
+        },
+        "setbacks_by_form": {
+          "$ref": "#/$defs/leaf_yards_by_form"
         }
       }
     },
@@ -1871,6 +1874,41 @@
                   "minLength": 1
                 },
                 "description": "Pass 18: with test in_planned_development, the kinds of planned or cluster development the test accepts, as the code names them (Worcester 150-110.2A(1)(c): 'Option 3', not Options 1 and 2). The lot fact planned_development_kind must match one. A lot in a planned development of unknown kind depends on it."
+              },
+              "no_variance": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "section"
+                ],
+                "additionalProperties": false,
+                "description": "Pass 24: the code allows no variance for what this bar prohibits (Wilson 170-86A(8)(b)[2], West Caln 350-1002A(7)(b)[1][c]). A lot that fails the bar has the forms it reaches as not allowed, never a variance to ask for, even a form already left to a use variance. section is the passage that denies the variance, quote its words, note what else it says. On a condition gate it is carried with the condition and decides nothing.",
+                "properties": {
+                  "section": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "quote": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "note": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -2161,6 +2199,14 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "only_without": {
+                      "enum": [
+                        "public_sewer",
+                        "public_water",
+                        null
+                      ],
+                      "description": "Pass 24: the item holds only on a lot without this public service (Canton 27-305(2): a density on on-lot sewage). A lot with the service skips it. A lot without it is tested as usual. With the service not given, the item is said with that open and reads 'applies only if'."
                     }
                   }
                 }
@@ -2406,7 +2452,7 @@
     },
     "leaf_yard_tiers": {
       "type": "object",
-      "description": "Yards that depend on lot size. Each tier: lot size range and the yards. The resolver picks the tier for the lot, or says the yards depend on the lot tier.",
+      "description": "Yards that depend on lot size. Each tier: lot size range and the yards. The resolver picks the tier for the lot, or says the yards depend on the lot tier. Pass 24: where envelope.district_yards_bind_accessory is true, a principal tier is the detached unit's yard too (and the headline yard), unless the district row has an accessory yard of its own.",
       "required": [
         "value",
         "section",
@@ -5290,6 +5336,155 @@
         "note": {
           "type": "string",
           "minLength": 1
+        }
+      }
+    },
+    "leaf_yards_by_form": {
+      "type": "object",
+      "description": "Pass 24: yards one ADU form keeps, apart from the headline yards (Wilson 170-83H(3)(d): a suite in an existing garage, 4 ft from the side and rear lines). The form's own yards replace the yards shown for that form only and are said as a condition for it. The headline yards never take them.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "detached_new": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "setback_front_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_side_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_rear_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "garage_conversion": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "setback_front_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_side_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_rear_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "over_garage": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "setback_front_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_side_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_rear_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "attached": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "setback_front_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_side_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "setback_rear_ft": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "note": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }

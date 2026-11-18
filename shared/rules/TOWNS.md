@@ -408,6 +408,16 @@ How the resolver reads a file now (pass 7):
 - `PASS22_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the services row fix. Upper Dublin has services rows.
 - Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
 
+## More fields (pass 24)
+
+- `envelope.setbacks_by_form` (object by ADU form, each `{setback_front_ft, setback_side_ft, setback_rear_ft, note}`): yards one form keeps, apart from the headline yards. They replace the yards shown for that form only and are said as a condition for it ("Yards for garage conversion: side 4 ft, rear 4 ft. Only for that form, not the other forms"). The headline yards and the other forms never take them. Use it in place of a district-wide envelope yard when the code ties the yard to one form. Wilson 170-83H(3)(d): a suite in an existing garage, 4 ft from the side and rear lines. Moved: Wilson (from `accessory_rules_where`).
+- `eligibility.gates[].no_variance` (`{section, url, quote, note}`): the code allows no variance for what this bar prohibits. A lot that fails the bar has the forms it reaches as not allowed, never a variance to ask for, even a form the code already bars (its "a use variance is still a path" line says the variance is not a path on that lot). With every form shut, the answer has no variance path. On a condition gate it is carried with the condition and decides nothing. Wilson 170-86A(8)(b)[2] (floodplain, with a new gate for a detached unit) and 110-29 (habitation in an accessory structure), West Caln 350-1002A(7)(b)[1][c], Canton 8-503(1)A and 8-506 (fill and manufactured homes, a condition gate, since a variance for new construction is still granted under 8-801).
+- `approval.alternatives[].requires[].only_without` (`public_sewer` or `public_water`): the item holds only on a lot without that service. A lot with the service skips it. A lot without it is tested as usual. With the service not given the item is said with "It reaches only a lot without public sewer, and whether this lot has it was not given". Canton 27-305(2) (the on-lot sewage density on the conversions).
+- Principal `yard_tiers` with `envelope.district_yards_bind_accessory` true: the lot's tier is the detached unit's yard and the headline yard too, unless the district row has an accessory yard of its own. West Manheim Farming over two acres: side 30 ft, rear 40 ft (it printed 10 and 25). Nothing to change in the file.
+- A lot in a district the file has no row for no longer shows the general default side and rear yards (default.json) as the unit's yards. None are shown, and the line says the file has no yard figures for that district (and, with `district_yards_bind_accessory`, that the unit meets the district's yards, not on file). West Manheim TND. Nothing to change in the file.
+- `PASS24_HOLD_TOWNS` in `pipeline/rules.py` holds the ten lot towns for the default yards change.
+- Not done: a dispute on the status itself (O'Hara 455-1.3 stays a disputed bar gate).
+
 ## A town where the code does not mention ADUs
 
 Still write the file. Then:

@@ -514,7 +514,13 @@
           ],
           "section": "350-1002A(4)(b), (4)(b)[5], 350-1002A(7)(b)[1][c]",
           "url": "https://ecode360.com/print/WE4254?guid=51041233",
-          "confidence": "verified"
+          "confidence": "verified",
+          "no_variance": {
+            "section": "350-1002A(7)(b)[1][c]",
+            "url": "https://ecode360.com/print/WE4254?guid=51041233",
+            "quote": "No variances shall be granted for a proposed accessory structure that exceeds 600 square feet in size",
+            "note": "A variance for a smaller one needs a signed nonconversion agreement, so a variance does not open a unit in an accessory building there"
+          }
         },
         {
           "kind": "other",

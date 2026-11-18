@@ -4366,3 +4366,154 @@ def test_accessory_height_not_settled_with_no_adu_height(monkeypatch):
     assert line.endswith("The town's rules give no height for the ADU itself. Ask the zoning officer")
     monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", {"pa_lancaster_east_donegal"})
     assert cap("today")[1].endswith("Both are shown, and the lower one is the safe reading. Ask the zoning officer")
+
+
+def test_setbacks_by_form_stay_with_the_form():
+    """Pass 24: a form's own yards (envelope.setbacks_by_form). Wilson 170-83H(3)(d): a suite in an existing garage
+    keeps 4 ft from the side and rear lines. The garage conversion takes them, the headline and an addition keep the
+    district yards, and a condition says them for that form only."""
+    out = rules.resolve(
+        "pa_northampton_wilson", "today", {**DET, "zoning_district": "R-2", "lot_sqft": 12000, "house_sqft": 3600}
+    )
+    sbt = out["setbacks_by_type"]
+    assert (out["setback_front_ft"], out["setback_side_ft"], out["setback_rear_ft"]) == (25, 8, 25)
+    assert sbt["garage_conversion"] == {"setback_front_ft": 25, "setback_side_ft": 4, "setback_rear_ft": 4}
+    assert sbt["attached"] == {"setback_front_ft": 25, "setback_side_ft": 8, "setback_rear_ft": 25}
+    cond = [c for c in out["conditions"] if c["condition"].startswith("Yards for garage conversion")]
+    assert len(cond) == 1 and cond[0]["applies_to"] == ["garage_conversion"]
+    assert cond[0]["condition"].startswith(
+        "Yards for garage conversion: side 4 ft, rear 4 ft. Only for that form, not the other forms. A detached garage"
+    )
+    assert cond[0]["section"] == "170-83H(3)(d)"
+
+
+def test_no_variance_bar_offers_no_variance(monkeypatch):
+    """Pass 24: a bar the code allows no variance for (gate no_variance). The forms it reaches are not allowed, never
+    a variance to ask for, and a form the code already bars loses its use variance line on that lot. Wilson
+    170-86A(8)(b)[2] and 110-29, West Caln 350-1002A(7)(b)[1][c]. With every form shut, no variance path."""
+    lot = {**DET, "zoning_district": "R-2", "lot_sqft": 12000, "house_sqft": 3600, "overlays": ["Floodplain"]}
+    out = rules.resolve("pa_northampton_wilson", "today", lot)
+    by = out["approval_by_type"]
+    assert by["detached_new"] == "not_allowed" and by["garage_conversion"] == "not_allowed"
+    assert by["internal"] == "special_exception"
+    assert (
+        "The code bars detached new (170-83H(9)(c)). A use variance is not a path for detached new on this lot, "
+        "since a bar here allows no variance (170-86A(8)(b)[2])"
+    ) in out["reasons"]
+    assert not [r for r in out["reasons"] if r.startswith("The code bars detached new") and "still a path" in r]
+    assert any(
+        r.endswith(
+            "Not allowed here: garage conversion. The code allows no variance for it (110-29), so a variance is not a path"
+        )
+        for r in out["reasons"]
+    )
+    wc = {
+        **DET,
+        "zoning_district": "RR",
+        "lot_sqft": 80000,
+        "house_sqft": 2400,
+        "overlays": ["Identified floodplain area"],
+    }
+    out = rules.resolve("pa_chester_west_caln", "today", wc)
+    assert [out["approval_by_type"][t] for t in rules.DETACHED_TYPES] == ["not_allowed"] * 3
+    assert any(
+        r.endswith(
+            "Not allowed here: detached new, garage conversion, over garage. The code allows no variance for them "
+            "(350-1002A(7)(b)[1][c]), so a variance is not a path"
+        )
+        for r in out["reasons"]
+    )
+    orig = rules.load_rules
+
+    def every_form(name):
+        data = orig(name)
+        if name != "pa_chester_west_caln":
+            return data
+        data = json.loads(json.dumps(data))
+        for g in data["eligibility"]["gates"]["value"]:
+            if g.get("no_variance"):
+                g["applies_to"] = None
+        return data
+
+    monkeypatch.setattr(rules, "load_rules", every_form)
+    out = rules.resolve("pa_chester_west_caln", "today", wc)
+    assert out["approval_path"] == "not_allowed" and out["fallback"]["path"] == "not_allowed"
+    assert (
+        "Not allowed here, and not by variance either (350-1002A(7)(b)[1][c]). The code allows no variance under a "
+        "bar that reaches this lot. Ask the zoning officer"
+    ) in out["reasons"]
+    assert not [r for r in out["reasons"] if r.startswith("Not allowed as of right here. Path: variance")]
+
+
+def test_principal_yard_tiers_bind_the_unit(monkeypatch):
+    """Pass 24: West Manheim Farming, where the unit meets the setbacks for principal uses (270-109A(8)): a lot over
+    two acres takes the 30 ft side and 40 ft rear of its tier for the headline and the detached unit (it printed 10
+    and 25). Without the lot size the yards depend on the tier."""
+
+    def run(**kw):
+        return rules.resolve(
+            "pa_york_west_manheim", "today", {**DET, "zoning_district": "Farming", "house_sqft": 2000, **kw}
+        )
+
+    big = run(lot_sqft=200000)
+    assert (big["setback_front_ft"], big["setback_side_ft"], big["setback_rear_ft"]) == (40, 30, 40)
+    assert big["setbacks_by_type"]["detached_new"] == {
+        "setback_front_ft": 40,
+        "setback_side_ft": 30,
+        "setback_rear_ft": 40,
+    }
+    mid = run(lot_sqft=60000)
+    assert (mid["setback_side_ft"], mid["setback_rear_ft"]) == (20, 25)
+    small = run(lot_sqft=43560)
+    assert (small["setback_side_ft"], small["setback_rear_ft"]) == (10, 25)
+    unknown = run()
+    assert (
+        unknown["setback_side_ft"] is None
+        and "Yards depend on the lot size tier (270-46). Give the lot size to get them" in unknown["reasons"]
+    )
+
+
+def test_no_default_yards_for_a_district_without_a_row(monkeypatch):
+    """Pass 24: a lot in a district the file has no row for (West Manheim TND) showed the general default side and
+    rear of 5 ft for the detached unit. Now no yards are shown, and the line says the unit meets the district's yards,
+    which are not on file. Held for the ten lot towns."""
+    lot = {**DET, "zoning_district": "Traditional Neighborhood Development", "lot_sqft": 50000, "house_sqft": 2000}
+    out = rules.resolve("pa_york_west_manheim", "today", lot)
+    assert (out["setback_side_ft"], out["setback_rear_ft"]) == (None, None)
+    assert out["setbacks_by_type"]["detached_new"]["setback_side_ft"] is None
+    assert "setback_side_ft" not in out["assumed"] and "setback_side_ft" not in out["citations"]
+    assert (
+        "Yards: the town file has no yard figures for Traditional Neighborhood Development, so none are shown. The "
+        "unit must meet the district's yards (270-109A(8)), which are not on file. Ask the zoning officer"
+    ) in out["reasons"]
+    monkeypatch.setattr(rules, "PASS24_HOLD_TOWNS", {"pa_york_west_manheim"})
+    held = rules.resolve("pa_york_west_manheim", "today", lot)
+    assert (held["setback_side_ft"], held["setback_rear_ft"]) == (5, 5)
+
+
+def test_requires_item_only_without_a_service():
+    """Pass 24: Canton 27-305(2), a density only on on-lot sewage (requires[].only_without). A sewered lot skips it,
+    so the conversion applies. A lot on septic still depends on it. With sewer not given it says so."""
+
+    def alt(**kw):
+        lot = {
+            **DET,
+            "zoning_district": "A-1",
+            "lot_sqft": 100000,
+            "house_sqft": 2000,
+            "house_exists": True,
+            "overlays": [],
+        }
+        out = rules.resolve("pa_washington_canton", "today", {**lot, **kw})
+        return next(a for a in out["alternatives"] if a["name"] == "Single-family conversion (A-1, R-3)")
+
+    sewered = alt(public_sewer=True)
+    assert sewered["applies"] is True and "27-305(2)" not in sewered["note"]
+    septic = alt(public_sewer=False)
+    assert septic["applies"] is None and "Applies only if: On a lot with an on-lot sewage system" in septic["note"]
+    unknown = alt()
+    assert unknown["applies"] is None
+    assert (
+        "(27-305(2)). It reaches only a lot without public sewer, and whether this lot has it was not given"
+        in unknown["note"]
+    )

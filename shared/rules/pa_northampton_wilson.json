@@ -247,6 +247,32 @@
             "section": "170-86A(6)(d)[1]",
             "url": "https://ecode360.com/print/WI0763?guid=27942268",
             "note": "An addition may be read as an improvement of an existing structure, which in the FF and FA areas is allowed with full floodproofing at 10% or more of its market value. In the floodway no improvement of an existing structure is allowed (170-86A(6)(a))"
+          },
+          "no_variance": {
+            "section": "170-86A(8)(b)[2]",
+            "url": "https://ecode360.com/print/WI0763?guid=27942268",
+            "quote": "No variance shall be granted for any of the prohibited uses or activities in § 170-86A(5) to locate in the floodplain"
+          }
+        },
+        {
+          "kind": "other",
+          "condition": "In the floodplain 'All structures, with the exception of those specifically allowed in § 170-86A(4)' are prohibited, and none of those is a dwelling. New construction in the floodway is prohibited. No variance may be granted for a structure the floodplain rules prohibit.",
+          "effect": "bars",
+          "applies_to": [
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "overlays": [
+            "Floodplain"
+          ],
+          "section": "170-86A(1)(i), (4), (5)(b), (c), (8)(b)[2]",
+          "url": "https://ecode360.com/print/WI0763?guid=27942268",
+          "confidence": "secondary",
+          "no_variance": {
+            "section": "170-86A(8)(b)[2]",
+            "url": "https://ecode360.com/print/WI0763?guid=27942268",
+            "quote": "No variance shall be granted for any of the prohibited uses or activities in § 170-86A(5) to locate in the floodplain"
           }
         },
         {
@@ -264,7 +290,12 @@
           "section": "110-22E, 110-29",
           "url": "https://ecode360.com/print/WI0763?guid=11717467",
           "confidence": "verified",
-          "outside_zoning_chapter": "Chapter 110"
+          "outside_zoning_chapter": "Chapter 110",
+          "no_variance": {
+            "section": "110-29",
+            "url": "https://ecode360.com/print/WI0763?guid=11717467",
+            "note": "Chapter 110 variances relieve only the elevation and floodproofing rules, not the bar on human habitation"
+          }
         },
         {
           "kind": "other",
@@ -421,18 +452,14 @@
       "confidence": "secondary",
       "note": "'Garages shall not exceed 15 feet in height.'"
     },
-    "accessory_rules_where": {
-      "value": [
-        {
-          "where": "A detached garage which is accessory to a residence, behind the house's front building line",
+    "setbacks_by_form": {
+      "value": {
+        "garage_conversion": {
           "setback_side_ft": 4,
           "setback_rear_ft": 4,
-          "max_height_ft": 15,
-          "section": "170-83H(3)(d)",
-          "url": "https://ecode360.com/print/WI0763?guid=27942068",
-          "note": "The suite may use only an existing accessory building, so these yards hold for a garage conversion"
+          "note": "A detached garage which is accessory to a residence stays at least 4 ft from the side and rear lines, behind the house's front building line, and at most 15 ft tall. The suite may use only an existing accessory building, so these yards hold for a garage conversion"
         }
-      ],
+      },
       "section": "170-83H(3)(d)",
       "url": "https://ecode360.com/print/WI0763?guid=27942068",
       "verified_on": "2026-11-17",

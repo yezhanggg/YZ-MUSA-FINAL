@@ -1035,6 +1035,22 @@ PASS23_HOLD_TOWNS: set[str] = {
     "pa_montgomery_narberth",
     "pa_montgomery_upper_dublin",
 }
+# Pass 24 holds its change that could reach stored lot records, for the ten lot towns until their next lot rebuild: a
+# lot in a district the file has no row for gets no general default side and rear yard (default.json) as the unit's
+# yards. The other pass 24 changes need fields no lot town file uses (envelope.setbacks_by_form, a gate's no_variance,
+# a requires item's only_without, principal yard_tiers with district_yards_bind_accessory).
+PASS24_HOLD_TOWNS: set[str] = {
+    "pa_lehigh_allentown",
+    "pa_centre_college",
+    "pa_chester_west_chester",
+    "pa_chester_phoenixville",
+    "pa_chester_west_vincent",
+    "pa_chester_malvern",
+    "pa_chester_east_brandywine",
+    "pa_montgomery_lower_merion",
+    "pa_montgomery_narberth",
+    "pa_montgomery_upper_dublin",
+}
 NO_DETACHED_HEIGHT = "No height number on file for a detached unit. Ask the zoning officer"
 # Pass 7: tests on the house (and the services), not the lot. The lot facts that answer them, in plain words.
 HOUSE_TESTS: dict[str, str] = {
@@ -2340,6 +2356,26 @@ def _town_conditions(
                 applies_to=DETACHED_TYPES,
             )
         )
+    by_form_yards = _leaf(data, ("envelope", "setbacks_by_form"))
+    for t, item in ((by_form_yards or {}).get("value") or {}).items() if not no_adu else []:
+        # pass 24: yards one form keeps (Wilson: a suite in an existing garage, 4 ft from the side and rear lines). Said
+        # for that form only, never the headline yards
+        figs = [
+            f"{label} {item[k]:g} ft"
+            for k, label in (("setback_front_ft", "front"), ("setback_side_ft", "side"), ("setback_rear_ft", "rear"))
+            if item.get(k) is not None
+        ]
+        if figs:
+            words = t.replace("_", " ")
+            out.append(
+                _cond(
+                    "other",
+                    f"Yards for {words}: {', '.join(figs)}. Only for that form, not the other forms"
+                    + (f". {item['note']}" if item.get("note") else ""),
+                    by_form_yards,
+                    applies_to=[t],
+                )
+            )
     inside_rear = _leaf(data, ("envelope", "accessory_yards_inside_rear_yard"))
     if _usable(inside_rear) and inside_rear.get("value") is True and not no_adu:  # pass 13
         figs = [
@@ -2490,6 +2526,8 @@ def _town_conditions(
                 )
             if g.get("outside_zoning_chapter"):  # pass 17: a bar from another chapter, whose own appeal rules govern
                 c["outside_zoning_chapter"] = g["outside_zoning_chapter"]
+            if g.get("no_variance"):  # pass 24: the code allows no variance for what it bars (acts only on a bar)
+                c["no_variance"] = dict(g["no_variance"])
             if g.get("supersedes_district_figures"):  # pass 10: the gate's own figures replace the district's
                 c["supersedes_district_figures"] = True
                 if g.get("supersedes_figures"):  # pass 17: only these district figures are replaced
@@ -2801,27 +2839,75 @@ def _apply_gates(
         if c["met"] is None and c.get("test"):
             continue  # unknown lot fact: allowed if the condition holds
         # a form the code does not name still fails a lot or house bar that reaches it (pass 7)
+        nv = c.get("no_variance")  # pass 24: a bar the code allows no variance for reaches a form left to a variance
         hit = [
             t
             for t in (c["applies_to"] or ALL_TYPES)
-            if by_type.get(t) in OK_PATHS or by_type.get(t) in ("not_addressed", "in_conflict")
+            if by_type.get(t) in OK_PATHS
+            or by_type.get(t) in ("not_addressed", "in_conflict")
+            or (nv and by_type.get(t) == "variance")
         ]
         for t in hit:
-            by_type[t] = fallback
+            by_type[t] = "not_allowed" if nv else fallback
         if hit:
             ch = c.get("outside_zoning_chapter")
             text = c["condition"] if hold else c["condition"].rstrip(".")  # pass 18: never ". (" before the sections
             reasons.append(
                 f"{text} ({c['section']}). Not allowed here: {', '.join(t.replace('_', ' ') for t in hit)}"
-                + (  # pass 17: relief from a bar in another chapter follows that chapter's own appeal rules
-                    f". This bar is in {ch} of the code, not the zoning chapter. Relief from it follows {ch}'s own "
-                    "appeal rules"
+                + (
+                    f". The code allows no variance for {'it' if len(hit) == 1 else 'them'} ({nv['section']}), so "
+                    "a variance is not a path"
+                    if nv
+                    # pass 17: relief from a bar in another chapter follows that chapter's own appeal rules
+                    else f". This bar is in {ch} of the code, not the zoning chapter. Relief from it follows {ch}'s "
+                    "own appeal rules"
                     if ch
                     else ""
                 )
             )
             barred.append(c)
     return barred
+
+
+def _no_variance_form_line(
+    reasons: list[str],
+    at: int,
+    barred_forms: list[str],
+    by_type: dict[str, str],
+    gate_bars: list[dict[str, Any]],
+    by_form_leaf: dict[str, Any],
+    no_rule_lot: bool,
+) -> None:
+    """Pass 24: the line for forms the code bars said a use variance is still a path. A bar on this lot that allows
+    no variance (gate no_variance) takes that away for the forms it reaches, so the line says so."""
+    shut = [t for t in barred_forms if by_type[t] == "not_allowed"]
+    if not shut:
+        return
+    secs = list(
+        dict.fromkeys(
+            c["no_variance"]["section"]
+            for c in gate_bars
+            if c.get("no_variance") and set(c["applies_to"] or ALL_TYPES) & set(shut)
+        )
+    )
+    rest = [t for t in barred_forms if t not in shut]
+
+    def names(ts: list[str]) -> str:
+        words = [t.replace("_", " ") for t in ts]
+        return words[0] if len(words) == 1 else ", ".join(words[:-1]) + " and " + words[-1]
+
+    line = (
+        f"The code bars {names(barred_forms)} ({by_form_leaf['section']}). A use variance is not a path for "
+        f"{names(shut)} on this lot, since a bar here allows no variance ({', '.join(secs)})"
+    )
+    if rest:
+        line += (
+            f". For {names(rest)} a use variance is still a path"
+            if no_rule_lot
+            else f". For {names(rest)} a use variance from the Zoning Hearing Board is still a path to ask for "
+            "(MPC 910.2). The owner must show unnecessary hardship"
+        )
+    reasons[at] = line
 
 
 def _by_district(data: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -3523,6 +3609,9 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
         out.append((met, f"the lot is {'not ' if met is False else ''}in the {' or '.join(a['overlays'])} overlay"))
     for r in a.get("requires") or []:
         test = r.get("test")
+        only = r.get("only_without")  # pass 24: the item holds only on a lot without this public service
+        if only and lot.get(only) is True:
+            continue  # the lot has the service, so the item does not reach it
         if test in HOUSE_TESTS:
             met = _house_met(test, r.get("value"), r.get("value_date"), lot)
         elif test in LOT_TESTS:
@@ -3530,6 +3619,8 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
         else:
             met = None
         text = r["condition"].rstrip(".") + (f" ({r['section']})" if r.get("section") else "")
+        if only and lot.get(only) is None:  # pass 24: whether it reaches the lot turns on the service, not given
+            text += f". It reaches only a lot without {ROW_FACTS[only]}, and whether this lot has it was not given"
         if met is None and test in HOUSE_TESTS:
             text += _age_open(test, r.get("value"), lot)
         elif met is None and test == "not_alley_only_access":
@@ -3560,7 +3651,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             if "#districts." not in (p.get(("size", "max_sqft")) or ({}, ""))[1]:
                 p[("size", "max_sqft")] = ({**tier[2], "value": tier[0]}, f"{place}#size.max_sqft_by_lot_size")
     state = scenario == "state_reform"
-    tiers_out = _apply_yard_tiers(data, picked, principal, lot, reasons)
+    tiers_out = _apply_yard_tiers(data, picked, principal, lot, reasons, place not in PASS24_HOLD_TOWNS)
     status_leaf = _leaf(data, ("adu", "status")) or {}
     status = status_leaf.get("value")
     term = (_leaf(file_data, ("adu", "term")) or {}).get("value")
@@ -3646,6 +3737,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
         by_type[t] = path
     barred_forms = [] if state or not by_form else [t for t in ALL_TYPES if by_form.get(t) == "prohibited"]
     no_rule_lot = status in NO_ADU_STATUSES and how not in ("district", "historic")
+    form_line_at = None if form_bar or not (barred_forms and by_form_leaf) else len(reasons)  # pass 24
     if barred_forms and by_form_leaf:
         words = [t.replace("_", " ") for t in barred_forms]
         names = words[0] if len(words) == 1 else ", ".join(words[:-1]) + " and " + words[-1]
@@ -3695,6 +3787,7 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     )
     overridden: list[dict[str, Any]] = []
     chapter_bars: list[dict[str, Any]] = []
+    gate_bars: list[dict[str, Any]] = []
     if state:  # under the bill the town's gates show as conditions only, and some no longer apply
         live: list[dict[str, Any]] = []
         for c in conditions:
@@ -3731,6 +3824,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     else:
         n_fails = len(fails)
         gate_bars = _apply_gates(by_type, conditions, fallback, fails, place in PASS18_HOLD_TOWNS)
+        if form_line_at is not None and by_form_leaf:  # pass 24: a barred form a no-variance bar reaches
+            _no_variance_form_line(reasons, form_line_at, barred_forms, by_type, gate_bars, by_form_leaf, no_rule_lot)
         # pass 17: the lot fails only bars from another chapter of the code. Relief follows that chapter's own appeal
         # rules, never the zoning chapter's variance section
         if gate_bars and not n_fails and all(c.get("outside_zoning_chapter") for c in gate_bars):
@@ -3806,7 +3901,12 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             "The route the code leaves is a zoning amendment" + (f". {barred['note']}" if barred.get("note") else ""),
             "kind": "use_variance_barred",
         }
-    elif no_rule_here and not allowed and approval in ("variance", "not_allowed"):
+    elif (
+        no_rule_here
+        and not allowed
+        and approval in ("variance", "not_allowed")
+        and not (approval == "not_allowed" and any(c.get("no_variance") for c in gate_bars))  # pass 24
+    ):
         hit = picked.get(("approval", "fallback_path")) or picked.get(("approval", "path"))
         sec = (hit[0]["section"] if hit else "") or ""
         sec = sec if "910.2" in sec else (f"{sec}, MPC 910.2" if sec else "MPC 910.2")
@@ -3857,6 +3957,16 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             "Ask the zoning officer"
             if fb["section"]
             else f"Relief under {' and '.join(chs)}. Ask the zoning officer",
+        }
+    nv_bars = [c for c in gate_bars if c.get("no_variance")]
+    if nv_bars and not allowed and approval == "not_allowed":
+        # pass 24: every form is shut on this lot and a bar that allows no variance reaches it. No variance to ask for
+        secs = list(dict.fromkeys(c["no_variance"]["section"] for c in nv_bars))
+        fb = {
+            "path": "not_allowed",
+            "section": ", ".join(secs),
+            "url": nv_bars[0]["no_variance"].get("url") or nv_bars[0].get("url"),
+            "note": "The code allows no variance under a bar that reaches this lot. Ask the zoning officer",
         }
     checks = list(file_data["provenance"].get("checks", []))
     if state:
@@ -3933,6 +4043,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             tail.append(path_to_ask["note"])
             if fb["note"] and path_to_ask["path"] == "variance":
                 tail.append(fb["note"])
+    elif not allowed and fb["path"] == "not_allowed" and nv_bars:  # pass 24
+        tail.append(f"Not allowed here, and not by variance either ({fb['section']}). {fb['note']}")
     elif not allowed:
         sec = fb["section"] or ""
         if fallback == "variance" and "910.2" not in sec and not (chapter_bars and not allowed):
@@ -4185,7 +4297,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if heights["detached_new"] is None:
         citations.pop("max_height_ft", None)
     bind_all = (_leaf(data, ("envelope", "adu_yards_bind_all_forms")) or {}).get("value") is True and not state
-    setbacks = _town_setbacks(picked, principal, limits, state, by_type, bind_all)
+    form_yards = (_leaf(data, ("envelope", "setbacks_by_form")) or {}).get("value") or None  # pass 24
+    setbacks = _town_setbacks(picked, principal, limits, state, by_type, bind_all, form_yards)
     if not state:  # pass 9: a unit in a qualifying existing building is exempt from some caps
         out["reasons"] += _exempt_building(data, lot, by_type, sizes, shares, size_rules, heights, setbacks)
         for t in ALL_TYPES:  # a form freed of the height limit is freed of the story limit too
@@ -4211,7 +4324,32 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             if "setback_front_ft" in assumed:
                 assumed.remove("setback_front_ft")
     default_yards = [k for k in YARDS if k in assumed and out.get(k) is not None]
-    if default_yards and allowed:  # pass 8: a default yard is never the town's rule (pass 9: under the bill too)
+    d_rows = list((file_data.get("districts") or {}).keys())
+    no_row = (
+        bool(d_rows) and bool(lot.get("zoning_district")) and _match_code(lot.get("zoning_district"), d_rows) is None
+    )
+    if default_yards and allowed and no_row and place not in PASS24_HOLD_TOWNS:
+        # pass 24: a district the file has no row for. The general default is not shown as the unit's yards
+        d = lot.get("zoning_district")
+        binds = _leaf(data, ("envelope", "district_yards_bind_accessory")) or {}
+        out["reasons"].append(
+            f"Yards: the town file has no yard figures for {d}, so none are shown"
+            + (
+                f". The unit must meet the district's yards ({binds['section']}), which are not on file"
+                if binds.get("value") is True
+                else ""
+            )
+            + _district_read_line(file_data, lot)
+            + ". Ask the zoning officer"
+        )
+        for k in default_yards:
+            for t in ALL_TYPES:
+                if not (t == "attached" and k in principal) and not ((form_yards or {}).get(t) or {}).get(k):
+                    setbacks[t][k] = None
+            out[k] = None
+            citations.pop(k, None)
+            assumed.remove(k)
+    elif default_yards and allowed:  # pass 8: a default yard is never the town's rule (pass 9: under the bill too)
         d = lot.get("zoning_district")
         figs = ", ".join(f"{k.split('_')[1]} {out[k]:g} ft" for k in default_yards)
         where = f"for {d}" if d else "for this lot"
@@ -4978,14 +5116,18 @@ def _apply_yard_tiers(
     principal: dict[str, tuple[dict[str, Any], str]],
     lot: dict[str, Any],
     reasons: list[str],
+    bind_ok: bool = True,
 ) -> list[dict[str, Any]] | None:
     """Yards that depend on lot size. With the lot size known, the tier's yards apply. Without it,
-    the yards are left out and the tiers are returned."""
+    the yards are left out and the tiers are returned. Pass 24: where the district yards bind the unit
+    (envelope.district_yards_bind_accessory), a principal tier is the detached unit's yard too, unless the district
+    row has an accessory yard of its own. bind_ok: False for a lot town held by PASS24_HOLD_TOWNS."""
     _, row = _district_row(data, lot)
     leaf = row.get("yard_tiers") if _usable(row.get("yard_tiers")) else _leaf(data, ("envelope", "yard_tiers"))
     tiers = (leaf or {}).get("value") or []
     if not tiers or leaf is None:
         return None
+    bind = bind_ok and (_leaf(data, ("envelope", "district_yards_bind_accessory")) or {}).get("value") is True
     area = lot.get("lot_sqft")
     pick = None
     if area is not None:
@@ -5003,6 +5145,8 @@ def _apply_yard_tiers(
                     principal[k] = (tier_leaf, "#yard_tiers")
                 else:
                     principal[k] = (tier_leaf, "#yard_tiers")  # value None: depends on the tier
+                if bind and "accessory_" not in (picked.get(("envelope", k)) or ({}, ""))[1]:
+                    picked[("envelope", k)] = (tier_leaf, "#yard_tiers")  # pass 24: the unit meets these yards
             else:
                 picked[("envelope", k)] = (tier_leaf, "#yard_tiers")
     if pick is None:
@@ -5309,6 +5453,7 @@ def _town_setbacks(
     state: bool,
     by_type: dict[str, str],
     bind_all: bool = False,
+    by_form: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, dict[str, float | None]]:
     """Yards per ADU type. A unit inside the house adds no structure. An attached unit takes the
     district (principal) yards. A detached unit takes the accessory yards (the headline values).
@@ -5334,6 +5479,9 @@ def _town_setbacks(
                     v = acc if v is None else max(v, acc)
             else:
                 v = acc
+            own_form = (by_form or {}).get(t) or {}
+            if own_form.get(k) is not None:  # pass 24: envelope.setbacks_by_form, this form's own yard
+                v = own_form[k]
             cap = state and k in limits and limits[k]["mode"] == "at_most" and v is not None
             if cap and t in NEW_STRUCTURE_TYPES and t != "attached":  # the bill's yard cap is for a separate unit
                 v = min(v, limits[k]["value"])
