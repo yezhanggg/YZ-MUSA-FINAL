@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-11-18, early morning
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+### Town rules
+
+- Batches 49 to 54 (18 towns) read, reviewed and fixed. Now 217 places with a rule file: 139 verified, 78 drafted. 87 of the 215 town codes have no ADU text. Town files now cover just over half of the people outside Philadelphia and Pittsburgh.
+- Newly verified: Wilson, Camp Hill, Downingtown, Grove City, East Fallowfield, Lower Windsor, Pittston, DuBois, West Brandywine, Glenolden, Derry, Cumberland (Adams).
+- Stay drafted, each with its open point in the status note: Smithfield and White Oak (ordinances posted only as PDFs), Bradford (guesthouse occupancy), East Vincent and South Hanover (codes behind pending or recent amendments), Kingston township and East Coventry (wording the tool cannot yet give).
+
+### Rules engine passes 24 to 27
+
+- Yards by form, bars that allow no variance, Farming yard tiers, no default yards for a district with no row, conditions that reach only lots without public sewer.
+- A footprint cap apart from the floor area cap (Narberth 600 sq ft). Stored Narberth lot records still show the older answer until the Montgomery County lots are rebuilt.
+- Floodplain bars keyed to the house's build date, headline yards that name their form, a unit over a garage on a lot with no garage takes the new detached path.
+- A front-yard bar scoped to districts, a tract minimum by district, a district hearing path that sets the status there, accessory rules under the bill in a town with no ADU rule, a one-side accessory yard, and a floodplain bar that spares a new unit built elevated.
+- No stored lot record changes in any pass (all ten lot towns reproduce byte for byte, grid hashes hold).
+
+### Land cover
+
+- A three-model ensemble (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34), picked on validation, scores test mIoU 0.7093 and building IoU 0.6554. It passes the Pittsburgh bar for replacing the lot model (0.7147 against 0.7136). The lots keep the earlier model until the owner decides.
+
+### Assistant eval
+
+- Full run after pass 24: 118 of 120, 119 rescored ($0.15). tierb-01 now asks about Benton township, Columbia County.
+
 ## 2026-11-17, early morning
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
