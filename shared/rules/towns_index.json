@@ -5055,7 +5055,7 @@
       "pop_rank": 374,
       "file": "pa_clearfield_dubois",
       "batch": 35,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14009952",
@@ -5065,7 +5065,7 @@
       "why": [
         "added as batch 52 by population. Code Chapter 450 has no ADU text (450-9B(1) bars a rear dwelling in residence districts, 450-13 conversion apartment and two-family by right in R-2, O-1, C-N)"
       ],
-      "status_note": "Not addressed. Open points: the conversion apartment path (450-13 by right against the 450-3H conditional use for conversion to multiple housing), the lot area per family for two units in R-2, and whether R-1 conditional uses go to City Council (450-23) or the Zoning Hearing Board (450-40). The city's ordinances page could not be read, so ordinances after 7-9-2025 were not checked"
+      "status_note": "Verified. Not addressed, with the conversion apartment and two-family dwelling by right in R-2, O-1 and C-N. Points to ask the zoning officer, not settled by the code text: the conversion apartment path (450-13 by right against the 450-3H conditional use for conversion to multiple housing), the two definitions of a two-family detached dwelling (one family over the other, or a duplex or twin), which body hears a floodplain variance (City Council under 215-33A and 215-17 against the Zoning Hearing Board under 450-20A(5)), which residential district's controls a house in C-N takes (450-73A), and whether two houses on one lot are a group dwelling. Ordinances after 7-9-2025 were not checked (council records are PDF only)."
     },
     {
       "geoid": "4202922000",
@@ -5089,7 +5089,7 @@
       "why": [
         "added as batch 52 by population. Code Chapter 27 has no ADU text beyond a farm caretaker unit (27-1609.1A(5)), 27-1608 residential conversion by special exception in RC, LR, MR, HR"
       ],
-      "status_note": "Not addressed. Open points: the online code is current only through 2-1-2023 (a zoning amendment proposed in November 2025 was not traced), the Chapter 8 floodplain bar on all structures with no variance against 8-502.1 and 8-801.1E, and the farm caretaker unit (27-1609.1A(5)) has no form, size or path of its own"
+      "status_note": "Not addressed. Open points: the online code is current only through 2-1-2023, while the township began a full zoning rewrite in 2022 and a September 2025 IMU amendment went to county review. Neither text was seen, so which zoning text is in force is the first question for the township. Also not settled: the Chapter 8 floodplain bar on all structures with no variance against 8-502.1 and 8-801.1E, and its cross-reference to an 8-501E and F that do not exist, whether the HR and NC two-family listing covers altering the existing house, the house size a conversion needs (1,200 or 1,600 sq ft under 27-1714), and the farm caretaker unit (27-1609.1A(5)), which has no form, size or path of its own. The zoning map was not read."
     },
     {
       "geoid": "4202982576",
@@ -5103,7 +5103,7 @@
       "pop_rank": 385,
       "file": "pa_chester_west_brandywine",
       "batch": 35,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/7990904",
@@ -5113,7 +5113,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 200-15B(3) accessory dwelling unit on a country property of 10 acres or more by conditional use (R-1, R-2, R-3, R-4, RM, LI))"
       ],
-      "status_note": "Conditional use on a country property of 10 acres or more. Open points: a lot of exactly 10 acres (1-20 'exceeding 10 acres' against 200-15B(3) 'greater than or equal to'), whether the 25 ft accessory height binds a unit in a barn, and the Chapter 89 floodplain bar that points to a reserved 200-61. RM, LI, the definitions and Article XXIII were read only in search results"
+      "status_note": "Verified. Conditional use on a country property of 10 acres or more, in R-1 to R-4, L-2 (by 200-32A), RM and LI (in doubt, LI permits no house). Points to ask the zoning officer, not settled by the code text: a lot of exactly 10 acres (1-20 'exceeding 10 acres' against 200-15B(3) 'greater than or equal to'), whether the 50 ft yards for conditional uses in R-1, R-2 and L-2 (200-16B, 200-20B) bind the unit or only the 200-83A accessory yards do, the conversion lot per unit or per lot (200-20B, 200-84B), and the Chapter 89 floodplain bar that points to a reserved 200-61 while 89-502 and 89-802I speak of a variance. The zoning map and Planning Commission agendas were not read."
     },
     {
       "geoid": "4204529720",

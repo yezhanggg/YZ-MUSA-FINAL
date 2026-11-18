@@ -32,7 +32,13 @@
       "https://ecode360.com/EA4240/search?query=%22accessory%20dwelling%22%20OR%20%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22garage%20apartment%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20%22living%20quarters%22%20OR%20guesthouse%20OR%20%22guest%20house%22%20OR%20caretaker%20OR%20%22temporary%20dwelling%22%20OR%20%22tenant%20house%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/EA4240/search?query=%22extended%20family%22%20OR%20%22elder%20cottage%22%20OR%20%22household%20employee%22%20OR%20%22rental%20cottage%22%20OR%20%22supplemental%20dwelling%22%20OR%20lodgers%20OR%20%22care%20of%20relative%22%20OR%20conversion%20OR%20%22apartment%22%20OR%20boarders&scope=all&sortOrder=relevance",
       "https://ecode360.com/EA4240/search?query=%22single%20family%20detached%22%20OR%20%22single-family%20detached%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
-      "https://www.eastvincent.org/?sec=015e8651-3650-4039-87ba-9b4c74591337&de=9a8fa310-7715-4b81-88c7-fed34dfd73c4"
+      "https://www.eastvincent.org/?sec=015e8651-3650-4039-87ba-9b4c74591337&de=9a8fa310-7715-4b81-88c7-fed34dfd73c4",
+      "https://ecode360.com/print/EA4240?guid=37018674",
+      "https://ecode360.com/print/EA4240?guid=37018744",
+      "https://ecode360.com/print/EA4240?guid=37019859",
+      "https://ecode360.com/print/EA4240?guid=37020107",
+      "https://ecode360.com/print/EA4240?guid=37012055",
+      "https://ecode360.com/print/EA4240?guid=37017906"
     ],
     "verified_on": "2026-11-18",
     "county": "Chester",
@@ -42,7 +48,7 @@
     "code_url": "https://ecode360.com/37017570",
     "code_current_through": "2023-02-01",
     "code_current_through_note": "eCode360 table of contents: 'Includes legislation through 02-01-2023.' New Laws: 'There are currently no known new laws for this Code.'",
-    "code_caution": "The online code is current only through 2-1-2023. No adopted zoning amendment since then was found: a 2025 data center amendment was shelved, and a Chester County review letter (ZA-11-25-18728) shows a further zoning amendment was proposed in November 2025 whose outcome was not found. Check with the township that the zoning text has not changed.",
+    "code_caution": "The online code is current only through 2-1-2023. The township began a full rewrite of the zoning ordinance in 2022, with new article numbering, and drafts were before the Planning Commission. Whether it was adopted was not found. A September 2025 amendment for an IMU district was sent for county review, and its text was not seen. A 2025 data center amendment was shelved, and a Chester County review letter (ZA-11-25-18728) shows a further zoning amendment was proposed in November 2025 whose outcome was not found. Check with the township which zoning text is in force.",
     "checks": [
       "The code has no general accessory dwelling unit use. The words searched (accessory dwelling, in-law, accessory apartment, garage apartment, second dwelling, ECHO, extended family, elder cottage, tenant house, household employee, rental cottage, supplemental dwelling, care of relative, temporary dwelling, living quarters, guesthouse, caretaker, lodgers, boarders, apartment, conversion) find only the farm caretaker unit (27-1609.1A(5)), living quarters for watchmen and caretakers of commercial and industrial uses (27-1602.1D, 27-1302), the residential conversion (27-1608) and other uses",
       "Each district lets a lot be used 'for only one of the following purposes as a use by right' (27-402.1, 27-502.1, 27-702.1, 27-802.1). Accessory uses are 'Customary residential and agricultural accessory uses' (27-602.4A and the like). A dwelling unit is for 'occupancy by only one family' with no enclosed space in common with another unit except halls and porches (27-202)",
@@ -51,16 +57,21 @@
       "Farms: 'There shall be only one single-family dwelling unit per farm, except for one additional accessory dwelling unit for a caretaker' (27-1609.1A(5)). A farm needs at least 20 acres in AP and RC and 10 acres in other districts (27-1609.1A(1))",
       "Historic Resource Overlay (properties with Class I or Class II historic resources): by conditional use the Board of Supervisors may allow any use permitted in the district as a second principal use and the residential conversion of a historic building other than a house into one or more dwelling units, mainly inside the historic structures, where 'necessary to the preservation of the historic resource(s)' (27-1403.3B(2)(a), (k), D(2)). Area and bulk rules may be modified by the same conditional use (27-1403.3C)",
       "Accessory buildings stand to the side or rear of the house, set back from side and rear lot lines a distance equal to their height and at least 10 ft, and at least 10 ft from any other building unless attached (27-1602.2A, C, D)",
-      "Coverage: building coverage counts all buildings plus roof overhangs and decks, and impervious cover counts buildings, paving and decks, measured on net tract area (27-202 'Building coverage', 'Impervious cover'). Lots on an on-site sewage system need a contiguous net area of 30,000 sq ft clear of street rights-of-way, the Flood Hazard District and wetlands (27-603.1B and the like)",
+      "Coverage: building coverage counts all buildings plus roof overhangs and decks, measured on the total lot size. Impervious cover counts buildings, paving and decks, measured on net tract area (27-202 'Building coverage', 'Impervious cover'). Lots on an on-site sewage system need a contiguous net area of 30,000 sq ft clear of street rights-of-way, the Flood Hazard District and wetlands (27-603.1B and the like)",
       "Parking: 'For all residential dwelling units there shall be provided two off street parking spaces per unit' (27-1709.1C). Parking for fewer than five vehicles may be in the front yard on a residential lot (27-1709.1A(2))",
-      "Minimum habitable floor area: 1,000 sq ft for a principal dwelling unit, 600 sq ft for apartments (27-1714)",
+      "Minimum habitable floor area: 'The minimum habitable floor area of a principal dwelling unit shall be 1,000 square feet except for apartments', which need 600 sq ft (27-1714). So a conversion into two units of 600 sq ft needs a house of at least 1,200 sq ft, or 1,600 sq ft if one unit counts as a principal dwelling unit",
       "Flood Hazard District (Chapter 8 through 27-1501): any construction needs a permit. 'Within any Flood Hazard District any new construction or substantial improvements shall be prohibited' except listed open uses, and 'All structures' are a prohibited activity for which 'No variance shall be granted' (8-502.1, 8-601.1A(2), 8-802.1B). Yet 8-502.1 and 8-801.1E speak of a variance for new construction outside the floodway. No expansion of an existing building may take more space in the district than it did, basements and fill are prohibited, and no structure may stand within 50 ft of the district boundary (8-702.1B, 8-502.1C(1), 8-503.1A(1), 8-501.4C)",
-      "Steep slopes: 'The erection of buildings ... on land sloping greater than 25% shall be prohibited' (27-1502.2). Building on 15% to 25% slopes needs a Township Engineer review of grading, site and architectural plans (27-1502.6, .7). Woodland and riparian buffer rules of the subdivision ordinance (22-429.2, 22-429.3, not read) apply to building permits, with relief by special exception (27-1503, 27-1504)",
+      "Steep slopes: 'The erection of buildings ... on land sloping greater than 25% shall be prohibited' (27-1502.2), and the only exceptions are wells, sewers and emergency access roads (27-1502.3). Building on 15% to 25% slopes needs a Township Engineer review of grading, site and architectural plans (27-1502.6, .7). Woodland and riparian buffer rules of the subdivision ordinance (22-429.2, 22-429.3, not read) apply to building permits, with relief by special exception (27-1503, 27-1504). Riparian buffer Zone One is at least 25 ft wide from a stream or wetland and takes in very steep slopes up to 100 ft. Zone Two reaches 50 ft from a wetland or 100 ft from a stream, lake or pond, and any hydric soil (27-202 'Riparian buffer areas')",
       "French Creek Scenic Corridor Overlay: base district uses and area and bulk rules, plus siting below ridge lines, a landscape plan and a 20% limit on tree clearing for any new principal use or expansion needing a building permit (27-1402)",
       "Nonconforming lots: a lot of record may be built on if it meets the district standards other than lot size or the contiguous net area, and a setback or coverage shortfall needs a variance (27-1805.1). HR lots in cluster subdivisions recorded before 6-12-2002 keep the 1984 yards: front 30 ft, rear 25 ft, side 10 ft, impervious cover 35% (27-1807)",
-      "Variances: Zoning Hearing Board on the findings of MPC 910.2 (27-2003.1C, 27-2010). No bar on a use variance was found, and no general rule for uses not provided for was found"
+      "Variances: Zoning Hearing Board on the findings of MPC 910.2 (27-2003.1C, 27-2010). No bar on a use variance was found, and no general rule for uses not provided for was found",
+      "Stormwater: the subdivision ordinance's stormwater rules apply to any new impervious or semi-pervious cover over 1,500 sq ft or land disturbance over 5,000 sq ft (27-1507.1A(1))",
+      "Land development includes 'a group of two or more buildings, whether proposed individually or cumulatively' on one or more lots. It does not include the conversion of an existing single-family detached dwelling into not more than three units, unless they are to be condominiums, or an accessory building such as a farm building (27-202 'Land development'). So a second dwelling building on a lot, such as a second principal use in NC or a farm caretaker's house, needs land development approval",
+      "Neighborhood mixed use development (Part 26) is by right only in HR, on a tract of at least 10 acres with public sewer and water (27-802.1D, 27-2603.1). It is a development, not a path for a house lot",
+      "PO, GI, CMU and IMU permit agriculture under 27-1609 by right and list no dwelling apart from living accommodations for a watchman or similar employee as an accessory use (27-1202.1G, 27-1302.1S, 27-2502.1C, Part 28)",
+      "Flood Hazard District extent: the district includes the FEMA flood areas of the September 29, 2017 maps and any community identified flood hazard areas, among them areas of alluvial soils subject to flooding in the county soil survey (8-401.1, 8-402.1E(1)). So it may reach beyond the FEMA map. New construction for Chapter 8 is a structure begun on or after the chapter's effective date (Ord. 232 of 7-5-2017), while 27-202 says 'on or after May, 1971'. The more stringent provision applies (27-1501)"
     ],
-    "notes": "Zoning office: East Vincent Township Code Enforcement Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: 27-202 (A to 'Non-conforming structure'), Parts 4 to 8, Part 10, 27-1102.1, Part 14, Part 15, Part 16, 27-1707 to 27-1709.1C and 27-1713 to 27-1715, Part 18, Part 20, Chapter 8 Parts 1 to 8 (to 8-503.1K), and three code searches. Not read: Parts 1, 3, 9, 12, 13, 19, 21 to 28 apart from search results, 27-1102.2 onward, the rest of 27-202, 27-1709.1D and the rest of Part 17, 8-503.1L to Part 9 of Chapter 8, and SALDO 22-429.2, 22-429.3. The chapter's effective date is read as its adoption date, 6-12-2002."
+    "notes": "Zoning office: East Vincent Township Code Enforcement Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-18: 27-202 (A to 'Non-conforming structure'), Parts 4 to 8, Part 10, 27-1102.1, Part 14, Part 15, Part 16, 27-1707 to 27-1709.1C and 27-1713 to 27-1715, Part 18, Part 20, Chapter 8 Parts 1 to 8 (to 8-503.1K), and three code searches. Not read: Parts 1, 3, 9, 12, 13, 19, 21 to 28 apart from search results, 27-1102.2 onward, the rest of 27-202, 27-1709.1D and the rest of Part 17, 8-503.1L to Part 9 of Chapter 8, and SALDO 22-429.2, 22-429.3. The chapter's effective date is read as its adoption date, 6-12-2002. Second reading on 2026-11-18 added the PO, GI, CMU and IMU use lists, the farm caretaker unit in those districts, the zoning rewrite and the 2025 IMU amendment in the code caution, the lot minimum without public sewer or water on the conversion, more Chapter 8 rules and the riparian, stormwater and land development rules. The rewrite and the IMU amendment are known from the township's web page and a county review listing, not from code text."
   },
   "adu": {
     "term": {
@@ -108,7 +119,7 @@
             "MR",
             "HR"
           ],
-          "conditions": "A single-family dwelling that existed on the chapter's effective date converted into a dwelling for not more than three families, where clearly necessary to permit reasonable use of the structure. It keeps the look of a single-family detached dwelling with one front entrance, other entrances at the side or rear, and outside changes kept to a minimum. The district's area and bulk rules apply as for a single-family dwelling. Each unit at least 600 sq ft with its own kitchen and bath, with County Health Department and DEP approvals. 25% of the lot kept as common open space for the residents. Two parking spaces per unit",
+          "conditions": "A single-family dwelling that existed on the chapter's effective date converted into a dwelling for not more than three families, where clearly necessary to permit reasonable use of the structure. It keeps the look of a single-family detached dwelling with one front entrance, other entrances at the side or rear, and outside changes kept to a minimum. The district's area and bulk rules apply as for a single-family dwelling. Each unit at least 600 sq ft with its own kitchen and bath, with County Health Department and DEP approvals. 25% of the lot kept as common open space for the residents. Two parking spaces per unit. In MR and HR the 25,000 and 20,000 sq ft figures hold with public sewer and water. Without either one the single-family minimum is one acre (27-703.1B, 27-803.1C). A Department of Labor and Industry certificate where two or more families are housed above the ground floor. A principal dwelling unit needs 1,000 sq ft of habitable floor area and an apartment 600 sq ft (27-1714)",
           "min_lot_by_district": {
             "RC": 108900,
             "LR": 65340,
@@ -128,6 +139,26 @@
               "section": "27-1608.1, Ord. 162"
             },
             {
+              "test": "lot_sqft_at_least",
+              "value": 43560,
+              "only_without": "public_sewer",
+              "condition": "Without public sewer, a lot of at least one acre, as for a single-family dwelling with on-lot sewer",
+              "section": "27-1608.1E, 27-703.1B, 27-803.1C"
+            },
+            {
+              "test": "lot_sqft_at_least",
+              "value": 43560,
+              "only_without": "public_water",
+              "condition": "Without public water, a lot of at least one acre, as for a single-family dwelling with on-lot water",
+              "section": "27-1608.1E, 27-703.1B, 27-803.1C"
+            },
+            {
+              "test": "house_sqft_at_least",
+              "value": 1200,
+              "condition": "A house of at least 1,200 sq ft, so each unit has the 600 sq ft an apartment needs. If one unit counts as a principal dwelling unit it needs 1,000 sq ft, and the house 1,600 sq ft",
+              "section": "27-1608.1F, 27-1714"
+            },
+            {
               "test": null,
               "condition": "The Zoning Hearing Board finds the conversion clearly necessary to permit reasonable use of the structure",
               "section": "27-1608.1"
@@ -139,10 +170,10 @@
           "builds": [
             "internal"
           ],
-          "section": "27-1608, 27-502.2C, 27-602.2E, 27-702.2E, 27-802.2E, 27-1709.1C",
+          "section": "27-1608, 27-502.2C, 27-602.2E, 27-702.2E, 27-802.2E, 27-703.1B, 27-803.1C, 27-1709.1C, 27-1714",
           "url": "https://ecode360.com/print/EA4240?guid=37019097",
           "confidence": "secondary",
-          "note": "The lot figures are the single-family minimums with public sewer and water where the district sets them apart (MR 25,000 sq ft, HR 20,000 sq ft). With on-lot sewer or water both need one acre. RC 2.5 acres, LR 1.5 acres"
+          "note": "The lot figures are the single-family minimums with public sewer and water where the district sets them apart (MR 25,000 sq ft, HR 20,000 sq ft). With on-lot sewer or water both need one acre. RC 2.5 acres, LR 1.5 acres. The conversion is not a land development"
         },
         {
           "name": "Two-family dwelling (HR)",
@@ -181,17 +212,22 @@
           "requires": [
             {
               "test": null,
-              "condition": "A building for two units. Turning the existing house into more units is the residential conversion instead",
-              "section": "27-202 'Dwelling or dwelling unit' B, 27-1608"
+              "condition": "A building for two units. The listing lets a building be 'erected, altered, or used' as a twin or duplex, so it may cover altering the existing house. That is not settled. For a house that existed in 2002 the residential conversion by special exception is the other route",
+              "section": "27-202 'Dwelling or dwelling unit' B, 27-802.1, 27-1608"
             }
           ],
           "builds": [
+            "internal",
             "attached"
           ],
           "section": "27-802.1B, 27-803.1A, C, 27-1709.1C",
           "url": "https://ecode360.com/print/EA4240?guid=37018287",
           "confidence": "secondary",
-          "note": "Read as 15,000 sq ft for each of two units. The figures are written for 'each new lot'"
+          "note": "Read as 15,000 sq ft for each of two units. The figures are written for 'each new lot'",
+          "covers_forms": [
+            "internal",
+            "attached"
+          ]
         },
         {
           "name": "Two-family dwelling (NC)",
@@ -204,17 +240,22 @@
           "requires": [
             {
               "test": null,
-              "condition": "A building for two units",
-              "section": "27-202 'Dwelling or dwelling unit' B"
+              "condition": "A building for two units. The listing lets a building be 'erected, altered, or used' as a twin or duplex, so it may cover altering the existing house. That is not settled. For a house that existed in 2002 the residential conversion by special exception is the other route",
+              "section": "27-202 'Dwelling or dwelling unit' B, 27-1002.1, 27-1608"
             }
           ],
           "builds": [
+            "internal",
             "attached"
           ],
           "section": "27-1002.1H, 27-1003.1, 27-1709.1C",
           "url": "https://ecode360.com/print/EA4240?guid=37018549",
           "confidence": "secondary",
-          "note": "27-1003.1F reads 'Maximum rear yard: 30 feet', read here as the rear yard"
+          "note": "27-1003.1F reads 'Maximum rear yard: 30 feet', read here as the rear yard. NC permits by right only one principal use on a lot (27-1002.1)",
+          "covers_forms": [
+            "internal",
+            "attached"
+          ]
         },
         {
           "name": "More than one principal use on a lot (NC)",
@@ -222,15 +263,16 @@
           "districts": [
             "NC"
           ],
-          "conditions": "More than one principal use on a single lot or tract, including any use permitted by right in NC, such as a second single-family detached or two-family dwelling. Board of Supervisors after a hearing under Part 19. The NC area and bulk rules apply",
+          "conditions": "More than one principal use on a single lot or tract, including any use permitted by right in NC, such as a second single-family detached or two-family dwelling. Board of Supervisors after a hearing under Part 19. The NC area and bulk rules apply. A second building on the lot is a land development (27-202 'Land development')",
           "min_lot_sqft": 43560,
           "builds": [
             "detached_new"
           ],
-          "section": "27-1002.3B, 27-1003.1",
+          "section": "27-1002.3B, 27-1003.1, 27-202 'Land development'",
           "url": "https://ecode360.com/print/EA4240?guid=37018549",
           "confidence": "secondary",
-          "note": "The code does not give a lot area for each principal use. One acre is the NC lot minimum for all uses"
+          "note": "The code does not give a lot area for each principal use. One acre is the NC lot minimum for all uses",
+          "land_development": true
         },
         {
           "name": "Additional use of a historic resource (Historic Resource Overlay)",
@@ -239,11 +281,11 @@
           "overlays": [
             "Historic Resource Overlay District"
           ],
-          "conditions": "On a property with a Class I or Class II historic resource, the Board of Supervisors may allow any use permitted in the district as a second principal use, and the conversion of a historic building other than a house into one or more dwelling units, meeting 27-1608C, D, F, G and H (entrances at side or rear, few outside changes, units of at least 600 sq ft, own kitchen and bath, parking). New uses are to be mainly inside the historic structures. The approval must be necessary to preserve the historic resource, and Historical Commission and Planning Commission review comes first. Area and bulk rules may be modified to the least degree needed",
+          "conditions": "On a property with a Class I or Class II historic resource, the Board of Supervisors may allow any use permitted in the district as a second principal use, such as a second single-family dwelling, and the conversion of a historic building other than a house into one or more dwelling units, meeting 27-1608C, D, F, G and H (entrances at side or rear, few outside changes, units of at least 600 sq ft, own kitchen and bath, parking). A historic single-family house may be converted into more than three units the same way. Uses the district does not otherwise permit are to be mainly inside the historic structures. The approval must be necessary to preserve the historic resource, and Historical Commission and Planning Commission review comes first. Area and bulk rules may be modified to the least degree needed. A second dwelling building is a land development",
           "requires": [
             {
               "test": null,
-              "condition": "The property holds a Class I or Class II historic resource on the township's Historic Resources Inventory",
+              "condition": "The property holds a Class I or Class II historic resource on the township's Historic Resources Inventory. Class I includes resources listed on or found eligible for the National Register, whether or not they are on the map",
               "section": "27-1403.2, 27-1403.3A"
             },
             {
@@ -253,12 +295,14 @@
             }
           ],
           "covers_forms": [
+            "detached_new",
             "garage_conversion"
           ],
           "builds": [
+            "detached_new",
             "garage_conversion"
           ],
-          "section": "27-1403.3B(2)(a), (k), C, D",
+          "section": "27-1403.2, 27-1403.3B(2)(a), (k), C, D, E(2)",
           "url": "https://ecode360.com/print/EA4240?guid=37018804",
           "confidence": "secondary"
         },
@@ -270,18 +314,26 @@
             "RC",
             "LR",
             "MR",
-            "HR"
+            "HR",
+            "PO",
+            "GI",
+            "CMU",
+            "IMU"
           ],
           "adu_listing": true,
           "no_standards": true,
-          "conditions": "On a farm, one single-family dwelling unit plus one additional accessory dwelling unit for a caretaker. A farm needs at least 20 acres in AP and RC and 10 acres elsewhere. Farm buildings 75 ft from the front line, 50 ft from the sides and 100 ft from the rear, and no dwelling closer to an abutting property than the district setbacks",
+          "conditions": "On a farm, one single-family dwelling unit plus one additional accessory dwelling unit for a caretaker. A farm needs at least 20 acres in AP and RC and 10 acres elsewhere. Farm buildings 75 ft from the front line, 50 ft from the sides and 100 ft from the rear, and no dwelling closer to an abutting property than the district setbacks. Agriculture in AP has front 100 ft, sides 50 ft, rear 100 ft, building coverage 8% and impervious cover 10% (27-403.1), and in RC front 75 ft, sides 50 ft, rear 100 ft, 8% and 10% (27-503.1). Not in the Flood Hazard District, where all structures are prohibited (8-601.1A(2)). A separate caretaker's house is a second building, which is a land development",
           "min_lot_sqft": 435600,
           "min_lot_by_district": {
             "AP": 871200,
             "RC": 871200,
             "LR": 435600,
             "MR": 435600,
-            "HR": 435600
+            "HR": 435600,
+            "PO": 435600,
+            "GI": 435600,
+            "CMU": 435600,
+            "IMU": 435600
           },
           "requires": [
             {
@@ -298,10 +350,10 @@
           "builds": [
             "detached_new"
           ],
-          "section": "27-1609.1A(1), (2), (3), (5), 27-402.1A, 27-502.1A, 27-602.1B, 27-702.1B, 27-802.1E",
+          "section": "27-1609.1A(1), (2), (3), (5), 27-402.1A, 27-502.1A, 27-602.1B, 27-702.1B, 27-802.1E, 27-1202.1G, 27-1302.1S, 27-2502.1C, Part 28, 27-403.1, 27-503.1",
           "url": "https://ecode360.com/print/EA4240?guid=37019097",
           "confidence": "secondary",
-          "note": "The code names no form, size or standards for the caretaker unit beyond the farm rules. It is read as part of agriculture, which is by right in these districts. Existing lots under 20 acres in AP and RC may also be used for agriculture (27-403.1A, 27-503.1A)"
+          "note": "The code names no form, size or standards for the caretaker unit beyond the farm rules. It is read as part of agriculture, which is by right in these districts, and 27-1609 applies 'in all districts in which agriculture is permitted'. Existing lots under 20 acres in AP and RC may also be used for agriculture (27-403.1A, 27-503.1A)"
         }
       ],
       "section": "27-1608, 27-802, 27-1002, 27-1403, 27-1609",
@@ -327,19 +379,23 @@
         "MR",
         "HR",
         "NC",
-        "GC"
+        "GC",
+        "PO",
+        "GI",
+        "CMU",
+        "IMU"
       ],
-      "section": "27-402, 27-502, 27-602, 27-702, 27-802, 27-1002, 27-1102",
+      "section": "27-301, 27-402, 27-502, 27-602, 27-702, 27-802, 27-1002, 27-1102, 27-1202, 27-1302, 27-2502, Part 28",
       "url": "https://ecode360.com/print/EA4240?guid=37018091",
       "verified_on": "2026-11-18",
       "confidence": "verified",
-      "note": "None lists an accessory dwelling unit apart from the farm caretaker unit of 27-1609. RC, LR, MR and HR list residential conversion by special exception, HR and NC list two-family dwellings, GC lists only units above a first-floor commercial use"
+      "note": "None lists an accessory dwelling unit apart from the farm caretaker unit of 27-1609, which reaches every district where agriculture is permitted. RC, LR, MR and HR list residential conversion by special exception, HR and NC list two-family dwellings, GC lists only units above a first-floor commercial use. PO, GI, CMU and IMU list no dwelling apart from living accommodations for a watchman or similar employee"
     },
     "gates": {
       "value": [
         {
           "kind": "other",
-          "condition": "In the Flood Hazard District 'All structures' other than those listed in 8-501E are a prohibited activity, and 'No variance shall be granted' for it. New construction and substantial improvements are prohibited there, and no existing building may be enlarged to take more space in the district than it did.",
+          "condition": "In the Flood Hazard District 'All structures' other than those Chapter 8 allows are a prohibited activity, and 'No variance shall be granted' for it. New construction and substantial improvements are prohibited there, and no existing building may be enlarged to take more space in the district than it did. The Zoning Hearing Board may not permit any structure in a floodway by special exception.",
           "effect": "bars",
           "applies_to": [
             "detached_new",
@@ -350,24 +406,25 @@
           "overlays": [
             "Flood Hazard District"
           ],
-          "section": "8-502.1, 8-601.1A(2), 8-702.1B, 8-802.1B, 27-1501",
+          "section": "8-501.5, 8-502.1, 8-601.1A(2), 8-702.1B, 8-802.1B, 27-1501",
           "url": "https://ecode360.com/print/EA4240?guid=37011983",
           "confidence": "secondary",
           "outside_zoning_chapter": "Chapter 8",
           "no_variance": {
             "section": "8-601.1, 8-802.1B",
             "url": "https://ecode360.com/print/EA4240?guid=37011983",
-            "quote": "the following activities shall be prohibited within any Flood Hazard District. No variance shall be granted."
+            "quote": "the following activities shall be prohibited within any Flood Hazard District. No variance shall be granted.",
+            "note": "No variance may be granted that would cause any increase in the base flood elevation either (8-802.1A)"
           },
           "disputed_by": {
             "section": "8-502.1, 8-801.1E",
             "url": "https://ecode360.com/print/EA4240?guid=37011706",
-            "note": "8-502.1 sets rules 'If a variance is obtained for new construction or substantial improvements in the Flood Hazard District', and 8-801.1E speaks of a variance 'to permit the erection of a structure in the Flood Hazard District (outside of the floodway where they are prohibited)'"
+            "note": "8-502.1 sets rules 'If a variance is obtained for new construction or substantial improvements in the Flood Hazard District', and 8-801.1E speaks of a variance 'to permit the erection of a structure in the Flood Hazard District (outside of the floodway where they are prohibited)'. Also, 8-502.1 and 8-601.1A(2) except the uses or structures of 8-501E and F, but 8-501 has no subsections with those letters. Its permitted uses are in 8-501.4 and 8-501.5, and none of them is a dwelling"
           }
         },
         {
           "kind": "other",
-          "condition": "In the Flood Hazard District any construction needs a permit. Basements and fill are prohibited, work of 50% or more of a building's market value is a substantial improvement, and an existing nonconforming building may be continued, repaired and floodproofed.",
+          "condition": "In the Flood Hazard District any construction needs a permit. Basements and fill are prohibited, work of 50% or more of a building's market value is a substantial improvement, and an existing nonconforming building may be continued, repaired and floodproofed. Where a building is permitted, the lowest floor must be at or above the regulatory flood elevation, which is the base flood elevation plus 1 1/2 ft, and in an A zone without flood data the township may require it at least 3 ft above the highest adjacent grade. In a floodway no new construction without a DEP permit, and in an AE zone without a floodway no new construction unless it would not raise flood levels anywhere in the township. No part of an on-site sewage system in the district except in strict compliance with state and local rules. The Zoning Hearing Board may require a deed notice of the floodplain when it grants a variance. The district includes community identified flood hazard areas such as alluvial soils, so it may reach beyond the FEMA map.",
           "effect": "condition",
           "applies_to": null,
           "districts": null,
@@ -375,7 +432,7 @@
           "overlays": [
             "Flood Hazard District"
           ],
-          "section": "8-302, 8-502.1C(1), 8-503.1A(1), 8-701, 8-702.1C",
+          "section": "8-302, 8-401.1B, 8-402.1A(2), 8-402.1B(2)(a), 8-402.1C(1), 8-402.1E(1), 8-502.1A, 8-502.1C(1), 8-503.1A(1), 8-503.1C(3), 8-701, 8-702.1C, 8-801.1E, Chapter 8 Part 9 'Regulatory flood elevation'",
           "url": "https://ecode360.com/print/EA4240?guid=37011706",
           "confidence": "verified",
           "outside_zoning_chapter": "Chapter 8"
@@ -431,7 +488,7 @@
         },
         {
           "kind": "other",
-          "condition": "French Creek Scenic Corridor Overlay: a new principal use or an expansion needing a building permit is sited below the nearest ridge line where feasible, needs a landscape plan, and may clear at most 20% of any tree mass, treeline or hedgerow without replacement planting.",
+          "condition": "French Creek Scenic Corridor Overlay: a new principal use or an expansion needing a building permit is sited below the nearest ridge line where feasible, needs a landscape plan, and may clear at most 20% of any tree mass, treeline or hedgerow without replacement planting. With a building permit the township may require riparian vegetation reestablished to at least 50 ft from the top of the bank of the French Creek.",
           "effect": "condition",
           "applies_to": [
             "detached_new",
@@ -442,7 +499,7 @@
           "overlays": [
             "French Creek Scenic Corridor Overlay District"
           ],
-          "section": "27-1402.3A, B",
+          "section": "27-1402.3A, B, 27-1402.3B(7)",
           "url": "https://ecode360.com/print/EA4240?guid=37018804",
           "confidence": "verified"
         },
