@@ -44,7 +44,7 @@ export const en = (label: string, value: string, accept: string[], reject?: stri
 
 export const NOT_FIT = ["does not fit", "doesn't fit", "won't fit", 'will not fit', 'would not fit', "wouldn't fit", 'no room', 'not enough room', 'no space', 'no open space', 'cannot fit', "can't fit"];
 export const STATUS: Record<string, { accept: string[]; reject: string[] }> = {
-  fits: { accept: ['fits', 'would fit', 'will fit', 'could fit', 'can fit', 'does fit'], reject: [...NOT_FIT, 'not allowed'] },
+  fits: { accept: ['fits', 'would fit', 'will fit', 'could fit', 'can fit', 'does fit', 'test passed', 'passed the test'], reject: [...NOT_FIT, 'not allowed'] },
   fits_with_changes: {
     accept: ['with changes', 'with a change', 'with one change', 'if you', 'move it', 'smaller', 'shift', 'remove', 'fits if', 'would fit if', 'lower', 'or less', 'if the footprint', 'cut it to', 'reduce'],
     reject: ['not allowed'],

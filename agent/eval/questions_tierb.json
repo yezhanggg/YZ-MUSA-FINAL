@@ -4,7 +4,7 @@
   {
    "id": "tierb-01",
    "category": "tier_b",
-   "question": "Can I build an ADU in Warren city, Warren County? What does the zoning text say?",
+   "question": "Can I build an ADU in Benton township, Columbia County? What does the zoning text say?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -32,14 +32,16 @@
     {
      "name": "get_rule_text",
      "input": {
-      "place": "Warren city",
+      "place": "Benton township",
+      "county": "Columbia",
       "topic": "status"
      }
     },
     {
      "name": "search_zoning_text",
      "input": {
-      "place": "Warren city",
+      "place": "Benton township",
+      "county": "Columbia",
       "query": "accessory dwelling unit"
      }
     }
@@ -47,8 +49,8 @@
    "facts": [
     {
      "kind": "section",
-     "label": "section 470-56",
-     "value": "470-56"
+     "label": "section 601.3",
+     "value": "601.3"
     },
     {
      "kind": "behaviour",
@@ -93,7 +95,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "No rule file: quotes the use table at Section 470-56 word for word, labels it unverified, gives link and date, says to confirm with the city. No verdict.",
+   "rubric": "No rule file: quotes Section 601.3 word for word (accessory dwelling units in Option 4 Country Properties subdivisions), labels it unverified, gives link and date, says to confirm with the township. No verdict.",
    "quotes": "verbatim"
   },
   {
