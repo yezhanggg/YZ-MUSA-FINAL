@@ -5209,7 +5209,7 @@
       "why": [
         "added as batch 54 by population. Code Chapter 27 defines an accessory dwelling unit (27-202) but no district lists it (duplex by right in R-2 and R-3, two-family in A-1, 27-307 conversion, 27-312 group housing in R-3). Its code as read has no ADU rule (not addressed)"
       ],
-      "status_note": "Open points (first reading): whether the defined accessory dwelling unit (27-202, at most three rooms or 800 sq ft) is permitted inside a house although no district lists it, whether 27-335 lets a rear dwelling stand beside 27-332's one principal building outside R-3 group housing, the R-2 duplex lot (15,000 sq ft or 21,780 sq ft at 4 units an acre), whether the R-3 garden apartment figures reach a house, and Part 4 (district list and map), Part 6, Part 8 and Chapter 8 sections 603 to 607 and Part 8, which were not read"
+      "status_note": "Open point: the answer says 'The code has no ADU rule here', while the code defines an accessory dwelling unit with its own limits (27-202 'Dwelling unit, accessory') that no district lists. A permitted use is 'Any use which is specifically permitted in a particular zoning district' (27-202 'Permitted use'), so the definition alone is read as no permission (not addressed, a use variance), and the answer needs wording for a defined but unlisted unit. For a later check: which districts 27-316 means by general and neighborhood commercial (read as B-1 and B-2), and Part 4 (district list and map), 27-344 to 27-352, Part 6, Part 8, Part 9, 27-512 and Chapter 8 sections 603 to 607 and 802, which were not read"
     },
     {
       "geoid": "4202921008",
@@ -5228,12 +5228,12 @@
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30868304",
       "plain_fetch": null,
-      "code_current_through": null,
+      "code_current_through": "2026-08-10",
       "code_note": null,
       "why": [
         "named as a town with an ADU ordinance (Code 27-1515 in-law suite by special exception, family only (FR, R-1, R-2, R-3, C-1, LI))"
       ],
-      "status_note": "Open points (first reading): whether the in-law suite reaches NC and C (27-1515 cites 27-902, whose lists do not name it), the conversion path (special exception under 27-1312.2 or by right under 27-502.1C), whether renting rooms with a kitchen (27-1319.1B(7)) is a second dwelling unit, whether the 600 sq ft dwelling minimum (27-1311) reaches the suite, the 40% cap showing on Option 4 detached forms, and Part 3, Part 12, Part 14, Parts 16 to 20 and the C-1 and LI standards, which were not read"
+      "status_note": "Open point: on a lot that the Option 4 country property listing reaches (27-11.104.3), the answer gives its unit the in-law suite's 40% share cap, its parking space and its family-only status, while Option 4 sets only a 1,500 sq ft cap, the district setbacks and the district height. A listing cannot yet carry its own size and parking rules, so the listing stays secondary. Also open: the conversion path (special exception under 27-1312.2 or by right under 27-502.1C) and its date (27-202 leaves the chapter's effective date blank), whether the suite reaches NC and C, which figures govern a house in NC, C, C-1 and LI (27-803 or 27-904.1, 27-1004.1, 27-1104.1), whether renting rooms with a kitchen (27-1319.1B(7)) is a second dwelling unit, and Part 3, Part 12, Part 14 and Parts 16 to 20, which were not read"
     },
     {
       "geoid": "4200117640",
@@ -5247,7 +5247,7 @@
       "pop_rank": 404,
       "file": "pa_adams_cumberland",
       "batch": 54,
-      "status": "drafted",
+      "status": "verified",
       "checked_on": "2026-11-18",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30831722",
@@ -5257,7 +5257,7 @@
       "why": [
         "added as batch 54 by population. Code Chapter 27 has no ADU text (two-family by right in R, RMH, VMX, TND)"
       ],
-      "status_note": "Open points (first reading): whether a house may be made into a two-family dwelling where 2F is permitted (no conversion section found), the R lot for two units (12,000 sq ft or 24,892 sq ft at 3.5 units a developable acre), the VMX, TND and MX standards (27-603), Part 14 multi-family overlays, Part 17 lots of record, the parking fraction rule and Chapter 8, which were not read"
+      "status_note": "For a later check: the full text of 8-702.1C (no variance for some floodplain accessory structures, only its opening words read), the TND Ordinance of June 21, 2001 (27-607), the 27-602 and 27-603 columns read by order from text, whether a house may be made into a two-family dwelling where 2F is permitted (no conversion section), whether the MX 40,000 sq ft tract minimum reaches an older single lot, and the 1 1/2 story accessory limit in R and RMH, which is kept in the notes"
     }
   ]
 }
