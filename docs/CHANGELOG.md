@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-18, evening
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+- Town rules batches 55 and 56 (Ellwood City, Ambridge, Thornbury, Clifton Heights, Carroll, Middlesex) read, reviewed and fixed. Rules engine passes 28 and 29 cleared the wording that kept seven towns drafted. Now 223 places with a rule file: 146 verified, 77 drafted. 92 of the 221 town codes have no ADU text.
+- The site is live at pa-adu.vercel.app with the lot data for all six places on GitHub Pages (yezhanggg/backyard-homes-lots) and the Ask assistant on. The class site is at yezhanggg.github.io/YZ-MUSA-FINAL.
+- A live check on Nov 19 loaded every app data file, all 1,736 lot data files and every tract listed in the six manifests. The browser test suite passed against the live site except tests that reach into the local dev server's source files or depend on load timing.
+
 ## 2026-11-18, afternoon
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.

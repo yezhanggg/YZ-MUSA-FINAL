@@ -226,28 +226,28 @@ The product knows zoning at three levels:
 | Tier | Coverage | How it is used |
 |---|---|---|
 | 1. Lot-level rules | The six lot places: Philadelphia, Pittsburgh, Allentown, and 9 towns in Chester, Centre and Montgomery counties | Resolved for every lot and scenario and saved in the lot record |
-| 2. Town rule files | 215 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 139 verified, 78 drafted (as of Nov 18, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
+| 2. Town rule files | 221 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 146 verified, 77 drafted (as of Nov 18, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
 | 3. Statewide baseline | Every other town (`pa_statewide.json`) | The assistant answers with MPC paths, building code, sewage rules and the bills, and says it is not the town's own code |
 
 <!-- source: shared/rules/towns_index.json status field, shared/rules/pa_*.json adu.status.value, at commit 751cfaf (2026-11-16) -->
 
-Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 215 files was written from the code text in batches of two to six towns. Then a separate reader checked it a second time, value by value, against the code link. 114 passed and are "verified". 71 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`.
+Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 221 files was written from the code text in batches of two to six towns. Then a separate reader checked it a second time, value by value, against the code link. 114 passed and are "verified". 71 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`.
 
-ADU status in the 215 town files:
+ADU status in the 221 town files:
 
 | ADU status | Towns |
 |---|---|
-| Not addressed (no ADU text in the code) | 87 |
+| Not addressed (no ADU text in the code) | 92 |
 | Family only | 74 |
 | Allowed by right | 32 |
-| Special exception | 13 |
+| Special exception | 14 |
 | Conversion of an existing building only | 4 |
 | Conditional use | 4 |
 | Prohibited | 1 |
 
-<!-- source: shared/rules/pa_*.json adu.status.value for the 215 town files listed in towns_index.json, at commit 42ee220 -->
+<!-- source: shared/rules/pa_*.json adu.status.value for the 221 town files listed in towns_index.json, at commit d4db613 -->
 
-So 87 of the 215 towns have no ADU rule at all. A further 74 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF or sits behind a login were skipped for now. Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes, so they were skipped too. Several verified files rest on codes with 2026 amendments that were not read. Each of these carries a caution (`provenance.code_caution`), shown first with every answer.
+So 92 of the 221 towns have no ADU rule at all. A further 74 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF or sits behind a login were skipped for now. Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes, so they were skipped too. Several verified files rest on codes with 2026 amendments that were not read. Each of these carries a caution (`provenance.code_caution`), shown first with every answer.
 
 Rules engine passes 10 and 11 (Nov 14 and 15) added these readings. The fields are in `shared/rules/TOWNS.md`.
 
@@ -685,7 +685,7 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **The detector scores are not true accuracy yet.** Test labels are unchecked.
 - **The fit has no measured accuracy.** The hand-label check has 250 lots drawn and 0 labeled.
 - **The assistant can be wrong.** It scored 114 of 119 on the newest eval run (Nov 16), and scores move by a few questions between runs.
-- **Most towns have no rule file.** 215 towns beyond the two cities have one (as of Nov 18, 2026). 78 of the 217 files stay first readings (drafted). Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
+- **Most towns have no rule file.** 221 towns beyond the two cities have one (as of Nov 18, 2026). 77 of the 223 files stay first readings (drafted). Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
 - **Heights from Microsoft outlines read low** in Upper Dublin, so the height test reads "not checked" in Montgomery County.
 - **Pittsburgh's undermined-area overlay (UM-O)** is not in the lot data. The rule is in the file but no lot carries the flag.
 - **Land cover in the new lot places is not validated.** Allentown, Chester and Montgomery have no labels to check the model against. Centre County lies in a test county (about 0.70 test mIoU). 36 Centre County lots have no cover. The tree figures inside the suggested spot come from the same model, so they are not validated either.
