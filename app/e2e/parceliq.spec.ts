@@ -23,7 +23,7 @@ async function fakeAgent(page: Page, asked: string[]) {
 }
 
 test.describe('ParcelIQ', () => {
-  test('opens full width over the map, a topic is answered after the pill, Explain more asks again, Escape closes', async ({ page }) => {
+  test('opens on the right like Details, a topic is answered after the pill, Explain more asks again, Escape closes', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const asked: string[] = [];
     await fakeAgent(page, asked);
@@ -31,8 +31,12 @@ test.describe('ParcelIQ', () => {
     await page.getByRole('button', { name: 'ParcelIQ', exact: true }).click();
     await expect(chat(page)).toBeVisible();
     await expect(details(page)).toHaveCount(0);
+    // On the right side like Details: a column at the right edge, the map still open to its left.
     const box = (await chat(page).boundingBox())!;
-    expect(box.width).toBeGreaterThan(800);
+    expect(box.x + box.width).toBeGreaterThan(1440 - 20);
+    expect(box.width).toBeGreaterThan(340);
+    expect(box.width).toBeLessThan(800);
+    await expect(page.getByRole('radiogroup', { name: 'Map view' })).toBeVisible();
     const t0 = Date.now();
     await chat(page).getByRole('button', { name: 'What is an ADU?' }).click();
     await expect(chat(page).getByRole('status')).toBeVisible(); // the thinking pill
@@ -73,9 +77,11 @@ test.describe('ParcelIQ', () => {
     expect(w1).toBeLessThan(w0 - 100);
     await bar.dblclick();
     await expect.poll(async () => Math.round((await chat(page).boundingBox())!.width)).toBe(Math.round(w0));
-    // Closing Details gives the chat the full width.
+    // Side by side on the right: ParcelIQ left of Details.
+    expect((await chat(page).boundingBox())!.x).toBeLessThan((await details(page).boundingBox())!.x);
+    // Closing Details moves ParcelIQ to the right edge.
     await page.getByRole('button', { name: 'Hide the details' }).click();
     await expect(bar).toHaveCount(0);
-    await expect.poll(async () => (await chat(page).boundingBox())!.width).toBeGreaterThan(w0 + 200);
+    await expect.poll(async () => { const c = (await chat(page).boundingBox())!; return c.x + c.width; }).toBeGreaterThan(1440 - 20);
   });
 });

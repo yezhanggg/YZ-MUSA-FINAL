@@ -28,12 +28,12 @@ export default function TopBar() {
   const resultsOpen = useTool((s) => s.resultsOpen);
   const sides = useSides();
   const rightOpen = rightDrawer(mode) ? resultsOpen : sides.right;
-  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightOpen ? rw + GUTTER * 2 : 120 + GUTTER * 2 };
+  // ParcelIQ opens on the right like Details (beside it when both are open), so the bar keeps to the map left of them.
+  const chatOpen = useChatOpen((s) => s.open) && !narrow(mode);
+  const rightCover = chatOpen ? (rightOpen ? rw * 2 + GUTTER : rw + 120 + GUTTER) : rightOpen ? rw : 120;
+  const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightCover + GUTTER * 2 };
   const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
   useEffect(() => setOpen(false), [research]);
-  // ParcelIQ fills the map area as a strip from the top like the side panels, so the bar steps aside until it closes.
-  const chatOpen = useChatOpen((s) => s.open);
-  if (chatOpen && !narrow(mode) && !research) return null;
 
   return (
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
