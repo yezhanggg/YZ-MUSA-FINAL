@@ -8,7 +8,8 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const PGH = { lot: '42003-0086N00208000000', tract: '42003141300' };
 const hasPgh = existsSync(resolve(LOTS, 'pittsburgh', 'detail', `${PGH.tract}.json.gz`));
-/** Words a person sees in the left panel (a closed select shows only its chosen option). */
+/** Words a person sees in the left panel (a closed select shows only its chosen option). The map credits line in the
+ *  footer does not count: it is a licence notice, not panel text. */
 const LEFT_BUDGET = 80;
 /** Words in the right panel with a tract picked and nothing opened. */
 const RIGHT_BUDGET = 60;
@@ -22,6 +23,7 @@ async function visibleWords(el: Locator) {
     const count = (t: string) => t.split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
     let hidden = 0;
     for (const o of n.querySelectorAll('select option')) if (!(o as HTMLOptionElement).selected) hidden += count(o.textContent ?? '');
+    for (const c of n.querySelectorAll('[data-map-credits]')) hidden += count((c as HTMLElement).innerText);
     return count((n as HTMLElement).innerText) - hidden;
   });
 }

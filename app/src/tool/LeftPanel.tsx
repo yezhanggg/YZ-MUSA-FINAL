@@ -112,7 +112,7 @@ function Controls() {
       <MapLevelPick />
       <PayoffPick />
       <ForecastPick />
-      <BoundariesCard />
+      <BoundariesCard folded />
     </div>
   );
 }

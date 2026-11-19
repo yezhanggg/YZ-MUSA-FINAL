@@ -174,7 +174,8 @@ test.describe('address search in Test Project', () => {
       if (mode !== 'city tract index') await page.route('**/data/city_tracts.json', (r) => r.abort());
       const areaFiles: string[] = [];
       page.on('request', (r) => {
-        if (/data\/(tracts|towns|counties)\.geojson/.test(r.url())) areaFiles.push(r.url());
+        // The two big area files. counties.geojson (300 KB) loads anyway for the County outline (Boundaries).
+        if (/data\/(tracts|towns)\.geojson/.test(r.url())) areaFiles.push(r.url());
       });
       await page.goto('/#/?view=test');
       await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled();

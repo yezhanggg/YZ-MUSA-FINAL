@@ -9,11 +9,12 @@ const SAMPLE: Record<BoundaryId, string> = {
   zip: 'border-t-[1.5px] border-dashed border-teal-700/80',
 };
 
-export default function BoundariesCard() {
+/** `folded`: starts closed (Explore, where the panel keeps few words). Each view remembers its own fold. */
+export default function BoundariesCard({ folded }: { folded?: boolean }) {
   const on = useBoundaries((s) => s.on);
   const setOn = useBoundaries((s) => s.setOn);
   return (
-    <FoldCard title="Boundaries" storageKey="bh.boundariesOpen">
+    <FoldCard title="Boundaries" storageKey={folded ? 'bh.boundariesOpenExplore' : 'bh.boundariesOpen'} defaultOpen={!folded}>
       <div className="space-y-2">
         {BOUNDARY_IDS.map((id) => (
           <div key={id} className="flex items-center justify-between gap-3" data-boundary={id}>

@@ -4,16 +4,17 @@ import { useState, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cx } from '../../lib/cx';
 
-function readOpen(key: string) {
+function readOpen(key: string, fallback: boolean) {
   try {
-    return window.localStorage.getItem(key) !== '0';
+    const v = window.localStorage.getItem(key);
+    return v === null ? fallback : v !== '0';
   } catch {
-    return true;
+    return fallback;
   }
 }
 
-export default function FoldCard({ title, storageKey, extra, titleId, titleHint, bodyClass, children }: { title: string; storageKey: string; extra?: ReactNode; titleId?: string; titleHint?: string; bodyClass?: string; children: ReactNode }) {
-  const [open, setOpen] = useState(() => readOpen(storageKey));
+export default function FoldCard({ title, storageKey, extra, titleId, titleHint, bodyClass, defaultOpen = true, children }: { title: string; storageKey: string; extra?: ReactNode; titleId?: string; titleHint?: string; bodyClass?: string; defaultOpen?: boolean; children: ReactNode }) {
+  const [open, setOpen] = useState(() => readOpen(storageKey, defaultOpen));
   const toggle = () => {
     setOpen(!open);
     try {
