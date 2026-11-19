@@ -52,7 +52,7 @@ const P: Record<string, Passage> = {
       'Not addressed: the code has no ADU text. The path is a use variance or a code change. Some codes allow a special exception for a use similar to a listed one (Canonsburg). A unit inside the house may still be possible as a conversion to a two-family dwelling where a district allows one.',
       'Prohibited: the code bars ADUs. Only a use variance, unless the code bars those too.',
       'If two apply, the file keeps the one that limits most (a family-only unit by special exception is family only, with the hearing as its path).',
-      'In the 215 town rule files as of Nov 18, 2026: not addressed 87, family only 74, allowed by right 32, special exception 13, conversion only 4, conditional use 4, prohibited 1.',
+      'In the 221 town rule files as of Nov 18, 2026: not addressed 92, family only 74, allowed by right 32, special exception 14, conversion only 4, conditional use 4, prohibited 1.',
       'A town can also answer differently by form: a detached cottage, a garage conversion, a unit over a garage, a unit inside the house and an attached addition can each have their own path.',
     ],
     source: 'shared/rules/TOWNS.md "The adu part" and "A town where the code does not mention ADUs", docs/METHODS.md section 2.6',
