@@ -17,6 +17,7 @@ test.describe('boundaries', () => {
   test('County is on at the start, Tract and ZIP Code add and remove their layers', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
+    await expect(card(page)).toBeVisible();
     // Right after Testable Lots, before ADU Design.
     const order = await page.locator('aside[aria-label="Search and map controls"] section[aria-label]').evaluateAll((els) => els.map((e) => e.getAttribute('aria-label')));
     expect(order.indexOf('Boundaries')).toBe(order.indexOf('Testable Lots') + 1);
