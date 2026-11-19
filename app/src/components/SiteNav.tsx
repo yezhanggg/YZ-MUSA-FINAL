@@ -1,8 +1,8 @@
-// The top bar, always on screen over the map: Tool, and Research with a menu of the two class pages
-// (opens on hover, focus, click or tap). Picking one opens it in a panel over the map.
+// The top bar, always on screen over the map: Features, a menu of the two tools (Test Site and Explore), and Research,
+// a menu of the two class pages. Both open on hover, focus, click or tap. A Research page opens in a panel over the map.
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
@@ -29,38 +29,13 @@ export default function TopBar() {
   const sides = useSides();
   const rightOpen = rightDrawer(mode) ? resultsOpen : sides.right;
   const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightOpen ? rw + GUTTER * 2 : 120 + GUTTER * 2 };
-  const [open, setOpen] = useState(false);
-  const shut = useRef<number | undefined>(undefined);
-  const wrap = useRef<HTMLDivElement>(null);
-  const opened = useRef(0);
-  const show = () => {
-    window.clearTimeout(shut.current);
-    if (!open) opened.current = Date.now();
-    setOpen(true);
-  };
-  const hide = () => {
-    window.clearTimeout(shut.current);
-    shut.current = window.setTimeout(() => setOpen(false), 160);
-  };
-  // A tap fires a hover and then a click: keep the menu open instead of toggling it shut.
-  const onClick = () => setOpen((o) => (o && Date.now() - opened.current < 400 ? true : !o));
-  useEffect(() => {
-    if (!open) return;
-    const esc = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-    const out = (e: PointerEvent) => !wrap.current?.contains(e.target as Node) && setOpen(false);
-    window.addEventListener('keydown', esc);
-    window.addEventListener('pointerdown', out);
-    return () => {
-      window.removeEventListener('keydown', esc);
-      window.removeEventListener('pointerdown', out);
-    };
-  }, [open]);
+  const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
   useEffect(() => setOpen(false), [research]);
 
   return (
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
       <nav aria-label="Sections" className="pointer-events-auto relative flex min-w-0 gap-0.5 rounded-xl bg-white/90 p-1 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur">
-        <ModePick />
+        <FeaturesMenu />
         <div ref={wrap} className="relative" onMouseEnter={show} onMouseLeave={hide}>
           <button type="button" aria-haspopup="menu" aria-expanded={open} aria-current={research ? 'page' : undefined} onClick={onClick} onFocus={show} className={cx(TAB, research ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')}>
             {research && <motion.span layoutId="site-nav-pill" className="absolute inset-0 rounded-lg bg-stone-100 ring-1 ring-black/5" transition={SPRING_TAB} />}
@@ -87,28 +62,74 @@ export default function TopBar() {
   );
 }
 
-/** Which tool: lot-level testing or tract and town projections. Same shell, different controls and cards. */
-function ModePick() {
+/** A menu that opens on hover, focus, click or tap, and closes on Escape, a press outside or leaving it. */
+function useHoverMenu() {
+  const [open, setOpen] = useState(false);
+  const shut = useRef<number | undefined>(undefined);
+  const wrap = useRef<HTMLDivElement>(null);
+  const opened = useRef(0);
+  const show = () => {
+    window.clearTimeout(shut.current);
+    if (!open) opened.current = Date.now();
+    setOpen(true);
+  };
+  const hide = () => {
+    window.clearTimeout(shut.current);
+    shut.current = window.setTimeout(() => setOpen(false), 160);
+  };
+  // A tap fires a hover and then a click: keep the menu open instead of toggling it shut.
+  const onClick = () => setOpen((o) => (o && Date.now() - opened.current < 400 ? true : !o));
+  useEffect(() => {
+    if (!open) return;
+    const esc = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    const out = (e: PointerEvent) => !wrap.current?.contains(e.target as Node) && setOpen(false);
+    window.addEventListener('keydown', esc);
+    window.addEventListener('pointerdown', out);
+    return () => {
+      window.removeEventListener('keydown', esc);
+      window.removeEventListener('pointerdown', out);
+    };
+  }, [open]);
+  return { open, setOpen, wrap, show, hide, onClick };
+}
+
+const FEATURE_LINE: Record<ToolView, string> = {
+  test: 'One lot: its rules, where an ADU fits, cost and payoff',
+  project: 'Tracts, towns and counties across Pennsylvania',
+};
+
+/** "Features": which tool, Test Site (view=test) or Explore (view=project). Same shell, different controls and cards.
+ *  While a Research page is open, either option (the same one too) goes back to the map. */
+function FeaturesMenu() {
   const view = useView();
-  // While a Research page is open, the menu stands on a placeholder with the mode's name, so picking either mode
-  // (the same one too) goes back to the map.
   const research = useResearch();
+  const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
+  useEffect(() => setOpen(false), [research, view, setOpen]);
   return (
-    <label className="relative flex min-w-0 items-center">
-      <span className="sr-only">Mode</span>
-      <select value={research ? '' : view} onChange={(e) => openView(e.target.value as ToolView)} title="Test Project: one lot, its rules and fit (MUSA 6950). Explore: tracts, towns and counties (MUSA 5500)." className="tap min-w-0 cursor-pointer appearance-none truncate rounded-lg bg-violet-50 py-1.5 pl-3 pr-8 text-small font-semibold text-violet-900 ring-1 ring-violet-200 outline-none hover:bg-violet-100 focus-visible:ring-2 focus-visible:ring-violet-500 max-sm:max-w-[11rem] max-sm:text-small">
-        {research && (
-          <option value="" hidden>
-            {VIEW_LABEL[view]}
-          </option>
+    <div ref={wrap} className="relative" onMouseEnter={show} onMouseLeave={hide}>
+      <button type="button" aria-haspopup="menu" aria-expanded={open} aria-current={research ? undefined : 'page'} onClick={onClick} onFocus={show} title={`${VIEW_LABEL[view]} is open`} className={cx(TAB, research ? 'text-slate-600 hover:text-slate-900' : 'text-slate-900')}>
+        {!research && <motion.span layoutId="site-nav-pill" className="absolute inset-0 rounded-lg bg-stone-100 ring-1 ring-black/5" transition={SPRING_TAB} />}
+        <span className="relative">Features</span>
+        <ChevronDown className={cx('relative h-3.5 w-3.5 text-slate-500 transition-transform', open && 'rotate-180')} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div role="menu" aria-label="Features" initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.12 } }} transition={SPRING_TAB} style={{ transformOrigin: 'top left' }} className="absolute left-0 top-full z-50 mt-2 w-[260px] rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5">
+            {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => {
+              const on = !research && view === v;
+              return (
+                <button key={v} type="button" role="menuitemradio" aria-checked={on} onClick={() => (setOpen(false), openView(v))} className={cx('tap flex w-full items-start justify-between gap-2 rounded-lg px-3 py-2 text-left transition-colors', on ? 'bg-violet-50' : 'hover:bg-stone-100')}>
+                  <span className="min-w-0">
+                    <span className={cx('block text-small font-semibold', on ? 'text-violet-800' : 'text-slate-900')}>{VIEW_LABEL[v]}</span>
+                    <span className="block text-caption text-slate-500">{FEATURE_LINE[v]}</span>
+                  </span>
+                  {on && <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-violet-700" />}
+                </button>
+              );
+            })}
+          </motion.div>
         )}
-        {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => (
-          <option key={v} value={v}>
-            {VIEW_LABEL[v]}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-violet-700" />
-    </label>
+      </AnimatePresence>
+    </div>
   );
 }

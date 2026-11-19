@@ -25,9 +25,10 @@ test.describe('lot flow', () => {
   test('desktop 1440: verdict, size, scenario, build, report', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
-    const mode = page.getByRole('combobox', { name: 'Mode' });
-    await expect(mode).toHaveValue('project');
-    await mode.selectOption({ label: 'Test Project' });
+    // The Features menu: Explore is the open view, Test Site switches to testing.
+    await page.getByRole('button', { name: 'Features' }).click();
+    await expect(page.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'true');
+    await page.getByRole('menuitemradio', { name: /^Test Site/ }).click();
     await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toBeVisible();
 
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
@@ -82,7 +83,8 @@ test.describe('lot flow', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
     await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
-    await page.getByRole('combobox', { name: 'Mode' }).selectOption({ label: 'Explore' });
+    await page.getByRole('button', { name: 'Features' }).click();
+    await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
     const testHere = page.getByRole('button', { name: 'Test a lot here' }).first();
     await expect(testHere).toBeVisible();
     await expect(verdict(page)).toHaveCount(0);

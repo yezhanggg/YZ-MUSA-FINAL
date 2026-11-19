@@ -21,12 +21,14 @@ import { TestableLegend } from './test/TestableLots';
 import { usePlacesLayer } from './placesLayer';
 import { PlacesLegend } from './PlaceResults';
 import { useMainTerrain } from './terrain';
+import { useBoundaryLayers } from './boundaryLayers';
+import { watchCredits } from './credits';
 
 setWorkerUrl(workerUrl);
 // Parcels are PMTiles files, read by byte range.
 addProtocol('pmtiles', new Protocol().tile);
 
-/** Credits shown in the map's (i) box, next to the basemap's own OpenFreeMap / OpenMapTiles / OpenStreetMap line. */
+/** The app's own credits, shown in the left panel footer after the credits of the map sources (credits.ts). */
 const CREDITS = [
   '<a href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>',
   'Search <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> (OSM data, ODbL)',
@@ -207,6 +209,8 @@ export default function MapCanvas() {
   usePlacesLayer();
   // 3D: the ground from the place's terrain tiles (terrain.ts). 2D: flat.
   useMainTerrain();
+  // County, tract and ZIP code outlines (boundaryLayers.ts), in both views.
+  useBoundaryLayers();
 
   useEffect(() => {
     const container = el.current;
@@ -216,7 +220,8 @@ export default function MapCanvas() {
       style: 'https://tiles.openfreemap.org/styles/positron',
       bounds: PA_BBOX,
       fitBoundsOptions: { padding: mapPadding(false) },
-      attributionControl: { compact: true, customAttribution: CREDITS },
+      // No attribution button on the map: the credits are one line in the left panel footer (credits.ts).
+      attributionControl: false,
       // Right-drag or ctrl-drag rotates and tilts. Two-finger drag tilts on touch screens.
       maxPitch: 60,
       dragRotate: true,
@@ -229,6 +234,7 @@ export default function MapCanvas() {
     let alive = true;
     const tip = new Popup({ closeButton: false, closeOnClick: false, offset: 12, className: 'bh-tip', maxWidth: '260px' });
     let hovered: { src: string; id: string | number } | undefined;
+    const stopCredits = watchCredits(map, CREDITS);
 
     map.on('load', async () => {
       try {
@@ -263,8 +269,6 @@ export default function MapCanvas() {
         attachBoxDrag(map, ['site-unit-fill', 'site-model-3d']); // the unit box drags here too, linked with the site view (boxDrag.ts)
         addAreaLayers(map);
         set({ status: 'ready' });
-        // Start with the credits folded (MapLibre opens them on small screens). The (i) button opens them.
-        container.querySelector('.maplibregl-compact-show')?.classList.remove('maplibregl-compact-show');
       } catch {
         if (alive) set({ status: 'error' });
       }
@@ -344,6 +348,7 @@ export default function MapCanvas() {
     return () => {
       alive = false;
       tip.remove();
+      stopCredits();
       map.remove();
       mapRef.current = null;
       useTool.getState().set({ status: 'loading', spot: null, selectedLot: null });

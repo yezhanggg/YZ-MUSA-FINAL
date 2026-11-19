@@ -2,7 +2,7 @@
 // 2031 numbers), the header title, and the loading skeleton. Missing numbers read "Not ready yet".
 import { useState, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Loader2 } from 'lucide-react';
 import { Tag } from '../components/primitives';
 import { useMode } from './layout';
 import { FORECAST_LABEL, WINDOW_LABEL } from './metrics';
@@ -19,9 +19,16 @@ const NA = <span className="font-normal text-slate-400">Not ready yet</span>;
 const val = (v: ReactNode) => (v == null || v === '' ? NA : v);
 
 export function ReportSkeleton() {
+  // A spinning circle, or a still one when the viewer asks for less motion.
   return (
     <div>
-      <div className="shimmer-text text-small font-semibold">Checking this spot…</div>
+      <div role="status" aria-live="polite" data-loading className="flex items-center gap-2.5 rounded-xl bg-violet-50/60 px-3 py-2.5 ring-1 ring-violet-200/70">
+        <Loader2 aria-hidden className="h-5 w-5 shrink-0 animate-spin text-violet-600 motion-reduce:animate-none" />
+        <div className="min-w-0">
+          <div className="text-small font-semibold text-slate-900">Loading</div>
+          <div className="text-caption text-slate-500">Getting the lot data. This can take a few seconds.</div>
+        </div>
+      </div>
       <div className="mt-4 space-y-3">
         {[64, 120, 180].map((h) => (
           <div key={h} className="animate-pulse rounded-xl bg-stone-100" style={{ height: h }} />

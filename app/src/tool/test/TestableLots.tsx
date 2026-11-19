@@ -9,6 +9,7 @@ import { createPortal } from 'react-dom';
 import { mapRef, useTool } from '../store';
 import { ANSWER_COLOR, LEGEND, LOT_ZOOM, testableCaption } from '../testable';
 import { useManifests } from './placeData';
+import FoldCard, { Switch } from './FoldCard';
 
 
 /** Places with lot records, and a home street to fly to (placeData.ts PLACES, in the order of the loader's registry). */
@@ -23,8 +24,8 @@ export const LOT_PLACES = [
   { id: 'montgomery_county', name: 'Montgomery County', center: [-75.2634, 40.0087] as [number, number] },
 ];
 
-/** "Testable Lots": the switch on the title line, then one row per city that flies there, with its lot count (three
- * cities do not fit side by side in the 300 px panel). */
+/** "Testable Lots": a card that folds (remembered), the switch on the title line, then one row per place that flies
+ * there, with its lot count (three places do not fit side by side in the 300 px panel). */
 export default function TestableLots() {
   const on = useTool((s) => s.lotsLayer);
   const ready = useTool((s) => s.status === 'ready');
@@ -32,24 +33,14 @@ export default function TestableLots() {
   const caption = testableCaption(manifests);
   const count = (id: string) => manifests.find((m) => m.place === id)?.counts?.lots ?? null;
   return (
-    <section aria-label="Testable Lots" className="rounded-xl p-2.5 ring-1 ring-stone-200">
-      <div className="flex items-center justify-between gap-3">
-        <span id="testable-lots-label" className="text-small font-semibold text-slate-900" title={caption ? `Color every lot by its answer. ${caption}.` : 'Color every lot by its answer.'}>
-          Testable Lots
-        </span>
-        <button
-          type="button"
-          role="switch"
-          aria-checked={on}
-          aria-labelledby="testable-lots-label"
-          onClick={() => useTool.getState().set({ lotsLayer: !on })}
-          className="relative h-6 w-11 shrink-0 rounded-full before:absolute before:-inset-2.5 before:content-[''] focus-visible:outline-2 focus-visible:outline-violet-500"
-        >
-          <span aria-hidden className={cx('absolute inset-0 rounded-full transition-colors', on ? 'bg-violet-600' : 'bg-stone-300')} />
-          <span aria-hidden className={cx('absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform', on && 'translate-x-5')} />
-        </button>
-      </div>
-      <div className="mt-2 grid grid-cols-1 gap-1.5">
+    <FoldCard
+      title="Testable Lots"
+      storageKey="bh.testableLotsOpen"
+      titleId="testable-lots-label"
+      titleHint={caption ? `Color every lot by its answer. ${caption}.` : 'Color every lot by its answer.'}
+      extra={<Switch on={on} onChange={(v) => useTool.getState().set({ lotsLayer: v })} labelledBy="testable-lots-label" />}
+    >
+      <div className="grid grid-cols-1 gap-1.5">
         {LOT_PLACES.map((p) => {
           const n = count(p.id);
           return (
@@ -60,7 +51,7 @@ export default function TestableLots() {
           );
         })}
       </div>
-    </section>
+    </FoldCard>
   );
 }
 

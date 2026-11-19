@@ -11,7 +11,8 @@ import { openResearch } from '../lib/router';
 import { useTool, type Rule } from './store';
 import TestControls from './test/TestControls';
 import { NotLaw } from './test/Answer';
-import { dataLine, useManifests } from './test/placeData';
+import { useCredits } from './credits';
+import BoundariesCard from './test/BoundariesCard';
 import { ForecastPick, Label, MapLevelPick, PayoffPick } from './ProjectControls';
 
 /**
@@ -47,11 +48,10 @@ export default function LeftPanel({ style, drawer, onClose, column }: { style?: 
             <Controls />
           </>
         )}
-        <div className="mt-4 flex items-center justify-between gap-2 border-t border-stone-100 pt-3 text-caption text-slate-500">
-          {/* Lot record dates only matter for Test Project. */}
-          {test ? <DataLine /> : <span />}
+        <div className="mt-4 flex items-center justify-end gap-2 border-t border-stone-100 pt-3 text-caption text-slate-500">
           <button type="button" onClick={() => openResearch(test ? '6950' : '5500')} className="tap shrink-0 font-semibold text-violet-700 hover:text-violet-900">How it works →</button>
         </div>
+        <MapCredits />
       </div>
     </motion.aside>
   );
@@ -112,12 +112,25 @@ function Controls() {
       <MapLevelPick />
       <PayoffPick />
       <ForecastPick />
+      <BoundariesCard />
     </div>
   );
 }
 
-/** Build date of the lot records per place, from each manifest. */
-function DataLine() {
-  const line = dataLine(useManifests());
-  return line ? <span className="min-w-0 text-caption text-slate-500">{line}</span> : <span />;
+/** The map credits (credits.ts): one small muted line, in place of an attribution button on the map. */
+function MapCredits() {
+  const parts = useCredits((s) => s.parts);
+  if (!parts.length) return null;
+  return (
+    <p data-map-credits className="mt-2 text-[10.5px] leading-snug text-slate-400 [&_a]:underline [&_a]:decoration-slate-300 [&_a]:underline-offset-2 hover:[&_a]:text-slate-600">
+      Map:{' '}
+      {parts.map((p, i) =>
+        p.href ? (
+          <a key={i} href={p.href} target="_blank" rel="noreferrer">{p.text}</a>
+        ) : (
+          <span key={i}>{p.text}</span>
+        ),
+      )}
+    </p>
+  );
 }

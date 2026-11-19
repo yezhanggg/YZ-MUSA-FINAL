@@ -1,9 +1,10 @@
-// Test Project, left panel (search is in the panel header above): "Test Lot": the Testable Lots block (switch and the two cities) and
-// the scenario. "ADU Design": unit type, size, height, units and the money settings, folded with one click (remembered).
+// Test Project, left panel (search is in the panel header above): the scenario, then three cards that fold with one click
+// (remembered): Testable Lots (switch and the places), Boundaries (map outlines) and ADU Design (unit type, size, height,
+// units and the money settings).
 // Each change updates the result at once (the store is the only state). Labels in title case, three words or fewer;
 // longer explanations sit in hover text.
 import { useState, type ReactNode } from 'react';
-import { ChevronDown, RotateCcw } from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
 import { Segmented } from '../../components/primitives';
 import { cx } from '../../lib/cx';
 import { SCENARIOS, type AduType, type LotRecord, type Scenario } from '../../lib/lot/types';
@@ -12,6 +13,8 @@ import { ASSUMPTIONS } from '../../lib/money';
 import { useTool } from '../store';
 import { AREA_MAX, AREA_MIN, DEFAULT_MONEY, FINISHES, HEIGHT_MAX, HEIGHT_MIN, PRESETS, SIDE_MAX, SIDE_MIN, sidesFromArea, startUnit, typeOptions, type Finish } from '../testState';
 import TestableLots from './TestableLots';
+import BoundariesCard from './BoundariesCard';
+import FoldCard from './FoldCard';
 import { NotLaw } from './Answer';
 import { sameAsToday } from '../../lib/lot/verdict';
 
@@ -31,46 +34,21 @@ const FINISH_LABEL: Record<Finish, string> = { basic: 'Basic', standard: 'Standa
 const SMALL = new Set(['a', 'an', 'and', 'by', 'for', 'in', 'of', 'on', 'or', 'per', 'the', 'to']);
 export const titleLabel = (t: string) => t.split(' ').map((w, i) => (/[A-Z0-9]/.test(w) || (i > 0 && SMALL.has(w)) ? w : w.charAt(0).toUpperCase() + w.slice(1))).join(' ');
 
-const DESIGN_KEY = 'bh.aduDesignOpen';
-const readOpen = () => {
-  try {
-    return window.localStorage.getItem(DESIGN_KEY) !== '0';
-  } catch {
-    return true;
-  }
-};
-
 export default function TestControls() {
   const record = useTool((s) => s.spot?.record ?? null);
-  const [open, setOpen] = useState(readOpen);
-  const toggle = () => {
-    setOpen(!open);
-    try {
-      window.localStorage.setItem(DESIGN_KEY, open ? '0' : '1');
-    } catch {
-      /* storage blocked: the section state lasts for this visit only */
-    }
-  };
   return (
     <div className="space-y-4">
       <section aria-label="Test Lot" className="space-y-4 pt-1">
         <ScenarioPick />
         <TestableLots />
       </section>
+      <BoundariesCard />
       {/* One box, one fold: everything about the unit, as rows with light lines between them. */}
-      <section aria-label="ADU Design" className="rounded-xl bg-violet-50/40 ring-1 ring-violet-200/70">
-        <button type="button" onClick={toggle} aria-expanded={open} className="tap flex w-full items-center justify-between gap-2 px-3 py-2.5 text-left text-body font-bold text-slate-900">
-          ADU Design
-          <ChevronDown className={cx('h-4 w-4 shrink-0 text-slate-400 transition-transform', open && 'rotate-180')} aria-hidden />
-        </button>
-        {open && (
-          <div className="divide-y divide-violet-200/60 border-t border-violet-200/60 [&>*]:px-3 [&>*]:py-3">
-            <TypePick record={record} />
-            <SizePick />
-            <MoneyPick />
-          </div>
-        )}
-      </section>
+      <FoldCard title="ADU Design" storageKey="bh.aduDesignOpen" bodyClass="divide-y divide-violet-200/60 border-t border-violet-200/60 [&>*]:px-3 [&>*]:py-3">
+        <TypePick record={record} />
+        <SizePick />
+        <MoneyPick />
+      </FoldCard>
     </div>
   );
 }

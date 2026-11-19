@@ -115,26 +115,23 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   const map = mapRef.current;
   if (!map) return;
   const known = view === 'test' ? (opts.tract ?? parcel?.tr) : undefined;
-  // Test Project, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
-  // Philadelphia), the 10 MB area files only outside the two cities.
-  const indexed = view === 'test' && !known && useTool.getState().areas !== 'ready' ? await cityTractAt(pt) : null;
-  if (!known && !indexed && !(await loadAreas())) {
-    set({ msg: 'The map data did not load. Refresh the page to try again.' });
-    return;
-  }
-  const { tracts, towns } = useTool.getState();
-  const tract = tracts ? findFeature(tracts, pt) : undefined;
-  const town = towns ? findFeature(towns, pt) : undefined;
-  let area = tract ? { tract: tract.properties, town: town?.properties ?? {} } : (indexed ?? (known ? knownTract(known) : null));
-  if (!area) {
-    set({ msg: 'That spot is outside Pennsylvania.' });
-    return;
-  }
+  // Busy from the start, so the results open on the loading message while the tract and lot files load.
   const n = ++counter;
   pending?.abort();
   const ctrl = new AbortController();
   pending = ctrl;
   set({ msg: null, busy: true, selectedLot: view === 'test' ? (parcel?.id ?? opts.lotId ?? null) : null });
+  const fail = (msg: string) => n === counter && set({ msg, busy: false, selectedLot: null });
+  // Test Project, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
+  // Philadelphia), the 10 MB area files only outside the two cities.
+  const indexed = view === 'test' && !known && useTool.getState().areas !== 'ready' ? await cityTractAt(pt) : null;
+  if (!known && !indexed && !(await loadAreas())) return void fail('The map data did not load. Refresh the page to try again.');
+  if (n !== counter) return; // a newer spot won
+  const { tracts, towns } = useTool.getState();
+  const tract = tracts ? findFeature(tracts, pt) : undefined;
+  const town = towns ? findFeature(towns, pt) : undefined;
+  let area = tract ? { tract: tract.properties, town: town?.properties ?? {} } : (indexed ?? (known ? knownTract(known) : null));
+  if (!area) return void fail('That spot is outside Pennsylvania.');
 
   // The selected parcel's glowing outline is the only mark. Outside the parcels, a ripple shows where.
   if (!parcel) ripple(pt);
@@ -177,6 +174,9 @@ export const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m
 /** Open a lot from a link: load its record, then test the spot at its center. A link with a unit keeps it. */
 export async function openLot(lotId: string, geoid: string) {
   const keepUnit = /[?&]ut=/.test(window.location.hash);
+  // The record loads before the spot test starts: show the loading message from the first moment.
+  const n = counter;
+  useTool.getState().set({ msg: null, busy: true });
   try {
     const rec = await loadLot(lotId, geoid);
     const f = frameOf(rec);
@@ -184,7 +184,8 @@ export async function openLot(lotId: string, geoid: string) {
     const pt = f.toLonLat(centroid(toFeet(rec.lot.polygon, f.origin)));
     await testSpot(pt, 'Linked lot', null, { lotId, tract: geoid, keepUnit });
   } catch (e) {
-    useTool.getState().set({ msg: isLotLoadError(e) ? e.userMessage : 'That lot could not be opened.' });
+    // A newer spot started meanwhile: leave its state alone.
+    if (n === counter) useTool.getState().set({ msg: isLotLoadError(e) ? e.userMessage : 'That lot could not be opened.', busy: false });
   }
 }
 

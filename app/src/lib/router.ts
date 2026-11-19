@@ -36,7 +36,7 @@ export function openResearch(course: Course | null) {
 /** Which tool the top bar has picked: lot-level testing (default) or tract and town projections. */
 export type ToolView = 'test' | 'project';
 export const VIEW_LABEL: Record<ToolView, string> = {
-  test: 'Test Project',
+  test: 'Test Site',
   project: 'Explore',
 };
 

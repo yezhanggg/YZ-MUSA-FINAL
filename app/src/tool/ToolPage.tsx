@@ -99,12 +99,14 @@ export default function ToolPage() {
   }, [drawer]);
   const spotN = useTool((s) => s.spot?.n);
   useEffect(() => setDrawer(false), [spotN]);
-  // A picked lot opens the results drawer (laptop) or the right column (desktop), which start hidden.
+  // A picked lot opens the results drawer (laptop) or the right column (desktop), which start hidden. They open as
+  // soon as a lot starts loading, so the loading message shows there.
+  const busy = useTool((s) => s.busy);
   useEffect(() => {
-    if (!spotN) return;
+    if (!spotN && !busy) return;
     useTool.getState().set({ resultsOpen: true });
     useSides.getState().setSide('right', true);
-  }, [spotN]);
+  }, [spotN, busy]);
   // Hiding or showing a side: the map re-centres on the free space.
   const firstSides = useRef(true);
   useEffect(() => {

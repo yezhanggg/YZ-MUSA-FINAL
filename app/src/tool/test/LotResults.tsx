@@ -53,8 +53,17 @@ export function TestTabs({ tab, onTab, layoutId, ask = true }: { tab: TestTab; o
 export function TestTabBody({ tab }: { tab: TestTab }) {
   const spot = useTool((s) => s.spot);
   const busy = useTool((s) => s.busy);
+  const msg = useTool((s) => s.msg);
   if (tab === 'ask') return <AskBox expanded />;
-  if (busy && !spot) return <ReportSkeleton />;
+  // A lot loading (a click, a search pick, a link): the loading message, also over the lot shown before.
+  if (busy) return <ReportSkeleton />;
+  // The load failed before there was a spot: the same message the search box shows.
+  if (!spot && msg)
+    return (
+      <p className="rounded-xl bg-amber-50 px-3 py-2.5 text-small text-amber-900 ring-1 ring-amber-200" role="status" data-load-error>
+        {msg}
+      </p>
+    );
   // Nothing picked: one line on how to start (the box was empty under its title).
   if (!spot) return <p className="text-small text-slate-600" data-empty-prompt>Search an address or click a lot on the map to test a backyard home there.</p>;
   if (!spot.record) return <NoRecord spot={spot} tab={tab} />;

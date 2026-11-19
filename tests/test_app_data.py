@@ -102,3 +102,26 @@ def test_lots():
             assert "owner" not in " ".join(lot).lower()
             assert isinstance(lot["fits"], bool)
             assert not (lot["fits_keep_trees"] and not lot["fits"])
+
+
+def test_zcta() -> None:
+    """ZIP code outlines (pipeline/zcta_pa.py): Pennsylvania's 2020 ZCTAs, ZCTA5 only, small enough for the browser."""
+    path = APP / "zcta.geojson"
+    assert path.stat().st_size < 3_500_000, "zcta.geojson should stay under 3.5 MB (simplify more)"
+    fc = json.loads(path.read_text())
+    assert fc["type"] == "FeatureCollection"
+    feats = fc["features"]
+    # Pennsylvania has about 1,800 ZCTAs (all PA ZIP codes start 150 to 196).
+    assert 1700 <= len(feats) <= 1900
+    codes = [f["properties"]["ZCTA5"] for f in feats]
+    assert len(set(codes)) == len(codes)
+    assert all(set(f["properties"]) == {"ZCTA5"} for f in feats)
+    assert all(len(c) == 5 and c.isdigit() and "15000" <= c < "19700" for c in codes)
+    assert {"19104", "15213", "18101", "17101", "16801"} <= set(codes)
+    for f in feats:
+        assert f["geometry"]["type"] in {"Polygon", "MultiPolygon"}
+        ring = f["geometry"]["coordinates"][0]
+        ring = ring[0] if f["geometry"]["type"] == "MultiPolygon" else ring
+        assert len(ring) >= 4 and ring[0] == ring[-1]
+        for lon, lat in ring:
+            assert -80.6 < lon < -74.6 and 39.6 < lat < 42.4

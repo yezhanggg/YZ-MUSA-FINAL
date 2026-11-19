@@ -57,7 +57,8 @@ test.describe('explore areas', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${PGH.lot}&tract=${PGH.tract}`);
     await expect(page.locator('section[aria-label="Verdict"]').first()).toBeVisible();
-    await page.getByRole('combobox', { name: 'Mode' }).selectOption({ label: 'Explore' });
+    await page.getByRole('button', { name: 'Features' }).click();
+    await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
     // Explore opens on Where to Build (the municipality's answer, places.spec.ts); a tract map colour shows the tract answer.
     await left(page).getByRole('combobox', { name: 'Map colour' }).selectOption('pays');
     await expect(answer(page)).toBeVisible();
