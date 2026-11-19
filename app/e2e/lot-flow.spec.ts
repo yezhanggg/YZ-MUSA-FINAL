@@ -4,6 +4,7 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const LOT = '42003-0086N00208000000';
@@ -49,6 +50,7 @@ test.describe('lot flow', () => {
     await shot(page, 'lot-1440-fits.png');
 
     // Grow the unit until it no longer fits where it is.
+    await openCard(page, 'ADU Design');
     await page.locator('#u-width').fill('40');
     await page.locator('#u-depth').fill('60');
     await expect(verdict(page)).not.toHaveAttribute('data-status', 'fits');

@@ -35,7 +35,8 @@ export default function TestableLots() {
   return (
     <FoldCard
       title="Testable Lots"
-      storageKey="bh.testableLotsOpen"
+      storageKey="bh.testableLotsOpen.v2"
+      defaultOpen={false}
       titleId="testable-lots-label"
       titleHint={caption ? `Color every lot by its answer. ${caption}.` : 'Color every lot by its answer.'}
       extra={<Switch on={on} onChange={(v) => useTool.getState().set({ lotsLayer: v })} labelledBy="testable-lots-label" />}

@@ -135,3 +135,13 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 ## What to credit on screen
 
 When the product shows a map or a lot, the credits should name: the City of Philadelphia or the City of Pittsburgh and Allegheny County (for the place shown), "© OpenStreetMap contributors", Microsoft building footprints (ODbL) for Pittsburgh, PEMA via PASDA for the aerial photo and wherever detector results are shown, and Esri when its fallback imagery is on screen.
+
+On the map itself the app shows one small line, "© OpenStreetMap", in the bottom right corner, linked to https://www.openstreetmap.org/copyright (the ODbL credit). There is no attribution button. The full list of credits for the app is here:
+
+- Basemap tiles: OpenFreeMap (https://openfreemap.org), © OpenMapTiles (https://www.openmaptiles.org), map data from OpenStreetMap (https://www.openstreetmap.org/copyright), ODbL
+- Map library: MapLibre GL JS (https://maplibre.org), BSD-3-Clause
+- Address search: Photon by komoot (https://photon.komoot.io), OpenStreetMap data, ODbL
+- Building outlines: Microsoft Global ML Building Footprints (https://github.com/microsoft/GlobalMLBuildingFootprints), ODbL
+- Parcels: City of Philadelphia, Allegheny County, Chester County, Centre County, Montgomery County
+- Aerial photo: Pennsylvania Emergency Management Agency (PEMA), imagery hosted by PASDA. Fallback: Esri, Maxar, Earthstar Geographics
+- County, census tract and ZIP code outlines: U.S. Census Bureau, 2020 TIGER/Line and TIGERweb (2020 ZIP Code Tabulation Areas), public domain

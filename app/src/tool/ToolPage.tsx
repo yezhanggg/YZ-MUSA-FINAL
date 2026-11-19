@@ -162,7 +162,8 @@ export default function ToolPage() {
   const setLegendSlot = useLegendSlot((s) => s.setEl);
   // Map controls: bottom right of the open map area. Attribution: bottom left of it, out of their way.
   const controls: CSSProperties = isNarrow ? { right: GUTTER, bottom: sheetH + GUTTER, transition: 'bottom .35s cubic-bezier(.22,1,.36,1)' } : { right: rw + GUTTER * 2, bottom: GUTTER };
-  const shellVars = { ['--attr-left' as string]: `${isNarrow ? GUTTER : lw + GUTTER * 2}px`, ['--attr-bottom' as string]: `${isNarrow ? sheetH + GUTTER : GUTTER}px` } as CSSProperties;
+  // The "© OpenStreetMap" line: the bottom right corner of the open map (left of the right panel, above the sheet).
+  const shellVars = { ['--attr-left' as string]: `${isNarrow ? GUTTER : lw + GUTTER * 2}px`, ['--attr-bottom' as string]: `${isNarrow ? sheetH + GUTTER : GUTTER}px`, ['--credit-right' as string]: `${!isNarrow && rightOpen ? rw + GUTTER * 2 : 0}px`, ['--credit-bottom' as string]: `${isNarrow ? sheetH : 0}px` } as CSSProperties;
 
   return (
     <div className="bh-shell absolute inset-0" style={shellVars} data-mode={mode}>
@@ -188,7 +189,8 @@ export default function ToolPage() {
               out to the left when hidden; a "Controls" button at the left edge brings it back. */}
           <AnimatePresence initial={false}>
             {leftOpen ? (
-              <motion.div key="left" className="absolute z-30 flex flex-col gap-3" style={leftStyle} initial={{ x: '-110%' }} animate={{ x: 0 }} exit={{ x: '-110%' }} transition={reduced() ? { duration: 0 } : SPRING_PANEL}>
+              // The column spans the height, but only the panel and the legend take clicks: the map below a short panel stays clickable.
+              <motion.div key="left" className="pointer-events-none absolute z-30 flex flex-col gap-3 [&>*]:pointer-events-auto" style={leftStyle} initial={{ x: '-110%' }} animate={{ x: 0 }} exit={{ x: '-110%' }} transition={reduced() ? { duration: 0 } : SPRING_PANEL}>
                 <LeftPanel column onClose={() => useSides.getState().setSide('left', false)} />
                 <div ref={setLegendSlot} className="shrink-0 empty:hidden" />
               </motion.div>

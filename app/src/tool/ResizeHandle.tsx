@@ -1,5 +1,5 @@
-// The drag handle on the right panel's left edge (desktop and laptop). Drag it, or focus it and use the arrow
-// keys, to make the panel wider or narrower. A double-click goes back to 630 px. The width is remembered, and the
+// The drag handle on the right panel's left edge (desktop and laptop), drawn as a thin line with a grip in the middle.
+// Drag it, or focus it and use the arrow keys, to make the panel wider or narrower. A double-click goes back to 630 px. The width is remembered, and the
 // main map re-centres in the open area when the drag ends.
 import { useRef, type KeyboardEvent, type PointerEvent } from 'react';
 import { RIGHT_DEFAULT, RIGHT_MIN, RIGHT_STEP, clampRight, mapPadding, rightMax, saveRightWidth, usePanelWidth, useRightWidth, useViewportWidth } from './layout';
@@ -78,9 +78,13 @@ export default function ResizeHandle() {
       onPointerCancel={up}
       onDoubleClick={() => commit(RIGHT_DEFAULT)}
       onKeyDown={key}
-      className="group absolute inset-y-0 left-0 z-30 flex w-3 cursor-col-resize touch-none items-center justify-center outline-none"
+      data-resize-grip
+      // An 8 px hit area centred on the panel's left edge, the whole height. A thin line shows the edge, and a small
+      // pill in the middle shows it can be dragged. Both turn violet on hover, focus and drag.
+      className="group absolute inset-y-3 -left-1 z-30 flex w-2 cursor-col-resize touch-none items-center justify-center outline-none"
     >
-      <span className="h-12 w-1 rounded-full bg-stone-300 opacity-70 transition-opacity group-hover:opacity-100 group-focus-visible:bg-violet-500 group-focus-visible:opacity-100 group-active:bg-violet-500 group-active:opacity-100" />
+      <span aria-hidden className="absolute inset-y-4 left-1/2 w-px -translate-x-1/2 rounded-full bg-stone-300/80 transition-colors group-hover:bg-violet-400 group-focus-visible:bg-violet-500 group-active:bg-violet-500" />
+      <span aria-hidden className="relative h-10 w-1.5 rounded-full bg-stone-300 shadow-sm ring-2 ring-white transition-colors group-hover:bg-violet-500 group-focus-visible:bg-violet-500 group-active:bg-violet-600" />
     </div>
   );
 }

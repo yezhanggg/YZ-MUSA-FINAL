@@ -6,6 +6,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const WCH = { lot: '42029-1-4-50', tract: '42029302400' }; // 307 W Marshall St, West Chester, NC-1
@@ -52,6 +53,7 @@ test.describe('a county place with several towns', () => {
   test('Testable Lots lists the county by name with its lot count', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
+    await openCard(page, 'Testable Lots');
     const row = page.locator('[data-place="chester_county"]');
     await expect(row).toContainText('Chester County');
     await expect(row).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
@@ -86,6 +88,7 @@ test.describe('Montgomery County, a second county place', () => {
   test('Testable Lots lists Montgomery County with its lot count', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
+    await openCard(page, 'Testable Lots');
     const row = page.locator('[data-place="montgomery_county"]');
     await expect(row).toContainText('Montgomery County');
     await expect(row).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
@@ -116,6 +119,7 @@ test.describe('answers that depend on something the record does not hold', () =>
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${PHX_SOUTH.lot}&tract=${PHX_SOUTH.tract}`);
     await expect(verdict(page)).toBeVisible();
+    await openCard(page, 'ADU Design');
     await page.locator('#u-width').fill('40');
     await page.locator('#u-depth').fill('60');
     await expect(verdict(page)).toHaveAttribute('data-status', 'check_needed');

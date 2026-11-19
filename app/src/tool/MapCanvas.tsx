@@ -22,19 +22,10 @@ import { usePlacesLayer } from './placesLayer';
 import { PlacesLegend } from './PlaceResults';
 import { useMainTerrain } from './terrain';
 import { useBoundaryLayers } from './boundaryLayers';
-import { watchCredits } from './credits';
 
 setWorkerUrl(workerUrl);
 // Parcels are PMTiles files, read by byte range.
 addProtocol('pmtiles', new Protocol().tile);
-
-/** The app's own credits, shown in the left panel footer after the credits of the map sources (credits.ts). */
-const CREDITS = [
-  '<a href="https://maplibre.org/" target="_blank" rel="noreferrer">MapLibre</a>',
-  'Search <a href="https://photon.komoot.io/" target="_blank" rel="noreferrer">Photon</a> (OSM data, ODbL)',
-  'Building outlines <a href="https://github.com/microsoft/GlobalMLBuildingFootprints" target="_blank" rel="noreferrer">Microsoft</a> (ODbL)',
-  'Parcels: City of Philadelphia, Allegheny County, Chester County, Centre County, Montgomery County',
-];
 
 const MOE_NONE: ExpressionSpecification = ['==', ['get', 'GEOID'], '__none__'];
 
@@ -220,7 +211,8 @@ export default function MapCanvas() {
       style: 'https://tiles.openfreemap.org/styles/positron',
       bounds: PA_BBOX,
       fitBoundsOptions: { padding: mapPadding(false) },
-      // No attribution button on the map: the credits are one line in the left panel footer (credits.ts).
+      // No attribution button on the map: one small "© OpenStreetMap" line in the corner (below). The full credits list
+      // is in docs/LICENSES.md ("What to credit on screen").
       attributionControl: false,
       // Right-drag or ctrl-drag rotates and tilts. Two-finger drag tilts on touch screens.
       maxPitch: 60,
@@ -234,7 +226,6 @@ export default function MapCanvas() {
     let alive = true;
     const tip = new Popup({ closeButton: false, closeOnClick: false, offset: 12, className: 'bh-tip', maxWidth: '260px' });
     let hovered: { src: string; id: string | number } | undefined;
-    const stopCredits = watchCredits(map, CREDITS);
 
     map.on('load', async () => {
       try {
@@ -348,7 +339,6 @@ export default function MapCanvas() {
     return () => {
       alive = false;
       tip.remove();
-      stopCredits();
       map.remove();
       mapRef.current = null;
       useTool.getState().set({ status: 'loading', spot: null, selectedLot: null });
@@ -481,6 +471,10 @@ export default function MapCanvas() {
   return (
     <div className="bh-map absolute inset-0">
       <div ref={el} className="h-full w-full" aria-label="Map of Pennsylvania. Click to test a spot." />
+      {/* The OpenStreetMap credit the ODbL asks for: one small line in the bottom right corner of the open map. */}
+      <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer" data-osm-credit className="absolute z-[5] rounded-tl bg-white/70 px-1 text-[10px] leading-3 text-slate-500 hover:text-slate-800" style={{ right: 'var(--credit-right, 0px)', bottom: 'var(--credit-bottom, 0px)' }}>
+        © OpenStreetMap
+      </a>
       <TestableLegend answers={answers} />
       <PlacesLegend />
     </div>

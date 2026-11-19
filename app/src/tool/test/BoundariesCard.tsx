@@ -14,7 +14,7 @@ export default function BoundariesCard({ folded }: { folded?: boolean }) {
   const on = useBoundaries((s) => s.on);
   const setOn = useBoundaries((s) => s.setOn);
   return (
-    <FoldCard title="Boundaries" storageKey={folded ? 'bh.boundariesOpenExplore' : 'bh.boundariesOpen'} defaultOpen={!folded}>
+    <FoldCard title="Boundaries" storageKey={folded ? 'bh.boundariesOpenExplore' : 'bh.boundariesOpen.v2'} defaultOpen={!folded}>
       <div className="space-y-2">
         {BOUNDARY_IDS.map((id) => (
           <div key={id} className="flex items-center justify-between gap-3" data-boundary={id}>

@@ -5,6 +5,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const hasTiles = ['lots.pmtiles', 'overview.pmtiles'].every((f) => existsSync(resolve(LOTS, 'pittsburgh/tiles', f)));
@@ -24,6 +25,7 @@ test.describe('show testable lots', () => {
     await expect(map).toHaveAttribute('data-testable', '');
     await expect(legend).toHaveCount(0);
     // One button per place (a city, or a county with several towns), each with its lot count from the place manifest.
+    await openCard(page, 'Testable Lots');
     for (const place of ['pittsburgh', 'philadelphia', 'allentown', 'chester_county', 'centre_county', 'montgomery_county']) await expect(page.locator(`[data-place="${place}"]`)).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
     // The legend is a card under the left panel, not over the map.
     const panel = page.locator('aside[aria-label="Search and map controls"]');
@@ -48,20 +50,20 @@ test.describe('show testable lots', () => {
     await expect(map).toHaveAttribute('data-testable', '');
   });
 
-  test('the card folds with its title, the switch stays on the title row, and the fold is remembered', async ({ page }) => {
+  test('the card starts folded, the switch stays on the title row, and the fold is remembered', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
     const fold = page.getByRole('button', { name: 'Testable Lots', exact: true });
-    await expect(fold).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('[data-place="pittsburgh"]')).toBeVisible();
-    await fold.click();
+    await expect(fold).toHaveAttribute('aria-expanded', 'false');
     await expect(page.locator('[data-place="pittsburgh"]')).toHaveCount(0);
     const sw = page.getByRole('switch', { name: 'Testable Lots' });
     await sw.click();
     await expect(sw).toHaveAttribute('aria-checked', 'true');
-    await page.reload();
-    await expect(fold).toHaveAttribute('aria-expanded', 'false');
     await fold.click();
     await expect(page.locator('[data-place="pittsburgh"]')).toBeVisible();
+    await page.reload();
+    await expect(fold).toHaveAttribute('aria-expanded', 'true');
+    await fold.click();
+    await expect(page.locator('[data-place="pittsburgh"]')).toHaveCount(0);
   });
 });

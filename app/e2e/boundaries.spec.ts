@@ -5,6 +5,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const hasLots = existsSync(resolve(LOTS, 'pittsburgh/manifest.json'));
@@ -18,10 +19,11 @@ test.describe('boundaries', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
     await expect(card(page)).toBeVisible();
-    // Right after Testable Lots, before ADU Design.
+    // First under Zoning Regulation and open; Testable Lots and ADU Design follow, folded.
     const order = await page.locator('aside[aria-label="Search and map controls"] section[aria-label]').evaluateAll((els) => els.map((e) => e.getAttribute('aria-label')));
-    expect(order.indexOf('Boundaries')).toBe(order.indexOf('Testable Lots') + 1);
-    expect(order.indexOf('ADU Design')).toBeGreaterThan(order.indexOf('Boundaries'));
+    expect(order.filter((l) => ['Boundaries', 'Testable Lots', 'ADU Design'].includes(l ?? ''))).toEqual(['Boundaries', 'Testable Lots', 'ADU Design']);
+    await expect(card(page).getByRole('button', { name: 'Boundaries' })).toHaveAttribute('aria-expanded', 'true');
+    for (const t of ['Testable Lots', 'ADU Design']) await expect(page.locator(`section[aria-label="${t}"]`).getByRole('button', { name: t, exact: true })).toHaveAttribute('aria-expanded', 'false');
     await expect(sw(page, 'County')).toHaveAttribute('aria-checked', 'true');
     await expect(sw(page, 'Census Tract')).toHaveAttribute('aria-checked', 'false');
     await expect(sw(page, 'ZIP Code')).toHaveAttribute('aria-checked', 'false');
@@ -71,6 +73,7 @@ test.describe('boundaries', () => {
     await sw(page, 'Census Tract').click();
     await sw(page, 'ZIP Code').click();
     await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-county-line.*bnd-tract-line.*bnd-zip-line/);
+    await openCard(page, 'Testable Lots');
     await page.locator('[data-place="pittsburgh"]').click();
     await page.waitForTimeout(4000); // the fly to the city
     const canvas = main(page).locator('canvas').first();

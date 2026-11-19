@@ -4,6 +4,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const PGH = { lot: '42003-0086N00208000000', tract: '42003141300', place: 'pittsburgh' };
@@ -193,6 +194,7 @@ test.describe('right panel', () => {
       await page.goto('about:blank');
       await page.goto('/#/?view=test');
       await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled();
+      await openCard(page, 'Testable Lots');
       await page.locator('[data-place="pittsburgh"]').click();
       await page.waitForTimeout(4000);
       // Lots are dense in the Pittsburgh view: try points across the open map until one opens a lot record

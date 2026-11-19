@@ -4,6 +4,7 @@ import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { openCard } from './cards';
 
 const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
 const LOT = '42003-0086N00208000000';
@@ -62,6 +63,7 @@ test.describe('linked views and selection', () => {
     await expect(title(page)).toHaveText('Details');
     // A lot picked on the map, then the same lot again: the map centres the picked point in the open map, so the
     // second click goes to that centre.
+    await openCard(page, 'Testable Lots');
     await page.locator('[data-place="pittsburgh"]').click();
     await page.waitForTimeout(4000);
     const l = (await page.locator('aside[aria-label="Search and map controls"]').boundingBox())!;

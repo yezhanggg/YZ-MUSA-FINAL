@@ -1,6 +1,6 @@
 // Test Project, left panel (search is in the panel header above): the scenario, then three cards that fold with one click
-// (remembered): Testable Lots (switch and the places), Boundaries (map outlines) and ADU Design (unit type, size, height,
-// units and the money settings).
+// (remembered): Boundaries (map outlines, open at first), Testable Lots (switch and the places) and ADU Design (unit type,
+// size, height, units and the money settings), both folded at first.
 // Each change updates the result at once (the store is the only state). Labels in title case, three words or fewer;
 // longer explanations sit in hover text.
 import { useState, type ReactNode } from 'react';
@@ -38,13 +38,14 @@ export default function TestControls() {
   const record = useTool((s) => s.spot?.record ?? null);
   return (
     <div className="space-y-4">
-      <section aria-label="Test Lot" className="space-y-4 pt-1">
+      <section aria-label="Test Lot" className="pt-1">
         <ScenarioPick />
-        <TestableLots />
       </section>
       <BoundariesCard />
-      {/* One box, one fold: everything about the unit, as rows with light lines between them. */}
-      <FoldCard title="ADU Design" storageKey="bh.aduDesignOpen" bodyClass="divide-y divide-violet-200/60 border-t border-violet-200/60 [&>*]:px-3 [&>*]:py-3">
+      <TestableLots />
+      {/* One box, one fold: everything about the unit, as rows with light lines between them. Starts folded (v2 key:
+          the new default applies once to everyone, then each viewer's choice is kept). */}
+      <FoldCard title="ADU Design" storageKey="bh.aduDesignOpen.v2" defaultOpen={false} bodyClass="divide-y divide-violet-200/60 border-t border-violet-200/60 [&>*]:px-3 [&>*]:py-3">
         <TypePick record={record} />
         <SizePick />
         <MoneyPick />

@@ -26,14 +26,37 @@ test.describe('features menu and footer', () => {
     await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toBeVisible();
   });
 
-  test('the map credits are a line in the left panel, with no button on the map', async ({ page }) => {
+  test('the map shows one small OpenStreetMap credit, the left panel no credits and no footer link', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
-    const credits = page.locator('aside[aria-label="Search and map controls"] [data-map-credits]');
-    await expect(credits).toContainText('OpenStreetMap');
-    await expect(credits.getByRole('link', { name: /OpenStreetMap/ })).toHaveAttribute('href', /openstreetmap\.org/);
+    const credit = page.locator('[data-osm-credit]');
+    await expect(credit).toHaveText('© OpenStreetMap');
+    await expect(credit).toHaveAttribute('href', 'https://www.openstreetmap.org/copyright');
+    const box = (await credit.boundingBox())!;
+    expect(box.x + box.width).toBeGreaterThan(1440 - 40); // bottom right corner of the map
+    expect(box.y + box.height).toBeGreaterThan(900 - 20);
     await expect(page.locator('[aria-label^="Map of Pennsylvania"] .maplibregl-ctrl-attrib')).toHaveCount(0);
-    await expect(page.locator('aside[aria-label="Search and map controls"]')).not.toContainText('Lot data:');
-    await expect(page.getByRole('button', { name: 'How it works →' })).toBeVisible();
+    const left = page.locator('aside[aria-label="Search and map controls"]');
+    await expect(left).not.toContainText('Lot data:');
+    await expect(left).not.toContainText('OpenFreeMap');
+    await expect(left.getByRole('button', { name: /How it works/ })).toHaveCount(0);
+  });
+
+  test('the left panel is as tall as what is open, and the map under it takes clicks', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/#/?view=test');
+    const left = page.locator('aside[aria-label="Search and map controls"]');
+    await expect(left.locator('section[aria-label="Boundaries"]')).toBeVisible();
+    const short = (await left.boundingBox())!.height;
+    expect(short).toBeLessThan(900 - 100);
+    // Opening ADU Design makes it taller (up to the window, then it scrolls inside).
+    await page.locator('section[aria-label="ADU Design"]').getByRole('button', { name: 'ADU Design', exact: true }).click();
+    await expect.poll(async () => (await left.boundingBox())!.height).toBeGreaterThan(short + 100);
+    expect((await left.boundingBox())!.height).toBeLessThanOrEqual(900 - 24 + 1);
+    await page.locator('section[aria-label="ADU Design"]').getByRole('button', { name: 'ADU Design', exact: true }).click();
+    // Below the short panel: the map, not the panel's column, is under the pointer.
+    const b = (await left.boundingBox())!;
+    const hit = await page.evaluate(([x, y]) => document.elementFromPoint(x, y)?.tagName, [b.x + b.width / 2, b.y + b.height + 40]);
+    expect(hit).toBe('CANVAS');
   });
 });
