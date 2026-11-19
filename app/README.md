@@ -129,7 +129,7 @@ The eval lives in `../agent/eval/` (65 questions in `questions.json`). `agent/ev
 
 - `index.html` page shell.
 - `src/tool/` map (`MapCanvas`), map buttons (`MapControls`), search (`Search`), panels (`LeftPanel`, `RightPanel` with its `ResizeHandle`, `BottomSheet`), Projecting controls (`ProjectControls`, `CountyTable`, `PlayModel`), spot test (`actions`, `geo`), parcel colours (`parcels`), aerial layer (`aerial`).
-- `src/tool/test/` Testing mode: controls (`TestControls`), result tabs (`LotResults`), the answer, checklist, scenario chips and folds (`Answer`), the fold bodies (`cards`, `story`), the site view (`SiteView`, a second map with the aerial photo, the unit box and its own zoom), the printable report (`LotReport`). State helpers in `src/tool/testState.ts`, site layers in `src/tool/siteLayers.ts`.
+- `src/tool/test/` Testing mode: controls (`TestControls`), result tabs (`LotResults`: Results, Compare, Next Step), the answer, checklist and folds (`Answer`), the bills side by side (`Compare`, from `src/lib/lot/compare.ts`), the fold bodies (`cards`, `story`), the site view (`SiteView`, a second map with the aerial photo, the unit box and its own zoom), the printable report (`LotReport`). State helpers in `src/tool/testState.ts`, site layers in `src/tool/siteLayers.ts`.
 - `src/lib/lot/` lot records: loading, verdict, citations, build steps, report data, assistant tools. See its README.
 - `src/lib/money.ts` the money model in the browser. It reads `shared/assumptions.json`, like `pipeline/money.py`.
 - `src/lib/adu.ts`, `src/lib/rules.ts` the Projecting mode's fit and payoff math and its rule text.

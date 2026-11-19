@@ -64,7 +64,7 @@ export default function ToolPage() {
       if (/[?&](bed|size|st)=/.test(hash)) st.set({ adu: aduFromHash(hash) });
       const link = testFromHash(hash);
       // The mode menu writes only the view. A full link also carries the scenario and the unit.
-      st.set(/[?&]sc=/.test(hash) ? { view: link.view, scenario: link.scenario, unit: link.unit } : { view: link.view });
+      st.set(/[?&]sc=/.test(hash) ? { view: link.view, scenario: 'today', unit: link.unit } : { view: link.view });
       if (link.lot && link.lot.id !== st.spot?.record?.lot.id) void openLot(link.lot.id, link.lot.tract);
     };
     window.addEventListener('hashchange', on);

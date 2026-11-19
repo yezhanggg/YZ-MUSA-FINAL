@@ -1,7 +1,7 @@
-// Test Project, right panel (and the phone sheet). The right panel has Ask on top (its own section, RightPanel) and
-// two tabs; the phone sheet keeps Ask as a third tab.
-//   Results: the answer, the rule checklist, the site view, the three scenarios, then folds
+// Test Site, right panel (and the phone sheet): three tabs, and on the phone sheet Ask as a fourth.
+//   Results: the answer under today's rules, the rule checklist, the site view, then folds
 //            (Why, Money, Land cover, Lot facts, City numbers), all closed at first
+//   Compare: the same unit under today's rules and each bill, what each bill changes (Compare.tsx)
 //   Next Step: the plain steps (lib/lot/nextSteps from buildSteps), or what would have to change
 //   Ask:     the assistant (phone and tablet sheet only)
 // With no lot record for the spot, it says what is missing and falls back to the tract and town report.
@@ -17,7 +17,8 @@ import { ReportStack } from '../RightPanel';
 import { ReportSkeleton } from '../Report';
 import { linkHash, useTool, type Spot } from '../store';
 import { testSpot } from '../actions';
-import { AnswerCard, Fold, Folds, RuleChecklist, ScenarioChips, ShortNotice } from './Answer';
+import { AnswerCard, Fold, Folds, RuleChecklist, ShortNotice } from './Answer';
+import Compare from './Compare';
 import { FactsBody, NextStepList, MoneyBody, WhyText, ZoningRules } from './cards';
 import LotReport from './LotReport';
 import SiteView from './SiteView';
@@ -25,9 +26,10 @@ import { CityStory, CoverBody, SpotCoverLine, WhyNot } from './story';
 import { useLotResult } from './useLotResult';
 import { nextSteps } from '../../lib/lot/nextSteps';
 
-export type TestTab = 'results' | 'build' | 'ask';
+export type TestTab = 'results' | 'compare' | 'build' | 'ask';
 const TABS: { id: TestTab; label: string }[] = [
   { id: 'results', label: 'Results' },
+  { id: 'compare', label: 'Compare' },
   { id: 'build', label: 'Next Step' },
   { id: 'ask', label: 'Ask' },
 ];
@@ -35,7 +37,7 @@ const TABS: { id: TestTab; label: string }[] = [
 export function TestTabs({ tab, onTab, layoutId, ask = true }: { tab: TestTab; onTab: (t: TestTab) => void; layoutId: string; ask?: boolean }) {
   const tabs = ask ? TABS : TABS.filter((t) => t.id !== 'ask');
   return (
-    <div role="tablist" aria-label="Results" className={cx('relative grid rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70', ask ? 'grid-cols-3' : 'grid-cols-2')}>
+    <div role="tablist" aria-label="Results" className={cx('relative grid rounded-xl bg-stone-100 p-1 ring-1 ring-stone-200/70', ask ? 'grid-cols-4' : 'grid-cols-3')}>
       {tabs.map((t) => {
         const on = tab === t.id;
         return (
@@ -81,12 +83,12 @@ function NoRecord({ spot, tab }: { spot: Spot; tab: TestTab }) {
           </button>
         )}
       </p>
-      {tab === 'results' ? <ReportStack /> : <p className="text-small text-slate-600">The next steps need a lot record.</p>}
+      {tab === 'results' ? <ReportStack /> : <p className="text-small text-slate-600">{tab === 'compare' ? 'The comparison needs a lot record.' : 'The next steps need a lot record.'}</p>}
     </div>
   );
 }
 
-/** Answer first, then the rule checklist, the site, the three scenarios, and the rest folded. */
+/** Answer first, then the rule checklist, the site, and the rest folded. The bills are in the Compare tab. */
 function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: string | null; tab: TestTab }) {
   const r = useLotResult(record);
   // The unit box can be dragged on the main map and the site view (boxDrag.ts): they read this lot and result.
@@ -95,12 +97,12 @@ function WithRecord({ record, builtAt, tab }: { record: LotRecord; builtAt: stri
     return () => setBoxContext(null);
   }, [record, r]);
   if (tab === 'build') return <NextStepList plan={nextSteps(r.build, r.verdict, r.rows, record.lot.place)} />;
+  if (tab === 'compare') return <Compare lot={record} r={r} />;
   return (
     <div className="space-y-3">
       <AnswerCard v={r.verdict} lot={record} />
       <RuleChecklist lot={record} v={r.verdict} />
       <SiteView record={record} r={r} />
-      <ScenarioChips rows={r.rows} scenario={r.scenario} />
       <Folds>
         <Fold title="Why">
           <WhyText v={r.verdict} lot={record} />

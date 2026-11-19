@@ -1,5 +1,5 @@
 // The main lot flow: pick Test Project, open a Pittsburgh lot by link, read the verdict, grow the unit until it
-// no longer fits, switch the scenario, open the Next Step tab and the lot report. Screenshots go to SHOTS_DIR.
+// no longer fits, compare it with the bills, open the Next Step tab and the lot report. Screenshots go to SHOTS_DIR.
 import { existsSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { resolve } from 'node:path';
@@ -30,7 +30,9 @@ test.describe('lot flow', () => {
     await page.getByRole('button', { name: 'Features' }).click();
     await expect(page.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'true');
     await page.getByRole('menuitemradio', { name: /^Test Site/ }).click();
-    await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toBeVisible();
+    await expect(page.locator('section[aria-label="Boundaries"]')).toBeVisible();
+    // No rules switch on the left: every answer is under today's rules.
+    await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toHaveCount(0);
 
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
     await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
@@ -57,14 +59,16 @@ test.describe('lot flow', () => {
     await expect(verdict(page)).toContainText(/1,000 sq ft|does not fit/);
     await shot(page, 'lot-1440-too-big.png');
 
-    // Another scenario from the chips under the site view: the answer says "not law", the zoning in Why follows.
-    const scenarios = page.getByRole('group', { name: 'Scenarios' }).first();
-    await scenarios.getByRole('button', { name: /State Bill/ }).click();
-    await expect(scenarios.getByRole('button', { name: /State Bill/ })).toHaveAttribute('aria-pressed', 'true');
-    await expect(verdict(page)).toContainText('not law');
-    await page.getByRole('button', { name: 'Why' }).first().click();
-    await expect(page.getByRole('heading', { name: 'Zoning, state bill' })).toBeVisible();
-    expect(new URL(page.url()).hash).toContain('sc=state_reform');
+    // The bills are in the Compare tab: an answer card per column, then only the rules that change.
+    await page.getByRole('tab', { name: 'Compare' }).first().click();
+    const compare = page.locator('[data-compare]');
+    await expect(compare.locator('[data-col]')).toHaveCount(2);
+    await expect(compare.locator('[data-col="state_reform"]')).toContainText('not law');
+    await expect(compare.getByRole('table', { name: 'Rules a bill would change' }).locator('[data-compare-row]').first()).toBeVisible();
+    // The Results answer stays under today's rules.
+    await page.getByRole('tab', { name: 'Results' }).first().click();
+    await expect(verdict(page)).not.toContainText('not law');
+    await shot(page, 'lot-1440-compare.png');
 
     await page.getByRole('tab', { name: 'Next Step' }).first().click();
     const next = page.locator('section[aria-label="Next steps"]');
@@ -79,6 +83,13 @@ test.describe('lot flow', () => {
     await expect(report).toContainText('Three scenarios');
     await expect(report).toContainText('Not legal advice');
     await shot(page, 'lot-1440-report.png');
+  });
+
+  test('an old link with a bill in it opens under today\'s rules', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}&sc=state_reform`);
+    await expect(verdict(page)).toHaveAttribute('data-answer', 'approval');
+    await expect(verdict(page)).not.toContainText('not law');
   });
 
   test('Explore shows the tract, and Test a lot here goes back to the lot', async ({ page }) => {
@@ -133,9 +144,18 @@ test.describe('philadelphia lot flow', () => {
     await page.getByRole('button', { name: 'Land cover' }).first().click();
     await expect(page.locator('[aria-label="What is on this lot"]').first()).toContainText('Tree canopy');
     await shot(page, 'phl-row-today-1440.png');
-    await page.getByRole('radio', { name: 'State Bill' }).click();
-    await expect(page.getByRole('heading', { name: 'Zoning, state bill' })).toBeVisible();
-    await shot(page, 'phl-row-state-1440.png');
+    // Compare: Today, the local bill (Philadelphia has one) and the state bill, side by side.
+    await page.getByRole('tab', { name: 'Compare' }).first().click();
+    const compare = page.locator('[data-compare]');
+    await expect(compare.locator('[data-col]')).toHaveCount(3);
+    const changes = compare.getByRole('table', { name: 'Rules a bill would change' });
+    await expect(changes.locator('[data-compare-row="min_lot_size"]')).toContainText('min 1,600 sq ft');
+    await expect(changes.locator('[data-compare-row="min_lot_size"]')).toContainText('No limit');
+    await expect(changes.locator('[data-compare-row="approval"]')).toContainText('By right');
+    // The rules that stay the same fold away under one line.
+    await compare.getByRole('button', { name: /Same in every column/ }).click();
+    await expect(compare.getByRole('table', { name: 'Rules that stay the same' })).toBeVisible();
+    await shot(page, 'phl-row-compare-1440.png');
   });
 
   test('the unit-type list on a Philadelphia lot says why each type is off', async ({ page }) => {

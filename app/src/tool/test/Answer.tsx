@@ -1,5 +1,4 @@
-// Test Project, top of the Results tab: the answer in one word, the rule checklist, the three scenarios as chips,
-// and the folds that hold everything else. The answer and the rows come from lib/lot/answer.ts, which reads the
+// Test Site, top of the Results tab: the answer in one word, the rule checklist, and the folds that hold everything else. The answer and the rows come from lib/lot/answer.ts, which reads the
 // verdict. Nothing here decides a rule.
 import { useState, type ReactNode } from 'react';
 import { Check, ChevronDown, CircleHelp, Clock, TriangleAlert, X } from 'lucide-react';
@@ -8,20 +7,18 @@ import { answerOf, ruleRows, type Answer, type RowState, type RuleRow } from '..
 import { NOTICE } from '../../lib/lot/citations';
 import { slopeOf, type SlopeView } from '../../lib/lot/slope';
 import { answerFor, whyNot } from '../../lib/lot/whyNot';
-import { SCENARIO_NAME } from '../../lib/lot/words';
-import type { LotRecord, Scenario } from '../../lib/lot/types';
-import { ownerWord, sameAsToday, type ScenarioVerdict, type UnitVerdict } from '../../lib/lot/verdict';
-import { useTool } from '../store';
+import type { LotRecord } from '../../lib/lot/types';
+import { ownerWord, sameAsToday, type UnitVerdict } from '../../lib/lot/verdict';
 import { Cite } from './cards';
 
-const ANSWER_LOOK: Record<Answer, { box: string; title: string; line: string; icon: string }> = {
+export const ANSWER_LOOK: Record<Answer, { box: string; title: string; line: string; icon: string }> = {
   yes: { box: 'bg-emerald-50 ring-emerald-200', title: 'text-emerald-800', line: 'text-emerald-900/80', icon: 'bg-emerald-600 text-white' },
   approval: { box: 'bg-amber-50 ring-amber-200', title: 'text-amber-800', line: 'text-amber-900/80', icon: 'bg-amber-500 text-white' },
   no: { box: 'bg-rose-50 ring-rose-200', title: 'text-rose-700', line: 'text-rose-900/80', icon: 'bg-rose-600 text-white' },
   unknown: { box: 'bg-stone-50 ring-stone-200', title: 'text-slate-800', line: 'text-slate-600', icon: 'bg-slate-400 text-white' },
 };
 
-const ANSWER_ICON: Record<Answer, ReactNode> = {
+export const ANSWER_ICON: Record<Answer, ReactNode> = {
   yes: <Check className="h-5 w-5" strokeWidth={3} />,
   approval: <Clock className="h-5 w-5" strokeWidth={2.5} />,
   no: <X className="h-5 w-5" strokeWidth={3} />,
@@ -176,38 +173,6 @@ function SlopeRow({ s }: { s: SlopeView }) {
         A site caution, not a zoning rule. Elevation: {s.source}. Gentle under {s.thresholds.moderate}%, steep from {s.thresholds.steep}%.
       </p>
     </Row>
-  );
-}
-
-// ------------------------------------------------------------------ scenarios
-export const SCENARIO_CHIP: Record<Scenario, string> = SCENARIO_NAME;
-
-const ANSWER_STATE: Record<Answer, RowState> = { yes: 'pass', approval: 'approval', no: 'fail', unknown: 'unknown' };
-
-/** Today, the local bill and the state bill, each with its answer. A click switches the scenario. */
-export function ScenarioChips({ rows, scenario }: { rows: ScenarioVerdict[]; scenario: Scenario }) {
-  const setTest = useTool((s) => s.setTest);
-  return (
-    <div role="group" aria-label="Scenarios" className="grid grid-cols-3 gap-1.5">
-      {rows.map((r) => {
-        const on = r.scenario === scenario;
-        const a = answerOf(r.verdict);
-        return (
-          <button
-            key={r.scenario}
-            type="button"
-            aria-pressed={on}
-            onClick={() => setTest({ scenario: r.scenario })}
-            title={`${r.title}: ${r.same_as_today ? 'same as today. ' : ''}${a.title}`}
-            className={cx('tap flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-0.5 rounded-xl px-2.5 py-2 text-left ring-1 transition-colors', on ? 'bg-violet-50 ring-2 ring-violet-500' : 'bg-white ring-stone-200 hover:bg-stone-50')}
-          >
-            <StateIcon state={ANSWER_STATE[a.answer]} small />
-            <span className={cx('whitespace-nowrap text-small font-semibold', on ? 'text-violet-900' : 'text-slate-800')}>{SCENARIO_CHIP[r.scenario]}</span>
-            {r.scenario !== 'today' && <NotLaw same={r.same_as_today} />}
-          </button>
-        );
-      })}
-    </div>
   );
 }
 

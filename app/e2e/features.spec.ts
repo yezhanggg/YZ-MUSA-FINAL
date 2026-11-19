@@ -23,7 +23,7 @@ test.describe('features menu and footer', () => {
     await expect(page.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'true');
     // Old links keep working.
     await page.goto('/#/?view=test');
-    await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toBeVisible();
+    await expect(page.locator('section[aria-label="Boundaries"]')).toBeVisible();
   });
 
   test('the map shows one small OpenStreetMap credit, the left panel no credits and no footer link', async ({ page }) => {

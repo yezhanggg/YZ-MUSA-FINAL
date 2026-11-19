@@ -19,7 +19,7 @@ test.describe('boundaries', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
     await expect(card(page)).toBeVisible();
-    // First under Zoning Regulation and open; Testable Lots and ADU Design follow, folded.
+    // First under the search and open; Testable Lots and ADU Design follow, folded.
     const order = await page.locator('aside[aria-label="Search and map controls"] section[aria-label]').evaluateAll((els) => els.map((e) => e.getAttribute('aria-label')));
     expect(order.filter((l) => ['Boundaries', 'Testable Lots', 'ADU Design'].includes(l ?? ''))).toEqual(['Boundaries', 'Testable Lots', 'ADU Design']);
     await expect(card(page).getByRole('button', { name: 'Boundaries' })).toHaveAttribute('aria-expanded', 'true');

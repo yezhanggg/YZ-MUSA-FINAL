@@ -134,9 +134,11 @@ test.describe('answers that depend on something the record does not hold', () =>
     await expect(verdict(page)).toContainText('Only if the ADU rule reaches 5b, which is in doubt. Ask the zoning officer.');
     const checklist = page.locator('section[aria-label="Rule checklist"]').first();
     await expect(checklist.locator('[data-rule-row="approval"]')).toContainText('By right, if confirmed');
-    // The local bill is the same as today here: the chip says so, not "not law".
-    const scenarios = page.getByRole('group', { name: 'Scenarios' }).first();
-    await expect(scenarios.getByRole('button', { name: /Local Bill/ })).toContainText('same as today');
+    // The local bill is the same as today here: Compare leaves its column out and says so.
+    await page.getByRole('tab', { name: 'Compare' }).first().click();
+    const compare = page.locator('[data-compare]');
+    await expect(compare.locator('[data-col="local_reform"]')).toHaveCount(0);
+    await expect(compare).toContainText('No local bill is on file for this town.');
   });
 
   test('Narberth 5a, not allowed: the height reads "not checked", never "no limit"', async ({ page }) => {

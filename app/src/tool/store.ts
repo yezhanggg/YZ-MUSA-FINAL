@@ -120,7 +120,8 @@ const start = testFromHash(typeof window === 'undefined' ? '' : window.location.
 
 export const useTool = create<ToolState>((set, get) => ({
   view: start.view,
-  scenario: start.scenario,
+  // Every answer is under today's rules; the bills are in the Compare tab. An old link with a bill opens today.
+  scenario: 'today',
   unit: start.unit,
   money: DEFAULT_MONEY,
   rule: 'current',

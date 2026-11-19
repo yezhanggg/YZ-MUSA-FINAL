@@ -1,4 +1,5 @@
-// Test Project, left panel (search is in the panel header above): the scenario, then three cards that fold with one click
+// Test Site, left panel (search is in the panel header above): three cards that fold with one click. Every answer is
+// under today's rules; the bills are compared in the right panel's Compare tab.
 // (remembered): Boundaries (map outlines, open at first), Testable Lots (switch and the places) and ADU Design (unit type,
 // size, height, units and the money settings), both folded at first.
 // Each change updates the result at once (the store is the only state). Labels in title case, three words or fewer;
@@ -7,25 +8,14 @@ import { useState, type ReactNode } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Segmented } from '../../components/primitives';
 import { cx } from '../../lib/cx';
-import { SCENARIOS, type AduType, type LotRecord, type Scenario } from '../../lib/lot/types';
-import { SCENARIO_NAME, TYPE_NAME, usdText } from '../../lib/lot/words';
+import type { AduType, LotRecord } from '../../lib/lot/types';
+import { TYPE_NAME, usdText } from '../../lib/lot/words';
 import { ASSUMPTIONS } from '../../lib/money';
 import { useTool } from '../store';
 import { AREA_MAX, AREA_MIN, DEFAULT_MONEY, FINISHES, HEIGHT_MAX, HEIGHT_MIN, PRESETS, SIDE_MAX, SIDE_MIN, sidesFromArea, startUnit, typeOptions, type Finish } from '../testState';
 import TestableLots from './TestableLots';
 import BoundariesCard from './BoundariesCard';
 import FoldCard from './FoldCard';
-import { NotLaw } from './Answer';
-import { sameAsToday } from '../../lib/lot/verdict';
-
-/** Short labels that fit the 300 px panel. The full title is in the hover text. */
-const SCENARIO_SHORT: Record<Scenario, string> = SCENARIO_NAME;
-
-const SCENARIO_HINT: Record<Scenario, string> = {
-  today: 'The rules in force today.',
-  local_reform: 'A city bill that is not law yet. Only Philadelphia has one (Bill 250042). Everywhere else it is the same as today.',
-  state_reform: 'State bill HB 2186. It passed the House. It is not law.',
-};
 
 const FINISH_LABEL: Record<Finish, string> = { basic: 'Basic', standard: 'Standard', premium: 'Premium' };
 
@@ -38,9 +28,6 @@ export default function TestControls() {
   const record = useTool((s) => s.spot?.record ?? null);
   return (
     <div className="space-y-4">
-      <section aria-label="Test Lot" className="pt-1">
-        <ScenarioPick />
-      </section>
       <BoundariesCard />
       <TestableLots />
       {/* One box, one fold: everything about the unit, as rows with light lines between them. Starts folded (v2 key:
@@ -72,22 +59,6 @@ function Slider({ id, label, value, text, min, max, step, onChange }: { id: stri
   );
 }
 
-function ScenarioPick() {
-  const scenario = useTool((s) => s.scenario);
-  const setTest = useTool((s) => s.setTest);
-  const record = useTool((s) => s.spot?.record ?? null);
-  // Outside Philadelphia the local bill's rules are today's: say so instead of "not law".
-  const same = !!record && sameAsToday(record, scenario);
-  return (
-    <div>
-      <div className="flex items-start justify-between gap-2">
-        <Label>Zoning Regulation</Label>
-        {scenario !== 'today' && <NotLaw className="-mt-0.5" same={same} />}
-      </div>
-      <Segmented<Scenario> full label="Zoning Regulation" value={scenario} onChange={(v) => setTest({ scenario: v })} options={SCENARIOS.map((s) => ({ value: s, label: SCENARIO_SHORT[s], hint: SCENARIO_HINT[s] }))} className="[&_button]:px-1 [&_button]:whitespace-nowrap [&_button]:text-caption" />
-    </div>
-  );
-}
 
 function TypePick({ record }: { record: LotRecord | null }) {
   const scenario = useTool((s) => s.scenario);

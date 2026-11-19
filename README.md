@@ -11,7 +11,7 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 ## Two modes
 
-- **ADU Testing** (`#/?view=test`, the default). One lot at a time, in six lot places: Pittsburgh, Philadelphia, Allentown, and parts of Chester, Centre and Montgomery counties. Draw a unit, pick a type and a scenario, and get a verdict with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report.
+- **ADU Testing** (`#/?view=test`, the default). One lot at a time, in six lot places: Pittsburgh, Philadelphia, Allentown, and parts of Chester, Centre and Montgomery counties. Draw a unit and pick a type, and get a verdict under today's rules with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report. The Compare tab shows the same unit under each pending bill and only the rules that would change.
 - **ADU projecting and analysis** (`#/?view=project`). Census tracts, towns and counties for the whole state: demand trends, whether a unit pays off on local rent, and ADUs by 2031 under each bill.
 
 Both modes have **Ask**, an assistant that answers from the tool's own data with citations. It runs on Claude Haiku 5.5 through a server function, and the browser runs the tools.
