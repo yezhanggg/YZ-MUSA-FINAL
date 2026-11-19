@@ -47,4 +47,21 @@ test.describe('show testable lots', () => {
     await expect(legend).toHaveCount(0);
     await expect(map).toHaveAttribute('data-testable', '');
   });
+
+  test('the card folds with its title, the switch stays on the title row, and the fold is remembered', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/#/?view=test');
+    const fold = page.getByRole('button', { name: 'Testable Lots', exact: true });
+    await expect(fold).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('[data-place="pittsburgh"]')).toBeVisible();
+    await fold.click();
+    await expect(page.locator('[data-place="pittsburgh"]')).toHaveCount(0);
+    const sw = page.getByRole('switch', { name: 'Testable Lots' });
+    await sw.click();
+    await expect(sw).toHaveAttribute('aria-checked', 'true');
+    await page.reload();
+    await expect(fold).toHaveAttribute('aria-expanded', 'false');
+    await fold.click();
+    await expect(page.locator('[data-place="pittsburgh"]')).toBeVisible();
+  });
 });
