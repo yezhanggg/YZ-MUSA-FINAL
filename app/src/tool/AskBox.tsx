@@ -38,7 +38,8 @@ interface Msg {
   tags?: AskTags;
 }
 
-function useContext() {
+/** What the assistant reads with each question: the lot, the unit and the map on screen. */
+export function useAskContext() {
   const spot = useTool((s) => s.spot);
   const adu = useTool((s) => s.adu);
   const rule = useTool((s) => s.rule);
@@ -73,7 +74,7 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
   const [history, setHistory] = useState<Turn[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
-  const { chips, context, test } = useContext();
+  const { chips, context, test } = useAskContext();
   const input = useRef<HTMLInputElement>(null);
   // A new mode is a new context: a conversation about a lot in Testing does not carry into Projecting, or back.
   const [mode, setMode] = useState(test);
@@ -172,13 +173,22 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
   );
 }
 
+/** Text with **bold** runs shown in bold. */
+function Bold({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={i} className="font-semibold">{part}</strong> : <span key={i}>{part}</span>))}
+    </>
+  );
+}
+
 /** An answer with lot links that select the lot on the map. */
-function Answer({ text }: { text: string }) {
+export function Answer({ text }: { text: string }) {
   return (
     <span className="whitespace-pre-line">
       {splitLinks(text).map((p, i) =>
         p.t === 'text' ? (
-          <span key={i}>{p.v}</span>
+          <Bold key={i} text={p.v} />
         ) : (
           <button key={i} type="button" onClick={() => void selectLotById(p.id)} className="font-semibold text-violet-700 underline decoration-violet-300 underline-offset-2 hover:decoration-violet-700">
             {p.label}

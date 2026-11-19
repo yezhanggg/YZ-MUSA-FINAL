@@ -9,15 +9,18 @@ import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
+import ParcelIQ from './ParcelIQ';
+import SplitBar from './SplitBar';
 import { aduFromHash, useTool } from './store';
 import { clearSpot, openLot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, splitWidths, useChatOpen, useChatSplit, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
 import { PA_BBOX } from './geo';
 
+const DETAILS_BTN = 120;
 const SHOW_BTN = 'tap absolute z-40 flex h-11 items-center gap-2 rounded-xl bg-white/95 px-3 text-small font-semibold text-slate-700 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-violet-500';
 
 export default function ToolPage() {
@@ -156,7 +159,16 @@ export default function ToolPage() {
 
   // Desktop and laptop: both panels start one gutter from the top (PANEL_TOP); the top bar sits between them.
   const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: widths(mode).lw };
-  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: panelW };
+  // ParcelIQ (desktop and laptop): the whole map area right of the left panel, or half of it beside Details, with
+  // the drag bar between them (SplitBar). A strip from the top like the side panels (the top bar steps aside).
+  // With Details hidden, the chat leaves room at the right edge for the Details button (about 120 px).
+  const chatOpen = useChatOpen((s) => s.open) && !isNarrow;
+  const ratio = useChatSplit((s) => s.ratio);
+  const areaL = leftOpen ? widths(mode).lw + GUTTER * 2 : GUTTER;
+  const areaW = vw - areaL - GUTTER;
+  const split = splitWidths(areaW, ratio);
+  const chatStyle: CSSProperties = { left: areaL, top: PANEL_TOP, bottom: GUTTER, width: rightOpen ? split.chat : areaW - DETAILS_BTN - GUTTER };
+  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: chatOpen && rightOpen ? split.right : panelW };
   // The control row drops the Aerial label when the open map is narrow (laptop with the results drawer open).
   const openMap = vw - lw - rw - GUTTER * 4;
   const setLegendSlot = useLegendSlot((s) => s.setEl);
@@ -215,7 +227,9 @@ export default function ToolPage() {
       )}
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
-      {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} onChat={() => setRight(true)} />}
+      {controlsSize !== 'none' && (isNarrow || !rightOpen) && !chatOpen && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} />}
+      <AnimatePresence>{chatOpen && <ParcelIQ key="parceliq" style={chatStyle} onClose={() => useChatOpen.getState().setOpen(false)} />}</AnimatePresence>
+      {chatOpen && rightOpen && <SplitBar left={areaL} width={areaW} chatW={split.chat} top={PANEL_TOP} />}
     </div>
   );
 }

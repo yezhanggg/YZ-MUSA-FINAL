@@ -2,12 +2,11 @@
 // and closed folds (AreaResults). Test Project: the lot results (test/LotResults). On tablet and
 // phone the same pieces fill the bottom sheet's tabs. On desktop and laptop the left edge drags to resize (ResizeHandle).
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, MotionConfig, animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
-import { Home, Minimize2, PanelRightClose } from 'lucide-react';
+import { MotionConfig, animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
+import { Home, PanelRightClose } from 'lucide-react';
 import { PANEL, PANEL_BODY, PanelHeader, IconButton } from '../components/Panel';
 import { SPRING_PANEL } from '../components/primitives';
 import { cx } from '../lib/cx';
-import AskBox from './AskBox';
 import CountyTable from './CountyTable';
 import { ReportSkeleton, reportTitle } from './Report';
 import { AreaAnswer, AreaFolds, AreaLine, AreaRows } from './AreaResults';
@@ -15,7 +14,6 @@ import { HeadSub, PlaceAnswer, PlaceRows } from './PlaceResults';
 import { hasLotTesting, placesShown } from './places';
 import { testLotHere } from './actions';
 import ResizeHandle from './ResizeHandle';
-import { useChatOpen } from './layout';
 import { useTool } from './store';
 import { Fold, Folds, ShortNotice } from './test/Answer';
 import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
@@ -104,8 +102,8 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
     ),
     [head?.label, head?.sub, legal, test, spot, drawer, onClose, tab, busy],
   );
-  const chatOpen = useChatOpen((s) => s.open);
-  const chat = useMemo(() => <AskBox flat />, []);
+  // The chat is ParcelIQ now (its own window, ToolPage). This column holds the results and the map controls row.
+  const chatOpen = false;
   const body = useMemo(() => <div className={PANEL_BODY}>{test ? <TestTabBody tab={tab === 'ask' ? 'results' : tab} /> : <ReportStack />}</div>, [test, tab]);
   // One column, one width (the handle resizes all of it), top to bottom: the results box, the chat box (compact until
   // used, at most half the column with its own scroll) and the map controls row (`below`). The results box is
@@ -116,12 +114,10 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
   const colRef = useRef<HTMLDivElement>(null);
   const chatRef = useRef<HTMLElement>(null);
   const rowRef = useRef<HTMLDivElement>(null);
-  const [colH, setColH] = useState(0);
   const [chatH, setChatH] = useState(0);
   const [rowH, setRowH] = useState(0);
   useLayoutEffect(() => {
     const ro = new ResizeObserver(() => {
-      setColH(colRef.current?.clientHeight ?? 0);
       setRowH(rowRef.current?.offsetHeight ?? 0);
       if (chatRef.current) setChatH(chatRef.current.offsetHeight);
     });
@@ -138,8 +134,6 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
     else bottom.set(target);
     last.current = chatOpen;
   }, [target, chatOpen, reduce, bottom]);
-  // The chat box may take half the column; the results box keeps the other half.
-  const chatMax = Math.max(120, colH * 0.5 - rowH - GAP * 2);
   return (
     <MotionConfig reducedMotion="user">
       <motion.div
@@ -158,18 +152,6 @@ export default function RightPanel({ style, drawer, onClose, below }: { style: R
           {body}
         </motion.aside>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col gap-3 [&>*]:pointer-events-auto">
-          <AnimatePresence initial={false}>
-            {chatOpen && (
-              <motion.section ref={chatRef} key="chat" layoutId="chat-box" transition={SPRING_PANEL} aria-label="Ask" className={cx(PANEL, 'scroll-quiet relative overflow-y-auto overscroll-contain p-3')} style={{ maxHeight: chatMax }}>
-                <div className="flex items-start gap-1.5">
-                  <div className="min-w-0 flex-1">{chat}</div>
-                  <IconButton label="Minimise chat" onClick={() => useChatOpen.getState().setOpen(false)} className="mt-0.5 shrink-0">
-                    <Minimize2 className="h-4 w-4" />
-                  </IconButton>
-                </div>
-              </motion.section>
-            )}
-          </AnimatePresence>
           {below && (
             <div ref={rowRef} className="flex justify-end">
               {below}

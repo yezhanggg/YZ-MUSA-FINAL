@@ -9,7 +9,8 @@ describe('system prompt', () => {
     ['says bills are not law', /bills, not law/],
     ['corrects a wrong premise', /wrong premise, correct it/],
     ['never gives owner names', /Never give owner names/],
-    ['adds the notice once', /Once per conversation, add: "Not legal advice/],
+    ['adds the notice once', /Once per conversation, add the short line: "Not legal advice/],
+    ['answers short: yes or no, why, what to do', /\*\*Yes\*\*, \*\*No\*\* or \*\*Not sure yet\*\*[\s\S]*\*\*What to do:\*\*/],
     ['keeps the testing mode rule', /scenario and unit/],
   ])('%s', (_name, re) => expect(SYSTEM_PROMPT).toMatch(re));
 

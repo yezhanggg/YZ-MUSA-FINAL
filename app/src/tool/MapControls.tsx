@@ -5,7 +5,7 @@ import { useEffect, useState, type CSSProperties } from 'react';
 import { motion } from 'motion/react';
 import { Compass, Image, MessageCircle, Minus, Plus } from 'lucide-react';
 import { cx } from '../lib/cx';
-import { SPRING_PANEL, SPRING_TAB } from '../components/primitives';
+import { SPRING_TAB } from '../components/primitives';
 import { reduced, setView3d } from './actions';
 import { mapRef, useTool } from './store';
 import { useChatOpen } from './layout';
@@ -35,12 +35,11 @@ export default function MapControls({ style, size = 'full', row, tight, chat, on
   // No style: in the flow under the right panel (desktop, laptop with the results open), right-aligned.
   return (
     <div className={cx('z-20 flex gap-2', style ? 'absolute' : 'shrink-0 self-end', row ? 'flex-row items-center' : 'flex-col items-end')} style={style}>
-      {/* The minimised chat box (RightPanel): it shrinks into this button and grows back out of it. With the right
-          column hidden (onChat) the button is always here and brings the column back with the chat open. */}
-      {chat && (!chatOpen || onChat) && (
-        <motion.button key="chat" layoutId={onChat ? undefined : 'chat-box'} transition={SPRING_PANEL} type="button" onClick={() => (useChatOpen.getState().setOpen(true), onChat?.())} title="Open the chat" className={cx('tap flex h-10 items-center gap-1.5 rounded-xl px-3 text-small font-bold text-violet-700 hover:text-violet-900', SHELL)}>
-          <MessageCircle className="h-4 w-4" /> Chat
-        </motion.button>
+      {/* ParcelIQ: opens the chat over the map area (ToolPage), without opening the Details panel. */}
+      {chat && !chatOpen && (
+        <button key="chat" type="button" onClick={() => (useChatOpen.getState().setOpen(true), onChat?.())} title="Open ParcelIQ" className={cx('tap flex h-10 items-center gap-1.5 rounded-xl px-3 text-small font-bold text-violet-700 hover:text-violet-900', SHELL)}>
+          <MessageCircle className="h-4 w-4" /> ParcelIQ
+        </button>
       )}
       <div role="radiogroup" aria-label="Map view" className={cx('relative flex rounded-xl p-1', SHELL)}>
         {(['2D', '3D'] as const).map((v) => {

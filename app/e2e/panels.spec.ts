@@ -127,41 +127,6 @@ test.describe('right panel', () => {
     await expect.poll(async () => Number(await site.getAttribute('data-bearing'))).not.toBeCloseTo(b0, 0);
   });
 
-  test('the chat box grows to at most half the column, the results box keeps the rest, and it minimises into the Chat button', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    const long = Array.from({ length: 30 }, (_, i) => `Line ${i + 1} of a long answer about this lot.`).join('\n');
-    await page.route('**/api/agent', (r) => r.fulfill({ json: { type: 'final', text: long } }));
-    await open(page, PGH);
-    // The chat starts minimised on every visit: the "Chat" button opens it.
-    await page.getByRole('button', { name: 'Chat', exact: true }).click();
-    const chat = page.locator('section[aria-label="Ask"]');
-    const column = panel(page).locator('..'); // the right column: results box, chat box, map controls row
-    const input = chat.locator('input[aria-label="Ask about this site"]');
-    for (const q of ['Does this unit fit here?', 'What limits it on this lot?']) {
-      await input.fill(q);
-      await input.press('Enter');
-      await expect(chat.getByText('Line 30 of a long answer about this lot.').last()).toBeAttached();
-    }
-    await page.waitForTimeout(800); // the conversation's open animation
-    const [c, col, res] = await Promise.all([chat.boundingBox(), column.boundingBox(), panel(page).boundingBox()]);
-    console.log(`chat ${Math.round(c!.height)} px, results ${Math.round(res!.height)} px, column ${Math.round(col!.height)} px`);
-    expect(c!.height).toBeLessThanOrEqual(col!.height * 0.5 + 1);
-    expect(res!.height).toBeGreaterThanOrEqual(col!.height * 0.45 - 1);
-    // The conversation scrolls inside the chat box.
-    await expect.poll(() => chat.evaluate((n) => n.scrollHeight > n.clientHeight)).toBe(true);
-    // Minimised: the chat box goes into the "Chat" button of the controls row and the results box takes the height.
-    await chat.getByRole('button', { name: 'Minimise chat' }).click();
-    await expect(chat).toHaveCount(0);
-    const chatButton = page.getByRole('button', { name: 'Chat', exact: true });
-    await expect(chatButton).toBeVisible();
-    await expect.poll(async () => (await panel(page).boundingBox())!.height).toBeGreaterThan(res!.height + 100);
-    await page.reload();
-    await expect(verdict(page)).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Chat', exact: true })).toBeVisible(); // minimised again on a new visit
-    await page.getByRole('button', { name: 'Chat', exact: true }).click();
-    await expect(page.locator('section[aria-label="Ask"]')).toBeVisible();
-  });
-
   test('each side hides and comes back, and stays as left after a reload', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await open(page, PGH);
@@ -170,11 +135,11 @@ test.describe('right panel', () => {
     await expect(left).toHaveCount(0);
     await page.getByRole('button', { name: 'Hide the details' }).click();
     await expect(panel(page)).toHaveCount(0);
-    // Full map: the show buttons at the edges, the map controls and a Chat button stay on the map.
+    // Full map: the show buttons at the edges, the map controls and the ParcelIQ button stay on the map.
     await expect(page.getByRole('button', { name: 'Show the controls' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
     await expect(page.getByRole('radiogroup', { name: 'Map view' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Chat', exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'ParcelIQ', exact: true })).toBeVisible();
     await page.reload();
     await expect(page.getByRole('button', { name: 'Show the controls' })).toBeVisible();
     await page.getByRole('button', { name: 'Show the controls' }).focus();

@@ -93,6 +93,37 @@ export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void
   },
 }));
 
+/** ParcelIQ open next to the Details panel: the chat's share of the space they split (the drag bar between them).
+ *  Remembered in localStorage. Double-click on the bar goes back to half and half. */
+const SPLIT_KEY = 'bh.chatSplit';
+const savedSplit = () => {
+  try {
+    const v = Number(window.localStorage.getItem(SPLIT_KEY));
+    return v > 0.1 && v < 0.9 ? v : 0.5;
+  } catch {
+    return 0.5;
+  }
+};
+export const useChatSplit = create<{ ratio: number; setRatio: (r: number) => void }>((set) => ({
+  ratio: typeof window === 'undefined' ? 0.5 : savedSplit(),
+  setRatio: (ratio) => {
+    try {
+      window.localStorage.setItem(SPLIT_KEY, String(Math.round(ratio * 1000) / 1000));
+    } catch {
+      /* storage blocked: the split lasts for this visit only */
+    }
+    set({ ratio });
+  },
+}));
+/** The narrowest either side of the split may get, in px. */
+export const SPLIT_MIN = 320;
+/** The chat's width and the Details width for a split of `total` px (a gap of one gutter between them). */
+export const splitWidths = (total: number, ratio: number) => {
+  const room = Math.max(0, total - GUTTER);
+  const chat = Math.round(Math.min(room - SPLIT_MIN, Math.max(SPLIT_MIN, room * ratio)));
+  return { chat, right: room - chat };
+};
+
 /** Desktop and laptop: the left panel, and on desktop the right column, can be hidden (a hide button in each header,
  *  a show button at that edge). The left panel is remembered in localStorage. The right column starts hidden on every
  *  visit and opens when a lot is picked. The laptop results drawer keeps its own open state (store resultsOpen),

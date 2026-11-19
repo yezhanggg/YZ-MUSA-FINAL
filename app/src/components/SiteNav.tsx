@@ -6,7 +6,7 @@ import { Check, ChevronDown } from 'lucide-react';
 import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
-import { GUTTER, narrow, rightDrawer, useMode, useRightWidth, useSides, useViewportWidth, widths } from '../tool/layout';
+import { GUTTER, narrow, rightDrawer, useChatOpen, useMode, useRightWidth, useSides, useViewportWidth, widths } from '../tool/layout';
 import { useTool } from '../tool/store';
 
 export const RESEARCH: { course: Course; label: string; line: string }[] = [
@@ -31,6 +31,9 @@ export default function TopBar() {
   const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightOpen ? rw + GUTTER * 2 : 120 + GUTTER * 2 };
   const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
   useEffect(() => setOpen(false), [research]);
+  // ParcelIQ fills the map area as a strip from the top like the side panels, so the bar steps aside until it closes.
+  const chatOpen = useChatOpen((s) => s.open);
+  if (chatOpen && !narrow(mode) && !research) return null;
 
   return (
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
