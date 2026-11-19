@@ -112,15 +112,21 @@ export default function ToolPage() {
     useTool.getState().set({ resultsOpen: true });
     useSides.getState().setSide('right', true);
   }, [spotN, busy]);
-  // Hiding or showing a side: the map re-centres on the free space.
+  // Hiding or showing a side leaves the map picture where it is (the panels float over it). The map's padding still
+  // follows the open space, so a lot picked later is framed in it: the centre is moved by exactly what the new padding
+  // would shift, so nothing on screen moves.
   const firstSides = useRef(true);
   useEffect(() => {
     if (firstSides.current) return void (firstSides.current = false);
     const map = mapRef.current;
     if (!map) return;
-    // A flight to a picked lot may be under way (the laptop drawer opens with the first spot): easing now would cancel
-    // it and leave the map where it was, so re-centre once it lands.
-    const go = () => map.easeTo({ padding: mapPadding(rightOpen), duration: reduced() ? 0 : 500 });
+    const go = () => {
+      const p = mapPadding(rightOpen);
+      const cv = map.getCanvas();
+      const x = p.left + (cv.clientWidth - p.left - p.right) / 2;
+      const y = p.top + (cv.clientHeight - p.top - p.bottom) / 2;
+      map.jumpTo({ center: map.unproject([x, y]), padding: p });
+    };
     if (map.isMoving()) map.once('moveend', go);
     else go();
   }, [leftOpen, rightOpen]);

@@ -145,8 +145,26 @@ test.describe('right panel', () => {
     await page.getByRole('button', { name: 'Show the controls' }).focus();
     await page.keyboard.press('Enter');
     await expect(left).toBeVisible();
-    await page.getByRole('button', { name: 'Show the details' }).click();
+    // The page's lot link loads the lot again after the reload, and a lot that loads opens Details (with its Loading
+    // state first), so Details comes back on its own.
     await expect(panel(page)).toBeVisible();
+  });
+
+  test('opening and closing Controls and Details leaves the map where it is', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await open(page, PGH);
+    await page.waitForTimeout(3000); // the flight to the lot lands and the tiles settle
+    // A patch of map that no panel covers in any of these states.
+    const clip = { x: 380, y: 260, width: 360, height: 360 };
+    const shot = () => page.screenshot({ clip, animations: 'disabled' });
+    const before = await shot();
+    await page.getByRole('button', { name: 'Hide the details' }).click();
+    await page.getByRole('button', { name: 'Hide the controls' }).click();
+    await page.waitForTimeout(900);
+    await page.getByRole('button', { name: 'Show the controls' }).click();
+    await page.getByRole('button', { name: 'Show the details' }).click();
+    await page.waitForTimeout(900);
+    expect((await shot()).equals(before)).toBe(true);
   });
 
   test('a click on a lot in the main map fills the Details box with the answer', async ({ page }) => {

@@ -1,6 +1,7 @@
 // The top bar, always on screen over the map: Features, a menu of the two tools (Test Site and Explore), and Research,
 // a menu of the two class pages. Both open on hover, focus, click or tap. A Research page opens in a panel over the map.
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
+import { create } from 'zustand';
 import { AnimatePresence, motion } from 'motion/react';
 import { Check, ChevronDown } from 'lucide-react';
 import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
@@ -32,8 +33,8 @@ export default function TopBar() {
   const chatOpen = useChatOpen((s) => s.open) && !narrow(mode);
   const rightCover = rightOpen || chatOpen ? rw : 120;
   const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightCover + GUTTER * 2 };
-  const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
-  useEffect(() => setOpen(false), [research]);
+  const { open, other, setOpen, wrap, show, hide, onClick } = useHoverMenu('research');
+  useEffect(() => setOpen(false), [research, setOpen]);
 
   return (
     <div className="pointer-events-none absolute z-50 flex justify-center" style={{ top: GUTTER, ...place }}>
@@ -45,9 +46,9 @@ export default function TopBar() {
             <span className="relative">Research</span>
             <ChevronDown className={cx('relative h-3.5 w-3.5 text-slate-500 transition-transform', open && 'rotate-180')} />
           </button>
-          <AnimatePresence>
+          <AnimatePresence custom={other}>
             {open && (
-              <motion.div role="menu" aria-label="Research pages" initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.12 } }} transition={SPRING_TAB} style={{ transformOrigin: 'top right' }} className="absolute right-0 top-full z-50 mt-2 w-[296px] rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5 max-sm:-right-12">
+              <motion.div role="menu" aria-label="Research pages" initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} variants={MENU_EXIT} exit="exit" custom={other} transition={SPRING_TAB} style={{ transformOrigin: 'top right' }} className="absolute right-0 top-full z-50 mt-2 w-[296px] rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5 max-sm:-right-12">
                 {RESEARCH.map((r) => {
                   const on = research === r.course;
                   return (
@@ -66,15 +67,30 @@ export default function TopBar() {
 }
 
 /** A menu that opens on hover, focus, click or tap, and closes on Escape, a press outside or leaving it. */
-function useHoverMenu() {
-  const [open, setOpen] = useState(false);
+/** Which top bar menu is open. One at a time: opening one shuts the other at once (no fade), so they never overlap. */
+type NavMenu = 'features' | 'research';
+const useNavMenu = create<{ open: NavMenu | null; set: (m: NavMenu | null) => void }>((set) => ({ open: null, set: (open) => set({ open }) }));
+
+/** Exit of a menu: a short fade when it simply closes, none when the other menu takes its place. */
+const MENU_EXIT = { exit: (instant: boolean) => ({ opacity: 0, y: -4, scale: 0.98, transition: { duration: instant ? 0 : 0.12 } }) };
+
+function useHoverMenu(id: NavMenu) {
+  const open = useNavMenu((s) => s.open === id);
+  const other = useNavMenu((s) => s.open !== null && s.open !== id);
+  const set = useNavMenu((s) => s.set);
+  const setOpen = useCallback((o: boolean | ((o: boolean) => boolean)) => {
+    const cur = useNavMenu.getState().open === id;
+    const next = typeof o === 'function' ? o(cur) : o;
+    if (next) useNavMenu.getState().set(id);
+    else if (cur) useNavMenu.getState().set(null);
+  }, [id]);
   const shut = useRef<number | undefined>(undefined);
   const wrap = useRef<HTMLDivElement>(null);
   const opened = useRef(0);
   const show = () => {
     window.clearTimeout(shut.current);
     if (!open) opened.current = Date.now();
-    setOpen(true);
+    set(id);
   };
   const hide = () => {
     window.clearTimeout(shut.current);
@@ -92,8 +108,8 @@ function useHoverMenu() {
       window.removeEventListener('keydown', esc);
       window.removeEventListener('pointerdown', out);
     };
-  }, [open]);
-  return { open, setOpen, wrap, show, hide, onClick };
+  }, [open, setOpen]);
+  return { open, other, setOpen, wrap, show, hide, onClick };
 }
 
 const FEATURE_LINE: Record<ToolView, string> = {
@@ -106,7 +122,7 @@ const FEATURE_LINE: Record<ToolView, string> = {
 function FeaturesMenu() {
   const view = useView();
   const research = useResearch();
-  const { open, setOpen, wrap, show, hide, onClick } = useHoverMenu();
+  const { open, other, setOpen, wrap, show, hide, onClick } = useHoverMenu('features');
   useEffect(() => setOpen(false), [research, view, setOpen]);
   return (
     <div ref={wrap} className="relative" onMouseEnter={show} onMouseLeave={hide}>
@@ -115,9 +131,9 @@ function FeaturesMenu() {
         <span className="relative">Features</span>
         <ChevronDown className={cx('relative h-3.5 w-3.5 text-slate-500 transition-transform', open && 'rotate-180')} />
       </button>
-      <AnimatePresence>
+      <AnimatePresence custom={other}>
         {open && (
-          <motion.div role="menu" aria-label="Features" initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -4, scale: 0.98, transition: { duration: 0.12 } }} transition={SPRING_TAB} style={{ transformOrigin: 'top left' }} className="absolute left-0 top-full z-50 mt-2 w-[260px] rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5">
+          <motion.div role="menu" aria-label="Features" initial={{ opacity: 0, y: -6, scale: 0.97 }} animate={{ opacity: 1, y: 0, scale: 1 }} variants={MENU_EXIT} exit="exit" custom={other} transition={SPRING_TAB} style={{ transformOrigin: 'top left' }} className="absolute left-0 top-full z-50 mt-2 w-[260px] rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5">
             {(Object.keys(VIEW_LABEL) as ToolView[]).map((v) => {
               const on = !research && view === v;
               return (

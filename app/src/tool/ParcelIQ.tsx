@@ -3,7 +3,7 @@
 // as AskBox. An answer waits at least MIN_THINK_MS behind the thinking pill, so a fast reply does not flash.
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUp, ArrowUpRight, ListPlus, MessageCircleDashed, RefreshCw, Sparkles, X } from 'lucide-react';
+import { ArrowUp, ArrowUpRight, Eraser, ListPlus, Sparkles, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { ask, type Turn } from '../agent/client';
 import { browserProvider } from '../agent/browserProvider';
@@ -39,7 +39,6 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   const [history, setHistoryState] = useState<Turn[]>(memory.history);
   const [busy, setBusy] = useState(false);
   const [q, setQ] = useState('');
-  const [spins, setSpins] = useState(0);
   const { context } = useAskContext();
   const hasLot = useTool((s) => !!s.spot);
   const reduce = useReducedMotion();
@@ -92,7 +91,6 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   };
 
   const reset = () => {
-    setSpins((n) => n + 1);
     setMsgs(() => []);
     setHistory([]);
     setQ('');
@@ -114,21 +112,17 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
       style={style}
     >
       {resize && <WidthHandle {...resize} />}
-      {/* Header: name, what it does, new chat and close. */}
+      {/* Header: name, what it does, Clear Chat and close. */}
       <header className="flex shrink-0 items-center gap-3 border-b border-stone-100 px-4 py-3">
-        <div className="relative grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white shadow-[0_4px_12px_-4px_rgba(109,40,217,0.6)]">
-          <Sparkles className="h-[18px] w-[18px]" />
-          <span aria-hidden className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-white" />
-        </div>
         <div className="min-w-0 flex-1">
           <h2 className="text-[15px] font-semibold leading-5 tracking-[-0.01em] text-slate-900">ParcelIQ</h2>
           <p className="truncate text-[12px] leading-4 text-slate-500">Zoning and buildable answers for PA lots</p>
         </div>
-        <motion.button type="button" onClick={reset} whileTap={{ scale: 0.9 }} aria-label="Start a new conversation" title="New conversation" className="tap grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-stone-100 hover:text-slate-800">
-          <motion.span animate={{ rotate: spins * 360 }} transition={{ type: 'spring', bounce: 0.2, duration: reduce ? 0 : 0.7 }} className="flex">
-            <RefreshCw className="h-4 w-4" />
-          </motion.span>
-        </motion.button>
+        {msgs.length > 0 && (
+          <button type="button" onClick={reset} title="Clear the conversation" className="tap inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-[12px] font-semibold text-slate-600 ring-1 ring-stone-200 transition-colors hover:bg-stone-50 hover:text-slate-900">
+            <Eraser className="h-3.5 w-3.5" /> Clear Chat
+          </button>
+        )}
         <button type="button" onClick={onClose} aria-label="Close ParcelIQ" title="Close (Esc)" className="tap grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-stone-100 hover:text-slate-800">
           <X className="h-4 w-4" />
         </button>
@@ -139,9 +133,6 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
         {msgs.length === 0 ? (
           <div className="flex min-h-full flex-col justify-end gap-5 pb-1">
             <div className="flex flex-col items-start gap-1.5 px-1">
-              <motion.div animate={reduce ? undefined : { y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} className="mb-2 grid h-11 w-11 place-items-center rounded-2xl bg-violet-50 ring-1 ring-violet-100">
-                <MessageCircleDashed className="h-5 w-5 text-violet-600" />
-              </motion.div>
               <p className="text-[19px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">Hi there!</p>
               <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : 'Pick a lot on the map, or ask about any town in PA.'}</p>
             </div>
