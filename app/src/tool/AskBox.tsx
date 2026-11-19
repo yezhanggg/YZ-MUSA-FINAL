@@ -173,28 +173,30 @@ export default function AskBox({ expanded: forceOpen, flat }: { expanded?: boole
   );
 }
 
-/** Text with **bold** runs shown in bold. */
-function Bold({ text }: { text: string }) {
+/** Lot links in a run of text: a click selects the lot on the map. */
+function Links({ text }: { text: string }) {
   return (
     <>
-      {text.split(/\*\*(.+?)\*\*/g).map((part, i) => (i % 2 ? <strong key={i} className="font-semibold">{part}</strong> : <span key={i}>{part}</span>))}
-    </>
-  );
-}
-
-/** An answer with lot links that select the lot on the map. */
-export function Answer({ text }: { text: string }) {
-  return (
-    <span className="whitespace-pre-line">
       {splitLinks(text).map((p, i) =>
         p.t === 'text' ? (
-          <Bold key={i} text={p.v} />
+          <span key={i}>{p.v}</span>
         ) : (
           <button key={i} type="button" onClick={() => void selectLotById(p.id)} className="font-semibold text-violet-700 underline decoration-violet-300 underline-offset-2 hover:decoration-violet-700">
             {p.label}
           </button>
         ),
       )}
+    </>
+  );
+}
+
+/** An answer: **bold** runs in bold (a run may hold a lot link), lot links that select the lot on the map. A stray
+ *  ** with no partner is dropped. */
+export function Answer({ text }: { text: string }) {
+  const parts = text.split(/\*\*([\s\S]+?)\*\*/g).map((t) => t.replace(/\*\*/g, ''));
+  return (
+    <span className="whitespace-pre-line">
+      {parts.map((part, i) => (i % 2 ? <strong key={i} className="font-semibold text-slate-900"><Links text={part} /></strong> : <Links key={i} text={part} />))}
     </span>
   );
 }
