@@ -13,7 +13,7 @@ import TestControls from './test/TestControls';
 import { NotLaw } from './test/Answer';
 import { useCredits } from './credits';
 import BoundariesCard from './test/BoundariesCard';
-import { ForecastPick, Label, MapLevelPick, PayoffPick } from './ProjectControls';
+import { Label, MapLevelPick, PayoffPick } from './ProjectControls';
 
 /**
  * The left panel: search and the lot at a glance in the header, the controls below. Same shell as the right panel.
@@ -111,7 +111,6 @@ function Controls() {
       </div>
       <MapLevelPick />
       <PayoffPick />
-      <ForecastPick />
       <BoundariesCard folded />
     </div>
   );

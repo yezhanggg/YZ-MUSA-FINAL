@@ -50,7 +50,7 @@ test.describe('where to build', () => {
   test('Explore opens on Where to Build: legend card, six answers with shares, then one municipality', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
-    await expect(page.getByRole('combobox', { name: 'Map colour' })).toHaveValue('legal');
+    await expect(page.getByRole('radiogroup', { name: 'Map layer' }).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
     await expect(page.locator('.bh-map [data-places="ready:current"]')).toHaveCount(1, { timeout: 60_000 });
     const legend = page.getByRole('group', { name: 'Where to build legend' });
     await expect(legend.locator('[data-place-legend]')).toHaveCount(6);

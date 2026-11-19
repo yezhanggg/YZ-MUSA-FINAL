@@ -10,7 +10,8 @@ const PGH = { lot: '42003-0086N00208000000', tract: '42003141300' };
 const hasPgh = existsSync(resolve(LOTS, 'pittsburgh', 'detail', `${PGH.tract}.json.gz`));
 /** Words a person sees in the left panel (a closed select shows only its chosen option). The map credits line in the
  *  footer does not count: it is a licence notice, not panel text. */
-const LEFT_BUDGET = 80;
+// 100 since the map layers became a list with a one-line description each (was 80 with one select).
+const LEFT_BUDGET = 100;
 /** Words in the right panel with a tract picked and nothing opened. */
 const RIGHT_BUDGET = 60;
 
@@ -29,26 +30,43 @@ async function visibleWords(el: Locator) {
 }
 
 test.describe('explore areas', () => {
-  test('the left panel shows at most 80 words and keeps every control', async ({ page }) => {
+  test('the left panel shows at most 100 words and keeps every control', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
     await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled();
-    for (const level of ['Tracts', 'Towns', 'Counties']) {
-      await left(page).getByRole('radio', { name: level }).click();
-      const words = await visibleWords(left(page));
-      console.log(`left panel, ${level}: ${words} words`);
+    const layers = left(page).getByRole('radiogroup', { name: 'Map layer' });
+    // Explore opens on Where to Build, in the ADU Layers card. The other two cards start folded.
+    await expect(layers.getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
+    const prediction = left(page).getByRole('button', { name: 'Prediction Layers' });
+    await expect(prediction).toHaveAttribute('aria-expanded', 'false');
+    await expect(left(page).getByRole('button', { name: 'Data Layers' })).toHaveAttribute('aria-expanded', 'false');
+    const counts: Record<string, number> = { 'Where to Build': await visibleWords(left(page)) };
+    // ADUs by 2031, by towns and by counties: the Prediction card with its scenario.
+    await prediction.click();
+    await expect(left(page).getByRole('radiogroup', { name: 'ADUs by 2031 scenario' })).toBeVisible();
+    await layers.getByRole('radio', { name: 'ADUs by 2031' }).click();
+    // Counted with the card folded again (its scenario table is opt-in reading, like the old fold).
+    for (const level of ['Towns', 'Counties']) {
+      if ((await prediction.getAttribute('aria-expanded')) === 'false') await prediction.click();
+      await left(page).getByRole('radiogroup', { name: 'Map by' }).getByRole('radio', { name: level }).click();
+      await prediction.click();
+      counts[level] = await visibleWords(left(page));
+    }
+    for (const [k, words] of Object.entries(counts)) {
+      console.log(`left panel, ${k}: ${words} words`);
       expect(words).toBeLessThanOrEqual(LEFT_BUDGET);
     }
-    await left(page).getByRole('radio', { name: 'Tracts' }).click();
+    // A data layer: open its card, pick it, and the card title shows it.
+    await left(page).getByRole('button', { name: 'Data Layers' }).click();
+    await layers.getByRole('radio', { name: 'Rent' }).click();
+    await expect(layers.getByRole('radio', { name: 'Rent' })).toHaveAttribute('aria-checked', 'true');
+    await expect(layers.getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'false');
+    await expect(left(page).locator('section[aria-label="Data Layers"]')).toContainText('Rent');
+    await expect(left(page).getByText('Inside the margin of error')).toBeVisible(); // its legend, under the list
     // Every control is still on the panel (some inside a closed fold).
-    for (const name of ['Bedrooms', 'Stories', 'Rules', 'Map by', 'Build cost per sq ft']) await expect(left(page).getByRole('radiogroup', { name })).toBeVisible();
-    await expect(left(page).getByRole('combobox', { name: 'Map colour' })).toBeVisible();
+    for (const name of ['Bedrooms', 'Stories', 'Rules', 'Map layer', 'Build cost per sq ft']) await expect(left(page).getByRole('radiogroup', { name })).toBeVisible();
     await expect(left(page).locator('#adu-size')).toBeVisible();
     await expect(left(page).locator('#pay-rate')).toBeVisible();
-    const fold = left(page).getByRole('button', { name: /^ADUs by 2031/ });
-    await expect(fold).toHaveAttribute('aria-expanded', 'false');
-    await fold.click();
-    await expect(left(page).getByRole('radiogroup', { name: 'ADUs by 2031 scenario' })).toBeVisible();
     // A bill is marked "not law" where it is picked.
     await left(page).getByRole('radiogroup', { name: 'Rules' }).getByRole('radio', { name: 'State Bill' }).click();
     await expect(left(page).getByText('not law').first()).toBeVisible();
@@ -62,7 +80,7 @@ test.describe('explore areas', () => {
     await page.getByRole('button', { name: 'Features' }).click();
     await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
     // Explore opens on Where to Build (the municipality's answer, places.spec.ts); a tract map colour shows the tract answer.
-    await left(page).getByRole('combobox', { name: 'Map colour' }).selectOption('pays');
+    await left(page).getByRole('radio', { name: 'Pays Off?' }).click();
     await expect(answer(page)).toBeVisible();
     await expect(answer(page)).toHaveAttribute('data-answer', /^(yes|approval|no|unknown)$/);
     await expect(answer(page)).toContainText(/Pays off|paying off|No payoff estimate/);

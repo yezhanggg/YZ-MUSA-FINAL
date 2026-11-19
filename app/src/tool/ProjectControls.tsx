@@ -1,5 +1,6 @@
-// Explore (MUSA 5500), left panel: map level, map colour with its legend, the payoff cost and rate
-// (the Pays map and the live share of tracts that pay), and the ADUs-by-2031 scenario.
+// Explore (MUSA 5500), left panel: the map layers in three groups (Data, Prediction with the ADUs by 2031 scenario,
+// ADU) with the legend of the one on the map, and the payoff cost and rate (the Pays map and the live share of tracts
+// that pay).
 import type { ReactNode } from 'react';
 import { Segmented } from '../components/primitives';
 import { cx } from '../lib/cx';
@@ -8,7 +9,8 @@ import { COST_PSF, HEADLINE, NUMBERS, RATE, ROOM_SENTENCE } from '../lib/numbers
 import { fmt } from '../lib/format';
 import { AREA_NAMES, AREA_STEPS, FORECAST_LABEL, GROUP_COLORS, METRICS, NO_DATA, WINDOW_LABEL, WINDOW_VAR_LABEL, windowLegend, type Forecast, type MapLevel, type MetricId, type Window, type WindowVar } from './metrics';
 import { useTool } from './store';
-import { Fold, Folds, NotLaw } from './test/Answer';
+import { NotLaw } from './test/Answer';
+import FoldCard from './test/FoldCard';
 
 export function Label({ children }: { children: ReactNode }) {
   return <div className="mb-1.5 text-caption font-semibold uppercase tracking-[0.12em] text-slate-500">{children}</div>;
@@ -36,21 +38,104 @@ function Legend({ title, items, note, hint }: { title?: string; items: { name: s
   );
 }
 
-/** Short names in the map colour menu. The full name (METRICS label) is the hover text. */
-const PICK_NAME: Record<MetricId, string> = {
-  legal: 'Where to Build',
-  pays: 'Pays Off?',
-  room: 'Room on Lots (Estimate)',
-  jobs_after: 'Jobs, 2019 to 2024',
-  jobs_shift: 'Jobs, Faster or Slower',
-  pop_after: 'People, Recent Growth',
-  units_after: 'Homes, Recent Growth',
-  rent_after: 'Rent, Recent Growth',
-  group: 'Trend Groups',
-  window: 'One ACS Window',
-};
+/** The map layers, in three groups. One coloured layer is on the map at a time. "forecast" is the ADUs by 2031 map,
+ *  drawn by town or county; every other layer is a tract map (METRICS). */
+type LayerId = MetricId | 'forecast';
+interface Layer {
+  id: LayerId;
+  name: string;
+  line: string;
+}
+const LAYER_GROUPS: { key: string; title: string; open: boolean; layers: Layer[] }[] = [
+  {
+    key: 'data',
+    title: 'Data Layers',
+    open: false,
+    layers: [
+      { id: 'jobs_after', name: 'Job Change', line: 'Jobs gained or lost, 2019 to 2024' },
+      { id: 'jobs_shift', name: 'Job Growth Shift', line: 'Job growth after 2019 against before' },
+      { id: 'pop_after', name: 'People', line: 'Population growth per year, recent ACS' },
+      { id: 'units_after', name: 'Homes', line: 'Growth in homes per year, recent ACS' },
+      { id: 'rent_after', name: 'Rent', line: 'Rent growth per year, in 2024 dollars' },
+      { id: 'group', name: 'Trend Groups', line: 'Tracts grouped by how they changed' },
+      { id: 'window', name: 'By ACS Window', line: 'People, homes or rent in one ACS window' },
+    ],
+  },
+  {
+    key: 'prediction',
+    title: 'Prediction Layers',
+    open: false,
+    layers: [{ id: 'forecast', name: 'ADUs by 2031', line: 'Estimated new ADUs per 1,000 people' }],
+  },
+  {
+    key: 'adu',
+    title: 'ADU Layers',
+    open: true,
+    layers: [
+      { id: 'legal', name: 'Where to Build', line: 'Allowed today, town by town' },
+      { id: 'room', name: 'Room on Lots', line: 'Lots with room for 600 sq ft' },
+      { id: 'pays', name: 'Pays Off?', line: 'Rent covers the build cost' },
+    ],
+  },
+];
 
-/** Tract, town or county map, and the colour key for what is on screen. */
+/** The layer on the map now. */
+const activeLayer = (level: MapLevel, metric: MetricId): LayerId => (level === 'tract' ? metric : 'forecast');
+
+/** Map layers: three folding cards (Data, Prediction, ADU), each layer a row; the picked one is on the map. */
+function LayerGroups() {
+  const level = useTool((s) => s.level);
+  const metric = useTool((s) => s.metric);
+  const set = useTool((s) => s.set);
+  const active = activeLayer(level, metric);
+  const pick = (id: LayerId) => (id === 'forecast' ? set({ level: level === 'tract' ? 'town' : level }) : set({ metric: id, level: 'tract' }));
+  return (
+    <div role="radiogroup" aria-label="Map layer" className="space-y-3">
+      {LAYER_GROUPS.map((g) => {
+        const on = g.layers.find((l) => l.id === active);
+        return (
+          <FoldCard
+            key={g.key}
+            title={g.title}
+            storageKey={`bh.layers.${g.key}`}
+            defaultOpen={g.open}
+            extra={on ? <span className="max-w-[7.5rem] shrink-0 truncate rounded-full bg-violet-600 px-2 py-0.5 text-[11px] font-semibold text-white" title={`On the map: ${on.name}`}>{on.name}</span> : undefined}
+            bodyClass="space-y-1 border-t border-violet-200/60 p-2"
+          >
+            {g.layers.map((l) => {
+              const sel = l.id === active;
+              return (
+                <button
+                  key={l.id}
+                  type="button"
+                  role="radio"
+                  aria-checked={sel}
+                  aria-label={l.name}
+                  aria-describedby={`layer-${l.id}-line`}
+                  data-layer={l.id}
+                  onClick={() => pick(l.id)}
+                  title={l.id === 'forecast' ? 'ADUs by 2031 per 1,000 people, by town or county' : METRICS[l.id].label}
+                  className={cx('tap flex w-full items-start gap-2 rounded-lg px-2 py-1.5 text-left ring-1 transition-colors', sel ? 'bg-white ring-violet-300 shadow-sm' : 'ring-transparent hover:bg-white/70')}
+                >
+                  <span aria-hidden className={cx('mt-1 grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full ring-1', sel ? 'bg-violet-600 ring-violet-600' : 'bg-white ring-stone-300')}>
+                    {sel && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
+                  </span>
+                  <span className="min-w-0">
+                    <span className={cx('block text-small font-semibold', sel ? 'text-violet-900' : 'text-slate-900')}>{l.name}</span>
+                    <span id={`layer-${l.id}-line`} className="block text-caption leading-snug text-slate-500">{l.line}</span>
+                  </span>
+                </button>
+              );
+            })}
+            {g.key === 'prediction' && <ForecastSettings show={active === 'forecast'} />}
+          </FoldCard>
+        );
+      })}
+    </div>
+  );
+}
+
+/** The map layers (three groups), the settings of the picked one and the colour key for what is on screen. */
 export function MapLevelPick() {
   const level = useTool((s) => s.level);
   const metric = useTool((s) => s.metric);
@@ -111,19 +196,7 @@ export function MapLevelPick() {
   }
   return (
     <div className="space-y-2">
-      <div>
-        <Label>Map By</Label>
-        <Segmented<MapLevel> full label="Map by" value={level} onChange={(v) => set({ level: v })} options={[{ value: 'tract', label: 'Tracts' }, { value: 'town', label: 'Towns' }, { value: 'county', label: 'Counties' }]} />
-      </div>
-      {level === 'tract' && (
-        <select id="map-metric" aria-label="Map colour" title={`Map colour: ${m.label}`} value={metric} onChange={(e) => set({ metric: e.target.value as MetricId })} className="tap h-10 w-full rounded-lg bg-white px-2.5 text-small font-semibold text-slate-900 ring-1 ring-stone-300 outline-none focus:ring-violet-400">
-          {(Object.keys(METRICS) as MetricId[]).map((k) => (
-            <option key={k} value={k} title={METRICS[k].label}>
-              {PICK_NAME[k]}
-            </option>
-          ))}
-        </select>
-      )}
+      <LayerGroups />
       {level === 'tract' && metric === 'window' && (
         <div className="space-y-2">
           <Segmented<WindowVar> full label="Measure" value={winVar} onChange={(v) => set({ winVar: v })} options={(Object.keys(WINDOW_VAR_LABEL) as WindowVar[]).map((v) => ({ value: v, label: WINDOW_VAR_LABEL[v] }))} />
@@ -182,26 +255,27 @@ const FORECAST_HINT: Record<Forecast, string> = {
   sb1346: 'State bill SB 1346 (Senate). Not law. Would not cover Philadelphia or Pittsburgh.',
 };
 
-/** The ADUs-by-2031 scenario, with the statewide low, mid and high for each. Closed until opened. */
-export function ForecastPick() {
+/** In the Prediction card: by towns or counties (while ADUs by 2031 is on the map), the scenario, and the statewide
+ *  low, mid and high for each scenario. */
+function ForecastSettings({ show }: { show: boolean }) {
   const forecast = useTool((s) => s.forecast);
+  const level = useTool((s) => s.level);
   const set = useTool((s) => s.set);
   return (
-    <Folds>
-      <Fold title="ADUs by 2031 (Estimate)">
-        <Segmented<Forecast> full label="ADUs by 2031 scenario" value={forecast} onChange={(v) => set({ forecast: v })} options={FORECASTS.map((f) => ({ value: f, label: FORECAST_LABEL[f], hint: FORECAST_HINT[f] }))} />
-        <dl className="mt-2 divide-y divide-stone-100 rounded-xl bg-white text-small ring-1 ring-stone-200/80">
-          {FORECASTS.map((f) => (
-            <div key={f} className={cx('flex items-baseline justify-between gap-2 px-3 py-1.5', f === forecast && 'bg-violet-50')}>
-              <dt className={cx(f === forecast ? 'font-semibold text-slate-900' : 'text-slate-600')}>{FORECAST_LABEL[f]}</dt>
-              <dd className="text-right font-medium text-slate-900 tnum">{fmtRange(HEADLINE.adus_by_2031[f])}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className="mt-1.5 text-caption leading-snug text-slate-500" title="Statewide, mid case with the low to high range. Both bills die on Nov 30, 2026 if not enacted.">
-          Statewide, mid (low to high). Arithmetic, not a forecast. Bills are not law.
-        </p>
-      </Fold>
-    </Folds>
+    <div className="space-y-2 px-1 pt-1.5 pb-1">
+      {show && <Segmented<MapLevel> full label="Map by" value={level} onChange={(v) => set({ level: v })} options={[{ value: 'town', label: 'Towns' }, { value: 'county', label: 'Counties' }]} className="bg-white/70" />}
+      <Segmented<Forecast> full label="ADUs by 2031 scenario" value={forecast} onChange={(v) => set({ forecast: v })} options={FORECASTS.map((f) => ({ value: f, label: FORECAST_LABEL[f], hint: FORECAST_HINT[f] }))} className="bg-white/70" />
+      <dl className="divide-y divide-stone-100 rounded-xl bg-white text-small ring-1 ring-stone-200/80">
+        {FORECASTS.map((f) => (
+          <div key={f} className={cx('flex items-baseline justify-between gap-2 px-3 py-1.5', f === forecast && 'bg-violet-50')}>
+            <dt className={cx(f === forecast ? 'font-semibold text-slate-900' : 'text-slate-600')}>{FORECAST_LABEL[f]}</dt>
+            <dd className="text-right font-medium text-slate-900 tnum">{fmtRange(HEADLINE.adus_by_2031[f])}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="text-caption leading-snug text-slate-500" title="Statewide, mid case with the low to high range. Both bills die on Nov 30, 2026 if not enacted.">
+        Statewide, mid (low to high). Arithmetic, not a forecast. Bills are not law.
+      </p>
+    </div>
   );
 }

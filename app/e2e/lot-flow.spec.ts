@@ -197,7 +197,7 @@ test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await mockPhoton(page);
     await page.goto('/#/?view=project');
-    await page.locator('#map-metric').selectOption('room');
+    await page.getByRole('radio', { name: 'Room on Lots' }).click();
     await expect(page.getByText(/Statewide: about 2\.9 million \(1\.5 to 3\.6 million\)/)).toBeVisible();
     await expect(page.getByText('Outside training range')).toBeVisible();
     await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled(); // areas loaded
@@ -212,7 +212,7 @@ test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
     await page.goto('about:blank');
     await page.goto('/#/?view=project');
     await page.getByRole('button', { name: 'Search and controls' }).click();
-    await page.locator('#map-metric').selectOption('room');
+    await page.getByRole('radio', { name: 'Room on Lots' }).click();
     await page.getByText('Outside training range').scrollIntoViewIfNeeded();
     await shot(page, 'room-phone.png');
   });
@@ -226,11 +226,13 @@ test.describe('Explore', () => {
     await expect(share).toContainText('10%');
     await page.getByRole('radio', { name: '$300' }).click();
     await expect(share).toContainText('4%');
+    // ADUs by 2031, by county: the Prediction Layers card.
+    await page.getByRole('button', { name: 'Prediction Layers' }).click();
+    await page.getByRole('radio', { name: 'ADUs by 2031' }).click();
     await page.getByRole('radio', { name: 'Counties' }).click();
     // The right panel starts hidden on every visit: "Details" shows it.
     await page.getByRole('button', { name: 'Show the details' }).click();
     await expect(page.getByRole('heading', { name: /Counties/ })).toBeVisible();
-    await page.getByRole('button', { name: /^ADUs by 2031/ }).click();
     await page.getByRole('radio', { name: 'SB 1346' }).click();
     await expect(page.getByText('Bills are not law.').first()).toBeVisible();
     await shot(page, 'proj-1440-e2e.png');
