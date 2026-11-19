@@ -14,7 +14,7 @@ import SplitBar from './SplitBar';
 import { aduFromHash, useTool } from './store';
 import { clearSpot, openLot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, splitWidths, useChatOpen, useChatSplit, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, splitHeights, CHAT_W_MIN, useChatOpen, useChatSplit, useChatWidth, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
@@ -164,20 +164,23 @@ export default function ToolPage() {
   // ParcelIQ (desktop and laptop): a window at the right edge.
   const chatOpen = useChatOpen((s) => s.open) && !isNarrow;
   const ratio = useChatSplit((s) => s.ratio);
-  // With Details open too, ParcelIQ and Details sit side by side
-  // (ParcelIQ on the left, Details at the right edge) and split twice that width on the drag bar (SplitBar), leaving
-  // at least MAP_LEFT px of map.
+  // ParcelIQ alone (Details hidden) keeps at least MAP_LEFT px of map to its left.
   const MAP_LEFT = 240;
-  const leftEdge = leftOpen ? widths(mode).lw + GUTTER * 2 : GUTTER;
-  const pairW = Math.max(0, Math.min(panelW * 2 + GUTTER, vw - leftEdge - GUTTER - MAP_LEFT));
-  const pairL = vw - GUTTER - pairW;
-  const split = splitWidths(pairW, ratio);
-  // Details hidden: ParcelIQ fills the space at the right edge between the Details button (top) and the map controls
-  // row (bottom), at the Details width.
-  const chatStyle: CSSProperties = rightOpen ? { left: pairL, top: PANEL_TOP, bottom: GUTTER, width: split.chat } : { right: GUTTER, top: GUTTER + SHOW_BTN_H + GUTTER, bottom: GUTTER + CONTROLS_H + GUTTER, width: panelW };
-  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: chatOpen && rightOpen ? split.right : panelW };
-  // What the right side covers: Details, ParcelIQ, or both.
-  const rightCover = chatOpen && rightOpen ? pairW : rw;
+  const chatWant = useChatWidth((s) => s.want);
+  const setChatWant = useChatWidth((s) => s.setWant);
+  const chatMax = Math.max(CHAT_W_MIN, vw - (leftOpen ? widths(mode).lw + GUTTER * 2 : GUTTER) - GUTTER - MAP_LEFT);
+  const chatAloneW = Math.min(chatMax, Math.max(CHAT_W_MIN, chatWant));
+  // With Details open too, they stack in the right column: Details on top, ParcelIQ under it, the drag bar between
+  // them (SplitBar). The map controls row then floats on the map left of the column.
+  const stacked = chatOpen && rightOpen;
+  const colH = vh - PANEL_TOP - GUTTER;
+  const split = splitHeights(colH, ratio);
+  const chatStyle: CSSProperties = stacked
+    ? { right: GUTTER, top: PANEL_TOP + split.top + GUTTER, bottom: GUTTER, width: panelW }
+    : { right: GUTTER, top: GUTTER + SHOW_BTN_H + GUTTER, bottom: GUTTER + CONTROLS_H + GUTTER, width: chatAloneW };
+  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: stacked ? GUTTER + split.bottom + GUTTER : GUTTER, width: panelW };
+  // What the right side covers, for the floating map controls.
+  const rightCover = rw;
   // The control row drops the Aerial label when the open map is narrow (laptop with the results drawer open).
   const openMap = vw - lw - rw - GUTTER * 4;
   const setLegendSlot = useLegendSlot((s) => s.setEl);
@@ -225,7 +228,7 @@ export default function ToolPage() {
               at the right edge brings it back, and the map controls and a Chat button stay on the map. */}
           <AnimatePresence initial={false}>
             {rightOpen ? (
-              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => setRight(false)} below={<MapControls row chat />} />
+              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => setRight(false)} below={stacked ? undefined : <MapControls row chat />} />
             ) : (
               <motion.button key="open-results" type="button" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 12 }} onClick={() => setRight(true)} aria-label="Show the details" title="Show the details" className={SHOW_BTN} style={{ right: GUTTER, top: GUTTER }}>
                 <PanelRightOpen className="h-5 w-5" /> Details
@@ -236,9 +239,9 @@ export default function ToolPage() {
       )}
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
-      {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} />}
-      <AnimatePresence>{chatOpen && <ParcelIQ key="parceliq" style={chatStyle} onClose={() => useChatOpen.getState().setOpen(false)} />}</AnimatePresence>
-      {chatOpen && rightOpen && <SplitBar left={pairL} width={pairW} chatW={split.chat} top={PANEL_TOP} />}
+      {controlsSize !== 'none' && (isNarrow || !rightOpen || stacked) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} />}
+      <AnimatePresence>{chatOpen && <ParcelIQ key="parceliq" style={chatStyle} onClose={() => useChatOpen.getState().setOpen(false)} resize={rightOpen ? undefined : { width: chatAloneW, min: CHAT_W_MIN, max: chatMax, onWidth: setChatWant }} />}</AnimatePresence>
+      {chatOpen && rightOpen && <SplitBar left={vw - GUTTER - panelW} width={panelW} top={PANEL_TOP} height={colH} topH={split.top} />}
     </div>
   );
 }

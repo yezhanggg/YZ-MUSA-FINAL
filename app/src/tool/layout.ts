@@ -93,9 +93,9 @@ export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void
   },
 }));
 
-/** ParcelIQ open next to the Details panel: the chat's share of the space they split (the drag bar between them).
- *  Remembered in localStorage. Double-click on the bar goes back to half and half. */
-const SPLIT_KEY = 'bh.chatSplit';
+/** ParcelIQ and Details both open: they stack in the right column, and this is ParcelIQ's share of its height (the
+ *  drag bar between them). Remembered in localStorage. Double-click on the bar goes back to half and half. */
+const SPLIT_KEY = 'bh.chatStack';
 const savedSplit = () => {
   try {
     const v = Number(window.localStorage.getItem(SPLIT_KEY));
@@ -115,13 +115,39 @@ export const useChatSplit = create<{ ratio: number; setRatio: (r: number) => voi
     set({ ratio });
   },
 }));
-/** The narrowest either side of the split may get, in px. */
-export const SPLIT_MIN = 320;
-/** The chat's width and the Details width for a split of `total` px (a gap of one gutter between them). */
-export const splitWidths = (total: number, ratio: number) => {
+/** ParcelIQ on its own (Details hidden): the width the user dragged it to, remembered in localStorage. */
+const CHAT_W_KEY = 'bh.chatWidth';
+export const CHAT_W_DEFAULT = 420;
+export const CHAT_W_MIN = 340;
+const savedChatW = () => {
+  try {
+    const v = Number(window.localStorage.getItem(CHAT_W_KEY));
+    return v >= CHAT_W_MIN ? v : CHAT_W_DEFAULT;
+  } catch {
+    return CHAT_W_DEFAULT;
+  }
+};
+export const useChatWidth = create<{ want: number; setWant: (w: number, save?: boolean) => void }>((set) => ({
+  want: typeof window === 'undefined' ? CHAT_W_DEFAULT : savedChatW(),
+  setWant: (want, save = true) => {
+    if (save) {
+      try {
+        window.localStorage.setItem(CHAT_W_KEY, String(Math.round(want)));
+      } catch {
+        /* storage blocked: the width lasts for this visit only */
+      }
+    }
+    set({ want });
+  },
+}));
+/** The shortest either box of the stack may get, in px. */
+export const SPLIT_MIN = 200;
+/** Details (top) and ParcelIQ (bottom) heights for a column of `total` px with ParcelIQ's share `ratio` (a gap of
+ *  one gutter between them). */
+export const splitHeights = (total: number, ratio: number) => {
   const room = Math.max(0, total - GUTTER);
-  const chat = Math.round(Math.min(room - SPLIT_MIN, Math.max(SPLIT_MIN, room * ratio)));
-  return { chat, right: room - chat };
+  const bottom = Math.round(Math.min(room - SPLIT_MIN, Math.max(SPLIT_MIN, room * ratio)));
+  return { top: room - bottom, bottom };
 };
 
 /** Desktop and laptop: the left panel, and on desktop the right column, can be hidden (a hide button in each header,

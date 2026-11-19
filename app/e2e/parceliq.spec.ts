@@ -37,6 +37,16 @@ test.describe('ParcelIQ', () => {
     expect(box.width).toBeGreaterThan(340);
     expect(box.width).toBeLessThan(800);
     await expect(page.getByRole('radiogroup', { name: 'Map view' })).toBeVisible();
+    // Its left edge drags it wider, and the width is kept.
+    const grip = page.getByRole('separator', { name: 'Resize ParcelIQ' });
+    const g = (await grip.boundingBox())!;
+    await page.mouse.move(g.x + g.width / 2, g.y + g.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(g.x - 120, g.y + g.height / 2, { steps: 6 });
+    await page.mouse.up();
+    await expect.poll(async () => (await chat(page).boundingBox())!.width).toBeGreaterThan(box.width + 100);
+    await grip.dblclick();
+    await expect.poll(async () => Math.abs((await chat(page).boundingBox())!.width - 420)).toBeLessThan(3); // the default width
     const t0 = Date.now();
     await chat(page).getByRole('button', { name: 'What is an ADU?' }).click();
     await expect(chat(page).getByRole('status')).toBeVisible(); // the thinking pill
@@ -53,35 +63,36 @@ test.describe('ParcelIQ', () => {
     await expect(chat(page).getByText('Here are the details.')).toBeVisible();
   });
 
-  test('with a lot open, chat and Details split the space and the bar drags', async ({ page }) => {
+  test('with a lot open, Details and ParcelIQ stack in the right column and the bar drags', async ({ page }) => {
     test.skip(!hasPgh, `no lot records at ${LOTS}`);
     await page.setViewportSize({ width: 1440, height: 900 });
-    await page.addInitScript(() => window.localStorage.removeItem('bh.chatSplit'));
+    await page.addInitScript(() => window.localStorage.removeItem('bh.chatStack'));
     await page.goto(`/#/?view=test&lot=${PGH.lot}&tract=${PGH.tract}`);
     await expect(details(page)).toBeVisible();
     await page.getByRole('button', { name: 'ParcelIQ', exact: true }).click();
     await expect(chat(page)).toBeVisible();
     await expect(chat(page).getByRole('button', { name: 'Can I build an ADU on this lot?' })).toBeVisible();
-    const bar = page.getByRole('separator', { name: 'Resize ParcelIQ and Details' });
+    const bar = page.getByRole('separator', { name: 'Resize Details and ParcelIQ' });
     await expect(bar).toBeVisible();
     await page.waitForTimeout(400);
-    const w0 = (await chat(page).boundingBox())!.width;
-    const d0 = (await details(page).boundingBox())!.width;
-    expect(Math.abs(w0 - d0)).toBeLessThan(40); // half and half
+    const c0 = (await chat(page).boundingBox())!;
+    const d0 = (await details(page).boundingBox())!;
+    // Stacked: same column, Details above ParcelIQ, about half and half.
+    expect(Math.abs(c0.x - d0.x)).toBeLessThan(4);
+    expect(d0.y + d0.height).toBeLessThan(c0.y + 1);
+    expect(Math.abs(c0.height - 870 / 2)).toBeLessThan(40);
     const b = (await bar.boundingBox())!;
     await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2);
     await page.mouse.down();
-    await page.mouse.move(b.x - 150, b.y + b.height / 2, { steps: 6 });
+    await page.mouse.move(b.x + b.width / 2, b.y - 150, { steps: 6 });
     await page.mouse.up();
-    const w1 = (await chat(page).boundingBox())!.width;
-    expect(w1).toBeLessThan(w0 - 100);
+    await expect.poll(async () => (await chat(page).boundingBox())!.height).toBeGreaterThan(c0.height + 100);
     await bar.dblclick();
-    await expect.poll(async () => Math.round((await chat(page).boundingBox())!.width)).toBe(Math.round(w0));
-    // Side by side on the right: ParcelIQ left of Details.
-    expect((await chat(page).boundingBox())!.x).toBeLessThan((await details(page).boundingBox())!.x);
-    // Closing Details moves ParcelIQ to the right edge.
+    await expect.poll(async () => Math.abs((await chat(page).boundingBox())!.height - c0.height)).toBeLessThan(3);
+    // Closing Details puts ParcelIQ back on its own at the right edge.
     await page.getByRole('button', { name: 'Hide the details' }).click();
     await expect(bar).toHaveCount(0);
     await expect.poll(async () => { const c = (await chat(page).boundingBox())!; return c.x + c.width; }).toBeGreaterThan(1440 - 20);
   });
+
 });

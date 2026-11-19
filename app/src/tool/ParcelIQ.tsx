@@ -1,17 +1,16 @@
-// ParcelIQ: the chat, opened from the map's ParcelIQ button. On desktop and laptop it fills the map area on its own,
-// or splits it with the Details panel (ToolPage, with the drag bar between them). Same Ask backend and browser tools
+// ParcelIQ: the chat, opened from the map's ParcelIQ button. On desktop and laptop it stands at the right edge (its
+// left edge drags its width), or beside the Details panel (ToolPage, with the drag bar between them). Same Ask backend and browser tools
 // as AskBox. An answer waits at least MIN_THINK_MS behind the thinking pill, so a fast reply does not flash.
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUp, MessageCircleDashed, RefreshCw, X } from 'lucide-react';
-import { PANEL } from '../components/Panel';
+import { ArrowUp, ArrowUpRight, ListPlus, MessageCircleDashed, RefreshCw, Sparkles, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { ask, type Turn } from '../agent/client';
 import { browserProvider } from '../agent/browserProvider';
 import { askReply, askTags, type AskTags } from './askTags';
 import { Answer, useAskContext } from './AskBox';
 import { ThinkingPill } from './ThinkingPill';
-import { useChatOpen } from './layout';
+import { CHAT_W_DEFAULT, useChatOpen } from './layout';
 import { useTool } from './store';
 
 /** The least time the thinking pill shows before an answer, in ms. */
@@ -34,7 +33,8 @@ const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 /** The chat's conversation, kept while the chat is closed and opened again (a module store, one per page). */
 const memory: { msgs: Msg[]; history: Turn[] } = { msgs: [], history: [] };
 
-export default function ParcelIQ({ style, onClose }: { style?: CSSProperties; onClose: () => void }) {
+/** `resize`: ParcelIQ stands alone and its left edge drags its width. */
+export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProperties; onClose: () => void; resize?: { width: number; min: number; max: number; onWidth: (w: number, save?: boolean) => void } }) {
   const [msgs, setMsgsState] = useState<Msg[]>(memory.msgs);
   const [history, setHistoryState] = useState<Turn[]>(memory.history);
   const [busy, setBusy] = useState(false);
@@ -106,120 +106,184 @@ export default function ParcelIQ({ style, onClose }: { style?: CSSProperties; on
     <motion.section
       role="dialog"
       aria-label="ParcelIQ"
-      initial={{ opacity: 0, y: 12, scale: 0.99 }}
+      initial={{ opacity: 0, y: 10, scale: 0.985 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 12, scale: 0.99 }}
+      exit={{ opacity: 0, y: 10, scale: 0.985 }}
       transition={{ duration: reduce ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
-      className={cx(PANEL, 'absolute z-30')}
+      className="absolute z-30 flex flex-col overflow-visible rounded-2xl bg-white shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35),0_2px_6px_-2px_rgba(15,23,42,0.08)] ring-1 ring-slate-900/[0.06]"
       style={style}
     >
-      {/* Header */}
-      <div className="flex shrink-0 items-start justify-between gap-4 border-b border-stone-200 px-5 pb-4 pt-5">
-        <div className="min-w-0">
-          <h2 className="text-[16px] font-semibold leading-6 text-slate-900">ParcelIQ</h2>
-          <p className="mt-0.5 text-small leading-5 text-slate-500">Parcel intelligence: zoning, limits and what you can build on any PA lot</p>
+      {resize && <WidthHandle {...resize} />}
+      {/* Header: name, what it does, new chat and close. */}
+      <header className="flex shrink-0 items-center gap-3 border-b border-stone-100 px-4 py-3">
+        <div className="relative grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white shadow-[0_4px_12px_-4px_rgba(109,40,217,0.6)]">
+          <Sparkles className="h-[18px] w-[18px]" />
+          <span aria-hidden className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-400 ring-2 ring-white" />
         </div>
-        <div className="flex shrink-0 items-center gap-2">
-          <motion.button type="button" onClick={reset} whileTap={{ scale: 0.9 }} aria-label="Start a new conversation" title="Start a new conversation" className="tap grid h-[30px] w-[30px] place-items-center rounded-[18px] bg-white text-slate-500 ring-1 ring-stone-200 transition-colors hover:text-slate-900">
-            <motion.span animate={{ rotate: spins * 360 }} transition={{ type: 'spring', bounce: 0.2, duration: reduce ? 0 : 0.7 }} className="flex">
-              <RefreshCw className="h-4 w-4" />
-            </motion.span>
-          </motion.button>
-          <button type="button" onClick={onClose} aria-label="Close ParcelIQ" title="Close (Esc)" className="tap grid h-[30px] w-[30px] place-items-center rounded-[18px] bg-white text-slate-500 ring-1 ring-stone-200 transition-colors hover:text-slate-900">
-            <X className="h-4 w-4" />
-          </button>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-[15px] font-semibold leading-5 tracking-[-0.01em] text-slate-900">ParcelIQ</h2>
+          <p className="truncate text-[12px] leading-4 text-slate-500">Zoning and buildable answers for PA lots</p>
         </div>
-      </div>
+        <motion.button type="button" onClick={reset} whileTap={{ scale: 0.9 }} aria-label="Start a new conversation" title="New conversation" className="tap grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-stone-100 hover:text-slate-800">
+          <motion.span animate={{ rotate: spins * 360 }} transition={{ type: 'spring', bounce: 0.2, duration: reduce ? 0 : 0.7 }} className="flex">
+            <RefreshCw className="h-4 w-4" />
+          </motion.span>
+        </motion.button>
+        <button type="button" onClick={onClose} aria-label="Close ParcelIQ" title="Close (Esc)" className="tap grid h-8 w-8 place-items-center rounded-lg text-slate-400 transition-colors hover:bg-stone-100 hover:text-slate-800">
+          <X className="h-4 w-4" />
+        </button>
+      </header>
 
-      {/* Messages, or the empty state with topics */}
-      <div ref={listRef} className="scroll-quiet min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-5" aria-live="polite">
+      {/* Messages, or the welcome with suggested questions. */}
+      <div ref={listRef} className="scroll-quiet min-h-0 flex-1 overflow-y-auto overscroll-contain bg-gradient-to-b from-stone-50/80 to-white px-4 py-4" aria-live="polite">
         {msgs.length === 0 ? (
-          <div className="mx-auto flex h-full max-w-xl flex-col items-center justify-center py-6 text-center">
-            <motion.div animate={reduce ? undefined : { y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} className="grid h-10 w-10 place-items-center rounded-[14px] bg-violet-50 ring-1 ring-violet-100">
-              <MessageCircleDashed className="h-5 w-5 text-violet-700" />
-            </motion.div>
-            <p className="mt-4 text-[18px] font-semibold leading-7 tracking-[-0.45px] text-slate-900">Hi there!</p>
-            <p className="mt-1.5 max-w-[300px] text-small leading-[22px] text-slate-500">Ask whether an ADU fits a lot, or pick a topic below.</p>
-            <div role="group" aria-label="Suggested questions" className="mt-6 flex max-w-lg flex-wrap items-center justify-center gap-2">
+          <div className="flex min-h-full flex-col justify-end gap-5 pb-1">
+            <div className="flex flex-col items-start gap-1.5 px-1">
+              <motion.div animate={reduce ? undefined : { y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} className="mb-2 grid h-11 w-11 place-items-center rounded-2xl bg-violet-50 ring-1 ring-violet-100">
+                <MessageCircleDashed className="h-5 w-5 text-violet-600" />
+              </motion.div>
+              <p className="text-[19px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">Hi there!</p>
+              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : 'Pick a lot on the map, or ask about any town in PA.'}</p>
+            </div>
+            <div role="group" aria-label="Suggested questions" className="flex flex-col gap-1.5">
               {topics.map((t) => (
-                <button key={t} type="button" onClick={() => void send(t)} className={cx('tap h-8 rounded-full px-4 text-small transition-all duration-150 active:scale-[0.99]', t === LOT_TOPIC ? 'bg-violet-600 font-semibold text-white hover:bg-violet-700' : 'bg-stone-100 text-slate-800 hover:bg-stone-200')}>
-                  {t}
+                <button key={t} type="button" onClick={() => void send(t)} className={cx('tap group flex min-h-10 items-center justify-between gap-3 rounded-xl px-3.5 py-2 text-left text-[13px] font-medium transition-all duration-150 active:scale-[0.99]', t === LOT_TOPIC ? 'bg-violet-600 text-white shadow-[0_6px_16px_-8px_rgba(109,40,217,0.7)] hover:bg-violet-700' : 'bg-white text-slate-700 ring-1 ring-stone-200 hover:text-violet-800 hover:ring-violet-300')}>
+                  <span>{t}</span>
+                  <ArrowUpRight className={cx('h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-px group-hover:translate-x-px', t === LOT_TOPIC ? 'text-violet-200' : 'text-slate-300 group-hover:text-violet-500')} />
                 </button>
               ))}
             </div>
           </div>
         ) : (
-          <div className="mx-auto flex max-w-2xl flex-col gap-3">
+          <div className="flex flex-col gap-4">
             {msgs.map((m, i) =>
               m.role === 'user' ? (
-                <div key={i} className="ml-12 self-end rounded-[18px] rounded-br-md bg-violet-600 px-4 py-2.5 text-body leading-snug text-white">
+                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="ml-10 self-end rounded-2xl rounded-br-md bg-gradient-to-br from-violet-600 to-indigo-600 px-3.5 py-2 text-[13.5px] leading-[1.45] text-white shadow-[0_4px_14px_-6px_rgba(79,70,229,0.55)]">
                   {m.text}
-                </div>
+                </motion.div>
               ) : (
-                <div key={i} className="mr-12 self-start" data-answer>
-                  <div className="mb-1 pl-1 text-[11px] font-semibold uppercase tracking-wide text-violet-700">ParcelIQ</div>
-                  <div className={cx('rounded-[18px] rounded-bl-md px-4 py-2.5 text-body leading-snug', m.error ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-stone-100 text-slate-800')}>
-                    <Answer text={m.text} />
+                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mr-6 flex items-start gap-2 self-start" data-answer>
+                  <div aria-hidden className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
+                    <Sparkles className="h-3 w-3" />
                   </div>
-                  {(m.tags?.unverified || (m.tags?.confidence.length ?? 0) > 0 || (m.tools?.length ?? 0) > 0) && (
-                    <div className="mt-1.5 flex flex-wrap gap-1 pl-1" data-ask-tags>
-                      {m.tags?.unverified && <span className="rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-800 ring-1 ring-amber-200">Unverified text search</span>}
-                      {m.tags?.confidence.map((c) => (
-                        <span key={c} className="rounded-full bg-white px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-stone-200" data-confidence>
-                          {c}
-                        </span>
-                      ))}
+                  <div className="min-w-0">
+                    <div className={cx('rounded-2xl rounded-tl-md px-3.5 py-2.5 text-[13.5px] leading-[1.5]', m.error ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-white text-slate-700 shadow-[0_1px_2px_rgba(15,23,42,0.05)] ring-1 ring-stone-200/80')}>
+                      <Answer text={m.text} />
                     </div>
-                  )}
-                  {m === lastAnswer && !m.error && !busy && (
-                    <button type="button" onClick={() => void send(EXPLAIN_MORE)} className="tap mt-2 h-8 rounded-full bg-white px-4 text-small font-semibold text-violet-700 ring-1 ring-violet-200 transition hover:bg-violet-50">
-                      {EXPLAIN_MORE}
-                    </button>
-                  )}
-                </div>
+                    {(m.tags?.unverified || (m.tags?.confidence.length ?? 0) > 0) && (
+                      <div className="mt-1.5 flex flex-wrap gap-1" data-ask-tags>
+                        {m.tags?.unverified && <span className="rounded-md bg-amber-50 px-1.5 py-0.5 text-[10.5px] font-semibold text-amber-800 ring-1 ring-amber-200">Unverified text search</span>}
+                        {m.tags?.confidence.map((c) => (
+                          <span key={c} className="rounded-md bg-stone-100 px-1.5 py-0.5 text-[10.5px] font-medium text-slate-500" data-confidence>
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {m === lastAnswer && !m.error && !busy && (
+                      <button type="button" onClick={() => void send(EXPLAIN_MORE)} className="tap mt-2 inline-flex h-7 items-center gap-1 rounded-full bg-violet-50 px-3 text-[12px] font-semibold text-violet-700 ring-1 ring-violet-200/70 transition hover:bg-violet-100">
+                        <ListPlus className="h-3.5 w-3.5" /> {EXPLAIN_MORE}
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
               ),
             )}
             {busy && (
-              <div className="self-start">
-                <ThinkingPill width={160} height={44} label="Thinking" />
+              <div className="flex items-center gap-2 self-start">
+                <div aria-hidden className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
+                  <Sparkles className="h-3 w-3" />
+                </div>
+                <ThinkingPill width={132} height={36} label="Thinking" />
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* Composer, always at the bottom */}
+      {/* Composer: one line that grows with the text, send inside it. */}
       <form
-        className="shrink-0 px-5 pb-5"
+        className="shrink-0 border-t border-stone-100 px-3 pb-2.5 pt-2.5"
         onSubmit={(e) => {
           e.preventDefault();
           void send(q);
         }}
       >
-        <div className="mx-auto max-w-2xl rounded-[18px] bg-stone-200/50 p-3 transition-colors focus-within:bg-stone-200/80">
+        <div className="flex items-end gap-2 rounded-xl bg-stone-100/80 py-1.5 pl-3.5 pr-1.5 ring-1 ring-transparent transition focus-within:bg-white focus-within:ring-violet-300 focus-within:shadow-[0_0_0_4px_rgba(139,92,246,0.10)]">
           <textarea
             ref={boxRef}
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => {
+              setQ(e.target.value);
+              const t = e.target;
+              t.style.height = 'auto';
+              t.style.height = `${Math.min(t.scrollHeight, 120)}px`;
+            }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
                 e.preventDefault();
                 void send(q);
+                e.currentTarget.style.height = 'auto';
               }
             }}
-            rows={2}
-            placeholder={hasLot ? 'Ask about this lot, or anything about ADUs in PA' : 'Ask anything about ADUs in PA'}
+            rows={1}
+            placeholder={hasLot ? 'Ask about this lot…' : 'Ask about ADUs in PA…'}
             aria-label="Ask ParcelIQ"
-            className="max-h-40 w-full resize-none bg-transparent text-body leading-5 text-slate-900 outline-none placeholder:text-slate-500"
+            className="max-h-[120px] min-h-[28px] flex-1 resize-none bg-transparent py-1 text-[13.5px] leading-5 text-slate-900 outline-none placeholder:text-slate-400"
           />
-          <div className="mt-2 flex items-center justify-end">
-            <motion.button type="submit" disabled={!q.trim() || busy} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.88 }} aria-label="Send" className="group grid h-[30px] w-[30px] place-items-center rounded-[18px] bg-slate-950 text-white disabled:bg-stone-300 disabled:text-white">
-              <ArrowUp className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-px" />
-            </motion.button>
-          </div>
+          <motion.button type="submit" disabled={!q.trim() || busy} whileTap={{ scale: 0.9 }} aria-label="Send" className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-violet-600 text-white shadow-sm transition-colors hover:bg-violet-700 disabled:bg-stone-200 disabled:text-slate-400 disabled:shadow-none">
+            <ArrowUp className="h-4 w-4" />
+          </motion.button>
         </div>
+        <p className="mt-1.5 text-center text-[10.5px] text-slate-400">Answers can be wrong. Not legal advice.</p>
       </form>
     </motion.section>
+  );
+}
+
+/** The drag edge on the left of ParcelIQ when it stands alone: drag, or arrow keys, for the width. Double-click resets. */
+function WidthHandle({ width, min, max, onWidth }: { width: number; min: number; max: number; onWidth: (w: number, save?: boolean) => void }) {
+  const drag = useRef<{ x: number; w: number; next: number } | null>(null);
+  const clamp = (w: number) => Math.round(Math.min(max, Math.max(min, w)));
+  return (
+    <div
+      role="separator"
+      aria-orientation="vertical"
+      aria-label="Resize ParcelIQ"
+      aria-valuenow={width}
+      aria-valuemin={min}
+      aria-valuemax={max}
+      tabIndex={0}
+      title="Drag to resize. Double-click for the default width."
+      onPointerDown={(e) => {
+        if (e.button !== 0) return;
+        e.preventDefault();
+        e.currentTarget.setPointerCapture(e.pointerId);
+        drag.current = { x: e.clientX, w: width, next: width };
+      }}
+      onPointerMove={(e) => {
+        const d = drag.current;
+        if (!d) return;
+        d.next = clamp(d.w + (d.x - e.clientX));
+        onWidth(d.next, false);
+      }}
+      onPointerUp={() => {
+        const d = drag.current;
+        drag.current = null;
+        if (d) onWidth(d.next);
+      }}
+      onPointerCancel={() => (drag.current = null)}
+      onDoubleClick={() => onWidth(CHAT_W_DEFAULT)}
+      onKeyDown={(e) => {
+        if (e.key === 'ArrowLeft') onWidth(clamp(width + 24));
+        else if (e.key === 'ArrowRight') onWidth(clamp(width - 24));
+        else return;
+        e.preventDefault();
+      }}
+      className="group absolute inset-y-4 -left-1.5 z-10 flex w-3 cursor-col-resize touch-none items-center justify-center outline-none"
+    >
+      <span aria-hidden className="h-10 w-1 rounded-full bg-stone-300 opacity-0 transition group-hover:h-14 group-hover:bg-violet-500 group-hover:opacity-100 group-focus-visible:bg-violet-500 group-focus-visible:opacity-100" />
+    </div>
   );
 }
 
