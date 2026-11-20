@@ -11,9 +11,9 @@ import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
 import AskDock, { DOCK_BAR_H } from './AskDock';
 import { aduFromHash, useTool } from './store';
-import { clearSpot, openLot, testSpot } from './actions';
+import { clearSpot, openLot, takeCarrySpot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding, useChatOpen } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
@@ -74,11 +74,21 @@ export default function ToolPage() {
     const link = testFromHash(window.location.hash);
     if (status === 'ready' && link.lot) void openLot(link.lot.id, link.lot.tract);
   }, [status]);
-  // Switching between testing and projecting reloads the spot for the other view.
+  // Switching between Test Site and Explore starts clean: nothing picked, Details closed, the whole state in view
+  // (Explore fits it itself). "Test a lot here" is the one switch that keeps the spot: it is tested for its lot.
   const view = useTool((s) => s.view);
+  // Only a real change of view (not a repeat run of the effect, as React's dev mode does on the first load).
+  const prevView = useRef(view);
   useEffect(() => {
+    if (prevView.current === view) return;
+    prevView.current = view;
     const spot = useTool.getState().spot;
-    if (spot) void testSpot(spot.pt, spot.label, spot.parcel, { keepUnit: true, lotId: spot.record?.lot.id });
+    if (spot && takeCarrySpot()) return void testSpot(spot.pt, spot.label, spot.parcel, { keepUnit: true, lotId: spot.record?.lot.id });
+    clearSpot();
+    useSides.getState().setSide('right', false);
+    useTool.getState().set({ resultsOpen: false });
+    const map = mapRef.current;
+    if (view === 'test' && map) map.fitBounds(PA_BBOX, { padding: mapPadding(false), absolutePadding: true, duration: reduced() ? 0 : 600 } as Parameters<typeof map.fitBounds>[1]);
   }, [view]);
   // Esc deselects the lot or tract (not while typing, and not while a dialog such as the Lot report is open).
   useEffect(() => {
@@ -181,7 +191,11 @@ export default function ToolPage() {
   }, [status, vw, vh]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Desktop and laptop: both panels start one gutter from the top (PANEL_TOP); the top bar sits between them.
-  const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER + DOCK_BAR_H + GUTTER, width: widths(mode).lw };
+  // With ParcelIQ open, the Controls panel gives it room: it keeps at most what leaves ParcelIQ CHAT_ROOM of the
+  // window, and scrolls inside past that, so the chat always sits under the panel (AskDock).
+  const chatShown = useChatOpen((s) => s.open && !s.hidden) && !isNarrow;
+  const chatRoom = Math.max(320, Math.round(vh * 0.42));
+  const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER + DOCK_BAR_H + (chatShown ? chatRoom + GUTTER : GUTTER), width: widths(mode).lw };
   // Desktop and laptop: one box for an address or a question at the bottom left (AskDock), ParcelIQ above it. It can
   // grow up to the top and across, leaving the Details panel and some map on the right.
   const dockMaxW = vw - GUTTER * 2 - (rightOpen ? panelW + GUTTER : 0) - 160;
@@ -223,7 +237,6 @@ export default function ToolPage() {
               // The column spans the height, but only the panel and the legend take clicks: the map below a short panel stays clickable.
               <motion.div key="left" className="pointer-events-none absolute z-30 flex flex-col gap-3 [&>*]:pointer-events-auto" style={leftStyle} initial={{ x: '-110%' }} animate={{ x: 0 }} exit={{ x: '-110%' }} transition={reduced() ? { duration: 0 } : SPRING_PANEL}>
                 <LeftPanel column onClose={() => useSides.getState().setSide('left', false)} />
-                <div ref={setLegendSlot} className="shrink-0 empty:hidden" />
               </motion.div>
             ) : (
               <motion.button key="show-left" type="button" initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }} onClick={() => useSides.getState().setSide('left', true)} aria-label="Show the controls" title="Show the controls" className={SHOW_BTN} style={{ left: GUTTER, top: GUTTER }}>
@@ -247,6 +260,9 @@ export default function ToolPage() {
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
       {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} />}
+      {/* Desktop and laptop: the map legend (Test Site's testable lots, Explore's layer) sits just above the map buttons at
+          the bottom right. The Details panel lies over it when open. */}
+      {!isNarrow && <div ref={setLegendSlot} className="pointer-events-auto absolute z-10 w-[248px] empty:hidden" style={{ right: GUTTER, bottom: GUTTER + 40 + 8 }} data-legend-slot />}
       {!isNarrow && <AskDock maxW={dockMaxW} vh={vh} />}
     </div>
   );

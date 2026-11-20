@@ -6,6 +6,7 @@ import { cx } from '../lib/cx';
 import Search from './Search';
 import { useTool } from './store';
 import TestControls from './test/TestControls';
+import { VIEW_LABEL } from '../lib/router';
 import ExploreControls from './ProjectControls';
 
 /**
@@ -30,7 +31,7 @@ export default function LeftPanel({ style, drawer, onClose, column }: { style?: 
       {/* Tablet and phone: search under the title, in the header, outside the scrolling body, so its focus ring and the
           results list are never clipped. Desktop and laptop: one box for an address or a question at the bottom left
           (AskDock). */}
-      <PanelHeader title="ADU in PA" actions={onClose ? drawer ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : <IconButton label="Hide the controls" onClick={onClose}><PanelLeftClose className="h-4 w-4" /></IconButton> : undefined}>
+      <PanelHeader title={test ? VIEW_LABEL.test : VIEW_LABEL.project} actions={onClose ? drawer ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : <IconButton label="Hide the controls" onClick={onClose}><PanelLeftClose className="h-4 w-4" /></IconButton> : undefined}>
         {drawer || status === 'error' ? (
           <>
             {drawer && <Search />}

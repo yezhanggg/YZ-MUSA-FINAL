@@ -92,18 +92,21 @@ test.describe('lot flow', () => {
     await expect(verdict(page)).not.toContainText('not law');
   });
 
-  test('Explore shows the tract, and Test a lot here goes back to the lot', async ({ page }) => {
+  test('switching to Explore from the Features menu starts clean: nothing picked, Details closed', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
     await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
     await page.getByRole('button', { name: 'Features' }).click();
     await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
-    const testHere = page.getByRole('button', { name: 'Test a lot here' }).first();
-    await expect(testHere).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Test a lot here' })).toHaveCount(0);
     await expect(verdict(page)).toHaveCount(0);
-    await shot(page, 'proj-tract-1440.png');
-    await testHere.click();
-    await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
+    await shot(page, 'proj-clean-1440.png');
+    // And back: still nothing picked.
+    await page.getByRole('button', { name: 'Features' }).click();
+    await page.getByRole('menuitemradio', { name: /^Test Site/ }).click();
+    await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
+    await expect(verdict(page)).toHaveCount(0);
   });
 
   test('phone: the same lot in the sheet', async ({ page }) => {

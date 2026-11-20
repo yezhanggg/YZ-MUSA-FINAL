@@ -3,6 +3,7 @@
 // time. The row that is on shows its legend right under it, and the settings that change that layer (Rules for Where
 // to Build, your ADU and the payoff for Does It Pay Off, the scenario for ADUs by 2031, the window for By ACS Window).
 import type { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { RotateCcw } from 'lucide-react';
 import { Segmented } from '../components/primitives';
 import { cx } from '../lib/cx';
@@ -11,9 +12,9 @@ import { BASE, BED_LABEL, BED_SIZE, COST_PSF, HEADLINE, NUMBERS, RATE, ROOM_SENT
 import { fmt } from '../lib/format';
 import { AREA_NAMES, AREA_STEPS, FORECAST_LABEL, GROUP_COLORS, METRICS, NO_DATA, WINDOW_LABEL, WINDOW_VAR_LABEL, windowLegend, type Forecast, type MapLevel, type MetricId, type Window, type WindowVar } from './metrics';
 import type { LayerId } from './layerInsight';
-import { LEGEND_ORDER, STATUS_COLOR } from './places';
 import { PlacesKey } from './PlaceResults';
 import { useTool, type Rule } from './store';
+import { useLegendSlot } from './layout';
 import { NotLaw } from './test/Answer';
 import BoundariesCard from './test/BoundariesCard';
 import FoldCard from './test/FoldCard';
@@ -51,23 +52,6 @@ export const LAYER_GROUPS: { title: string; layers: { id: LayerId; name: string;
 ];
 export const LAYER_NAME = Object.fromEntries(LAYER_GROUPS.flatMap((g) => g.layers.map((l) => [l.id, l.name]))) as Record<LayerId, string>;
 
-/** The colours a layer draws with, for the small preview on its row. */
-function rampOf(id: LayerId, winVar: WindowVar): string[] {
-  if (id === 'legal') return LEGEND_ORDER.slice(0, 5).map((s) => STATUS_COLOR[s]);
-  if (id === 'forecast') return AREA_STEPS.map(([, c]) => c);
-  if (id === 'group') return GROUP_COLORS.slice(0, 5).map(([, c]) => c);
-  if (id === 'window') return windowLegend(winVar).colors;
-  return METRICS[id].steps.map(([, c]) => c);
-}
-
-const Ramp = ({ colors }: { colors: string[] }) => (
-  <span aria-hidden className="flex h-2.5 w-8 shrink-0 overflow-hidden rounded-[3px] ring-1 ring-black/10">
-    {colors.map((c, i) => (
-      <span key={i} className="h-full flex-1" style={{ background: c }} />
-    ))}
-  </span>
-);
-
 export default function ExploreControls() {
   return (
     <div className="space-y-4">
@@ -81,7 +65,6 @@ export default function ExploreControls() {
 function DataLayers() {
   const active = useActiveLayer();
   const level = useTool((s) => s.level);
-  const winVar = useTool((s) => s.winVar);
   const set = useTool((s) => s.set);
   const pick = (id: LayerId) => (id === 'forecast' ? set({ level: level === 'tract' ? 'town' : level }) : set({ metric: id, level: 'tract' }));
   return (
@@ -109,11 +92,10 @@ function DataLayers() {
                         {on && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
                       </span>
                       <span className={cx('min-w-0 flex-1 truncate text-small font-semibold', on ? 'text-violet-900' : 'text-slate-800')}>{l.name}</span>
-                      <Ramp colors={rampOf(l.id, winVar)} />
                     </button>
                     {on && (
                       <div className="space-y-2.5 px-2 pb-2.5 pt-0.5" data-layer-detail={l.id}>
-                        <LayerLegend id={l.id} />
+                        <LegendHere id={l.id} />
                         <LayerSettings id={l.id} />
                       </div>
                     )}
@@ -150,7 +132,21 @@ function Key({ label, items, note, hint, cols = 1 }: { label: string; items: { n
   );
 }
 
-/** The legend of one layer, inline under its row. */
+/** The active layer's legend. Desktop and laptop: a card just above the map buttons at the bottom right (ToolPage's
+ *  legend slot), titled with the layer. Tablet and phone: inline under the row, in the drawer. */
+function LegendHere({ id }: { id: LayerId }) {
+  const slot = useLegendSlot((s) => s.el);
+  if (!slot) return <LayerLegend id={id} />;
+  return createPortal(
+    <div role="group" aria-label={`${LAYER_NAME[id]} map legend`} className="max-h-[50vh] overflow-y-auto rounded-2xl bg-white/95 px-4 py-3 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.28)] ring-1 ring-black/5 backdrop-blur" data-layer-legend={id}>
+      <p className="mb-2 text-small font-semibold text-slate-900">{LAYER_NAME[id]}</p>
+      <LayerLegend id={id} />
+    </div>,
+    slot,
+  );
+}
+
+/** The legend of one layer. */
 function LayerLegend({ id }: { id: LayerId }) {
   const forecast = useTool((s) => s.forecast);
   const winVar = useTool((s) => s.winVar);

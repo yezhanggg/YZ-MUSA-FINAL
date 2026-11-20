@@ -27,16 +27,15 @@ test.describe('show testable lots', () => {
     // One button per place (a city, or a county with several towns), each with its lot count from the place manifest.
     await openCard(page, 'Testable Lots');
     for (const place of ['pittsburgh', 'philadelphia', 'allentown', 'chester_county', 'centre_county', 'montgomery_county']) await expect(page.locator(`[data-place="${place}"]`)).toHaveText(/\d{1,3}(,\d{3})* Lots$/);
-    // The legend is a card under the left panel, not over the map.
-    const panel = page.locator('aside[aria-label="Search and map controls"]');
+    // The legend is a card just above the map buttons at the bottom right.
+    const buttons = page.getByRole('radiogroup', { name: 'Map view' });
 
     await sw.click();
     await expect(sw).toHaveAttribute('aria-checked', 'true');
     await expect(legend).toBeVisible();
-    const [p, l] = [(await panel.boundingBox())!, (await legend.boundingBox())!];
-    expect(l.y).toBeGreaterThanOrEqual(p.y + p.height);
-    expect(Math.round(l.x)).toBe(Math.round(p.x));
-    expect(Math.round(l.width)).toBe(Math.round(p.width));
+    const [b, l] = [(await buttons.boundingBox())!, (await legend.boundingBox())!];
+    expect(l.y + l.height).toBeLessThanOrEqual(b.y);
+    expect(l.x + l.width).toBeGreaterThan(1440 - 30);
     for (const label of ['Allowed and fits', 'Allowed, does not fit', 'Not allowed']) await expect(legend).toContainText(label);
     await expect(legend).toContainText('Squares: most common answer'); // the state map is below lot level
     await expect(map).toHaveAttribute('data-testable', /parcels-pgh-overview/);

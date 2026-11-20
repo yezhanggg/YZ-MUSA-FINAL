@@ -20,6 +20,7 @@ export const EXPLAIN_MORE = 'Explain more';
 
 const TOPICS = ['What is an ADU?', 'Which towns allow ADUs by right?', 'What would the state bill change?', 'How much would a backyard cottage cost?', 'Can I rent it out?'];
 export const LOT_TOPIC = 'Can I build an ADU on this lot?';
+export const AREA_TOPIC = 'Can I build an ADU in this town?';
 
 interface Msg {
   role: 'user' | 'assistant';
@@ -50,7 +51,9 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   const [history, setHistoryState] = useState<Turn[]>(memory.history);
   const [busy, setBusy] = useState(false);
   const { context } = useAskContext();
-  const hasLot = useTool((s) => !!s.spot);
+  // Test Site with a lot: questions about the lot. Explore with an area: about its town.
+  const hasLot = useTool((s) => s.view === 'test' && !!s.spot?.record);
+  const hasArea = useTool((s) => s.view === 'project' && !!s.spot);
   const reduce = useReducedMotion();
   const listRef = useRef<HTMLDivElement>(null);
   const setMsgs = (f: (m: Msg[]) => Msg[]) =>
@@ -120,7 +123,7 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   };
 
   const lastAnswer = [...msgs].reverse().find((m) => m.role === 'assistant');
-  const topics = hasLot ? [LOT_TOPIC, ...TOPICS] : TOPICS;
+  const topics = hasLot ? [LOT_TOPIC, ...TOPICS] : hasArea ? [AREA_TOPIC, ...TOPICS] : TOPICS;
 
   return (
     <motion.section
@@ -157,13 +160,13 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
           <div className="flex min-h-full flex-col justify-end gap-5 pb-1">
             <div className="flex flex-col items-start gap-1.5 px-1">
               <p className="text-[19px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">Hi there!</p>
-              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : 'Search an Address or Ask Anything'}</p>
+              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : hasArea ? 'Ask about this town, or pick a question.' : 'Search an Address or Ask Anything'}</p>
             </div>
             <div role="group" aria-label="Suggested questions" className="flex flex-col gap-1.5">
               {topics.map((t) => (
-                <button key={t} type="button" onClick={() => void send(t)} className={cx('tap group flex min-h-10 items-center justify-between gap-3 rounded-xl px-3.5 py-2 text-left text-[13px] font-medium transition-all duration-150 active:scale-[0.99]', t === LOT_TOPIC ? 'bg-violet-600 text-white shadow-[0_6px_16px_-8px_rgba(109,40,217,0.7)] hover:bg-violet-700' : 'bg-white text-slate-700 ring-1 ring-stone-200 hover:text-violet-800 hover:ring-violet-300')}>
+                <button key={t} type="button" onClick={() => void send(t)} className={cx('tap group flex min-h-10 items-center justify-between gap-3 rounded-xl px-3.5 py-2 text-left text-[13px] font-medium transition-all duration-150 active:scale-[0.99]', t === LOT_TOPIC || t === AREA_TOPIC ? 'bg-violet-600 text-white shadow-[0_6px_16px_-8px_rgba(109,40,217,0.7)] hover:bg-violet-700' : 'bg-white text-slate-700 ring-1 ring-stone-200 hover:text-violet-800 hover:ring-violet-300')}>
                   <span>{t}</span>
-                  <ArrowUpRight className={cx('h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-px group-hover:translate-x-px', t === LOT_TOPIC ? 'text-violet-200' : 'text-slate-300 group-hover:text-violet-500')} />
+                  <ArrowUpRight className={cx('h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-px group-hover:translate-x-px', t === LOT_TOPIC || t === AREA_TOPIC ? 'text-violet-200' : 'text-slate-300 group-hover:text-violet-500')} />
                 </button>
               ))}
             </div>

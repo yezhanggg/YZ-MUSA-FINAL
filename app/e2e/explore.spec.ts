@@ -1,5 +1,5 @@
 // Explore, like a simple GIS: the left panel lists Boundaries first, then one Data Layers card with every map layer as
-// a row. The layer on the map shows its legend and its own settings right under its row. A click on an area opens
+// a row. The layer on the map shows its own settings right under its row, and its legend above the map buttons. A click on an area opens
 // Details with "This layer here" (the value, how it compares, a takeaway), then the answer and the folds.
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -60,9 +60,12 @@ test.describe('explore areas', () => {
     for (const name of ['Where to Build', 'Lots with Room', 'Does It Pay Off', 'Jobs', 'Job Growth Shift', 'People', 'Homes', 'Rent', 'Trend Groups', 'By ACS Window', 'ADUs by 2031'])
       await expect(layers(page).getByRole('radio', { name, exact: true })).toBeVisible();
     await expect(layers(page).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
-    // Its legend and Rules sit under its row. No legend card of its own, no payoff settings.
+    // Rules sits under its row, no payoff settings.
     const legal = left(page).locator('[data-layer-detail="legal"]');
-    await expect(legal.getByRole('group', { name: 'Where to build legend' })).toBeVisible();
+    // The legend itself sits above the map buttons at the bottom right (the legend slot), titled with the layer.
+    const slot = page.locator('[data-legend-slot]');
+    await expect(slot.getByRole('group', { name: 'Where to build legend' })).toBeVisible();
+    await expect(slot.locator('[data-layer-legend="legal"]')).toContainText('Where to Build');
     await expect(legal.getByRole('radiogroup', { name: 'Rules' })).toBeVisible();
     await expect(page.getByRole('group', { name: 'Where to build legend' })).toHaveCount(1);
     await expect(left(page).getByRole('radiogroup', { name: 'Bedrooms' })).toHaveCount(0);
@@ -70,11 +73,11 @@ test.describe('explore areas', () => {
     console.log(`left panel, Where to Build: ${words} words`);
     expect(words).toBeLessThanOrEqual(LEFT_BUDGET);
 
-    // Rent: its legend moves under the Rent row, Rules goes away.
+    // Rent: the legend card shows Rent, Rules goes away.
     await layers(page).getByRole('radio', { name: 'Rent', exact: true }).click();
     await expect(layers(page).getByRole('radio', { name: 'Rent', exact: true })).toHaveAttribute('aria-checked', 'true');
     await expect(layers(page).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'false');
-    await expect(left(page).locator('[data-layer-detail="rent_after"]').getByRole('group', { name: 'Rent legend' })).toContainText('Inside the margin of error');
+    await expect(page.locator('[data-legend-slot]').getByRole('group', { name: 'Rent legend' })).toContainText('Inside the margin of error');
     await expect(left(page).locator('[data-layer-detail]')).toHaveCount(1);
     await expect(left(page).getByRole('radiogroup', { name: 'Rules' })).toHaveCount(0);
 
@@ -88,7 +91,7 @@ test.describe('explore areas', () => {
     // ADUs by 2031: by towns or counties and the scenario; a bill is marked not law.
     await layers(page).getByRole('radio', { name: 'ADUs by 2031' }).click();
     const forecast = left(page).locator('[data-layer-detail="forecast"]');
-    await expect(forecast.getByRole('group', { name: 'ADUs by 2031 legend' })).toBeVisible();
+    await expect(page.locator('[data-legend-slot]').getByRole('group', { name: 'ADUs by 2031 legend' })).toBeVisible();
     await forecast.getByRole('radiogroup', { name: 'Map by' }).getByRole('radio', { name: 'Counties' }).click();
     await forecast.getByRole('radiogroup', { name: 'ADUs by 2031 scenario' }).getByRole('radio', { name: 'SB 1346' }).click();
     await expect(forecast.getByText('not law').first()).toBeVisible();
@@ -129,10 +132,8 @@ test.describe('explore areas', () => {
   test('a picked tract: this layer, one answer, four rows, the rest closed', async ({ page }) => {
     test.skip(!hasPgh, `no lot records at ${LOTS}`);
     await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto(`/#/?view=test&lot=${PGH.lot}&tract=${PGH.tract}`);
-    await expect(page.locator('section[aria-label="Verdict"]').first()).toBeVisible();
-    await page.getByRole('button', { name: 'Features' }).click();
-    await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
+    // A link to the lot in Explore picks its tract (the Features menu starts clean, lot-flow.spec.ts).
+    await page.goto(`/#/?view=project&lot=${PGH.lot}&tract=${PGH.tract}`);
     // Explore opens on Where to Build (the municipality's answer, places.spec.ts); a tract layer shows the tract answer.
     await left(page).getByRole('radio', { name: 'Does It Pay Off' }).click();
     await expect(here(page)).toHaveAttribute('data-layer-here', 'pays');

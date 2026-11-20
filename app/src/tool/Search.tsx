@@ -228,7 +228,7 @@ export default function Search({ dock = false, joined = false }: { dock?: boolea
 
   return (
     <div className="relative">
-      <div className={cx('flex h-11 items-center gap-2 rounded-xl bg-white pl-3 pr-1.5 ring-1 transition-shadow', dock && 'h-12 rounded-2xl shadow-[0_12px_32px_-12px_rgba(15,23,42,0.45)]', joined && 'rounded-t-none', showList ? 'shadow-[0_0_0_4px_rgba(124,58,237,0.12)] ring-violet-400' : 'ring-stone-300 hover:ring-stone-400 focus-within:shadow-[0_0_0_4px_rgba(124,58,237,0.12)] focus-within:ring-violet-400')}>
+      <div className={cx('flex h-11 items-center gap-2 rounded-xl bg-white pl-3 pr-1.5 ring-1 transition-shadow', dock && (joined ? 'h-11 rounded-full bg-stone-100 pl-4 ring-stone-200' : 'h-12 rounded-full pl-4 shadow-[0_12px_32px_-12px_rgba(15,23,42,0.45)]'), showList ? 'shadow-[0_0_0_4px_rgba(124,58,237,0.12)] ring-violet-400' : 'ring-stone-300 hover:ring-stone-400 focus-within:shadow-[0_0_0_4px_rgba(124,58,237,0.12)] focus-within:ring-violet-400')}>
         {loading ? <Loader2 className="h-4 w-4 shrink-0 animate-spin text-violet-600" /> : question ? <Sparkles className="h-4 w-4 shrink-0 text-violet-600" /> : <SearchIcon className="h-4 w-4 shrink-0 text-slate-500" />}
         <input
           value={q}
@@ -272,7 +272,7 @@ export default function Search({ dock = false, joined = false }: { dock?: boolea
           </button>
         )}
         {dock && text && (
-          <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => void enter()} aria-label={question ? 'Ask ParcelIQ' : 'Search'} title={question ? 'Ask ParcelIQ' : 'Search'} className="tap grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-violet-600 text-white shadow-sm transition hover:bg-violet-700">
+          <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => void enter()} aria-label={question ? 'Ask ParcelIQ' : 'Search'} title={question ? 'Ask ParcelIQ' : 'Search'} className="tap grid h-8 w-8 shrink-0 place-items-center rounded-full bg-violet-600 text-white shadow-sm transition hover:bg-violet-700">
             <ArrowUp className="h-4 w-4" />
           </button>
         )}

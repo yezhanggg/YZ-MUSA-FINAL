@@ -9,8 +9,8 @@ import ParcelIQ from './ParcelIQ';
 import Search from './Search';
 import { CHAT_H_MIN, CHAT_W_MIN, GUTTER, PANEL_TOP, useChatOpen, useChatSize, useSides } from './layout';
 
-/** The box's height (h-12). */
-export const DOCK_BAR_H = 48;
+/** The box's height with the chat card's footer around it (h-11 plus padding). */
+export const DOCK_BAR_H = 60;
 /** The panel's "Controls" show button when the panel is hidden (h-11). */
 const SHOW_BTN_H = 44;
 
@@ -67,7 +67,10 @@ export default function AskDock({ maxW, vh }: { maxW: number; vh: number }) {
           />
         )}
       </AnimatePresence>
-      <Search dock joined={open} />
+      {/* Open: the box sits in the chat card's white footer as a rounded field. Closed: a rounded bar on the map. */}
+      <div className={open ? 'rounded-b-2xl bg-white px-3 pb-3 pt-1 shadow-[0_18px_40px_-18px_rgba(15,23,42,0.35)] ring-1 ring-slate-900/[0.06] [clip-path:inset(0_-60px_-60px_-60px)]' : undefined}>
+        <Search dock joined={open} />
+      </div>
     </div>
   );
 }

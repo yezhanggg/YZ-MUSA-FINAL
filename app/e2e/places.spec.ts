@@ -47,13 +47,13 @@ async function clickAt(page: Page, lng: number, lat: number, zoom: number) {
 test.describe('where to build', () => {
   test.skip(!hasPlaces, 'no pa_places.json');
 
-  test('Explore opens on Where to Build: inline legend, six answers with shares, then one municipality', async ({ page }) => {
+  test('Explore opens on Where to Build: its legend above the map buttons, six answers with shares, then one municipality', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
     await expect(page.getByRole('radiogroup', { name: 'Map layer' }).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
     await expect(page.locator('.bh-map [data-places="ready:current"]')).toHaveCount(1, { timeout: 60_000 });
-    // The legend sits under its row in Data Layers, not in a card of its own.
-    const legend = page.locator('[data-layer-detail="legal"]').getByRole('group', { name: 'Where to build legend' });
+    // The legend sits in the card above the map buttons (the legend slot).
+    const legend = page.locator('[data-legend-slot]').getByRole('group', { name: 'Where to build legend' });
     await expect(page.getByRole('group', { name: 'Where to build legend' })).toHaveCount(1);
     await expect(legend.locator('[data-place-legend]')).toHaveCount(6);
     await expect(legend).toContainText('Hatched');

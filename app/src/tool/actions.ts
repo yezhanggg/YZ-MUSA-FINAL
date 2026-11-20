@@ -190,8 +190,17 @@ function exploreOutline(pt: LngLat, tract: Feature<TractProps> | undefined, town
 /** Explore: switch to Test Project at the selected spot (the tool then opens the lot there). */
 export function testLotHere() {
   // The view change re-runs testSpot at the selected spot (ToolPage), now looking for the lot record there.
+  carrySpot = true;
   openView('test');
 }
+
+/** "Test a lot here" keeps the spot across the view change; any other switch (the Features menu) starts clean. */
+let carrySpot = false;
+export const takeCarrySpot = () => {
+  const c = carrySpot;
+  carrySpot = false;
+  return c;
+};
 
 /** "5459 BEACON ST" -> "5459 Beacon St" */
 export const titleCase = (s: string) => s.toLowerCase().replace(/\b([a-z])/g, (m) => m.toUpperCase());
