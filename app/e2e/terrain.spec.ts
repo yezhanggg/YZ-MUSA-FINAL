@@ -3,11 +3,11 @@
 // views working on flat ground. Needs the lot records with terrain.pmtiles (LOT_DATA_DIR, e.g.
 // ~/Library/Caches/yz-musa/lots-local); skips when they are not there.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
+import { lotDataDir } from '../devData';
 import { expect, test, type Page } from '@playwright/test';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const STEEP = { lot: '42003-0116K00029000000', tract: '42003260700' }; // 405 Venture St, steep site
 const BEACON = { lot: '42003-0086N00208000000', tract: '42003141300' }; // 5459 Beacon St, a detached unit fits
 const has = existsSync(resolve(LOTS, 'pittsburgh/tiles/terrain.pmtiles')) && existsSync(resolve(LOTS, 'pittsburgh/detail', `${STEEP.tract}.json.gz`));

@@ -1,11 +1,11 @@
 // Loading: while a lot's data loads, the results open at once on a "Loading" message with a spinning circle, and the
 // answer replaces it. A failed load shows its message there instead. The lot file is held back on purpose here.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
+import { lotDataDir } from '../devData';
 import { expect, test, type Page } from '@playwright/test';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const LOT = '42003-0086N00208000000';
 const TRACT = '42003141300';
 const has = existsSync(resolve(LOTS, 'pittsburgh/detail', `${TRACT}.json.gz`));

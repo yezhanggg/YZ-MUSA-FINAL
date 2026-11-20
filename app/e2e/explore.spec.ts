@@ -1,11 +1,11 @@
 // Explore areas: the left panel stays short (word budget, every control still there), and the right panel with a
 // tract picked leads with one answer, then at most four rows, with everything else folded and closed.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
+import { lotDataDir } from '../devData';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const PGH = { lot: '42003-0086N00208000000', tract: '42003141300' };
 const hasPgh = existsSync(resolve(LOTS, 'pittsburgh', 'detail', `${PGH.tract}.json.gz`));
 /** Words a person sees in the left panel (a closed select shows only its chosen option). The map credits line in the

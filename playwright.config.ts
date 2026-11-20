@@ -1,5 +1,5 @@
 // End-to-end test of the lot flow against the dev server (npm run e2e). Uses the real lot records on the
-// external drive (LOT_DATA_DIR, default ~/musa-drive/lots) and skips when they are not there.
+// lot records (app/devData.ts: the data drive or the laptop copy) and skips when they are not there.
 import { defineConfig, devices } from '@playwright/test';
 
 const PORT = Number(process.env.E2E_PORT ?? 5199);

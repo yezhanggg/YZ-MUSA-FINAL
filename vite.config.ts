@@ -5,7 +5,8 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { cpSync, createReadStream, existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { homedir } from "node:os";
+
+import { lotDataDir } from "./app/devData";
 import { resolve, sep } from "node:path";
 
 const ROOT = import.meta.dirname;
@@ -109,13 +110,15 @@ function tractExplorer(): Plugin {
 
 /**
  * In `vite dev`, serve the lot records (built outside the repo) at /data/lots2/, the default VITE_LOT_DATA_URL.
- * The folder is LOT_DATA_DIR, default ~/musa-drive/lots. Byte ranges are supported for the parcel PMTiles.
+ * The folder is LOT_DATA_DIR, else the data drive (~/musa-drive/lots), else the laptop copy of the public data
+ * repository (app/devData.ts). Byte ranges are supported for the parcel PMTiles.
  * .json.gz files go out as plain bytes: the browser decodes them (app/src/lib/lot/load.ts).
  */
 function devLotData(): Plugin {
   const MOUNT = "/data/lots2/";
   const TYPES: Record<string, string> = { ".json": "application/json", ".gz": "application/octet-stream", ".pmtiles": "application/octet-stream" };
-  const root = resolve((process.env.LOT_DATA_DIR ?? "~/musa-drive/lots").replace(/^~(?=$|\/)/, homedir()));
+  const root = lotDataDir();
+  console.log(`lot records: ${root}`);
   const serve = (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     const url = decodeURIComponent((req.url ?? "").split("?")[0]);
     if (!url.startsWith(MOUNT)) return next();

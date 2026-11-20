@@ -1,13 +1,13 @@
 // "Testable Lots": the switch in the Test Project panel puts the lot answer layers and the map legend on, and taking
-// it off removes both. Uses the lot tiles on the external drive (LOT_DATA_DIR, default ~/musa-drive/lots) and skips
+// it off removes both. Uses the lot tiles on the lot records (app/devData.ts: the data drive or the laptop copy) and skips
 // when they are not there. The map element lists the testable-lot layers it draws in data-testable.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test } from '@playwright/test';
+import { lotDataDir } from '../devData';
 import { openCard } from './cards';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const hasTiles = ['lots.pmtiles', 'overview.pmtiles'].every((f) => existsSync(resolve(LOTS, 'pittsburgh/tiles', f)));
 
 test.describe('show testable lots', () => {

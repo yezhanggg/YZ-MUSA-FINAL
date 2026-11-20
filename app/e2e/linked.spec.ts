@@ -1,12 +1,12 @@
 // The unit box on the main map: one press-and-drag moves it, the site view follows on every frame, and the link
 // gains at=. Deselecting: the same lot again, or Esc. Testable lots: select, deselect, zoom out, the squares stay.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { lotDataDir } from '../devData';
 import { openCard } from './cards';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const LOT = '42003-0086N00208000000';
 const TRACT = '42003141300';
 const has = existsSync(resolve(LOTS, 'pittsburgh/detail', `${TRACT}.json.gz`));

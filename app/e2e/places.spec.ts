@@ -2,14 +2,14 @@
 // the legend card with the share of Pennsylvanians, and Details for one municipality. Then the plain why-not
 // sentences on the two demo lots and the ground slope row on a steep lot (Test Project).
 import { existsSync, readFileSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
+import { lotDataDir } from '../devData';
 import { expect, test, type Page } from '@playwright/test';
 
 const PLACES = resolve(import.meta.dirname, '../public/data/pa_places.json');
 const hasPlaces = existsSync(PLACES);
 const rows: { geoid: string; name: string; status: string; tier: string }[] = hasPlaces ? JSON.parse(readFileSync(PLACES, 'utf8')) : [];
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const has = (place: string, tract: string) => existsSync(resolve(LOTS, place, 'detail', `${tract}.json.gz`));
 
 const right = (page: Page) => page.locator('aside[aria-label="Ask and report"]');
