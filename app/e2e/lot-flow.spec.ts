@@ -238,7 +238,7 @@ test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await mockPhoton(page);
     await page.goto('/#/?view=project');
-    await page.getByRole('radio', { name: 'Room on Lots' }).click();
+    await page.getByRole('radio', { name: 'Lots with Room' }).click();
     await expect(page.getByText(/Statewide: about 2\.9 million \(1\.5 to 3\.6 million\)/)).toBeVisible();
     await expect(page.getByText('Outside training range')).toBeVisible();
     await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled(); // areas loaded
@@ -253,7 +253,7 @@ test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
     await page.goto('about:blank');
     await page.goto('/#/?view=project');
     await page.getByRole('button', { name: 'Search and controls' }).click();
-    await page.getByRole('radio', { name: 'Room on Lots' }).click();
+    await page.getByRole('radio', { name: 'Lots with Room' }).click();
     await page.getByText('Outside training range').scrollIntoViewIfNeeded();
     await shot(page, 'room-phone.png');
   });
@@ -263,12 +263,13 @@ test.describe('Explore', () => {
   test('payoff controls, counties and the research explorer', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
+    // The payoff settings sit under the Does It Pay Off layer.
+    await page.getByRole('radio', { name: 'Does It Pay Off' }).click();
     const share = page.locator('p[aria-live="polite"]', { hasText: 'pays off in' }).first();
     await expect(share).toContainText('10%');
     await page.getByRole('radio', { name: '$300' }).click();
     await expect(share).toContainText('4%');
-    // ADUs by 2031, by county: the Prediction Layers card.
-    await page.getByRole('button', { name: 'Prediction Layers' }).click();
+    // ADUs by 2031, by county: its settings open under the layer.
     await page.getByRole('radio', { name: 'ADUs by 2031' }).click();
     await page.getByRole('radio', { name: 'Counties' }).click();
     // The right panel starts hidden on every visit: "Details" shows it.

@@ -1,5 +1,5 @@
-// The right panel. Explore areas: Ask on top, then the answer for the tract and town, four rows, Test a lot here,
-// and closed folds (AreaResults). Test Project: the lot results (test/LotResults). On tablet and
+// The right panel. Explore areas: the layer on the map for this area (value, how it compares, a takeaway, in LayerHere),
+// then the answer for the tract and town, four rows, Test a lot here, and closed folds (AreaResults). Test Project: the lot results (test/LotResults). On tablet and
 // phone the same pieces fill the bottom sheet's tabs. On desktop and laptop the left edge drags to resize (ResizeHandle).
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { MotionConfig, animate, motion, useMotionValue, useReducedMotion } from 'motion/react';
@@ -14,6 +14,7 @@ import { HeadSub, PlaceAnswer, PlaceRows } from './PlaceResults';
 import { hasLotTesting, placesShown } from './places';
 import { testLotHere } from './actions';
 import ResizeHandle from './ResizeHandle';
+import LayerHere from './LayerHere';
 import { useTool } from './store';
 import { Fold, Folds, ShortNotice } from './test/Answer';
 import { TestActions, TestTabBody, TestTabs, type TestTab } from './test/LotResults';
@@ -27,7 +28,7 @@ export function TestLotHere() {
   );
 }
 
-/** The answer, four rows, Test a lot here, then closed folds. Shared by the right panel and the sheet. */
+/** This layer here, the answer, four rows, Test a lot here, then closed folds. Shared by the right panel and the sheet. */
 export function ReportStack() {
   const spot = useTool((s) => s.spot);
   const level = useTool((s) => s.level);
@@ -48,6 +49,7 @@ export function ReportStack() {
   if (legal && spot)
     return (
       <div className="space-y-3">
+        <LayerHere spot={spot} />
         <PlaceAnswer spot={spot} />
         <PlaceRows spot={spot} />
         {hasLotTesting(spot.town.GEOID as string | undefined) && <TestLotHere />}
@@ -63,6 +65,7 @@ export function ReportStack() {
   return (
     <div className="space-y-3">
       {counties && !spot && <CountyTable />}
+      {spot && <LayerHere spot={spot} />}
       {spot && <AreaAnswer spot={spot} />}
       {spot && <AreaRows spot={spot} />}
       {spot && <TestLotHere />}

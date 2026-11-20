@@ -141,6 +141,7 @@ export async function loadData() {
   const [tracts, towns] = (await Promise.all(['data/tracts.geojson', 'data/towns.geojson'].map((u) => fetch(u).then((r) => r.json())))) as [FC<TractProps>, FC<TownProps>];
   prepare(tracts, towns);
   const counties = (await fetch('data/counties.geojson').then((r) => (r.ok ? r.json() : null)).catch(() => null)) as FC<CountyProps> | null;
+  if (counties) for (const f of counties.features) f._bbox = bbox(f.geometry);
   return { tracts, towns, counties };
 }
 

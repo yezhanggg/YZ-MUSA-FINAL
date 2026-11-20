@@ -263,6 +263,6 @@ Uses the lot data as it is today. The lot ids below were checked in `~/musa-driv
    <!-- source: lots/philadelphia/index.parquet: housing_type rowhouse, zoning RSA5, allowed_today false, allowed_local_reform true, allowed_state_reform true -->
 3. **The scenario switch.** On the same lot, click the "Local Bill" chip (Bill 250042) and then "State Bill" (HB 2186). Each chip carries a "not law" tag. Say again: bills, not law.
 4. **The Next Step tab.** Open Next Step: a one-line summary, then up to six plain steps (who, how long, cost, official link), from checking the rules to the rental license; on a "No" lot it says what would have to change. Then the Money fold on Results with cost and rent.
-5. **The Projecting room map.** Switch the top menu to "Explore". Set the map colour to "Room on Lots (Estimate)". Point out the two cities drawn solid (measured), the rest lighter (modelled) and the hatching outside the training range.
+5. **The Projecting room map.** Switch the top menu to "Explore". In Data Layers, pick "Lots with Room". Point out the two cities drawn solid (measured), the rest lighter (modelled) and the hatching outside the training range.
 
 Backup if the network is slow: the tract and town files load on the first Projecting view. Open it once before the talk.

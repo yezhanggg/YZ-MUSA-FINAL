@@ -60,8 +60,8 @@ test.describe('boundaries', () => {
     await card(page).getByRole('button', { name: 'Boundaries' }).click();
     await expect(sw(page, 'County')).toHaveAttribute('aria-checked', 'true');
     await page.goto('/#/?view=project');
-    // Explore keeps few words on the panel: the card starts folded there.
-    await card(page).getByRole('button', { name: 'Boundaries' }).click();
+    // Explore has the same card, first and open (it shares the fold with Test Site).
+    await expect(card(page).getByRole('button', { name: 'Boundaries' })).toHaveAttribute('aria-expanded', 'true');
     await sw(page, 'ZIP Code').click();
     await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
   });

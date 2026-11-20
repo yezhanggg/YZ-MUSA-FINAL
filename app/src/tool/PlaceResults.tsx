@@ -1,6 +1,5 @@
-// Explore, Where to Build: the legend card under the left panel (with the share of Pennsylvanians per answer) and, in
-// Details, the plain answer for the municipality with at most four short rows. Words come from tool/places.ts.
-import { createPortal } from 'react-dom';
+// Explore, Where to Build: the legend under its layer row (with the share of Pennsylvanians per answer), a small key on
+// the map on tablet and phone, and, in Details, the plain answer for the municipality with at most four short rows. Words come from tool/places.ts.
 import { ExternalLink, Minus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { dateText } from '../lib/lot/words';
@@ -11,43 +10,22 @@ import { AnswerBox, NotLaw, Row, Rows } from './test/Answer';
 
 const hatchBg = (color: string) => `repeating-linear-gradient(135deg, ${color} 0 2px, #fff 2px 4px)`;
 
-/** The legend card: six answers, each with its share of Pennsylvanians, and one line on the hatching. */
-export function PlacesLegend() {
-  const show = useTool((s) => placesShown(s));
+/** Where to Build's legend, inline under its row in Data Layers: six answers, each with its share of Pennsylvanians,
+ *  and one line on the hatching. */
+export function PlacesKey() {
   const mode = useTool((s) => s.rule);
   const state = usePlaces((s) => s.state);
   const places = usePlaces((s) => s.places);
-  const slot = useLegendSlot((s) => s.el);
-  if (!show) return null;
   const shares = peopleShares(places, mode);
   const date = dateText(places?.date);
-  // Tablet and phone have no legend slot: a compact key on the map (names only, two columns), the shares stay in the slot card.
-  if (!slot)
-    return (
-      <div role="group" aria-label="Where to build legend" data-map-legend className="pointer-events-none absolute z-[5] max-w-[236px] rounded-xl bg-white/95 px-2.5 py-1.5 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur" style={{ left: 'var(--attr-left, 12px)', top: 64 }}>
-        <ul className="grid grid-cols-2 gap-x-2 gap-y-0.5">
-          {LEGEND_ORDER.map((s) => (
-            <li key={s} className="flex items-center gap-1 text-[11px] leading-tight text-slate-700" data-place-legend={s}>
-              <span className="h-2 w-2 shrink-0 rounded-[2px] ring-1 ring-black/10" style={{ background: STATUS_COLOR[s] }} />
-              {STATUS_NAME[s]}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-0.5 text-[11px] leading-tight text-slate-500">Hatched: not checked against the code{mode === 'hb2186' ? ' · State Bill, not law' : ''}</p>
-      </div>
-    );
-  const card = (
-    <div role="group" aria-label="Where to build legend" className="rounded-2xl bg-white/95 px-4 py-3 shadow-[0_10px_40px_-10px_rgba(15,23,42,0.28)] ring-1 ring-black/5 backdrop-blur">
-      <div className="flex items-center justify-between gap-2 text-caption font-semibold text-slate-900">
-        <span>{mode === 'hb2186' ? 'Where you could build, State Bill' : 'Where you can build an ADU today'}</span>
-        {mode === 'hb2186' && <NotLaw />}
-      </div>
+  return (
+    <div role="group" aria-label="Where to build legend" className="pl-[22px]">
       {state === 'missing' ? (
-        <p className="mt-0.5 text-caption text-slate-500">The statewide table did not load. Every place shows as not checked.</p>
+        <p className="text-caption text-slate-500">The statewide table did not load. Every place shows as not checked.</p>
       ) : (
-        <ul className="mt-1 space-y-0.5" aria-label="Share of Pennsylvanians">
+        <ul className="space-y-1" aria-label="Share of Pennsylvanians">
           {LEGEND_ORDER.map((s) => (
-            <li key={s} className="flex items-center gap-1.5 text-caption text-slate-700" title={STATUS_HINT[s]} data-place-legend={s}>
+            <li key={s} className="flex items-center gap-1.5 text-caption leading-tight text-slate-600" title={STATUS_HINT[s]} data-place-legend={s}>
               <span className="h-2.5 w-2.5 shrink-0 rounded-[3px] ring-1 ring-black/10" style={{ background: STATUS_COLOR[s] }} />
               <span className="min-w-0 flex-1">{STATUS_NAME[s]}</span>
               {shares && <span className="tnum font-semibold text-slate-900">{shareText(shares[s])}</span>}
@@ -59,10 +37,35 @@ export function PlacesLegend() {
         <span className="mt-0.5 h-2.5 w-2.5 shrink-0 rounded-[3px] ring-1 ring-black/10" style={{ background: hatchBg('#94a3b8') }} />
         {HATCH_LINE}
       </p>
-      {shares && <p className="mt-1 text-caption text-slate-500">Share of Pennsylvanians{date ? `, data of ${date}` : ''}.</p>}
+      {shares && (
+        <p className="mt-1 text-caption text-slate-500">
+          Share of Pennsylvanians{date ? `, data of ${date}` : ''}.{mode === 'hb2186' && <NotLaw className="ml-1.5" />}
+        </p>
+      )}
     </div>
   );
-  return createPortal(card, slot);
+}
+
+/** Tablet and phone: the controls are a drawer, so a compact key stays on the map (names only, two columns). Desktop
+ *  and laptop show the key inline in Data Layers (PlacesKey) and nothing on the map. */
+export function PlacesLegend() {
+  const show = useTool((s) => placesShown(s));
+  const mode = useTool((s) => s.rule);
+  const slot = useLegendSlot((s) => s.el);
+  if (!show || slot) return null;
+  return (
+    <div role="group" aria-label="Where to build map key" data-map-legend className="pointer-events-none absolute z-[5] max-w-[236px] rounded-xl bg-white/95 px-2.5 py-1.5 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur" style={{ left: 'var(--attr-left, 12px)', top: 64 }}>
+      <ul className="grid grid-cols-2 gap-x-2 gap-y-0.5">
+        {LEGEND_ORDER.map((s) => (
+          <li key={s} className="flex items-center gap-1 text-[11px] leading-tight text-slate-700">
+            <span className="h-2 w-2 shrink-0 rounded-[2px] ring-1 ring-black/10" style={{ background: STATUS_COLOR[s] }} />
+            {STATUS_NAME[s]}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-0.5 text-[11px] leading-tight text-slate-500">Hatched: not checked against the code{mode === 'hb2186' ? ' · State Bill, not law' : ''}</p>
+    </div>
+  );
 }
 
 /** The place row for a spot, when the table has it. */

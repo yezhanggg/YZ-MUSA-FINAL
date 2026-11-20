@@ -1,5 +1,5 @@
 // Where to Build (Explore's default map colour): every municipality coloured by whether an ADU is allowed today,
-// the legend card with the share of Pennsylvanians, and Details for one municipality. Then the plain why-not
+// its legend under the layer row with the share of Pennsylvanians, and Details for one municipality. Then the plain why-not
 // sentences on the two demo lots and the ground slope row on a steep lot (Test Project).
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -47,12 +47,14 @@ async function clickAt(page: Page, lng: number, lat: number, zoom: number) {
 test.describe('where to build', () => {
   test.skip(!hasPlaces, 'no pa_places.json');
 
-  test('Explore opens on Where to Build: legend card, six answers with shares, then one municipality', async ({ page }) => {
+  test('Explore opens on Where to Build: inline legend, six answers with shares, then one municipality', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=project');
     await expect(page.getByRole('radiogroup', { name: 'Map layer' }).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
     await expect(page.locator('.bh-map [data-places="ready:current"]')).toHaveCount(1, { timeout: 60_000 });
-    const legend = page.getByRole('group', { name: 'Where to build legend' });
+    // The legend sits under its row in Data Layers, not in a card of its own.
+    const legend = page.locator('[data-layer-detail="legal"]').getByRole('group', { name: 'Where to build legend' });
+    await expect(page.getByRole('group', { name: 'Where to build legend' })).toHaveCount(1);
     await expect(legend.locator('[data-place-legend]')).toHaveCount(6);
     await expect(legend).toContainText('Hatched');
     await expect(legend).toContainText(/Share of Pennsylvanians, data of/);
@@ -67,6 +69,11 @@ test.describe('where to build', () => {
     await expect(answer.locator('h3')).toHaveText(TITLE[allentown.status]);
     expect(await right(page).locator('[data-place-row]').count()).toBeLessThanOrEqual(4);
     await expect(right(page).getByRole('heading', { name: 'Allentown city' })).toBeVisible();
+    // This layer here: the answer, the share of Pennsylvanians with it, a takeaway.
+    const here = right(page).locator('section[aria-label="This layer here"]');
+    await expect(here).toHaveAttribute('data-layer-here', 'legal');
+    await expect(here.locator('[data-insight]').first()).toContainText('of Pennsylvanians');
+    await expect(here.locator('[data-takeaway]')).not.toBeEmpty();
     await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('href', 'https://ecode360.com/49783893');
     await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('rel', 'noopener noreferrer');
     await expect(right(page).getByRole('button', { name: 'Test a lot here' })).toBeVisible();

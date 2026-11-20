@@ -1,5 +1,5 @@
 import { Marker, type GeoJSONSource } from 'maplibre-gl';
-import { findFeature, inGeom, type LngLat, type TownProps, type TractProps } from './geo';
+import { bboxOf, findFeature, inGeom, type Feature, type LngLat, type TownProps, type TractProps } from './geo';
 import { cityTractAt, loadAreas } from './areas';
 import { openView } from '../lib/router';
 import type { ParcelProps } from './parcels';
@@ -137,9 +137,15 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   if (!parcel) ripple(pt);
   // Where to Build answers for a whole municipality: zoom in only to about county level, so its outline shows.
   const legal = placesShown(useTool.getState());
-  map.flyTo({ center: pt, zoom: Math.max(map.getZoom(), view === 'test' ? 16.5 : legal ? 10 : 12), pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true });
-  // Explore, Where to Build answers for the municipality, so its outline is the one drawn.
-  const outline = legal && town ? town : tract;
+  // Explore draws the outline of the area the layer is about: the municipality (Where to Build, ADUs by 2031 by town),
+  // the county (by county) or the tract.
+  const outline = view === 'test' ? tract : exploreOutline(pt, tract, town, legal);
+  const want = Math.max(map.getZoom(), view === 'test' ? 16.5 : legal ? 10 : 12);
+  // Explore inspects an area: when that zoom would crop its outline, fit the outline in the open map instead.
+  const fitZoom = view === 'test' || !outline || want <= map.getZoom() ? undefined : map.cameraForBounds(bboxOf(outline.geometry), { padding: mapPadding(true) })?.zoom;
+  const motion = { pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true };
+  if (outline && fitZoom !== undefined && fitZoom < want) map.fitBounds(bboxOf(outline.geometry), motion);
+  else map.flyTo({ center: pt, zoom: want, ...motion });
   (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: outline ? [outline as unknown as GeoJSON.Feature] : [] });
 
   let rec = view === 'test' ? await recordAt(pt, area.tract, ctrl.signal, label, opts.lotId ?? (parcel?.tr ? parcel.id : undefined), opts.tract ?? parcel?.tr) : { record: null, recordNote: null, builtAt: null };
@@ -160,6 +166,25 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   if (record && !opts.keepUnit) fitUnitTo(record);
   set({ busy: false, selectedLot: record?.lot.id ?? null, spot });
   syncHash();
+}
+
+/** Explore: draw the outline of the picked area again after the map layer changed (tract, town or county). */
+export function redrawPick() {
+  const { spot, view, tracts, towns } = useTool.getState();
+  const map = mapRef.current;
+  if (!map || !spot || view !== 'project') return;
+  const tract = tracts ? findFeature(tracts, spot.pt) : undefined;
+  const town = towns ? findFeature(towns, spot.pt) : undefined;
+  const outline = exploreOutline(spot.pt, tract, town, placesShown(useTool.getState()));
+  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: outline ? [outline as unknown as GeoJSON.Feature] : [] });
+}
+
+/** Explore: the outline of the area the map layer is about, at a clicked spot. */
+function exploreOutline(pt: LngLat, tract: Feature<TractProps> | undefined, town: Feature<TownProps> | undefined, legal: boolean): Feature<unknown> | undefined {
+  const { level, counties } = useTool.getState();
+  if (level === 'county') return (counties ? findFeature(counties, pt) : undefined) ?? tract;
+  if ((legal || level === 'town') && town) return town;
+  return tract;
 }
 
 /** Explore: switch to Test Project at the selected spot (the tool then opens the lot there). */
