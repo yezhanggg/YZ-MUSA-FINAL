@@ -1,12 +1,12 @@
 // The right panel: the Results tab stays short (word budget), the site view zooms, the panel resizes from its
 // left edge and keeps that width after a reload, and the content reflows at any width with no sideways scroll.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
+import { lotDataDir } from '../devData';
 import { openCard } from './cards';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const PGH = { lot: '42003-0086N00208000000', tract: '42003141300', place: 'pittsburgh' };
 const PHL = { lot: '42101-011000034', tract: '42101002702', place: 'philadelphia' };
 const has = (l: typeof PGH) => existsSync(resolve(LOTS, l.place, 'detail', `${l.tract}.json.gz`));
@@ -135,11 +135,11 @@ test.describe('right panel', () => {
     await expect(left).toHaveCount(0);
     await page.getByRole('button', { name: 'Hide the details' }).click();
     await expect(panel(page)).toHaveCount(0);
-    // Full map: the show buttons at the edges, the map controls and the ParcelIQ button stay on the map.
+    // Full map: the show buttons at the edges, the map controls and the search box stay on the map.
     await expect(page.getByRole('button', { name: 'Show the controls' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
     await expect(page.getByRole('radiogroup', { name: 'Map view' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'ParcelIQ', exact: true })).toBeVisible();
+    await expect(page.getByRole('combobox', { name: /ask ParcelIQ/ })).toBeVisible();
     await page.reload();
     await expect(page.getByRole('button', { name: 'Show the controls' })).toBeVisible();
     await page.getByRole('button', { name: 'Show the controls' }).focus();

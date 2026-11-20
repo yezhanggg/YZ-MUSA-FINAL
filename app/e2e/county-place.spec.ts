@@ -1,14 +1,14 @@
 // County places with several towns (Chester County: West Chester, Phoenixville, West Vincent, Malvern, East
 // Brandywine). A West Chester lot opened by link gets West Chester's answer, names its town and cites the West Chester
 // rule file; a Phoenixville lot in the same county names Phoenixville and links its code. Uses the lot records on the
-// external drive (LOT_DATA_DIR, default ~/musa-drive/lots) and skips when they are not there.
+// lot records (app/devData.ts: the data drive or the laptop copy) and skips when they are not there.
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
-import { openCard } from './cards';
+import { lotDataDir } from '../devData';
+import { openCard, openPart } from './cards';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const WCH = { lot: '42029-1-4-50', tract: '42029302400' }; // 307 W Marshall St, West Chester, NC-1
 const PHX = { lot: '42029-15-7-4', tract: '42029300502' }; // 192 Pennsylvania Av, Phoenixville
 const has = [WCH, PHX].every((x) => existsSync(resolve(LOTS, 'chester_county/detail', `${x.tract}.json.gz`)));
@@ -119,7 +119,7 @@ test.describe('answers that depend on something the record does not hold', () =>
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto(`/#/?view=test&lot=${PHX_SOUTH.lot}&tract=${PHX_SOUTH.tract}`);
     await expect(verdict(page)).toBeVisible();
-    await openCard(page, 'ADU Design');
+    await openPart(page, 'Size');
     await page.locator('#u-width').fill('40');
     await page.locator('#u-depth').fill('60');
     await expect(verdict(page)).toHaveAttribute('data-status', 'check_needed');

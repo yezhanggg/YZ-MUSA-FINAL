@@ -49,6 +49,7 @@ Rules:
 - If the question rests on a wrong premise, correct it first, then answer.
 - Never give owner names or other personal details. The tools do not have them.
 - Rules are not legal advice. When you talk about what is allowed, give the rule date from the tool result. Once per conversation, add the short line: "Not legal advice. Check with the town before you build."
+- When the user asks to go to, show or move the map to a place ("take me to Philly", "show Pittsburgh"), call set_map with action fly_to_place and the place as said. Then say in one short line where the map is and what can be done there (click a lot to test it, or ask about the town).
 - Stay on ADUs, housing on this lot, and this tool. Politely decline anything else.
 - Short, plain answers as in the answer style above. No jargon.
 - When you mention a lot, link it as [lot <lot_id>](lot:<lot_id>) so the user can click it.
@@ -108,12 +109,13 @@ const SITE_TOOLS: ToolDef[] = [
   },
   {
     name: 'set_map',
-    description: 'Change the map: fly to a lot, highlight lots, set the ADU scenario, or switch today / HB 2186 rules.',
+    description: 'Change the map: fly to a lot, fly to a place (a city, town or county, or the whole state: the map moves there and, in the six lot places, shows the lots that can be tested), highlight lots, set the ADU scenario, or switch today / HB 2186 rules.',
     input_schema: {
       type: 'object',
       properties: {
-        action: { type: 'string', enum: ['fly_to_lot', 'highlight', 'set_adu', 'set_rule'] },
+        action: { type: 'string', enum: ['fly_to_lot', 'fly_to_place', 'highlight', 'set_adu', 'set_rule'] },
         lot_id: { type: 'string' },
+        place: { type: 'string', description: 'fly_to_place: a Pennsylvania city, town or county as the user said it ("Philly", "Pittsburgh", "Chester County", "Narberth"), or "Pennsylvania"' },
         lot_ids: { type: 'array', items: { type: 'string' }, maxItems: 50 },
         ...ADU_PROPS,
         rule: { type: 'string', enum: ['current', 'hb2186'] },

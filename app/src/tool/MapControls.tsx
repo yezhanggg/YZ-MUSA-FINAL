@@ -3,18 +3,16 @@
 // label when the open map is narrow), a column above the sheet's peek on tablet and phone.
 import { useEffect, useState, type CSSProperties } from 'react';
 import { motion } from 'motion/react';
-import { Compass, Image, MessageCircle, Minus, Plus } from 'lucide-react';
+import { Compass, Image, Minus, Plus } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from '../components/primitives';
 import { reduced, setView3d } from './actions';
 import { mapRef, useTool } from './store';
-import { useChatOpen } from './layout';
 
 const SHELL = 'bg-white/95 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur';
 const BTN = 'tap grid h-9 w-10 place-items-center text-slate-700 transition-colors hover:bg-stone-100 hover:text-slate-900';
 
-export default function MapControls({ style, size = 'full', row, tight, chat, onChat }: { style?: CSSProperties; size?: 'full' | 'compact' | 'switch'; row?: boolean; tight?: boolean; chat?: boolean; onChat?: () => void }) {
-  const chatOpen = useChatOpen((s) => s.open);
+export default function MapControls({ style, size = 'full', row, tight }: { style?: CSSProperties; size?: 'full' | 'compact' | 'switch'; row?: boolean; tight?: boolean }) {
   const compact = size !== 'full';
   const view3d = useTool((s) => s.view3d);
   const aerial = useTool((s) => s.aerial);
@@ -35,12 +33,6 @@ export default function MapControls({ style, size = 'full', row, tight, chat, on
   // No style: in the flow under the right panel (desktop, laptop with the results open), right-aligned.
   return (
     <div className={cx('z-20 flex gap-2', style ? 'absolute' : 'shrink-0 self-end', row ? 'flex-row items-center' : 'flex-col items-end')} style={style}>
-      {/* ParcelIQ: opens the chat over the map area (ToolPage), without opening the Details panel. */}
-      {chat && !chatOpen && (
-        <button key="chat" type="button" onClick={() => (useChatOpen.getState().setOpen(true), onChat?.())} title="Open ParcelIQ" className={cx('tap flex h-10 items-center gap-1.5 rounded-xl px-3 text-small font-bold text-violet-700 hover:text-violet-900', SHELL)}>
-          <MessageCircle className="h-4 w-4" /> ParcelIQ
-        </button>
-      )}
       <div role="radiogroup" aria-label="Map view" className={cx('relative flex rounded-xl p-1', SHELL)}>
         {(['2D', '3D'] as const).map((v) => {
           const on = (v === '3D') === view3d;

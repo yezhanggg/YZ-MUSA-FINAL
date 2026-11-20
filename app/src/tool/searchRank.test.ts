@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { houseFirst, looksLikeAddress, type PhotonFeature } from './searchRank';
+import { houseFirst, looksLikeAddress, looksLikeQuestion, type PhotonFeature } from './searchRank';
 
 const f = (x: number, p: PhotonFeature['properties']): PhotonFeature => ({ geometry: { coordinates: [x, 40] }, properties: { state: 'Pennsylvania', ...p } });
 
@@ -52,5 +52,16 @@ describe('lot address index rows', () => {
     const { mergeHits } = await import('./searchRank');
     const n = { coords: [-75.26, 40.0] as [number, number], main: 'Narberth', sub: 'Narberth, Montgomery' };
     expect(mergeHits([], [n, { ...n }, { ...n }, { ...n, sub: 'Montgomery' }])).toHaveLength(2);
+  });
+});
+
+describe('one box for addresses and questions', () => {
+  it('questions go to ParcelIQ', () => {
+    for (const q of ['Can I build an ADU here?', 'what is an ADU', 'How much would a cottage cost', 'Which towns allow ADUs by right', 'show me lots that fit a 1 bedroom', 'is 5459 Beacon St allowed?', 'I want to rent out a unit over my garage', 'move the map to Philly', 'go to Pittsburgh', 'zoom to Narberth'])
+      expect(looksLikeQuestion(q), q).toBe(true);
+  });
+  it('addresses, streets and towns stay an address search', () => {
+    for (const q of ['5459 Beacon St', '5459 beacon st pittsburgh pa', 'Beacon Street', 'Narberth', 'West Chester', '201 Barrie Rd Narberth', ''])
+      expect(looksLikeQuestion(q), q).toBe(false);
   });
 });

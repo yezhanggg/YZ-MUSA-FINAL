@@ -49,8 +49,10 @@ export interface DataProvider {
 }
 
 export interface SetMapInput {
-  action: 'fly_to_lot' | 'highlight' | 'set_adu' | 'set_rule';
+  action: 'fly_to_lot' | 'fly_to_place' | 'highlight' | 'set_adu' | 'set_rule';
   lot_id?: string;
+  /** fly_to_place: a Pennsylvania city, town or county ("Philly", "Pittsburgh", "Chester County"), or "Pennsylvania". */
+  place?: string;
   lot_ids?: string[];
   size_sqft?: number;
   stories?: number;

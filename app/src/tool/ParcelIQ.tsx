@@ -1,16 +1,17 @@
-// ParcelIQ: the chat, opened from the map's ParcelIQ button. On desktop and laptop it stands at the right edge (its
-// left edge drags its width), or beside the Details panel (ToolPage, with the drag bar between them). Same Ask backend and browser tools
-// as AskBox. An answer waits at least MIN_THINK_MS behind the thinking pill, so a fast reply does not flash.
+// ParcelIQ: the chat. Desktop and laptop: it opens above the search box at the bottom left (AskDock), where one box
+// takes an address or a question; a question arrives through useChatOpen.ask. Its right edge drags its width and its
+// top edge its height. Same Ask backend and browser tools as AskBox. An answer waits at least MIN_THINK_MS behind the
+// thinking pill, so a fast reply does not flash.
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUp, ArrowUpRight, Eraser, ListPlus, Sparkles, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Eraser, ListPlus, Sparkles, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { ask, type Turn } from '../agent/client';
 import { browserProvider } from '../agent/browserProvider';
 import { askReply, askTags, type AskTags } from './askTags';
 import { Answer, useAskContext } from './AskBox';
-import { ThinkingPill } from './ThinkingPill';
-import { CHAT_W_DEFAULT, useChatOpen } from './layout';
+import { ThinkingDots } from './ThinkingDots';
+import { CHAT_H_DEFAULT, CHAT_W_DEFAULT, useChatOpen } from './layout';
 import { useTool } from './store';
 
 /** The least time the thinking pill shows before an answer, in ms. */
@@ -31,19 +32,27 @@ interface Msg {
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** The chat's conversation, kept while the chat is closed and opened again (a module store, one per page). */
-const memory: { msgs: Msg[]; history: Turn[] } = { msgs: [], history: [] };
+const memory: { msgs: Msg[]; history: Turn[]; asked: number } = { msgs: [], history: [], asked: 0 };
 
-/** `resize`: ParcelIQ stands alone and its left edge drags its width. */
-export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProperties; onClose: () => void; resize?: { width: number; min: number; max: number; onWidth: (w: number, save?: boolean) => void } }) {
+export interface ChatResize {
+  width: number;
+  height: number;
+  minW: number;
+  maxW: number;
+  minH: number;
+  maxH: number;
+  onSize: (p: { w?: number; h?: number }, save?: boolean) => void;
+}
+
+/** `resize`: the right edge drags the width, the top edge the height. */
+export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProperties; onClose: () => void; resize?: ChatResize }) {
   const [msgs, setMsgsState] = useState<Msg[]>(memory.msgs);
   const [history, setHistoryState] = useState<Turn[]>(memory.history);
   const [busy, setBusy] = useState(false);
-  const [q, setQ] = useState('');
   const { context } = useAskContext();
   const hasLot = useTool((s) => !!s.spot);
   const reduce = useReducedMotion();
   const listRef = useRef<HTMLDivElement>(null);
-  const boxRef = useRef<HTMLTextAreaElement>(null);
   const setMsgs = (f: (m: Msg[]) => Msg[]) =>
     setMsgsState((m) => {
       const next = f(m);
@@ -58,9 +67,9 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   // Newest message in view.
   useEffect(() => {
     const el = listRef.current;
-    if (el) el.scrollTo({ top: el.scrollHeight, behavior: reduce ? 'auto' : 'smooth' });
+    // The welcome starts at its top; a conversation shows its newest message.
+    if (el) el.scrollTo({ top: msgs.length ? el.scrollHeight : 0, behavior: reduce || !msgs.length ? 'auto' : 'smooth' });
   }, [msgs.length, busy, reduce]);
-  useEffect(() => boxRef.current?.focus(), []);
 
   // Escape closes the chat (not while another dialog, such as the Lot report, is open). Captured first, so the
   // page's own Escape (which deselects the lot) does not also run.
@@ -74,10 +83,14 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
     return () => window.removeEventListener('keydown', esc, true);
   }, [onClose]);
 
+  // A question asked while an answer is on its way waits for it.
+  const queue = useRef<string[]>([]);
+  const busyRef = useRef(false);
   const send = async (text: string) => {
     const question = text.trim();
-    if (!question || busy) return;
-    setQ('');
+    if (!question) return;
+    if (busyRef.current) return void queue.current.push(question);
+    busyRef.current = true;
     setMsgs((m) => [...m, { role: 'user', text: question }]);
     setBusy(true);
     const started = Date.now();
@@ -88,13 +101,22 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
     const tags = out.ok ? askTags(out.history.slice(history.length) as { role: string; content: unknown }[]) : undefined;
     setMsgs((m) => [...m, { role: 'assistant', text: askReply(out), tools: out.tools, error: !out.ok, tags }]);
     setBusy(false);
+    busyRef.current = false;
+    const next = queue.current.shift();
+    if (next) void send(next);
   };
+
+  // A question from the search box (useChatOpen.ask), once each.
+  const question = useChatOpen((s) => s.question);
+  useEffect(() => {
+    if (!question || question.n <= memory.asked) return;
+    memory.asked = question.n;
+    void send(question.text);
+  }, [question]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const reset = () => {
     setMsgs(() => []);
     setHistory([]);
-    setQ('');
-    boxRef.current?.focus();
   };
 
   const lastAnswer = [...msgs].reverse().find((m) => m.role === 'assistant');
@@ -108,10 +130,11 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 10, scale: 0.985 }}
       transition={{ duration: reduce ? 0 : 0.22, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute z-30 flex flex-col overflow-visible rounded-2xl bg-white shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35),0_2px_6px_-2px_rgba(15,23,42,0.08)] ring-1 ring-slate-900/[0.06]"
+      // Joined to the search box below it: one card, square bottom corners, no line or gap between them.
+      className="relative flex flex-col overflow-visible rounded-t-2xl bg-white shadow-[0_18px_50px_-18px_rgba(15,23,42,0.35),0_2px_6px_-2px_rgba(15,23,42,0.08)] ring-1 ring-slate-900/[0.06] [clip-path:inset(-60px_-60px_0_-60px)]"
       style={style}
     >
-      {resize && <WidthHandle {...resize} />}
+      {resize && <EdgeHandles r={resize} />}
       {/* Header: name, what it does, Clear Chat and close. */}
       <header className="flex shrink-0 items-center gap-3 border-b border-stone-100 px-4 py-3">
         <div className="min-w-0 flex-1">
@@ -134,7 +157,7 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
           <div className="flex min-h-full flex-col justify-end gap-5 pb-1">
             <div className="flex flex-col items-start gap-1.5 px-1">
               <p className="text-[19px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">Hi there!</p>
-              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : 'Pick a lot on the map, or ask about any town in PA.'}</p>
+              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : 'Search an Address or Ask Anything'}</p>
             </div>
             <div role="group" aria-label="Suggested questions" className="flex flex-col gap-1.5">
               {topics.map((t) => (
@@ -185,98 +208,70 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
                 <div aria-hidden className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
                   <Sparkles className="h-3 w-3" />
                 </div>
-                <ThinkingPill width={132} height={36} label="Thinking" />
+                <ThinkingDots />
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* Composer: one line that grows with the text, send inside it. */}
-      <form
-        className="shrink-0 border-t border-stone-100 px-3 pb-2.5 pt-2.5"
-        onSubmit={(e) => {
-          e.preventDefault();
-          void send(q);
-        }}
-      >
-        <div className="flex items-end gap-2 rounded-xl bg-stone-100/80 py-1.5 pl-3.5 pr-1.5 ring-1 ring-transparent transition focus-within:bg-white focus-within:ring-violet-300 focus-within:shadow-[0_0_0_4px_rgba(139,92,246,0.10)]">
-          <textarea
-            ref={boxRef}
-            value={q}
-            onChange={(e) => {
-              setQ(e.target.value);
-              const t = e.target;
-              t.style.height = 'auto';
-              t.style.height = `${Math.min(t.scrollHeight, 120)}px`;
-            }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
-                e.preventDefault();
-                void send(q);
-                e.currentTarget.style.height = 'auto';
-              }
-            }}
-            rows={1}
-            placeholder={hasLot ? 'Ask about this lot…' : 'Ask about ADUs in PA…'}
-            aria-label="Ask ParcelIQ"
-            className="max-h-[120px] min-h-[28px] flex-1 resize-none bg-transparent py-1 text-[13.5px] leading-5 text-slate-900 outline-none placeholder:text-slate-400"
-          />
-          <motion.button type="submit" disabled={!q.trim() || busy} whileTap={{ scale: 0.9 }} aria-label="Send" className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-violet-600 text-white shadow-sm transition-colors hover:bg-violet-700 disabled:bg-stone-200 disabled:text-slate-400 disabled:shadow-none">
-            <ArrowUp className="h-4 w-4" />
-          </motion.button>
-        </div>
-        <p className="mt-1.5 text-center text-[10.5px] text-slate-400">Answers can be wrong. Not legal advice.</p>
-      </form>
+      {/* The questions are typed in the search box below (AskDock). */}
+      <p className="flex shrink-0 items-center justify-center gap-1.5 border-t border-stone-100 px-3 py-2 text-center text-[10.5px] text-slate-400">
+        <ArrowDown className="h-3 w-3" aria-hidden /> Type a question in the box below. Answers can be wrong. Not legal advice.
+      </p>
     </motion.section>
   );
 }
 
-/** The drag edge on the left of ParcelIQ when it stands alone: drag, or arrow keys, for the width. Double-click resets. */
-function WidthHandle({ width, min, max, onWidth }: { width: number; min: number; max: number; onWidth: (w: number, save?: boolean) => void }) {
-  const drag = useRef<{ x: number; w: number; next: number } | null>(null);
-  const clamp = (w: number) => Math.round(Math.min(max, Math.max(min, w)));
+/** The drag edge on the right for the width (drag, or arrow keys when focused). A double-click goes back to the
+ *  default width. The height follows the space up to the Controls panel (AskDock). */
+function EdgeHandles({ r }: { r: ChatResize }) {
+  const drag = useRef<{ x: number; y: number; w: number; h: number; next: { w?: number; h?: number } } | null>(null);
+  const clampW = (w: number) => Math.round(Math.min(r.maxW, Math.max(r.minW, w)));
+  const clampH = (h: number) => Math.round(Math.min(r.maxH, Math.max(r.minH, h)));
+  const edge = (side: 'right' | 'top') => ({
+    role: 'separator' as const,
+    'aria-orientation': side === 'right' ? ('vertical' as const) : ('horizontal' as const),
+    'aria-label': side === 'right' ? 'Resize ParcelIQ width' : 'Resize ParcelIQ height',
+    'aria-valuenow': side === 'right' ? r.width : r.height,
+    'aria-valuemin': side === 'right' ? r.minW : r.minH,
+    'aria-valuemax': side === 'right' ? r.maxW : r.maxH,
+    tabIndex: 0,
+    title: 'Drag to resize. Double-click for the default size.',
+    onPointerDown: (e: React.PointerEvent<HTMLDivElement>) => {
+      if (e.button !== 0) return;
+      e.preventDefault();
+      e.currentTarget.setPointerCapture(e.pointerId);
+      drag.current = { x: e.clientX, y: e.clientY, w: r.width, h: r.height, next: {} };
+    },
+    onPointerMove: (e: React.PointerEvent<HTMLDivElement>) => {
+      const d = drag.current;
+      if (!d) return;
+      // Right edge: moving right makes it wider. Top edge: moving up makes it taller.
+      d.next = side === 'right' ? { w: clampW(d.w + (e.clientX - d.x)) } : { h: clampH(d.h + (d.y - e.clientY)) };
+      r.onSize(d.next, false);
+    },
+    onPointerUp: () => {
+      const d = drag.current;
+      drag.current = null;
+      if (d) r.onSize(d.next);
+    },
+    onPointerCancel: () => (drag.current = null),
+    onDoubleClick: () => r.onSize(side === 'right' ? { w: CHAT_W_DEFAULT } : { h: CHAT_H_DEFAULT }),
+    onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) => {
+      const by: Record<string, { w?: number; h?: number }> =
+        side === 'right' ? { ArrowRight: { w: clampW(r.width + 24) }, ArrowLeft: { w: clampW(r.width - 24) } } : { ArrowUp: { h: clampH(r.height + 24) }, ArrowDown: { h: clampH(r.height - 24) } };
+      if (!(e.key in by)) return;
+      e.preventDefault();
+      r.onSize(by[e.key]);
+    },
+  });
+  const grip = 'rounded-full bg-stone-300 opacity-0 transition group-hover:bg-violet-500 group-hover:opacity-100 group-focus-visible:bg-violet-500 group-focus-visible:opacity-100';
   return (
-    <div
-      role="separator"
-      aria-orientation="vertical"
-      aria-label="Resize ParcelIQ"
-      aria-valuenow={width}
-      aria-valuemin={min}
-      aria-valuemax={max}
-      tabIndex={0}
-      title="Drag to resize. Double-click for the default width."
-      onPointerDown={(e) => {
-        if (e.button !== 0) return;
-        e.preventDefault();
-        e.currentTarget.setPointerCapture(e.pointerId);
-        drag.current = { x: e.clientX, w: width, next: width };
-      }}
-      onPointerMove={(e) => {
-        const d = drag.current;
-        if (!d) return;
-        d.next = clamp(d.w + (d.x - e.clientX));
-        onWidth(d.next, false);
-      }}
-      onPointerUp={() => {
-        const d = drag.current;
-        drag.current = null;
-        if (d) onWidth(d.next);
-      }}
-      onPointerCancel={() => (drag.current = null)}
-      onDoubleClick={() => onWidth(CHAT_W_DEFAULT)}
-      onKeyDown={(e) => {
-        if (e.key === 'ArrowLeft') onWidth(clamp(width + 24));
-        else if (e.key === 'ArrowRight') onWidth(clamp(width - 24));
-        else return;
-        e.preventDefault();
-      }}
-      className="group absolute inset-y-4 -left-1.5 z-10 flex w-3 cursor-col-resize touch-none items-center justify-center outline-none"
-    >
-      <span aria-hidden className="h-10 w-1 rounded-full bg-stone-300 opacity-0 transition group-hover:h-14 group-hover:bg-violet-500 group-hover:opacity-100 group-focus-visible:bg-violet-500 group-focus-visible:opacity-100" />
-    </div>
+    <>
+      <div {...edge('right')} className="group absolute inset-y-4 -right-1.5 z-10 flex w-3 cursor-col-resize touch-none items-center justify-center outline-none">
+        <span aria-hidden className={cx(grip, 'h-10 w-1 group-hover:h-14')} />
+      </div>
+    </>
   );
 }
-
-/** Opens ParcelIQ. */
-export const openParcelIQ = () => useChatOpen.getState().setOpen(true);

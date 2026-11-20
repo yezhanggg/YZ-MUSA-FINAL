@@ -7,7 +7,7 @@ import { Check, ChevronDown } from 'lucide-react';
 import { VIEW_LABEL, openResearch, openView, useResearch, useView, type Course, type ToolView } from '../lib/router';
 import { cx } from '../lib/cx';
 import { SPRING_TAB } from './primitives';
-import { GUTTER, narrow, rightDrawer, useChatOpen, useMode, useRightWidth, useSides, useViewportWidth, widths } from '../tool/layout';
+import { GUTTER, narrow, rightDrawer, useMode, useRightWidth, useSides, useViewportWidth, widths } from '../tool/layout';
 import { useTool } from '../tool/store';
 
 export const RESEARCH: { course: Course; label: string; line: string }[] = [
@@ -29,9 +29,7 @@ export default function TopBar() {
   const resultsOpen = useTool((s) => s.resultsOpen);
   const sides = useSides();
   const rightOpen = rightDrawer(mode) ? resultsOpen : sides.right;
-  // ParcelIQ opens at the right edge (under Details when both are open), so the bar keeps to the map left of it.
-  const chatOpen = useChatOpen((s) => s.open) && !narrow(mode);
-  const rightCover = rightOpen || chatOpen ? rw : 120;
+  const rightCover = rightOpen ? rw : 120;
   const place = narrow(mode) ? { left: GUTTER * 2 + 44, right: GUTTER } : { left: sides.left ? lw + GUTTER * 2 : 120 + GUTTER * 2, right: rightCover + GUTTER * 2 };
   const { open, other, setOpen, wrap, show, hide, onClick } = useHoverMenu('research');
   useEffect(() => setOpen(false), [research, setOpen]);

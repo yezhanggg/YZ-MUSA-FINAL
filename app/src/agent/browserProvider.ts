@@ -14,6 +14,7 @@ import { placesSource } from './placeAnswer';
 import { tractTownsSource } from './tractTowns';
 import { lotPlacesText } from './lotPlaces';
 import { lotTownOf } from '../lib/lot/towns';
+import { flyToPlace } from '../tool/flyToPlace';
 import { addressIndexSource } from '../lib/lot/addressIndex';
 
 /** { town } of a lot record for find_lot, when its town is known. */
@@ -147,6 +148,8 @@ export const browserProvider: DataProvider = {
         await selectLot(lot);
         return `Selected lot ${lot.lot_id}`;
       }
+      case 'fly_to_place':
+        return input.place ? flyToPlace(input.place) : 'No place was given.';
       case 'highlight':
         highlight(input.lot_ids ?? []);
         return `Highlighted ${(input.lot_ids ?? []).length} lots`;

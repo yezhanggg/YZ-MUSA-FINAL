@@ -32,11 +32,16 @@ export default function LeftPanel({ style, drawer, onClose, column }: { style?: 
       style={style}
       aria-label="Search and map controls"
     >
-      {/* Search under the title in both modes: in the header, outside the scrolling body, so its focus ring and the
-          results list are never clipped. */}
+      {/* Tablet and phone: search under the title, in the header, outside the scrolling body, so its focus ring and the
+          results list are never clipped. Desktop and laptop: one box for an address or a question at the bottom left
+          (AskDock). */}
       <PanelHeader title="ADU in PA" actions={onClose ? drawer ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : <IconButton label="Hide the controls" onClick={onClose}><PanelLeftClose className="h-4 w-4" /></IconButton> : undefined}>
-        <Search />
-        {status === 'error' && <p className="mt-2 text-small text-rose-700">The map data did not load. Refresh the page to try again.</p>}
+        {drawer || status === 'error' ? (
+          <>
+            {drawer && <Search />}
+            {status === 'error' && <p className="mt-2 text-small text-rose-700">The map data did not load. Refresh the page to try again.</p>}
+          </>
+        ) : null}
       </PanelHeader>
       <div className={PANEL_BODY}>
         {test ? (

@@ -1,15 +1,15 @@
 // The main lot flow: pick Test Project, open a Pittsburgh lot by link, read the verdict, grow the unit until it
 // no longer fits, compare it with the bills, open the Next Step tab and the lot report. Screenshots go to SHOTS_DIR.
 import { existsSync, mkdirSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { resolve } from 'node:path';
 import { expect, test, type Page } from '@playwright/test';
-import { openCard } from './cards';
+import { lotDataDir, shotsDir } from '../devData';
+import { openPart } from './cards';
 
-const LOTS = resolve(process.env.LOT_DATA_DIR ?? resolve(homedir(), 'musa-drive/lots'));
+const LOTS = lotDataDir();
 const LOT = '42003-0086N00208000000';
 const TRACT = '42003141300';
-const SHOTS = resolve(process.env.SHOTS_DIR ?? resolve(homedir(), 'musa-drive/ops/scratch/app-shots'));
+const SHOTS = shotsDir();
 const hasLots = existsSync(resolve(LOTS, 'pittsburgh/detail', `${TRACT}.json.gz`));
 
 const verdict = (page: Page) => page.locator('section[aria-label="Verdict"]').first();
@@ -52,7 +52,7 @@ test.describe('lot flow', () => {
     await shot(page, 'lot-1440-fits.png');
 
     // Grow the unit until it no longer fits where it is.
-    await openCard(page, 'ADU Design');
+    await openPart(page, 'Size');
     await page.locator('#u-width').fill('40');
     await page.locator('#u-depth').fill('60');
     await expect(verdict(page)).not.toHaveAttribute('data-status', 'fits');
@@ -156,6 +156,25 @@ test.describe('philadelphia lot flow', () => {
     await compare.getByRole('button', { name: /Same in every column/ }).click();
     await expect(compare.getByRole('table', { name: 'Rules that stay the same' })).toBeVisible();
     await shot(page, 'phl-row-compare-1440.png');
+  });
+
+  test('Cost and Rent suggests the numbers for this site, and Use these puts them back', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(`/#/?view=test&lot=${PHL_ROW}&tract=${PHL_TRACT}`);
+    await expect(verdict(page)).toBeVisible();
+    await openPart(page, 'Cost and Rent');
+    const card = page.locator('[data-site-suggestion]');
+    // Philadelphia's cost area (1.17 over the 1.09 default) and the HUD rent for a 1 bedroom in ZIP 19148.
+    await expect(card).toContainText('$236 per sq ft');
+    await expect(card).toContainText('$1,580 a month');
+    await expect(card).toContainText('ZIP 19148');
+    const use = card.getByRole('button');
+    await expect(use).toBeDisabled();
+    await page.locator('#m-psf').fill('400');
+    await expect(use).toBeEnabled();
+    await use.click();
+    await expect(use).toBeDisabled();
+    await expect(page.locator('[data-subfold="Cost and Rent"] > button')).toContainText('$236 per sq ft');
   });
 
   test('the unit-type list on a Philadelphia lot says why each type is off', async ({ page }) => {

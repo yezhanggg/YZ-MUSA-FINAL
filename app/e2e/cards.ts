@@ -6,3 +6,11 @@ export async function openCard(page: Page, title: 'Testable Lots' | 'ADU Design'
   await fold.waitFor();
   if ((await fold.getAttribute('aria-expanded')) === 'false') await fold.click();
 }
+
+/** ADU Design's parts fold too (all closed at first): open the card, then the part. */
+export async function openPart(page: Page, title: 'ADU Type' | 'Size' | 'Cost and Rent') {
+  await openCard(page, 'ADU Design');
+  const fold = page.locator(`[data-subfold="${title}"] > button`);
+  await fold.waitFor();
+  if ((await fold.getAttribute('aria-expanded')) === 'false') await fold.click();
+}

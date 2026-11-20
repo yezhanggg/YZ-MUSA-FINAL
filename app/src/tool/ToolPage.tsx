@@ -9,20 +9,16 @@ import LeftPanel from './LeftPanel';
 import RightPanel from './RightPanel';
 import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
-import ParcelIQ from './ParcelIQ';
-import SplitBar from './SplitBar';
+import AskDock, { DOCK_BAR_H } from './AskDock';
 import { aduFromHash, useTool } from './store';
 import { clearSpot, openLot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, splitHeights, CHAT_W_MIN, useChatOpen, useChatSplit, useChatWidth, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
 import { PA_BBOX } from './geo';
 
-/** Heights of the Details show button (h-11) and the map controls row (h-10), for the ParcelIQ window between them. */
-const SHOW_BTN_H = 44;
-const CONTROLS_H = 40;
 const SHOW_BTN = 'tap absolute z-40 flex h-11 items-center gap-2 rounded-xl bg-white/95 px-3 text-small font-semibold text-slate-700 shadow-[0_6px_24px_-12px_rgba(15,23,42,0.35)] ring-1 ring-black/5 backdrop-blur hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-violet-500';
 
 export default function ToolPage() {
@@ -165,26 +161,31 @@ export default function ToolPage() {
     return () => window.clearTimeout(t);
   }, [status, view, spotOn, leftOpen, rightOpen, panelW, vw, vh, isNarrow, sheetOpen]);
 
+  // Test Site with nothing picked: the whole state stays in view when the window changes size, as long as the user
+  // has not moved the map since (a click, a drag, a zoom). The first view is fitted by MapCanvas.
+  const testFit = useRef(true);
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status !== 'ready' || !map) return;
+    const off = (e: { originalEvent?: unknown }) => {
+      if (e.originalEvent) testFit.current = false;
+    };
+    map.on('movestart', off);
+    return () => void map.off('movestart', off);
+  }, [status]);
+  useEffect(() => {
+    const map = mapRef.current;
+    if (status !== 'ready' || !map || view !== 'test' || spotOn || !testFit.current) return;
+    const t = window.setTimeout(() => map.fitBounds(PA_BBOX, { padding: mapPadding(false), absolutePadding: true, duration: 0 }), 150);
+    return () => window.clearTimeout(t);
+  }, [status, vw, vh]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Desktop and laptop: both panels start one gutter from the top (PANEL_TOP); the top bar sits between them.
-  const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: widths(mode).lw };
-  // ParcelIQ (desktop and laptop): a window at the right edge.
-  const chatOpen = useChatOpen((s) => s.open) && !isNarrow;
-  const ratio = useChatSplit((s) => s.ratio);
-  // ParcelIQ alone (Details hidden) keeps at least MAP_LEFT px of map to its left.
-  const MAP_LEFT = 240;
-  const chatWant = useChatWidth((s) => s.want);
-  const setChatWant = useChatWidth((s) => s.setWant);
-  const chatMax = Math.max(CHAT_W_MIN, vw - (leftOpen ? widths(mode).lw + GUTTER * 2 : GUTTER) - GUTTER - MAP_LEFT);
-  const chatAloneW = Math.min(chatMax, Math.max(CHAT_W_MIN, chatWant));
-  // With Details open too, they stack in the right column: Details on top, ParcelIQ under it, the drag bar between
-  // them (SplitBar). The map controls row then floats on the map left of the column.
-  const stacked = chatOpen && rightOpen;
-  const colH = vh - PANEL_TOP - GUTTER;
-  const split = splitHeights(colH, ratio);
-  const chatStyle: CSSProperties = stacked
-    ? { right: GUTTER, top: PANEL_TOP + split.top + GUTTER, bottom: GUTTER, width: panelW }
-    : { right: GUTTER, top: GUTTER + SHOW_BTN_H + GUTTER, bottom: GUTTER + CONTROLS_H + GUTTER, width: chatAloneW };
-  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: stacked ? GUTTER + split.bottom + GUTTER : GUTTER, width: panelW };
+  const leftStyle: CSSProperties = isNarrow ? { left: GUTTER, top: TOP, bottom: GUTTER, width: `min(${lw || 360}px, calc(100% - ${GUTTER * 2}px))` } : { left: GUTTER, top: PANEL_TOP, bottom: GUTTER + DOCK_BAR_H + GUTTER, width: widths(mode).lw };
+  // Desktop and laptop: one box for an address or a question at the bottom left (AskDock), ParcelIQ above it. It can
+  // grow up to the top and across, leaving the Details panel and some map on the right.
+  const dockMaxW = vw - GUTTER * 2 - (rightOpen ? panelW + GUTTER : 0) - 160;
+  const rightStyle: CSSProperties = { right: GUTTER, top: PANEL_TOP, bottom: GUTTER, width: panelW };
   // What the right side covers, for the floating map controls.
   const rightCover = rw;
   // The control row drops the Aerial label when the open map is narrow (laptop with the results drawer open).
@@ -234,7 +235,7 @@ export default function ToolPage() {
               at the right edge brings it back, and the map controls and a Chat button stay on the map. */}
           <AnimatePresence initial={false}>
             {rightOpen ? (
-              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => setRight(false)} below={stacked ? undefined : <MapControls row chat />} />
+              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => setRight(false)} below={<MapControls row />} />
             ) : (
               <motion.button key="open-results" type="button" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 12 }} onClick={() => setRight(true)} aria-label="Show the details" title="Show the details" className={SHOW_BTN} style={{ right: GUTTER, top: GUTTER }}>
                 <PanelRightOpen className="h-5 w-5" /> Details
@@ -245,9 +246,8 @@ export default function ToolPage() {
       )}
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
-      {controlsSize !== 'none' && (isNarrow || !rightOpen || stacked) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} chat={!isNarrow} />}
-      <AnimatePresence>{chatOpen && <ParcelIQ key="parceliq" style={chatStyle} onClose={() => useChatOpen.getState().setOpen(false)} resize={rightOpen ? undefined : { width: chatAloneW, min: CHAT_W_MIN, max: chatMax, onWidth: setChatWant }} />}</AnimatePresence>
-      {chatOpen && rightOpen && <SplitBar left={vw - GUTTER - panelW} width={panelW} top={PANEL_TOP} height={colH} topH={split.top} />}
+      {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} />}
+      {!isNarrow && <AskDock maxW={dockMaxW} vh={vh} />}
     </div>
   );
 }

@@ -13,6 +13,24 @@ export interface PhotonFeature {
 /** "5459 beacon st": a house number first, so the user wants one house, not a street or a town. */
 export const looksLikeAddress = (text: string) => /^\s*\d+[a-z]?\s+\S/i.test(text);
 
+/** Words a question or a request starts with ("can I build here", "what is an ADU", "show me lots that fit",
+ *  "move the map to Philly"). */
+const ASK_WORDS = new Set(['can', 'could', 'what', 'whats', "what's", 'how', 'is', 'are', 'which', 'where', 'when', 'why', 'who', 'does', 'do', 'did', 'should', 'would', 'will', 'tell', 'show', 'find', 'explain', 'compare', 'list', 'help', 'i', 'my', 'if', 'am', 'any', 'give', 'please', 'move', 'go', 'take', 'zoom', 'fly', 'center', 'centre', 'navigate', 'pan', 'test', 'check', 'look', 'see', 'want', 'need', 'let']);
+
+/**
+ * One box for both: a question for ParcelIQ or an address to look up. A question ends with "?", starts with a
+ * question or request word, or runs to six words or more without a house number. Anything else (a street, a town,
+ * "5459 Beacon St") is an address.
+ */
+export function looksLikeQuestion(text: string): boolean {
+  const t = text.trim();
+  if (!t) return false;
+  if (t.endsWith('?')) return true;
+  if (looksLikeAddress(t)) return false;
+  const words = t.toLowerCase().split(/\s+/);
+  return ASK_WORDS.has(words[0].replace(/[^a-z']/g, '')) || words.length >= 6;
+}
+
 /**
  * Photon results for a typed address: the houses with that number on that street first (Photon's house layer also
  * returns other houses that only look alike, such as 5459 Spring St for 5459 Beacon St, so those are dropped),

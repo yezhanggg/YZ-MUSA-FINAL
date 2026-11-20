@@ -78,11 +78,16 @@ export const clampRight = (w: number, vw: number) => Math.round(Math.min(rightMa
 /** Desktop and laptop: the card under the left panel where a map legend goes (TestableLegend portals into it). */
 export const useLegendSlot = create<{ el: HTMLElement | null; setEl: (el: HTMLElement | null) => void }>((set) => ({ el: null, setEl: (el) => set({ el }) }));
 
-/** Desktop and laptop: the chat box under the results is open, or minimised into the "Chat" button of the map controls
- *  row. It starts minimised on every visit; the "Chat" button opens it. */
+/** ParcelIQ, the chat. Desktop and laptop: it opens above the search box at the bottom left when the box is clicked
+ *  (one box for addresses and questions), and steps aside while an address is typed. It starts closed on every visit.
+ *  `ask` opens it with a question that ParcelIQ sends at once. */
 const CHAT_KEY = 'bh.chatOpen';
-export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void }>((set) => ({
+export const useChatOpen = create<{ open: boolean; question: { text: string; n: number } | null; hidden: boolean; setOpen: (o: boolean) => void; setHidden: (h: boolean) => void; ask: (text: string) => void }>((set, get) => ({
   open: false,
+  question: null,
+  // Out of the way while an address is typed in the box (the address list shows instead).
+  hidden: false,
+  setHidden: (hidden) => get().hidden !== hidden && set({ hidden }),
   setOpen: (open) => {
     try {
       window.localStorage.setItem(CHAT_KEY, open ? '1' : '0');
@@ -91,64 +96,36 @@ export const useChatOpen = create<{ open: boolean; setOpen: (o: boolean) => void
     }
     set({ open });
   },
+  ask: (text) => set({ open: true, hidden: false, question: { text, n: (get().question?.n ?? 0) + 1 } }),
 }));
 
-/** ParcelIQ and Details both open: they stack in the right column, and this is ParcelIQ's share of its height (the
- *  drag bar between them). Remembered in localStorage. Double-click on the bar goes back to half and half. */
-const SPLIT_KEY = 'bh.chatStack';
-const savedSplit = () => {
-  try {
-    const v = Number(window.localStorage.getItem(SPLIT_KEY));
-    return v > 0.1 && v < 0.9 ? v : 0.5;
-  } catch {
-    return 0.5;
-  }
-};
-export const useChatSplit = create<{ ratio: number; setRatio: (r: number) => void }>((set) => ({
-  ratio: typeof window === 'undefined' ? 0.5 : savedSplit(),
-  setRatio: (ratio) => {
-    try {
-      window.localStorage.setItem(SPLIT_KEY, String(Math.round(ratio * 1000) / 1000));
-    } catch {
-      /* storage blocked: the split lasts for this visit only */
-    }
-    set({ ratio });
-  },
-}));
-/** ParcelIQ on its own (Details hidden): the width the user dragged it to, remembered in localStorage. */
-const CHAT_W_KEY = 'bh.chatWidth';
+/** ParcelIQ's size on desktop and laptop: its right edge drags the width, its top edge the height. Remembered in
+ *  localStorage; a double-click on an edge goes back to the default. */
+const CHAT_SIZE_KEY = 'bh.chatSize';
 export const CHAT_W_DEFAULT = 420;
 export const CHAT_W_MIN = 340;
-const savedChatW = () => {
+export const CHAT_H_DEFAULT = 520;
+export const CHAT_H_MIN = 280;
+const savedChatSize = () => {
   try {
-    const v = Number(window.localStorage.getItem(CHAT_W_KEY));
-    return v >= CHAT_W_MIN ? v : CHAT_W_DEFAULT;
+    const v = JSON.parse(window.localStorage.getItem(CHAT_SIZE_KEY) ?? '{}') as { w?: number; h?: number };
+    return { w: Number(v.w) >= CHAT_W_MIN ? Number(v.w) : CHAT_W_DEFAULT, h: Number(v.h) >= CHAT_H_MIN ? Number(v.h) : CHAT_H_DEFAULT };
   } catch {
-    return CHAT_W_DEFAULT;
+    return { w: CHAT_W_DEFAULT, h: CHAT_H_DEFAULT };
   }
 };
-export const useChatWidth = create<{ want: number; setWant: (w: number, save?: boolean) => void }>((set) => ({
-  want: typeof window === 'undefined' ? CHAT_W_DEFAULT : savedChatW(),
-  setWant: (want, save = true) => {
-    if (save) {
-      try {
-        window.localStorage.setItem(CHAT_W_KEY, String(Math.round(want)));
-      } catch {
-        /* storage blocked: the width lasts for this visit only */
-      }
+export const useChatSize = create<{ w: number; h: number; setSize: (p: { w?: number; h?: number }, save?: boolean) => void }>((set, get) => ({
+  ...(typeof window === 'undefined' ? { w: CHAT_W_DEFAULT, h: CHAT_H_DEFAULT } : savedChatSize()),
+  setSize: (p, save = true) => {
+    set(p);
+    if (!save) return;
+    try {
+      window.localStorage.setItem(CHAT_SIZE_KEY, JSON.stringify({ w: Math.round(get().w), h: Math.round(get().h) }));
+    } catch {
+      /* storage blocked: the size lasts for this visit only */
     }
-    set({ want });
   },
 }));
-/** The shortest either box of the stack may get, in px. */
-export const SPLIT_MIN = 200;
-/** Details (top) and ParcelIQ (bottom) heights for a column of `total` px with ParcelIQ's share `ratio` (a gap of
- *  one gutter between them). */
-export const splitHeights = (total: number, ratio: number) => {
-  const room = Math.max(0, total - GUTTER);
-  const bottom = Math.round(Math.min(room - SPLIT_MIN, Math.max(SPLIT_MIN, room * ratio)));
-  return { top: room - bottom, bottom };
-};
 
 /** Desktop and laptop: the left panel, and on desktop the right column, can be hidden (a hide button in each header,
  *  a show button at that edge). The left panel is remembered in localStorage. The right column starts hidden on every
