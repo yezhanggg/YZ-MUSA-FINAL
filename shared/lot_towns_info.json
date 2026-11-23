@@ -1,0 +1,2496 @@
+{
+ "checked_on": "2026-11-22",
+ "note": "Per lot town: tax rates, school district, county record, offices and official documents, each with its source and the date checked (opened and read on that date). Values that could not be opened are left out. Philadelphia and Pittsburgh tax rates used by the money model live in shared/assumptions.json. Read by app/src/lib/lot/townInfo.ts.",
+ "counties": {
+  "42003": {
+   "name": "Allegheny County",
+   "county_levies": [
+    {
+     "name": "Allegheny County",
+     "mills": 6.43,
+     "tax_year": "2026",
+     "source": {
+      "title": "Allegheny County Community Profile: City of Pittsburgh (millage rates 2024 to 2026)",
+      "url": "https://apps.alleghenycounty.us/website/MuniPgh.asp",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "assessment": {
+    "office": "Allegheny County Office of Property Assessments",
+    "basis": "base year",
+    "base_year": 2012,
+    "clr": {
+     "value": 0.493,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "Allegheny County Real Estate Portal",
+     "url": "https://realestate.alleghenycounty.us/search",
+     "parcel_url": "https://realestate.alleghenycounty.us/GeneralInfo?ID={PARCEL}",
+     "parcel_format": "raw",
+     "source": {
+      "title": "Allegheny County: Property Record Search",
+      "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Property-Record-Search",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "Municipalities send all building, demolition and occupancy permits to the Office of Property Assessments, which reviews each one and may reassess the property. A school district or municipality with a local ordinance can also ask for an interim assessment of new construction or a major addition within 12 months of the final occupancy permit. That taxing body then sends its own partial-year bill.",
+     "source": {
+      "title": "Allegheny County: Interim Valuation",
+      "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Property-Assessments/Interim-Valuation",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "Annual appeals for tax year 2027 had to be submitted from July 1, 2026 to September 1, 2026. A newly reassessed value from a permit can be appealed with a Special Appeal.",
+     "source": {
+      "title": "Allegheny County: Appeals",
+      "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Appeals",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": {
+    "text": "The county Homestead/Farmstead Exclusion (Act 50) cuts the assessed value of an owner's primary residence by $18,000 for county tax only.",
+    "source": {
+     "title": "Allegheny County: Tax Abatements and Exemptions",
+     "url": "https://www.alleghenycounty.us/Services/Property-Assessments-and-Real-Estate/Tax-Abatements-and-Exemptions",
+     "date": null,
+     "checked_on": "2026-11-21"
+    }
+   }
+  },
+  "42101": {
+   "name": "Philadelphia County",
+   "county_levies": [],
+   "assessment": {
+    "office": "Office of Property Assessment (OPA)",
+    "basis": "market value",
+    "base_year": null,
+    "clr": {
+     "value": 0.943,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "Philadelphia Property (property.phila.gov)",
+     "url": "https://property.phila.gov/",
+     "parcel_url": "https://property.phila.gov/?p={PARCEL}",
+     "parcel_format": "raw",
+     "source": {
+      "title": "City of Philadelphia property search (property.phila.gov)",
+      "url": "https://property.phila.gov/",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "OPA lists permits from other City departments as one source it uses to value property. The pages checked do not describe a mid-year or interim assessment for new construction.",
+     "source": {
+      "title": "Office of Property Assessment: Property assessments",
+      "url": "https://www.phila.gov/departments/office-of-property-assessment/property-assessments/",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "For tax year 2027, First Level Review requests were due Tuesday, September 1, 2026. Formal appeals to the Board of Revision of Taxes were due Monday, October 5, 2026.",
+     "source": {
+      "title": "phila.gov: City of Philadelphia to mail 2027 property assessments",
+      "url": "https://www.phila.gov/2026-06-30-city-of-philadelphia-to-mail-2027-property-assessments-and-launch-expanded-outreach-to-connect-homeowners-to-tax-relief/",
+      "date": "2026-06-30",
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": {
+    "text": "The Homestead Exemption cuts the assessed value of an owner-occupied home by $100,000 from tax year 2025 on. Homes with a 10-year residential abatement cannot get it until the abatement ends.",
+    "source": {
+     "title": "phila.gov: Get the Homestead Exemption",
+     "url": "https://www.phila.gov/services/payments-assistance-taxes/taxes/property-and-real-estate-taxes/get-real-estate-tax-relief/get-the-homestead-exemption/",
+     "date": null,
+     "checked_on": "2026-11-21"
+    }
+   }
+  },
+  "42077": {
+   "name": "Lehigh County",
+   "county_levies": [
+    {
+     "name": "Lehigh County",
+     "mills": 3.78,
+     "tax_year": "2026",
+     "source": {
+      "title": "Lehigh County Office of Assessment: Lehigh County Millage 2026 (school 2026/2027), revised 7/2/2026",
+      "url": "https://www.lehighcounty.org/Portals/0/PDF/Assessment/2026-27%20SD_Millage.pdf",
+      "date": "2026-07-02",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "assessment": {
+    "office": "Lehigh County Office of Assessment",
+    "basis": "base year",
+    "base_year": 2013,
+    "clr": {
+     "value": 0.47,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "Lehigh County Online Records Access (ORA) property search",
+     "url": "https://home.lehighcounty.org/ORA.UI/Public/PropertySearch",
+     "parcel_url": "https://home.lehighcounty.org/ORA.UI/Public/PropertyDetails?pinpar={PARCEL}%201",
+     "parcel_format": "raw",
+     "source": {
+      "title": "Lehigh County: Assessment Home",
+      "url": "https://www.lehighcounty.org/departments/assessment-home",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "The Assessment Office keeps the assessment rolls up to date during the year and adds new assessments for new construction. An interim assessment can be appealed by the date on the Change of Assessment Notice.",
+     "source": {
+      "title": "Lehigh County: Assessment Home",
+      "url": "https://www.lehighcounty.org/departments/assessment-home",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "The Board of Assessment Appeals accepts annual appeals received on or before August 1 of each year. Postmarks and faxes do not count as timely filing.",
+     "source": {
+      "title": "Lehigh County: Assessment Home",
+      "url": "https://www.lehighcounty.org/departments/assessment-home",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": null
+  },
+  "42029": {
+   "name": "Chester County",
+   "county_levies": [
+    {
+     "name": "Chester County",
+     "mills": 5.164,
+     "tax_year": "2026",
+     "source": {
+      "title": "Chester County: Tax Rates page",
+      "url": "https://www.chesco.org/1585/Tax-Rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "assessment": {
+    "office": "Chester County Assessment Office",
+    "basis": "base year",
+    "base_year": 1998,
+    "clr": {
+     "value": 0.306,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "ChescoViews parcel details (Chester County GIS)",
+     "url": "https://arcweb.chesco.org/cv4/",
+     "parcel_url": "https://arcweb.chesco.org/LR_INFO/lr_info.aspx?PARID={PARCEL}",
+     "parcel_format": "chester_pin",
+     "source": {
+      "title": "Chester County: ChescoViews",
+      "url": "https://www.chesco.org/2198/ChescoViews",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "After an improvement is reported, often through a building permit, an assessor visits and the office sends an Assessment Change Notice. The interim assessment is the added value of the improvement and is retroactive to the first month after completion. Taxing bodies then bill for the increase.",
+     "source": {
+      "title": "Chester County FAQs: Assessment",
+      "url": "https://www.chesco.org/faq.aspx?TID=39",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "Annual appeals may be filed from May 1 through August 1. If August 1 falls on a weekend the deadline moves to the next business day.",
+     "source": {
+      "title": "Chester County FAQs: Assessment",
+      "url": "https://www.chesco.org/faq.aspx?TID=39",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": null
+  },
+  "42027": {
+   "name": "Centre County",
+   "county_levies": [
+    {
+     "name": "Centre County",
+     "mills": 7.84,
+     "tax_year": "2026",
+     "source": {
+      "title": "Centre County Real Estate Millage 2026 County and Municipal, 2026-2027 School, revised 07/08/2026",
+      "url": "https://centrecountypa.gov/DocumentCenter/View/26631/Millage-Rates-2025-with-2024-2025-School-Millage-Rate",
+      "date": "2026-07-08",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "assessment": {
+    "office": "Centre County Assessment Office",
+    "basis": "base year",
+    "base_year": 1994,
+    "clr": {
+     "value": 0.164,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "Centre County Tax Assessment office",
+     "url": "https://centrecountypa.gov/423/Tax-Assessment",
+     "parcel_url": null,
+     "parcel_format": "raw",
+     "source": {
+      "title": "Centre County: Tax Assessment",
+      "url": "https://centrecountypa.gov/423/Tax-Assessment",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "Municipalities send building permits for new construction, improvements and demolition to the Assessment Office. An evaluator visits the property and appraisers set the new land and building values. The office also prepares the interim tax rolls.",
+     "source": {
+      "title": "Centre County: Tax Assessment",
+      "url": "https://centrecountypa.gov/423/Tax-Assessment",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "Annual appeals may be filed on or before August 1 and take effect the next tax year. An appeal of an assessment change notice may be filed within 40 days.",
+     "source": {
+      "title": "Centre County: Tax Assessment",
+      "url": "https://centrecountypa.gov/423/Tax-Assessment",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": null
+  },
+  "42091": {
+   "name": "Montgomery County",
+   "county_levies": [
+    {
+     "name": "Montgomery County",
+     "mills": 5.462,
+     "tax_year": "2026",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    {
+     "name": "Montgomery County Community College (MCCC)",
+     "mills": 0.49,
+     "tax_year": "2026",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "assessment": {
+    "office": "Montgomery County Board of Assessment Appeals",
+    "basis": "base year",
+    "base_year": 1998,
+    "clr": {
+     "value": 0.298,
+     "ratio_year": 2025,
+     "source": {
+      "title": "State Tax Equalization Board, Common Level Ratio 2025 (certified, used July 1, 2026 to June 30, 2027)",
+      "url": "https://dced.pa.gov/download/common-level-ratio-2025/",
+      "date": "2026-05-20",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "record": {
+     "label": "Montgomery County Property Records",
+     "url": "https://propertyrecords.montcopa.org/pt/Main/Home.aspx",
+     "parcel_url": "https://propertyrecords.montcopa.org/PT/Datalets/Datalet.aspx?UseSearch=no&pin={PARCEL}&jur=046",
+     "parcel_format": "raw",
+     "source": {
+      "title": "Montgomery County: Property Records / Property Information",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/property-records-property-information",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "new_construction": {
+     "text": "The Board of Assessment Appeals sends local tax collectors a monthly list of assessment changes. New construction on a vacant lot or an addition can raise the assessment and bring an interim tax bill on top of the annual bill. An interim change can be appealed within 40 days of the notice date.",
+     "source": {
+      "title": "Souderton Borough (Montgomery County): Interim Tax Bills and Assessment Appeals",
+      "url": "https://soudertonborough.org/government/tax-collector/interim-tax-bills-assessment-appeals/",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "appeal": {
+     "text": "The deadline for annual assessment appeals is August 1 of the year before the tax year on appeal.",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: Annual Assessment Appeal Deadline",
+      "url": "https://assets.montgomerycountypa.gov/files/2026-08/New%20Application%20and%20Appeals%20Deadline_201702271414580901_202502121331521459%20Annual%20Assessment%20Appeal%20Deadline_AOD%20ADA%20seal.pdf",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   },
+   "homestead": null
+  }
+ },
+ "towns": {
+  "pittsburgh": {
+   "name": "Pittsburgh city",
+   "county_fips": "42003",
+   "municipal_levies": [
+    {
+     "name": "City of Pittsburgh",
+     "mills": 9.67,
+     "tax_year": "2026",
+     "source": {
+      "title": "Allegheny County Community Profile: City of Pittsburgh (millage rates 2024 to 2026)",
+      "url": "https://apps.alleghenycounty.us/website/MuniPgh.asp",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Pittsburgh Public Schools",
+    "levy": {
+     "name": "Pittsburgh Public Schools",
+     "mills": 10.457,
+     "tax_year": "2026 (calendar year)",
+     "source": {
+      "title": "Allegheny County Community Profile: City of Pittsburgh (millage rates 2024 to 2026)",
+      "url": "https://apps.alleghenycounty.us/website/MuniPgh.asp",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [
+    {
+     "name": "City of Pittsburgh tax abatement, Chapter 265 and Chapter 267",
+     "text": "The City offers abatements for new construction or improvements, including owner-occupied or for-sale homes. You must apply within 180 days of the building permit issue date and pay a $60 fee per property. Enhanced abatements need a CDBG-eligible location or affordable units.",
+     "source": {
+      "title": "City of Pittsburgh Tax Abatement Application, Chapter 265 and Chapter 267",
+      "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/finance/documents/real-estate-forms/265-267-re-tax-abatement-application.pdf",
+      "date": "2026-08-17",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Department of City Planning, Zoning and Development Review",
+     "phone": "(412) 255-2219",
+     "email": "zoning@pittsburghpa.gov",
+     "address": "412 Boulevard of the Allies, Suite 201, Pittsburgh, PA 15219",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/About-DCP",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Permits, Licenses, and Inspections (OneStopPGH)",
+     "phone": "412-255-2175",
+     "email": "PLIAppTech@pittsburghpa.gov",
+     "address": "412 Boulevard of the Allies, Pittsburgh, PA",
+     "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/OneStopPGH-Permit-Center",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historic Review Commission staff (Historic Preservation Program)",
+     "phone": null,
+     "email": "historicpreservation@pittsburghpa.gov",
+     "address": "412 Boulevard of the Allies, Suite 201, Pittsburgh, PA 15219",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Historic-Preservation-Program",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Board of Adjustment",
+     "phone": null,
+     "email": "zoningboard@pittsburghpa.gov",
+     "address": "Lower Level Hearing Room, 412 Boulevard of the Allies",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Commissions-Boards#section-7",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_map",
+     "label": "Pittsburgh Zoning Map",
+     "url": "https://pittsburghpa.maps.arcgis.com/apps/instant/sidebar/index.html?appid=4bb79ea64bf848b3a0560e3856efeccb",
+     "note": "City GIS zoning map listed on the city Interactive Apps page, with floodplain, steep slope and historic district layers.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "adu_page",
+     "label": "ADU and housing zoning bill",
+     "url": "https://engage.pittsburghpa.gov/implementing-housing-needs-assessment",
+     "note": "City Planning page for Council Bill 2025-1545 on ADUs, affordable housing and parking, approved by Council on October 27, 2026.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "adu_page",
+     "label": "Proposed ADU standards",
+     "url": "https://engage.pittsburghpa.gov/implementing-housing-needs-assessment/accessory-dwelling-units-adus",
+     "note": "City Planning summary of the proposed ADU standards from the 2024 review, which may differ from the final adopted text.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Comprehensive Planning Process",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Neighborhood-Planning/Comprehensive-Planning-Process",
+     "note": "Pittsburgh has no adopted citywide comprehensive plan yet, and this page lists the parts adopted so far such as PreservePGH (2012) and OpenSpacePGH (2013).",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Department of City Planning",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning",
+     "note": "Home page of the Department of City Planning.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "OneStopPGH Permit Center",
+     "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/OneStopPGH-Permit-Center",
+     "note": "Where to apply online for zoning and building permits, with the counter at 412 Boulevard of the Allies.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "PLI Permitting",
+     "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/Permitting",
+     "note": "PLI overview of permit types and the building and development application steps.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Zoning application and process",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Zoning/Planning-Applications-and-Processes",
+     "note": "City Planning page on the Zoning and Development Review application, including the form for one and two unit homes.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "PLI Fees",
+     "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/Fees",
+     "note": "PLI fee page that links the current fee schedule.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "PLI 2026 Fee Schedule",
+     "url": "https://www.pittsburghpa.gov/files/assets/city/v/1/pli/documents/fees/2026-fee-schedule-final-2.pdf",
+     "note": "PLI 2026 fee schedule effective January 1, 2026, with residential permits at $6.00 per $1,000 of construction value.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental registration (PLI)",
+     "url": "https://www.pittsburghpa.gov/Business-Development/Permits-Licenses-and-Inspections/Licensing/Registrations",
+     "note": "PLI Residential Housing Rental Permit program page, which says compliance remains voluntary until further notice.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historic Preservation Program",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Historic-Preservation-Program",
+     "note": "City Planning page for historic designation and review of work in city historic districts.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Apply for Historic Review",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Historic-Preservation-Program/Apply-for-Historic-Review",
+     "note": "Explains that exterior work in a city historic district needs Historic Review Commission approval through OneStopPGH.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Board of Adjustment",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Commissions-Boards#section-7",
+     "note": "Zoning Board of Adjustment section of the City Planning boards page, which also covers the Historic Review Commission.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "Allegheny County Real Estate Portal",
+     "url": "https://realestate.alleghenycounty.us/",
+     "note": "Allegheny County assessment portal for parcel owner, value and tax records.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "Parcels N'at",
+     "url": "https://parcelsnat.org/",
+     "note": "Parcel data browser from the Western Pennsylvania Regional Data Center, launched with the City in 2025.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Floodplain overlay",
+     "url": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Zoning/Plan-Reviews-and-Notices/Environmental-Review/Floodplain",
+     "note": "City page on the Flood Plain Overlay District (Section 906.02) and the PLI floodplain permit.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "GI": "General Industrial",
+    "H": "illside",
+    "HC": "Highway Commercial",
+    "LNC": "Local Neighborhood Commercial",
+    "NDI": "Neighborhood Industrial",
+    "NDO": "Neighborhood Office",
+    "P": "arks and Open Space",
+    "R-MU": "Residential Mixed Use",
+    "R1A-H": "Single-Unit Attached Residential High Density",
+    "R1A-M": "Single-Unit Attached Residential Moderate Density",
+    "R1A-VH": "Single-Unit Attached Residential Very High Density",
+    "R1D-H": "Single-Unit Detached Residential High Density",
+    "R1D-L": "Single-Unit Detached Residential Low Density",
+    "R1D-M": "Single-Unit Detached Residential Moderate Density",
+    "R1D-VH": "Single-Unit Detached Residential Very High Density",
+    "R1D-VL": "Single-Unit Detached Residential Very Low Density",
+    "R2-H": "Two-Unit Residential High Density",
+    "R2-L": "Two-Unit Residential Low Density",
+    "R2-M": "Two-Unit Residential Moderate Density",
+    "R2-VH": "Two-Unit Residential Very High Density",
+    "R3-L": "Three-Unit Residential Low Density",
+    "R3-M": "Three-Unit Residential Moderate Density",
+    "RIV-GI": "Riverfront General Industrial",
+    "RIV-MU": "Riverfront Mixed Use",
+    "RIV-NS": "Riverfront North Shore",
+    "RIV-RM": "Riverfront Mixed Residential",
+    "RM-H": "Multi-Unit Residential High Density",
+    "RM-M": "Multi-Unit Residential Moderate Density",
+    "RM-VH": "Multi-Unit Residential Very High Density",
+    "RM-VL": "Multi-Unit Residential Very Low Density",
+    "UI": "Urban Industrial",
+    "UNC": "Urban Neighborhood Commercial",
+    "RIV": "Riverfront"
+   },
+   "notes": []
+  },
+  "philadelphia": {
+   "name": "Philadelphia city",
+   "county_fips": "42101",
+   "municipal_levies": [
+    {
+     "name": "City of Philadelphia",
+     "mills": null,
+     "pct": 0.6159,
+     "tax_year": "2026",
+     "source": {
+      "title": "City of Philadelphia Department of Revenue: Real Estate Tax Regulations (compiled as of February 16, 2025)",
+      "url": "https://www.phila.gov/media/20250505143809/Real-Estate-Tax-regulations-updated-2025-May.pdf",
+      "date": "2025-02-16",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "School District of Philadelphia",
+    "levy": {
+     "name": "School District of Philadelphia",
+     "mills": null,
+     "pct": 0.7839,
+     "tax_year": "2026 (calendar year)",
+     "source": {
+      "title": "City of Philadelphia Department of Revenue: Real Estate Tax Regulations (compiled as of February 16, 2025)",
+      "url": "https://www.phila.gov/media/20250505143809/Real-Estate-Tax-regulations-updated-2025-May.pdf",
+      "date": "2025-02-16",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [
+    {
+     "name": "10-year residential improvement abatement (Ord. 961)",
+     "text": "Improvements to an existing home can get a 10-year abatement. Apply by December 31 of the year the building permit is issued.",
+     "source": {
+      "title": "phila.gov: Get a property tax abatement",
+      "url": "https://www.phila.gov/services/payments-assistance-taxes/taxes/property-and-real-estate-taxes/get-real-estate-tax-relief/get-a-property-tax-abatement/",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    {
+     "name": "Development abatement (State Act 175)",
+     "text": "New homes or work on unoccupied homes can get a 30-month abatement that starts the month after the building permit. Apply by December 31 of the permit year.",
+     "source": {
+      "title": "phila.gov: Get a property tax abatement",
+      "url": "https://www.phila.gov/services/payments-assistance-taxes/taxes/property-and-real-estate-taxes/get-real-estate-tax-relief/get-a-property-tax-abatement/",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "L&I Permit and License Center",
+     "phone": "(215) 686-8686",
+     "email": null,
+     "address": "1401 John F. Kennedy Blvd., MSB, Public Service Concourse, Philadelphia, PA 19102",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/apply-for-a-permit/zoning-permits/get-a-zoning-permit/",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Department of Licenses and Inspections",
+     "phone": "(215) 686-8686",
+     "email": null,
+     "address": "1401 John F. Kennedy Blvd., 11th Floor, Philadelphia, PA 19102",
+     "url": "https://www.phila.gov/departments/department-of-licenses-and-inspections/",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Philadelphia Historical Commission",
+     "phone": "(215) 686-7660",
+     "email": "preservation@phila.gov",
+     "address": "1515 Arch St., 13th Floor, Philadelphia, PA 19102",
+     "url": "https://www.phila.gov/departments/philadelphia-historical-commission/",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Board of Adjustment",
+     "phone": "(215) 686-2429",
+     "email": null,
+     "address": "1515 Arch St., 18th Floor, Room 18-006, Philadelphia, PA 19102",
+     "url": "https://www.phila.gov/departments/zoning-board-of-adjustment/",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Zoning Code Quick Guide",
+     "url": "https://www.phila.gov/media/20260213170558/ZONING-QUICK-GUIDE_feb-2026.pdf",
+     "note": "Base Districts Quick Guide from February 2026, a summary of districts that does not replace the code.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Atlas zoning lookup",
+     "url": "https://atlas.phila.gov/",
+     "note": "City map app where the Zoning tab shows the base district and overlays for any address.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "adu_page",
+     "label": "ADU checklist (L&I)",
+     "url": "https://www.phila.gov/media/20220308130807/PZ_004_INF_Accessory-Dwelling-Unit-Checklist-rev-3.8.2022.pdf",
+     "note": "L&I Accessory Dwelling Unit Checklist revised March 8, 2022, which walks through the zoning rules for an ADU.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Philadelphia2035 Comprehensive Plan",
+     "url": "https://www.phila.gov/programs/the-comprehensive-plan/",
+     "note": "Philadelphia2035 is the current plan with a Citywide Vision and 18 district plans, and PCPC has begun an update.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "City Planning Commission",
+     "url": "https://www.phila.gov/departments/philadelphia-city-planning-commission/",
+     "note": "Home page of the Philadelphia City Planning Commission.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Get a zoning permit",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/apply-for-a-permit/zoning-permits/get-a-zoning-permit/",
+     "note": "L&I steps, fees and requirements for a zoning permit.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "eCLIPSE permit portal",
+     "url": "https://eclipse.phila.gov/",
+     "note": "L&I online system for zoning, building and license applications.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building and repair permits",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/apply-for-a-permit/building-and-repair-permits/",
+     "note": "L&I list of building, electrical, plumbing and mechanical permit pages.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Licenses and Inspections",
+     "url": "https://www.phila.gov/departments/department-of-licenses-and-inspections/",
+     "note": "Home page of L&I, which issues zoning and building permits.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "L&I permit and license fees",
+     "url": "https://www.phila.gov/documents/fees-for-li-permits-and-licenses/",
+     "note": "L&I fee documents, including construction permit fees effective October 1, 2026.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Zoning permit fee summary",
+     "url": "https://www.phila.gov/media/20260720085858/PZ_008_INF_Summary-of-zoning-permit-fees-Rev-7.2026.pdf",
+     "note": "Zoning and use permit fees effective January 1, 2025 (revised July 2026), with $189 for new 1 or 2 family construction.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rent your property long-term",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/rent-or-sell-property/rent-your-property-long-term/",
+     "note": "City overview of what a landlord needs, including a Rental License and zoning approval.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Get a Rental License",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/get-a-license/business-licenses/rental-and-property/get-a-rental-license/",
+     "note": "L&I Rental License page, with a fee of $69 per unit and no fee for owner-occupied units.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Philadelphia Historical Commission",
+     "url": "https://www.phila.gov/departments/philadelphia-historical-commission/",
+     "note": "Home page of the Historical Commission, which reviews work on properties on the Philadelphia Register.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Board of Adjustment",
+     "url": "https://www.phila.gov/departments/zoning-board-of-adjustment/",
+     "note": "Home page of the Zoning Board of Adjustment, which hears variances and special exceptions.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "Atlas property search",
+     "url": "https://atlas.phila.gov/",
+     "note": "City property lookup with assessments, deeds, permits and zoning for each address.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Construction in the floodplain",
+     "url": "https://www.phila.gov/services/permits-violations-licenses/get-construction-approval-and-review/get-approval-for-construction-in-the-floodplain/",
+     "note": "L&I page on flood protection documents for permits in the Special Flood Hazard Area.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "CMX-1": "Neighborhood Commercial Mixed-Use-1",
+    "CMX-2": "Neighborhood Commercial Mixed-Use-2",
+    "CMX-2.5": "Neighborhood Commercial Mixed-Use-2.5",
+    "CMX-3": "Community Commercial Mixed-Use-3",
+    "RM-1": "Residential Multi-Family-1",
+    "RM-2": "Residential Multi-Family-2",
+    "RSA-1": "Residential Single-Family Attached-1",
+    "RSA-2": "Residential Single-Family Attached-2",
+    "RSA-3": "Residential Single-Family Attached-3",
+    "RSA-4": "Residential Single-Family Attached-4",
+    "RSA-5": "Residential Single-Family Attached-5",
+    "RSA-6": "Residential Single-Family Attached-6",
+    "RSD-1": "Residential Single-Family Detached-1",
+    "RSD-2": "Residential Single-Family Detached-2",
+    "RSD-3": "Residential Single-Family Detached-3",
+    "RTA-1": "Residential Two-Family Attached-1",
+    "ICMX": "Industrial Commercial Mixed-Use",
+    "I-2": "Medium Industrial"
+   },
+   "notes": []
+  },
+  "pa_lehigh_allentown": {
+   "name": "Allentown city",
+   "county_fips": "42077",
+   "municipal_levies": [
+    {
+     "name": "City of Allentown, buildings and improvements",
+     "mills": 4.6293,
+     "tax_year": "2026",
+     "source": {
+      "title": "Lehigh County Office of Assessment: Lehigh County Millage 2026 (school 2026/2027), revised 7/2/2026",
+      "url": "https://www.lehighcounty.org/Portals/0/PDF/Assessment/2026-27%20SD_Millage.pdf",
+      "date": "2026-07-02",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Allentown School District",
+    "levy": {
+     "name": "Allentown School District",
+     "mills": 23.3,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "Lehigh County Office of Assessment: Lehigh County Millage 2026 (school 2026/2027), revised 7/2/2026",
+      "url": "https://www.lehighcounty.org/Portals/0/PDF/Assessment/2026-27%20SD_Millage.pdf",
+      "date": "2026-07-02",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": "Most Allentown parcels are in the Allentown School District. Some are in the Parkland or Salisbury Township school districts, at other rates. The county record shows the district of each parcel."
+   },
+   "abatements": [],
+   "tax_notes": [
+    {
+     "text": "Allentown taxes land at 24.4705 mills and buildings at 4.6293 mills. A new unit is a building, so the building rate is used here.",
+     "source": {
+      "title": "Lehigh County Office of Assessment: Lehigh County Millage 2026 (school 2026/2027), revised 7/2/2026",
+      "url": "https://www.lehighcounty.org/Portals/0/PDF/Assessment/2026-27%20SD_Millage.pdf",
+      "date": "2026-07-02",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "offices": {
+    "zoning": {
+     "name": "Office of Zoning",
+     "phone": "(610) 437-7630",
+     "email": "zoning@allentownpa.gov",
+     "address": "City Hall (435 Hamilton St), 4th Floor",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Zoning",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Office of Building & Construction (Bureau of Building Standards and Safety)",
+     "phone": "(610) 437-7592",
+     "email": null,
+     "address": "City Hall (435 Hamilton St), 4th Floor",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety/Building-Construction/Construction-Permitting",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Office of Historic Preservation",
+     "phone": "610-437-7613",
+     "email": "historic@allentownpa.gov",
+     "address": "435 Hamilton Street",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Historic-Preservation",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.allentownpa.gov/en-us/Government/Authorities-Boards-Commissions-Councils/Zoning-Hearing-Board",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Zoning Ordinance PDF",
+     "url": "https://www.allentownpa.gov/Portals/0/files/Departments/PlanningZoning/Zoning%20Ordinance.pdf",
+     "note": "Ordinance No. 16166, adopted October 15, 2025 and effective January 1, 2026, with ADU rules in Section 660-42.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_code",
+     "label": "Zone Allentown",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Zone-Allentown",
+     "note": "Page for the new zoning ordinance, zoning map and SALDO adopted October 15, 2025.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "City of Allentown Zoning Map",
+     "url": "https://experience.arcgis.com/experience/2316ac49fd23417597e809092c944e4b",
+     "note": "City ArcGIS zoning map of all districts, last updated October 1, 2026.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Allentown Vision 2030",
+     "url": "https://www.allentownpa.gov/Portals/0/adam/Content/quZTh4X72Eq9pbSmrThB7w/Url/Vision2030ExecutiveSummary.pdf",
+     "note": "Executive summary of the Allentown Vision 2030 Comprehensive and Economic Development Plan, final report dated November 2019.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Bureau of Planning and Zoning",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau",
+     "note": "Home page of the Bureau of Planning and Zoning.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Office of Zoning",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Zoning",
+     "note": "Zoning office page with links to the ordinance, the map, the hearing board and permit applications.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Online permits (EnerGov)",
+     "url": "https://energov.allentownpa.gov/EnerGov_Prod/SelfService/",
+     "note": "City self-service portal for zoning and building permit applications.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Construction Permitting",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety/Building-Construction/Construction-Permitting",
+     "note": "Building permit page with residential permit requirements and the fee ordinance.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building Standards and Safety",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety",
+     "note": "Home page of the Bureau of Building Standards and Safety.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Permit fee ordinance 16124",
+     "url": "https://www.allentownpa.gov/Portals/0/adam/Content/w0IXWceJRkyrQ6afPGFGMQ/Url/Ord.%20No.%2016124.pdf",
+     "note": "Ordinance No. 16124 of April 2, 2025, which revises the Chapter 270 Article V permit and plan review fees.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental Unit Registration",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Building-Standards-and-Safety/Rental-Unit-Registration-Inspection-Program",
+     "note": "Rental registration and inspection program, with a yearly license of $75 per unit.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Architectural Review Board",
+     "url": "https://www.allentownpa.gov/en-us/Government/Authorities-Boards-Commissions-Councils/Historical-Architectural-Review-Board-HARB",
+     "note": "HARB page with the historic design guide and the historic district map.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Office of Historic Preservation",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Historic-Preservation",
+     "note": "City office that handles Certificate of Appropriateness applications in the three historic districts.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.allentownpa.gov/en-us/Government/Authorities-Boards-Commissions-Councils/Zoning-Hearing-Board",
+     "note": "Zoning Hearing Board page, with meetings and agendas posted on the city Legistar site.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Floodplain Management Program",
+     "url": "https://www.allentownpa.gov/en-us/Government/Departments/Community-Economic-Development/Planning-Zoning-Bureau/Floodplain-Management-Program",
+     "note": "City floodplain page explaining when the $25 Floodplain Development Permit is needed.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "GX-C": "Residential-Office Mix Corridor",
+    "GX-N": "Residential-Office Mix Neighborhood Centers",
+    "NX": "Residential Mix Neighborhood",
+    "N1": "Urban Neighborhood",
+    "N2": "Town Neighborhood",
+    "N3": "Twinhouse-House Neighborhood 1",
+    "N4": "Twinhouse-House Neighborhood 2",
+    "N5": "House Neighborhood"
+   },
+   "notes": []
+  },
+  "pa_chester_west_chester": {
+   "name": "West Chester borough",
+   "county_fips": "42029",
+   "municipal_levies": [
+    {
+     "name": "West Chester Borough",
+     "mills": 8.09,
+     "tax_year": "2026",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "West Chester Area School District",
+    "levy": {
+     "name": "West Chester Area School District",
+     "mills": 24.1573,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Building, Housing and Code Enforcement (Zoning Officer)",
+     "phone": "610-696-1773",
+     "email": "housing@west-chester.com",
+     "address": "401 East Gay Street, West Chester, PA 19380",
+     "url": "https://www.west-chester.com/560/Zoning",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical and Architectural Review Board",
+     "phone": "610-696-1773",
+     "email": "housing@west-chester.com",
+     "address": "401 E Gay St., Room 232, West Chester, PA 19380",
+     "url": "https://www.west-chester.com/210/Historical-Architectural-Review-Board",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.west-chester.com/214/Zoning-Hearing-Board",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 112 Zoning",
+     "url": "https://ecode360.com/6471979",
+     "note": "Borough zoning ordinance on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Borough zoning map PDF",
+     "url": "https://www.west-chester.com/DocumentCenter/Home/View/29",
+     "note": "Official zoning map PDF marked revised 10/17/2017.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Zone Lookup map app",
+     "url": "https://west-chestergis.maps.arcgis.com/apps/instant/lookup/index.html?appid=32eb80b8d3da470fbda21ab5956c8867",
+     "note": "Borough GIS app for looking up the zoning district of an address.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "adu_page",
+     "label": "Borough ADU rules handout",
+     "url": "https://west-chester.com/DocumentCenter/View/18707/WC_ADUs",
+     "note": "Borough handout quoting the ADU definition and the ADU standards in section 112-903(I).",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "2016 Comprehensive Plan",
+     "url": "https://west-chester.com/DocumentCenter/View/4056/Comprensive-Plan---Final---March-23?bidId=",
+     "note": "Borough of West Chester Comprehensive Plan and Urban Center Revitalization Plan from 2016.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.west-chester.com/220/Planning-Commission",
+     "note": "Planning Commission page with agendas, minutes and comprehensive plan links.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building permits page",
+     "url": "https://www.west-chester.com/862/Building-Permits",
+     "note": "How to apply for building permits through the Permitting and Licensing Portal.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Zoning review page",
+     "url": "https://www.west-chester.com/560/Zoning",
+     "note": "How to request zoning review online before a building permit.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Borough fee schedule",
+     "url": "https://www.west-chester.com/DocumentCenter/View/695/Fee-Schedule",
+     "note": "Borough fee schedule approved October 21, 2026, including zoning review and building permit fees.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental licenses",
+     "url": "https://www.west-chester.com/823/Rental-Licenses",
+     "note": "Annual rental license with a tenant landlord form and a health and safety inspection.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical and Architectural Review Board",
+     "url": "https://www.west-chester.com/210/Historical-Architectural-Review-Board",
+     "note": "HARB reviews exterior changes and new building in the borough historic district.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.west-chester.com/214/Zoning-Hearing-Board",
+     "note": "Board that hears variances and appeals from the zoning ordinance.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "ChescoViews parcel viewer",
+     "url": "https://www.chesco.org/2198/ChescoViews",
+     "note": "Chester County page for ChescoViews, the county map app for searching parcels by address, owner, UPI or PIN.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Chester County floodplains page",
+     "url": "https://www.chesco.org/3458/FEMA-Floodplains",
+     "note": "County floodplain page that the borough maps page links as its flood map.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "NC-1": "Neighborhood Conservation District",
+    "NC-2": "Neighborhood Conservation District",
+    "TC": "Town Center District"
+   },
+   "notes": []
+  },
+  "pa_chester_phoenixville": {
+   "name": "Phoenixville borough",
+   "county_fips": "42029",
+   "municipal_levies": [
+    {
+     "name": "Phoenixville Borough, general purposes",
+     "mills": 4.81,
+     "tax_year": "2026",
+     "source": {
+      "title": "Borough of Phoenixville: Finance",
+      "url": "https://phoenixville.org/191/Finance",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    {
+     "name": "Phoenixville Borough, fire protection",
+     "mills": 2.49,
+     "tax_year": "2026",
+     "source": {
+      "title": "Borough of Phoenixville: Finance",
+      "url": "https://phoenixville.org/191/Finance",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    {
+     "name": "Phoenixville Borough, public parks and recreation",
+     "mills": 1.37,
+     "tax_year": "2026",
+     "source": {
+      "title": "Borough of Phoenixville: Finance",
+      "url": "https://phoenixville.org/191/Finance",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Phoenixville Area School District",
+    "levy": {
+     "name": "Phoenixville Area School District",
+     "mills": 36.3071,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Dave Boelker, BCO, Director of Planning and Code Enforcement/Zoning Officer",
+     "phone": "610-933-8801",
+     "email": "dboelker@phoenixville.org",
+     "address": "351 Bridge Street, Phoenixville, PA 19460",
+     "url": "https://www.phoenixville.org/2527/Zoning",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Code Enforcement Department",
+     "phone": "610-933-8801, ext. 312",
+     "email": "codes@phoenixville.org",
+     "address": "351 Bridge Street, Phoenixville, PA 19460",
+     "url": "https://www.phoenixville.org/182/Inspections",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical Architectural Review Board",
+     "phone": null,
+     "email": "codes@phoenixville.org",
+     "address": "Borough Hall, 351 Bridge Street, 3rd Floor, Phoenixville, PA 19460",
+     "url": "https://www.phoenixville.org/180/Historical-Architectural-Review-Board",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": "610-933-8801",
+     "email": null,
+     "address": "Borough Hall, 351 Bridge Street, 3rd Floor Council Chamber, Phoenixville, PA 19460",
+     "url": "https://www.phoenixville.org/189/Zoning-Hearing-Board",
+     "checked_on": "2026-11-21"
+    },
+    "inspections": {
+     "name": "Barry Isett & Associates",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.phoenixville.org/182/Inspections",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 27 Zoning",
+     "url": "https://ecode360.com/47638080",
+     "note": "Borough zoning ordinance on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Official zoning map PDF",
+     "url": "https://ecode360.com/attachment/339060/PH1486-027bba%20Official%20Zoning%20Map_eCode360.pdf",
+     "note": "Official Zoning Map attached to Chapter 27, adopted August 12, 2025.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "2022 Borough Comprehensive Plan",
+     "url": "https://www.phoenixville.org/325/Phoenixville-Borough-Comprehensive-Plan",
+     "note": "Borough Comprehensive Plan adopted by Borough Council on June 14, 2022.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Regional Comprehensive Plan 2021",
+     "url": "https://www.phoenixville.org/332/Phoenixville-Regional-Comprehensive-Plan",
+     "note": "Multi-municipal Phoenixville Regional Comprehensive Plan adopted in 2021 by the borough and neighboring townships.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.phoenixville.org/311/Planning-Commission",
+     "note": "Planning Commission meets the 2nd Thursday at 6 p.m. at Borough Hall.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Permits and applications",
+     "url": "https://www.phoenixville.org/183/Permits-Applications",
+     "note": "Permit forms, submitted digitally by email to codes@phoenixville.org.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Schedule of fees PDF",
+     "url": "https://phoenixville.org/DocumentCenter/View/6671/Schedule-of-Fees-2026---Approved",
+     "note": "Link named 2026 Approved now opens a proposed fee schedule effective January 1, 2027.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental licenses and inspections",
+     "url": "https://www.phoenixville.org/182/Inspections",
+     "note": "Yearly rental license with annual inspection by the Borough Rental Inspector.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Architectural Review Board",
+     "url": "https://www.phoenixville.org/180/Historical-Architectural-Review-Board",
+     "note": "HARB for the Phoenixville Downtown Historic District, meeting the 1st Monday at 5 p.m.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.phoenixville.org/189/Zoning-Hearing-Board",
+     "note": "Board for variances, special exceptions and appeals, usually the 3rd Wednesday as needed.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "ChescoViews parcel viewer",
+     "url": "https://www.chesco.org/2198/ChescoViews",
+     "note": "Chester County page for ChescoViews, the county map app for searching parcels by address, owner, UPI or PIN.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Chester County floodplains page",
+     "url": "https://www.chesco.org/3458/FEMA-Floodplains",
+     "note": "County page on FEMA floodplain maps, checking a property's flood status and flood insurance.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "RI": "Residential Infill District",
+    "MG": "Mixed Use Growth District"
+   },
+   "notes": []
+  },
+  "pa_chester_west_vincent": {
+   "name": "West Vincent township",
+   "county_fips": "42029",
+   "municipal_levies": [
+    {
+     "name": "West Vincent Township",
+     "mills": 2.09,
+     "tax_year": "2026",
+     "source": {
+      "title": "West Vincent Township: Finance",
+      "url": "https://westvincenttwp.org/?p=1074",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Owen J. Roberts School District",
+    "levy": {
+     "name": "Owen J. Roberts School District",
+     "mills": 37.4507,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "West Vincent Township: Finance",
+      "url": "https://westvincenttwp.org/?p=1074",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Jason Barron, Director of Codes, Permitting & Zoning / Zoning Officer",
+     "phone": "610-458-1601",
+     "email": "jbarron@westvincenttwp.org",
+     "address": "729 Saint Matthews Road, Chester Springs, PA 19425",
+     "url": "https://westvincenttwp.org/building-zoning/",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Technicon Enterprises Inc. II (BCO & Inspector)",
+     "phone": "610-458-1601",
+     "email": null,
+     "address": "729 Saint Matthews Road, Chester Springs, PA 19425",
+     "url": "https://westvincenttwp.org/building-zoning/",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical Commission",
+     "phone": null,
+     "email": "hc@westvincenttwp.org",
+     "address": null,
+     "url": "https://westvincenttwp.org/historical-commission/",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": "610-458-1601",
+     "email": null,
+     "address": "729 Saint Matthews Road, Chester Springs, PA 19425",
+     "url": "https://westvincenttwp.org/zoning-hearing-board/",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 390 Zoning",
+     "url": "https://ecode360.com/32399799",
+     "note": "Township zoning ordinance on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Township maps page",
+     "url": "https://westvincenttwp.org/maps/",
+     "note": "Township maps page with the Zoning Map PDF and the Historical Resources Classification Map.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Appendix I zoning map",
+     "url": "https://ecode360.com/attachment/322659/WE3779-390i%20Zoning%20Map.pdf",
+     "note": "Zoning Map attached to Chapter 390, marked publication December 2019.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Township plans and guides",
+     "url": "https://westvincenttwp.org/plans-guides/",
+     "note": "Township page listing the Phoenixville Regional Comprehensive Plan of October 2021 and older plans.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Regional Comprehensive Plan 2021",
+     "url": "https://www.phoenixville.org/332/Phoenixville-Regional-Comprehensive-Plan",
+     "note": "Multi-municipal regional plan adopted in 2021 that includes West Vincent Township.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://westvincenttwp.org/planning-commission/",
+     "note": "Planning Commission reviews subdivisions and zoning changes and meets the fourth Thursday at 7 p.m.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Permit application process",
+     "url": "https://westvincenttwp.org/permit-application-process/",
+     "note": "Steps to apply in person, pay by cash or check and pick up the permit in person.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building and zoning forms",
+     "url": "https://westvincenttwp.org/building-zoning/",
+     "note": "Building and Zoning department page with the combined building and zoning permit application.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "2026 fee schedule",
+     "url": "https://westvincenttwp.org/wp-content/uploads/2026/10/2026-Fee-Schedule-Oct-2026.pdf",
+     "note": "Township 2026 fee schedule effective October 27, 2026.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Commission",
+     "url": "https://westvincenttwp.org/historical-commission/",
+     "note": "Advisory commission on historic preservation in the township.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://westvincenttwp.org/zoning-hearing-board/",
+     "note": "Board for variances, special exceptions and appeals, meeting as needed.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "ChescoViews parcel viewer",
+     "url": "https://www.chesco.org/2198/ChescoViews",
+     "note": "Chester County page for ChescoViews, the county map app for searching parcels by address, owner, UPI or PIN.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Chester County floodplains page",
+     "url": "https://www.chesco.org/3458/FEMA-Floodplains",
+     "note": "County page on FEMA floodplain maps, checking a property's flood status and flood insurance.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "BV": "Birchrunville Village District",
+    "KV": "Kimberton Village District",
+    "R-2": "Residential District",
+    "R-3": "Residential District",
+    "RC": "Rural Conservation District",
+    "RM": "Residential Mix District"
+   },
+   "notes": []
+  },
+  "pa_chester_malvern": {
+   "name": "Malvern borough",
+   "county_fips": "42029",
+   "municipal_levies": [
+    {
+     "name": "Malvern Borough",
+     "mills": 4.67,
+     "tax_year": "2026",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Great Valley School District",
+    "levy": {
+     "name": "Great Valley School District",
+     "mills": 26.1,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Bob Rittle, Building & Code Enforcement Officer",
+     "phone": "(484) 899-2218",
+     "email": "BRittle@malvern.org",
+     "address": "1 East First Avenue, Malvern, PA 19355",
+     "url": "https://www.malvern.org/1288/Building-Zoning-Code-Enforcement",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical Commission",
+     "phone": null,
+     "email": "malvernborohistory@malvern.org",
+     "address": null,
+     "url": "https://www.malvern.org/1208/Historical-Commission",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": "(610) 644-2602",
+     "email": "malvern@malvern.org",
+     "address": "Borough Hall, 1 E First Ave, Second Fl, Malvern, PA 19355",
+     "url": "https://www.malvern.org/1201/Zoning-Hearing-Board",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 220 Zoning",
+     "url": "https://ecode360.com/11230593",
+     "note": "Borough zoning ordinance on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Borough zoning map PDF",
+     "url": "https://www.malvern.org/DocumentCenter/View/435/Zoning-Maps",
+     "note": "Zoning Map adopted May 21, 2003 with amendments through 10/2/2018, prepared October 2018.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "2022 Comprehensive Plan Update",
+     "url": "https://www.malvern.org/DocumentCenter/View/461/Malvern-Plan-Final-Interactive",
+     "note": "Malvern Borough Comprehensive Plan Update adopted September 20, 2022.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.malvern.org/1205/Planning-Commission",
+     "note": "Borough Planning Commission page with members and meetings.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Zoning rewrite task force",
+     "url": "https://www.malvern.org/1202/Zoning-and-Land-Development-Ordinances-T",
+     "note": "Page for the borough zoning rewrite, now at draft Version 17 and not adopted.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Permits and applications",
+     "url": "https://www.malvern.org/1316/Permits-and-Applications",
+     "note": "Permit forms to submit online, by mail or in person at 1 E. First Avenue, Suite 3.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "2026 fee schedule",
+     "url": "https://www.malvern.org/DocumentCenter/View/1906/2026-Fee-Schedule",
+     "note": "Malvern Borough 2026 Fee Schedule.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental permit application",
+     "url": "https://www.malvern.org/DocumentCenter/View/597/Rental-Permit-Application",
+     "note": "Borough rental permit application form submitted by email or mail.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Commission",
+     "url": "https://www.malvern.org/1208/Historical-Commission",
+     "note": "Borough Historical Commission established by Borough Council ordinance.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.malvern.org/1201/Zoning-Hearing-Board",
+     "note": "Board for variances, special exceptions and appeals, usually the 4th Monday at 6 p.m. as needed.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "ChescoViews parcel viewer",
+     "url": "https://www.chesco.org/2198/ChescoViews",
+     "note": "Chester County page for ChescoViews, the county map app for searching parcels by address, owner, UPI or PIN.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Flooding assistance",
+     "url": "https://www.malvern.org/1536/Flooding-Assistance",
+     "note": "Borough page linking Chester County flood preparedness, recovery and flood risk tools.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "I4": "Institutional District",
+    "R1": "Residential District",
+    "R2": "Residential District",
+    "R3a": "R3 (R3a and R3b) - Residential Districts",
+    "R3b": "R3 (R3a and R3b) - Residential Districts",
+    "R4": "Residential District",
+    "R5": "Residential District",
+    "R6": "Residential District",
+    "R7": "Residential District"
+   },
+   "notes": []
+  },
+  "pa_chester_east_brandywine": {
+   "name": "East Brandywine township",
+   "county_fips": "42029",
+   "municipal_levies": [
+    {
+     "name": "East Brandywine Township, general purposes",
+     "mills": 2.5,
+     "tax_year": "2026",
+     "source": {
+      "title": "East Brandywine Township: Property Taxes and Assessments",
+      "url": "https://ebrandywine.org/276/Property-Taxes-Assessments",
+      "date": "2026-10-19",
+      "checked_on": "2026-11-21"
+     }
+    },
+    {
+     "name": "East Brandywine Township, fire services",
+     "mills": 0.53,
+     "tax_year": "2026",
+     "source": {
+      "title": "East Brandywine Township: Property Taxes and Assessments",
+      "url": "https://ebrandywine.org/276/Property-Taxes-Assessments",
+      "date": "2026-10-19",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Downingtown Area School District",
+    "levy": {
+     "name": "Downingtown Area School District",
+     "mills": 33.0268,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "County of Chester Tax Rates 2026 (2026 county, 2026 municipality, 2026/2027 school district), revised 6/24/2026",
+      "url": "https://www.chesco.org/DocumentCenter/View/85097",
+      "date": "2026-06-24",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Building Permits & Codes Enforcement office",
+     "phone": "(610) 269-8230",
+     "email": "permits@ebrandywine.org",
+     "address": "1214 Horseshoe Pike, Downingtown, PA 19335",
+     "url": "https://www.ebrandywine.org/296/Building-Permit-Codes-Enforcement",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Norann King, Permits Administrator",
+     "phone": "610-269-8230, ext. 202",
+     "email": "norann@ebrandywine.org",
+     "address": "1214 Horseshoe Pike, Downingtown, PA 19335",
+     "url": "https://www.ebrandywine.org/316/Township-Staff-Directory",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical Commission",
+     "phone": "610-269-8230",
+     "email": null,
+     "address": "1214 Horseshoe Pike, Downingtown, PA 19335",
+     "url": "https://www.ebrandywine.org/125/Historical-Commission",
+     "checked_on": "2026-11-21"
+    },
+    "inspections": {
+     "name": "Arro Consulting, Inc.",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.ebrandywine.org/296/Building-Permit-Codes-Enforcement",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 399 Zoning",
+     "url": "https://ecode360.com/11881518",
+     "note": "Township zoning ordinance on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "2024 Zoning Map PDF",
+     "url": "https://www.ebrandywine.org/DocumentCenter/View/16",
+     "note": "Township zoning map with base and overlay districts, posted as the 2024 Zoning Map.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "2022 Comprehensive Plan Update",
+     "url": "https://www.ebrandywine.org/DocumentCenter/View/1331",
+     "note": "East Brandywine Township Comprehensive Plan Update adopted October 6, 2022.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.ebrandywine.org/213/Planning-Commission",
+     "note": "Planning Commission page with the 2022 plan, the 2023 Official Map and Act 537 plan.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building permits and codes",
+     "url": "https://www.ebrandywine.org/296/Building-Permit-Codes-Enforcement",
+     "note": "Standard building and zoning permit form, delivered signed to the township office with fees.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Master fee schedule PDF",
+     "url": "https://ecode360.com/documents/EA1968/public/753062879.pdf",
+     "note": "Resolution No. 9 of 2024 adopting the township master fee schedule for permits and applications.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Commission",
+     "url": "https://www.ebrandywine.org/125/Historical-Commission",
+     "note": "Historical Commission page with the historic resources map and atlas.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "ChescoViews parcel viewer",
+     "url": "https://www.chesco.org/2198/ChescoViews",
+     "note": "Chester County page for ChescoViews, the county map app for searching parcels by address, owner, UPI or PIN.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "flood",
+     "label": "Chester County floodplains page",
+     "url": "https://www.chesco.org/3458/FEMA-Floodplains",
+     "note": "County page on FEMA floodplain maps, checking a property's flood status and flood insurance.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "R-1": "Residential District",
+    "R-2": "Residential District",
+    "R-3": "Residential District",
+    "TND-1": "Traditional Neighborhood Development District",
+    "VC": "Village Commercial District"
+   },
+   "notes": []
+  },
+  "pa_centre_college": {
+   "name": "College township",
+   "county_fips": "42027",
+   "municipal_levies": [
+    {
+     "name": "College Township",
+     "mills": 6.1,
+     "tax_year": "2026",
+     "source": {
+      "title": "Centre County Real Estate Millage 2026 County and Municipal, 2026-2027 School, revised 07/08/2026",
+      "url": "https://centrecountypa.gov/DocumentCenter/View/26631/Millage-Rates-2025-with-2024-2025-School-Millage-Rate",
+      "date": "2026-07-08",
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "State College Area School District",
+    "levy": {
+     "name": "State College Area School District",
+     "mills": 54.8132,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "Centre County Real Estate Millage 2026 County and Municipal, 2026-2027 School, revised 07/08/2026",
+      "url": "https://centrecountypa.gov/DocumentCenter/View/26631/Millage-Rates-2025-with-2024-2025-School-Millage-Rate",
+      "date": "2026-07-08",
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Planning & Zoning Department (Zoning Officer Mark Gabrovsek)",
+     "phone": "814-231-3021",
+     "email": "mgabrovsek@collegetownship.org",
+     "address": "1481 E College Avenue, State College, PA 16801",
+     "url": "https://www.collegetownship.org/205/Zoning-Department",
+     "checked_on": "2026-11-21"
+    },
+    "building": {
+     "name": "Centre Region Code Administration (CRCA)",
+     "phone": "814.231.3056",
+     "email": null,
+     "address": "2643 Gateway Drive, Suite #1, State College, PA 16801",
+     "url": "https://www.crcog.net/crca",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": "814-231-3021",
+     "email": null,
+     "address": "1481 E College Avenue, State College, PA 16801",
+     "url": "https://www.collegetownship.org/222/Zoning-Hearing-Board",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_map",
+     "label": "Interactive Zoning Map",
+     "url": "https://college-township.maps.arcgis.com/apps/webappviewer/index.html?id=574cf31b072f468f8710b960c870c740",
+     "note": "Township ArcGIS zoning map with overlay and FEMA flood layers, updated February 26, 2026.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Centre Region Comprehensive Plan",
+     "url": "https://www.crcog.net/compplan",
+     "note": "The 2013 Update adopted November 25, 2013 by the Centre Region municipalities, with the One Vision for 2045 update underway.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning & Zoning Department",
+     "url": "https://www.collegetownship.org/205/Zoning-Department",
+     "note": "Township planning and zoning office page with staff contacts and maps.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.collegetownship.org/206/Planning-Commission",
+     "note": "Township Planning Commission, which meets the first and third Tuesdays at 7 PM.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Centre Regional Planning Agency",
+     "url": "https://www.crcog.net/planning",
+     "note": "Regional planning agency that prepares the Centre Region Comprehensive Plan.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building permits and forms",
+     "url": "https://www.collegetownship.org/369/Building-Permits-Applications-Forms-Info",
+     "note": "Township page explaining that the township zoning permit comes first, then the Centre Region building permit.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "CRCA residential applications",
+     "url": "https://www.crcog.net/index.asp?SEC=9AC46C99-FB9A-4A2A-8C02-AB1BD25C5BB1",
+     "note": "Centre Region Code Administration forms for residential building permits.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Zoning fees resolution R-24-08",
+     "url": "https://www.collegetownship.org/DocumentCenter/View/2605/R-24-08-Zoning-A-20316-FINAL-Esigned-PDF",
+     "note": "Resolution of January 2, 2024 setting a $35 base zoning permit fee and a $200 plus $1,000 escrow hearing fee.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "CRCA building permit fees",
+     "url": "https://www.crcog.net/index.asp?SEC=38C2B40B-DCAF-4380-BA59-58396D2E68F6",
+     "note": "CRCA fee page with the building permit fee procedure of November 1, 2025 and the 2026 rental fees.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "CRCA rental housing forms",
+     "url": "https://www.crcog.net/index.asp?SEC=CA3C4B9C-1916-41C4-ACA1-1ADB9FB7576D",
+     "note": "Rental housing permit forms, with applications filed at the township zoning office.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "rental_license",
+     "label": "Rental Housing Permit Packet",
+     "url": "https://www.collegetownship.org/DocumentCenter/View/228",
+     "note": "Rental Housing Permit Application Packet for College and nearby municipalities, run with CRCA.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historic Districts and Properties map",
+     "url": "https://www.collegetownship.org/DocumentCenter/View/2045",
+     "note": "Township map of March 16, 2022 showing the Lemont and Oak Hall historic districts for Ordinance O-22-01.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.collegetownship.org/222/Zoning-Hearing-Board",
+     "note": "Five-member board that hears variances and special exceptions as needed.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "A": "griculture",
+    "F": "orest",
+    "R-1": "Single Family Residential",
+    "R-2": "Two Family Residential",
+    "R-O": "Residential Office",
+    "RR": "Rural Residential",
+    "V": "illage",
+    "PRD": "Planned Residential Development"
+   },
+   "notes": []
+  },
+  "pa_montgomery_lower_merion": {
+   "name": "Lower Merion township",
+   "county_fips": "42091",
+   "municipal_levies": [
+    {
+     "name": "Lower Merion Township",
+     "mills": 4.819,
+     "tax_year": "2026",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "School District of Lower Merion",
+    "levy": {
+     "name": "School District of Lower Merion",
+     "mills": 36.5017,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Scott Houchins, Zoning Officer (Building and Planning Department)",
+     "phone": "610-645-6172",
+     "email": "shouchins@lowermerion.org",
+     "address": "75 East Lancaster Avenue, Ardmore, PA 19003-2323",
+     "url": "https://www.lowermerion.org/departments/building-and-planning-department/zoning",
+     "checked_on": "2026-11-22"
+    },
+    "building": {
+     "name": "Building and Planning Department",
+     "phone": "610-645-6200",
+     "email": null,
+     "address": "75 East Lancaster Avenue, Ardmore, PA 19003-2323",
+     "url": "https://www.lowermerion.org/departments/building-and-planning-department",
+     "checked_on": "2026-11-22"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.lowermerion.org/government/other-boards-and-commissions/zoning-hearing-board",
+     "checked_on": "2026-11-22"
+    },
+    "historic": {
+     "name": "Historical Architectural Review Board (HARB)",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.lowermerion.org/government/other-boards-and-commissions/historical-architectural-review-board",
+     "checked_on": "2026-11-22"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 155 Zoning",
+     "url": "https://ecode360.com/35907405",
+     "note": "Township zoning code on eCode360.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Interactive Zoning Map",
+     "url": "https://www.lowermerion.org/businesses/zoning-and-planning/interactive-zoning-map",
+     "note": "The township zoning map online.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Zoning Map (adopted Feb 26, 2020, PDF)",
+     "url": "https://www.lowermerion.org/home/showpublisheddocument/23133/637184794970070000",
+     "note": "The map adopted with the 2020 Zoning Code. Later amendments are on the interactive map.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Comprehensive Plan (adopted January 2016)",
+     "url": "https://www.lowermerion.org/departments/building-and-planning-department/planning-division/comprehensive-plan",
+     "note": "The township long-range plan, by element (land use, housing, circulation and more).",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Division",
+     "url": "https://www.lowermerion.org/departments/building-and-planning-department/planning-division",
+     "note": "Subdivision and land development, conditional use and certificates of appropriateness.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Building permits and applications",
+     "url": "https://www.lowermerion.org/departments/building-and-planning-department/building-division/permits-licensing",
+     "note": "Building Division permit applications, contractor licenses and permit fees.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.lowermerion.org/government/other-boards-and-commissions/zoning-hearing-board",
+     "note": "Hears variances, special exceptions and appeals.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Architectural Review Board (HARB)",
+     "url": "https://www.lowermerion.org/government/other-boards-and-commissions/historical-architectural-review-board",
+     "note": "Review of changes in the historic districts.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "property_map",
+     "label": "Montgomery County property records",
+     "url": "https://propertyrecords.montcopa.org/pt/forms/htmlframe.aspx?mode=content/home.htm",
+     "note": "County assessment records search by address, parcel ID or map.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "BMMD-2": "Bryn Mawr Medical District 2",
+    "BMMD-3": "Bryn Mawr Medical District 3",
+    "BMV3": "Bryn Mawr Village District 3",
+    "BMV4": "Bryn Mawr Village District 4",
+    "CAD-BV": "City Avenue District - Bala Village",
+    "IC1": "Institutional Civic 1",
+    "IC2": "Institutional Civic 2",
+    "IC3": "Institutional Civic 3",
+    "IE1": "Institutional Education 1",
+    "IE2": "Institutional Education 2",
+    "IE3": "Institutional Education 3",
+    "IH1": "Institutional Housing 1",
+    "IH2": "Institutional Housing 2",
+    "IH3": "Institutional Housing 3",
+    "IN": "Institutional Nature Preserve",
+    "LDR1": "Low Density Residential",
+    "LDR2": "Low Density Residential",
+    "LDR3": "Low Density Residential",
+    "LDR4": "Low Density Residential",
+    "LI": "Light Industrial District",
+    "MDR1": "Medium Density Residential",
+    "MDR2": "Medium Density Residential",
+    "MDR3": "Medium Density Residential",
+    "RHR": "Rock Hill Road District",
+    "TC1": "Town Center 1",
+    "VC": "Village Center"
+   },
+   "notes": []
+  },
+  "pa_montgomery_narberth": {
+   "name": "Narberth borough",
+   "county_fips": "42091",
+   "municipal_levies": [
+    {
+     "name": "Narberth Borough",
+     "mills": 9.865,
+     "tax_year": "2026",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "School District of Lower Merion",
+    "levy": {
+     "name": "School District of Lower Merion",
+     "mills": 36.5017,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Kevin Walsh, Building Code Official, Zoning Officer and Code Enforcement Officer (Yerkes Associates)",
+     "phone": "(610) 656-2707",
+     "email": "kwalsh@yerkes-assoc.com",
+     "address": "100 Conway Avenue, Narberth, PA 19072",
+     "url": "https://www.narberthpa.gov/departments/building_and_zoning/index.php",
+     "checked_on": "2026-11-21"
+    },
+    "historic": {
+     "name": "Historical Architectural Review Board",
+     "phone": "610-664-2840",
+     "email": null,
+     "address": "100 Conway Avenue, Narberth, PA 19072",
+     "url": "https://www.narberthpa.gov/government/boards_commissions/historical_architectural_review_board.php",
+     "checked_on": "2026-11-21"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board",
+     "phone": "610-664-2840",
+     "email": null,
+     "address": "100 Conway Avenue, Narberth, PA 19072",
+     "url": "https://www.narberthpa.gov/government/boards_commissions/zoning_hearing_board.php",
+     "checked_on": "2026-11-21"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 500 Zoning",
+     "url": "https://ecode360.com/34400015",
+     "note": "Borough zoning code on eCode360, amended in its entirety 8-20-2026 by Ord. No. 1070.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_code",
+     "label": "Zoning ordinance updates page",
+     "url": "https://www.narberthpa.gov/departments/building_and_zoning/ordinances.php",
+     "note": "Borough page on the zoning recodification under Ordinance No. 1070 and other amendments.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "Zoning district map PDF",
+     "url": "https://www.narberthpa.gov/Documents/Departments/Building%20and%20Zoning/Maps/Zoning%20District%20Map.pdf",
+     "note": "Narberth Borough Zoning Map by Montgomery County Planning Commission showing boundaries as of April 2016.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "Narberth 2040 Comprehensive Plan",
+     "url": "https://www.narberthpa.gov/government/projects/narberth_2040_comprehensive_plan/index.php",
+     "note": "Narberth 2040 Comprehensive Plan adopted in April 2019.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "planning",
+     "label": "Planning Commission",
+     "url": "https://www.narberthpa.gov/government/boards_commissions/planning_commission.php",
+     "note": "Planning Commission page with agendas, generally meeting the first Monday of the month.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Permits and applications",
+     "url": "https://www.narberthpa.gov/departments/building_and_zoning/permits.php",
+     "note": "Permit forms including the zoning permit, submitted through MyGov, by mail or drop off.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "MyGov online portal",
+     "url": "https://www.narberthpa.gov/services/mygov.php",
+     "note": "Borough page for the MyGov portal used to submit permit applications online.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "historic",
+     "label": "Historical Architectural Review Board",
+     "url": "https://www.narberthpa.gov/government/boards_commissions/historical_architectural_review_board.php",
+     "note": "HARB page with agendas and members for the borough historic district.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.narberthpa.gov/government/boards_commissions/zoning_hearing_board.php",
+     "note": "Quasi-judicial board for zoning appeals, variances and special exceptions.",
+     "checked_on": "2026-11-21"
+    },
+    {
+     "kind": "property_map",
+     "label": "Montgomery County property records",
+     "url": "https://propertyrecords.montcopa.org/pt/forms/htmlframe.aspx?mode=content/home.htm",
+     "note": "County assessment records search by address, parcel ID or map.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "3A": "Neighborhood Residential District",
+    "3B": "Mixed Residential Limited District",
+    "3C": "Mixed Residential Open District",
+    "4A": "General Urban Limited District",
+    "4B": "General Urban Open District"
+   },
+   "notes": []
+  },
+  "pa_montgomery_upper_dublin": {
+   "name": "Upper Dublin township",
+   "county_fips": "42091",
+   "municipal_levies": [
+    {
+     "name": "Upper Dublin Township (total)",
+     "mills": 7.382,
+     "tax_year": "2026",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    }
+   ],
+   "school_district": {
+    "name": "Upper Dublin School District",
+    "levy": {
+     "name": "Upper Dublin School District",
+     "mills": 41.1418,
+     "tax_year": "2026-27",
+     "source": {
+      "title": "Montgomery County Board of Assessment Appeals: County and Municipality Millage Rates (2026 county, MCCC, municipality, 2026-2027 school)",
+      "url": "https://www.montgomerycountypa.gov/departments/board-assessment-appeals/county-municipality-millage-rates",
+      "date": null,
+      "checked_on": "2026-11-21"
+     }
+    },
+    "split": null
+   },
+   "abatements": [],
+   "tax_notes": [],
+   "offices": {
+    "zoning": {
+     "name": "Riley McGrath, Zoning Officer and Planning Coordinator (Community Planning and Zoning)",
+     "phone": "(215) 643-1600 ext. 3213",
+     "email": "rmcgrath@upperdublin.net",
+     "address": null,
+     "url": "https://www.upperdublin.net/government/departments/community-planning-zoning",
+     "checked_on": "2026-11-22"
+    },
+    "building": {
+     "name": "Code Enforcement Department",
+     "phone": "(215) 643-1600 ext. 8070",
+     "email": "permits@upperdublin.net",
+     "address": null,
+     "url": "https://www.upperdublin.net/government/departments/code-enforcement",
+     "checked_on": "2026-11-22"
+    },
+    "zoning_board": {
+     "name": "Zoning Hearing Board (meets at Upper Dublin Public Library, 520 Virginia Drive, Fort Washington)",
+     "phone": null,
+     "email": null,
+     "address": null,
+     "url": "https://www.upperdublin.net/government/boards-and-commissions/zoning-hearing-board",
+     "checked_on": "2026-11-22"
+    }
+   },
+   "links": [
+    {
+     "kind": "zoning_code",
+     "label": "Chapter 255 Zoning",
+     "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-24735",
+     "note": "Township zoning code on American Legal Publishing.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "zoning_map",
+     "label": "2019 Zoning Map (PDF)",
+     "url": "https://www.upperdublin.net/home/showpublisheddocument/2484/638313391404230000",
+     "note": "The zoning map posted on the Community Planning and Zoning page.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "comprehensive_plan",
+     "label": "UD Plan: 2025 Comprehensive Plan (adopted Jan 13, 2026)",
+     "url": "https://www.upperdublin.net/our-township/comprehensive-plan",
+     "note": "Adopted by the Board of Commissioners. A Zoning Ordinance update to match it comes next.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "planning",
+     "label": "Community Planning and Zoning",
+     "url": "https://www.upperdublin.net/government/departments/community-planning-zoning",
+     "note": "Zoning applications, conditional use and Zoning Hearing Board applications. Consultations by appointment, Monday to Friday, 9am to 4pm.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "permit_apply",
+     "label": "Online permits (OpenGov)",
+     "url": "https://www.upperdublin.net/government/departments/code-enforcement/permits",
+     "note": "All applications are filed online. Paper applications are no longer taken.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "permit_fees",
+     "label": "Fee schedule",
+     "url": "https://www.upperdublin.net/services/fee-schedule",
+     "note": "Township fees. A Zoning Hearing Board application is $500 for a residential use.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "zoning_board",
+     "label": "Zoning Hearing Board",
+     "url": "https://www.upperdublin.net/government/boards-and-commissions/zoning-hearing-board",
+     "note": "Hears appeals, special exceptions and variances.",
+     "checked_on": "2026-11-22"
+    },
+    {
+     "kind": "property_map",
+     "label": "Montgomery County property records",
+     "url": "https://propertyrecords.montcopa.org/pt/forms/htmlframe.aspx?mode=content/home.htm",
+     "note": "County assessment records search by address, parcel ID or map.",
+     "checked_on": "2026-11-21"
+    }
+   ],
+   "districts": {
+    "A": "A Residential District",
+    "A-1": "A-1 Residential District",
+    "A-2": "A-2 Residential District",
+    "B": "B Residential District",
+    "C": "C Residential District",
+    "NH": "NH Residential District",
+    "MD": "MD Multi-Dwelling District",
+    "MRD": "MRD Mixed Residential District",
+    "MRH": "MRH Mixed Use Residential-Historic District",
+    "CR-L": "CR Commercial Retail District, Class L",
+    "CR-I": "CR Commercial Retail District, Class I",
+    "INST": "INST Institutional District",
+    "RE": "RE Recreational District",
+    "GFW": "GFW Greater Fort Washington District"
+   },
+   "notes": []
+  }
+ }
+}

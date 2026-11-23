@@ -272,8 +272,14 @@ def financing_terms(financing: Mapping[str, Any] | None, u: Used) -> dict[str, A
 
 
 # ------------------------------------------------------------------ tax
-def tax_schedule(place: Place, added_value: float, years: int, u: Used) -> list[dict[str, float]]:
-    """Added property tax per year after the unit is finished, with any abatement."""
+def tax_schedule(
+    place: Place, added_value: float, years: int, u: Used, town_rate: float | None = None
+) -> list[dict[str, float]]:
+    """Added property tax per year after the unit is finished, with any abatement.
+
+    town_rate: the town's own yearly tax as a share of market value (county, town and school millage times the
+    county's common level ratio). Used outside the two cities in place of the statewide rate.
+    """
     if place == "philadelphia":
         full = added_value * u.value("tax.philadelphia.rate")
         abated = u.table("tax.philadelphia.abatement")["schedule"]
@@ -283,6 +289,9 @@ def tax_schedule(place: Place, added_value: float, years: int, u: Used) -> list[
         u.item("tax.pittsburgh.reassessment")
         full = assessed * (mills["county"] + mills["city"] + mills["school"]) / 1000
         abated = u.table("tax.pittsburgh.abatement")["schedule"]
+    elif town_rate is not None:
+        full = added_value * town_rate
+        abated = []
     else:
         full = added_value * u.value("tax.rest_of_pa.effective_rate")
         abated = []
@@ -314,6 +323,7 @@ def _case(
     basis: str,
     years: int,
     u: Used,
+    town_rate: float | None = None,
 ) -> dict[str, Any]:
     """Monthly numbers for one total cost."""
     loan = cost * terms["ltc"]
@@ -324,7 +334,7 @@ def _case(
     maint_rate = u.value("operating.maintenance")
     collected = rent * (1 - vacancy)
     added_value = build * u.value("tax.assessed_share_of_build_cost")
-    schedule = tax_schedule(place, added_value, years, u)
+    schedule = tax_schedule(place, added_value, years, u, town_rate)
     tax_m = tax_for_test(schedule, basis) / 12
     fixed = (u.value("operating.insurance") + u.table("operating.rental_license")[place]) / 12 + tax_m
     opex = collected * (mgmt_rate + maint_rate) + fixed
@@ -410,7 +420,8 @@ def pro_forma(
     adu: size_sqft, adu_type, quality (basic | standard | premium).
     financing: preset (cash | heloc | construction_to_perm | fha_203k | all_borrowed), rate, years, ltc.
     scenario: self_managed (default true), rent (monthly, replaces the looked-up rent),
-        hard_psf (replaces the mid build cost per sq ft), tax_basis (year1 | avg10 | full).
+        hard_psf (replaces the mid build cost per sq ft), tax_basis (year1 | avg10 | full),
+        tax_rate (the town's own yearly property tax as a share of market value, used outside the two cities).
     """
     a = a or load_assumptions()
     u = Used(a)
@@ -436,6 +447,7 @@ def pro_forma(
     basis = sc.get("tax_basis") or rules["tax_basis"]
     years = int(u.value("pro_forma.schedule_years"))
     self_managed = sc.get("self_managed", True)
+    town_rate = float(sc["tax_rate"]) if place == "rest_of_pa" and sc.get("tax_rate") is not None else None
 
     base = {
         "place": place,
@@ -450,7 +462,7 @@ def pro_forma(
         return {**base, "verdict": None, "verdict_reason": "No market rent for this ZIP.", "assumptions": u.sorted()}
 
     cases = {
-        c: _case(cost["total"][c], cost["build_cost"][c], rent, place, terms, self_managed, basis, years, u)
+        c: _case(cost["total"][c], cost["build_cost"][c], rent, place, terms, self_managed, basis, years, u, town_rate)
         for c in CASES
     }
     mid, low = cases["mid"], cases["low"]
@@ -540,6 +552,8 @@ FIXTURE_SPECS: list[tuple[str, str, str, float, str | None, dict[str, Any]]] = [
     ("rest_of_pa", "15601", "internal", 700, "heloc", {}),
     ("rest_of_pa", "15601", "attached", 1000, "fha_203k", {"septic": True}),
     ("rest_of_pa", "00000", "detached_new", 600, "construction_to_perm", {"no_rent": True}),
+    ("rest_of_pa", "19087", "detached_new", 600, "construction_to_perm", {"scenario": {"tax_rate": 0.0113}}),
+    ("pittsburgh", "15206", "detached_new", 600, "construction_to_perm", {"scenario": {"tax_rate": 0.0113}}),
 ]
 
 

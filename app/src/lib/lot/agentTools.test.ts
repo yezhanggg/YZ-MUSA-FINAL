@@ -31,7 +31,7 @@ function strings(v: unknown, key = ''): [string, string][] {
 
 describe('tool definitions', () => {
   it('match the ToolDef shape of agent/schema.ts', () => {
-    expect(LOT_TOOLS.map((t) => t.name)).toEqual(['get_lot_facts', 'get_lot_rules', 'test_unit_on_lot', 'compare_scenarios', 'lot_money', 'explain_limit']);
+    expect(LOT_TOOLS.map((t) => t.name)).toEqual(['get_lot_facts', 'get_lot_rules', 'test_unit_on_lot', 'compare_scenarios', 'lot_money', 'explain_limit', 'get_parcel_info', 'get_property_tax', 'get_next_steps']);
     for (const t of LOT_TOOLS) {
       expect(t.description.length).toBeGreaterThan(20);
       expect(t.input_schema.type).toBe('object');
@@ -305,7 +305,12 @@ describe('no placeholders', () => {
             const r = await run(p, t.name as LotToolName, input);
             const json = JSON.stringify(r);
             expect(json).not.toMatch(/\bnan\b|undefined|Infinity/i);
-            for (const [k, s] of strings(r)) if (k !== 'url') expect(s, `${n} ${t.name} ${k}`).not.toContain('?');
+            for (const [k, s] of strings(r)) {
+              if (k === 'url') continue;
+              // The questions for the zoning office end with a question mark after a word, never a lone "?".
+              if (k === 'ask_the_zoning_office') expect(s, `${n} ${t.name} ${k}`).not.toMatch(/^\?|\s\?|\?\?|[^a-z0-9)]\?/i);
+              else expect(s, `${n} ${t.name} ${k}`).not.toContain('?');
+            }
           }
         }
       }

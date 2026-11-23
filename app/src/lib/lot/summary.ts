@@ -5,6 +5,7 @@ import { NOTICE, sourcesOf, verdictCitations, type CitationView } from './citati
 import { SCENARIOS, type LotRecord, type RentByBedroom, type Scenario } from './types.js';
 import { compareScenarios, unitVerdict, approvalFor, type UnitInput, type UnitVerdict, type VerdictCheck, type VerdictWarning } from './verdict.js';
 import { SCENARIO_TITLE, TYPE_TITLE, dateText, ftText, isNum, sqftText, usdText } from './words.js';
+import { townTaxRate } from './lotTax.js';
 
 export interface Fact {
   label: string;
@@ -125,7 +126,8 @@ export function lotMoney(lot: LotRecord, v: UnitVerdict, input: MoneyOptions = {
     { place: lot.lot.place, zip: lot.facts?.zip ?? null, septic: lot.zoning.flags?.sewer === false, rent_by_bedroom: rents as MoneyRents | null, rent_source: input.rent_source ?? null },
     { size_sqft: v.floor_sqft, adu_type: v.type, quality: input.quality },
     input.financing ?? {},
-    input.money ?? {},
+    // Outside the two cities, the town's own tax rate (lotTax.ts) when its county, town and school rates are on file.
+    { ...input.money, tax_rate: input.money?.tax_rate ?? townTaxRate(lot) },
   );
   const base = { cost: pf.cost.total, pro_forma: pf, assumptions: pf.assumptions };
   if (pf.verdict === null || !('monthly' in pf)) {

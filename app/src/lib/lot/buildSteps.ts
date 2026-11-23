@@ -2,11 +2,12 @@
 // Fees come from shared/assumptions.json (through money.ts), never typed in here. The assumptions file has
 // no waiting times, so every step says to ask the city about time. Where the data does not know who decides
 // or what applies, the step says to ask the city instead of guessing.
-import { ASSUMPTIONS, Used, aduCost, placeOf, type Assumptions, type Range } from '../money';
-import { NOTICE } from './citations';
-import type { AduType, Citation, LotRecord, Rules, Scenario } from './types';
-import { approvalFor, type ApprovalInfo } from './verdict';
-import { SCENARIO_TITLE, TYPE_LABEL, isNum, pctText, usdText } from './words';
+import { ASSUMPTIONS, Used, aduCost, placeOf, type Assumptions, type Range } from '../money.js';
+import { NOTICE } from './citations.js';
+import type { AduType, Citation, LotRecord, Rules, Scenario } from './types.js';
+import { approvalFor, type ApprovalInfo } from './verdict.js';
+import { townInfoOf } from './townInfo.js';
+import { SCENARIO_TITLE, TYPE_LABEL, isNum, pctText, usdText } from './words.js';
 
 export type StepBasis = { kind: 'rule'; citation: Citation } | { kind: 'assumption'; key: string } | { kind: 'general_practice' };
 
@@ -89,6 +90,18 @@ const OTHER_OFFICES: Offices = {
   historic: "the town's historic review board",
 };
 
+/** A county place's town: the offices its town info file names (shared/lot_towns_info.json), else null. */
+function townOffices(lot: LotRecord): Offices | null {
+  const o = townInfoOf(lot)?.offices;
+  if (!o?.zoning) return null;
+  return {
+    zoning: o.zoning.name,
+    building: o.building?.name ?? o.inspections?.name ?? OTHER_OFFICES.building,
+    water: OTHER_OFFICES.water,
+    historic: o.historic?.name ?? OTHER_OFFICES.historic,
+  };
+}
+
 const range = (r: Range) => (r.low === r.high ? usdText(r.mid) : `${usdText(r.low)} to ${usdText(r.high)}`);
 /** 0.006 -> "0.6%", 0.0025 -> "0.25%" */
 const finePct = (share: number) => `${Number((share * 100).toFixed(2))}%`;
@@ -142,7 +155,7 @@ export function buildSteps(input: BuildStepsInput): BuildChecklist {
   const u = new Used(input.assumptions ?? ASSUMPTIONS);
   const placeName = lot.lot.place ?? '';
   const place = placeOf(placeName);
-  const offices = OFFICES[placeName] ?? OTHER_OFFICES;
+  const offices = OFFICES[placeName] ?? townOffices(lot) ?? OTHER_OFFICES;
   const rules = lot.rules[scenario];
   const approval = approvalFor(lot, scenario, type);
   const flags = lot.zoning.flags ?? {};

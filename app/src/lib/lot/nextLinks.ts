@@ -1,6 +1,9 @@
 // Official links for the "Next Step" tab, one per step kind and place. Every link here was opened and read on the
 // date below (a normal fetch: the page loaded and its title matched). A link that could not be confirmed is left
 // out rather than guessed. Re-check them when this date is old.
+import { townInfoOf, type LinkKind } from './townInfo.js';
+import type { LotRecord } from './types.js';
+
 export const LINKS_CHECKED_ON = '2026-11-12';
 
 export type NextKind = 'rules' | 'plans' | 'zoning' | 'permit' | 'build' | 'rent' | 'bill' | 'variance';
@@ -44,3 +47,25 @@ export const BILL_LINK: NextLink = { label: 'HB 2186 at the General Assembly', u
 
 export const linkFor = (place: string | null | undefined, kind: NextKind): NextLink | null =>
   kind === 'bill' ? BILL_LINK : (NEXT_LINKS[place as Place]?.[kind] ?? null);
+
+/** The town info link kinds that stand in for a step kind, best first (shared/lot_towns_info.json). */
+const TOWN_KINDS: Partial<Record<NextKind, LinkKind[]>> = {
+  rules: ['adu_page', 'planning', 'zoning_code'],
+  zoning: ['permit_apply', 'planning'],
+  permit: ['permit_apply'],
+  build: ['permit_fees', 'permit_apply'],
+  rent: ['rental_license'],
+  variance: ['zoning_board'],
+};
+
+/** The link for a step on one lot: the city's checked link above, else the town's own page from the town info file. */
+export function lotLinkFor(lot: LotRecord | null | undefined, place: string | null | undefined, kind: NextKind): NextLink | null {
+  const city = linkFor(place, kind);
+  if (city || !lot) return city;
+  const info = townInfoOf(lot);
+  for (const k of TOWN_KINDS[kind] ?? []) {
+    const hit = info?.links.find((l) => l.kind === k);
+    if (hit) return { label: hit.label, url: hit.url };
+  }
+  return null;
+}

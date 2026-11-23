@@ -1,9 +1,9 @@
 // The plain answer and the rule checklist for the right panel, read off one UnitVerdict.
 // No rule logic here: every state comes from the verdict's checks and its approval path. A check the data
 // cannot decide (pass === null) reads "not checked", never a pass.
-import type { Citation, LotRecord } from './types';
-import { NO_GARAGE, type CheckKey, type UnitVerdict, type VerdictCheck } from './verdict';
-import { ftText, isNum, pctText, sqftText } from './words';
+import type { Citation, LotRecord } from './types.js';
+import { NO_GARAGE, type CheckKey, type UnitVerdict, type VerdictCheck } from './verdict.js';
+import { ftText, isNum, pctText, sqftText } from './words.js';
 
 /** yes: allowed as drawn, no hearing. approval: allowed as drawn with an approval step. no: not as drawn. */
 export type Answer = 'yes' | 'approval' | 'no' | 'unknown';

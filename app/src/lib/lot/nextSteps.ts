@@ -2,11 +2,12 @@
 // what to do, who to contact, how long, what it costs (when the assumptions file knows) and an official link
 // (nextLinks.ts). Nothing here adds a process fact: every sentence restates a step from buildSteps, the approval
 // path of the verdict, or the scenario rows. When the answer is No, it says what would have to change instead.
-import { answerOf } from './answer';
-import { ASK_TIME, type BuildChecklist, type BuildStep, type StepId } from './buildSteps';
-import { linkFor, type NextKind, type NextLink } from './nextLinks';
-import type { ScenarioVerdict, UnitVerdict } from './verdict';
-import { SCENARIO_NAME } from './words';
+import { answerOf } from './answer.js';
+import { ASK_TIME, type BuildChecklist, type BuildStep, type StepId } from './buildSteps.js';
+import { lotLinkFor, type NextKind, type NextLink } from './nextLinks.js';
+import type { LotRecord } from './types.js';
+import type { ScenarioVerdict, UnitVerdict } from './verdict.js';
+import { SCENARIO_NAME } from './words.js';
 
 export interface NextStep {
   kind: NextKind;
@@ -43,7 +44,8 @@ const costOf = (steps: BuildStep[]) => {
 };
 
 /** The plan for one unit on one lot under one scenario. */
-export function nextSteps(b: BuildChecklist, v: UnitVerdict, rows: ScenarioVerdict[], place: string | null | undefined): NextPlan {
+export function nextSteps(b: BuildChecklist, v: UnitVerdict, rows: ScenarioVerdict[], place: string | null | undefined, lot: LotRecord | null = null): NextPlan {
+  const linkFor = (p: string | null | undefined, kind: NextKind) => lotLinkFor(lot, p, kind);
   const by = (ids: StepId[]) => b.steps.filter((s) => ids.includes(s.id));
   const one = (id: StepId) => b.steps.find((s) => s.id === id);
   const answer = answerOf(v).answer;

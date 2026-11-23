@@ -264,8 +264,12 @@ export interface TaxYear {
   tax: number;
 }
 
-/** Added property tax per year after the unit is finished, with any abatement. */
-export function taxSchedule(place: Place, addedValue: number, years: number, u: Used = new Used()): TaxYear[] {
+/**
+ * Added property tax per year after the unit is finished, with any abatement. townRate: the town's own yearly tax as
+ * a share of market value (county, town and school millage times the county's common level ratio), used outside the
+ * two cities in place of the statewide rate.
+ */
+export function taxSchedule(place: Place, addedValue: number, years: number, u: Used = new Used(), townRate: number | null = null): TaxYear[] {
   let full: number;
   let abated: number[];
   if (place === 'philadelphia') {
@@ -277,6 +281,9 @@ export function taxSchedule(place: Place, addedValue: number, years: number, u: 
     u.item('tax.pittsburgh.reassessment');
     full = (assessed * (mills.county + mills.city + mills.school)) / 1000;
     abated = u.table<{ schedule: number[] }>('tax.pittsburgh.abatement').schedule;
+  } else if (townRate !== null) {
+    full = addedValue * townRate;
+    abated = [];
   } else {
     full = addedValue * u.value('tax.rest_of_pa.effective_rate');
     abated = [];
@@ -321,6 +328,7 @@ interface CaseResult {
 
 function oneCase(
   cost: number, build: number, rent: number, place: Place, t: Terms, selfManaged: boolean, basis: string, years: number, u: Used,
+  townRate: number | null = null,
 ): CaseResult {
   const loan = cost * t.ltc;
   const equity = cost - loan;
@@ -330,7 +338,7 @@ function oneCase(
   const maintRate = u.value('operating.maintenance');
   const collected = rent * (1 - vacancy);
   const addedValue = build * u.value('tax.assessed_share_of_build_cost');
-  const schedule = taxSchedule(place, addedValue, years, u);
+  const schedule = taxSchedule(place, addedValue, years, u, townRate);
   const taxM = taxForTest(schedule, basis) / 12;
   const fixed = (u.value('operating.insurance') + u.table<Record<Place, number>>('operating.rental_license')[place]) / 12 + taxM;
   const opex = collected * (mgmtRate + maintRate) + fixed;
@@ -396,6 +404,8 @@ export interface Scenario {
   /** Mid build cost per sq ft from the screen. */
   hard_psf?: number | null;
   tax_basis?: 'year1' | 'avg10' | 'full' | null;
+  /** The town's own yearly property tax as a share of market value. Used outside the two cities only. */
+  tax_rate?: number | null;
 }
 
 /** Full monthly and yearly picture for one ADU on one lot. Same output as pipeline/money.py pro_forma. */
@@ -412,6 +422,7 @@ export function proForma(lotFacts: LotFacts, adu: AduInput, financing: Financing
   const basis = scenario.tax_basis || rules.tax_basis;
   const years = Math.trunc(u.value('pro_forma.schedule_years'));
   const selfManaged = scenario.self_managed ?? true;
+  const townRate = place === 'rest_of_pa' && given(scenario.tax_rate) ? Number(scenario.tax_rate) : null;
 
   const base = {
     place,
@@ -428,7 +439,7 @@ export function proForma(lotFacts: LotFacts, adu: AduInput, financing: Financing
   if (rent === null) return { ...base, verdict: null, verdict_reason: 'No market rent for this ZIP.', assumptions: u.sorted() };
 
   const cases = {} as Record<Case, CaseResult>;
-  for (const c of CASES) cases[c] = oneCase(cost.total[c], cost.build_cost[c], rent, place, terms, selfManaged, basis, years, u);
+  for (const c of CASES) cases[c] = oneCase(cost.total[c], cost.build_cost[c], rent, place, terms, selfManaged, basis, years, u, townRate);
   const { mid, low } = cases;
   const [v, why] = verdict(mid, low, rent, u);
   const cap = u.range('value.cap_rate');

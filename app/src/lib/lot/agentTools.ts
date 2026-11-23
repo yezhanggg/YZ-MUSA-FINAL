@@ -7,6 +7,7 @@ import { ASSUMPTIONS } from '../money.js';
 import { NOTICE, collectSources, sourcesOf, verdictCitations, type CitationView } from './citations.js';
 import { lotMoney, type MoneyOptions } from './summary.js';
 import { lotTownOf } from './towns.js';
+import { PARCEL_TOOLS, getNextSteps, getParcelInfo, getPropertyTax, type ParcelToolName } from './parcelTools.js';
 import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type RuleType, type Rules, type Scenario } from './types.js';
 import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict.js';
 import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words.js';
@@ -72,9 +73,11 @@ export const LOT_TOOLS: ToolDef[] = [
     description: 'What limits a unit type on this lot under one scenario, in plain words, and what change would help.',
     input_schema: { type: 'object', properties: { lot_id: LOT_ID, scenario: SCENARIO, type: UNIT_PROPS.type }, required: ['type'] },
   },
+  // Parcel record, property tax and next steps (lib/lot/parcelTools.ts).
+  ...PARCEL_TOOLS,
 ];
 
-export type LotToolName = 'get_lot_facts' | 'get_lot_rules' | 'test_unit_on_lot' | 'compare_scenarios' | 'lot_money' | 'explain_limit';
+export type LotToolName = 'get_lot_facts' | 'get_lot_rules' | 'test_unit_on_lot' | 'compare_scenarios' | 'lot_money' | 'explain_limit' | ParcelToolName;
 
 /** What the tools need from the app. The browser provides it from the store, tests from fixtures. */
 export interface LotAgentProvider {
@@ -233,8 +236,10 @@ export function getLotFacts(lot: LotRecord) {
     // The suggested spot is the backyard cottage spot under today's rules.
     land_cover: hasCover(lot) ? landCover(lot, 'today', 'detached_new') : NO_COVER,
     // Left out of the published lot files (tools/publish_lots.sh), so never read here, even from a local build.
+    // get_parcel_info gives the county record link, where the owner can see them.
     assessed_value: NOT_PUBLIC,
     last_sale: NOT_PUBLIC,
+    more: 'get_parcel_info has the parcel number, school district, zoning district name, documents, offices and the county record link. get_property_tax has the tax rates.',
     lot_shape_confidence: CONFIDENCE[lot.lot.shape_confidence],
     data_confidence: CONFIDENCE[lot.quality.confidence],
     sources: Object.entries(lot.quality.data_dates ?? {}).map(([name, date]) => ({ data: name, date: date ?? 'not on file' })),
@@ -463,5 +468,9 @@ export function makeLotExecutors(p: LotAgentProvider): Record<LotToolName, (inpu
       });
     }),
     explain_limit: withLot((lot, i) => explainLimit(lot, unitFrom(i, lot, scenarioFrom(i, p), p))),
+    get_parcel_info: withLot((lot) => compact(getParcelInfo(lot))),
+    // Tax is about building the unit: today's rules unless the call names a bill.
+    get_property_tax: withLot((lot, i) => compact(getPropertyTax(lot, unitFrom(i, lot, scenarioFrom(i, p), p), p.money?.(lot) ?? { rent_by_bedroom: p.rents?.(lot) ?? null }))),
+    get_next_steps: withLot((lot, i) => compact(getNextSteps(lot, unitFrom(i, lot, scenarioFrom(i, p), p)))),
   };
 }
