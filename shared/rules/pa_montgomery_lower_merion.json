@@ -973,7 +973,7 @@
         "url": "https://ecode360.com/35686381",
         "verified_on": "2026-11-22",
         "confidence": "verified",
-        "note": "2 stories minimum to 3 stories up to 40 ft."
+        "note": "2 stories minimum to 3 stories up to 40 ft. Accessory structure height limit 15 ft (155-4.3 Table 4.3.1 VC Dimensional Standards, Building Height, Accessory structure). 1 story up to 15 ft. Accessory building: n/a."
       },
       "principal_max_stories": {
         "value": 3,
@@ -996,14 +996,6 @@
         "url": "https://ecode360.com/35686381",
         "verified_on": "2026-11-22",
         "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 15,
-        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Building Height, Accessory structure",
-        "url": "https://ecode360.com/35686381",
-        "verified_on": "2026-11-22",
-        "confidence": "verified",
-        "note": "1 story up to 15 ft. Accessory building: n/a."
       }
     },
     "IE3": {
@@ -1133,7 +1125,7 @@
         "url": "https://ecode360.com/35686793",
         "verified_on": "2026-11-22",
         "confidence": "verified",
-        "note": "2 stories minimum, 5 stories maximum, up to 65 ft."
+        "note": "2 stories minimum, 5 stories maximum, up to 65 ft. Accessory structure height limit 15 ft (155-6.3 Table 6.3 RHR Dimensional Standards, Building Height, Accessory structure). 1 story up to 15 ft. Accessory building: n/a."
       },
       "principal_max_stories": {
         "value": 5,
@@ -1141,14 +1133,6 @@
         "url": "https://ecode360.com/35686793",
         "verified_on": "2026-11-22",
         "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 15,
-        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Building Height, Accessory structure",
-        "url": "https://ecode360.com/35686793",
-        "verified_on": "2026-11-22",
-        "confidence": "verified",
-        "note": "1 story up to 15 ft. Accessory building: n/a."
       }
     },
     "BMV4": {

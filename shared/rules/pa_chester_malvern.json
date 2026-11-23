@@ -991,6 +991,117 @@
         "verified_on": "2026-11-13",
         "confidence": "secondary"
       }
+    },
+    "C2": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "220-1302A",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Width 20 ft at the building line."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "220-1302C",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "220-1302D(1)",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Detached building: two side yards, each at least 5 ft. Semidetached: one side yard of 5 ft."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-1302E",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "220-1302F",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Maximum lot coverage 90% (220-1302G)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-1302H",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Three stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-1302H",
+        "url": "https://ecode360.com/31445774",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "C3": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "220-1402A",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Width 20 ft at the building line."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "220-1402C",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Front build-to line: a building may be at most 5 ft from the front lot line."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "220-1402D",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "None required."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "220-1402E",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "220-1402F",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Maximum lot coverage 90% (220-1402G)."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "220-1402H",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Three stories or 35 ft, whichever is less."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "220-1402H",
+        "url": "https://ecode360.com/31445825",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }

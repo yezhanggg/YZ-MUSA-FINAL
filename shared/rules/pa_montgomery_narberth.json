@@ -751,6 +751,42 @@
         "confidence": "verified",
         "note": "Detached house '80% of lot area'. Impervious 90%."
       }
+    },
+    "5A": {
+      "accessory_setback_side_ft": {
+        "value": 0,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "5A and 5B allow no detached or twin house as a new building type (500-308, 500-309), so no house lot, yard or height figures are given. Only the accessory building rules of Table 500-801-1 are on file. Side fronting a street: 25 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 0,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Accessory structure height limit 16 ft (Table 500-801-1). At most 2 stories."
+      }
+    },
+    "5B": {
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "5A and 5B allow no detached or twin house as a new building type (500-308, 500-309), so no house lot, yard or height figures are given. Only the accessory building rules of Table 500-801-1 are on file. Side fronting a street: 25 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 15,
+        "section": "Table 500-801-1",
+        "url": "https://ecode360.com/print/NA0447?guid=52005146",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Accessory structure height limit 16 ft (Table 500-801-1). At most 2 stories."
+      }
     }
   },
   "coverage": {

@@ -1252,12 +1252,12 @@
         "note": "Intermediate lot 75%, corner lot 80%."
       },
       "setback_side_ft": {
-        "value": 5,
+        "value": 0,
         "section": "14-701(3), Table 14-701-3, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "5 if used. Only if a side yard is left: none is required, but one that is left must be at least this wide."
+        "note": "5 if used. None is required. A side yard that is left must be at least 5 ft."
       },
       "setback_rear_ft": {
         "value": 9,
@@ -1301,12 +1301,12 @@
         "note": "Intermediate lot 75%, corner lot 80%."
       },
       "setback_side_ft": {
-        "value": 5,
+        "value": 0,
         "section": "14-701(3), Table 14-701-3, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "5 if used. Only if a side yard is left: none is required, but one that is left must be at least this wide."
+        "note": "5 if used. None is required. A side yard that is left must be at least 5 ft."
       },
       "setback_rear_ft": {
         "value": 9,
@@ -1343,12 +1343,12 @@
         "note": "Intermediate lot 75%, corner lot 80%. Max. floor area 500% of lot area. No height limit or rear yard in the table."
       },
       "setback_side_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(3), Table 14-701-3, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used, for buildings with dwelling units. Only if a side yard is left: none is required, but one that is left must be at least this wide."
+        "note": "8 if used, for buildings with dwelling units. None is required. A side yard that is left must be at least 8 ft."
       }
     },
     "CMX-4": {
@@ -1361,12 +1361,12 @@
         "note": "Buildings of 5 stories or less with 1 or more dwelling units: 90%. Others: 100%. Max. floor area 500%. Bulk and massing controls in 14-701(5). No height limit or rear yard in the table."
       },
       "setback_side_ft": {
-        "value": 5,
+        "value": 0,
         "section": "14-701(3), Table 14-701-3, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "If used: buildings of 4 stories or less with three or fewer dwelling units 5 ft, others 8 ft. Only if a side yard is left: none is required, but one that is left must be at least this wide."
+        "note": "None is required. A side yard that is left must be at least 5 ft for buildings of 4 stories or less with three or fewer dwelling units, 8 ft for others."
       },
       "parking_spaces": {
         "value": 0,
@@ -1394,20 +1394,20 @@
         "note": "Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_side_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used. Only if a side yard is left: none is required, but one that is left must be at least this wide. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "8 if used. None is required. A side yard that is left must be at least 8 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_rear_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Rear Yard Depth",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used. Only if a rear yard is left: none is required, but one that is left must be at least this deep. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "8 if used. None is required. A rear yard that is left must be at least 8 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "principal_max_height_ft": {
         "value": 60,
@@ -1434,20 +1434,20 @@
         "note": "Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_side_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used. Only if a side yard is left: none is required, but one that is left must be at least this wide. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "8 if used. None is required. A side yard that is left must be at least 8 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_rear_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Rear Yard Depth",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used. Only if a rear yard is left: none is required, but one that is left must be at least this deep. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "8 if used. None is required. A rear yard that is left must be at least 8 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "principal_max_height_ft": {
         "value": 60,
@@ -1475,20 +1475,20 @@
         "note": "Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_side_ft": {
-        "value": 6,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Side Yard Width, Each",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "6 if used. Only if a side yard is left: none is required, but one that is left must be at least this wide. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "6 if used. None is required. A side yard that is left must be at least 6 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "setback_rear_ft": {
-        "value": 8,
+        "value": 0,
         "section": "14-701(4), Table 14-701-4, Min. Rear Yard Depth",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "8 if used. Only if a rear yard is left: none is required, but one that is left must be at least this deep. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
+        "note": "8 if used. None is required. A rear yard that is left must be at least 8 ft. Note [3]: on a side that abuts a residential district, the larger of this yard and the residential yard applies."
       },
       "principal_max_height_ft": {
         "value": 60,
@@ -1550,12 +1550,12 @@
         "confidence": "verified"
       },
       "setback_rear_ft": {
-        "value": 5,
+        "value": 0,
         "section": "14-701(2), Table 14-701-2, Rear Yard Min. Depth",
         "url": "https://codelibrary.amlegal.com/codes/philadelphia/latest/philadelphia_pa/0-0-0-292846",
         "verified_on": "2026-11-22",
         "confidence": "secondary",
-        "note": "5 if used. Only if a rear yard is left: none is required, but one that is left must be at least this deep."
+        "note": "5 if used. None is required. A rear yard that is left must be at least 5 ft."
       },
       "parking_spaces": {
         "value": 0,
