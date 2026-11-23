@@ -16,6 +16,10 @@ describe('system prompt', () => {
     ['sends tax questions to get_property_tax with year and source', /Property tax[\s\S]*call get_property_tax\. Give each rate with its year and source/],
     ['sends what-next questions to get_next_steps', /What to do next[\s\S]*call get_next_steps/],
     ['owner, assessment and tax bill are not in the data, with the county record', /assessed value and tax bill[\s\S]*"not in my data"[\s\S]*property_record/],
+    ['answers district yards, height and coverage from district_rules, with the section, and says not on file', /district_rules, with the value and its section[\s\S]*not_on_file[\s\S]*"not on file"[\s\S]*Never give a typical/],
+    ['keeps district rules and ADU rules apart', /District rules and ADU rules are not the same/],
+    ['says what a flag means and who reviews it', /flags_that_matter/],
+    ['sends HB 2186 for this lot to get_lot_rules changes_from_today', /HB 2186[\s\S]*get_lot_rules with scenario state_reform[\s\S]*changes_from_today/],
     ['redraws the unit with set_unit, then tests it', /action set_unit[\s\S]*then test_unit_on_lot/],
   ])('%s', (_name, re) => expect(SYSTEM_PROMPT).toMatch(re));
 

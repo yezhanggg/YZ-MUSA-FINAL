@@ -1493,6 +1493,182 @@
         "confidence": "unverified",
         "note": "No interior side setback row in this district."
       }
+    },
+    "RP": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "909.02.D RP, Residential Planned Unit Developments",
+        "url": "https://ecode360.com/45476287",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Planned district. The approved unit development plan sets lots, yards and height. The code gives no fixed numbers. Housing density may not pass the higher of the old zoning or the average of the abutting districts (909.02.D.3)."
+      }
+    },
+    "UPR-B": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "908.04.D.2.d Site Development Standards, Minimum Lot Size",
+        "url": "https://ecode360.com/45475575",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "None."
+      },
+      "setback_front_ft": {
+        "value": 0,
+        "section": "908.04.D.2.d Site Development Standards, Minimum Front and Exterior Sideyard Setbacks",
+        "url": "https://ecode360.com/45475575",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "0 ft for the first 40 ft of height, 10 ft from 41 to 70 ft."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "908.04.D.2.d Site Development Standards, Minimum Interior Sideyard Setbacks",
+        "url": "https://ecode360.com/45475575",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "908.04.D.2.d Site Development Standards, Minimum Rear Setback",
+        "url": "https://ecode360.com/45475575",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "20 ft. 0 ft when the rear is on a way, Tustin Street or Watson Street."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "908.04.D.2.d Site Development Standards, Maximum Height without Bonus",
+        "url": "https://ecode360.com/45475575",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "70 ft with bonus points. Minimum height 20 ft."
+      }
+    },
+    "UC-MU": {
+      "setback_front_ft": {
+        "value": 0,
+        "section": "904.08.C.2 Build-To Zone",
+        "url": "https://ecode360.com/45474391",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "No front setback. A build-to zone of 0 to 10 ft applies on a street, with 60% of the frontage in it. Height comes from the height map (904.08.C.1), so no single number here."
+      }
+    },
+    "RIV-IMU": {
+      "setback_front_ft": {
+        "value": 0,
+        "section": "905.04.E.4.b Street Build-To Zone",
+        "url": "https://ecode360.com/45474542",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "No front setback. A build-to zone of 0 to 10 ft applies on a street, with 60% of the frontage in it."
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "905.04.E.3.a Height",
+        "url": "https://ecode360.com/45474542",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Base height 60 ft, or 45 ft where the RIV height map says so. More with bonus points. Minimum 24 ft for a primary structure. A nonconforming detached house follows the R1D-H rules (905.04.D.3)."
+      }
+    },
+    "GPR-A": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "908.02.D.1(c) Area",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Lot area per dwelling unit for a detached house or two-unit house: 3,000 sq ft. Attached house 2,500 sq ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "908.02.C.3(a) Front Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "15 ft when no abutting lot has a building. Otherwise within the range of the abutting front yards (925.06.B)."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "908.02.C.3(b) Sideyard Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "The average of the abutting lots, but no less than 3 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "908.02.C.3(c) Rear Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "On the north side of Grandview Avenue the rear yard must also keep buildings off slopes over 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "908.02.D.1(b)(1) Main Structure",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "908.02.D.1(b)(2) Accessory Structure",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "GPR-B": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "908.02.D.2(c) Area",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Lot area per unit for a detached house, two- or three-unit house: 3,000 sq ft. Attached 2,500, multi-unit 600."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "908.02.C.3(a) Front Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "15 ft when no abutting lot has a building. Otherwise within the range of the abutting front yards (925.06.B)."
+      },
+      "setback_side_ft": {
+        "value": 3,
+        "section": "908.02.C.3(b) Sideyard Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "The average of the abutting lots, but no less than 3 ft."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "908.02.C.3(c) Rear Setback",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "On the north side of Grandview Avenue the rear yard must also keep buildings off slopes over 30%."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "908.02.D.2(b)(1) Main Structure",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "A special exception can allow 100 ft (908.02.E)."
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "908.02.D.2(b)(2) Accessory Structure",
+        "url": "https://ecode360.com/45475462",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }

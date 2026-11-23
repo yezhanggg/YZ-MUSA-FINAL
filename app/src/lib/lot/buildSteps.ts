@@ -53,6 +53,15 @@ export interface BuildStepsInput {
 export const ASK_TIME = 'Ask the city how long this takes.';
 const GENERAL: StepBasis = { kind: 'general_practice' };
 
+/** What a flood, historic, slope or no-sewer flag means for building, said the same way in the Build steps and the
+ * assistant's parcel answer (parcelTools.ts get_parcel_info). */
+export const FLAG_STEP_TEXT = {
+  historic: 'The lot is in a historic district or uses the historic rule. The design needs approval before the building permit.',
+  site_risk: 'The lot is on a steep slope or in a landslide-prone area. Expect a soils report and extra review.',
+  flood: 'Part of the lot is in a flood zone. Building there needs a floodplain review and may need a raised floor.',
+  no_sewer: 'The lot has no public sewer, so a septic system is needed.',
+} as const;
+
 interface Offices {
   zoning: string;
   building: string;
@@ -187,17 +196,17 @@ export function buildSteps(input: BuildStepsInput): BuildChecklist {
   add(zoning);
 
   if (flags.historic || rules.historic_path) {
-    add({ id: 'historic', title: 'Get historic review', who: offices.historic, what: 'The lot is in a historic district or uses the historic rule. The design needs approval before the building permit.', documents: ['Plans', 'Photos', 'Material samples if asked'], fee: null, fee_key: null, time: ASK_TIME, basis: ruleBasis(noteCitation(rules, /Historic/)), ask_city: true });
+    add({ id: 'historic', title: 'Get historic review', who: offices.historic, what: FLAG_STEP_TEXT.historic, documents: ['Plans', 'Photos', 'Material samples if asked'], fee: null, fee_key: null, time: ASK_TIME, basis: ruleBasis(noteCitation(rules, /Historic/)), ask_city: true });
   }
   if (flags.steep_slope || flags.landslide) {
-    add({ id: 'site_risk', title: 'Check the slope and the soil', who: 'A geotechnical engineer', what: 'The lot is on a steep slope or in a landslide-prone area. Expect a soils report and extra review.', documents: ['Soils and slope report'], fee: null, fee_key: null, time: ASK_TIME, basis: GENERAL, ask_city: true });
+    add({ id: 'site_risk', title: 'Check the slope and the soil', who: 'A geotechnical engineer', what: FLAG_STEP_TEXT.site_risk, documents: ['Soils and slope report'], fee: null, fee_key: null, time: ASK_TIME, basis: GENERAL, ask_city: true });
   }
   if (flags.flood) {
-    add({ id: 'flood', title: 'Check the flood zone rules', who: offices.building, what: 'Part of the lot is in a flood zone. Building there needs a floodplain review and may need a raised floor.', documents: ['Elevation certificate if asked'], fee: null, fee_key: null, time: ASK_TIME, basis: GENERAL, ask_city: true });
+    add({ id: 'flood', title: 'Check the flood zone rules', who: offices.building, what: FLAG_STEP_TEXT.flood, documents: ['Elevation certificate if asked'], fee: null, fee_key: null, time: ASK_TIME, basis: GENERAL, ask_city: true });
   }
 
   const newService = u.table<{ types: string[] }>('cost.new_service_types').types.includes(type);
-  const sewer = flags.sewer === true ? 'Public sewer serves the lot.' : flags.sewer === false ? 'The lot has no public sewer, so a septic system is needed.' : 'Ask if public sewer serves the lot.';
+  const sewer = flags.sewer === true ? 'Public sewer serves the lot.' : flags.sewer === false ? FLAG_STEP_TEXT.no_sewer : 'Ask if public sewer serves the lot.';
   add({
     id: 'water_sewer', title: newService ? 'Arrange water and sewer service' : 'Check water and sewer', who: offices.water,
     what: `${newService ? 'The unit needs its own water and sewer line.' : 'The unit uses the house lines. Check they can carry the extra load.'} ${sewer}`,

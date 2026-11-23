@@ -636,6 +636,105 @@
         "verified_on": "2026-11-13",
         "confidence": "verified"
       }
+    },
+    "PRD": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "145-17D(1)",
+        "url": "https://ecode360.com/print/CO1052?guid=10701772",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Single-family dwellings on local and collector streets. 100 ft on arterial streets. Planned district: the approved plan sets lot size, width, side and rear yards (145-17D)."
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "145-17E",
+        "url": "https://ecode360.com/print/CO1052?guid=10701772",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "30% of the whole PRD, not each lot. Impervious cover 50% of the whole PRD. Height near the edge may not pass the next residential district (145-17F); the Council may allow more inside."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 8 (R-3), Patio house",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "R-3 has no single-family detached house. Figures are for a model home or patio house: 3,500 sq ft per building, width 30 ft at the building line. Duplex 7,000, townhouse 3,000 per unit, multifamily 2,000 per unit. Lots carry the code as R3."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "Attachment 8 (R-3), Front Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "20 ft on local and collector streets, 50 ft on arterial streets."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Attachment 8 (R-3), Side Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Patio house: 10 ft on one side."
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "Attachment 8 (R-3), Rear Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Patio house. Duplex, townhouse and multifamily 40 ft."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 8 (R-3), Maximum Height",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200h%20MFR%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Can be raised by conditional use (note 1). Impervious cover limit 50%."
+      }
+    },
+    "C-1": {
+      "setback_front_ft": {
+        "value": 50,
+        "section": "Attachment 11 (C-1), Front Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "No single-family houses in C-1. The minimum lot size is set by the width, coverage, yards and parking. Min. width 150 ft."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "Attachment 11 (C-1), Side Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "Attachment 11 (C-1), Rear Yard",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.3,
+        "section": "Attachment 11 (C-1), Maximum Coverage",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "30% buildings. 70% total impervious."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Attachment 11 (C-1), Maximum Height",
+        "url": "https://ecode360.com/attachment/CO1052/CO1052-200k%20General%20Comm%20District.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }

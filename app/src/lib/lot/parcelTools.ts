@@ -1,7 +1,8 @@
 // The assistant's parcel tools: the public record facts of a lot, its property tax, and what to do next (steps, what
 // to bring, what to ask). Same data as the Parcel and Next Step tabs (lib/lot/parcel.ts, lotTax.ts, nextSteps.ts), so
 // the chat and the screen agree. Registered with the other lot tools in agentTools.ts.
-import { buildSteps } from './buildSteps.js';
+import { FLAG_STEP_TEXT, buildSteps } from './buildSteps.js';
+import { districtTable } from './districtRules.js';
 import { NOTICE } from './citations.js';
 import { currentBill, millsText, rateSentence, ratePct, taxNotes, taxRates, unitTax, unitTaxSentence } from './lotTax.js';
 import { nextSteps } from './nextSteps.js';
@@ -37,7 +38,7 @@ export const PARCEL_TOOLS: ToolDef[] = [
   {
     name: 'get_parcel_info',
     description:
-      'The public record facts of one lot and its town: parcel number, address, municipality, county, ZIP, school district, census tract, council district, lot size, frontage and depth, the house (year built, living area, stories, garage), the zoning district with its full name, overlays and flags (flood, historic, slope, sewer), the approval path of each unit type today, the zoning code sections behind the answer, the official documents of the town (zoning map, zoning code, comprehensive plan, ADU page, permit and fee pages, rental license, historic and zoning board pages, property map) and the offices to call with their phone numbers. Use it for any question about the parcel, its records, its zoning district, plans and documents, or who to contact.',
+      'The public record facts of one lot and its town: parcel number, address, municipality, county, ZIP, school district, census tract, council district, lot size, frontage and depth, the house (year built, living area, stories, garage), the zoning district with its full name, overlays and flags (flood, historic, slope, sewer) with what a flag means for building, the district rules for any building (district_rules: smallest lot, front, side and rear yards, house height and stories, building and paved coverage, outbuilding yards and height, parking, each with its code section, and the rules not on file), the approval path of each unit type today, the zoning code sections behind the answer, the official documents of the town (zoning map, zoning code, comprehensive plan, ADU page, permit and fee pages, rental license, historic and zoning board pages, property map) and the offices to call with their phone numbers. Use it for any question about the parcel, its records, its zoning district and the district yards, height and coverage, plans and documents, or who to contact.',
     input_schema: { type: 'object', properties: { lot_id: LOT_ID } },
   },
   {
@@ -58,7 +59,27 @@ export type ParcelToolName = 'get_parcel_info' | 'get_property_tax' | 'get_next_
 
 const factsObj = (rows: { key: string; value: string }[]) => Object.fromEntries(rows.map((r) => [r.key, r.value]));
 
-export function getParcelInfo(lot: LotRecord, file: TownsInfoFile = TOWNS_INFO) {
+/** What each flag that is set means for building, and who reviews it. Only flags that are set (or no public sewer). */
+function flagsThatMatter(lot: LotRecord, file: TownsInfoFile) {
+  const f = lot.zoning.flags ?? {};
+  const office = (role: string) => officesOf(lot, file).find((o) => o.role === role)?.office.name ?? null;
+  const out: { flag: string; means: string; who?: string }[] = [];
+  if (f.historic) out.push({ flag: 'Historic district', means: FLAG_STEP_TEXT.historic, ...(office('historic') ? { who: office('historic')! } : {}) });
+  if (f.flood) out.push({ flag: 'Flood zone', means: FLAG_STEP_TEXT.flood, ...(office('building') ? { who: office('building')! } : {}) });
+  if (f.steep_slope || f.landslide) out.push({ flag: f.landslide ? 'Landslide-prone' : 'Steep slope', means: FLAG_STEP_TEXT.site_risk });
+  if (f.sewer === false) out.push({ flag: 'No public sewer', means: FLAG_STEP_TEXT.no_sewer });
+  return out;
+}
+
+/** The rule for the district table, said with the table. */
+export const DISTRICT_RULE =
+  'district_rules are the zoning district\'s own rules for any building on the lot (the house, additions, garages). Cite the section of a row. A rule in not_on_file is not on file: say so, never guess or use a typical value. A backyard unit has its own ADU rules (get_lot_rules), which can differ.';
+
+/**
+ * get_parcel_info. `rules` is the lot town's rule file (shared/rules/<file>.json) for the district table, loaded by the
+ * caller (makeLotExecutors), or null when there is none.
+ */
+export function getParcelInfo(lot: LotRecord, file: TownsInfoFile = TOWNS_INFO, rules: Record<string, unknown> | null = null) {
   const z = zoningView(lot, 'today', file);
   const rec = propertyRecordLink(lot, file);
   const dims = lotDimensions(lot);
@@ -72,9 +93,11 @@ export function getParcelInfo(lot: LotRecord, file: TownsInfoFile = TOWNS_INFO) 
       district_name: z.district_name ?? 'not on file',
       overlays: z.overlays,
       flags: Object.fromEntries(z.flags.map((f) => [f.label, f.value === true ? 'yes' : f.value === false ? 'no' : 'not on file'])),
+      flags_that_matter: flagsThatMatter(lot, file),
       approval_today_by_unit_type: Object.fromEntries(z.paths.map((p) => [p.title, p.label])),
       code_sections: z.sections.map((s) => ({ section: s.section, url: s.url, checked: s.checked })),
     },
+    district_rules: { ...districtTable(rules, z.district), rule: DISTRICT_RULE },
     property_record: rec ? { label: rec.label, url: rec.url, direct_link: rec.direct } : 'not on file',
     documents: documentsOf(lot, file).flatMap((g) => g.links.map((l) => ({ group: g.title, kind: l.kind, label: l.label, url: l.url, note: l.note ?? null, checked_on: l.checked_on }))),
     offices: officesOf(lot, file).map((o) => ({ for: o.title, name: o.office.name, phone: o.office.phone ?? 'not on file', email: o.office.email ?? null, url: o.office.url ?? null, checked_on: o.office.checked_on })),

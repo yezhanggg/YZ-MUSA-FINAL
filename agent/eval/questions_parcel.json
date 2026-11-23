@@ -1,6 +1,6 @@
 {
- "about": "Questions on the Parcel tab and Be prepared (Nov 21), and on areas picked on a boundary (Nov 22): parcel facts, property tax, documents, offices, what to bring and ask, county, tract and ZIP code answers, and two general passages. Made by agent/eval/make_parcel_questions.ts: expected values read from tool results. Do not edit by hand.",
- "generated_at": "2026-11-23T04:08:42.417Z",
+ "about": "Questions on the Parcel tab and Be prepared (Nov 21), and on areas picked on a boundary and the district tables (Nov 22): parcel facts, district yards, height and coverage, flags, property tax, documents, offices, what to bring and ask, county, tract and ZIP code answers, and two general passages. Made by agent/eval/make_parcel_questions.ts: expected values read from tool results. Do not edit by hand.",
+ "generated_at": "2026-11-23T04:33:54.351Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/lots/philadelphia",
@@ -1448,6 +1448,1238 @@
    ],
    "scenario": null,
    "rubric": "With no lot open, gives Lower Merion's zoning map link from get_place_answer town_documents, with the date it was checked."
+  },
+  {
+   "id": "par-22",
+   "category": "parcel",
+   "question": "What is the front setback for my lot's zoning district?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "district front yard",
+     "value": 30,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "section of the front yard",
+     "value": "903.03.B"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the R2-L front yard from the district table with its section (903.03.B)."
+  },
+  {
+   "id": "par-23",
+   "category": "parcel",
+   "question": "How tall can a house be in my zoning district?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "district height limit",
+     "value": 40,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "section of the height limit",
+     "value": "903.03.B"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the R2-L height limit for a house from the district table, with its section."
+  },
+  {
+   "id": "par-24",
+   "category": "parcel",
+   "question": "What is the lot coverage limit for my lot's district?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says the coverage limit is not on file",
+     "accept": [
+      "not on file",
+      "not in my data",
+      "n't in my data",
+      "can't tell you",
+      "can't tell from my data",
+      "cannot tell from my data",
+      "not included in my data",
+      "don't have",
+      "do not have",
+      "no record",
+      "unknown",
+      "not available",
+      "not listed",
+      "no data",
+      "not known",
+      "isn't on file",
+      "is not on file"
+     ],
+     "evidence": "Building coverage limit"
+    },
+    {
+     "kind": "behaviour",
+     "label": "names who to ask",
+     "accept": [
+      "zoning",
+      "city planning",
+      "255-2219"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "coverage[^.]{0,40}\\b\\d{1,2} ?(%|percent)",
+     "why": "gives a coverage figure the district table does not have"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The R2-L district table has no coverage limit: says it is not on file here, gives no typical figure, and names the zoning office to ask."
+  },
+  {
+   "id": "par-25",
+   "category": "parcel",
+   "question": "How much of my lot can buildings cover, and how deep does the rear yard have to be?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "building coverage limit",
+     "value": 75,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "number",
+     "label": "rear yard",
+     "value": 9,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "the district table section",
+     "value": "14-701(2)"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the RSA-5 building coverage limit (75% for an inside lot) and the rear yard from the district table, citing 14-701(2)."
+  },
+  {
+   "id": "par-26",
+   "category": "parcel",
+   "question": "Is this a corner lot, and would that change how much of the lot I can build on?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "corner lot",
+     "value": "No",
+     "accept": [
+      "not a corner",
+      "isn't a corner",
+      "is not a corner",
+      "no,",
+      "no."
+     ],
+     "reject": [
+      "is a corner lot"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "coverage limit for this lot",
+     "value": 75,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "number",
+     "label": "corner lot coverage",
+     "value": 80,
+     "tol_pct": 0,
+     "unit": "pct"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Says the lot is not a corner lot, so the inside lot coverage limit holds (75%); a corner lot would get 80% (the district row note)."
+  },
+  {
+   "id": "par-27",
+   "category": "parcel",
+   "question": "How far back from the street does my house have to be in this district?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the front yard matches the neighbors",
+     "accept": [
+      "neighbor",
+      "neighbour",
+      "contextual",
+      "line up",
+      "next door",
+      "nearby houses"
+     ],
+     "evidence": "Match the neighbors"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "front (yard|setback)[^.]{0,30}\\b\\d+ ?(ft|feet|foot)",
+     "why": "gives a fixed front yard the district table does not have"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The RSA-5 front yard has no set number: the house front lines up with its neighbors (table notes [4][5]). No fixed figure."
+  },
+  {
+   "id": "par-28",
+   "category": "parcel",
+   "question": "Is my lot in a historic district, and what does that mean if I build?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "yes, a historic district",
+     "accept": [
+      "historic district",
+      "is in a historic",
+      "yes"
+     ],
+     "evidence": "Historic district"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the design needs approval before the permit",
+     "accept": [
+      "approv",
+      "review"
+     ],
+     "evidence": "The design needs approval before the building permit."
+    },
+    {
+     "kind": "behaviour",
+     "label": "the Historical Commission",
+     "accept": [
+      "historical commission"
+     ],
+     "evidence": "Philadelphia Historical Commission"
+    },
+    {
+     "kind": "behaviour",
+     "label": "its phone",
+     "accept": [
+      "(215) 686-7660",
+      "215-686-7660",
+      "686-7660"
+     ],
+     "evidence": "(215) 686-7660"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Yes: the lot is in a historic district, so the Philadelphia Historical Commission must approve the design before the building permit. Gives its phone."
+  },
+  {
+   "id": "par-29",
+   "category": "parcel",
+   "question": "What is the smallest lot allowed in my district, and how deep must the rear yard be?",
+   "context": {
+    "lot": {
+     "id": "42091-120000004002",
+     "tract": "42091205600",
+     "label": "203 BARRIE RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "smallest lot",
+     "value": 6000,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "number",
+     "label": "rear yard",
+     "value": 15,
+     "tol_pct": 0,
+     "unit": "ft"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives Narberth 3B's smallest lot and rear yard from the district table (Table 500-503-1)."
+  },
+  {
+   "id": "par-30",
+   "category": "parcel",
+   "question": "How close to the side and rear lot lines can I put a garage or shed in my district?",
+   "context": {
+    "lot": {
+     "id": "42091-120000004002",
+     "tract": "42091205600",
+     "label": "203 BARRIE RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "outbuilding side yard",
+     "value": 3,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "section",
+     "label": "section of the outbuilding yards",
+     "value": "500-801"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the Narberth 3B outbuilding side and rear yards (Table 500-801-1), and the larger yard on a side that faces a street."
+  },
+  {
+   "id": "par-31",
+   "category": "parcel",
+   "question": "What's the minimum lot size and the building coverage limit in my zoning district?",
+   "context": {
+    "lot": {
+     "id": "42091-540001024209",
+     "tract": "42091201404",
+     "label": "1208 ASCOT DR"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "smallest lot",
+     "value": 26000,
+     "tol_pct": 0,
+     "unit": "sqft"
+    },
+    {
+     "kind": "number",
+     "label": "building coverage limit",
+     "value": 15,
+     "tol_pct": 0,
+     "unit": "pct"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives Upper Dublin A's smallest lot (with public sewer and water) and building coverage limit, with the section (255-15A(3))."
+  },
+  {
+   "id": "par-32",
+   "category": "parcel",
+   "question": "What are the front setback and the height limit for my district?",
+   "context": {
+    "lot": {
+     "id": "42091-400005084006",
+     "tract": "42091204300",
+     "label": "126 MINFFORD RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "front yard",
+     "value": 40,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "number",
+     "label": "house height limit",
+     "value": 35,
+     "tol_pct": 0,
+     "unit": "ft"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives Lower Merion LDR3's front yard and house height limit from Table 4.1.3."
+  },
+  {
+   "id": "par-33",
+   "category": "parcel",
+   "question": "How much of my lot can be covered by buildings?",
+   "context": {
+    "lot": {
+     "id": "42029-1-4-50",
+     "tract": "42029302400",
+     "label": "307 W MARSHALL ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "coverage limit for a lot under 12,000 sq ft",
+     "value": 30,
+     "tol_pct": 0,
+     "unit": "pct"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The West Chester lot is under 12,000 sq ft, so the NC-1 building coverage limit is 30% (112-306B); larger lots get less."
+  },
+  {
+   "id": "par-34",
+   "category": "parcel",
+   "question": "Is the height limit for a backyard cottage the same as for my house?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ],
+    [
+     "get_lot_rules",
+     "test_unit_on_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    },
+    {
+     "name": "get_lot_rules",
+     "input": {
+      "scenario": "today"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "house height limit (district)",
+     "value": 40,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "number",
+     "label": "backyard unit height limit (ADU rule)",
+     "value": 30,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says they differ",
+     "accept": [
+      "not the same",
+      "different",
+      "lower",
+      "differ",
+      "no,",
+      "no."
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "No: the R2-L district lets a house reach 40 ft (903.03.B), while the ADU rule caps a backyard unit at 30 ft. Says which is which."
+  },
+  {
+   "id": "par-35",
+   "category": "parcel",
+   "question": "What would change for my lot under HB 2186?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_lot_rules",
+     "compare_scenarios",
+     "test_unit_on_lot"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_lot_rules",
+     "input": {
+      "scenario": "state_reform"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "backyard cottage approval under the bill",
+     "value": "By right",
+     "accept": [
+      "by right",
+      "without a hearing",
+      "no exception"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "side yard under the bill",
+     "value": 4,
+     "tol_pct": 0,
+     "unit": "ft"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says it is a bill, not law",
+     "accept": [
+      "not law",
+      "not yet law",
+      "not a law",
+      "has not passed the senate",
+      "hasn't passed the senate",
+      "pending",
+      "waiting in the senate",
+      "only passed the house",
+      "still in the senate",
+      "not passed",
+      "a bill"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "state_reform",
+   "rubric": "Under HB 2186 (a bill, not law) a backyard cottage here goes from an Administrator's Exception to by right, and the side and rear yards go from 5 ft to 4 ft (changes_from_today)."
+  },
+  {
+   "id": "par-36",
+   "category": "parcel",
+   "question": "Can I build a second story over my garage?",
+   "context": {
+    "lot": {
+     "id": "42091-120000004002",
+     "tract": "42091205600",
+     "label": "203 BARRIE RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "test_unit_on_lot",
+     "explain_limit"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "test_unit_on_lot",
+     "input": {
+      "type": "over_garage"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "no garage on file",
+     "accept": [
+      "no garage",
+      "doesn't have a garage",
+      "does not have a garage",
+      "no existing garage",
+      "not find a garage",
+      "didn't find a garage",
+      "no garage or outbuilding",
+      "without a garage"
+     ],
+     "evidence": "No garage or outbuilding was found on this lot."
+    },
+    {
+     "kind": "behaviour",
+     "label": "a new garage with a unit is a new detached unit",
+     "accept": [
+      "new detached",
+      "new garage",
+      "backyard cottage",
+      "detached unit",
+      "build a new"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "No garage is on file for this lot, so there is nothing to build on; a new garage with a unit over it counts as a new detached unit."
+  },
+  {
+   "id": "par-37",
+   "category": "parcel",
+   "question": "If I add a unit inside my house, how much more property tax would I pay each year than without it?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_property_tax"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_property_tax",
+     "input": {
+      "type": "internal"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "added yearly tax once the abatement ends",
+     "value": 1262.13,
+     "tol_pct": 3,
+     "unit": "usd"
+    },
+    {
+     "kind": "number",
+     "label": "years of abatement",
+     "value": 10,
+     "tol_pct": 0,
+     "unit": "count"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the current bill is not in the data",
+     "accept": [
+      "not in my data",
+      "n't in my data",
+      "not in the data",
+      "don't have",
+      "do not have",
+      "county record",
+      "property.phila.gov"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(your|the lot'?s|current|today'?s) (property )?tax (bill )?is (about |around )?\\$\\d",
+     "why": "gives the lot's own tax bill, which is not in the data"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "The unit adds about $1,262 a year once the 10-year abatement ends (about $0 in year 1), an estimate. The lot's tax now is not in the data: the county record has it."
+  },
+  {
+   "id": "par-38",
+   "category": "parcel",
+   "question": "Which office handles the building permit and which handles zoning? Give me both phone numbers.",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning office phone",
+     "accept": [
+      "(412) 255-2219",
+      "412-255-2219",
+      "255-2219"
+     ],
+     "evidence": "(412) 255-2219"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the building permit office phone",
+     "accept": [
+      "412-255-2175",
+      "412-255-2175",
+      "255-2175"
+     ],
+     "evidence": "412-255-2175"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Names City Planning (zoning) and PLI (building permits) with both phone numbers from get_parcel_info."
   }
  ]
 }

@@ -815,6 +815,223 @@
         "confidence": "verified",
         "note": "Impervious 35%."
       }
+    },
+    "MD": {
+      "setback_front_ft": {
+        "value": 30,
+        "section": "255-49D(2)(a)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26082",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Front yard on each street or common parking area. The tract must be at least 3 acres (255-49A) with a 75 ft street setback and 50 ft from tract lines (255-49D(1)). Any use allowed in a residential district is allowed (255-48A). The code names a side yard only for twin and duplex buildings: 20 ft (255-49D(2)(b))."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "255-49D(2)(c)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26082",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.15,
+        "section": "255-49C",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26082",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "15% of the tract area, not of each lot."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-50A",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26103",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Age-restricted multiple dwellings may go up to 12 ft higher with larger yards (255-50B). Impervious cover limit 40% (255-49G). 40% of the tract and/or lot area."
+      }
+    },
+    "MRD": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "255-131D(1)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27219",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Single-family detached. Lot width 80 ft. Patio house 7,000 sq ft, twin 6,000 sq ft per unit, townhouse 2,500 sq ft. Density 2.75 units per acre for the whole MRD (255-131A)."
+      },
+      "setback_front_ft": {
+        "value": 35,
+        "section": "255-131D(3)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27219",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "From the right-of-way line. Corner lot: front yard on both streets (255-132D)."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "255-131D(4)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27219",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Single-family detached. 10 ft each, 25 ft together."
+      },
+      "setback_sides_total_ft": {
+        "value": 25,
+        "section": "255-131D(4)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27219",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 30,
+        "section": "255-131D(5)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27219",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Single-family detached."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-132B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27260",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Impervious cover limit 35% (255-131C). For the entire MRD, not each lot."
+      },
+      "accessory_setback_side_ft": {
+        "value": 4,
+        "section": "255-132E",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27260",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Accessory structures only in the rear and side yards of detached and patio houses, at least 4 ft from the side and rear lines."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 4,
+        "section": "255-132E",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27260",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "parking_spaces": {
+        "value": 2,
+        "section": "255-132G",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-27260",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "At least 2 off-street spaces per dwelling unit. Garage spaces do not count."
+      }
+    },
+    "MRH": {
+      "min_lot_sqft": {
+        "value": null,
+        "section": "255-284A",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29540",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Planned community: the lot must be at least 40 acres with 800 ft of width on a road. The approved plan sets the lots and yards inside it."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "255-284F",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-29540",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "35 ft for residential uses other than the senior independent living campus. Impervious cover limit 40% (255-284D). 40% of total lot area."
+      }
+    },
+    "CR-L": {
+      "setback_front_ft": {
+        "value": 40,
+        "section": "255-95A",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "40 ft on each street of a corner lot."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "255-95B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Only on a side that abuts a residential district: 20 ft or the residential side yard, whichever is larger. No side yard is named elsewhere."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "255-95C",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "255-95D(1)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "255-95E(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Same yard and bulk rules for Class L and Class I. This row is Class L. Impervious cover limit 75% (255-95D(2)). The online text reads '7 5c7o' of total lot area, a print error read here as 75%."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "255-95E(1)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "CR-I": {
+      "setback_front_ft": {
+        "value": 40,
+        "section": "255-95A",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "40 ft on each street of a corner lot."
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "255-95B",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Only on a side that abuts a residential district: 20 ft or the residential side yard, whichever is larger. No side yard is named elsewhere."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "255-95C",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "255-95D(1)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "255-95E(2)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Same yard and bulk rules for Class L and Class I. This row is Class I. Impervious cover limit 75% (255-95D(2)). The online text reads '7 5c7o' of total lot area, a print error read here as 75%."
+      },
+      "principal_max_stories": {
+        "value": 2,
+        "section": "255-95E(1)",
+        "url": "https://codelibrary.amlegal.com/codes/upperdublin/latest/upperdublintwp_pa/0-0-0-26692",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }

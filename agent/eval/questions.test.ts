@@ -44,7 +44,7 @@ describe('eval set shape', () => {
   it.skipIf(!set)('has 10 questions in each main category, up to 5 on town rule files, unique ids', () => {
     for (const c of CATEGORIES.filter((c) => !['town_rules', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map'].includes(c))) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
     // Made by make_more_questions.ts, make_feature_questions.ts and make_parcel_questions.ts, when their files are there.
-    for (const [c, k] of [['allentown', 8], ['rule_text', 6], ['features', 5], ['parcel', 21]] as const) expect([0, k]).toContain(set!.questions.filter((q) => q.category === c).length);
+    for (const [c, k] of [['allentown', 8], ['rule_text', 6], ['features', 5], ['parcel', 38]] as const) expect([0, k]).toContain(set!.questions.filter((q) => q.category === c).length);
     expect(set!.questions.filter((q) => q.category === 'town_rules').length).toBeLessThanOrEqual(5);
     // questions_expert.json: 40 or more hand-written questions when the file is there. A follow-up's history ends
     // with the assistant's turn, so the question is the user's next turn.

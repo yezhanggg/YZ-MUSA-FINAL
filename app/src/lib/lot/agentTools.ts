@@ -92,6 +92,9 @@ export interface LotAgentProvider {
   rents?(lot: LotRecord): RentByBedroom | null;
   /** The money settings on screen (cost, finish, financing, rent), so answers match the money card. */
   money?(lot: LotRecord): MoneyOptions;
+  /** A town rule file by its key (shared/rules/<key>.json), for the district table of get_parcel_info. Missing: the
+   *  table says its rules are not on file. */
+  ruleFile?(key: string): Promise<Record<string, unknown> | null>;
 }
 
 export interface ToolInput {
@@ -468,7 +471,11 @@ export function makeLotExecutors(p: LotAgentProvider): Record<LotToolName, (inpu
       });
     }),
     explain_limit: withLot((lot, i) => explainLimit(lot, unitFrom(i, lot, scenarioFrom(i, p), p))),
-    get_parcel_info: withLot((lot) => compact(getParcelInfo(lot))),
+    get_parcel_info: withLot(async (lot) => {
+      const key = lotTownOf(lot)?.file ?? null;
+      const rules = key && p.ruleFile ? await p.ruleFile(key).catch(() => null) : null;
+      return compact(getParcelInfo(lot, undefined, rules));
+    }),
     // Tax is about building the unit: today's rules unless the call names a bill.
     get_property_tax: withLot((lot, i) => compact(getPropertyTax(lot, unitFrom(i, lot, scenarioFrom(i, p), p), p.money?.(lot) ?? { rent_by_bedroom: p.rents?.(lot) ?? null }))),
     get_next_steps: withLot((lot, i) => compact(getNextSteps(lot, unitFrom(i, lot, scenarioFrom(i, p), p)))),

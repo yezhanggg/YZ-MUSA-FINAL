@@ -862,6 +862,53 @@
         "confidence": "verified",
         "note": "In TND-1 the by-right standards (399-91C) set a 500 sq ft minimum and no maximum. The 800 sq ft cap (399-91B(4)) is the special exception cap and does not apply in TND-1"
       }
+    },
+    "I/R": {
+      "min_lot_sqft": {
+        "value": 45000,
+        "section": "399-57A(1)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Net 45,000 sq ft, gross 1 1/2 acres. Width 175 ft. Figures for uses in 399-56A, which include a single-family detached dwelling. Clustered houses by conditional use follow 399-57C and 399-58C."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "399-57A(3)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "399-57A(4)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Side and rear 40 ft. An accessory structure may sit in a side or rear yard per 399-75."
+      },
+      "setback_rear_ft": {
+        "value": 40,
+        "section": "399-57A(4)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "399-57A(6)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Three stories or 35 ft, whichever is less. Impervious cover limit 15% of net lot area (399-57A(5))."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "399-57A(6)",
+        "url": "https://ecode360.com/11882846",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }

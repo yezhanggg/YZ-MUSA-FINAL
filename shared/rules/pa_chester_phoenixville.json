@@ -490,6 +490,230 @@
         "confidence": "secondary",
         "note": "'Min. Building Spacing 10 ft.' (twin 10 ft). Whether it binds an accessory building on the same lot is not settled."
       }
+    },
+    "MG": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "MG: all RI house types are allowed and use the RI standards, which may be changed by up to 25% to fit the street. Figures are the RI single-family detached ones. Starred: lots under one acre follow the infill standards of 27-301.1."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "RI single-family detached, used here per the Residential row of 27-307."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Impervious cover limit 80% (Attachment 1, 27-302 RI, SF Detached)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'Accessory Building-rear/side 8/5 ft. or attached'."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 8,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      }
+    },
+    "CD": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "CD: all RI house types are allowed and use the RI standards, which may be changed by up to 25% to fit the street. Figures are the RI single-family detached ones. Starred: lots under one acre follow the infill standards of 27-301.1."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "RI single-family detached, used here per the Residential row of 27-306."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Impervious cover limit 80% (Attachment 1, 27-302 RI, SF Detached)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'Accessory Building-rear/side 8/5 ft. or attached'."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 8,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      }
+    },
+    "MI": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "MI: all RI house types are allowed and use the RI standards, which may be changed by up to 25% to fit the street. Figures are the RI single-family detached ones. Starred: lots under one acre follow the infill standards of 27-301.1."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "RI single-family detached, used here per the Residential row of 27-304."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Impervious cover limit 80% (Attachment 1, 27-302 RI, SF Detached)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'Accessory Building-rear/side 8/5 ft. or attached'."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 8,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      }
+    },
+    "NC": {
+      "min_lot_sqft": {
+        "value": 3500,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "NC: all RI house types are allowed and use the RI standards, which may be changed by up to 25% to fit the street. Figures are the RI single-family detached ones. Starred: lots under one acre follow the infill standards of 27-301.1."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "RI single-family detached, used here per the Residential row of 27-305."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Impervious cover limit 80% (Attachment 1, 27-302 RI, SF Detached)."
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'Accessory Building-rear/side 8/5 ft. or attached'."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 8,
+        "section": "Attachment 1, 27-302 RI, SF Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      }
+    },
+    "TC": {
+      "min_lot_sqft": {
+        "value": 3000,
+        "section": "Attachment 1, 27-303 TC, Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "TC chart has no house row. These are the Detached (low rise) building figures. Starred: lots under one acre follow 27-301.1. No residential use on the ground story of buildings on Bridge Street east of Church, Main and Gay Streets."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "Attachment 1, 27-303 TC, Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "Attachment 1, 27-303 TC, Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "Attachment 1, 27-303 TC, Detached",
+        "url": "https://ecode360.com/attachment/339060/PH1486-027a%20District%20Specs.pdf",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "Min. building height 35 ft. Impervious cover limit 90% (Attachment 1, 27-303 TC, Detached)."
+      }
     }
   }
 }

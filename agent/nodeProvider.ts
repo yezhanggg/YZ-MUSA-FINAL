@@ -18,6 +18,7 @@ import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoning
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
 import { memoryTractTowns, type TractTowns, type TractTownsSource } from '../app/src/agent/tractTowns';
 import { addressIndexSource } from '../app/src/lib/lot/addressIndex';
+import { ruleFileByKey } from '../app/src/agent/ruleText';
 import type { AreaRef } from '../app/src/agent/boundaryTool';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
@@ -222,6 +223,7 @@ function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Sce
     unit,
     rents: (rec) => tractRents(tractProps(rec)),
     money: (rec) => moneyOptions(rec, DEFAULT_MONEY, tractProps(rec)),
+    ruleFile: (key) => ruleFileByKey(key) as Promise<Record<string, unknown> | null>,
   };
 }
 

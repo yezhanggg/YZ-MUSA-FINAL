@@ -5,7 +5,7 @@ import { fixture } from './__fixtures__';
 import { ASSUMPTIONS, proForma } from '../money';
 import { buildSteps } from './buildSteps';
 import { taxNotes, taxRates, townTaxRate, unitTax, unitTaxSentence, rateSentence } from './lotTax';
-import { districtRows } from './districtRules';
+import { districtRows, districtTable } from './districtRules';
 import { districtName, documentsOf, lotDimensions, officesOf, parcelFacts, prepareFor, zoningView } from './parcel';
 import { getNextSteps, getParcelInfo, getPropertyTax } from './parcelTools';
 import { lotMoney } from './summary';
@@ -260,6 +260,39 @@ describe('district rules', () => {
     expect(districtRows(phl, 'RSA5').length).toBeGreaterThan(2);
     expect(districtRows(phl, 'NOPE')).toEqual([]);
     expect(districtRows(null, 'R2-L')).toEqual([]);
+  });
+
+  it('give the assistant the district table: rows with sections, rows with no set number, and what is not on file', async () => {
+    const pgh = (await import('../../../../shared/rules/pittsburgh.json', { with: { type: 'json' } })).default as Record<string, unknown>;
+    const t = districtTable(pgh, 'R2-L');
+    const leaf = (k: string) => ((pgh.districts as Record<string, Record<string, { value: unknown; section: string }>>)['R2-L'][k]);
+    expect(t.district).toBe('R2-L');
+    expect(t.rows.find((r) => r.rule === 'Front yard')).toMatchObject({ value: `${leaf('setback_front_ft').value} ft`, section: leaf('setback_front_ft').section });
+    expect(t.rows.every((r) => r.section)).toBe(true);
+    // Every label is said once: as a row, as a row with no set number, or as not on file.
+    const said = [...t.rows.map((r) => r.rule), ...(t.no_fixed_number ?? []).map((r) => r.rule), ...(t.not_on_file as string[])];
+    expect(new Set(said).size).toBe(said.length);
+    expect(said).toHaveLength(14);
+    expect(t.source?.url).toMatch(/^https:/);
+    // Philadelphia RSA-5: a front yard that matches the neighbors has no number, so its note is given instead.
+    const phl = (await import('../../../../shared/rules/philadelphia.json', { with: { type: 'json' } })).default as Record<string, unknown>;
+    const p = districtTable(phl, 'RSA5');
+    expect(p.district).toBe('RSA-5');
+    expect(p.no_fixed_number?.find((r) => r.rule === 'Front yard')?.note).toMatch(/neighbors/i);
+    // No row, no file, no district: a plain "not on file" sentence, never a guess.
+    expect(districtTable(phl, 'NOPE')).toMatchObject({ rows: [], not_on_file: expect.stringMatching(/not on file/) });
+    expect(districtTable(null, 'R2-L').not_on_file).toMatch(/No district table/);
+    expect(districtTable(pgh, null).not_on_file).toMatch(/district of this lot is not on file/);
+  });
+
+  it('get_parcel_info carries the district table of the rule file it is given', async () => {
+    const nar = (await import('../../../../shared/rules/pa_montgomery_narberth.json', { with: { type: 'json' } })).default as Record<string, unknown>;
+    const lot = fixture('nar_detached');
+    const r = getParcelInfo(lot, FAKE, nar);
+    expect(r.district_rules.district).toBe(districtTable(nar, lot.zoning.district).district);
+    expect(r.district_rules.rows.length).toBeGreaterThan(0);
+    expect(r.district_rules.rule).toMatch(/not on file/);
+    expect(getParcelInfo(lot, FAKE).district_rules.rows).toEqual([]);
   });
 });
 

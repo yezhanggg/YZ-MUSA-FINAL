@@ -16,6 +16,7 @@ import { lotPlacesText } from './lotPlaces';
 import { lotTownOf } from '../lib/lot/towns';
 import { flyToPlace } from '../tool/flyToPlace';
 import { addressIndexSource } from '../lib/lot/addressIndex';
+import { ruleFileByKey } from './ruleText';
 
 /** { town } of a lot record for find_lot, when its town is known. */
 const townOf = (r: LotRecord) => {
@@ -94,6 +95,8 @@ export const lotProvider: LotAgentProvider = {
   },
   rents: (lot) => tractRents(tractOf(lot)),
   money: (lot) => moneyOptions(lot, useTool.getState().money, tractOf(lot)),
+  // get_parcel_info's district table: the town rule file, one lazy chunk per town (the Parcel tab loads the same one).
+  ruleFile: (key) => ruleFileByKey(key) as Promise<Record<string, unknown> | null>,
 };
 
 export const browserProvider: DataProvider = {

@@ -933,6 +933,257 @@
         "confidence": "unverified",
         "note": "Table 8.1 'I' column not read for single-family with ADU."
       }
+    },
+    "VC": {
+      "min_lot_sqft": {
+        "value": 1600,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Width 16 ft. Impervious cover limit 70%."
+      },
+      "setback_front_ft": {
+        "value": 12,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Setbacks, Front",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "12 ft minimum, 15 ft maximum."
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Setbacks, Side",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'0 or 5 minimum' (note 4): 0 ft on a shared wall, else at least 5 ft."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Setbacks, Rear",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "None."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "2 stories minimum to 3 stories up to 40 ft."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Accessory Buildings and Structures, Side",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'0 or 5 minimum'. Front 20 ft behind the main building, front corner 10 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Accessory Buildings and Structures, Rear",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "155-4.3 Table 4.3.1 VC Dimensional Standards, Building Height, Accessory structure",
+        "url": "https://ecode360.com/35686381",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "1 story up to 15 ft. Accessory building: n/a."
+      }
+    },
+    "IE3": {
+      "min_lot_sqft": {
+        "value": 7500,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Lot area",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Width 60 ft. Impervious cover limit 47%."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Setbacks, Front",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Setbacks may grow with building height (note 1)."
+      },
+      "setback_side_ft": {
+        "value": 50,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Setbacks, Side",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Note 2: a 20 ft buffer is required."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Setbacks, Rear",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Note 2: a 20 ft buffer is required."
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "'3 stories up to 45 feet'. Up to 5 stories or 65 ft where setbacks increase (note 3)."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "155-4.4 Table 4.4.3.C IE3 Dimensional Standards, Building Height, Principal",
+        "url": "https://ecode360.com/35686426",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "BMMD-3": {
+      "setback_front_ft": {
+        "value": 0,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Setbacks, BMMD-3, Front (minimum)",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "See note 4."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Setbacks, BMMD-3, Side",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'0 or 10 minimum' (note 6): 0 ft on a shared wall, else at least 10 ft."
+      },
+      "setback_rear_ft": {
+        "value": 0,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Setbacks, BMMD-3, Rear",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "See note 7."
+      },
+      "max_building_coverage": {
+        "value": 0.75,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Building area, BMMD-2 and BMMD-3",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Building area 75% maximum. Impervious cover limit 85%. Lot area: see note 1."
+      },
+      "principal_max_height_ft": {
+        "value": 60,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Building Height, BMMD-2 and BMMD-3",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "6 stories or 60 ft. Lower next to MDR1, and a row house is 3 stories or 45 ft."
+      },
+      "principal_max_stories": {
+        "value": 6,
+        "section": "155-6.2 Table 6.2 BMMD Dimensional Standards, Building Height, BMMD-2 and BMMD-3",
+        "url": "https://ecode360.com/35686661",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "RHR": {
+      "setback_front_ft": {
+        "value": 20,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Setbacks, Front",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Lot area: none. Width 20 ft. Impervious cover limit 60%."
+      },
+      "setback_side_ft": {
+        "value": 15,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Setbacks, Side",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Setbacks, Rear",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 65,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "2 stories minimum, 5 stories maximum, up to 65 ft."
+      },
+      "principal_max_stories": {
+        "value": 5,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Building Height, Principal building",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 15,
+        "section": "155-6.3 Table 6.3 RHR Dimensional Standards, Building Height, Accessory structure",
+        "url": "https://ecode360.com/35686793",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "1 story up to 15 ft. Accessory building: n/a."
+      }
+    },
+    "BMV4": {
+      "setback_front_ft": {
+        "value": 0,
+        "section": "155-6.4 Table 6.4 BMV Dimensional Standards, Setbacks, Front",
+        "url": "https://ecode360.com/35686866",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Build-to line: 0 ft maximum. Lot area and width: n/a. Impervious cover limit 70%."
+      },
+      "setback_side_ft": {
+        "value": 0,
+        "section": "155-6.4 Table 6.4 BMV Dimensional Standards, Setbacks, Side",
+        "url": "https://ecode360.com/35686866",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "See note 6."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "155-6.4 Table 6.4 BMV Dimensional Standards, Setbacks, Rear",
+        "url": "https://ecode360.com/35686866",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "25 ft when abutting residential. 0 ft when abutting commercial."
+      },
+      "principal_max_stories": {
+        "value": 3,
+        "section": "155-6.4 Table 6.4 BMV Dimensional Standards, Building Height, Total maximum (base), BMV4",
+        "url": "https://ecode360.com/35686866",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Base 3 stories, 3 with the increase. Street wall at most 3 stories or 38 ft. Minimum 2 stories or 26 ft."
+      }
     }
   }
 }

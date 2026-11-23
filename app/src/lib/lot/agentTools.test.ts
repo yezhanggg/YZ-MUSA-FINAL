@@ -43,6 +43,21 @@ describe('tool definitions', () => {
   });
 });
 
+describe('get_parcel_info district table', () => {
+  it("reads the lot town's rule file through the provider, and says not on file without one", async () => {
+    const asked: string[] = [];
+    const file = { districts: { '3B': { setback_rear_ft: { value: 15, section: 'Table 1', url: 'https://example.org/t', verified_on: '2026-11-13', confidence: 'verified' } } } };
+    const p = { ...provider('nar_detached'), ruleFile: async (key: string) => (asked.push(key), file) };
+    const r = (await run(p, 'get_parcel_info')) as { district_rules: { rows: { rule: string; value: string; section: string }[]; not_on_file: string[] } };
+    expect(asked).toEqual(['pa_montgomery_narberth']);
+    expect(r.district_rules.rows).toEqual([{ rule: 'Rear yard', value: '15 ft', section: 'Table 1' }]);
+    expect(r.district_rules.not_on_file).toContain('Front yard');
+    const none = (await run(provider('nar_detached'), 'get_parcel_info')) as { district_rules: { rows: unknown[]; not_on_file: string } };
+    expect(none.district_rules.rows).toEqual([]);
+    expect(none.district_rules.not_on_file).toMatch(/not on file/);
+  });
+});
+
 describe('scenario is the one the user chose', () => {
   it('uses the screen scenario when the call names none, and the call scenario when it does', async () => {
     const p = provider('easy_fit', 'state_reform');

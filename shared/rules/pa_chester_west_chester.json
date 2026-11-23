@@ -592,6 +592,107 @@
         "verified_on": "2026-11-13",
         "confidence": "verified"
       }
+    },
+    "NC-3": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Lot area minimum per dwelling unit. Width 40 ft detached, 30 semidetached, 20 attached."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Existing adjacent, 10 ft minimum. Front yard matches the adjacent setbacks."
+      },
+      "setback_rear_ft": {
+        "value": 20,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Apartment 55 ft. Impervious cover limit 70%."
+      },
+      "max_building_coverage": {
+        "value": 0.5,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "112-308B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
+    },
+    "MU": {
+      "min_lot_sqft": {
+        "value": 2500,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "Width 20 ft."
+      },
+      "setback_front_ft": {
+        "value": 10,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "secondary",
+        "note": "'Build-to line/front yard: 10 feet from curb'. Measured from the curb, not the lot line."
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 10,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 45,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified",
+        "note": "60 ft by conditional use. Impervious cover limit 95%."
+      },
+      "max_building_coverage": {
+        "value": 0.9,
+        "section": "112-313B",
+        "url": "https://ecode360.com/6472545",
+        "verified_on": "2026-11-22",
+        "confidence": "verified"
+      }
     }
   }
 }
