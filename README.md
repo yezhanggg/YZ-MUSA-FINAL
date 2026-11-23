@@ -5,16 +5,17 @@ Pick a lot. The tool says which kinds of ADU the law allows there, whether a uni
 
 - Website and tool: https://pa-adu.vercel.app
 - Class site (Quarto): https://pa-adu.vercel.app/quarto/
-- Final project for MUSA 5500 (geospatial data science in Python) and MUSA 6950 (remote sensing and deep learning), Fall 2026
+- Final project for MUSA 6950 (remote sensing and deep learning), Fall 2026
+- The MUSA 5500 half (housing demand and payoff across Pennsylvania: the statewide map, notebooks and report) is in its own repository: https://github.com/yezhanggg/YZMUSA5500
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
-## Two modes
+## Test Site
 
-- **ADU Testing** (`#/?view=test`, the default). One lot at a time, in six lot places: Pittsburgh, Philadelphia, Allentown, and parts of Chester, Centre and Montgomery counties. Draw a unit and pick a type, and get a verdict under today's rules with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report. The Compare tab shows the same unit under each pending bill and only the rules that would change.
-- **ADU projecting and analysis** (`#/?view=project`). Census tracts, towns and counties for the whole state: demand trends, whether a unit pays off on local rent, and ADUs by 2031 under each bill.
+- **Test Site** (`#/?view=test`). One lot at a time, in six lot places: Pittsburgh, Philadelphia, Allentown, and parts of Chester, Centre and Montgomery counties. Draw a unit and pick a type, and get a verdict under today's rules with the rule sections behind it, an aerial site view, a cost and rent estimate, the steps to build, and a printable lot report. The Compare tab shows the same unit under each pending bill and only the rules that would change. The Parcel tab gives the public record facts of the lot (parcel number, school district, frontage, the house), its zoning district with its full name and the district's own rules, the property tax rates and what the unit would add each year, the town's official documents (zoning map and code, comprehensive plan, permit and fee pages) and who to call. The Next Step tab ends with what to bring and the questions to ask the zoning office.
+- **Boundaries.** County, Township or City, Census Tract or ZIP Code outlines, one at a time. The one that is on is coloured by its ADU rule, and a click opens its answer and its towns.
 
-Both modes have **Ask**, an assistant that answers from the tool's own data with citations. It runs on Claude Haiku 5.5 through a server function, and the browser runs the tools.
+Test Site has **Ask** (ParcelIQ), an assistant that answers from the tool's own data with citations. On a lot it also answers parcel, property tax, document and next-step questions, and can redraw the unit ("try a two-story 800 sq ft unit"). It runs on Claude Haiku 5.5 through a server function, and the browser runs the tools.
 
 ## Three scenarios on every lot
 
@@ -48,20 +49,18 @@ By town, a detached unit is legal and fits today on 76.9% of Narberth lots, 66.6
 - **Steep slope rules.** Pittsburgh (915.02 grading and the LS-O, UM-O and SS-O overlays, 906.04, 906.05, 906.08) and Philadelphia (14-704(2)) steep slope rules are in the rule files as cited rows. They are shown as conditions or questions for the city, never as a bar. The Ask rule text and the Pittsburgh and Philadelphia lot records carry them (refreshed Nov 14). They change sentences, not the shares above.
 - **Address search.** Ask can find any address in the six lot places, on the map or not. It reads a static address index (3.6 MB, in the lot data bundle). It works live only after the bundle is published.
 - **Money.** Itemised costs from one assumptions file (`shared/assumptions.json`). Rent from HUD Small Area Fair Market Rents by ZIP.
-- **Tract analysis.** A 600 sq ft 1-bedroom unit pays off in 10.3% of tracts (356 of 3,445) at the mid cost. Seven descriptive growth groups. ADUs by 2031: about 1,000 under today's rules, about 13,500 under HB 2186 and about 13,200 under SB 1346 (mid case, scenario arithmetic). Lots with room for a 600 sq ft unit: about 2.9 million statewide (1.5 to 3.6 million), measured in Philadelphia and Pittsburgh and modelled elsewhere.
 - **Town rules.** As of Nov 18, 2026, 223 places have a rule file: Philadelphia, Pittsburgh and 221 towns. 146 are verified by an independent second reading (the two cities and 144 towns). 77 towns stay first readings (drafted): the review left an open point, written down for each. 92 of the 221 town codes have no ADU text at all. A statewide baseline covers every other town.
 - **An answer for every Pennsylvania place.** Each of the 2,572 county subdivisions gets one best answer and says how good the evidence is: verified rule file, drafted rule file, a dated agency report (or no zoning on record with the state), a search of the town's public zoning text, or the statewide baseline. See [docs/PLACES.md](docs/PLACES.md).
 
-<!-- source: ~/musa-drive/processed/5500/payoff_summary.json, forecast_summary.json, groups_summary.json. shared/rules/towns_index.json status (2026-11-16, commit 751cfaf) and the town files adu.status. app/public/data/pa_places_meta.json -->
+<!-- source: shared/rules/towns_index.json status (2026-11-16, commit 751cfaf) and the town files adu.status. app/public/data/pa_places_meta.json -->
 
 ## What does not work yet
 
-- Lot-level answers exist only in the six lot places. Elsewhere the tool shows tract and town answers.
+- Lot-level answers exist only in the six lot places. Elsewhere the boundaries show each area's ADU rule.
 - The public lot data bundle is 999.9 MB after the Nov 18 Montgomery rebuild and Pittsburgh land cover refresh. That is at the 1 GB GitHub Pages limit, with about 0.1 MB of room. The next lot data change must make room first. It is in the data repository `yezhanggg/backyard-homes-lots` on GitHub Pages.
 - The fit answers have not been checked by hand. A 250-lot labeling sample is drawn (125 per city). None are labeled yet, so fit accuracy is not measured.
 - Land cover: the best model, picked on validation, is an ensemble of DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34 (Nov 18). It scores test mIoU 0.7093 and building IoU 0.6554. The targets were 0.72 and 0.65, so the mIoU target is missed. In Pittsburgh it passes the bar for replacing the lot model (0.7147 against 0.7136), so the Pittsburgh lots use the three-model ensemble from 2026-11-18. In Philadelphia the model cannot read trees from the spring 2022 photos, so the city raster is used there. Allentown, Chester and Montgomery have no labels to check the model against. In the four town places the trees and paving inside the suggested spot come from the same model, so they carry the same accuracy as the lot shares.
 - The outbuilding detector scores garage AP50 0.469 (final) with classes set by the size rule, against a target of 0.50. The labels are unchecked first-pass labels, so this is not a true accuracy.
-- The tract forecast explains little: county-held-out R2 about 0.20, and about 0.02 on a test of earlier years. It read the 38 rule files of Nov 11, not the 223 of today.
 - 77 rule files are first readings. Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read. Each of these carries a caution.
 - Microsoft building heights read low in Upper Dublin, so the "no taller than the house" test there reads "not checked".
 - Pittsburgh's undermined-area overlay (UM-O) layer is not in the lot data.
@@ -99,9 +98,9 @@ The full pipeline, from downloads to lot files, is in [docs/RUNNING.md](docs/RUN
 
 - `app/` the website and tool (React, Vite, MapLibre). See [app/README.md](app/README.md)
 - `api/agent.ts`, `agent/` the Ask server function, tool schemas and the assistant eval
-- `pipeline/` places, rules, fit, lot builder, money, market, tract analysis, land cover, validation, zoning pilot
+- `pipeline/` places, rules, fit, lot builder, money, market, tract and ZIP code town splits, land cover, validation, zoning pilot
 - `shared/rules/` rule files with citations, `shared/assumptions.json` money inputs
-- `musa5500/`, `musa6950/` course notebooks and course write-ups
+- `musa6950/` course notebooks and course write-ups
 - `tests/` Python tests
 
 ## Docs
@@ -120,7 +119,7 @@ The full pipeline, from downloads to lot files, is in [docs/RUNNING.md](docs/RUN
 | [TALKS](docs/TALKS.md) | Notes and a demo script for the two course talks |
 | [CHANGELOG](docs/CHANGELOG.md) | What changed |
 
-Course write-ups: `musa5500/docs/` and `musa6950/docs/`, also on the class site.
+Course write-ups: `musa6950/docs/`, also on the class site. MUSA 5500: https://github.com/yezhanggg/YZMUSA5500
 
 ## License
 

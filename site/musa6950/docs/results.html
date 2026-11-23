@@ -100,33 +100,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand and payoff)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
- <span class="dropdown-text">Proposal</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/data.html">
- <span class="dropdown-text">Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/methods.html">
- <span class="dropdown-text">Methods</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/results.html">
- <span class="dropdown-text">Results</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
- <span class="dropdown-text">Tract explorer</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-6950-(room-on-the-lot" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">MUSA 6950 (room on the lot)</span>
     </a>
@@ -172,7 +145,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#model-comparison-on-the-held-out-counties" id="toc-model-comparison-on-the-held-out-counties" class="nav-link active" data-scroll-target="#model-comparison-on-the-held-out-counties">1. Model comparison on the held-out counties</a></li>
+  <li><a href="#model-comparison-on-the-held-out-counties" id="toc-model-comparison-on-the-held-out-counties" class="nav-link active" data-scroll-target="#model-comparison-on-the-held-out-counties">1. Model comparison on the held-out counties</a>
+  <ul class="collapse">
+  <li><a href="#later-runs-nov-12-to-18" id="toc-later-runs-nov-12-to-18" class="nav-link" data-scroll-target="#later-runs-nov-12-to-18">Later runs (Nov 12 to 18)</a></li>
+  </ul></li>
   <li><a href="#where-and-why-the-model-fails" id="toc-where-and-why-the-model-fails" class="nav-link" data-scroll-target="#where-and-why-the-model-fails">2. Where and why the model fails</a></li>
   <li><a href="#transfer-to-pittsburgh-and-philadelphia" id="toc-transfer-to-pittsburgh-and-philadelphia" class="nav-link" data-scroll-target="#transfer-to-pittsburgh-and-philadelphia">3. Transfer to Pittsburgh and Philadelphia</a>
   <ul class="collapse">
@@ -212,10 +188,10 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Short version:</p>
 <ul>
-<li>Every pretrained U-Net variant lands near 0.70 test mIoU on the held-out counties. A goal of 0.72 was not reached. No run reached building IoU 0.65. The error analysis says the labels are the limit.</li>
-<li>In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help.</li>
+<li>Every pretrained single U-Net lands near 0.70 test mIoU on the held-out counties. After the Nov 12 to 18 training rounds, the best result is an ensemble of a DeepLabV3+, an EfficientNet-B2 and a ResNet-34 model, picked on validation: test mIoU 0.7093 and building IoU 0.6554. The building goal of 0.65 is met. The mIoU goal of 0.72 is not. The error analysis says the labels are the limit.</li>
+<li>In Pittsburgh the model transfers well without city training: about 0.70 on clean test pixels. City fine-tuning did not help. The new ensemble passes the bar for replacing the lot model, but the lots still use the earlier model until the owner decides.</li>
 <li>In Philadelphia the model cannot see trees or lawns in the 2022 spring photos (tree IoU about 0.26). The lot tool uses the city’s 2018 land cover raster there instead.</li>
-<li>The structure detector is a first pass. Its scores are agreement with unchecked labels, not accuracy.</li>
+<li>The structure detector reaches garage AP50 0.469 (goal 0.50) with classes set by the label size rule. Its scores are agreement with unchecked labels, not accuracy.</li>
 <li>The lot tool’s fit test is a vector test on lot lines, buildings and streets with rule-based setbacks. Land cover adds context.</li>
 <li>No hand-labeled lot exists yet, so the fit answers have not been checked against a person looking at the lot.</li>
 </ul>
@@ -485,6 +461,101 @@ ul.task-list li input[type="checkbox"] {
 <li>Urban boxes are the weak place type in every 4-class run.</li>
 <li>The 5-class run pays for the extra class: “other” drops to 0.4714 once roads and paving leave it, and rural and suburban mIoU fall.</li>
 </ul>
+<section id="later-runs-nov-12-to-18" class="level3">
+<h3 class="anchored" data-anchor-id="later-runs-nov-12-to-18">Later runs (Nov 12 to 18)</h3>
+<!-- source: ~/musa-drive/ops/logs/model-1112.md, sections "09:25 Nov 14", "14:30 Nov 14", "18:00 Nov 14" and "Nov 17 to 18 night"; ~/musa-drive/ops/scratch/model-1112/night/*_ens5b.json, *_div.json, *_div7.json, *_night.json -->
+<p>Updated Nov 18 with the Nov 17 to 18 night runs. Same test pixels and 8 flips and turns. Ensembles are picked on validation only. 5-class rows are scored as 4 classes here.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Run or pick</th>
+<th>What changes</th>
+<th>Val mIoU</th>
+<th>Test mIoU</th>
+<th>Building IoU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dlv3lov_c4_s1</code></td>
+<td>DeepLabV3+, Lovasz loss</td>
+<td>0.7456</td>
+<td>0.7031</td>
+<td>0.6507</td>
+</tr>
+<tr class="even">
+<td><code>effb2_c4_s1</code></td>
+<td>U-Net with an EfficientNet-B2 encoder</td>
+<td>0.7439</td>
+<td>0.7038</td>
+<td>0.6441</td>
+</tr>
+<tr class="odd">
+<td><code>effb2lov_c4_s1</code></td>
+<td>the same, Lovasz loss</td>
+<td>0.7458</td>
+<td>0.7057</td>
+<td>0.6506</td>
+</tr>
+<tr class="even">
+<td>ResNet-34 Lovasz ensemble</td>
+<td>3 models, seeds only</td>
+<td></td>
+<td>0.7035</td>
+<td>0.6493</td>
+</tr>
+<tr class="odd">
+<td><code>dlv3lov</code> + <code>effb2lov</code></td>
+<td>ensemble of two model types, 8 views each</td>
+<td>0.7512</td>
+<td>0.7089</td>
+<td>0.6546</td>
+</tr>
+<tr class="even">
+<td>5-class ensemble</td>
+<td><code>effb2lov_c5_s0</code> + <code>r34lov_c5_s0</code>, 8 views each</td>
+<td>0.7422</td>
+<td>0.7009</td>
+<td>0.6478</td>
+</tr>
+<tr class="odd">
+<td><code>r34c512lov_c4_s1</code></td>
+<td>ResNet-34, 512 px crops, Lovasz loss</td>
+<td>0.7464</td>
+<td>0.705</td>
+<td>0.6515</td>
+</tr>
+<tr class="even">
+<td><code>dlv3c512lov_c4_s1</code></td>
+<td>DeepLabV3+, 512 px crops, Lovasz loss</td>
+<td>0.7464</td>
+<td>0.7072</td>
+<td>0.6548</td>
+</tr>
+<tr class="odd">
+<td><code>dlv3lov</code> + <code>effb2lov</code> + <code>r34c512lov</code></td>
+<td>best ensemble, picked on validation, 8 views each</td>
+<td>0.7517</td>
+<td><strong>0.7093</strong></td>
+<td><strong>0.6554</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Mixing model types helped where more seeds did not: +0.0054 test mIoU over the ResNet-only ensemble.</li>
+<li>Larger crops (512 px) helped a little (+0.0025 test with Lovasz loss). With that run added to the ensemble search, validation picked a new best of three models: test mIoU 0.7093.</li>
+<li><code>dlv3c512lov_c4_s1</code> is the best single model on test (0.7072), but adding it to the best pick does not raise validation.</li>
+<li>Building IoU goal (0.65) met. mIoU goal (0.72) missed.</li>
+<li>For the Pittsburgh lots a new model must reach mIoU 0.7136 and building IoU 0.7435 on the clean city pixels. The new three-model ensemble scored 0.7147 and 0.7585, so it passes the bar. One pass of the same three models scored 0.7148 and 0.7622 and passes too. The two-model pair scored 0.7133 and 0.7571 and missed. The 5-class ensemble scored 0.7085 and 0.7524. The Pittsburgh lots use the 8-view ensemble since 2026-11-18.</li>
+</ul>
+</section>
 </section>
 <section id="where-and-why-the-model-fails" class="level2">
 <h2 class="anchored" data-anchor-id="where-and-why-the-model-fails">2. Where and why the model fails</h2>
@@ -706,7 +777,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="per-lot-agreement-with-the-city-rasters" class="level3">
 <h3 class="anchored" data-anchor-id="per-lot-agreement-with-the-city-rasters">Per-lot agreement with the city rasters</h3>
-<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json. MAE in percentage points of lot area, r = correlation. Lots with at least 90 % raster coverage, outside the city train and validation boxes. -->
+<!-- source: ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, cover_compare_div7_3m_tta.json, ~/musa-drive/processed/philadelphia/cover_compare.json. MAE in percentage points of lot area, r = correlation. Lots with at least 90 % raster coverage, outside the city train and validation boxes. -->
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -732,7 +803,7 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pittsburgh, <code>r34_c5_s0</code> against the 2019 raster</td>
+<td>Pittsburgh, <code>r34_c5_s0</code> against the 2019 raster (until Nov 18)</td>
 <td>128</td>
 <td>8.41 (0.862)</td>
 <td>11.02 (0.844)</td>
@@ -742,6 +813,16 @@ ul.task-list li input[type="checkbox"] {
 <td>12.5 %</td>
 </tr>
 <tr class="even">
+<td>Pittsburgh, three-model ensemble against the 2019 raster (since Nov 18)</td>
+<td>128</td>
+<td>8.1 (0.863)</td>
+<td>12.81 (0.841)</td>
+<td>9.48 (0.878)</td>
+<td>6.98 (0.859)</td>
+<td>18.6 %</td>
+<td>13.2 %</td>
+</tr>
+<tr class="odd">
 <td>Philadelphia, <code>ft_c5_philadelphia</code> against the 2018 raster</td>
 <td>430,161</td>
 <td>6.71 (0.622)</td>
@@ -842,11 +923,58 @@ ul.task-list li input[type="checkbox"] {
 <li>Sheds are not detectable at this stage (AP50 0.0331).</li>
 <li>A review pack of 150 chips per city is ready for hand checking. It has not been done.</li>
 </ul>
+<p><strong>Later runs (final, Nov 14).</strong> Same test chips, same unchecked labels. Goal: garage AP50 0.50.</p>
+<!-- source: ~/musa-drive/ops/logs/yolo.md (FINAL detector table), ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>What changes</th>
+<th>mAP50</th>
+<th>Garage AP50</th>
+<th>Garage AP50, size rule classes (Pittsburgh / Philadelphia)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>long640</code></td>
+<td>80 epochs, cosine schedule</td>
+<td>0.2868</td>
+<td>0.4062</td>
+<td><strong>0.469</strong> (0.5042 / 0.4093)</td>
+</tr>
+<tr class="even">
+<td><code>pseudo1</code></td>
+<td>plus 141 pseudo boxes on train</td>
+<td>0.2644</td>
+<td>0.401</td>
+<td>0.4057 (0.5315 / 0.1732)</td>
+</tr>
+<tr class="odd">
+<td><code>px960</code></td>
+<td>960 px, 40 epochs</td>
+<td>0.1428</td>
+<td>0.257</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Size rule classes: each found building gets garage, shed or other by the same size and street-distance rule that made the labels. The image cannot show that split, so applying the rule after detection is the cheapest gain.</li>
+<li>Best garage AP50 0.469 misses the 0.50 goal. Pittsburgh alone passes (0.504).</li>
+</ul>
 </section>
 <section id="how-the-models-feed-the-lot-tool" class="level2">
 <h2 class="anchored" data-anchor-id="how-the-models-feed-the-lot-tool">5. How the models feed the lot tool</h2>
 <ul>
-<li><strong>Land cover:</strong> each lot record has a <code>cover</code> block (building, tree, open ground, hard surface, impervious share, source, date) and the cover inside the suggested spot. Pittsburgh: <code>model:r34_c5_s0</code>, 2022. Philadelphia: <code>landcover_2018</code>. The fit test does not use it. It tells the user how much canopy a unit might remove.</li>
+<li><strong>Land cover:</strong> each lot record has a <code>cover</code> block (building, tree, open ground, hard surface, impervious share, source, date). Records in all six lot places also give the cover inside the suggested spot. Pittsburgh: <code>model:div7_3m_tta</code> (the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each)), 2022, since Nov 18. Before that <code>model:r34_c5_s0</code>. Philadelphia: <code>landcover_2018</code>. Allentown and the three county places: <code>model:r34_c5_s0</code>, 2022, added Nov 14, with the spot cover from the same model since Nov 15. Only Centre County is a test county of the model (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so. 36 Centre County lots have no cover. The fit test does not use it. It tells the user how much canopy a unit might remove.</li>
 <li><strong>Detector:</strong> not used. Lot records carry an empty <code>objects</code> list. Garages and sheds come from building footprints by size (180 sq ft or more is a garage).</li>
 <li><strong>Fit:</strong> a vector test on the lot outline, edges labeled front, side and rear, building outlines, setbacks from the rule files, and the largest rectangle that fits. See the methods page.</li>
 </ul>
@@ -854,7 +982,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="lot-results" class="level2">
 <h2 class="anchored" data-anchor-id="lot-results">6. Lot results</h2>
 <p>Three scenarios on every lot: today’s law, local reform (Philadelphia Bill 250042, in Pittsburgh equal to today) and state reform (HB 2186). The bills are not law. The state session ends Nov 30, 2026.</p>
-<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261111-bdeb5697ae, manifest built 2026-11-11T20:30:22) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261111-b7fa7bda07, built 2026-11-11T21:41:43) -->
+<!-- source: ~/musa-drive/lots/pittsburgh/stats.json (data version pittsburgh-20261114-7ae3f25d22, the steep slope refresh, fit numbers unchanged since pittsburgh-20261111-bdeb5697ae) and ~/musa-drive/lots/philadelphia/stats.json and manifest.json (data version philadelphia-20261114-2a67293eaa, fit numbers unchanged since philadelphia-20261111-b7fa7bda07), read 2026-11-14 -->
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -935,6 +1063,57 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Pittsburgh:</strong> under Ordinance 31-2026 (signed Oct 29, 2026) internal and attached units are by right. A new detached unit in a side or rear yard needs an Administrator’s Exception. So every lot has a legal path, and none has a detached unit by right today. The binding limit is yard space.</li>
 <li><strong>Philadelphia:</strong> about 1.2 percent of lots have any legal ADU path today, and no lot can add a new detached unit by right. The limits come from the zoning code and its overlays. The binding limit is the law.</li>
 </ul>
+<p>The tool now also has lot records for Allentown and three county places, where each lot answers with its own town’s rule file:</p>
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-14 -->
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Place</th>
+<th>Lots</th>
+<th>Any legal ADU path today</th>
+<th>A detached unit is legal and fits, today</th>
+<th>Same, state reform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Allentown</td>
+<td>29,158</td>
+<td>0.883</td>
+<td>0.215</td>
+<td>0.713</td>
+</tr>
+<tr class="even">
+<td>Montgomery County (Lower Merion, Narberth, Upper Dublin)</td>
+<td>26,119</td>
+<td>0.782</td>
+<td>0.256</td>
+<td>0.86</td>
+</tr>
+<tr class="odd">
+<td>Chester County (West Chester, Phoenixville, West Vincent, Malvern, East Brandywine)</td>
+<td>14,847</td>
+<td>0.688</td>
+<td>0.231</td>
+<td>0.588</td>
+</tr>
+<tr class="even">
+<td>Centre County (College Township)</td>
+<td>3,484</td>
+<td>0.537</td>
+<td>0.487</td>
+<td>0.805</td>
+</tr>
+</tbody>
+</table>
+<p>All six places: 625,687 lots.</p>
 <p>Pittsburgh by housing type:</p>
 <!-- source: ~/musa-drive/lots/pittsburgh/stats.json by_type (data version pittsburgh-20261111-bdeb5697ae) -->
 <table class="caption-top table">
@@ -1082,10 +1261,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="limits" class="level2">
 <h2 class="anchored" data-anchor-id="limits">8. Limits</h2>
 <ul>
-<li>Land cover scores sit near 0.70 on the held-out counties. The labels set the ceiling.</li>
+<li>Land cover single models sit near 0.70 on the held-out counties, the best ensemble at 0.709. The labels set the ceiling.</li>
 <li>Philadelphia tree and open ground from NAIP 2022 are not reliable. The 2018 raster misses changes since 2018.</li>
 <li>The Pittsburgh per-lot land cover check covers 128 lots.</li>
 <li>The detector is not checked against hand labels and is not used in the lot records.</li>
+<li>Land cover in Allentown, Chester and Montgomery is not validated: there are no labels there.</li>
 <li>The fit answers are not checked against hand labels.</li>
 <li>Lot lines come from county and city parcel maps. They are not a survey. Building outlines can be old or merged.</li>
 <li>Rules come from rule files read from the codes. This is not legal advice and not a zoning determination. The bills behind the reform scenarios are not law.</li>

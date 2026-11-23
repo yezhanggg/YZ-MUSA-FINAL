@@ -3,7 +3,7 @@
 Ye Zhang · MUSA 6950 AI for Urban Sustainability · Fall 2026 · Prof. Xiaojiang Li
 
 This half asks: is there room on the lot, and how many trees would it cost?
-The MUSA 5500 half (`../musa5500/`) asks about demand and payoff.
+The MUSA 5500 half asks about demand and payoff. It is in its own repository: https://github.com/yezhanggg/YZMUSA5500
 
 ## Run it
 

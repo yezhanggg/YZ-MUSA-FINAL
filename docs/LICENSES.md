@@ -42,6 +42,12 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 | Montgomery County GIS (parcels, Board of Assessment land table, municipal zoning, street centerlines) | The zoning item says "Montgomery County provides this data as a free and open resource". The other layers state no license | Not stated. Naming Montgomery County is good practice | Zoning yes as stated; the rest unclear, ask the provider | unclear, ask the provider | Owner, mailing, sale and assessed value fields of the land table are never requested |
 | US Census 2020 ZIP Code Tabulation Areas (TIGERweb) | A US federal government work | Courtesy credit to the US Census Bureau | Yes | Yes | ZIP for rents where no property ZIP is published |
 
+## Data: town details (Parcel tab)
+
+| Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |
+|---|---|---|---|---|---|
+| Tax rates, common level ratios, assessment rules, office names and phone numbers, and links from county, city, borough, township and state (STEB) websites (`shared/lot_towns_info.json`) | Public facts on government websites. No license text on most pages | Each value names its page and the date it was opened | Yes for the facts and links. No page text is copied beyond one-sentence notes | Yes for the facts | Rates change every year: recheck before each tax year. See docs/DATA.md "Town details for the Parcel tab" |
+
 ## Data: open and federal
 
 | Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |

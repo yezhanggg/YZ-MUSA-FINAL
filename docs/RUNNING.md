@@ -8,7 +8,7 @@ The pipeline uses two conda environments. Their names are fixed in two scripts (
 
 | Env | What runs in it | Install list |
 |---|---|---|
-| `geospatial` | Place downloads and builds, rules, fit, lot builder, money, market, detector geo steps, most tests | `musa5500/requirements.txt`, plus `pyarrow` (GeoParquet) and `pytest`. `jsonschema` is optional |
+| `geospatial` | Place downloads and builds, rules, fit, lot builder, money, market, detector geo steps, most tests | `requirements-geospatial.txt`, plus `pytest`. `jsonschema` is optional |
 | `geoai` | Land cover training and scoring, detector training and prediction | `musa6950/requirements.txt` and `musa6950/requirements-yolo.txt`. The land cover code also needs `segmentation-models-pytorch` |
 
 A new machine:
@@ -16,7 +16,7 @@ A new machine:
 ```bash
 conda create -y -n geospatial python=3.12
 conda activate geospatial
-pip install -r musa5500/requirements.txt pyarrow pytest jsonschema
+pip install -r requirements-geospatial.txt pytest jsonschema
 
 conda create -y -n geoai python=3.11
 conda activate geoai
@@ -246,18 +246,7 @@ Status: 250 lots are sampled (125 per city). 0 are labeled. The agreement of the
 
 ### 4.5 Tract analysis (MUSA 5500)
 
-```bash
-$G -m pipeline.tract.acs_moe
-$G -m pipeline.tract.growth
-$G -m pipeline.tract.migration
-$G -m pipeline.tract.groups
-$G -m pipeline.tract.payoff
-$G -m pipeline.tract.forecast
-$G -m pipeline.tract.rollup      # after payoff, groups and forecast
-$G -m pipeline.tract.viz         # musa5500/figures/tract_explorer.html
-```
-
-Output: `processed/5500/`. Then `python app/build_data.py` writes the app's tract, town and county files and `app/src/lib/headline.json`.
+Moved to its own repository on Nov 22, 2026: https://github.com/yezhanggg/YZMUSA5500. This repo keeps the tract and ZIP code town splits that Test Site's boundaries read (`python -m pipeline.tract.towns`, `python -m pipeline.tract.zip_towns`). `python app/build_data.py` still writes the app's tract, town and county files from the tract tables on the data drive.
 
 ### 4.6 Machine-read zoning pilot
 

@@ -100,33 +100,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand and payoff)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
- <span class="dropdown-text">Proposal</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/data.html">
- <span class="dropdown-text">Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/methods.html">
- <span class="dropdown-text">Methods</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/results.html">
- <span class="dropdown-text">Results</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
- <span class="dropdown-text">Tract explorer</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-6950-(room-on-the-lot" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">MUSA 6950 (room on the lot)</span>
     </a>
@@ -205,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Two kinds of data feed this half of the project. Aerial images with land cover labels train and test the models. Lot, building and street layers from the two cities feed the lot tool. Large files live on an external data drive (<code>ADU_DATA_DIR</code>, default <code>~/musa-drive</code>). Nothing large is in the repository. The full source list with record counts and licenses is in <code>docs/DATA.md</code> in the repository.</p>
+<p>Two kinds of data feed this half of the project. Aerial images with land cover labels train and test the models. Lot, building and street layers from the two cities feed the lot tool. The tool now also has lot records for Allentown and parts of Chester, Centre and Montgomery counties, built from city and county layers. The original 5-class land cover model was run on those four places on Nov 14 to give each lot a land cover block. Only Centre County has labels to check it against. Large files live on an external data drive (<code>ADU_DATA_DIR</code>, default <code>~/musa-drive</code>). Nothing large is in the repository. The full source list with record counts and licenses is in <code>docs/DATA.md</code> in the repository.</p>
 <section id="images-and-labels-for-the-land-cover-model" class="level2">
 <h2 class="anchored" data-anchor-id="images-and-labels-for-the-land-cover-model">Images and labels for the land cover model</h2>
 <!-- sources: ~/musa-drive/processed/vision/class_shares.json, ~/musa-drive/processed/vision/city/<city>/summary.json -->

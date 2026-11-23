@@ -4,16 +4,10 @@ project:
   render:
     - index.qmd
     - tool.qmd
-    - musa5500/docs/proposal.md
-    - musa5500/docs/data.md
-    - musa5500/docs/methods.md
-    - musa5500/docs/results.md
     - musa6950/docs/proposal.md
     - musa6950/docs/data.md
     - musa6950/docs/methods.md
     - musa6950/docs/results.md
-  resources:
-    - musa5500/figures/
 
 website:
   title: "Backyard Homes PA"
@@ -23,18 +17,6 @@ website:
         text: Home
       - href: tool.qmd
         text: Tool
-      - text: MUSA 5500 (demand and payoff)
-        menu:
-          - href: musa5500/docs/proposal.md
-            text: Proposal
-          - href: musa5500/docs/data.md
-            text: Data
-          - href: musa5500/docs/methods.md
-            text: Methods
-          - href: musa5500/docs/results.md
-            text: Results
-          - href: musa5500/figures/tract_explorer.html
-            text: Tract explorer
       - text: MUSA 6950 (room on the lot)
         menu:
           - href: musa6950/docs/proposal.md

@@ -100,33 +100,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Tool</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-5500-(demand-and-payoff" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">MUSA 5500 (demand and payoff)</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-musa-5500-(demand-and-payoff">    
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/proposal.html">
- <span class="dropdown-text">Proposal</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/data.html">
- <span class="dropdown-text">Data</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/methods.html">
- <span class="dropdown-text">Methods</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/docs/results.html">
- <span class="dropdown-text">Results</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../musa5500/figures/tract_explorer.html">
- <span class="dropdown-text">Tract explorer</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-musa-6950-(room-on-the-lot" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">MUSA 6950 (room on the lot)</span>
     </a>
@@ -314,8 +287,9 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Pittsburgh: the zero-shot model <code>r34_c5_s0</code> (<code>cover_model_r34_c5_s0.parquet</code>).</li>
 <li>Philadelphia: the 2018 city raster. Lots built in 2018 or later get a flag, since the raster may show the old use.</li>
+<li>Allentown and the three county places (Nov 14): the same model <code>r34_c5_s0</code> (<code>processed/&lt;place&gt;/cover.parquet</code>). Only Centre County lies in a test county of the model. Each record carries a note on how far its cover can be trusted.</li>
 </ul></li>
-<li><code>pipeline/vision/cover_lookup.py</code> returns the cover inside any polygon. The lot builder uses it to report the tree, open ground and paving inside the suggested spot.</li>
+<li><code>pipeline/vision/cover_lookup.py</code> returns the cover inside any polygon. The lot builder uses it to report the tree, open ground and paving inside the suggested spot. It reads the city raster in Philadelphia and the model’s class maps in Pittsburgh and the four town places (<code>MODEL_RUNS</code>, since Nov 15).</li>
 </ul>
 </section>
 <section id="structure-detector" class="level2">
@@ -338,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Largest rectangle.</strong> The largest rectangle inside the buildable ground, at the lot’s own angle and offsets of 8 and 45 degrees. Short side at least 12 ft, long side at most 3 times the short side. The tool looks behind the house first and uses the front yard only when nothing fits behind.</li>
 <li><strong>Checks.</strong> Room in the yard, size cap, minimum size, share of the house, coverage and height. The first failed check is the limiting reason (no room, yard space, size cap and others). A second detached unit is tested where the rules allow two.</li>
 <li><strong>Other types.</strong> Internal units, attached units and garage conversions are tested from the house and garage outlines. Attached units use the internal test as a stand-in.</li>
-<li><strong>Context.</strong> Land cover adds tree canopy, open ground, hard surface, impervious share and the trees inside the suggested spot. Slope, landslide, flood and historic flags come from city layers. None of these change the fit answer.</li>
+<li><strong>Context.</strong> Land cover adds tree canopy, open ground, hard surface, impervious share and, in all six lot places, the trees and paving inside the suggested spot. Slope, landslide, flood and historic flags come from city layers. None of these change the fit answer.</li>
 </ol>
 <p>The same test runs in the browser for a unit the user draws (<code>app/src/lib/lot/verdict.ts</code>), on the saved buildable polygon.</p>
 </section>
