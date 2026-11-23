@@ -2,7 +2,7 @@
 # Nothing outside this folder imports it. Only data files (Parquet, CSV) leave it.
 #
 # Model steps (train.py, evaluate.py, detect_lots.py predict):
-ultralytics==8.4.170
+ultralytics==8.4.216
 torch>=2.4
 pillow>=10
 pyyaml>=6
