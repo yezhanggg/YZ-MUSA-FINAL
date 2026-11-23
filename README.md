@@ -10,7 +10,7 @@ Pick a lot on the map. You get:
 - **What if the law changes?** The same lot under pending bills, such as HB 2186.
 - **What next?** The lot's parcel facts, its zoning district, town documents, who to call, and what to bring.
 
-**Try it:** https://pa-adu.vercel.app
+<h2 align="center">👉 <a href="https://pa-adu.vercel.app">pa-adu.vercel.app</a></h2>
 
 ![Test Site with a Pittsburgh lot open: the map on the left, the verdict "Yes, with approval" and the rule checks on the right](docs/img/test-site.jpg)
 
