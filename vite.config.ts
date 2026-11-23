@@ -45,7 +45,33 @@ function lotIndex(): Plugin {
   };
 }
 
-/** In `vite dev`, serve api/agent.ts the way Vercel does. Keys come from the repo-root .env (never the bundle). */
+/**
+ * In `vite dev`, a JSON file imported on demand with `{ with: { type: "json" } }` (the rule files in
+ * app/src/agent/ruleText.ts; the Ask server function on Vercel needs that attribute) reaches the browser already turned
+ * into JavaScript, and the browser refuses it as not JSON. The attribute is dropped from browser code in dev only. The
+ * production build bundles these files and is not changed.
+ */
+function devJsonImports(): Plugin {
+  const RE = /import\((['"][^'"]+\.json['"])\s*,\s*\{\s*with:\s*\{\s*type:\s*['"]json['"]\s*\}\s*\}\s*\)/g;
+  return {
+    name: "dev-json-imports",
+    apply: "serve",
+    enforce: "pre",
+    transform(code, id, opts) {
+      if (opts?.ssr || !/\.[jt]sx?$/.test(id.split("?")[0]) || !code.includes("type: 'json'") && !code.includes('type: "json"')) return null;
+      const out = code.replace(RE, "import($1)");
+      return out === code ? null : { code: out, map: null };
+    },
+  };
+}
+
+/**
+ * In `vite dev`, serve api/agent.ts the way Vercel does. Keys come from the repo-root .env (never the bundle).
+ * With no key there, or a key the API turns down, the question goes to the live site's Ask function instead
+ * (ASK_FALLBACK_URL, default https://pa-adu.vercel.app/api/agent), so ParcelIQ works on localhost without a key.
+ * ASK_LIVE=1 always uses the live function.
+ */
+const ASK_FALLBACK_URL = process.env.ASK_FALLBACK_URL ?? "https://pa-adu.vercel.app/api/agent";
 function devApi(): Plugin {
   return {
     name: "dev-api",
@@ -58,52 +84,43 @@ function devApi(): Plugin {
           if (m && m[2] && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
         }
       }
+      let live = process.env.ASK_LIVE === "1" || !process.env.ANTHROPIC_API_KEY;
+      const viaLive = async (text: string, res: ServerResponse) => {
+        const r = await fetch(ASK_FALLBACK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: text });
+        res.statusCode = r.status;
+        res.setHeader("content-type", r.headers.get("content-type") ?? "application/json");
+        res.end(await r.text());
+      };
       server.middlewares.use("/api/agent", async (req, res) => {
         const chunks: Buffer[] = [];
         for await (const c of req) chunks.push(c as Buffer);
-        const mod = await server.ssrLoadModule(resolve(ROOT, "api/agent.ts"));
         const text = Buffer.concat(chunks).toString("utf8");
+        if (live) return viaLive(text, res).catch(() => ((res.statusCode = 502), res.end(JSON.stringify({ type: "error", error: "upstream", message: "The live Ask function did not answer." }))));
+        const mod = await server.ssrLoadModule(resolve(ROOT, "api/agent.ts"));
+        // The local answer is held until it is known to be good: a missing or refused key switches to the live one.
+        let code = 200;
+        let body: unknown = null;
         const shim = {
-          status(code: number) {
-            res.statusCode = code;
+          status(c: number) {
+            code = c;
             return shim;
           },
           json(b: unknown) {
-            res.setHeader("content-type", "application/json");
-            res.end(JSON.stringify(b));
+            body = b;
           },
           setHeader: (k: string, v: string) => res.setHeader(k, v),
         };
         await mod.default({ method: req.method, body: text ? JSON.parse(text) : null, headers: req.headers, socket: req.socket }, shim);
-      });
-    },
-  };
-}
-
-/**
- * The MUSA 5500 tract explorer (musa5500/figures/tract_explorer.html, made by pipeline/tract/viz.py) at
- * /explorer/tract_explorer.html: served from its folder in dev, copied into dist/explorer/ at build.
- */
-function tractExplorer(): Plugin {
-  const src = resolve(ROOT, "musa5500/figures/tract_explorer.html");
-  let outDir = resolve(ROOT, "dist");
-  return {
-    name: "tract-explorer",
-    configResolved(c) {
-      outDir = c.build.outDir;
-    },
-    configureServer(server) {
-      server.middlewares.use("/explorer/tract_explorer.html", (_req, res) => {
-        if (!existsSync(src)) {
-          res.statusCode = 404;
-          return res.end("not built: run python -m pipeline.tract.viz");
+        const err = (body as { type?: string; error?: string } | null)?.type === "error" ? (body as { error?: string }).error : null;
+        if (err === "not_configured" || err === "upstream") {
+          live = true;
+          server.config.logger.info(`Ask: the local key did not work (${err}). Using the live Ask function from now on.`);
+          return viaLive(text, res);
         }
-        res.setHeader("content-type", "text/html; charset=utf-8");
-        createReadStream(src).pipe(res);
+        res.statusCode = code;
+        res.setHeader("content-type", "application/json");
+        res.end(JSON.stringify(body));
       });
-    },
-    closeBundle() {
-      if (existsSync(src)) cpSync(src, resolve(outDir, "explorer/tract_explorer.html"));
     },
   };
 }
@@ -165,7 +182,7 @@ export default defineConfig({
   root: resolve(ROOT, "app"),
   base: "/",
   publicDir: "public",
-  plugins: [react(), tailwindcss(), lotIndex(), devLotData(), tractExplorer(), devApi(), copyQuarto()],
+  plugins: [react(), tailwindcss(), lotIndex(), devLotData(), devApi(), devJsonImports(), copyQuarto()],
   // The docs (musa*/docs/*.md) and figures live outside app/, so dev needs to read the repo root.
   server: { fs: { allow: [ROOT] } },
   build: { outDir: resolve(ROOT, "dist"), emptyOutDir: true, target: "es2022", chunkSizeWarningLimit: 1500 },

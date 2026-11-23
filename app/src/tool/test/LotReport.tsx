@@ -9,6 +9,9 @@ import { SCENARIO_NAME, usdText } from '../../lib/lot/words';
 import { titleCase } from '../actions';
 import { STATUS_TEXT, signedUsd } from './cards';
 import type { LotResult } from './useLotResult';
+import { officesOf, parcelFacts, prepareFor, zoningView } from '../../lib/lot/parcel';
+import { rateSentence, taxRates, unitTax, unitTaxSentence } from '../../lib/lot/lotTax';
+import { propertyRecordLink } from '../../lib/lot/townInfo';
 
 export default function LotReport({ record, r, builtAt, onClose }: { record: LotRecord; r: LotResult; builtAt: string | null; onClose: () => void }) {
   const s = lotSummary({ lot: record, unit: r.input, built_at: builtAt, ...r.moneyOpts });
@@ -111,6 +114,8 @@ export default function LotReport({ record, r, builtAt, onClose }: { record: Lot
           )}
         </section>
 
+        <ParcelPart record={record} r={r} />
+
         <section className="mt-3">
           <h2 className="text-[13px] font-bold text-slate-900">Sources</h2>
           <ul className="text-[11px] text-slate-600">
@@ -127,5 +132,80 @@ export default function LotReport({ record, r, builtAt, onClose }: { record: Lot
       </article>
     </div>,
     document.body,
+  );
+}
+
+/** Parcel, zoning district, property tax, the zoning office questions and the offices: the Parcel and Next Step tabs on paper. */
+function ParcelPart({ record, r }: { record: LotRecord; r: LotResult }) {
+  const z = zoningView(record, 'today');
+  const facts = parcelFacts(record).filter((f) => ['municipality', 'county', 'school', 'zip', 'frontage', 'depth'].includes(f.key));
+  const rates = taxRates(record);
+  const build = r.money.pro_forma?.cost.build_cost.mid ?? null;
+  const t = build !== null ? unitTax(record, build) : null;
+  const prep = prepareFor(record, r.verdict, r.build);
+  const offices = officesOf(record);
+  const rec = propertyRecordLink(record);
+  return (
+    <>
+      <section className="mt-3 grid grid-cols-2 gap-4 print:grid-cols-2" data-report-parcel>
+        <div>
+          <h2 className="text-[13px] font-bold text-slate-900">Parcel and zoning</h2>
+          <table className="w-full">
+            <tbody>
+              {facts.map((f) => (
+                <tr key={f.key} className="border-t border-stone-100">
+                  <td className="py-0.5 pr-2 text-slate-600">{f.label}</td>
+                  <td className="py-0.5 text-right">{f.value}</td>
+                </tr>
+              ))}
+              <tr className="border-t border-stone-100">
+                <td className="py-0.5 pr-2 text-slate-600">District</td>
+                <td className="py-0.5 text-right">
+                  {z.district ?? 'Not on file'}
+                  {z.district_name ? `: ${z.district_name}` : ''}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          {rec && <p className="mt-1 text-[11px] text-slate-600">County record: {rec.url}</p>}
+        </div>
+        <div>
+          <h2 className="text-[13px] font-bold text-slate-900">Property tax</h2>
+          <p>{rateSentence(rates)}</p>
+          <p className="mt-1">{unitTaxSentence(t)}</p>
+        </div>
+      </section>
+      <section className="mt-3 grid grid-cols-2 gap-4 print:grid-cols-2">
+        <div>
+          <h2 className="text-[13px] font-bold text-slate-900">Ask the zoning office</h2>
+          <ol className="list-decimal pl-4">
+            {prep.ask.map((q) => (
+              <li key={q}>{q}</li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h2 className="text-[13px] font-bold text-slate-900">Bring</h2>
+          <ul className="list-disc pl-4">
+            {prep.bring.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+          {offices.length > 0 && (
+            <>
+              <h2 className="mt-2 text-[13px] font-bold text-slate-900">Who to call</h2>
+              <ul>
+                {offices.map((o) => (
+                  <li key={o.role}>
+                    {o.title}: {o.office.name}
+                    {o.office.phone ? `, ${o.office.phone}` : ''}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

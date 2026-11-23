@@ -1,11 +1,10 @@
 import { Marker, type GeoJSONSource } from 'maplibre-gl';
 import { bboxOf, findFeature, inGeom, type Feature, type LngLat, type TownProps, type TractProps } from './geo';
 import { cityTractAt, loadAreas } from './areas';
-import { openView } from '../lib/router';
 import type { ParcelProps } from './parcels';
-import { mapRef, syncHash, useTool, type Spot } from './store';
+import { mapRef, syncHash, useTool, type Spot, type AreaPick } from './store';
 import { placesShown } from './places';
-import { mapPadding } from './layout';
+import { mapPadding, useSides } from './layout';
 import { isLotLoadError, loadLot, loadTractLots, placeOfGeoid } from '../lib/lot/load';
 import { centroid, frameOf } from '../lib/lot/geometry';
 import { toFeet } from '../lib/fitBox';
@@ -14,6 +13,8 @@ import { lotByAddress, startUnit, typeFor } from './testState';
 import { lotTownOf, townsOfPlace } from '../lib/lot/towns';
 import { lotPlacesText } from '../agent/lotPlaces';
 import { PLACE_TITLE } from './test/placeData';
+import { COUNTY_MAX_ZOOM, TRACT_MAX_ZOOM, frameArea, frameLot, geomBox, unionBox, type BBox } from './frame';
+import { RULE_KEY } from './ruleLayers';
 
 export { mapPadding };
 
@@ -110,7 +111,7 @@ function knownTract(geoid: string): { tract: TractProps; town: TownProps } {
  * its tract. Explore: the tract and town at the spot, with no lot (that is Test Project's job).
  * The tract files load only when needed: a lot whose tract is known from its tile or link opens without them.
  */
-export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; tract?: string; keepUnit?: boolean } = {}) {
+export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps | null, opts: { lotId?: string; tract?: string; keepUnit?: boolean; bounds?: BBox | null } = {}) {
   const { set, view3d, view } = useTool.getState();
   const map = mapRef.current;
   if (!map) return;
@@ -120,7 +121,7 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   pending?.abort();
   const ctrl = new AbortController();
   pending = ctrl;
-  set({ msg: null, busy: true, selectedLot: view === 'test' ? (parcel?.id ?? opts.lotId ?? null) : null });
+  set({ msg: null, busy: true, areaPick: null, selectedLot: view === 'test' ? (parcel?.id ?? opts.lotId ?? null) : null });
   const fail = (msg: string) => n === counter && set({ msg, busy: false, selectedLot: null });
   // Test Project, a searched or clicked spot with no tract yet: the small city tract index first (Pittsburgh and
   // Philadelphia), the 10 MB area files only outside the two cities.
@@ -140,11 +141,14 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
   // Explore draws the outline of the area the layer is about: the municipality (Where to Build, ADUs by 2031 by town),
   // the county (by county) or the tract.
   const outline = view === 'test' ? tract : exploreOutline(pt, tract, town, legal);
-  const want = Math.max(map.getZoom(), view === 'test' ? 16.5 : legal ? 10 : 12);
+  // Test Site: a lot whose outline is known (a click, a link) is fitted with about the block around it (frame.ts).
+  // Otherwise a first move to street level, fitted to the lot once its record is read.
+  const want = Math.max(map.getZoom(), view === 'test' ? 16 : legal ? 10 : 12);
   // Explore inspects an area: when that zoom would crop its outline, fit the outline in the open map instead.
-  const fitZoom = view === 'test' || !outline || want <= map.getZoom() ? undefined : map.cameraForBounds(bboxOf(outline.geometry), { padding: mapPadding(true) })?.zoom;
+  const fitZoom = view === 'test' || !outline || want <= map.getZoom() ? undefined : map.cameraForBounds(bboxOf(outline.geometry), { padding: mapPadding(true), absolutePadding: true })?.zoom;
   const motion = { pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 1400, padding: mapPadding(true), essential: true };
-  if (outline && fitZoom !== undefined && fitZoom < want) map.fitBounds(bboxOf(outline.geometry), motion);
+  if (view === 'test' && opts.bounds) frameLot(opts.bounds, { pitch: motion.pitch, duration: motion.duration });
+  else if (outline && fitZoom !== undefined && fitZoom < want) map.fitBounds(bboxOf(outline.geometry), { ...motion, absolutePadding: true });
   else map.flyTo({ center: pt, zoom: want, ...motion });
   (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: outline ? [outline as unknown as GeoJSON.Feature] : [] });
 
@@ -162,21 +166,14 @@ export async function testSpot(pt: LngLat, label: string, parcel?: ParcelProps |
     }
   }
   const record = rec.record;
+  if (view === 'test' && record && !opts.bounds) {
+    const b = geomBox(record.lot.polygon);
+    if (b) frameLot(b, { pitch: view3d ? PITCH_SPOT : 0, duration: reduced() ? 0 : 900 });
+  }
   const spot: Spot = { n, label: record?.lot.address ? titleCase(record.lot.address) : label, pt, tract: area.tract, town: townOfRecord(record, area.town), parcel: parcel ?? null, ...rec };
   if (record && !opts.keepUnit) fitUnitTo(record);
   set({ busy: false, selectedLot: record?.lot.id ?? null, spot });
   syncHash();
-}
-
-/** Explore: draw the outline of the picked area again after the map layer changed (tract, town or county). */
-export function redrawPick() {
-  const { spot, view, tracts, towns } = useTool.getState();
-  const map = mapRef.current;
-  if (!map || !spot || view !== 'project') return;
-  const tract = tracts ? findFeature(tracts, spot.pt) : undefined;
-  const town = towns ? findFeature(towns, spot.pt) : undefined;
-  const outline = exploreOutline(spot.pt, tract, town, placesShown(useTool.getState()));
-  (map.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: outline ? [outline as unknown as GeoJSON.Feature] : [] });
 }
 
 /** Explore: the outline of the area the map layer is about, at a clicked spot. */
@@ -185,13 +182,6 @@ function exploreOutline(pt: LngLat, tract: Feature<TractProps> | undefined, town
   if (level === 'county') return (counties ? findFeature(counties, pt) : undefined) ?? tract;
   if ((legal || level === 'town') && town) return town;
   return tract;
-}
-
-/** Explore: switch to Test Project at the selected spot (the tool then opens the lot there). */
-export function testLotHere() {
-  // The view change re-runs testSpot at the selected spot (ToolPage), now looking for the lot record there.
-  carrySpot = true;
-  openView('test');
 }
 
 /** "Test a lot here" keeps the spot across the view change; any other switch (the Features menu) starts clean. */
@@ -216,7 +206,7 @@ export async function openLot(lotId: string, geoid: string) {
     const f = frameOf(rec);
     // The lot's center. The lot id wins over the point, so an odd-shaped lot still opens.
     const pt = f.toLonLat(centroid(toFeet(rec.lot.polygon, f.origin)));
-    await testSpot(pt, 'Linked lot', null, { lotId, tract: geoid, keepUnit });
+    await testSpot(pt, 'Linked lot', null, { lotId, tract: geoid, keepUnit, bounds: geomBox(rec.lot.polygon) });
   } catch (e) {
     // A newer spot started meanwhile: leave its state alone.
     if (n === counter) useTool.getState().set({ msg: isLotLoadError(e) ? e.userMessage : 'That lot could not be opened.', busy: false });
@@ -228,9 +218,37 @@ export function clearSpot() {
   counter++;
   pending?.abort();
   (mapRef.current?.getSource('pick') as GeoJSONSource | undefined)?.setData({ type: 'FeatureCollection', features: [] });
-  useTool.getState().set({ spot: null, selectedLot: null, busy: false });
+  useTool.getState().set({ spot: null, areaPick: null, selectedLot: null, busy: false });
   syncHash();
 }
+
+/** Test Site, a boundary on: pick a county, town, tract or ZIP code for its ADU rule answer. Any lot is let go. The
+ * map fits its whole outline in the open map (frame.ts), never at street or lot zoom. */
+export function selectArea(t: AreaPick) {
+  clearSpot();
+  ripple(t.pt);
+  // Details opens now (ToolPage does it too), so the padding leaves its room.
+  useTool.getState().set({ areaPick: t, resultsOpen: true });
+  useSides.getState().setSide('right', true);
+  const st = useTool.getState();
+  const inMemory = t.kind === 'tract' ? st.tracts : t.kind === 'town' ? st.towns : t.kind === 'county' ? st.counties : null;
+  const b = sourceBox(`bnd-${t.kind}`, RULE_KEY[t.kind], t.geoid, inMemory as AreaFC | null);
+  if (b) frameArea(b, t.kind === 'county' ? COUNTY_MAX_ZOOM : TRACT_MAX_ZOOM, reduced() ? 0 : 1000);
+}
+
+type AreaFC = { features: { properties: Record<string, unknown>; geometry: { type: string; coordinates?: unknown } }[] };
+
+/** An area's outline box: from the file in memory, else from the map's boundary source (all its tile pieces). */
+function sourceBox(source: string, key: string, id: string, fc: AreaFC | null): BBox | null {
+  const f = fc?.features.find((x) => x.properties[key] === id);
+  if (f) return geomBox(f.geometry);
+  const map = mapRef.current;
+  if (!map?.getSource(source)) return null;
+  return unionBox(map.querySourceFeatures(source, { filter: ['==', ['get', key], id] }).map((x) => geomBox(x.geometry)));
+}
+
+/** Let go of the picked area (Esc, the Details close button). */
+export const clearTract = () => useTool.getState().areaPick && useTool.getState().set({ areaPick: null });
 
 /** Switch between the flat map and the tilted 3D view. */
 export function setView3d(on: boolean) {

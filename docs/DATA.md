@@ -157,6 +157,21 @@ Heights: Microsoft model heights read low in Upper Dublin (median house 15.7 ft 
 
 Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). Land cover: the model `r34_c5_s0` on NAIP 2022 (see Land cover per lot below).
 
+## Town details for the Parcel tab
+
+`shared/lot_towns_info.json`, one entry per lot town (the 12 rule file towns) and per county, read by `app/src/lib/lot/townInfo.ts`. Checked 2026-11-21. Every value carries its source (title, link, the page's own date when shown) and the date it was opened. A value whose page could not be opened is left out.
+
+| Part | Source |
+|---|---|
+| County, municipal and school district millage (2026, school 2026-27) | Allegheny County municipal millage profile, Lehigh County millage sheet (revised 2026-07-02), County of Chester tax rates 2026 (revised 2026-06-24), Centre County millage (revised 2026-07-08), Montgomery County Board of Assessment Appeals millage table, borough and township finance pages where they load |
+| Philadelphia rate split | City Real Estate Tax regulations: City 0.6159 percent, School District 0.7839 percent of assessed market value |
+| Common level ratio | State Tax Equalization Board, 2025 ratios certified 2026-05-20, used July 1, 2026 to June 30, 2027. STEB publishes them for appeals. The tool uses them only to estimate the tax a new unit adds |
+| Base year, new construction, appeals, homestead | County assessment office pages (Montgomery's new construction line is from a borough tax collector page) |
+| Parcel record links | Allegheny Real Estate Portal, property.phila.gov, Lehigh County Online Records Access, Chester County record pages by assessment PIN, Montgomery County Property Records. Tested with sample parcels. Centre County's record site refused requests, so its assessment office page is linked |
+| Documents, offices, district names | City, borough and township websites, eCode360 code pages, county GIS pages |
+
+Known gaps (Nov 21): the Lower Merion and Upper Dublin township websites refused every request, so their township pages, offices and (Upper Dublin) district names are not in the file. Their county record link and millage are. Allentown parcels can lie in three school districts: the file gives the Allentown School District rate and says so. Allentown taxes land and buildings at different rates: a new unit is a building, so the building rate is used. Phoenixville's 2026 borough rate is 8.67 mills on the borough finance page and the county table, while an unsigned borough levy ordinance says 9.82: 8.67 is used. Whether Pittsburgh's 9.67 mills include the library and parks levies is not stated.
+
 ## Statewide
 
 <!-- source: file listing of ~/musa-drive/raw/tiger and ~/musa-drive/raw/market on 2026-11-11, raw/market/safmr_pa_fy2026.json "source" and "vintage", output of `python -m pipeline.market coverage` on 2026-11-11 -->

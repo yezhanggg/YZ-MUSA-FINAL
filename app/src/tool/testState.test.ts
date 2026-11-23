@@ -3,7 +3,7 @@ import { fixture } from '../lib/lot/__fixtures__';
 import { fitBox } from '../lib/fitBox';
 import { areaFeet, frameOf } from '../lib/lot/geometry';
 import { unitVerdict } from '../lib/lot/verdict';
-import { DEFAULT_UNIT, PRESETS, allowedPhrase, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput } from './testState';
+import { DEFAULT_UNIT, PRESETS, allowedPhrase, boxRing, fitsAt, lotByAddress, normAddress, siteData, sidesFromArea, testFromHash, testHash, typeFor, typeOptions, unitInput, unitFromInput } from './testState';
 
 describe('the address', () => {
   it('defaults to Test Project, today and a 20 x 30 ft cottage', () => {
@@ -21,7 +21,8 @@ describe('the address', () => {
   it('writes only the view in Explore', () => {
     const hash = testHash('#/?sc=today&uw=20', { view: 'project', scenario: 'today', unit: DEFAULT_UNIT, lot: null });
     expect(hash).toBe('#/?view=project');
-    expect(testFromHash(hash).view).toBe('project');
+    // Explore moved to the MUSA 5500 repository: an older Explore link opens Test Site.
+    expect(testFromHash(hash).view).toBe('test');
   });
 
   it('ignores odd values', () => {
@@ -142,5 +143,28 @@ describe('search by address', () => {
     expect(lotByAddress('Beacon Street', lots)).toBeNull();
     expect(lotByAddress('9999 Beacon Street', lots)).toBeNull();
     expect(lotByAddress('5459 Beacon Street', [...lots, fixture('easy_fit')])).toBeNull();
+  });
+});
+
+describe('unitFromInput (the assistant changes the unit on screen)', () => {
+  const cur = { type: 'detached_new' as const, width: 20, depth: 30, stories: 1 as const, height: null, angle: null, at: { lon: -80, lat: 40.4 }, units: 1 as const };
+  it('a floor area keeps the shape, splits over two stories and drops the dragged spot', () => {
+    const u = unitFromInput(cur, { size_sqft: 800, stories: 2 });
+    expect(u.stories).toBe(2);
+    expect(u.width! * u.depth!).toBeGreaterThan(380);
+    expect(u.width! * u.depth!).toBeLessThan(420);
+    expect(u.depth! / u.width!).toBeCloseTo(1.5, 0);
+    expect(u.at).toBeNull();
+    expect(u.height).toBeNull();
+  });
+  it('clamps sides and height to the ADU Design limits, and takes a type', () => {
+    const u = unitFromInput(cur, { type: 'garage_conversion', width_ft: 5, depth_ft: 200, height_ft: 99 });
+    expect(u).toMatchObject({ type: 'garage_conversion', width: 12, depth: 60, height: 35 });
+  });
+  it('ignores a type it does not know and keeps the spot when only the height changes', () => {
+    const u = unitFromInput(cur, { type: 'castle', height_ft: 18 });
+    expect(u.type).toBeUndefined();
+    expect(u.height).toBe(18);
+    expect(u.at).toBeUndefined();
   });
 });

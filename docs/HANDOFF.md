@@ -21,7 +21,7 @@ cd ~/Documents/YZ-MUSA-FINAL
 | `agent/` | Ask tool schemas and system prompt (`schema.ts`), the Node data provider, and the eval (`agent/eval/`) |
 | `pipeline/` | Python. `places/` downloads and builds each city, `rules.py` reads rule files, `fit.py` the vector fit test, `lot.py` and `build_lots.py` the lot records, `money.py` and `market.py` cost and rent, `tract/` the MUSA 5500 tract analysis, `vision/` the land cover model, `validation/` the hand-label kit, `corpus/` the machine-read zoning pilot |
 | `shared/` | `rules/` the rule files with citations (one JSON per place or bill), `assumptions.json` every money and planning number, `ASSUMPTIONS.md` its explanation |
-| `musa5500/`, `musa6950/` | Course notebooks and course write-ups (`docs/`). `musa6950/yolo/` is the outbuilding detector |
+| `musa6950/` | Course notebooks and course write-ups (`docs/`). `musa6950/yolo/` is the outbuilding detector. MUSA 5500 is in https://github.com/yezhanggg/YZMUSA5500 |
 | `tests/` | Python tests, with a 50-lot regression set in `tests/regression/` |
 | `tools/` | `publish_lots.sh` (lot data bundle for hosting), `town_targets.py` (rank towns for rule files), `gen_rules.py` (rule tables for the docs) |
 | `docs/` | These documents |
@@ -140,25 +140,14 @@ python3 tools/gen_rules.py towns > docs/RULES_TOWNS.md    # refresh the town tab
 
 ### 5. Tract analysis numbers (MUSA 5500)
 
-Each step is a module under `pipeline/tract/`. All were checked with `--help`. Run them in this order (each reads the one before):
+The tract analysis moved to its own repository on Nov 22, 2026: https://github.com/yezhanggg/YZMUSA5500 (its README has the order of the steps). Its outputs land on the data drive (`data/processed/*.csv`, `~/musa-drive/processed/5500/*`). After a rerun there:
 
 ```bash
-$G -m pipeline.tract.growth        # growth before and after 2019
-$G -m pipeline.tract.groups        # trend groups (--k, --method kmeans|gmm|ward)
-$G -m pipeline.tract.payoff        # 600 sq ft payoff screen
-$G -m pipeline.tract.lot_rollup    # lot results to tract, city and county (reads lots/<place>/index.parquet)
-$G -m pipeline.tract.legal         # legal class of every town from the rule files
-$G -m pipeline.tract.room          # room model for every tract
-$G -m pipeline.tract.forecast      # growth model and ADUs by 2031 (--no-save to try without writing)
-$G -m pipeline.tract.rollup        # county roll-up
-$G -m pipeline.tract.viz           # musa5500/figures/tract_explorer.html
 $G app/build_data.py               # app/public/data files and app/src/lib/headline.json
 ```
 
-- Outputs: `data/processed/*.csv` and `~/musa-drive/processed/5500/*`.
 - `app/build_data.py` has no `--help`. Any call runs the full build and rewrites `app/public/data/` and `app/src/lib/headline.json`.
-- `headline.json` feeds `app/src/lib/numbers.ts`, so the app text follows. Two values in `numbers.ts` are typed by hand (`rfMiou`, `lotsWithRoom`). Check them after a rerun.
-- Then update `musa5500/docs/results.md` from the files named in its table comments, and render the class site (recipe 8).
+- `headline.json` feeds `app/src/lib/numbers.ts` (the Research page and ParcelIQ's passages). Two values in `numbers.ts` are typed by hand (`rfMiou`, `lotsWithRoom`). Check them after a rerun.
 
 ### 6. The land cover and detector models
 

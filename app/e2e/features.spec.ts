@@ -1,29 +1,24 @@
-// The top bar's Features menu (Test Site and Explore) and the left panel footer: map credits in one line, no
+// The top bar (Test Site and Research) and the left panel footer: map credits in one line, no
 // attribution button on the map, no lot data dates.
 import { expect, test } from '@playwright/test';
 
 test.describe('features menu and footer', () => {
-  test('Features opens on hover and focus, marks the open view, switches views and closes on Escape', async ({ page }) => {
+  test('the top bar: Test Site and Research (MUSA 6950), no Features menu and no Explore', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
-    const button = page.getByRole('button', { name: 'Features' });
-    await expect(button).toHaveAttribute('aria-haspopup', 'menu');
-    await button.hover();
-    const menu = page.getByRole('menu', { name: 'Features' });
-    await expect(menu).toBeVisible();
-    await expect(menu.getByRole('menuitemradio', { name: /^Test Site/ })).toHaveAttribute('aria-checked', 'true');
-    await expect(menu.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'false');
-    await page.keyboard.press('Escape');
-    await expect(menu).toHaveCount(0);
-    await button.focus();
-    await expect(menu).toBeVisible();
-    await menu.getByRole('menuitemradio', { name: /^Explore/ }).click();
-    await expect.poll(() => new URL(page.url()).hash).toContain('view=project');
-    await button.click();
-    await expect(page.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'true');
-    // Old links keep working.
-    await page.goto('/#/?view=test');
+    const bar = page.getByRole('navigation', { name: 'Sections' });
+    await expect(bar.getByRole('button')).toHaveText(['Test Site', 'Research']);
+    await expect(bar.getByRole('button', { name: 'Test Site' })).toHaveAttribute('aria-current', 'page');
+    await expect(page.getByRole('button', { name: 'Features' })).toHaveCount(0);
+    await bar.getByRole('button', { name: 'Research' }).click();
+    await expect(page.getByRole('dialog', { name: 'Research' })).toContainText('Room on the lot');
+    await expect(page.getByRole('dialog', { name: 'Research' })).not.toContainText('Demand and payoff');
+    await bar.getByRole('button', { name: 'Test Site' }).click();
+    await expect(page.getByRole('dialog', { name: 'Research' })).toHaveCount(0);
+    // Old links: Explore and the MUSA 5500 page open Test Site.
+    await page.goto('/#/?view=project&research=5500');
     await expect(page.locator('section[aria-label="Boundaries"]')).toBeVisible();
+    await expect(page.getByRole('dialog', { name: 'Research' })).toHaveCount(0);
   });
 
   test('the map shows one small OpenStreetMap credit, the left panel no credits and no footer link', async ({ page }) => {

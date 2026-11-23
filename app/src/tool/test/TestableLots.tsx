@@ -10,19 +10,10 @@ import { mapRef, useTool } from '../store';
 import { ANSWER_COLOR, LEGEND, LOT_ZOOM, testableCaption } from '../testable';
 import { useManifests } from './placeData';
 import FoldCard, { Switch } from './FoldCard';
+import { LOT_PLACES } from '../placeMatch';
 
-
-/** Places with lot records, and a home street to fly to (placeData.ts PLACES, in the order of the loader's registry). */
-export const LOT_PLACES = [
-  { id: 'pittsburgh', name: 'Pittsburgh', center: [-79.9236, 40.4381] as [number, number] },
-  { id: 'philadelphia', name: 'Philadelphia', center: [-75.0126, 40.0618] as [number, number] },
-  { id: 'allentown', name: 'Allentown', center: [-75.4880, 40.6010] as [number, number] },
-  // County places hold several towns: the row is named for the county and flies to its largest town with lots by right
-  // (West Chester, College Township, Narberth).
-  { id: 'chester_county', name: 'Chester County', center: [-75.6060, 39.9584] as [number, number] },
-  { id: 'centre_county', name: 'Centre County', center: [-77.8216, 40.8113] as [number, number] },
-  { id: 'montgomery_county', name: 'Montgomery County', center: [-75.2634, 40.0087] as [number, number] },
-];
+/** Places with lot records, and a home street to fly to: in placeMatch.ts (no React), so the Node eval has them too. */
+export { LOT_PLACES };
 
 /** "Testable Lots": a card that folds (remembered), the switch on the title line, then one row per place that flies
  * there, with its lot count (three places do not fit side by side in the 300 px panel). */

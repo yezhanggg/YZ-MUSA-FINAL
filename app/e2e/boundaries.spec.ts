@@ -15,7 +15,7 @@ const sw = (page: Page, name: string) => card(page).getByRole('switch', { name }
 const verdict = (page: Page) => page.locator('section[aria-label="Verdict"]').first();
 
 test.describe('boundaries', () => {
-  test('County is on at the start, Tract and ZIP Code add and remove their layers', async ({ page }) => {
+  test('County is on at the start, one boundary at a time: Tract and ZIP Code replace it', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
     await expect(card(page)).toBeVisible();
@@ -30,11 +30,15 @@ test.describe('boundaries', () => {
     await expect(card(page)).toContainText('ZIP Code Tabulation Areas');
     await expect(main(page)).toHaveAttribute('data-boundaries', 'bnd-county-line bnd-county-label');
 
+    // One at a time: turning one on turns the others off.
     await sw(page, 'Census Tract').click();
     await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-tract-line/);
+    await expect(sw(page, 'County')).toHaveAttribute('aria-checked', 'false');
+    await expect(main(page)).not.toHaveAttribute('data-boundaries', /bnd-county-line/);
     await sw(page, 'ZIP Code').click();
     await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
-    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-county-line/);
+    await expect(main(page)).not.toHaveAttribute('data-boundaries', /bnd-tract-line/);
+    await expect(sw(page, 'Census Tract')).toHaveAttribute('aria-checked', 'false');
     // The ZIP code file is there and holds Pennsylvania's ZCTAs.
     const n = await page.evaluate(async () => ((await (await fetch('data/zcta.geojson')).json()) as { features: unknown[] }).features.length);
     expect(n).toBeGreaterThan(1700);
@@ -44,13 +48,11 @@ test.describe('boundaries', () => {
     await expect(sw(page, 'ZIP Code')).toHaveAttribute('aria-checked', 'true');
     await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
 
-    await sw(page, 'Census Tract').click();
     await sw(page, 'ZIP Code').click();
-    await sw(page, 'County').click();
     await expect(main(page)).toHaveAttribute('data-boundaries', '');
   });
 
-  test('the card folds, and Explore has the same switches', async ({ page }) => {
+  test('the card folds and keeps its switches', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
     await card(page).getByRole('button', { name: 'Boundaries' }).click();
@@ -59,20 +61,14 @@ test.describe('boundaries', () => {
     await expect(card(page).getByRole('button', { name: 'Boundaries' })).toHaveAttribute('aria-expanded', 'false');
     await card(page).getByRole('button', { name: 'Boundaries' }).click();
     await expect(sw(page, 'County')).toHaveAttribute('aria-checked', 'true');
-    await page.goto('/#/?view=project');
-    // Explore has the same card, first and open (it shares the fold with Test Site).
-    await expect(card(page).getByRole('button', { name: 'Boundaries' })).toHaveAttribute('aria-expanded', 'true');
-    await sw(page, 'ZIP Code').click();
-    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
   });
 
-  test('with all three on, a lot can still be clicked and opened', async ({ page }) => {
+  test('with a boundary on, a lot can still be clicked and opened', async ({ page }) => {
     test.skip(!hasLots, `no lot records at ${LOTS}`);
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/#/?view=test');
-    await sw(page, 'Census Tract').click();
     await sw(page, 'ZIP Code').click();
-    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-county-line.*bnd-tract-line.*bnd-zip-line/);
+    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
     await openCard(page, 'Testable Lots');
     await page.locator('[data-place="pittsburgh"]').click();
     await page.waitForTimeout(4000); // the fly to the city
@@ -88,6 +84,6 @@ test.describe('boundaries', () => {
     expect(spot, 'a lot under the cursor').not.toBeNull();
     await page.mouse.click(spot![0], spot![1]);
     await expect(verdict(page)).toBeVisible({ timeout: 30_000 });
-    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-tract-line/);
+    await expect(main(page)).toHaveAttribute('data-boundaries', /bnd-zip-line/);
   });
 });

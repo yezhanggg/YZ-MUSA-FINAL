@@ -84,7 +84,7 @@ for every other place; the app then shows the town website from `contact.url`, o
 
 ## Population and homes
 
-`pop` is the Census Vintage 2025 subcounty estimate (July 1, 2025), the file `musa5500/get_data.py` already reads.
+`pop` is the Census Vintage 2025 subcounty estimate (July 1, 2025), the file the MUSA 5500 `get_data.py` reads (https://github.com/yezhanggg/YZMUSA5500).
 Mount Lebanon and Penn Hills are found under their new codes by name. Wheatland borough (Mercer) has no 2025 estimate
 and keeps its 2020 count. `housing_units` is the 2020 Census (PL 94-171 HU100), the file `tools/town_targets.py` reads.
 

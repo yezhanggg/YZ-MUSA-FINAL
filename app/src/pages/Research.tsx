@@ -1,10 +1,9 @@
-// The two Research pages. Each has three short sections: Purpose, Data, Methods.
+// The Research page (MUSA 6950). Three short sections: Purpose, Data, Methods.
 // Written from musa*/docs/proposal.md, data.md and methods.md. Scores and totals come from lib/numbers.ts.
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { BookOpen } from 'lucide-react';
 import figLots from '../../../musa6950/docs/figures/09_pittsburgh_lot_sheet.png';
-import figPayoff from '../../../musa5500/docs/figures/04_payoff_map.png';
 import { NUMBERS } from '../lib/numbers';
 import { QUARTO_URL, type Course } from '../lib/router';
 import { EASE_OUT } from '../components/primitives';
@@ -16,8 +15,6 @@ interface Page {
   data: [string, string, string, string][];
   methods: { title: string; body: ReactNode }[];
   figure: { src: string; caption: string; after: number };
-  /** Link the interactive tract explorer (MUSA 5500). */
-  explorer?: boolean;
 }
 
 const PAGES: Record<Course, Page> = {
@@ -53,39 +50,6 @@ const PAGES: Record<Course, Page> = {
       { title: 'Not checked yet', body: 'No hand-labeled lot exists yet (0 of 250), so the fit answers have not been checked against a person looking at the lot.' },
     ],
     figure: { src: figLots, caption: 'Twenty random Pittsburgh lots from the final build. Gray: house. Brown: garage. Green: buildable ground today. Blue: the suggested unit.', after: 6 },
-  },
-  '5500': {
-    name: 'MUSA 5500',
-    title: 'Demand and payoff',
-    purpose: [
-      'Legal does not mean built. Philadelphia has allowed ADUs in parts of the city since 2012, and only about 10 were built legally.',
-      'ADUs get built where demand is growing and the rent covers the cost.',
-      'This part asks where people and jobs are growing, and if that changed after 2019.',
-      'It tests where an ADU would pay off, and how many could be built by 2031.',
-    ],
-    data: [
-      ['ACS 5-year (Census API)', 'People, rent, home value, renters', '2010-14 to 2020-24', 'Tract'],
-      ['ACS 5-year, table B25031', 'Rent by bedroom count', '2020-24', 'Tract, county ratios'],
-      ['Decennial Census', 'Housing units', '2010, 2020', 'Tract'],
-      ['Population Estimates', 'Town population', '2010-2025', 'Town'],
-      ['LEHD LODES8', 'Jobs', '2010 to 2024', 'Block, summed to tract'],
-      ['Building Permits Survey', 'New homes permitted', '2010-2025', 'Town'],
-      ['Freddie Mac PMMS', '30-year mortgage rate', 'Weekly', 'State'],
-      ['Annual NLCD (USGS)', 'Developed land', '2010, 2019, 2025', '30 m raster'],
-      ['OpenStreetMap (OSMnx)', 'Street network', 'Current', 'Metro area'],
-      ['MUSA 6950', 'Lots with room', '2022 images', 'Tract'],
-    ],
-    methods: [
-      { title: 'Put everything on 2020 tracts', body: 'Move 2010-tract counts to 2020 tracts with the Census block crosswalk. Rent and values are in 2024 dollars.' },
-      { title: 'Growth before and after 2019', body: 'Yearly growth in people, homes and rent across three ACS 5-year windows that do not overlap: 2010-14, 2015-19 and 2020-24 (midpoints 2012, 2017, 2022). Jobs compare 2010-19 with 2019-24. Where a change is smaller than its margin of error, the map says so.' },
-      { title: 'Group places by trend', body: <>K-means on the growth rates gives {NUMBERS.groups} stable groups. The structure is weak (silhouette {NUMBERS.groupsSilhouette}), so the groups describe tracts. They are not a discovery.</> },
-      { title: 'Land and job access', body: 'Share of developed land from NLCD rasters. Jobs within 30 minutes by car from OSMnx, for Philadelphia.' },
-      { title: 'Does an ADU pay off?', body: <>A 600 sq ft unit at $175, $250 or $300 per sq ft, borrowed over 30 years at 6.53%. It pays if the tract's 1-bedroom rent, minus 30% for costs, covers the monthly payment. That is true in about {NUMBERS.paysShare} of tracts at the mid cost.</> },
-      { title: 'ADUs by 2031', body: <>A gradient boosting model (county-held-out R2 about {NUMBERS.forecastR2}) ranks where housing grows. Combine it with permit rates from cities that allow ADUs, the payoff, lots with room and each town's rule. The mid case is {NUMBERS.adusHb2186} under HB 2186, {NUMBERS.adusSb1346} under SB 1346 and {NUMBERS.adusToday} under today's rules. This is scenario arithmetic, not a fitted ADU forecast. Both bills die on Nov 30, 2026 if not enacted.</> },
-      { title: 'Other sizes', body: 'In the tool you pick bedrooms, size and stories. Rent comes from ACS rent for that bedroom count, and cost from that size, with the same loan and the same yes, close or no rule. The town forecast stays at 600 sq ft.' },
-    ],
-    figure: { src: figPayoff, caption: 'Where a 600 sq ft 1-bedroom unit pays off at the mid build cost.', after: 4 },
-    explorer: true,
   },
 };
 
@@ -155,34 +119,9 @@ export default function Research({ course }: { course: Course }) {
         </ol>
       </Section>
 
-      {p.explorer && <Explorer />}
 
       <Credits />
     </motion.article>
-  );
-}
-
-/** The interactive tract explorer (Altair), copied next to the site at build time. Loads only when opened. */
-export const EXPLORER_URL = '/explorer/tract_explorer.html';
-
-function Explorer() {
-  const [open, setOpen] = useState(false);
-  return (
-    <Section n="4" title="Explore the tracts">
-      <p className="text-body leading-relaxed text-slate-700 sm:text-[15px]">Click a county or brush the scatter plot to filter the bars, the histogram and the table.</p>
-      {open ? (
-        <iframe src={EXPLORER_URL} title="Tract explorer" loading="lazy" className="mt-3 h-[720px] w-full rounded-2xl bg-white ring-1 ring-stone-200/80" />
-      ) : (
-        <button type="button" onClick={() => setOpen(true)} className="tap mt-3 rounded-lg bg-violet-600 px-3 py-2 text-small font-semibold text-white hover:bg-violet-700">
-          Open the explorer here
-        </button>
-      )}
-      <p className="mt-2">
-        <a href={EXPLORER_URL} target="_blank" rel="noreferrer" className="text-small font-semibold text-violet-700 hover:underline">
-          Open it in a new tab
-        </a>
-      </p>
-    </Section>
   );
 }
 

@@ -12,7 +12,7 @@ export default function App() {
   const research = useResearch();
 
   useEffect(() => {
-    document.title = research ? `${research === '6950' ? 'Room on the lot' : 'Demand and payoff'} · Backyard Homes PA` : 'Backyard Homes PA';
+    document.title = research ? 'Room on the lot · Backyard Homes PA' : 'Backyard Homes PA';
   }, [research]);
 
   return (

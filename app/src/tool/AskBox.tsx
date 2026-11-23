@@ -46,11 +46,12 @@ export function useAskContext() {
   const view = useTool((s) => s.view);
   const scenario = useTool((s) => s.scenario);
   const unit = useTool((s) => s.unit);
+  const areaPick = useTool((s) => s.areaPick);
   const map = mapRef.current;
   const test = view === 'test';
   const lotId = spot?.record?.lot.id ?? spot?.parcel?.id ?? null;
   // The lot by its address, as the panel names it, not by its raw id.
-  const where = askWhere(spot);
+  const where = areaPick && !spot?.record ? areaPick.name : askWhere(spot);
   return {
     test,
     chips: test
@@ -63,6 +64,8 @@ export function useAskContext() {
       scenario: test ? scenario : null,
       unit: test ? { type: unit.type, width_ft: unit.width, depth_ft: unit.depth, stories: unit.stories, height_ft: unit.height, units: unit.units } : null,
       map: map ? { center: [map.getCenter().lng, map.getCenter().lat] as [number, number], zoom: map.getZoom() } : null,
+      // Test Site: an area picked on a boundary, with no lot open.
+      area: test && areaPick && !spot?.record ? { kind: areaPick.kind, geoid: areaPick.geoid, name: areaPick.name, county: areaPick.county } : null,
     },
   };
 }

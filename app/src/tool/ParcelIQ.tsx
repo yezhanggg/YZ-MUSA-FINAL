@@ -3,14 +3,14 @@
 // top edge its height. Same Ask backend and browser tools as AskBox. An answer waits at least MIN_THINK_MS behind the
 // thinking pill, so a fast reply does not flash.
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
-import { ArrowDown, ArrowUpRight, Eraser, ListPlus, Sparkles, X } from 'lucide-react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { ArrowUpRight, Eraser, ListPlus, X } from 'lucide-react';
 import { cx } from '../lib/cx';
 import { ask, type Turn } from '../agent/client';
 import { browserProvider } from '../agent/browserProvider';
 import { askReply, askTags, type AskTags } from './askTags';
 import { Answer, useAskContext } from './AskBox';
-import { ThinkingDots } from './ThinkingDots';
+import { ThinkingBackdrop } from './ThinkingDots';
 import { CHAT_H_DEFAULT, CHAT_W_DEFAULT, useChatOpen } from './layout';
 import { useTool } from './store';
 
@@ -20,7 +20,9 @@ export const EXPLAIN_MORE = 'Explain more';
 
 const TOPICS = ['What is an ADU?', 'Which towns allow ADUs by right?', 'What would the state bill change?', 'How much would a backyard cottage cost?', 'Can I rent it out?'];
 export const LOT_TOPIC = 'Can I build an ADU on this lot?';
-export const AREA_TOPIC = 'Can I build an ADU in this town?';
+/** With a lot open: the parcel, tax and preparation questions the Parcel and Next Step tabs answer. */
+const LOT_TOPICS = ['How much would it add to my property tax?', 'What should I bring and ask at the zoning office?', 'Where are the zoning map and the town plan?', 'How much would a backyard cottage cost?'];
+export const AREA_TOPIC = 'Can I build an ADU here?';
 
 interface Msg {
   role: 'user' | 'assistant';
@@ -53,7 +55,8 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   const { context } = useAskContext();
   // Test Site with a lot: questions about the lot. Explore with an area: about its town.
   const hasLot = useTool((s) => s.view === 'test' && !!s.spot?.record);
-  const hasArea = useTool((s) => s.view === 'project' && !!s.spot);
+  // An area picked on a boundary (county, town, tract or ZIP code), with no lot open.
+  const hasArea = useTool((s) => !!s.areaPick && !s.spot?.record);
   const reduce = useReducedMotion();
   const listRef = useRef<HTMLDivElement>(null);
   const setMsgs = (f: (m: Msg[]) => Msg[]) =>
@@ -123,7 +126,7 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
   };
 
   const lastAnswer = [...msgs].reverse().find((m) => m.role === 'assistant');
-  const topics = hasLot ? [LOT_TOPIC, ...TOPICS] : hasArea ? [AREA_TOPIC, ...TOPICS] : TOPICS;
+  const topics = hasLot ? [LOT_TOPIC, ...LOT_TOPICS] : hasArea ? [AREA_TOPIC, ...TOPICS] : TOPICS;
 
   return (
     <motion.section
@@ -139,7 +142,9 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
     >
       {resize && <EdgeHandles r={resize} />}
       {/* Header: name, what it does, Clear Chat and close. */}
-      <header className="flex shrink-0 items-center gap-3 border-b border-stone-100 px-4 py-3">
+      {/* While an answer is on its way, the whole card shows the thinking field behind everything. */}
+      <AnimatePresence>{busy && <motion.div key="field" className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-2xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduce ? 0 : 0.35 }}><ThinkingBackdrop /></motion.div>}</AnimatePresence>
+      <header className="relative flex shrink-0 items-center gap-3 rounded-t-2xl border-b border-stone-100 bg-white px-4 py-3">
         <div className="min-w-0 flex-1">
           <h2 className="text-[15px] font-semibold leading-5 tracking-[-0.01em] text-slate-900">ParcelIQ</h2>
           <p className="truncate text-[12px] leading-4 text-slate-500">Zoning and buildable answers for PA lots</p>
@@ -155,12 +160,12 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
       </header>
 
       {/* Messages, or the welcome with suggested questions. */}
-      <div ref={listRef} className="scroll-quiet min-h-0 flex-1 overflow-y-auto overscroll-contain bg-gradient-to-b from-stone-50/80 to-white px-4 py-4" aria-live="polite">
+      <div ref={listRef} className={cx('relative scroll-quiet min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-4', !busy && 'bg-gradient-to-b from-stone-50/80 to-white')} aria-live="polite">
         {msgs.length === 0 ? (
           <div className="flex min-h-full flex-col justify-end gap-5 pb-1">
             <div className="flex flex-col items-start gap-1.5 px-1">
               <p className="text-[19px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">Hi there!</p>
-              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask what you can build on this lot, or pick a question.' : hasArea ? 'Ask about this town, or pick a question.' : 'Search an Address or Ask Anything'}</p>
+              <p className="text-[13px] leading-5 text-slate-500">{hasLot ? 'Ask about this lot: what you can build, its zoning, taxes, documents and next steps.' : hasArea ? 'Ask about the area you picked, or pick a question.' : 'Search an Address or Ask Anything'}</p>
             </div>
             <div role="group" aria-label="Suggested questions" className="flex flex-col gap-1.5">
               {topics.map((t) => (
@@ -175,14 +180,11 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
           <div className="flex flex-col gap-4">
             {msgs.map((m, i) =>
               m.role === 'user' ? (
-                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="ml-10 self-end rounded-2xl rounded-br-md bg-gradient-to-br from-violet-600 to-indigo-600 px-3.5 py-2 text-[13.5px] leading-[1.45] text-white shadow-[0_4px_14px_-6px_rgba(79,70,229,0.55)]">
+                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="ml-10 self-end rounded-2xl rounded-br-md bg-violet-100 px-3.5 py-2 text-[13.5px] leading-[1.45] text-violet-950 ring-1 ring-violet-200/80">
                   {m.text}
                 </motion.div>
               ) : (
-                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mr-6 flex items-start gap-2 self-start" data-answer>
-                  <div aria-hidden className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
-                    <Sparkles className="h-3 w-3" />
-                  </div>
+                <motion.div key={i} initial={reduce ? false : { opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mr-6 self-start" data-answer>
                   <div className="min-w-0">
                     <div className={cx('rounded-2xl rounded-tl-md px-3.5 py-2.5 text-[13.5px] leading-[1.5]', m.error ? 'bg-amber-50 text-amber-900 ring-1 ring-amber-200' : 'bg-white text-slate-700 shadow-[0_1px_2px_rgba(15,23,42,0.05)] ring-1 ring-stone-200/80')}>
                       <Answer text={m.text} />
@@ -207,21 +209,13 @@ export default function ParcelIQ({ style, onClose, resize }: { style?: CSSProper
               ),
             )}
             {busy && (
-              <div className="flex items-center gap-2 self-start">
-                <div aria-hidden className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
-                  <Sparkles className="h-3 w-3" />
-                </div>
-                <ThinkingDots />
+              <div role="status" className="sr-only">
+                Thinking
               </div>
             )}
           </div>
         )}
       </div>
-
-      {/* The questions are typed in the search box below (AskDock). */}
-      <p className="flex shrink-0 items-center justify-center gap-1.5 border-t border-stone-100 px-3 py-2 text-center text-[10.5px] text-slate-400">
-        <ArrowDown className="h-3 w-3" aria-hidden /> Type a question in the box below. Answers can be wrong. Not legal advice.
-      </p>
     </motion.section>
   );
 }

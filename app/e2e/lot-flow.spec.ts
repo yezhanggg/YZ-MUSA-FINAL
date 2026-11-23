@@ -25,11 +25,8 @@ test.describe('lot flow', () => {
 
   test('desktop 1440: verdict, size, scenario, build, report', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
+    // An old Explore link opens Test Site (Explore moved to the MUSA 5500 repository).
     await page.goto('/#/?view=project');
-    // The Features menu: Explore is the open view, Test Site switches to testing.
-    await page.getByRole('button', { name: 'Features' }).click();
-    await expect(page.getByRole('menuitemradio', { name: /^Explore/ })).toHaveAttribute('aria-checked', 'true');
-    await page.getByRole('menuitemradio', { name: /^Test Site/ }).click();
     await expect(page.locator('section[aria-label="Boundaries"]')).toBeVisible();
     // No rules switch on the left: every answer is under today's rules.
     await expect(page.getByRole('radiogroup', { name: 'Zoning Regulation' })).toHaveCount(0);
@@ -90,23 +87,6 @@ test.describe('lot flow', () => {
     await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}&sc=state_reform`);
     await expect(verdict(page)).toHaveAttribute('data-answer', 'approval');
     await expect(verdict(page)).not.toContainText('not law');
-  });
-
-  test('switching to Explore from the Features menu starts clean: nothing picked, Details closed', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto(`/#/?view=test&lot=${LOT}&tract=${TRACT}`);
-    await expect(verdict(page)).toHaveAttribute('data-status', 'fits');
-    await page.getByRole('button', { name: 'Features' }).click();
-    await page.getByRole('menuitemradio', { name: /^Explore/ }).click();
-    await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Test a lot here' })).toHaveCount(0);
-    await expect(verdict(page)).toHaveCount(0);
-    await shot(page, 'proj-clean-1440.png');
-    // And back: still nothing picked.
-    await page.getByRole('button', { name: 'Features' }).click();
-    await page.getByRole('menuitemradio', { name: /^Test Site/ }).click();
-    await expect(page.getByRole('button', { name: 'Show the details' })).toBeVisible();
-    await expect(verdict(page)).toHaveCount(0);
   });
 
   test('phone: the same lot in the sheet', async ({ page }) => {
@@ -236,57 +216,3 @@ test.describe('address search in Test Project', () => {
   }
 });
 
-test.describe('room for a 600 sq ft unit (MUSA 5500)', () => {
-  test('the statewide map, a Philadelphia tract and the phone legend', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await mockPhoton(page);
-    await page.goto('/#/?view=project');
-    await page.getByRole('radio', { name: 'Lots with Room' }).click();
-    await expect(page.getByText(/Statewide: about 2\.9 million \(1\.5 to 3\.6 million\)/)).toBeVisible();
-    await expect(page.getByText('Outside training range')).toBeVisible();
-    await expect(page.getByRole('combobox', { name: 'Search an address in Pennsylvania' })).toBeEnabled(); // areas loaded
-    await shot(page, 'room-state-1440.png');
-    await search(page, '1818 E Moyamensing');
-    await page.locator('[data-area-row="room"] > button').click();
-    await expect(page.getByText('Lots with room').first()).toBeVisible();
-    await expect(page.getByText(/Measured from every lot record in Philadelphia and Pittsburgh/).first()).toBeVisible();
-    await shot(page, 'room-phl-1440.png');
-    // Phone: a fresh page, the controls drawer with the map colour and its legend.
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('about:blank');
-    await page.goto('/#/?view=project');
-    await page.getByRole('button', { name: 'Search and controls' }).click();
-    await page.getByRole('radio', { name: 'Lots with Room' }).click();
-    await page.getByText('Outside training range').scrollIntoViewIfNeeded();
-    await shot(page, 'room-phone.png');
-  });
-});
-
-test.describe('Explore', () => {
-  test('payoff controls, counties and the research explorer', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/#/?view=project');
-    // The payoff settings sit under the Does It Pay Off layer.
-    await page.getByRole('radio', { name: 'Does It Pay Off' }).click();
-    const share = page.locator('p[aria-live="polite"]', { hasText: 'pays off in' }).first();
-    await expect(share).toContainText('10%');
-    await page.getByRole('radio', { name: '$300' }).click();
-    await expect(share).toContainText('4%');
-    // ADUs by 2031, by county: its settings open under the layer.
-    await page.getByRole('radio', { name: 'ADUs by 2031' }).click();
-    await page.getByRole('radio', { name: 'Counties' }).click();
-    // The right panel starts hidden on every visit: "Details" shows it.
-    await page.getByRole('button', { name: 'Show the details' }).click();
-    await expect(page.getByRole('heading', { name: /Counties/ })).toBeVisible();
-    await page.getByRole('radio', { name: 'SB 1346' }).click();
-    await expect(page.getByText('Bills are not law.').first()).toBeVisible();
-    await shot(page, 'proj-1440-e2e.png');
-
-    await page.goto('/#/?view=project&research=5500');
-    await expect(page.getByText('7 stable groups')).toBeVisible();
-    await page.getByRole('button', { name: 'Open the explorer here' }).click();
-    await expect(page.locator('iframe[title="Tract explorer"]')).toBeVisible();
-    const res = await page.request.get('/explorer/tract_explorer.html');
-    expect(res.ok()).toBe(true);
-  });
-});

@@ -91,7 +91,10 @@ test.describe('right panel', () => {
     const z0 = await zoom();
     await site.getByRole('button', { name: 'Zoom in on the site' }).click();
     await expect.poll(zoom).toBeGreaterThan(z0 + 0.5);
+    // One step at a time: a second press during the first ease starts from wherever that ease is (slow software
+    // WebGL, with the coloured boundary layer on the main map, draws few frames a second).
     await site.getByRole('button', { name: 'Zoom out on the site' }).click();
+    await expect.poll(zoom).toBeCloseTo(z0, 1);
     await site.getByRole('button', { name: 'Zoom out on the site' }).click();
     await expect.poll(zoom).toBeLessThan(z0 - 0.5);
     await site.getByRole('button', { name: 'Recentre on the lot' }).click();
@@ -106,6 +109,8 @@ test.describe('right panel', () => {
     await expect.poll(() => body(page).evaluate((n) => n.scrollTop)).not.toBe(before);
     await page.waitForTimeout(400);
     expect(await zoom()).toBeCloseTo(z0, 1);
+    // The scroll above can leave the site map partly under the map legend below the panel: bring it into view first.
+    await site.scrollIntoViewIfNeeded();
     const box2 = (await site.locator('canvas').first().boundingBox())!;
     await page.mouse.move(box2.x + box2.width / 3, box2.y + box2.height / 2);
     await page.mouse.move(box2.x + box2.width / 3 + 4, box2.y + box2.height / 2 + 2);

@@ -4,9 +4,9 @@ React 19, TypeScript, Tailwind 4 and motion, built with Vite. The site is static
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey. HB 2186, SB 1346 and Bill 250042 are bills, not law.
 
-## Two modes
+## Test Site
 
-The top bar has a mode menu. The mode is kept in the hash (`view=test` or `view=project`).
+The top bar has two buttons: Test Site and Research (the MUSA 6950 page in a panel over the map). Explore (`view=project`) moved to the MUSA 5500 repository (https://github.com/yezhanggg/YZMUSA5500) on Nov 22, 2026. An old `view=project` link opens Test Site.
 
 - **Test Project** (MUSA 6950), `view=test`, the default. Lot level, for Philadelphia and Pittsburgh. It reads the lot records built by `pipeline/build_lots.py`.
   - Left: every control (city, scenario, ADU type, width and depth, stories, height, number of units, cost, finish, financing, rent). Labels are three words or fewer; longer explanations are hover text.
@@ -21,8 +21,7 @@ The top bar has a mode menu. The mode is kept in the hash (`view=test` or `view=
   - "Report" opens a printable page with every check and source. "Link" copies a link that keeps the lot, scenario and unit.
   - Scenarios: today's law, local reform (Philadelphia Bill 250042, the same as today in Pittsburgh) and state reform (HB 2186).
   - A click finds the lot record whose outline contains the point. There is no snapping to a nearby lot. A searched address that lands on the street matches its lot by address. Outside the two cities the panel says there is no lot record and shows the tract and town numbers.
-- **Explore** (MUSA 5500), `view=project`. Tract, town and county level for the whole state. Map colour by measure (jobs, population, housing units and rent growth after 2019, trend group, growth by ACS window, lots with room, payoff), the forecast scenario for ADUs by 2031 (today, HB 2186 or SB 1346, in a closed fold), a county table, and on the right one answer (does it pay off, is it allowed in this town), four rows (pays off, allowed, room on lots, ADUs by 2031) that open to their detail, Test a lot here, and closed folds (Pick an ADU, jobs, people and rent).
-  - This mode still has the older two-option rules switch (Today or HB 2186) and the older lot layers. See "Legacy files" below.
+- **Boundaries**: County, Township or City, Census Tract or ZIP Code outlines, one at a time (turning one on turns the others off). The one that is on is coloured by its ADU rule (`src/tool/ruleLayers.ts`). A click on an area opens its answer and its towns.
 
 Layout (`src/tool/layout.ts`): desktop 1440 px and wider shows left 300 and right 630 side by side. Laptop 1024 to 1439 keeps the left panel and opens the results as a drawer over the map. Tablet and phone put the controls in a drawer and the results in one bottom sheet.
 
@@ -31,9 +30,8 @@ The right panel resizes on desktop and laptop: drag its left edge, or focus the 
 Links:
 
 - `#/?view=test&lot=42003-0086N00208000000&tract=42003141300&sc=state_reform&ut=detached_new&uw=20&ud=30` a lot with a scenario and a unit. Other keys: `us` stories, `uh` height in ft, `ua` angle, `at` lon,lat of the unit, `un=2` two units.
-- `#/?view=project&bed=1&size=600&st=1` the projecting mode with an ADU (bedrooms, size, stories).
-- `#/?research=6950` and `#/?research=5500` the Research panel for one class over the map. Esc closes it.
-- `/quarto/` the Quarto class site (copied from `site/` at build). `/explorer/tract_explorer.html` the MUSA 5500 tract explorer.
+- `#/?research=6950` the Research panel (MUSA 6950) over the map. Esc closes it.
+- `/quarto/` the Quarto class site (copied from `site/` at build).
 
 ## Data the app reads
 
@@ -74,7 +72,7 @@ Size: the detail files are 108,915,795 bytes for Pittsburgh and 314,906,136 byte
 | `towns.geojson` | `loadData`, both modes | One shape per town with town totals and the older town rule fields |
 | `counties.geojson` | `loadData`, Projecting mode, and the County outlines under Boundaries (both modes) | County roll-up of the tract results |
 | `zcta.geojson` | The Boundaries card, ZIP Code switch (`tool/boundaryLayers.ts`) | Pennsylvania's 2020 Census ZIP Code Tabulation Areas (1,833, property `ZCTA5` only), simplified to about 100 m. ZCTAs are the Census Bureau's outline of each ZIP code, close to but not the same as the postal ZIP areas. Source: Census TIGERweb `PUMA_TAD_TAZ_UGA_ZCTA/MapServer/1`, downloaded 2026-11-19. Built by `python -m pipeline.zcta_pa`, not by `build_data.py` |
-| `tract_towns.json` | Explore's Allowed row (`tool/TractTownsNote.tsx`), the assistant's `get_area_stats` on a tract (`agent/tractTowns.ts`) | Tract GEOID to `[town GEOID, share of homes, share of people]`, largest first, from the 2020 Census blocks and block assignment file. Built by `python -m pipeline.tract.towns`, not by `build_data.py` |
+| `tract_towns.json` | Test Site's tract answers (`tool/tractRules.ts`), the assistant's `get_area_stats` on a tract (`agent/tractTowns.ts`) | Tract GEOID to `[town GEOID, share of homes, share of people]`, largest first, from the 2020 Census blocks and block assignment file. Built by `python -m pipeline.tract.towns`, not by `build_data.py` |
 | `app/src/lib/headline.json` | `src/lib/numbers.ts`, the Research page, the assistant's `get_area_stats` | Statewide headline numbers: tract payoff share, ADUs by 2031 by scenario, trend groups, forecast fit, lots with room (`room`: measured and modelled tracts, low, mid, high) and the lot results of both cities (`lots`) |
 | `meta.json` | The eval question maker only | Build time of the files above |
 
@@ -129,7 +127,7 @@ The eval lives in `../agent/eval/` (65 questions in `questions.json`). `agent/ev
 
 - `index.html` page shell.
 - `src/tool/` map (`MapCanvas`), map buttons (`MapControls`), search (`Search`), panels (`LeftPanel`, `RightPanel` with its `ResizeHandle`, `BottomSheet`), Projecting controls (`ProjectControls`, `CountyTable`, `PlayModel`), spot test (`actions`, `geo`), parcel colours (`parcels`), aerial layer (`aerial`).
-- `src/tool/test/` Testing mode: controls (`TestControls`), result tabs (`LotResults`: Results, Compare, Next Step), the answer, checklist and folds (`Answer`), the bills side by side (`Compare`, from `src/lib/lot/compare.ts`), the fold bodies (`cards`, `story`), the site view (`SiteView`, a second map with the aerial photo, the unit box and its own zoom), the printable report (`LotReport`). State helpers in `src/tool/testState.ts`, site layers in `src/tool/siteLayers.ts`.
+- `src/tool/test/` Testing mode: controls (`TestControls`), result tabs (`LotResults`: Results, Compare, Parcel, Next Step), the Parcel tab and the Be prepared card (`ParcelTab`, from `src/lib/lot/parcel.ts`, `lotTax.ts`, `townInfo.ts`, `districtRules.ts` and `shared/lot_towns_info.json`), the answer, checklist and folds (`Answer`), the bills side by side (`Compare`, from `src/lib/lot/compare.ts`), the fold bodies (`cards`, `story`), the site view (`SiteView`, a second map with the aerial photo, the unit box and its own zoom), the printable report (`LotReport`). State helpers in `src/tool/testState.ts`, site layers in `src/tool/siteLayers.ts`.
 - `src/lib/lot/` lot records: loading, verdict, citations, build steps, report data, assistant tools. See its README.
 - `src/lib/money.ts` the money model in the browser. It reads `shared/assumptions.json`, like `pipeline/money.py`.
 - `src/lib/adu.ts`, `src/lib/rules.ts` the Projecting mode's fit and payoff math and its rule text.

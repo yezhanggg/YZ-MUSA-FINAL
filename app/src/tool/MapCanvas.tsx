@@ -3,13 +3,14 @@ import { Map as MLMap, Popup, addProtocol, setWorkerUrl, type ExpressionSpecific
 import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import { Protocol } from 'pmtiles';
-import { tractPayoff } from '../lib/adu';
 import { PA_BBOX } from './geo';
-import { METRICS, PAYS_CODE, areaColorExpr, colorExpr, type MetricId } from './metrics';
 import { PARCEL_LAYER, type ParcelProps } from './parcels';
-import { loadAreas } from './areas';
 import { mapRef, useTool } from './store';
-import { clearSpot, mapPadding, reduced, testSpot } from './actions';
+import { clearSpot, mapPadding, reduced, selectArea, testSpot } from './actions';
+import { geomBox } from './frame';
+import { RULE_KEY, RULE_ORDER, ruleFill, useRuleLayers } from './ruleLayers';
+import { useBoundaries } from './boundaries';
+import { RuleLegend } from './test/TractRules';
 import { aerialSource, watchAerial } from './aerial';
 import { addSiteLayers, updateSite } from './siteLayers';
 import { attachBoxDrag, consumeBoxPress } from './boxDrag';
@@ -18,16 +19,12 @@ import { lotDataUrl } from '../lib/lot/load';
 import { unitVerdict } from '../lib/lot/verdict';
 import { FLY_IN_ZOOM, LOT_ZOOM, answerColorExpr, answerOf, lotFillOpacity, lotTipHtml, overviewOpacity, squareTipHtml } from './testable';
 import { TestableLegend } from './test/TestableLots';
-import { usePlacesLayer } from './placesLayer';
-import { PlacesLegend } from './PlaceResults';
 import { useMainTerrain } from './terrain';
 import { useBoundaryLayers } from './boundaryLayers';
 
 setWorkerUrl(workerUrl);
 // Parcels are PMTiles files, read by byte range.
 addProtocol('pmtiles', new Protocol().tile);
-
-const MOE_NONE: ExpressionSpecification = ['==', ['get', 'GEOID'], '__none__'];
 
 const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get', 'id'], id ?? '__none__'];
 
@@ -113,56 +110,16 @@ function markTestable(map: MLMap) {
   map.getContainer().dataset.testable = on.join(' ');
 }
 
-/** A small repeating pattern drawn on a canvas, for fill-pattern. */
-function pattern(draw: (c: CanvasRenderingContext2D) => void, size: number) {
-  const cv = document.createElement('canvas');
-  cv.width = cv.height = size;
-  const c = cv.getContext('2d')!;
-  draw(c);
-  return { width: size, height: size, data: new Uint8Array(c.getImageData(0, 0, size, size).data.buffer) };
-}
-
-/**
- * Tract fill opacity: fades out between z12.5 and z14, where the lots take over. On the Room map, measured tracts
- * (the two cities) are drawn solid and modelled tracts lighter.
- */
-function tractOpacity(metric: MetricId): ExpressionSpecification {
-  const at = (solid: number) => (metric === 'room' ? ['case', ['==', ['get', 'room_measured'], 1], solid, Math.round(solid * 0.5 * 100) / 100] : solid);
-  return ['interpolate', ['linear'], ['zoom'], 7, at(0.62), 12.5, at(0.4), 14, 0] as unknown as ExpressionSpecification;
-}
-
-/** Tracts, towns and counties, once loaded: under the lot outlines and the tested lot, above the basemap. */
+/** Tract and town outlines and the picked area's outline, once the areas load: under the lot outlines and the tested
+ *  lot, above the basemap. */
 function addAreaLayers(map: MLMap) {
-  const { tracts, towns, counties, metric, forecast, level } = useTool.getState();
+  const { tracts, towns } = useTool.getState();
   if (!tracts || !towns || map.getSource('tracts')) return;
   const before = [...PARCEL_SOURCES.map((x) => fillOf(x.id)), 'site-buildable-fill'].find((id) => map.getLayer(id)) ?? map.getStyle().layers.find((l) => l.type === 'symbol')?.id;
   map.addSource('tracts', { type: 'geojson', data: tracts as unknown as GeoJSON.FeatureCollection, promoteId: 'GEOID' });
   map.addSource('towns', { type: 'geojson', data: towns as unknown as GeoJSON.FeatureCollection });
   map.addSource('pick', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
-  // Tracts fade out between z12.5 and z14, where the lots take over.
-  const fade = ['interpolate', ['linear'], ['zoom'], 7, 0.62, 12.5, 0.4, 14, 0] as unknown as ExpressionSpecification;
-  map.addLayer({ id: 'tract-fill', type: 'fill', source: 'tracts', paint: { 'fill-color': colorExpr(metric), 'fill-opacity': tractOpacity(metric) } }, before);
   map.addLayer({ id: 'tract-line', type: 'line', source: 'tracts', minzoom: 9, paint: { 'line-color': '#ffffff', 'line-width': 0.5, 'line-opacity': 0.7 } }, before);
-  // Margin of error: tracts whose change is inside it are hatched (People / Homes / Rent).
-  map.addImage(
-    'bh-moe',
-    pattern((c) => {
-      c.strokeStyle = 'rgba(71,85,105,0.75)';
-      c.lineWidth = 1.2;
-      c.beginPath();
-      c.moveTo(0, 8);
-      c.lineTo(8, 0);
-      c.stroke();
-    }, 8),
-  );
-  map.addLayer({ id: 'tract-moe', type: 'fill', source: 'tracts', maxzoom: 14, layout: { visibility: 'none' }, filter: MOE_NONE, paint: { 'fill-pattern': 'bh-moe', 'fill-opacity': 0.8 } }, before);
-  // Towns and counties: ADUs by 2031 per 1,000 people, under the forecast scenario.
-  map.addLayer({ id: 'town-fill', type: 'fill', source: 'towns', layout: { visibility: level === 'town' ? 'visible' : 'none' }, paint: { 'fill-color': areaColorExpr(forecast, 'pop_2025'), 'fill-opacity': fade } }, before);
-  if (counties) {
-    map.addSource('counties', { type: 'geojson', data: counties as unknown as GeoJSON.FeatureCollection });
-    map.addLayer({ id: 'county-fill', type: 'fill', source: 'counties', layout: { visibility: level === 'county' ? 'visible' : 'none' }, paint: { 'fill-color': areaColorExpr(forecast, 'pop_2024'), 'fill-opacity': fade } }, before);
-    map.addLayer({ id: 'county-line', type: 'line', source: 'counties', layout: { visibility: level === 'county' ? 'visible' : 'none' }, paint: { 'line-color': '#334155', 'line-width': 1, 'line-opacity': 0.6 } }, before);
-  }
   map.addLayer({ id: 'town-line', type: 'line', source: 'towns', minzoom: 8, paint: { 'line-color': '#475569', 'line-width': 0.6, 'line-opacity': 0.45 } }, before);
   // The picked tract's outline: above the labels and the 3D buildings, under the selected lot and the tested lot
   // (the same order as when the areas loaded with the map).
@@ -176,18 +133,10 @@ const present = (map: MLMap) => PARCEL_SOURCES.map((p) => p.id).filter((id) => !
 
 export default function MapCanvas() {
   const el = useRef<HTMLDivElement>(null);
-  const metric = useTool((s) => s.metric);
-  const level = useTool((s) => s.level);
-  const forecast = useTool((s) => s.forecast);
-  const costLevel = useTool((s) => s.costLevel);
-  const payRate = useTool((s) => s.payRate);
-  const winVar = useTool((s) => s.winVar);
-  const win = useTool((s) => s.win);
   const status = useTool((s) => s.status);
   const areas = useTool((s) => s.areas);
   const selectedLot = useTool((s) => s.selectedLot);
   const view3d = useTool((s) => s.view3d);
-  const adu = useTool((s) => s.adu);
   const aerial = useTool((s) => s.aerial);
   const view = useTool((s) => s.view);
   const record = useTool((s) => s.spot?.record ?? null);
@@ -196,12 +145,12 @@ export default function MapCanvas() {
   const lotsLayer = useTool((s) => s.lotsLayer);
   /** The lot tiles carry the answers (lots.pmtiles), null until the map has loaded. */
   const [answers, setAnswers] = useState<boolean | null>(null);
-  // Explore, Where to Build: municipalities coloured by status (placesLayer.ts).
-  usePlacesLayer();
   // 3D: the ground from the place's terrain tiles (terrain.ts). 2D: flat.
   useMainTerrain();
   // County, tract and ZIP code outlines (boundaryLayers.ts), in both views.
   useBoundaryLayers();
+  // Test Site: the finest boundary on coloured by its ADU rule, and the picked area (ruleLayers.ts).
+  useRuleLayers();
 
   useEffect(() => {
     const container = el.current;
@@ -274,8 +223,15 @@ export default function MapCanvas() {
     map.on('click', (e) => {
       if (consumeBoxPress(map)) return; // a press on the unit box: a drag, not a pick
       const testing = useTool.getState().view === 'test';
+      // Test Site, a boundary on: a click off the lots picks the area for its ADU rule answer and fits its outline.
+      // The finest boundary on comes first (ruleLayers.ts). County is the default boundary: it is picked only below lot
+      // zoom (a click off the lots there still lets go of the lot), and a testable lots square still flies in.
+      const on = useBoundaries.getState().on;
+      const lotZoom = map.getZoom() >= LOT_ZOOM;
+      const levels = testing ? RULE_ORDER.filter((id) => on[id] && map.getLayer(ruleFill(id)) && !(id === 'county' && lotZoom)) : [];
+      const fine = levels.some((id) => id !== 'county');
       // Show testable lots, zoomed out: a click on a square flies in to the lots there.
-      if (testing && useTool.getState().lotsLayer && map.getZoom() < LOT_ZOOM) {
+      if (testing && !fine && useTool.getState().lotsLayer && map.getZoom() < LOT_ZOOM) {
         const squares = PARCEL_SOURCES.map((p) => overviewOf(p.id)).filter((l) => map.getLayer(l));
         if (squares.length && map.queryRenderedFeatures(e.point, { layers: squares }).length) {
           tip.remove();
@@ -286,9 +242,23 @@ export default function MapCanvas() {
       const layers = testing ? present(map).map(fillOf).filter((l) => map.getLayer(l)) : [];
       const hit = layers.length && map.getZoom() >= 14 ? map.queryRenderedFeatures(e.point, { layers })[0] : undefined;
       const parcel = hit ? (hit.properties as ParcelProps) : null;
+      if (levels.length && !parcel) {
+        // The outlines are still loading: wait for them rather than drop a pin.
+        if (!map.isSourceLoaded(`bnd-${levels[0]}`)) return;
+        const pt: [number, number] = [e.lngLat.lng, e.lngLat.lat];
+        for (const kind of levels) {
+          const p = map.queryRenderedFeatures(e.point, { layers: [ruleFill(kind)] })[0]?.properties as Record<string, string | undefined> | undefined;
+          const id = p?.[RULE_KEY[kind]];
+          if (!p || !id) continue;
+          const name = kind === 'zip' ? `ZIP code ${id}` : kind === 'county' ? `${p.NAME ?? id} County` : (p.NAMELSAD ?? p.NAME ?? id);
+          tip.remove();
+          return void selectArea({ kind, geoid: id, name, county: kind === 'county' ? null : (p.county ?? null), pt });
+        }
+      }
       // Test Project at lot zoom: a click on the selected lot again, or off any lot (ground, street), deselects.
       if (testing && map.getZoom() >= 14 && (!parcel || parcel.id === useTool.getState().selectedLot)) return void clearSpot();
-      void testSpot([e.lngLat.lng, e.lngLat.lat], parcel ? 'Selected lot' : testing ? 'Dropped pin' : 'Selected tract', parcel);
+      // A clicked lot is fitted with about the block around it (frame.ts).
+      void testSpot([e.lngLat.lng, e.lngLat.lat], parcel ? 'Selected lot' : testing ? 'Dropped pin' : 'Selected tract', parcel, { bounds: parcel && hit ? geomBox(hit.geometry) : null });
     });
 
     const unhover = () => {
@@ -345,51 +315,10 @@ export default function MapCanvas() {
     };
   }, []);
 
-  // Explore needs the tracts, towns and counties. Test Project loads them only when a lot test needs them.
-  useEffect(() => {
-    if (view === 'project') void loadAreas();
-  }, [view]);
   useEffect(() => {
     const map = mapRef.current;
     if (status === 'ready' && areas === 'ready' && map) addAreaLayers(map);
   }, [areas, status]);
-
-  // Explore: tract metric, map level, forecast scenario and the margin-of-error hatch.
-  useEffect(() => {
-    const map = mapRef.current;
-    if (status !== 'ready' || areas !== 'ready' || !map?.getLayer('tract-fill')) return;
-    map.setPaintProperty('tract-fill', 'fill-color', colorExpr(metric, { v: winVar, w: win }));
-    map.setPaintProperty('tract-fill', 'fill-opacity', tractOpacity(metric));
-    const project = view === 'project';
-    const show = (id: string, on: boolean) => map.getLayer(id) && map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
-    // Show testable lots (Test Project) hides the tract colours, so only the lot answers are coloured.
-    show('tract-fill', (!project || level === 'tract') && !(lotsLayer && view === 'test') && !(project && metric === 'legal'));
-    show('town-fill', project && level === 'town');
-    show('county-fill', project && level === 'county');
-    show('county-line', project && level === 'county');
-    const moe = METRICS[metric].moe;
-    show('tract-moe', project && level === 'tract' && !!moe);
-    map.setFilter('tract-moe', moe ? (['==', ['get', moe], 1] as unknown as ExpressionSpecification) : MOE_NONE);
-    // Room hatches most of the state (modelled outside the training range), so its hatch is fainter.
-    map.setPaintProperty('tract-moe', 'fill-opacity', metric === 'room' ? 0.4 : 0.8);
-    map.setPaintProperty('town-fill', 'fill-color', areaColorExpr(forecast, 'pop_2025'));
-    if (map.getLayer('county-fill')) map.setPaintProperty('county-fill', 'fill-color', areaColorExpr(forecast, 'pop_2024'));
-  }, [metric, winVar, win, level, forecast, view, status, areas, lotsLayer]);
-
-  // Pays off for every tract follows the ADU and payoff controls (debounced for the sliders).
-  useEffect(() => {
-    const map = mapRef.current;
-    const tracts = useTool.getState().tracts;
-    if (status !== 'ready' || areas !== 'ready' || !map || !tracts) return;
-    const t = window.setTimeout(() => {
-      for (const f of tracts.features) {
-        const p = f.properties;
-        const pay = tractPayoff(p, adu, costLevel, payRate);
-        map.setFeatureState({ source: 'tracts', id: p.GEOID }, { pays: pay ? PAYS_CODE[pay.pays] : null });
-      }
-    }, 150);
-    return () => window.clearTimeout(t);
-  }, [adu, status, areas, costLevel, payRate]);
 
   // Lot outlines: Test Project only. Over the aerial photo the fills go, so the photo shows through.
   // Show testable lots: each lot filled with its answer for the scenario and unit type, white lines between lots.
@@ -476,7 +405,7 @@ export default function MapCanvas() {
         © OpenStreetMap
       </a>
       <TestableLegend answers={answers} />
-      <PlacesLegend />
+      <RuleLegend />
     </div>
   );
 }

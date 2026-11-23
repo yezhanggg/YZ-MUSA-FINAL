@@ -182,8 +182,9 @@ export default function Search({ dock = false, joined = false }: { dock?: boolea
   const askRow = dock && text.length > 0 && (question || (!loading && searched === text));
   const rows = hits.length + (askRow ? 1 : 0);
   const askAt = hits.length;
-  // Dock mode: a click in the box opens ParcelIQ; an address being typed puts it aside for the address list.
-  const addressing = dock && text.length > 0 && !question;
+  // Dock mode: a click in the box opens ParcelIQ. It steps aside only for a real address (a house number first) once
+  // its matches are in, never while a word or a question is still being typed.
+  const addressing = dock && looksLikeAddress(text) && hits.length > 0;
   useEffect(() => {
     if (dock) useChatOpen.getState().setHidden(addressing);
   }, [dock, addressing]);

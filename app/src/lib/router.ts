@@ -2,9 +2,11 @@
 // #/?research=6950 (older #/research/6950 links still open it). The ADU scenario shares the same query.
 import { useSyncExternalStore } from 'react';
 
-export type Course = '5500' | '6950';
+/** The one Research page: MUSA 6950. MUSA 5500 has its own site at /5500/ (musa5500/web), so older ?research=5500
+ *  links open nothing here. */
+export type Course = '6950';
 
-const asCourse = (v: string | null | undefined): Course | null => (v === '5500' || v === '6950' ? v : null);
+const asCourse = (v: string | null | undefined): Course | null => (v === '6950' ? v : null);
 
 /** Which Research page is open, if any. */
 export function researchOf(hash: string): Course | null {
@@ -40,7 +42,9 @@ export const VIEW_LABEL: Record<ToolView, string> = {
   project: 'Explore',
 };
 
-export const viewOf = (hash: string): ToolView => (new URLSearchParams(hash.split('?')[1] ?? '').get('view') === 'project' ? 'project' : 'test');
+/** The tool is Test Site only. Explore (view=project) moved to the MUSA 5500 repository (YZMUSA5500) on Nov 22, 2026,
+ *  so older view=project links open Test Site. */
+export const viewOf = (_hash: string): ToolView => 'test';
 
 export function useView(): ToolView {
   return viewOf(useSyncExternalStore(subscribe, () => window.location.hash, () => ''));

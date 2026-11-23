@@ -1,7 +1,7 @@
 // The tool: a full-screen map with panels on one grid (tool/layout.ts).
 //   desktop / laptop: left panel and right panel, same top, bottom, gutters and shell
 //   tablet / phone: controls in a drawer from the left, one bottom sheet with tabs
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { PanelLeftOpen, PanelRightOpen, SlidersHorizontal } from 'lucide-react';
 import MapCanvas from './MapCanvas';
@@ -11,9 +11,9 @@ import BottomSheet from './BottomSheet';
 import MapControls from './MapControls';
 import AskDock, { DOCK_BAR_H } from './AskDock';
 import { aduFromHash, useTool } from './store';
-import { clearSpot, openLot, takeCarrySpot, testSpot } from './actions';
+import { clearSpot, clearTract, openLot, takeCarrySpot, testSpot } from './actions';
 import { testFromHash } from './testState';
-import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, statePadding, useChatOpen } from './layout';
+import { GUTTER, PANEL_TOP, SHEET_MAX, SHEET_PEEK, TOP, narrow, rightDrawer, sheetOpenHeight, useLegendSlot, useMode, useRightWidth, useSides, widths, mapPadding, useChatOpen } from './layout';
 import { SPRING_PANEL } from '../components/primitives';
 import { mapRef } from './store';
 import { reduced } from './actions';
@@ -93,7 +93,7 @@ export default function ToolPage() {
   // Esc deselects the lot or tract (not while typing, and not while a dialog such as the Lot report is open).
   useEffect(() => {
     const esc = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape' || !useTool.getState().spot) return;
+      if (e.key !== 'Escape' || !(useTool.getState().spot || useTool.getState().areaPick)) return;
       const t = e.target as HTMLElement | null;
       if (t?.closest('input, textarea, select, [contenteditable="true"]') || document.querySelector('[aria-modal="true"]')) return;
       clearSpot();
@@ -113,11 +113,14 @@ export default function ToolPage() {
   // A picked lot opens the results drawer (laptop) or the right column (desktop), which start hidden. They open as
   // soon as a lot starts loading, so the loading message shows there.
   const busy = useTool((s) => s.busy);
+  // A tract picked with Census Tract on opens them the same way.
+  const tractN = useTool((s) => s.areaPick?.geoid ?? null);
+  const tractPt = useTool((s) => s.areaPick?.pt);
   useEffect(() => {
-    if (!spotN && !busy) return;
+    if (!spotN && !busy && !tractN) return;
     useTool.getState().set({ resultsOpen: true });
     useSides.getState().setSide('right', true);
-  }, [spotN, busy]);
+  }, [spotN, busy, tractN, tractPt]);
   // Hiding or showing a side leaves the map picture where it is (the panels float over it). The map's padding still
   // follows the open space, so a lot picked later is framed in it: the centre is moved by exactly what the new padding
   // would shift, so nothing on screen moves.
@@ -139,38 +142,7 @@ export default function ToolPage() {
   useEffect(() => {
     if (!isNarrow) setDrawer(false);
   }, [isNarrow]);
-  // Explore with nothing picked: Pennsylvania fills the open map between the panels, on the first load, on switching
-  // to Explore, and again when a side is hidden or shown, the right panel resized or the window changed, as long as
-  // the user has not moved the map since. Test Project keeps its own camera.
   const spotOn = useTool((s) => !!s.spot);
-  const atState = useRef(false);
-  const lastView = useRef<string | null>(null);
-  useEffect(() => {
-    const map = mapRef.current;
-    if (status !== 'ready' || !map) return;
-    const off = (e: { originalEvent?: unknown }) => {
-      if (e.originalEvent) atState.current = false;
-    };
-    map.on('movestart', off);
-    return () => void map.off('movestart', off);
-  }, [status]);
-  useEffect(() => {
-    const map = mapRef.current;
-    if (status !== 'ready' || !map) return;
-    const entering = view === 'project' && lastView.current !== 'project';
-    lastView.current = view;
-    if (view !== 'project' || spotOn) return void (atState.current = false);
-    if (!entering && !atState.current) return;
-    atState.current = true; // a burst of changes right after entering still fits
-    const fit = () => {
-      map.fitBounds(PA_BBOX, { padding: statePadding(isNarrow ? sheetOpen : rightOpen), absolutePadding: true, duration: entering || reduced() ? 0 : 400 });
-      atState.current = true;
-    };
-    // After layout (the legend's place), and once per burst while the right panel is dragged.
-    const t = window.setTimeout(fit, entering ? 0 : 120);
-    return () => window.clearTimeout(t);
-  }, [status, view, spotOn, leftOpen, rightOpen, panelW, vw, vh, isNarrow, sheetOpen]);
-
   // Test Site with nothing picked: the whole state stays in view when the window changes size, as long as the user
   // has not moved the map since (a click, a drag, a zoom). The first view is fitted by MapCanvas.
   const testFit = useRef(true);
@@ -206,9 +178,23 @@ export default function ToolPage() {
   const openMap = vw - lw - rw - GUTTER * 4;
   const setLegendSlot = useLegendSlot((s) => s.setEl);
   // Map controls: bottom right of the open map area. Attribution: bottom left of it, out of their way.
-  const controls: CSSProperties = isNarrow ? { right: GUTTER, bottom: sheetH + GUTTER, transition: 'bottom .35s cubic-bezier(.22,1,.36,1)' } : { right: rightCover + GUTTER * 2, bottom: GUTTER };
+  const controls: CSSProperties = isNarrow ? { right: GUTTER, bottom: sheetH + GUTTER, transition: 'bottom .35s cubic-bezier(.22,1,.36,1)' } : { right: rightOpen ? rightCover + GUTTER * 2 : GUTTER, bottom: GUTTER };
+  // (With Details hidden the buttons and legend sit one gutter from the edge, where they sit under the open panel too, so
+  // hiding or showing Details does not move them.)
   // The "© OpenStreetMap" line: the bottom right corner of the open map (left of the right panel, above the sheet).
   const shellVars = { ['--attr-left' as string]: `${isNarrow ? GUTTER : lw + GUTTER * 2}px`, ['--attr-bottom' as string]: `${isNarrow ? sheetH + GUTTER : GUTTER}px`, ['--credit-right' as string]: `${!isNarrow && rightOpen ? rw + GUTTER * 2 : 0}px`, ['--credit-bottom' as string]: `${isNarrow ? sheetH : 0}px` } as CSSProperties;
+
+  // Desktop and laptop: the map legend (Test Site's testable lots and tracts, Explore's layer) sits right on top of the
+  // map buttons (2D, 3D, Aerial, zoom) and takes their row's width. With Details open the buttons sit under the panel,
+  // so the legend stacks there too and the panel ends above it: the panel never covers it.
+  // The slot moves between the two places as Details opens and closes; the old one unmounts after the panel's slide, so
+  // it may only clear the target when the target is that old, detached element.
+  const legendRef = useCallback((el: HTMLDivElement | null) => {
+    const cur = useLegendSlot.getState().el;
+    if (el) setLegendSlot(el);
+    else if (cur && !cur.isConnected) setLegendSlot(null);
+  }, [setLegendSlot]);
+  const legendSlot = isNarrow ? null : <div ref={legendRef} className="w-0 min-w-full space-y-2 empty:hidden" data-legend-slot />;
 
   return (
     <div className="bh-shell absolute inset-0" style={shellVars} data-mode={mode}>
@@ -248,7 +234,7 @@ export default function ToolPage() {
               at the right edge brings it back, and the map controls and a Chat button stay on the map. */}
           <AnimatePresence initial={false}>
             {rightOpen ? (
-              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => setRight(false)} below={<MapControls row />} />
+              <RightPanel key="results" style={rightStyle} drawer={isDrawer} onClose={() => (clearTract(), setRight(false))} below={<ControlsStack legend={legendSlot}><MapControls row /></ControlsStack>} />
             ) : (
               <motion.button key="open-results" type="button" initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 12 }} onClick={() => setRight(true)} aria-label="Show the details" title="Show the details" className={SHOW_BTN} style={{ right: GUTTER, top: GUTTER }}>
                 <PanelRightOpen className="h-5 w-5" /> Details
@@ -259,11 +245,27 @@ export default function ToolPage() {
       )}
       {/* Desktop and laptop: the controls row sits under the right panel (RightPanel `below`). It floats on the map
           only on tablet and phone, and on a laptop while the results drawer is closed. */}
-      {controlsSize !== 'none' && (isNarrow || !rightOpen) && <MapControls style={controls} size={controlsSize} row={!isNarrow} tight={!isNarrow && openMap < 420} />}
-      {/* Desktop and laptop: the map legend (Test Site's testable lots, Explore's layer) sits just above the map buttons at
-          the bottom right. The Details panel lies over it when open. */}
-      {!isNarrow && <div ref={setLegendSlot} className="pointer-events-auto absolute z-10 w-[248px] empty:hidden" style={{ right: GUTTER, bottom: GUTTER + 40 + 8 }} data-legend-slot />}
+      {controlsSize !== 'none' && (isNarrow || !rightOpen) &&
+        (isNarrow ? (
+          <MapControls style={controls} size={controlsSize} row={false} />
+        ) : (
+          <div className="pointer-events-none absolute z-20 [&>*]:pointer-events-auto" style={controls}>
+            <ControlsStack legend={legendSlot}>
+              <MapControls size={controlsSize} row tight={openMap < 420} />
+            </ControlsStack>
+          </div>
+        ))}
       {!isNarrow && <AskDock maxW={dockMaxW} vh={vh} />}
+    </div>
+  );
+}
+
+/** The legend card(s) on top of the map buttons row, as wide as the row (the row sets the width). */
+function ControlsStack({ legend, children }: { legend: ReactNode; children: ReactNode }) {
+  return (
+    <div className="flex w-max flex-col items-stretch gap-2">
+      {legend}
+      {children}
     </div>
   );
 }

@@ -30,6 +30,16 @@ export interface Spot {
   loadFailed?: boolean;
 }
 
+export interface AreaPick {
+  /** The boundary level it was picked on (ruleLayers.ts). */
+  kind: 'county' | 'town' | 'tract' | 'zip';
+  geoid: string;
+  /** "Census Tract 1004", "Lancaster township", "ZIP code 15213", "Allegheny County" */
+  name: string;
+  county: string | null;
+  pt: LngLat;
+}
+
 interface ToolState {
   /** Testing (lot level) or projecting (tract and town level). Kept in the hash. */
   view: ToolView;
@@ -58,6 +68,8 @@ interface ToolState {
   tracts: FC<TractProps> | null;
   towns: FC<TownProps> | null;
   spot: Spot | null;
+  /** Test Site, Census Tract or Township or City on: the area picked on the map for its ADU rule answer (no lot). */
+  areaPick: AreaPick | null;
   /** A spot is being tested (lot file loading). */
   busy: boolean;
   msg: string | null;
@@ -138,6 +150,7 @@ export const useTool = create<ToolState>((set, get) => ({
   tracts: null,
   towns: null,
   spot: null,
+  areaPick: null,
   busy: false,
   msg: null,
   view3d: false,

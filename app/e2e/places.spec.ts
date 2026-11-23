@@ -1,101 +1,13 @@
-// Where to Build (Explore's default map colour): every municipality coloured by whether an ADU is allowed today,
-// its legend under the layer row with the share of Pennsylvanians, and Details for one municipality. Then the plain why-not
-// sentences on the two demo lots and the ground slope row on a steep lot (Test Project).
-import { existsSync, readFileSync } from 'node:fs';
+// The plain why-not sentences on the two demo lots and the ground slope row on a steep lot (Test Site).
+import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { lotDataDir } from '../devData';
 import { expect, test, type Page } from '@playwright/test';
 
-const PLACES = resolve(import.meta.dirname, '../public/data/pa_places.json');
-const hasPlaces = existsSync(PLACES);
-const rows: { geoid: string; name: string; status: string; tier: string }[] = hasPlaces ? JSON.parse(readFileSync(PLACES, 'utf8')) : [];
 const LOTS = lotDataDir();
 const has = (place: string, tract: string) => existsSync(resolve(LOTS, place, 'detail', `${tract}.json.gz`));
 
-const right = (page: Page) => page.locator('aside[aria-label="Ask and report"]');
 const verdict = (page: Page) => page.locator('section[aria-label="Verdict"]').first();
-
-/** Expected answer titles per status (today). Limited depends on the approval, so any of its titles. */
-const TITLE: Record<string, RegExp> = {
-  by_right: /^Allowed by right$/,
-  limited: /^(Allowed with a hearing|Allowed with limits|Allowed with sign-off|Only with a variance)$/,
-  not_addressed: /^Not addressed$/,
-  prohibited: /^Not allowed today$/,
-  no_zoning: /^No zoning here$/,
-  unknown: /^Not checked yet$/,
-};
-
-/** Click the map at a point (the map's own projection). */
-async function clickAt(page: Page, lng: number, lat: number, zoom: number) {
-  const xy = await page.evaluate(
-    async ([lng, lat, zoom]) => {
-      // The dev server serves the app's own modules: the live map is in the store.
-      const path = '/src/tool/store.ts';
-      const { mapRef } = (await import(path)) as { mapRef: { current: import('maplibre-gl').Map } };
-      const m = mapRef.current;
-      m.jumpTo({ center: [lng, lat], zoom });
-      await new Promise((r) => setTimeout(r, 1500));
-      const p = m.project([lng, lat]);
-      const r = m.getContainer().getBoundingClientRect();
-      return [p.x + r.left, p.y + r.top];
-    },
-    [lng, lat, zoom],
-  );
-  await page.mouse.click(xy[0], xy[1]);
-}
-
-test.describe('where to build', () => {
-  test.skip(!hasPlaces, 'no pa_places.json');
-
-  test('Explore opens on Where to Build: its legend above the map buttons, six answers with shares, then one municipality', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/#/?view=project');
-    await expect(page.getByRole('radiogroup', { name: 'Map layer' }).getByRole('radio', { name: 'Where to Build' })).toHaveAttribute('aria-checked', 'true');
-    await expect(page.locator('.bh-map [data-places="ready:current"]')).toHaveCount(1, { timeout: 60_000 });
-    // The legend sits in the card above the map buttons (the legend slot).
-    const legend = page.locator('[data-legend-slot]').getByRole('group', { name: 'Where to build legend' });
-    await expect(page.getByRole('group', { name: 'Where to build legend' })).toHaveCount(1);
-    await expect(legend.locator('[data-place-legend]')).toHaveCount(6);
-    await expect(legend).toContainText('Hatched');
-    await expect(legend).toContainText(/Share of Pennsylvanians, data of/);
-    const shares = await legend.locator('[data-place-legend] .tnum').allInnerTexts();
-    expect(shares).toHaveLength(6);
-
-    // Allentown: the answer matches its row in the file, at most four rows, a zoning code link, and a lot test (lot records).
-    const allentown = rows.find((r) => r.name === 'Allentown city')!;
-    await clickAt(page, -75.478, 40.602, 10);
-    const answer = right(page).locator('section[aria-label="Place answer"]');
-    await expect(answer).toHaveAttribute('data-place-status', allentown.status);
-    await expect(answer.locator('h3')).toHaveText(TITLE[allentown.status]);
-    expect(await right(page).locator('[data-place-row]').count()).toBeLessThanOrEqual(4);
-    await expect(right(page).getByRole('heading', { name: 'Allentown city' })).toBeVisible();
-    // This layer here: the answer, the share of Pennsylvanians with it, a takeaway.
-    const here = right(page).locator('section[aria-label="This layer here"]');
-    await expect(here).toHaveAttribute('data-layer-here', 'legal');
-    await expect(here.locator('[data-insight]').first()).toContainText('of Pennsylvanians');
-    await expect(here.locator('[data-takeaway]')).not.toBeEmpty();
-    await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('href', 'https://ecode360.com/49783893');
-    await expect(right(page).locator('[data-code-link="Zoning code"]')).toHaveAttribute('rel', 'noopener noreferrer');
-    await expect(right(page).getByRole('button', { name: 'Test a lot here' })).toBeVisible();
-    await expect(right(page).getByRole('button', { name: 'Payoff and room' })).toHaveAttribute('aria-expanded', 'false');
-
-    // The state bill: a zoned town becomes by right, marked not law.
-    await page.getByRole('radiogroup', { name: 'Rules' }).getByRole('radio', { name: 'State Bill' }).click();
-    await expect(page.locator('.bh-map [data-places="ready:hb2186"]')).toHaveCount(1);
-    await expect(answer.locator('h3')).toHaveText('Allowed by right');
-    await expect(answer).toContainText('not law');
-    await expect(legend).toContainText('not law');
-  });
-
-  test('Pittsburgh keeps Test a lot here', async ({ page }) => {
-    await page.setViewportSize({ width: 1440, height: 900 });
-    await page.goto('/#/?view=project');
-    await expect(page.locator('.bh-map [data-places="ready:current"]')).toHaveCount(1, { timeout: 60_000 });
-    await clickAt(page, -79.9959, 40.4406, 10);
-    await expect(right(page).getByRole('heading', { name: 'Pittsburgh city' })).toBeVisible();
-    await expect(right(page).getByRole('button', { name: 'Test a lot here' })).toBeVisible();
-  });
-});
 
 test.describe('why not, and ground slope', () => {
   test('the approval lot: it fits, it needs the administrator', async ({ page }) => {

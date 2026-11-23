@@ -7,7 +7,6 @@ import Search from './Search';
 import { useTool } from './store';
 import TestControls from './test/TestControls';
 import { VIEW_LABEL } from '../lib/router';
-import ExploreControls from './ProjectControls';
 
 /**
  * The left panel: search and the lot at a glance in the header, the controls below. Same shell as the right panel.
@@ -15,7 +14,6 @@ import ExploreControls from './ProjectControls';
  */
 export default function LeftPanel({ style, drawer, onClose, column }: { style?: React.CSSProperties; drawer?: boolean; onClose?: () => void; column?: boolean }) {
   const status = useTool((s) => s.status);
-  const test = useTool((s) => s.view === 'test');
   return (
     <motion.aside
       initial={drawer ? { x: '-105%' } : { opacity: 0, x: -16, filter: 'blur(6px)' }}
@@ -31,7 +29,7 @@ export default function LeftPanel({ style, drawer, onClose, column }: { style?: 
       {/* Tablet and phone: search under the title, in the header, outside the scrolling body, so its focus ring and the
           results list are never clipped. Desktop and laptop: one box for an address or a question at the bottom left
           (AskDock). */}
-      <PanelHeader title={test ? VIEW_LABEL.test : VIEW_LABEL.project} actions={onClose ? drawer ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : <IconButton label="Hide the controls" onClick={onClose}><PanelLeftClose className="h-4 w-4" /></IconButton> : undefined}>
+      <PanelHeader title={VIEW_LABEL.test} actions={onClose ? drawer ? <IconButton label="Close controls" onClick={onClose}><X className="h-4 w-4" /></IconButton> : <IconButton label="Hide the controls" onClick={onClose}><PanelLeftClose className="h-4 w-4" /></IconButton> : undefined}>
         {drawer || status === 'error' ? (
           <>
             {drawer && <Search />}
@@ -39,12 +37,9 @@ export default function LeftPanel({ style, drawer, onClose, column }: { style?: 
           </>
         ) : null}
       </PanelHeader>
-      <div className={PANEL_BODY}>
-        {test ? (
-          <TestControls />
-        ) : (
-          <ExploreControls />
-        )}
+      {/* A little room at the top so the first card's border is not clipped by the scroll area. */}
+      <div className={cx(PANEL_BODY, 'pt-1')}>
+        <TestControls />
       </div>
     </motion.aside>
   );

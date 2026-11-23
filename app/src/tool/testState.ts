@@ -310,3 +310,31 @@ export function lotByAddress(label: string, lots: LotRecord[]): LotRecord | null
   const hits = lots.filter((l) => l.lot.address && normAddress(l.lot.address) === want);
   return hits.length === 1 ? hits[0] : null;
 }
+
+/**
+ * The unit change an assistant call asks for, within the limits of the ADU Design controls. A floor area alone keeps the
+ * shape of the unit on screen (size_sqft is the floor over all stories, so a two-story unit has half the footprint).
+ * A new size or type drops the spot the user dragged to, so the tool looks for one.
+ */
+export function unitFromInput(cur: UnitDraft, input: { type?: unknown; width_ft?: number; depth_ft?: number; stories?: unknown; height_ft?: number; size_sqft?: number }): Partial<UnitDraft> {
+  const out: Partial<UnitDraft> = {};
+  const side = (v: number) => Math.min(SIDE_MAX, Math.max(SIDE_MIN, Math.round(v * 2) / 2));
+  if (isAduType(input.type)) out.type = input.type;
+  const stories = Number(input.stories) === 2 ? 2 : Number(input.stories) === 1 ? 1 : cur.stories;
+  out.stories = stories;
+  const w = typeof input.width_ft === 'number' && input.width_ft > 0 ? input.width_ft : null;
+  const d = typeof input.depth_ft === 'number' && input.depth_ft > 0 ? input.depth_ft : null;
+  if (w !== null || d !== null) {
+    out.width = side(w ?? cur.width);
+    out.depth = side(d ?? cur.depth);
+  } else if (typeof input.size_sqft === 'number' && input.size_sqft > 0) {
+    const foot = Math.min(AREA_MAX, Math.max(AREA_MIN, input.size_sqft / stories));
+    const ratio = Math.max(1, cur.depth / cur.width);
+    out.width = side(Math.sqrt(foot / ratio));
+    out.depth = side(foot / out.width);
+  }
+  if (typeof input.height_ft === 'number' && input.height_ft > 0) out.height = Math.min(HEIGHT_MAX, Math.max(HEIGHT_MIN, Math.round(input.height_ft * 2) / 2));
+  else if (out.stories !== cur.stories) out.height = null;
+  if (out.type !== undefined || out.width !== undefined || out.depth !== undefined || out.stories !== cur.stories) out.at = null;
+  return out;
+}
