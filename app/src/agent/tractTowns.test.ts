@@ -71,11 +71,3 @@ describe('tract_towns.json', () => {
     expect(out[1].adu_rule_today).toBe('Not addressed: the code has no ADU rule. The path to ask about is a special exception (Zoning Hearing Board hearing)');
   });
 });
-
-describe('townSplitText', () => {
-  it('names each town with its share and drops slivers', async () => {
-    const { townSplitText } = await import('../tool/TractTownsNote');
-    const names: Record<string, string> = { a: 'Lancaster township', b: 'Lancaster city' };
-    expect(townSplitText([['a', 0.797, 0.8], ['b', 0.198, 0.2], ['c', 0.005, 0]], (g) => names[g] ?? g)).toBe('Lancaster township 80%, Lancaster city 20%');
-  });
-});

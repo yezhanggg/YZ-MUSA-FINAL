@@ -1,0 +1,1453 @@
+{
+ "about": "Questions on the Parcel tab and Be prepared (Nov 21), and on areas picked on a boundary (Nov 22): parcel facts, property tax, documents, offices, what to bring and ask, county, tract and ZIP code answers, and two general passages. Made by agent/eval/make_parcel_questions.ts: expected values read from tool results. Do not edit by hand.",
+ "generated_at": "2026-11-23T04:08:42.417Z",
+ "data_roots": {
+  "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
+  "philadelphia": "/Users/ye/musa-drive/lots/philadelphia",
+  "montgomery_county": "/Users/ye/musa-drive/lots/montgomery_county",
+  "chester_county": "/Users/ye/musa-drive/lots/chester_county"
+ },
+ "data_versions": {
+  "pittsburgh": "pittsburgh-20261118-c11c62f00e",
+  "philadelphia": "philadelphia-20261114-2a67293eaa",
+  "montgomery_county": "montgomery_county-20261118-e05e33d1ea",
+  "chester_county": "chester_county-20261116-aa5d870e34"
+ },
+ "questions": [
+  {
+   "id": "par-01",
+   "category": "parcel",
+   "question": "What's the parcel number of this lot, and which school district is it in?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "parcel number",
+     "value": "0086N00208000000",
+     "accept": [
+      "0086N00208000000"
+     ]
+    },
+    {
+     "kind": "enum",
+     "label": "school district",
+     "value": "Pittsburgh Public Schools",
+     "accept": [
+      "Pittsburgh Public Schools"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the parcel number and the school district from the parcel record."
+  },
+  {
+   "id": "par-02",
+   "category": "parcel",
+   "question": "How much would a backyard cottage add to my property tax each year?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_property_tax"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_property_tax",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "added yearly tax",
+     "value": 1728.22,
+     "tol_pct": 3,
+     "unit": "usd"
+    },
+    {
+     "kind": "behaviour",
+     "label": "says it is an estimate",
+     "accept": [
+      "estimate",
+      "about",
+      "roughly",
+      "around"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the unit's added yearly tax as an estimate, from the Pittsburgh millage and the county's common level ratio."
+  },
+  {
+   "id": "par-03",
+   "category": "parcel",
+   "question": "What do I pay in property tax now, and who owns this lot?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_property_tax"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "says the bill and owner are not in the data",
+     "accept": [
+      "not in my data",
+      "n't in my data",
+      "not in the data",
+      "don't have",
+      "do not have"
+     ],
+     "evidence": "owner name"
+    },
+    {
+     "kind": "behaviour",
+     "label": "points to the county record",
+     "accept": [
+      "county record",
+      "county",
+      "real estate",
+      "assessment"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    },
+    {
+     "pattern": "\\b(your|the lot'?s|current|today'?s) (property )?tax (bill )?is (about |around )?\\$\\d",
+     "why": "gives the lot's own tax bill, which is not in the data"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Says the current tax bill and the owner are not in the data, and gives the county record link."
+  },
+  {
+   "id": "par-04",
+   "category": "parcel",
+   "question": "What should I bring to my first meeting with the zoning office?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_next_steps",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the parcel number",
+     "accept": [
+      "parcel number",
+      "0086N00208000000"
+     ],
+     "evidence": "Parcel number 0086N00208000000"
+    },
+    {
+     "kind": "behaviour",
+     "label": "a survey, plot plan or deed",
+     "accept": [
+      "survey",
+      "plot plan",
+      "deed",
+      "site plan"
+     ],
+     "evidence": "survey"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Lists the parcel number, the deed or a survey, a plot plan and photos, from get_next_steps."
+  },
+  {
+   "id": "par-05",
+   "category": "parcel",
+   "question": "What questions should I ask the zoning administrator about a backyard cottage here?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_next_steps",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the Administrator's Exception",
+     "accept": [
+      "administrator's exception",
+      "administrator exception",
+      "exception"
+     ],
+     "evidence": "Administrator's Exception"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the neighbors",
+     "accept": [
+      "neighbor",
+      "neighbour"
+     ],
+     "evidence": "neighbors"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the questions from get_next_steps, first the Administrator's Exception and the neighbors' sign-off."
+  },
+  {
+   "id": "par-06",
+   "category": "parcel",
+   "question": "Where can I find the zoning map and the city's comprehensive plan?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning map link",
+     "accept": [
+      "pittsburghpa.maps.arcgis.com",
+      "pittsburgh zoning map"
+     ],
+     "evidence": "https://pittsburghpa.maps.arcgis.com/apps/instant/sidebar/index.html?appid=4bb79ea64bf848b3a0560e3856efeccb"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the plan link",
+     "accept": [
+      "pittsburghpa.gov",
+      "comprehensive planning process"
+     ],
+     "evidence": "https://www.pittsburghpa.gov/Business-Development/City-Planning/Neighborhood-Planning/Comprehensive-Planning-Process"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the zoning map and comprehensive plan links from get_parcel_info, with the date checked."
+  },
+  {
+   "id": "par-07",
+   "category": "parcel",
+   "question": "Who do I call about a zoning permit, and what is their phone number?",
+   "context": {
+    "lot": {
+     "id": "42003-0086N00208000000",
+     "tract": "42003141300",
+     "label": "5459 BEACON ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning office phone",
+     "accept": [
+      "(412) 255-2219",
+      "412-255-2219",
+      "255-2219"
+     ],
+     "evidence": "(412) 255-2219"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Names the zoning office and its phone number from the tool."
+  },
+  {
+   "id": "par-08",
+   "category": "parcel",
+   "question": "What are the property tax rates here, and how does the county assess a new unit?",
+   "context": {
+    "lot": {
+     "id": "42091-120000004002",
+     "tract": "42091205600",
+     "label": "203 BARRIE RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_property_tax"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_property_tax",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "number",
+     "label": "total millage",
+     "value": 52.32,
+     "tol_pct": 1,
+     "unit": "none"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the base year or common level ratio",
+     "accept": [
+      "common level ratio",
+      "base year",
+      "share of market value",
+      "below market value"
+     ],
+     "evidence": "common_level_ratio"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the county, borough and school district millage with their year and source, the total, and that the county assesses at a base year value (common level ratio)."
+  },
+  {
+   "id": "par-09",
+   "category": "parcel",
+   "question": "What zoning district is this lot in, and what does that district mean?",
+   "context": {
+    "lot": {
+     "id": "42091-120000004002",
+     "tract": "42091205600",
+     "label": "203 BARRIE RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_lot_facts"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "district",
+     "value": "3B",
+     "accept": [
+      "3B"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "the district name",
+     "accept": [
+      "mixed residential limited district"
+     ],
+     "evidence": "Mixed Residential Limited District"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the district code and its full name from the borough's code."
+  },
+  {
+   "id": "par-10",
+   "category": "parcel",
+   "question": "Is there a tax break if I build a new unit here?",
+   "context": {
+    "lot": {
+     "id": "42101-021000035",
+     "tract": "42101002500",
+     "label": "1134 S FRONT ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_property_tax"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_property_tax",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the abatement",
+     "accept": [
+      "abatement",
+      "tax break"
+     ],
+     "evidence": "abatement"
+    },
+    {
+     "kind": "behaviour",
+     "label": "apply within 60 days of the permit",
+     "accept": [
+      "60 days"
+     ],
+     "evidence": "60 days"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Philadelphia's abatement for new residential construction, phased over 10 years, applied for within 60 days of the building permit."
+  },
+  {
+   "id": "par-11",
+   "category": "parcel",
+   "question": "Which school district is this lot in, and what is the total property tax millage?",
+   "context": {
+    "lot": {
+     "id": "42029-1-4-50",
+     "tract": "42029302400",
+     "label": "307 W MARSHALL ST"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_property_tax",
+     "get_parcel_info"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_property_tax",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "school district",
+     "value": "West Chester Area School District",
+     "accept": [
+      "West Chester Area School District"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "total millage",
+     "value": 37.41,
+     "tol_pct": 1,
+     "unit": "none"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the school district and the total of the county, borough and school district millage."
+  },
+  {
+   "id": "par-12",
+   "category": "parcel",
+   "question": "How does property tax work in Pennsylvania when I add an ADU?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "property_tax"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "mills",
+     "accept": [
+      "mill",
+      "per $1,000",
+      "per 1,000"
+     ],
+     "evidence": "mills"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the assessment rises after the permit",
+     "accept": [
+      "permit",
+      "reassess",
+      "interim",
+      "assessment"
+     ],
+     "evidence": "interim assessment"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Mills per $1,000 of assessed value from county, town and school district; base year and common level ratio; a new unit is assessed after the permit."
+  },
+  {
+   "id": "par-13",
+   "category": "parcel",
+   "question": "Is the town's comprehensive plan the law? Does it decide my permit?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_methods"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_methods",
+     "input": {
+      "topic": "plans_documents"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the plan is advisory",
+     "accept": [
+      "advisory",
+      "not the law",
+      "not law",
+      "guide",
+      "does not decide"
+     ],
+     "evidence": "advisory"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the zoning ordinance decides",
+     "accept": [
+      "zoning ordinance",
+      "zoning code",
+      "zoning law"
+     ],
+     "evidence": "zoning ordinance"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "The comprehensive plan is advisory in Pennsylvania (MPC 303(c)). The zoning ordinance decides what may be built."
+  },
+  {
+   "id": "par-14",
+   "category": "parcel",
+   "question": "Can I build an ADU here?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current",
+    "area": {
+     "kind": "zip",
+     "geoid": "19034",
+     "name": "ZIP code 19034",
+     "county": null
+    }
+   },
+   "tools_required": [
+    [
+     "get_boundary_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_boundary_answer",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "area answer",
+     "value": "Mostly allowed",
+     "accept": [
+      "mostly allowed",
+      "allowed in most",
+      "most homes",
+      "most of",
+      "allowed"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "share of homes in towns that allow it",
+     "value": 98,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the biggest town",
+     "accept": [
+      "upper dublin"
+     ],
+     "evidence": "Upper Dublin township"
+    },
+    {
+     "kind": "behaviour",
+     "label": "each town sets its own rule",
+     "accept": [
+      "each town",
+      "town by town",
+      "depends on the town",
+      "set by the town",
+      "sets its own"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Answers for the ZIP code picked on the map with get_boundary_answer: the answer word, the share of homes, the biggest towns with their rules, and that each town sets its own rule."
+  },
+  {
+   "id": "par-15",
+   "category": "parcel",
+   "question": "What are the ADU rules in this county?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current",
+    "area": {
+     "kind": "county",
+     "geoid": "42091",
+     "name": "Montgomery County",
+     "county": "Montgomery"
+    }
+   },
+   "tools_required": [
+    [
+     "get_boundary_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_boundary_answer",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "area answer",
+     "value": "Mixed",
+     "accept": [
+      "mixed",
+      "depends on the town",
+      "depends on which town",
+      "varies"
+     ]
+    },
+    {
+     "kind": "number",
+     "label": "share of people in towns that allow it",
+     "value": 53,
+     "tol_pct": 0,
+     "unit": "pct"
+    },
+    {
+     "kind": "behaviour",
+     "label": "each town sets its own rule",
+     "accept": [
+      "each town",
+      "town by town",
+      "depends on the town",
+      "set by the town",
+      "sets its own",
+      "varies"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Answers for Montgomery County as picked on the map: the answer word, the share of people in towns that allow an ADU today, and that the rule depends on the town. Offers to look at one town."
+  },
+  {
+   "id": "par-16",
+   "category": "parcel",
+   "question": "Can I build a backyard cottage here?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current",
+    "area": {
+     "kind": "town",
+     "geoid": "4209179008",
+     "name": "Upper Dublin township",
+     "county": "Montgomery"
+    }
+   },
+   "tools_required": [
+    [
+     "get_place_answer",
+     "get_boundary_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_boundary_answer",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "Upper Dublin",
+     "accept": [
+      "upper dublin"
+     ],
+     "evidence": "Upper Dublin township"
+    },
+    {
+     "kind": "behaviour",
+     "label": "an approval is needed",
+     "accept": [
+      "hearing",
+      "special exception",
+      "conditional use",
+      "approval",
+      "zoning hearing board"
+     ],
+     "evidence": "hearing"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Answers with Upper Dublin's own rule (get_place_answer): allowed with a hearing, with the code section and how sure."
+  },
+  {
+   "id": "par-17",
+   "category": "parcel",
+   "question": "Who is the zoning officer here, and how do I reach them?",
+   "context": {
+    "lot": {
+     "id": "42091-540001024209",
+     "tract": "42091201404",
+     "label": "1208 ASCOT DR"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_next_steps"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning officer phone",
+     "accept": [
+      "(215) 643-1600 ext. 3213",
+      "215-643-1600",
+      "643-1600"
+     ],
+     "evidence": "(215) 643-1600 ext. 3213"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the extension",
+     "accept": [
+      "3213"
+     ],
+     "evidence": "ext. 3213"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Names the Upper Dublin zoning officer from get_parcel_info with the phone and extension, and that consultations are by appointment."
+  },
+  {
+   "id": "par-18",
+   "category": "parcel",
+   "question": "What zoning district is this lot in, and where can I see the zoning map?",
+   "context": {
+    "lot": {
+     "id": "42091-400005084006",
+     "tract": "42091204300",
+     "label": "126 MINFFORD RD"
+    },
+    "site_lot": null,
+    "town": null,
+    "scenario": "today",
+    "unit": {
+     "type": "detached_new",
+     "width_ft": 20,
+     "depth_ft": 30,
+     "stories": 1,
+     "height_ft": null,
+     "units": 1
+    },
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_parcel_info",
+     "get_lot_facts"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_parcel_info",
+     "input": {}
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "district",
+     "value": "LDR3",
+     "accept": [
+      "LDR3"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "the district name",
+     "accept": [
+      "low density residential"
+     ],
+     "evidence": "Low Density Residential"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the zoning map link",
+     "accept": [
+      "lowermerion.org",
+      "interactive zoning map"
+     ],
+     "evidence": "https://www.lowermerion.org/businesses/zoning-and-planning/interactive-zoning-map"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": "today",
+   "rubric": "Gives the district code and its full name from Lower Merion's code, and the township's zoning map link."
+  },
+  {
+   "id": "par-19",
+   "category": "parcel",
+   "question": "Is an ADU allowed in Allegheny County?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_boundary_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_boundary_answer",
+     "input": {
+      "name": "Allegheny"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "enum",
+     "label": "area answer",
+     "value": "Mixed",
+     "accept": [
+      "mixed",
+      "depends on the town",
+      "depends on which town",
+      "varies"
+     ]
+    },
+    {
+     "kind": "behaviour",
+     "label": "each town sets its own rule",
+     "accept": [
+      "each town",
+      "town by town",
+      "depends on the town",
+      "set by the town",
+      "sets its own",
+      "varies",
+      "municipality"
+     ]
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "Answers for Allegheny County with get_boundary_answer: the answer word, the share of people, the biggest towns, and that each town sets its own rule."
+  },
+  {
+   "id": "par-20",
+   "category": "parcel",
+   "question": "Who is the zoning officer in Upper Dublin Township, and how do I reach them?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Upper Dublin township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning officer phone",
+     "accept": [
+      "(215) 643-1600 ext. 3213",
+      "215-643-1600",
+      "643-1600"
+     ],
+     "evidence": "(215) 643-1600 ext. 3213"
+    },
+    {
+     "kind": "behaviour",
+     "label": "the extension",
+     "accept": [
+      "3213"
+     ],
+     "evidence": "ext. 3213"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "With no lot open, names the Upper Dublin zoning officer from get_place_answer town_offices, with the phone and extension and the date checked."
+  },
+  {
+   "id": "par-21",
+   "category": "parcel",
+   "question": "Where can I see Lower Merion's zoning map?",
+   "context": {
+    "lot": null,
+    "site_lot": null,
+    "town": null,
+    "scenario": null,
+    "unit": null,
+    "adu": {
+     "bedrooms": 1,
+     "size_sqft": 600,
+     "stories": 1
+    },
+    "rule": "current"
+   },
+   "tools_required": [
+    [
+     "get_place_answer"
+    ]
+   ],
+   "calls": [
+    {
+     "name": "get_place_answer",
+     "input": {
+      "place": "Lower Merion township"
+     }
+    }
+   ],
+   "facts": [
+    {
+     "kind": "behaviour",
+     "label": "the zoning map link",
+     "accept": [
+      "lowermerion.org",
+      "interactive zoning map"
+     ],
+     "evidence": "https://www.lowermerion.org/businesses/zoning-and-planning/interactive-zoning-map"
+    }
+   ],
+   "forbidden": [
+    {
+     "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+     "why": "a dead-end answer"
+    }
+   ],
+   "scenario": null,
+   "rubric": "With no lot open, gives Lower Merion's zoning map link from get_place_answer town_documents, with the date it was checked."
+  }
+ ]
+}

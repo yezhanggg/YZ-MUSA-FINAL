@@ -3,12 +3,12 @@ import type { ExpressionSpecification } from 'maplibre-gl';
 import { findFeature, hasLots, loadLots, lotsLoaded, type LngLat, type Lot, type TownProps } from '../tool/geo';
 import { mapRef, useTool } from '../tool/store';
 import { openLot, testSpot } from '../tool/actions';
-import { BED_SIZE, SIZE_MAX, SIZE_MIN, type Bed, type Stories } from '../lib/numbers';
 import type { DataProvider, SetMapInput, SiteRecord } from './executors';
 import { findLoadedLot, loadedLots, lotByIdAnywhere } from '../lib/lot/load';
 import type { LotAgentProvider } from '../lib/lot/agentTools';
 import type { LotRecord } from '../lib/lot/types';
-import { moneyOptions, tractRents } from '../tool/testState';
+import { moneyOptions, tractRents, unitFromInput } from '../tool/testState';
+import { SET_UNIT_NO_LOT, aduFromInput, aduText, ruleText, unitText } from './mapText';
 import { zoningTextSource } from './zoningText';
 import { placesSource } from './placeAnswer';
 import { tractTownsSource } from './tractTowns';
@@ -103,6 +103,14 @@ export const browserProvider: DataProvider = {
   // The statewide place table for get_place_answer, from the app's own data folder.
   places: placesSource(),
   tractTowns: tractTownsSource(),
+  // get_boundary_answer on a ZIP code: the same shape as tract_towns.json.
+  zipTowns: tractTownsSource({ url: 'data/zip_towns.json' }),
+  // The area picked on a boundary in Test Site (ruleLayers.ts), only while no lot is open.
+  area() {
+    const s = useTool.getState();
+    const p = s.areaPick;
+    return p && !s.spot?.record ? { kind: p.kind, geoid: p.geoid, name: p.name } : null;
+  },
   // find_lot: the address index of every lot place (published next to the tract files), fetched per street.
   addressIndex: addressIndexSource(),
   async lotById(id) {
@@ -154,15 +162,19 @@ export const browserProvider: DataProvider = {
         highlight(input.lot_ids ?? []);
         return `Highlighted ${(input.lot_ids ?? []).length} lots`;
       case 'set_adu': {
-        const bed = [0, 1, 2, 3].includes(Number(input.bedrooms)) ? (Number(input.bedrooms) as Bed) : st.adu.bed;
-        const size = typeof input.size_sqft === 'number' ? Math.min(SIZE_MAX, Math.max(SIZE_MIN, Math.round(input.size_sqft / 50) * 50)) : input.bedrooms !== undefined ? BED_SIZE[bed] : st.adu.size;
-        const stories = (Number(input.stories) === 2 ? 2 : input.stories !== undefined ? 1 : st.adu.stories) as Stories;
-        st.setAdu({ bed, size, stories });
-        return `ADU set to ${bed === 0 ? 'studio' : `${bed} BR`}, ${size} sq ft, ${stories} ${stories === 2 ? 'stories' : 'story'}`;
+        const adu = aduFromInput(st.adu, input);
+        st.setAdu(adu);
+        return aduText(adu);
       }
       case 'set_rule':
         st.set({ rule: input.rule === 'hb2186' ? 'hb2186' : 'current' });
-        return `Rules set to ${input.rule === 'hb2186' ? 'HB 2186' : 'today'}`;
+        return ruleText(input.rule);
+      case 'set_unit': {
+        if (st.view !== 'test') return SET_UNIT_NO_LOT;
+        const next = unitFromInput(st.unit, input);
+        st.setUnit(next);
+        return unitText({ ...st.unit, ...next });
+      }
     }
   },
 };
@@ -182,3 +194,4 @@ export async function selectLotById(id: string) {
   if (lot) await selectLot(lot);
   return !!lot;
 }
+

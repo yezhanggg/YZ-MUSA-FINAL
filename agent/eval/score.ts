@@ -5,10 +5,12 @@
 //   citations  every section or link the answer cites is in shared/rules/*.json, a tool result or the question
 //   forbidden  no forbidden pattern matches
 //   scenario   lot tool calls that name a scenario name the expected one, and the user's named scenario is used
-// A question is correct when all five pass and the run did not fail.
+//   map        every expected map action (map_calls) was taken with set_map, with the expected values
+// A question is correct when all six pass and the run did not fail.
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import type { EvalQuestion, Fact } from './types';
+import type { EvalQuestion, Fact, MapCall } from './types';
+import { cleanPlace, lotPlaceOf } from '../../app/src/tool/placeMatch';
 import { CATEGORIES } from './types';
 
 export const TARGETS = { correct_pct: 90, made_up_citations: 0 };
@@ -207,6 +209,34 @@ export function checkFact(f: Fact, answer: string, found = numbersIn(answer)): F
   }
 }
 
+// ------------------------------------------------------------------ map actions
+/** Two place names move the map to the same place: the same words once cleaned ("Narberth Borough" = "Narberth",
+ *  "Erie County" = "Erie"), or the same lot place ("Philly" = "Philadelphia"). */
+export function samePlace(a: string, b: string): boolean {
+  const c = (x: string) => cleanPlace(x).replace(/ county$/, '');
+  if (c(a) === c(b)) return true;
+  const la = lotPlaceOf(a);
+  return la !== null && la === lotPlaceOf(b);
+}
+
+/** A set_map call carries the expected action and values. */
+export function mapCallMatches(want: MapCall, input: Record<string, unknown>): boolean {
+  if (input.action !== want.action) return false;
+  return Object.entries(want).every(([k, v]) => {
+    if (k === 'action') return true;
+    const got = input[k];
+    if (typeof v === 'number') return typeof got === 'number' && Math.abs(got - v) <= Math.abs(v) * 0.05;
+    if (typeof got !== 'string') return false;
+    return k === 'place' ? samePlace(got, v) : got.toLowerCase() === v.toLowerCase();
+  });
+}
+
+/** The expected map actions no set_map call took, as "action key=value" lines. */
+export function mapMissing(want: MapCall[] | undefined, events: ToolEvent[]): string[] {
+  const calls = events.filter((e) => e.name === 'set_map').map((e) => e.input);
+  return (want ?? []).filter((w) => !calls.some((c) => mapCallMatches(w, c))).map((w) => Object.entries(w).map(([k, v]) => (k === 'action' ? String(v) : `${k}=${v}`)).join(' '));
+}
+
 // ------------------------------------------------------------------ one question
 export interface QuestionScore {
   id: string;
@@ -219,6 +249,8 @@ export interface QuestionScore {
   /** Tier B: quoted spans not found in a search_zoning_text passage. */
   made_up_quotes: string[];
   forbidden_hits: string[];
+  /** Expected map actions not taken (map_calls). Older scores lack it. */
+  map_missing?: string[];
   scenario_ok: boolean;
   scenario_why: string | null;
   /** The model hit max_tokens: the answer may be cut. */
@@ -258,9 +290,10 @@ export function scoreQuestion(q: EvalQuestion, t: Transcript): QuestionScore {
       scenario_why = `no lot tool call used ${q.scenario}`;
     }
   }
-  const correct = t.ok && facts.every((f) => f.pass) && tools_missing.length === 0 && made_up_citations.length === 0 && made_up_quotes.length === 0 && forbidden_hits.length === 0 && scenario_ok;
+  const map_missing = mapMissing(q.map_calls, t.tool_calls);
+  const correct = t.ok && facts.every((f) => f.pass) && tools_missing.length === 0 && made_up_citations.length === 0 && made_up_quotes.length === 0 && forbidden_hits.length === 0 && scenario_ok && map_missing.length === 0;
   return {
-    id: q.id, category: q.category, correct, ok: t.ok, facts, tools_missing, made_up_citations, made_up_quotes, forbidden_hits, scenario_ok, scenario_why,
+    id: q.id, category: q.category, correct, ok: t.ok, facts, tools_missing, made_up_citations, made_up_quotes, forbidden_hits, map_missing, scenario_ok, scenario_why,
     truncated: (t.stop_reasons ?? []).includes('max_tokens'),
     tool_calls: t.tool_calls.length, latency_ms: t.latency_ms, cost_usd: t.cost_usd, usage: t.usage,
   };
@@ -369,6 +402,7 @@ export function markdown(s: RunSummary, scores: QuestionScore[]): string {
       ...m.made_up_citations.map((c) => `made-up citation ${c}`),
       ...(m.made_up_quotes ?? []).map((c) => `quote not in the text: "${c.slice(0, 80)}"`),
       ...m.forbidden_hits.map((f) => `forbidden: ${f}`),
+      ...(m.map_missing ?? []).map((c) => `map action not taken: ${c}`),
       m.scenario_why,
     ].filter(Boolean);
     lines.push(`- ${m.id}: ${why.join('. ')}`);

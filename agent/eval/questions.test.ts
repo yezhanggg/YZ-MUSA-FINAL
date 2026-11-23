@@ -6,8 +6,8 @@ import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { zoningTextDir } from '../nodeProvider';
 import { TOOLS } from '../schema';
-import { QUESTIONS_FILE, callTool, readSet, useRoots } from './provider';
-import { numbersIn } from './score';
+import { QUESTIONS_FILE, questionTools, readSet, useRoots } from './provider';
+import { mapCallMatches, numbersIn } from './score';
 import { CATEGORIES, type Fact } from './types';
 
 const set = existsSync(QUESTIONS_FILE) ? readSet() : null;
@@ -42,12 +42,14 @@ const jsonNumbers = (text: string) => [...text.matchAll(/-?\d+(?:\.\d+)?/g)].map
 
 describe('eval set shape', () => {
   it.skipIf(!set)('has 10 questions in each main category, up to 5 on town rule files, unique ids', () => {
-    for (const c of CATEGORIES.filter((c) => !['town_rules', 'ladder', 'allentown', 'rule_text', 'features', 'expert'].includes(c))) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
-    // Made by make_more_questions.ts and make_feature_questions.ts, when their files are there.
-    for (const [c, k] of [['allentown', 8], ['rule_text', 6], ['features', 5]] as const) expect([0, k]).toContain(set!.questions.filter((q) => q.category === c).length);
+    for (const c of CATEGORIES.filter((c) => !['town_rules', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map'].includes(c))) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
+    // Made by make_more_questions.ts, make_feature_questions.ts and make_parcel_questions.ts, when their files are there.
+    for (const [c, k] of [['allentown', 8], ['rule_text', 6], ['features', 5], ['parcel', 21]] as const) expect([0, k]).toContain(set!.questions.filter((q) => q.category === c).length);
     expect(set!.questions.filter((q) => q.category === 'town_rules').length).toBeLessThanOrEqual(5);
     // questions_expert.json: 40 or more hand-written questions when the file is there. A follow-up's history ends
     // with the assistant's turn, so the question is the user's next turn.
+    // questions_map.json: every map question names the map actions it expects.
+    for (const q of set!.questions.filter((x) => x.category === 'map')) expect(q.map_calls?.length, q.id).toBeGreaterThan(0);
     const expert = set!.questions.filter((q) => q.category === 'expert');
     if (expert.length) expect(expert.length).toBeGreaterThanOrEqual(40);
     for (const q of expert.filter((x) => x.history)) expect(q.history!.at(-1)?.role, q.id).toBe('assistant');
@@ -67,7 +69,7 @@ describe('eval set shape', () => {
       // Tier B questions check behaviour (labels, wording) on top of the text the tool returns.
       if (q.category === 'traps' || q.category === 'tier_b' || q.category === 'ladder') expect(q.facts.some((f) => f.kind === 'behaviour'), q.id).toBe(true);
       // Allentown and rule text questions check data or wording ("not checked", who decides), at least one fact each.
-      else if (q.category === 'allentown' || q.category === 'rule_text' || q.category === 'features' || q.category === 'expert') expect(q.facts.length, q.id).toBeGreaterThan(0);
+      else if (q.category === 'allentown' || q.category === 'rule_text' || q.category === 'features' || q.category === 'expert' || q.category === 'parcel' || q.category === 'map') expect(q.facts.length, q.id).toBeGreaterThan(0);
       else expect(q.facts.some((f) => f.kind !== 'behaviour'), q.id).toBe(true);
     }
   });
@@ -77,8 +79,9 @@ describe.skipIf(!haveData)('ground truth is reproducible from the tools', () => 
   for (const q of set?.questions ?? []) {
     it.skipIf(!haveText && q.calls.some((c) => TEXT_TOOLS.has(c.name)))(`${q.id}: ${q.question}`, async () => {
       const results: unknown[] = [];
+      const call = questionTools(q.context);
       for (const c of q.calls) {
-        const out = await callTool(q.context, c.name, c.input);
+        const out = await call(c.name, c.input);
         if (q.category !== 'traps') {
           expect(out.ok, `${c.name} threw`).toBe(true);
           expect(out.result && typeof out.result === 'object' && 'error' in out.result, `${c.name}: ${JSON.stringify(out.result)}`).toBe(false);
@@ -89,6 +92,8 @@ describe.skipIf(!haveData)('ground truth is reproducible from the tools', () => 
       const nums = jsonNumbers(text);
       const missing = q.facts.filter((f) => !backed(f, text, nums)).map((f) => `${f.label} (${f.kind === 'number' ? f.value : f.kind === 'behaviour' ? f.evidence : f.value})`);
       expect(missing, 'facts not in the tool results. If the data changed, run npm run eval:agent:make').toEqual([]);
+      // The reproduction takes every expected map action, so the expected calls are ones set_map accepts.
+      for (const w of q.map_calls ?? []) expect(q.calls.some((c) => c.name === 'set_map' && mapCallMatches(w, c.input)), `${q.id}: ${JSON.stringify(w)}`).toBe(true);
     });
   }
 });

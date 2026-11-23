@@ -16,6 +16,15 @@ const box = (page: Page) => page.getByRole('combobox', { name: /ask ParcelIQ/ })
 const bar = (page: Page) => page.locator('[data-ask-dock] > div').last();
 const details = (page: Page) => page.locator('aside[aria-label="Ask and report"]');
 
+/** The context block of each question sent to the agent (AskBox.tsx useAskContext). */
+async function contextOf(page: Page, seen: Record<string, unknown>[]) {
+  await page.route('**/api/agent', async (r) => {
+    const body = r.request().postDataJSON() as { context?: Record<string, unknown> };
+    seen.push(body.context ?? {});
+    await r.fulfill({ json: { type: 'final', text: '**Mostly allowed**\nMost homes here are in towns that allow an ADU.' } });
+  });
+}
+
 async function fakeAgent(page: Page, asked: string[]) {
   await page.route('**/api/agent', async (r) => {
     const body = r.request().postDataJSON() as { messages: { role: string; content: unknown }[] };
@@ -93,8 +102,8 @@ test.describe('ParcelIQ and the one search box', () => {
     // Its top just under the Controls panel (one gutter), its bottom on the box with no gap.
     expect(Math.abs(c0.y - (left.y + left.height + 12))).toBeLessThan(4);
     expect(Math.abs(c0.y + c0.height - b.y)).toBeLessThan(2);
-    // Opening a card makes the panel taller: ParcelIQ follows.
-    await page.locator('section[aria-label="Testable Lots"]').getByRole('button', { name: 'Testable Lots', exact: true }).click({ force: true });
+    // Folding a card makes the panel shorter: ParcelIQ grows up to follow it.
+    await page.locator('section[aria-label="Boundaries"]').getByRole('button', { name: 'Boundaries', exact: true }).click({ force: true });
     await expect.poll(async () => (await chat(page).boundingBox())!.height).not.toBe(c0.height);
     const g = (await page.getByRole('separator', { name: 'Resize ParcelIQ width' }).boundingBox())!;
     await page.mouse.move(g.x + g.width / 2, g.y + g.height / 2);
@@ -122,6 +131,24 @@ test.describe('ParcelIQ and the one search box', () => {
     await expect(page.locator('section[aria-label="Testable Lots"]').getByRole('switch')).toHaveAttribute('aria-checked', 'true');
   });
 
+
+  test('an area picked on a boundary: ParcelIQ offers a question about it and sends the area with the question', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const seen: Record<string, unknown>[] = [];
+    await contextOf(page, seen);
+    await page.goto('/#/?view=test');
+    // County is on at the start and coloured by its rule. A click in the open map picks the county under it.
+    const map = page.locator('[aria-label^="Map of Pennsylvania"]');
+    await expect(map).toHaveAttribute('data-rules', 'county:ready');
+    await page.mouse.click(880, 430);
+    await expect(map).toHaveAttribute('data-area-kind', 'county');
+    const geoid = await map.getAttribute('data-area-pick');
+    await box(page).click();
+    await expect(chat(page)).toBeVisible();
+    await chat(page).getByRole('button', { name: 'Can I build an ADU here?' }).click();
+    await expect.poll(() => seen.length).toBeGreaterThan(0);
+    expect(seen[0].area).toMatchObject({ kind: 'county', geoid });
+  });
 
   test('with a lot open, ParcelIQ stays at the left and Details on the right, with a topic for the lot', async ({ page }) => {
     test.skip(!hasPgh, `no lot records at ${LOTS}`);

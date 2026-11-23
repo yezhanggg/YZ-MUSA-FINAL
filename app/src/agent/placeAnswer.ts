@@ -134,7 +134,9 @@ export function confidenceOf(r: PlaceRow): string {
   }
 }
 
-function contactLine(r: PlaceRow): string {
+function contactLineOf(r: PlaceRow, info: TownOffices | null = null): string {
+  const checked = officeLine(info);
+  if (checked) return checked;
   const c = r.contact;
   const office = c?.office ?? `${r.name} office`;
   const how = [c?.phone, c?.url].filter(Boolean).join(', ');
@@ -421,6 +423,22 @@ export interface PlaceAnswerDeps {
   townSummary?: (geoid: string) => Promise<Record<string, unknown> | null>;
   /** Statewide baseline items (shared/rules/pa_statewide.json `statewide`). */
   statewide?: () => Promise<Record<string, { value?: unknown; section?: unknown; url?: unknown }> | null>;
+  /** Offices and official links checked by hand for a lot town (shared/lot_towns_info.json), when the town is one. */
+  townInfo?: (geoid: string) => TownOffices | null;
+}
+
+/** The checked offices and documents of a lot town. Each item carries the date it was checked. */
+export interface TownOffices {
+  offices: Record<string, { name: string; phone?: string | null; email?: string | null; address?: string | null; url?: string | null; checked_on: string }>;
+  links: { kind: string; label: string; url: string; note?: string | null; checked_on: string }[];
+}
+
+/** The zoning office line for next_step, from the checked offices when there are any. */
+function officeLine(info: TownOffices | null): string | null {
+  const z = info?.offices.zoning;
+  if (!z) return null;
+  const how = [z.phone, z.email].filter(Boolean).join(', ');
+  return `zoning office: ${z.name}${how ? ` (${how})` : ''}`;
 }
 
 const STATEWIDE_KEYS = ['who_zones', 'zoning_officer', 'path_special_exception', 'path_conditional_use', 'path_variance', 'building_code', 'sewage_planning', 'onlot_septic', 'private_restrictions', 'state_bill_hb2186', 'state_bill_sb1346'];
@@ -535,6 +553,12 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
   const lotPlace = lotPlaceOfTown(r.geoid, r.name);
   if (lotPlace) out.lot_records = `${r.name} has lot records: for one lot, find_lot (address) then the lot tools (get_lot_facts, get_lot_rules, test_unit_on_lot).`;
   out.contact = r.contact;
+  const info = deps.townInfo ? deps.townInfo(r.geoid) : null;
+  if (info) {
+    out.town_offices = Object.fromEntries(Object.entries(info.offices).map(([role, o]) => [role, { name: o.name, phone: o.phone ?? null, email: o.email ?? null, address: o.address ?? null, url: o.url ?? null, checked_on: o.checked_on }]));
+    out.town_documents = info.links.map((l) => ({ kind: l.kind, label: l.label, url: l.url, note: l.note ?? null, checked_on: l.checked_on }));
+  }
+  const contactLine = (row: PlaceRow) => contactLineOf(row, info);
   out.next_step =
     r.tier === 'verified'
       ? `Before you design, confirm the rule and your district with the ${contactLine(r)}.${lotPlace ? ' For a specific lot, search its address (find_lot): the lot tools test the unit on that lot.' : ''}`
@@ -555,6 +579,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
     rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
     rule?.hearing ? (/names no hearing/.test(String(rule.hearing.who_decides)) ? 'Say who decides (who_decides) and that the code names no hearing for it, in those words.' : 'Say who decides (who_decides) and that it is a public hearing.') : null,
     rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it. Say an unknown fact is "not known here", in those words, never "I don\'t know". If the owner already said the fact (for example "my carriage house" or "my garage"), take their word for it: say the rule then applies and that the zoning officer confirms it.' : null,
+    info ? 'For who to call or a document (zoning map, code, plan, permit or fee page, zoning board), give it from town_offices or town_documents, with the date it was checked.' : null,
     summary ? 'Also give earlier_town_summary (approval, owner on site, units per lot, size cap) with its label and source.' : null,
   ].filter(Boolean).join(' ');
   out.how_to_answer =

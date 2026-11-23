@@ -284,3 +284,22 @@ describe('get_place_answer pass 28', () => {
     expect(check.why[0]).toBe('The code defines an ADU but no district permits it. A variance or a code change would be needed.');
   });
 });
+
+describe('checked offices and documents of a lot town', () => {
+  const info = {
+    offices: { zoning: { name: 'Pat Doe, Zoning Officer', phone: '(717) 555-0199', email: 'zoning@york.test', url: 'https://york.test/zoning', checked_on: '2026-11-22' } },
+    links: [{ kind: 'zoning_map', label: 'Zoning Map (PDF)', url: 'https://york.test/map.pdf', note: 'The zoning map.', checked_on: '2026-11-22' }],
+  };
+  it('adds town_offices and town_documents, and the next step names the checked zoning office', async () => {
+    const r = await ask({ place: 'York city' }, { townInfo: (g: string) => (g === '4213387048' ? info : null) } as never);
+    expect(r.town_offices).toMatchObject({ zoning: { phone: '(717) 555-0199', checked_on: '2026-11-22' } });
+    expect(r.town_documents).toEqual([expect.objectContaining({ kind: 'zoning_map', url: 'https://york.test/map.pdf' })]);
+    expect(String(r.next_step)).toContain('zoning office: Pat Doe, Zoning Officer ((717) 555-0199, zoning@york.test)');
+    expect(String(r.how_to_answer)).toContain('town_offices');
+  });
+  it('a town with no checked info keeps the place table contact', async () => {
+    const r = await ask({ place: 'Reading city' }, { townInfo: () => null } as never);
+    expect(r).not.toHaveProperty('town_offices');
+    expect(String(r.next_step)).toContain('Borough office ((717) 555-0100)');
+  });
+});

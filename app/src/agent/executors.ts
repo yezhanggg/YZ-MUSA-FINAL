@@ -4,11 +4,14 @@ import { footprint, lotFit, rentNote, tractPayoff } from '../lib/adu';
 import { BED_SIZE, RATE, YEARS, COST_PSF, SOFT, OPEX, type Adu, type Bed, type Stories } from '../lib/numbers';
 import { APPROVAL_TEXT, HB2186, NOT_CODED, PITTSBURGH_NOTE, RULES_AS_OF, cleanWhy, isPittsburgh, ruleFor, ruleWarnings, type LotRule } from '../lib/rules';
 import { makeLotExecutors, type LotAgentProvider } from '../lib/lot/agentTools';
+import { lotTownByGeoid } from '../lib/lot/towns';
+import { townInfoByFile } from '../lib/lot/townInfo';
 import { getRuleText, listRulePlaces } from './ruleText';
 import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
 import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
 import { getMethods } from './methods';
 import { tractTownsOut, type TractTownsSource } from './tractTowns';
+import { boundaryAnswer, type AreaRef } from './boundaryAnswer';
 import { areaStats, findLotIndexResult, findLotResult, forecast, matchAddress, roomOut, type AddressEntry, type AreaData } from './areaTools';
 import type { AddressIndexSource } from '../lib/lot/addressIndex';
 import { meters, type LngLat, type Lot, type TownProps, type TractProps } from '../tool/geo';
@@ -46,10 +49,14 @@ export interface DataProvider {
   places?: PlacesSource | null;
   /** get_area_stats on a tract: the towns it sits in (app/public/data/tract_towns.json). */
   tractTowns?: TractTownsSource | null;
+  /** get_boundary_answer on a ZIP code: the towns it sits in (app/public/data/zip_towns.json). */
+  zipTowns?: TractTownsSource | null;
+  /** The area picked on a boundary in Test Site (county, town, tract or ZIP code), when there is one. */
+  area?(): AreaRef | null;
 }
 
 export interface SetMapInput {
-  action: 'fly_to_lot' | 'fly_to_place' | 'highlight' | 'set_adu' | 'set_rule';
+  action: 'fly_to_lot' | 'fly_to_place' | 'highlight' | 'set_adu' | 'set_rule' | 'set_unit';
   lot_id?: string;
   /** fly_to_place: a Pennsylvania city, town or county ("Philly", "Pittsburgh", "Chester County"), or "Pennsylvania". */
   place?: string;
@@ -58,6 +65,11 @@ export interface SetMapInput {
   stories?: number;
   bedrooms?: number;
   rule?: 'current' | 'hb2186';
+  /** set_unit (Test Site): the unit on screen. */
+  type?: string;
+  width_ft?: number;
+  depth_ft?: number;
+  height_ft?: number;
 }
 
 const SQFT = 10.764;
@@ -163,6 +175,20 @@ const RECORD_HINT = 'This is a lot record. Use get_lot_facts, test_unit_on_lot, 
 
 export function makeExecutors(p: DataProvider) {
   const site = async (id?: string) => (id ? await p.lotById(id) : await p.selected());
+  const placeAnswerOf = (input: { place?: unknown; county?: unknown; unit_type?: unknown; size_sqft?: unknown; proposal?: unknown; query?: unknown }) =>
+    getPlaceAnswer(input, {
+      places: p.places,
+      text: p.zoningText,
+      selectedTown: async () => {
+        const t = await p.town();
+        return t ? { geoid: (t.GEOID as string | undefined) ?? null, name: (t.NAMELSAD as string | undefined) ?? (t.NAME as string | undefined) ?? null } : null;
+      },
+      townSummary: async (geoid) => {
+        const w = await p.town(geoid);
+        return w?.adu_rule ? ({ ...(rulesOf(w).today as Record<string, unknown>), rules_as_of: RULES_AS_OF } as Record<string, unknown>) : null;
+      },
+      townInfo: (geoid) => townInfoByFile(lotTownByGeoid(geoid)?.file),
+    });
   const notFound = async (id: string) => ((await p.lots?.lotById(id)) ? { error: `Lot ${id} is not in the older pilot lot files. ${RECORD_HINT}` } : notLoaded(id));
   const lots = p.lots ? makeLotExecutors(p.lots) : {};
   return {
@@ -215,6 +241,12 @@ export function makeExecutors(p: DataProvider) {
       if (o.level === 'tract' && typeof o.geoid === 'string') return { ...out, ...(await tractTownsOut(o.geoid, p.tractTowns, p.places)) };
       return out;
     },
+    async get_boundary_answer(input: { kind?: unknown; geoid?: unknown; name?: unknown }) {
+      const out = await boundaryAnswer(input, { places: p.places, tractTowns: p.tractTowns, zipTowns: p.zipTowns, area: () => p.area?.() ?? null });
+      // A picked municipality has its own rule: answer it here, so the model needs no second call.
+      if ('use_instead' in out && out.place_geoid) return { ...(await placeAnswerOf({ place: out.place_geoid })), answered_by: 'get_place_answer (a municipality has its own rule)' };
+      return out;
+    },
     async get_rules(input: { town_geoid?: string }) {
       return rulesOf(await p.town(input.town_geoid));
     },
@@ -229,18 +261,7 @@ export function makeExecutors(p: DataProvider) {
       return out;
     },
     async get_place_answer(input: { place?: unknown; county?: unknown; unit_type?: unknown; size_sqft?: unknown; proposal?: unknown; query?: unknown }) {
-      return getPlaceAnswer(input, {
-        places: p.places,
-        text: p.zoningText,
-        selectedTown: async () => {
-          const t = await p.town();
-          return t ? { geoid: (t.GEOID as string | undefined) ?? null, name: (t.NAMELSAD as string | undefined) ?? (t.NAME as string | undefined) ?? null } : null;
-        },
-        townSummary: async (geoid) => {
-          const w = await p.town(geoid);
-          return w?.adu_rule ? ({ ...(rulesOf(w).today as Record<string, unknown>), rules_as_of: RULES_AS_OF } as Record<string, unknown>) : null;
-        },
-      });
+      return placeAnswerOf(input);
     },
     async search_zoning_text(input: { place?: unknown; county?: unknown; query?: unknown; k?: unknown }) {
       return searchZoningText(input, p.zoningText);

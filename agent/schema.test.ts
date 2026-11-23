@@ -12,6 +12,11 @@ describe('system prompt', () => {
     ['adds the notice once', /Once per conversation, add the short line: "Not legal advice/],
     ['answers short: yes or no, why, what to do', /\*\*Yes\*\*, \*\*No\*\* or \*\*Not sure yet\*\*[\s\S]*\*\*What to do:\*\*/],
     ['keeps the testing mode rule', /scenario and unit/],
+    ['sends parcel, document and contact questions to get_parcel_info', /parcel and records[\s\S]*call get_parcel_info/],
+    ['sends tax questions to get_property_tax with year and source', /Property tax[\s\S]*call get_property_tax\. Give each rate with its year and source/],
+    ['sends what-next questions to get_next_steps', /What to do next[\s\S]*call get_next_steps/],
+    ['owner, assessment and tax bill are not in the data, with the county record', /assessed value and tax bill[\s\S]*"not in my data"[\s\S]*property_record/],
+    ['redraws the unit with set_unit, then tests it', /action set_unit[\s\S]*then test_unit_on_lot/],
   ])('%s', (_name, re) => expect(SYSTEM_PROMPT).toMatch(re));
 
   it('names only tools that exist', () => {

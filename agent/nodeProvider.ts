@@ -6,16 +6,19 @@ import { resolve } from 'node:path';
 import { BASE, type Adu } from '../app/src/lib/numbers';
 import { findFeature, prepare, type CountyProps, type FC, type LngLat, type Lot, type TownProps, type TractProps } from '../app/src/tool/geo';
 import type { AddressEntry } from '../app/src/agent/areaTools';
-import type { DataProvider, SiteRecord } from '../app/src/agent/executors';
+import type { DataProvider, SetMapInput, SiteRecord } from '../app/src/agent/executors';
 import type { LotAgentProvider } from '../app/src/lib/lot/agentTools';
 import { PLACE_BY_COUNTY, loadLot, loadTractLots, lotByIdAnywhere, type Fetcher } from '../app/src/lib/lot/load';
 import type { Citation, LotRecord, Scenario } from '../app/src/lib/lot/types';
 import { lotTownByFile, townsOfPlace } from '../app/src/lib/lot/towns';
-import { DEFAULT_MONEY, moneyOptions, tractRents } from '../app/src/tool/testState';
+import { DEFAULT_MONEY, DEFAULT_UNIT, moneyOptions, tractRents, unitFromInput, type UnitDraft } from '../app/src/tool/testState';
+import { SET_UNIT_NO_LOT, aduFromInput, aduText, ruleText, unitText } from '../app/src/agent/mapText';
+import { STATE_TEXT, isState, lotPlaceOf, lotPlaceText, notFoundText, outlineOf, outlineText } from '../app/src/tool/placeMatch';
 import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
 import { memoryTractTowns, type TractTowns, type TractTownsSource } from '../app/src/agent/tractTowns';
 import { addressIndexSource } from '../app/src/lib/lot/addressIndex';
+import type { AreaRef } from '../app/src/agent/boundaryTool';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
 export type LotUnit = ReturnType<LotAgentProvider['unit']>;
@@ -187,6 +190,15 @@ export function nodeTractTowns(): TractTownsSource {
   return tractTownRows;
 }
 
+/** The ZIP code to town split (app/public/data/zip_towns.json), read once. Empty source when the file is missing. */
+let zipTownRows: TractTownsSource | null = null;
+export function nodeZipTowns(): TractTownsSource {
+  if (zipTownRows) return zipTownRows;
+  const f = resolve(DATA, 'zip_towns.json');
+  zipTownRows = existsSync(f) ? memoryTractTowns(JSON.parse(readFileSync(f, 'utf8')) as TractTowns) : { get: async () => null };
+  return zipTownRows;
+}
+
 /** Mean of the outer ring of a lot polygon, lon / lat. */
 function lotPoint(rec: LotRecord): LngLat | null {
   const g = rec.lot.polygon;
@@ -197,7 +209,7 @@ function lotPoint(rec: LotRecord): LngLat | null {
 
 /** Lot tools in Node: one selected record (lot id, tract optional), a scenario, the unit on screen (testing mode) and
  * the default money settings, as the browser has them. */
-function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Scenario, unit: LotUnit | null): LotAgentProvider {
+function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Scenario, unit: () => LotUnit | null): LotAgentProvider {
   const tractProps = (rec: LotRecord) => data().tracts.features.find((f) => f.properties.GEOID === rec.lot.tract)?.properties;
   return {
     lotById: recordById,
@@ -207,7 +219,7 @@ function nodeLots(lot: { id: string; tract?: string } | undefined, scenario: Sce
       return tract ? loadLot(lot.id, tract, LOAD) : null;
     },
     scenario: () => scenario,
-    unit: () => unit,
+    unit,
     rents: (rec) => tractRents(tractProps(rec)),
     money: (rec) => moneyOptions(rec, DEFAULT_MONEY, tractProps(rec)),
   };
@@ -219,14 +231,22 @@ export function nodeProvider(
     selectedLotId?: string | null; adu?: Adu; rule?: 'current' | 'hb2186'; lot?: { id: string; tract?: string }; scenario?: Scenario; unit?: LotUnit | null;
     /** The town selected on the map (get_rules and get_area_stats without a geoid). */
     townGeoid?: string | null;
+    /** An area picked on a boundary in Test Site (get_boundary_answer without a geoid). */
+    area?: AreaRef | null;
   } = {},
 ): DataProvider {
   const townBy = (geoid: string) => data().towns.features.find((f) => f.properties.GEOID === geoid)?.properties ?? null;
+  // What set_map changes, as the browser's store would: later tool calls see the new ADU, rules and unit.
+  let adu = opts.adu ?? BASE;
+  let rule = opts.rule ?? 'current';
+  let unit = opts.unit ?? null;
   return {
-    lots: nodeLots(opts.lot, opts.scenario ?? 'today', opts.unit ?? null),
+    lots: nodeLots(opts.lot, opts.scenario ?? 'today', () => unit),
     zoningText: nodeZoningText(),
     places: nodePlaces(),
     tractTowns: nodeTractTowns(),
+    zipTowns: nodeZipTowns(),
+    area: () => opts.area ?? null,
     addressIndex: ADDRESS_INDEX,
     async lotById(id) {
       const lot = byId(id);
@@ -262,7 +282,42 @@ export function nodeProvider(
       const lots = (tract ? (data().lots.get(tract) ?? []) : []).map((l) => siteOf(l) as SiteRecord & { lot: Lot });
       return { lots, center: [sel.lon, sel.lat], scope: `tract ${tract}` };
     },
-    adu: () => opts.adu ?? BASE,
-    rule: () => opts.rule ?? 'current',
+    adu: () => adu,
+    rule: () => rule,
+    /** set_map with no map: the same changes and the same words as the browser (mapText.ts, placeMatch.ts). */
+    async setMap(input: SetMapInput) {
+      switch (input.action) {
+        case 'fly_to_lot': {
+          const id = input.lot_id ?? '';
+          const found = byId(id) ?? (id ? await recordById(id) : null);
+          return found ? `Selected lot ${id}` : `Lot ${input.lot_id} not found in the loaded data`;
+        }
+        case 'fly_to_place': {
+          if (!input.place) return 'No place was given.';
+          if (isState(input.place)) return STATE_TEXT;
+          const lp = lotPlaceOf(input.place);
+          if (lp) return lotPlaceText(lp);
+          const f = outlineOf(input.place, countiesFc()?.features) ?? outlineOf(input.place, data().towns.features);
+          return f ? outlineText(String(f.properties.NAMELSAD ?? f.properties.NAME)) : notFoundText(input.place);
+        }
+        case 'highlight':
+          return `Highlighted ${(input.lot_ids ?? []).length} lots`;
+        case 'set_adu':
+          adu = aduFromInput(adu, input);
+          return aduText(adu);
+        case 'set_rule':
+          rule = input.rule === 'hb2186' ? 'hb2186' : 'current';
+          return ruleText(input.rule);
+        case 'set_unit': {
+          if (!opts.lot) return SET_UNIT_NO_LOT;
+          const cur: UnitDraft = unit
+            ? { ...DEFAULT_UNIT, type: unit.type, width: unit.width_ft, depth: unit.depth_ft, stories: unit.stories ?? 1, height: unit.height_ft ?? null, units: unit.units === 2 ? 2 : 1 }
+            : DEFAULT_UNIT;
+          const u = { ...cur, ...unitFromInput(cur, input) };
+          unit = { type: u.type, width_ft: u.width, depth_ft: u.depth, stories: u.stories, height_ft: u.height, units: u.units };
+          return unitText(u);
+        }
+      }
+    },
   };
 }

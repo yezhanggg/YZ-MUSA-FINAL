@@ -55,11 +55,15 @@ export const RULE_TEXT_FILE = resolve(EVAL_DIR, 'questions_rule_text.json');
 export const FEATURES_FILE = resolve(EVAL_DIR, 'questions_features.json');
 /** Hand-written expert questions: town paths, bills, site and size rules, confidence, the tool, tricks, follow-ups. */
 export const EXPERT_FILE = resolve(EVAL_DIR, 'questions_expert.json');
+/** Made by make_parcel_questions.ts: the Parcel tab, property tax and Be prepared. */
+export const PARCEL_FILE = resolve(EVAL_DIR, 'questions_parcel.json');
+/** Hand-written map actions: move the map, change the unit or ADU on screen (set_map). */
+export const MAP_FILE = resolve(EVAL_DIR, 'questions_map.json');
 
 export function readSet(file = QUESTIONS_FILE): QuestionSet {
   const set = JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
   if (file === QUESTIONS_FILE)
-    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE, EXPERT_FILE])
+    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE, EXPERT_FILE, PARCEL_FILE, MAP_FILE])
       if (existsSync(f)) {
         const extra = JSON.parse(readFileSync(f, 'utf8')) as Partial<QuestionSet> & { questions: QuestionSet['questions'] };
         set.questions = [...set.questions, ...extra.questions];
@@ -79,6 +83,7 @@ export function providerFor(c: QuestionContext): DataProvider {
     scenario: c.scenario ?? 'today',
     unit: c.unit,
     townGeoid: c.town?.geoid ?? null,
+    area: c.area ?? null,
   });
 }
 
@@ -98,10 +103,17 @@ export function agentContext(c: QuestionContext): AgentContext {
     scenario: c.scenario,
     unit: c.unit ? { type: c.unit.type, width_ft: c.unit.width_ft, depth_ft: c.unit.depth_ft, stories: c.unit.stories ?? 1, height_ft: c.unit.height_ft ?? null, units: c.unit.units ?? 1 } : null,
     map: null,
+    area: c.area ?? null,
   };
 }
 
 /** Run one tool the way the browser loop does (runTool), for a context. */
 export async function callTool(c: QuestionContext, name: string, input: Record<string, unknown>) {
   return runTool(makeExecutors(providerFor(c)), name, input);
+}
+
+/** Tools for one question, sharing one provider as a run does: a set_map call changes what the next call sees. */
+export function questionTools(c: QuestionContext) {
+  const ex = makeExecutors(providerFor(c));
+  return (name: string, input: Record<string, unknown>) => runTool(ex, name, input);
 }

@@ -202,7 +202,7 @@ const P: Record<string, Passage> = {
     words: ['money', 'cost', 'pay', 'pays', 'rent', 'loan', 'cash flow', 'financing', 'heloc', 'fha', 'debt coverage', 'worth it', 'afford', 'return', 'yield', 'tax'],
   },
   money_tract: {
-    title: 'The pay-off screen on the Explore map (tracts)',
+    title: 'The tract pay-off screen (the MUSA 5500 map)',
     points: [
       `The tract screen uses one all-in rate: ${usd(COST_PSF.low)}, ${usd(COST_PSF.mid)} or ${usd(COST_PSF.high)} per sq ft (low, mid, high), plus ${pct(SOFT)} soft costs, all borrowed over ${YEARS} years at ${pct(RATE)}.`,
       `Rent is the tract's ACS 2020-24 rent for the bedroom count. ${pct(OPEX)} of rent goes to vacancy, repairs, tax and insurance.`,
@@ -227,17 +227,46 @@ const P: Record<string, Passage> = {
     for_one_place: 'test_unit_on_lot and lot_money on a lot',
     words: ['build steps', 'build step', 'checklist', 'steps', 'permit', 'process', 'what do i do', 'next steps', 'how do i start', 'certificate of occupancy', 'inspection', 'rental license'],
   },
-  app_views: {
-    title: 'The two views of the tool: Test Project and Explore',
+  property_tax: {
+    title: 'How property tax works for a lot and a new unit',
     points: [
-      'Test Project: one lot, its rules and fit. Find a lot (search an address or click the map), test a unit (pick the type, size and height, and the zoning scenario: today, local reform or state reform), and read the Build steps with fees and the money picture.',
-      'Explore: tracts, towns and counties across Pennsylvania. Map by tracts, towns or counties, color the map by a measure (such as Where to Build, Pays, Room, People, Homes, Rent or trend groups), set your ADU (bedrooms, size, stories) and switch the rules between Today and the State Bill.',
-      `ADUs by 2031 on the Explore map is scenario arithmetic, not a fitted forecast. Mid case statewide: ${HEADLINE.adus_by_2031.current.mid.toLocaleString('en-US')} under today's rules and ${HEADLINE.adus_by_2031.hb2186.mid.toLocaleString('en-US')} under HB 2186 (a bill, not law).`,
+      'Pennsylvania property tax is set in mills: dollars per $1,000 of assessed value. The county, the municipality and the school district each set their own millage, and the bill adds them up.',
+      "Most counties assess at the value of a base year, not today's market value. The State Tax Equalization Board publishes a common level ratio each year: assessed value as a share of market value. Philadelphia assesses at market value every year.",
+      "So the yearly tax as a share of market value is about the total mills / 1,000 x the county's common level ratio.",
+      'A county adds a new unit to the tax roll after the building or occupancy permit, usually with an interim assessment. The tool takes the added market value as the mid build cost.',
+      'Philadelphia phases in the tax on new residential construction over 10 years (apply within 60 days of the building permit). Pittsburgh counts no abatement, since its terms were not verified.',
+      "The tool does not show a lot's own assessment, tax bill, owner of record or sales. The county record has them.",
+      'Not tax advice.',
+    ],
+    source: 'docs/METHODS.md section 5.6, shared/assumptions.json tax items, shared/lot_towns_info.json',
+    for_one_place: "get_property_tax gives one lot's rates and what its unit would add, get_parcel_info the county record link",
+    words: ['property tax', 'tax', 'taxes', 'millage', 'mills', 'assessment', 'assessed', 'reassessment', 'common level ratio', 'abatement', 'tax bill', 'school tax', 'appeal', 'homestead'],
+  },
+  plans_documents: {
+    title: 'Plans, maps and documents, and how to prepare',
+    points: [
+      'The zoning ordinance is the law that decides what may be built. The zoning map shows the district of each lot.',
+      "A comprehensive plan sets the town's long-range goals. In Pennsylvania it is advisory: a governing body's action cannot be challenged only because it is inconsistent with the plan (MPC 303(c)), though zoning should be generally consistent with it.",
+      "The Parcel tab lists each lot town's zoning code, zoning map, comprehensive plan, ADU page, permit and fee pages, rental license, historic review, zoning board and property map, and the offices to call, each with the date it was checked.",
+      'Before the first meeting with the zoning office, bring the parcel number, the deed and any survey, a plot plan, the unit size and height, and photos of the yard. Ask which approval the unit needs and which permit comes first.',
+      'The Next Step tab gives one lot its own list of what to bring and up to 8 questions, from its approval path, the rule values the code did not give, the checks the tool could not make, and its flood, historic and slope flags.',
+    ],
+    source: 'docs/METHODS.md section 5.6',
+    for_one_place: 'get_parcel_info gives the documents and offices of one lot town, get_next_steps what to bring and ask for one lot',
+    words: ['comprehensive plan', 'plan', 'zoning map', 'documents', 'document', 'ordinance', 'what to bring', 'prepare', 'prepared', 'who do i call', 'contact', 'phone', 'office', 'meeting', 'what should i ask'],
+  },
+  app_views: {
+    title: 'How to use the tool: Test Site',
+    points: [
+      'Test Site: one lot, its rules and fit. Find a lot (search an address or click the map), test a unit (pick the type, size and height, and the zoning scenario: today, local reform or state reform), and read the Results, Compare, Parcel and Next Step tabs.',
+      'Boundaries: turn on county, township or city, census tract or ZIP code outlines, one at a time. The one that is on is coloured by its ADU rule. Click an area for its rule and its towns.',
+      'The statewide maps of tracts, towns and counties (Where to Build, Pays, Room, trends, ADUs by 2031) are on the MUSA 5500 site at /5500/, not in this tool.',
+      `ADUs by 2031 on the MUSA 5500 map is scenario arithmetic, not a fitted forecast. Mid case statewide: ${HEADLINE.adus_by_2031.current.mid.toLocaleString('en-US')} under today's rules and ${HEADLINE.adus_by_2031.hb2186.mid.toLocaleString('en-US')} under HB 2186 (a bill, not law).`,
       `Lot test results exist only in the lot places: ${lotPlacesText()}.`,
       'The Ask box answers from the same data as the panels, with sources.',
     ],
-    source: 'app/src/lib/router.ts VIEW_LABEL, app/src/components/SiteNav.tsx, app/src/tool/ProjectControls.tsx, docs/ARCHITECTURE.md "Three steps for the user", app/src/lib/headline.json',
-    words: ['explore', 'test project', 'test a lot', 'view', 'mode', 'how do i use', 'how to use', 'map', 'tool', 'app', 'panel', 'button', 'by 2031', 'forecast', 'where do i'],
+    source: 'app/src/lib/router.ts, app/src/components/SiteNav.tsx, app/src/tool/boundaries.ts, docs/ARCHITECTURE.md "Three steps for the user", app/src/lib/headline.json',
+    words: ['explore', 'test site', 'test project', 'test a lot', 'boundaries', 'view', 'mode', 'how do i use', 'how to use', 'map', 'tool', 'app', 'panel', 'button', 'by 2031', 'forecast', 'where do i'],
   },
   tract_towns: {
     title: 'Tracts that cross a town line',
@@ -314,7 +343,8 @@ export const METHODS_TOOL: ToolDef = {
     'Short checked passages on how Pennsylvania towns regulate ADUs in general and how this tool works, from the project documents. ' +
     'Use it for: what an approval path means (by right, special exception, conditional use, variance), what family only, conversion only, not addressed or prohibited mean for an owner, ' +
     'the bills (HB 2186, SB 1346, Bill 250042) against today, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking and owner occupancy, ' +
-    'how to read a confidence label or open points (verified, drafted, reported, text search, baseline), how the fit test, land cover, money, Build steps, Explore and Test Project work, ' +
+    'how to read a confidence label or open points (verified, drafted, reported, text search, baseline), how the fit test, land cover, money, Build steps, Test Site and its boundaries work, ' +
+    'how property tax works (mills, base year, common level ratio, a new unit on the tax roll, abatements), comprehensive plans, zoning maps and how to prepare for the zoning office, ' +
     'tracts that cross town lines, and what data the tool has. Not for one town\'s rule: use get_place_answer or get_rule_text for that.',
   input_schema: {
     type: 'object',

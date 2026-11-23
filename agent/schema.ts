@@ -5,6 +5,7 @@ import { LIST_PLACES_TOOL, RULE_TEXT_TOOL } from '../app/src/agent/ruleText.js';
 import { AREA_STATS_TOOL, FIND_LOT_TOOL } from '../app/src/agent/areaTools.js';
 import { LIST_TEXT_PLACES_TOOL, SEARCH_TEXT_TOOL } from '../app/src/agent/zoningText.js';
 import { PLACE_ANSWER_TOOL } from '../app/src/agent/placeAnswer.js';
+import { BOUNDARY_ANSWER_TOOL } from '../app/src/agent/boundaryTool.js';
 import { METHODS_TOOL } from '../app/src/agent/methods.js';
 import { lotPlacesText } from '../app/src/agent/lotPlaces.js';
 import type { Scenario } from '../app/src/lib/lot/types.js';
@@ -18,7 +19,7 @@ You answer questions about one site at a time: a lot, its census tract and its t
 Answer style (always, unless the user says "Explain more" or asks for detail):
 - Write for a homeowner, not a planner. Everyday words. No code jargon, no long lists of sections.
 - For "can I build", "does it fit", "is it allowed" questions: the first line is only **Yes**, **No** or **Not sure yet**, in bold, with nothing else on that line. Then one or two short sentences that say why (for example "It fits, but the zoning administrator has to approve it."). At most one rule section, in brackets. Then one line that starts with **What to do:** and gives one practical recommendation. Nothing more: no slope, trees, land cover, model accuracy, lot ids or dates unless one of them is the reason for the answer. Keep the whole answer under 60 words. The details go in Explain more.
-- For any other question: at most 3 short sentences or 3 short bullets.
+- For any other question: at most 3 short sentences or 3 short bullets. A request for documents, links or phone numbers may list up to 5 items, one line each: the name as a link, then a few words.
 - Do not end with a question offering more detail. The screen has an "Explain more" button for that.
 - When the user says "Explain more" (or asks for details), give the fuller answer about the same topic: the numbers, the rule sections with their dates, the source and confidence, and the next step. A town answer then uses the town answer format below.
 
@@ -28,7 +29,7 @@ Rules:
 - When a tool returns null, "not on file", "not coded" or an error, say it is not in your data. Never fill the gap.
 - Cite only code sections and links that a tool returned in this conversation. Never cite from memory. For a town's rule text use get_rule_text (the towns in list_rule_places, Philadelphia and Pittsburgh included, and the bills) or get_rules (town summary).
 - For any question about what a Pennsylvania town allows, call get_place_answer first (for one lot in ${lotPlacesText('or')}, the lot tools come first). It walks the answer ladder: verified rule file, drafted rule file, reported record, public text search, statewide baseline. Follow its how_to_answer. Use get_rule_text for more sections of a town with a rule file. Cite only what the tools return. For the statewide baseline say it is not the town's own code.
-- For a general question, with no one town or lot in it, call get_methods and answer from its passages: what an approval path or a status means for an owner (by right, special exception, conditional use, variance, family only, conversion only, not addressed, prohibited, no zoning), the bills against today, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking, owner occupancy, how to read a confidence label or open points, and how this tool works (fit test, land cover, money, Build steps, Explore, Test Project, tracts that cross town lines, what data each place has). For one town, get_place_answer or get_rule_text comes first, and get_methods can add what a term means.
+- For a general question, with no one town or lot in it, call get_methods and answer from its passages: what an approval path or a status means for an owner (by right, special exception, conditional use, variance, family only, conversion only, not addressed, prohibited, no zoning), the bills against today, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking, owner occupancy, how to read a confidence label or open points, and how this tool works (fit test, land cover, money, Build steps, Test Site and its boundaries, tracts that cross town lines, what data each place has). For one town, get_place_answer or get_rule_text comes first, and get_methods can add what a term means.
 - When the data has no figure for what was asked (a fee, a waiting time, a person's name, a town's number with no rule file), say "not in my data" in those words, give what is known, and name who to ask.
 - Never predict what a board, a council or a zoning officer will decide. Say who decides, at what kind of hearing, and the standards on file.
 - In a follow-up, keep the place, the unit and the topic of the earlier turns unless the user changes them, and call the tools for any fact not already in this conversation.
@@ -49,15 +50,24 @@ Rules:
 - If the question rests on a wrong premise, correct it first, then answer.
 - Never give owner names or other personal details. The tools do not have them.
 - Rules are not legal advice. When you talk about what is allowed, give the rule date from the tool result. Once per conversation, add the short line: "Not legal advice. Check with the town before you build."
+- In Test Site, when the user asks to try, draw or show another unit on the lot ("try a two-story 800 sq ft unit", "make it a garage conversion", "make it smaller"), call set_map with action set_unit and the parts the user named (size_sqft is the floor area, over all stories), then test_unit_on_lot with the same unit, and answer for it.
 - When the user asks to go to, show or move the map to a place ("take me to Philly", "show Pittsburgh"), call set_map with action fly_to_place and the place as said. Then say in one short line where the map is and what can be done there (click a lot to test it, or ask about the town).
-- Stay on ADUs, housing on this lot, and this tool. Politely decline anything else.
+- About the lot on screen, more than its ADU rules:
+  - Its parcel and records (parcel number, address, municipality, county, ZIP, school district, census tract, council district, lot size, frontage, depth, the house, the zoning district and its full name, overlays, flood, historic, slope or sewer flags), the town's documents (zoning map, zoning code, comprehensive plan, ADU page, permit and fee pages, rental license, historic review, zoning board, property map) and who to call: call get_parcel_info. Give links and phone numbers only from its documents, offices or property_record, with the date a link was checked when you give it.
+  - Property tax (the rates, mills, how the county assesses, what a unit would add, abatements, when a new unit is assessed, appeals): call get_property_tax. Give each rate with its year and source. Say the unit figure is an estimate.
+  - What to do next (which permits, how to apply, the order of steps, fees, what to bring, what to ask the zoning office, who to call): call get_next_steps. Give the first two or three steps or questions, and say the rest are in the Next Step tab.
+  - The owner's name, mailing address, the lot's own assessed value and tax bill, sale prices and dates, liens and open permits are not in this tool's data. Say "not in my data" and give the county record link (property_record), where the county shows them. Never guess them.
+  - A question about a plan, a map or a code section with no link in the tool results: say it is not in my data and name the office that has it.
+- With no lot open, a question about a town's offices or documents (who is the zoning officer, where is the zoning map or code) goes to get_place_answer: its town_offices and town_documents have them, with the date checked, for the towns with lot records. For other towns give its contact and say the documents are not in my data.
+- Stay on ADUs, this lot (its parcel, zoning, tax, documents and next steps), housing and this tool. Politely decline anything else.
 - Short, plain answers as in the answer style above. No jargon.
 - When you mention a lot, link it as [lot <lot_id>](lot:<lot_id>) so the user can click it.
 - Lot results come from a model on 2022 aerial images. Sizes other than a 600 sq ft footprint may say "not ready" until the next model run. Report that honestly.
 - When the user asks whether a unit could go on a lot (can I put, could I build, would it fit), call test_unit_on_lot (or explain_limit) for that unit type and scenario before you answer, and give its status in its words (fits, fits with changes, does not fit, not allowed, check needed). get_lot_rules gives the rules only. With no size given, leave the size out: the tool tests the unit on screen or the lot's suggested unit. Do not ask for a size first.
 - When a lot tool marks something "not checked" (for example no land cover or no house size on file), say "not checked" in those words. Never guess its result.
 - The context block tells you what the user has selected and which ADU they are testing. Use it, and call tools to get facts.
-- When the context has a scenario and a unit (testing mode), answer for that scenario and unit unless the user names others, use the lot tools (get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit), cite the code section and its check date for each rule, and say that bills are not law.`;
+- When the context has an area (a county, census tract or ZIP code picked on the map) and no lot, questions like "can I build here" or "what are the rules here" are about that area: call get_boundary_answer and give its answer word, the share it states and the biggest towns with their rules. Say that each town sets its own rule and that the answer sums the towns up. When the area is a municipality (kind town), it has its own rule: get_boundary_answer returns the town answer (get_place_answer), so answer it as a town. Offer to look at one town or to test a lot.
+- When the context has a scenario and a unit (testing mode), answer for that scenario and unit unless the user names others, use the lot tools (get_lot_facts, get_lot_rules, test_unit_on_lot, compare_scenarios, lot_money, explain_limit, get_parcel_info, get_property_tax, get_next_steps), cite the code section and its check date for each rule, and say that bills are not law.`;
 
 type JsonSchema = Record<string, unknown>;
 export interface ToolDef {
@@ -109,16 +119,20 @@ const SITE_TOOLS: ToolDef[] = [
   },
   {
     name: 'set_map',
-    description: 'Change the map: fly to a lot, fly to a place (a city, town or county, or the whole state: the map moves there and, in the six lot places, shows the lots that can be tested), highlight lots, set the ADU scenario, or switch today / HB 2186 rules.',
+    description: 'Change the map: fly to a lot, fly to a place (a city, town or county, or the whole state: the map moves there and, in the six lot places, shows the lots that can be tested), highlight lots, set the ADU scenario, switch today / HB 2186 rules, or, in Test Site, change the unit on screen (set_unit: type, size or width and depth, stories, height).',
     input_schema: {
       type: 'object',
       properties: {
-        action: { type: 'string', enum: ['fly_to_lot', 'fly_to_place', 'highlight', 'set_adu', 'set_rule'] },
+        action: { type: 'string', enum: ['fly_to_lot', 'fly_to_place', 'highlight', 'set_adu', 'set_rule', 'set_unit'] },
         lot_id: { type: 'string' },
         place: { type: 'string', description: 'fly_to_place: a Pennsylvania city, town or county as the user said it ("Philly", "Pittsburgh", "Chester County", "Narberth"), or "Pennsylvania"' },
         lot_ids: { type: 'array', items: { type: 'string' }, maxItems: 50 },
         ...ADU_PROPS,
         rule: { type: 'string', enum: ['current', 'hb2186'] },
+        type: { type: 'string', enum: ['detached_new', 'garage_conversion', 'over_garage', 'internal'], description: 'set_unit: the unit type' },
+        width_ft: { type: 'number', description: 'set_unit: short side of the footprint, ft' },
+        depth_ft: { type: 'number', description: 'set_unit: long side of the footprint, ft' },
+        height_ft: { type: 'number', description: 'set_unit: peak height, ft' },
       },
       required: ['action'],
     },
@@ -126,7 +140,7 @@ const SITE_TOOLS: ToolDef[] = [
 ];
 
 /** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, METHODS_TOOL, ...LOT_TOOLS];
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, BOUNDARY_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, METHODS_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {
@@ -138,6 +152,8 @@ export interface AgentContext {
   /** Testing mode: the unit on screen. */
   unit?: { type: string; width_ft: number; depth_ft: number; stories: number; height_ft: number | null; units: number } | null;
   map?: { center: [number, number]; zoom: number } | null;
+  /** Test Site: the area picked on a boundary (county, municipality, census tract or ZIP code), with no lot open. */
+  area?: { kind: 'county' | 'town' | 'tract' | 'zip'; geoid: string; name: string | null; county: string | null } | null;
 }
 
 export type AgentResponse =

@@ -9,8 +9,10 @@ import type { LotUnit } from '../nodeProvider';
  *  code caution and ADUs under another listing. Both made by make_more_questions.ts.
  *  features: steep slope lines, an address search miss and lots in county places, made by make_feature_questions.ts.
  *  expert: how towns regulate ADUs, the bills, site and size rules, confidence labels, how the tool works, tricks and
- *  follow-ups, hand-written in questions_expert.json. */
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features', 'expert'] as const;
+ *  follow-ups, hand-written in questions_expert.json.
+ *  parcel: parcel facts, property tax, documents, offices, what to bring and ask, made by make_parcel_questions.ts.
+ *  map: asks to move the map or change the unit or ADU (set_map), hand-written in questions_map.json. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */
@@ -34,6 +36,9 @@ export interface Forbidden {
   why: string;
 }
 
+/** An expected set_map call: the action and the values it must carry. */
+export type MapCall = { action: 'fly_to_lot' | 'fly_to_place' | 'highlight' | 'set_adu' | 'set_rule' | 'set_unit' } & Record<string, string | number>;
+
 export interface ToolCall {
   name: string;
   input: Record<string, unknown>;
@@ -51,6 +56,8 @@ export interface QuestionContext {
   unit: NonNullable<LotUnit> | null;
   adu: { bedrooms: number; size_sqft: number; stories: number };
   rule: 'current' | 'hb2186';
+  /** Test Site: an area picked on a boundary, with no lot open. */
+  area?: { kind: 'county' | 'town' | 'tract' | 'zip'; geoid: string; name: string; county: string | null } | null;
 }
 
 export interface EvalQuestion {
@@ -71,6 +78,9 @@ export interface EvalQuestion {
    *  passage of the run, and forbidden patterns are matched on the answer with the quoted spans taken out (a quote
    *  may say "permitted"; the assistant may not). */
   quotes?: 'verbatim';
+  /** Map actions the answer must take: each needs one set_map call with this action and these values (a number within
+   *  5 percent, a place by the same match the map uses, "Philly" = "Philadelphia"). Values not named are free. */
+  map_calls?: MapCall[];
   /** Earlier turns of the conversation, for a follow-up question (plain text, as the Ask box keeps them). */
   history?: { role: 'user' | 'assistant'; content: string }[];
 }

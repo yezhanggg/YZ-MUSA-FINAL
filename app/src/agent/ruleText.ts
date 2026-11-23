@@ -1509,6 +1509,12 @@ export interface TownSource {
 }
 const BUNDLED: TownSource = { index: townIndex, town: (file) => loadJson(() => loadPa(file.slice(3))) };
 
+/** One place's rule file by its key (philadelphia, pittsburgh or pa_<county>_<town>), loaded on demand, else null. */
+export async function ruleFileByKey(key: string): Promise<Obj | null> {
+  if (key === 'philadelphia' || key === 'pittsburgh') return loadJson(FILES[key]);
+  return /^pa_[a-z0-9_]+$/.test(key) ? loadJson(() => loadPa(key.slice(3))) : null;
+}
+
 // Site rules (site.steep_slopes in the two city files). Mirrors pipeline/rules.py _site_row_met and _site_lines: a row is
 // said when the lot carries the fact it reads (its measured slope class, or a mapped area flag that is true), only for the
 // ADU forms it names, as a condition or a question. Never a bar: the slope class comes from a 1 m elevation model, not a survey.

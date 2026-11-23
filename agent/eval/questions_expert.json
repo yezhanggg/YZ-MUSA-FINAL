@@ -2659,7 +2659,7 @@
   {
    "id": "exp-37",
    "category": "expert",
-   "question": "On the Explore map, what does 'maybe' mean for whether an ADU pays off?",
+   "question": "On the MUSA 5500 tract pay-off map, what does 'maybe' mean for whether an ADU pays off?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -2797,7 +2797,7 @@
   {
    "id": "exp-39",
    "category": "expert",
-   "question": "What is the difference between Explore and Test Project?",
+   "question": "How do I use Test Site, and what do the boundaries show?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -2829,7 +2829,7 @@
    "facts": [
     {
      "kind": "behaviour",
-     "label": "Test Project: one lot",
+     "label": "Test Site: one lot",
      "accept": [
       "one lot",
       "a single lot",
@@ -2838,10 +2838,12 @@
     },
     {
      "kind": "behaviour",
-     "label": "Explore: tracts, towns, counties",
+     "label": "Boundaries: one at a time, coloured by the ADU rule",
      "accept": [
-      "tracts",
-      "counties"
+      "one at a time",
+      "ADU rule",
+      "coloured",
+      "colored"
      ]
     }
    ],
@@ -2852,7 +2854,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "Test Project: one lot, rules, fit, Build steps. Explore: tracts, towns and counties statewide."
+   "rubric": "Test Site: one lot, its rules, fit, Results, Compare, Parcel and Next Step tabs. Boundaries: one at a time, the one on is coloured by its ADU rule."
   },
   {
    "id": "exp-40",
