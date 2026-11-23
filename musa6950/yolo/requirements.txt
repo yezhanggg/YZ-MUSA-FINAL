@@ -3,7 +3,7 @@
 #
 # Model steps (train.py, evaluate.py, detect_lots.py predict):
 ultralytics==8.4.170
-torch>=2.4
+torch>=2.15.0
 pillow>=10
 pyyaml>=6
 requests>=2.31
