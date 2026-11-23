@@ -8,7 +8,7 @@ pillow>=10
 pyyaml>=6
 requests>=2.31
 # Geo steps (sample_areas.py, fetch_imagery.py, osm_pools.py, build_labels.py, review_pack.py, detect_lots.py join):
-geopandas>=1.0
+geopandas>=1.2.0
 shapely>=2.0
 pyarrow>=14
 pandas>=2.0
