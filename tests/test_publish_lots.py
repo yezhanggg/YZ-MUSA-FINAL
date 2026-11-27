@@ -155,3 +155,34 @@ def test_publish_without_an_address_index_says_so(tmp_path):
     assert run.returncode == 0, run.stderr
     assert "note: no address index for testville" in run.stderr
     assert not (out / "lots/testville/addresses").exists()
+
+
+@pytest.mark.skipif(shutil.which("bash") is None or shutil.which("python3") is None, reason="needs bash and python3")
+def test_publish_packs_tract_files_and_gzips_the_lot_index(tmp_path):
+    import sys
+
+    sys.path.insert(0, str(ROOT / "tools"))
+    import pack_lots
+
+    src, out = tmp_path / "lots", tmp_path / "host"
+    built = fake_build(src)
+    fix = ROOT / "app" / "src" / "lib" / "lot" / "__fixtures__"
+    lots = [json.loads((fix / f"{n}.json").read_text()) for n in ("easy_fit", "nar_detached")]
+    head = {"tract": "42003000100", "data_version": "testville-1", "lots": lots}
+    (built / "detail" / "42003000100.json.gz").write_bytes(gzip.compress(json.dumps(head).encode(), mtime=0))
+    env = {**os.environ, "LOT_DATA_DIR": str(src), "LOT_HOST_DIR": str(out), "LOT_PLACES": "testville"}
+    run = subprocess.run(["bash", str(SCRIPT)], env=env, capture_output=True, text=True, check=False)
+    assert run.returncode == 0, run.stderr
+
+    pub = out / "lots/testville"
+    packed = json.loads(gzip.decompress((pub / "detail/42003000100.json.gz").read_bytes()))
+    assert packed["pack"] == "pack1"
+    assert '"$same"' in json.dumps(packed)
+    for rec in head["lots"]:
+        for k in ("assessed_value", "last_sale_date", "last_sale_price"):
+            (rec.get("facts") or {}).pop(k, None)
+    assert json.dumps(pack_lots.unpack(packed)) == json.dumps(head)
+    # The lot index is published gzipped only, and the manifest names it for the app.
+    assert json.loads(gzip.decompress((pub / "lot_tract.json.gz").read_bytes())) == {"42003-1": "42003000100"}
+    assert not (pub / "lot_tract.json").exists()
+    assert json.loads((pub / "manifest.json").read_text())["published"] == {"lot_tract": "lot_tract.json.gz", "pack": "pack1"}

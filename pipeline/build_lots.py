@@ -40,6 +40,7 @@ import json
 import math
 import os
 import random
+import re
 import sys
 import time
 import traceback
@@ -74,6 +75,7 @@ def _lots_value(key: str) -> float:
 # Flags: share of the lot area inside each layer.
 STEEP_SLOPE_MIN_SHARE = _lots_value("flag.steep_slope_min_share")
 LANDSLIDE_MIN_SHARE = _lots_value("flag.landslide_min_share")
+UNDERMINED_MIN_SHARE = _lots_value("flag.undermined_min_share")
 FLOOD_MIN_SHARE = _lots_value("flag.flood_min_share")
 HISTORIC_MIN_SHARE = _lots_value("flag.historic_min_share")
 # An accessory building this big or bigger is a garage candidate. Smaller ones are sheds.
@@ -154,7 +156,7 @@ SPOT_COVER = True
 BASE_ASSUMPTIONS = (
     "land cover is per lot, plus what lies inside the best spot (spot_cover). The fit itself does not steer around trees",
     f"accessory buildings of {GARAGE_MIN_SQFT:.0f} sq ft or more are garages, smaller ones are sheds that could go",
-    "a new unit goes behind the front of the house when there is room",
+    "a new unit goes behind the front of the house: room only in front of it does not count",
     f"a unit is at least {fit.MIN_SIDE_FT:.0f} ft on its short side and at most {fit.MAX_ASPECT:.0f}:1",
     "assumed heights: 15 ft for 1 story, 25 ft for 2 stories",
     (
@@ -335,6 +337,7 @@ LOT_COLUMNS = (
     "historic_share",
     "steep_slope_share",
     "landslide_share",
+    "undermined_share",
     "flood_zone",
     "living_area",
     "stories",
@@ -372,7 +375,7 @@ BUILDING_COLUMNS = (
     "split",
     "geometry",
 )
-STREET_COLUMNS = ("kind", "st_type", "frontage", "geometry")
+STREET_COLUMNS = ("kind", "st_type", "frontage", "name", "geometry")
 
 
 def _read(path: Path, wanted: Sequence[str]) -> Any:
@@ -500,6 +503,8 @@ class Near:
     other: BaseGeometry | None  # private roads: front as fallback only
     # Street lines (the `streets` group) by frontage class A, B, C, where the place has the classes
     classes: dict[str, BaseGeometry | None] | None = None
+    # Street and way lines by name core (street_core), where the place's streets have names
+    by_name: dict[str, BaseGeometry] | None = None
 
 
 @dataclass
@@ -573,12 +578,15 @@ def to_buildings(
     return out
 
 
-def classify(poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list[str]) -> fit.EdgeInfo:
+def classify(
+    poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list[str], address: Any = None
+) -> fit.EdgeInfo:
     """Front, rear and side lot lines. Ways sit behind most Pittsburgh lots, so they are not used
-    for the front unless no ordinary street is near. Rear on a way or alley sets `alley`."""
+    for the front unless no ordinary street is near. Rear on a way or alley sets `alley`. On a lot
+    with a street at both ends the front is the one the address is on (front_on_address)."""
     edges = fit.classify_edges(poly, near.streets, near.ways, house)
     if edges.street_edge:
-        return edges
+        return front_on_address(poly, house, near, edges, address)
     backup = _union([near.streets, near.ways, near.other])
     if backup is None or (near.ways is None and near.other is None):
         return edges
@@ -592,6 +600,72 @@ def classify(poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list
 
 
 ABUT_FT = 50.0  # lot line to street centreline: the street abuts the lot (as fit's corner test)
+ADDRESS_FRONT_FT = 100.0  # lot line to the centreline of the street in the address, for that line to be the front
+ADDRESS_HOUSE_TOL_FT = 5.0  # the house may sit this much farther from the address street's line than from the other
+
+_SUFFIXES = frozenset(
+    (  # noqa: SIM905  one string reads easier than 38 quoted words
+        "ST STREET AVE AV AVENUE RD ROAD DR DRIVE LN LANE CT COURT PL PLACE WAY WY BLVD BOULEVARD TER TERRACE "
+        "CIR CIRCLE PIKE HWY HIGHWAY PKWY PARKWAY ALY ALLEY SQ SQUARE TRL TRAIL RUN XING CRES CRESCENT"
+    ).split()
+)
+_DIRS = frozenset(("N", "S", "E", "W", "NE", "NW", "SE", "SW", "NORTH", "SOUTH", "EAST", "WEST"))
+_HOUSE_NO = re.compile(r"^\d+[A-Z]?(?:[-/]\d*[A-Z]?)?$|^\d+-\d+[A-Z]?$")
+_ORDINAL = re.compile(r"^\d+(?:ST|ND|RD|TH)$")
+
+
+def street_core(name: Any, address: bool = False) -> str:
+    """The part of a street name two sources agree on: no house numbers or unit, no direction, no
+    suffix. "1318 W SYCAMORE ST" (address) and "W SYCAMORE ST" both give "SYCAMORE". "" when unknown."""
+    if not isinstance(name, str):
+        return ""
+    toks = re.sub(r"[.,#]", " ", name.upper()).split()
+    if address:
+        while toks and _HOUSE_NO.match(toks[0]) and not _ORDINAL.match(toks[0]):
+            toks.pop(0)
+        for i, t in enumerate(toks):
+            if t in ("UNIT", "APT", "STE", "FL", "REAR") or (i > 0 and t.isdigit()):
+                toks = toks[:i]
+                break
+    while len(toks) > 1 and toks[0] in _DIRS and toks[1] not in _SUFFIXES:  # "WEST ST" stays a name
+        toks.pop(0)
+    while len(toks) > 1 and toks[-1] in _DIRS:
+        toks.pop()
+    while len(toks) > 1 and toks[-1] in _SUFFIXES:
+        toks.pop()
+    return " ".join(toks)
+
+
+def front_on_address(
+    poly: shapely.Polygon, house: BaseGeometry, near: Near, edges: fit.EdgeInfo, address: Any
+) -> fit.EdgeInfo:
+    """The front is the lot line on the street in the lot's address, when that street faces the lot
+    and the nearest street does not carry the address. A narrow lane's centreline sits closer to the
+    lot than a wide avenue's, so on a lot between the two the nearest street is often the lane behind
+    the house (Pittsburgh through lots). Corner lots keep the shorter street line (classify_edges)."""
+    if edges.corner or not near.by_name:
+        return edges
+    lines = near.by_name.get(street_core(address, address=True))
+    if lines is None or lines.is_empty:
+        return edges
+    if min(fit._facing_distance(edges.edges[i].line, lines) for i in edges.front) <= ADDRESS_FRONT_FT:
+        return edges
+    found = fit.classify_edges(poly, lines, near.ways, house, max_street_ft=ADDRESS_FRONT_FT)
+    if not found.street_edge or found.corner or set(found.front) == set(edges.front):
+        return edges
+    # Houses face their street. Keep the first reading when the house sits clearly nearer it.
+    if house is not None and not house.is_empty:
+        to_new = min(found.edges[i].line.distance(house) for i in found.front)
+        to_old = min(edges.edges[i].line.distance(house) for i in edges.front)
+        if to_new > to_old + ADDRESS_HOUSE_TOL_FT:
+            return edges
+    found.notes.append("front on the street in the address, not the nearer street behind the lot")
+    if (
+        near.streets is not None
+        and min(fit._facing_distance(found.edges[i].line, near.streets) for i in found.rear) <= 40.0
+    ):
+        found.notes.append("street behind the lot too (through lot)")
+    return found
 
 
 def classify_abc(poly: shapely.Polygon, house: BaseGeometry, near: Near, notes: list[str]) -> fit.EdgeInfo:
@@ -662,6 +736,7 @@ def flags_for(r: dict[str, Any]) -> dict[str, bool | None]:
         "historic": historic,
         "steep_slope": flag_value(r.get("steep_slope_share"), STEEP_SLOPE_MIN_SHARE),
         "landslide": flag_value(r.get("landslide_share"), LANDSLIDE_MIN_SHARE),
+        "undermined": flag_value(r.get("undermined_share"), UNDERMINED_MIN_SHARE),
         "sewer": None,
     }
 
@@ -731,9 +806,26 @@ def historic_inputs(r: dict[str, Any], flags: dict[str, bool | None]) -> dict[st
     return {"historic_individual": individual, "historic_district": district, "historic_contributing": contributing}
 
 
+MIN_HOUSE_HEIGHT_FT = 10.0  # a measured house lower than this is a bad reading (no one-story house is), so unknown
+
+
 def house_height(r: dict[str, Any], blds: Sequence[fit.Building]) -> float | None:
+    """The house height for the "no taller than the house" rules. A reading under MIN_HOUSE_HEIGHT_FT
+    is treated as unknown, so the rule reads "house height unknown" instead of failing the unit."""
     hs = [b.height_ft for b in blds if b.role == "main" and b.height_ft is not None]
-    return max(hs) if hs else _num(r.get("main_bldg_height_ft"))
+    h = max(hs) if hs else _num(r.get("main_bldg_height_ft"))
+    return h if h is not None and h >= MIN_HOUSE_HEIGHT_FT else None
+
+
+def story_heights(rule_place: str) -> dict[int, float] | None:
+    """The rule file's own height by story count for a detached unit (envelope.max_height_by_stories)."""
+    try:
+        data = rulesmod.load_rules(rule_place)
+    except ValueError:
+        return None
+    leaf = (data.get("envelope") or {}).get("max_height_by_stories") or {}
+    out = {int(x["stories"]): float(x["max_height_ft"]) for x in leaf.get("value") or [] if x.get("max_height_ft")}
+    return out or None
 
 
 def resolver_lot(
@@ -763,6 +855,7 @@ def resolver_lot(
         # comes later, with the terrain block (add_site_lines).
         "steep_slope_area": flags.get("steep_slope"),
         "landslide_area": flags.get("landslide"),
+        "undermined_area": flags.get("undermined"),
     }
 
 
@@ -774,6 +867,7 @@ def site_facts(rec: dict[str, Any]) -> dict[str, Any]:
         "slope_class": terrain.get("slope_class"),
         "steep_slope_area": flags.get("steep_slope"),
         "landslide_area": flags.get("landslide"),
+        "undermined_area": flags.get("undermined"),
     }
 
 
@@ -1163,10 +1257,8 @@ def run_scenario(
     types = [t for t in FIT_TYPES if t == "detached_new" or t in allowed]
     results = {t: fit.fit_adu(shape, blds, rules_for_type(rules, t), t) for t in types}
     house = _union(x.polygon for x in blds if x.role == "main")
-    front = None
-    used_front = any("front of the house" in a for a in results["detached_new"].assumed)
-    if house is not None and not used_front:
-        front = fit.front_yard(shape, house)
+    # The fit never places a new unit in front of the house, so that ground is never buildable.
+    front = fit.front_yard(shape, house) if house is not None else None
     fits = {}
     for t, res in results.items():
         d = fit_record(res, epsg, shrink=(t == "detached_new"))
@@ -1277,7 +1369,7 @@ def build_lot(
     if ctx.abc_fronts:
         edges = classify_abc(poly, house if house is not None else shapely.Polygon(), near, notes)
     else:
-        edges = classify(poly, house if house is not None else shapely.Polygon(), near, notes)
+        edges = classify(poly, house if house is not None else shapely.Polygon(), near, notes, r.get("address"))
     if ctx.strict_garage:
         pairs = tighten_garages(pairs, r, edges, near, notes)
     blds = [b for _, b in pairs]
@@ -1341,6 +1433,10 @@ def build_lot(
                     "share_forms": share_forms,
                 },
             }
+        heights = story_heights(rule_place)
+        if heights:
+            fit_in = {**fit_in, "story_height_ft": heights}
+            filled = {**filled, "story_height_ft": {str(k): v for k, v in heights.items()}}
         key = _rules_key(fit_in)
         if key not in cache:  # scenarios with the same rules (Pittsburgh local reform) share a fit
             cache[key] = run_scenario(shape, blds, fit_in, epsg)
@@ -1556,6 +1652,7 @@ class TractJob:
     buildings: dict[str, list[dict[str, Any]]]  # lot_id -> building rows, geometry as WKB
     streets: list[tuple[str, str, bytes]] | list[tuple[str, str, bytes, str]]  # (kind, st_type, WKB[, frontage])
     expected: int  # lots in the tract (a --limit run builds fewer)
+    street_names: list[str] = field(default_factory=list)  # one per street row, "" when unnamed
 
 
 @dataclass
@@ -1574,8 +1671,10 @@ class TractResult:
 class StreetIndex:
     """Street lines of one tract with a spatial index, split into fronts, ways and private roads."""
 
-    def __init__(self, rows: Sequence[tuple[Any, ...]], way_types: Sequence[str] = ()):
+    def __init__(self, rows: Sequence[tuple[Any, ...]], way_types: Sequence[str] = (), names: Sequence[str] = ()):
         self.geoms = np.array([shapely.from_wkb(r[2]) for r in rows], dtype=object)
+        # Street name cores ("INTERBORO" for "Interboro Ave"), to find the street a lot's address is on.
+        self.core = np.array([street_core(n) for n in names], dtype=object) if len(names) == len(rows) else None
         self.group = np.array([street_group(r[0], r[1], way_types) for r in rows], dtype=object)
         self.frontage = np.array([r[3] if len(r) > 3 else "" for r in rows], dtype=object)
         self.has_classes = bool(len(rows)) and any(len(r) > 3 for r in rows)
@@ -1593,7 +1692,14 @@ class StreetIndex:
         if self.has_classes:
             street = self.group[idx] == "street"
             classes = {c: _union(self.geoms[idx][street & (self.frontage[idx] == c)]) for c in ("A", "B", "C")}
-        return Near(pick("street"), pick("way"), pick("other"), classes)
+        by_name: dict[str, BaseGeometry] | None = None
+        if self.core is not None:
+            groups: dict[str, list[Any]] = {}
+            for i in idx:
+                if self.group[i] in ("street", "way") and self.core[i]:
+                    groups.setdefault(self.core[i], []).append(self.geoms[i])
+            by_name = {k: _union(v) for k, v in groups.items()}
+        return Near(pick("street"), pick("way"), pick("other"), classes, by_name)
 
 
 SKIP_KINDS = {"highway", "expressway", "ramp", "walkway"}
@@ -1619,7 +1725,7 @@ def build_tract(job: TractJob, ctx: Ctx, out: str) -> TractResult:
     t0 = time.perf_counter()
     # GEOS sets a harmless floating point flag on some valid unions and simplifies (see fit._quiet).
     warnings.filterwarnings("ignore", "invalid value encountered", RuntimeWarning)
-    streets = StreetIndex(job.streets, ctx.way_types)
+    streets = StreetIndex(job.streets, ctx.way_types, job.street_names)
     records, rows, errors = [], [], []
     for r in job.lots:
         r = {**r, "geometry": shapely.from_wkb(r["geometry"])}
@@ -1859,7 +1965,8 @@ def make_jobs(
         if "frontage" in s.columns:  # A, B, C street classes (Allentown)
             cols.append(s["frontage"].fillna("").astype(str))
         srows: Any = list(zip(*cols, strict=True))
-        yield TractJob(t, _rows(part, LOT_COLUMNS), bmap, srows, counts[t])
+        names = s["name"].fillna("").astype(str).tolist() if "name" in s.columns else []
+        yield TractJob(t, _rows(part, LOT_COLUMNS), bmap, srows, counts[t], names)
 
 
 def progress_note(out: Path, place: str, text: str) -> None:
@@ -2260,6 +2367,7 @@ def write_manifest(place: Place, out: Path, ctx: Ctx, paths: dict[str, Path], in
         "assumptions": {
             "steep_slope_min_share": STEEP_SLOPE_MIN_SHARE,
             "landslide_min_share": LANDSLIDE_MIN_SHARE,
+            "undermined_min_share": UNDERMINED_MIN_SHARE,
             "flood_min_share": FLOOD_MIN_SHARE,
             "historic_min_share": HISTORIC_MIN_SHARE,
             "garage_min_sqft": GARAGE_MIN_SQFT,
@@ -2454,8 +2562,9 @@ STATS_CAVEATS = {
     ],
     "montgomery_county": [
         "Three towns, each on its own rule file (by_town). Building outlines are Microsoft's only; their model heights "
-        "are not used, so tests against the house height read not checked. No living area: share-of-house caps are "
-        "not checked.",
+        "are not used. House heights are DVRPC 2015 lidar estimates of the matching outline; a house with no match "
+        "(new since 2015, or outlines that disagree) has no height, so tests against it read not checked. No living "
+        "area: share-of-house caps are not checked.",
     ],
     "pittsburgh": [
         "A detached ADU in a side or rear yard needs an Administrator's Exception (925.06.G), "

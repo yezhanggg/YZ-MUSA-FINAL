@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-11-26
+
+Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.
+
+- Town rules: 52 drafted towns were read a second time and are now verified. 198 of 223 rule files are verified (the two cities and 196 towns), 25 stay drafted, each with its open point in `towns_index.json`. Verified means every finding of the second reading is resolved; where the code itself does not settle a point, the file keeps it as a disputed or secondary reading to ask the zoning officer. East Hempfield stays drafted (Ord. 2026-02, adopted Nov 4, not read). Hampden, Dover and White Oak stay drafted: their code hosts refuse automated reading. `docs/RULES_TOWNS.md` and the statewide place table (`pa_places.json`) were rebuilt: 200 places now answer from a verified file, 47.2% of Pennsylvanians.
+- Lot data 12: all six lot places rebuilt. Data versions pittsburgh-20261126-d747c67f1d, philadelphia-20261126-331f84072a, allentown-20261126-dcb22d8b63, chester_county-20261126-3396fbba65, centre_county-20261126-faba91665f, montgomery_county-20261126-39cb1f34c5. What changed:
+  - The front of a lot is the street in its address when another street is near (`front_on_address` in `pipeline/build_lots.py`). It moved the front on 8.3% of a Pittsburgh sample and on 800 Phoenixville through lots, where the house sits on the address street (797 of the 830 lots that changed).
+  - A detached unit whose only room is the front yard no longer counts as fitting (`fit_result.front_only_sqft`, limiting `no_room`).
+  - Montgomery County house heights come from the DVRPC 2015 lidar landbase (Microsoft heights read about 6 ft low). The town's one-story height sets the unit height where the code limits stories. A house under 10 ft reads "not checked".
+  - Pittsburgh lots carry the city's Undermined Areas layer (UM-O): 32,865 lots (35.7%) have at least 25% of the lot inside. The `um_o` row is a condition, never a bar.
+  - The district yards of Nov 22 reach the Philadelphia and Pittsburgh lot records. The rules passes 18 to 29 reach the four town places, and their hold sets are empty.
+  - Shares, detached unit legal and fits today (HB 2186): Pittsburgh 65.8% -> 65.4% (70.0% -> 69.7%), Montgomery County 25.6% -> 25.2% (86.0% -> 83.9%), Chester County 23.1% -> 28.7% (58.8% -> 64.2%), Centre County 48.7% -> 47.7% (80.5% -> 81.0%). Philadelphia and Allentown unchanged. By town: Phoenixville 34.6% -> 49.5%, Upper Dublin 66.6% -> 65.0% (78.4% -> 71.7%), Narberth 76.9% -> 77.2%, West Chester 42.8% -> 43.8%.
+  - The 50-lot regression set: 13 lots moved, each from district yards (7) or the front fixes (6). `expected_50.json` updated.
+- Fit check by a vision model: the 250-lot sample was labeled by a vision model following the hand-label protocol (`~/musa-drive/validation/labels_claude/`). These are not hand labels. On lot data 12, 600 sq ft agrees on 84.2% of Pittsburgh lots and 84.7% of Philadelphia lots (82.5% and 83.1% before the fixes). `pipeline/validation/protocol_fit.py` scores the product with the protocol's own test (a box anywhere in the open yard): 86.5% at 600 sq ft. About 70% of the gaps are definitions, not errors.
+- Lot data bundle: a new packed format (pack1, `tools/pack_lots.py`). Repeated scenario and quality blocks become references and tract files are gzipped at level 9; the browser unpacks them (`unpackRecords` in `app/src/lib/lot/load.ts`). Same answers on all 625,687 lots (`tools/compare_bundles.ts`). The bundle is 714.2 MB (Philadelphia 390.6, Pittsburgh 127.9, Montgomery County 62.6, Chester County 61.4, Centre County 21.2 MB, plus Allentown and the shared files), about 286 MB under the 1 GB Pages limit, down from 999.9 MB. Deploy the app before pushing the data: the old app cannot read pack1.
+- Bills: SB 1346 was tabled in the Senate on Nov 17 (`shared/rules/sb1346.json`). HB 2186 and Bill 250042 have not moved. The state session ends Nov 30.
+- Not done: no live agent eval (no API key here; the offline dry run passes 208 of 208). Whitpain (Ord. 4-269, Sep 15, 2026, family-only ADU) and Patton (Ord. 2026-658) have no rule file yet. Some code PDFs must be downloaded by hand before their towns can be verified (listed in `towns_index.json` notes).
+
 ## 2026-11-22
 
 Not legal advice. Not a zoning determination. HB 2186 is a bill, not law.

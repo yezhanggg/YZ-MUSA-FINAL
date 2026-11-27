@@ -1,7 +1,8 @@
 import { gzipSync } from 'node:zlib';
 import { describe, expect, it } from 'vitest';
 import { fixture } from './__fixtures__';
-import { DEFAULT_LOT_DATA_URL, LotLoadError, TractCache, findLoadedLot, isLotLoadError, loadLot, loadTractLots, lotDataUrl, placeOfGeoid, type Fetcher, type LoadOptions } from './load';
+import packedGolden from './__fixtures__/packed_tract.json';
+import { DEFAULT_LOT_DATA_URL, LotLoadError, unpackRecords, TractCache, findLoadedLot, isLotLoadError, loadLot, loadTractLots, lotDataUrl, placeOfGeoid, type Fetcher, type LoadOptions } from './load';
 import type { AreaGeom, LotRecord } from './types';
 
 const BASE = 'https://data.test/lots/';
@@ -285,9 +286,59 @@ describe('lot by id through the lot_tract index', () => {
     expect(await lotByIdAnywhere('42999-1', opts)).toBeNull();
   });
 
+  it('reads the gzip index the published manifest names', async () => {
+    const { lotTractOf } = await import('./load');
+    const lot = fixture('no_fit');
+    const files = {
+      'v2/pittsburgh/manifest.json': { ...manifest(), published: { lot_tract: 'lot_tract.json.gz', pack: 'pack1' } },
+      'v2/pittsburgh/lot_tract.json.gz': { [lot.lot.id]: T2 },
+    };
+    const { f, calls } = server(files);
+    expect(await lotTractOf(lot.lot.id, { baseUrl: `${BASE}v2/`, fetch: f, cache: new TractCache() })).toBe(T2);
+    expect(calls.some((c) => c.endsWith('lot_tract.json'))).toBe(false);
+  });
+
   it('gives null, not an error, when the place has no index', async () => {
     const { lotTractOf } = await import('./load');
     const { f } = server(inlineFiles());
     expect(await lotTractOf('42003-0000', { baseUrl: 'https://data.test/other/', fetch: f })).toBeNull();
+  });
+});
+
+describe('packed tract files (tools/pack_lots.py, pack1)', () => {
+  const golden = packedGolden as unknown as { fixtures: string[]; packed: Record<string, unknown> & { lots: unknown[] } };
+  const plain = () => golden.fixtures.map((n) => fixture(n as Parameters<typeof fixture>[0]));
+
+  it('the golden file uses the markers', () => {
+    const body = JSON.stringify(golden.packed);
+    expect(golden.packed.pack).toBe('pack1');
+    expect(body.split('"$same"').length).toBeGreaterThan(10);
+    expect(body).toContain('"$ref"');
+  });
+
+  it('unpacks to the same records as the plain file, key order included', () => {
+    const lots = unpackRecords(structuredClone(golden.packed) as never);
+    expect(JSON.stringify(lots)).toBe(JSON.stringify(plain()));
+  });
+
+  it('loadTractLots gives the same records from a packed and a plain head file, and from packed chunks', async () => {
+    const packed = structuredClone(golden.packed);
+    const [a, b, ...rest] = packed.lots;
+    const chunk = { ...packed, lots: [b, ...rest], more: [] };
+    const files: Files = {
+      'pittsburgh/manifest.json': manifest(),
+      [`pittsburgh/detail/${T1}.json.gz`]: { ...packed, lots: [a], more: [`${T1}.p2.json.gz`] },
+      [`pittsburgh/detail/${T1}.p2.json.gz`]: chunk,
+      [`pittsburgh/detail/${T2}.json.gz`]: head(T2, plain()),
+    };
+    const { f } = server(files);
+    const opts = { baseUrl: BASE, fetch: f, cache: new TractCache() };
+    const fromPacked = await loadTractLots(T1, opts);
+    const fromPlain = await loadTractLots(T2, opts);
+    expect(JSON.stringify(fromPacked.lots)).toBe(JSON.stringify(fromPlain.lots));
+  });
+
+  it('refuses a packing it does not know', () => {
+    expect(() => unpackRecords({ pack: 'pack9', lots: [] })).toThrow(LotLoadError);
   });
 });

@@ -156,8 +156,8 @@
       "pop_rank": 5,
       "file": "pa_erie_erie",
       "batch": 1,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/33839105",
       "plain_fetch": null,
@@ -166,7 +166,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "ADU by right. Open: whether the ADU counts toward lot area per family (205), and the one-principal-use rule in R districts (204). Reading the ADU as an accessory use is secondary."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4206969000",
@@ -206,8 +206,8 @@
       "pop_rank": 12,
       "file": "pa_northampton_bethlehem",
       "batch": 1,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "own site",
       "code_url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
       "plain_fetch": null,
@@ -216,7 +216,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Unit for Care of Relative by right, family only. Open: final passage of Bill 22-2026 is not confirmed, and the public PDF ends at Ord. 2023-32, so 2024 to 2026 amendments may be missing."
+      "status_note": "Verified 2026-11-26. Bill 22-2026 passed as Ord. 2026-22 (8-4-2026); the code renumbered 1302.146 to 1302.148 and 1322.03(bbb) to (ccc) (code_caution)."
     },
     {
       "geoid": "4207141216",
@@ -303,8 +303,8 @@
       "pop_rank": 25,
       "file": "pa_centre_state_college",
       "batch": 2,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/32909719",
       "plain_fetch": null,
@@ -313,7 +313,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Drafted only because parking is open: 2 spaces in total, or 4 if the apartment counts as a unit (19-2403.c). Every other review finding is resolved."
+      "status_note": "Verified 2026-11-26. Parking read as 4 in total (secondary, 19-2403.c); confirm with the Zoning Officer."
     },
     {
       "geoid": "4204579000",
@@ -400,7 +400,7 @@
       "file": "pa_montgomery_abington",
       "batch": 3,
       "status": "drafted",
-      "checked_on": "2026-11-11",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9010529",
       "plain_fetch": null,
@@ -409,7 +409,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Family-only ADU by special exception. Open: detached height (35 ft district vs 17 ft by analogy to A-22), and whether the district dwelling separation (20 to 40 ft) applies between the house and a detached ADU."
+      "status_note": "Open: detached ADU height (35 ft district against 17 ft for accessory structures) and district dwelling separation. The 2017 Zoning Ordinance is a PDF not read on 2026-11-26: https://ecode360.com/AB0569/laws/LF2031151.pdf"
     },
     {
       "geoid": "4201708768",
@@ -447,8 +447,8 @@
       "pop_rank": 14,
       "file": "pa_erie_millcreek",
       "batch": 3,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/28902039",
       "plain_fetch": null,
@@ -457,7 +457,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "In-law apartment by special exception, family only. Open: parking (2 or 4 spaces) and whether the apartment counts toward district density."
+      "status_note": "Verified 2026-11-26. Parking 2 in total and no density count, read from 145-11 and 145-58F (secondary)."
     },
     {
       "geoid": "4204345056",
@@ -471,8 +471,8 @@
       "pop_rank": 15,
       "file": "pa_dauphin_lower_paxton",
       "batch": 3,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/34198634",
       "plain_fetch": null,
@@ -481,7 +481,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "ADU by right with almost no ADU standards. Open: whether a full garage conversion that ends the garage use escapes 203-314C(2), and parking (2 or 4 under 203-903)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204533144",
@@ -543,8 +543,8 @@
       "pop_rank": 20,
       "file": "pa_luzerne_wilkes_barre",
       "batch": 4,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR",
       "plain_fetch": null,
@@ -553,7 +553,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule. Open: the undefined 'Accessory Residential Uses' row in Section 501, and the R-2 single-family height in feet."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207146896",
@@ -615,8 +615,8 @@
       "pop_rank": 23,
       "file": "pa_westmoreland_hempfield",
       "batch": 4,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/10769959",
       "plain_fetch": null,
@@ -625,7 +625,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Re-reviewed 2026-11-11 against 87-79, 87-15B, 87-186A, Tables 1 and 2, TND Exhibit A and Schedule A, 87-17G(1), 87-210. Accessory apartment by special exception, family only, TC-R in the TND overlay (six parcels). Open: whether a second unit outside the TND is an 'unlisted use' under 87-186A (a reading), and Schedule A bulk rules go by lot type, mapped to lot area here."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200359032",
@@ -735,8 +735,8 @@
       "pop_rank": 29,
       "file": "pa_bucks_falls",
       "batch": 5,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/7125081",
       "plain_fetch": null,
@@ -745,7 +745,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule. Open: the July 2026 curative amendment and any text change since the 2021 eCode360 publication, and HR two-family density (8,000 vs 8,712 sq ft)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200351696",
@@ -783,8 +783,8 @@
       "pop_rank": 31,
       "file": "pa_montgomery_upper_merion",
       "batch": 5,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11658450",
       "plain_fetch": false,
@@ -793,7 +793,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule. Open: how the Zoning Officer treats 'conversion subject to 165-212' after the 2023 repeal, R-3 density on a single two-family lot (165-61F(2)), and the R-3 house lot 5,000 vs 7,260."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201780952",
@@ -807,8 +807,8 @@
       "pop_rank": 32,
       "file": "pa_bucks_warminster",
       "batch": 5,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14238962",
       "plain_fetch": false,
@@ -817,7 +817,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "In-law dwelling by right, relatives only. Open: whether the in-law dwelling counts as a dwelling unit for parking (27-2200.1.C, 2 or 4 spaces), whether the 500 sq ft total in 27-1786.1.G is lot-wide, and whether adding a story to an existing garage counts as an existing accessory structure (27-1793.1.D)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200306064",
@@ -855,8 +855,8 @@
       "pop_rank": 34,
       "file": "pa_allegheny_ross",
       "batch": 6,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30842452",
       "plain_fetch": false,
@@ -865,7 +865,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule. Open: whether 27-904 similar-use conditional use reaches a second unit, and the servant or caretaker quarters reading."
+      "status_note": "Verified 2026-11-26. For a later check: Ords. 2565 to 2567 not seen."
     },
     {
       "geoid": "4204563264",
@@ -879,8 +879,8 @@
       "pop_rank": 35,
       "file": "pa_delaware_radnor",
       "batch": 6,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11078356",
       "plain_fetch": false,
@@ -889,7 +889,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule for house lots. Open: whether an AC tenant house counts as an ADU, and whether 280-130.1 reaches a second unit in R-6 and PA."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201744968",
@@ -927,8 +927,8 @@
       "pop_rank": 37,
       "file": "pa_butler_cranberry",
       "batch": 6,
-      "status": "drafted",
-      "checked_on": "2026-11-11",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/34273101",
       "plain_fetch": false,
@@ -937,7 +937,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "ADU and accessory dwelling quarters by right. Open: breezeway unit modeled as detached_new with the 1,200 sq ft and 50% caps, and the ADU parking count."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204132296",
@@ -952,7 +952,7 @@
       "file": "pa_cumberland_hampden",
       "batch": 6,
       "status": "drafted",
-      "checked_on": "2026-11-11",
+      "checked_on": "2026-11-26",
       "code_host": "municode",
       "code_url": "https://library.municode.com/pa/hampden_township/codes/code_of_ordinances?nodeId=CH27ZO",
       "plain_fetch": false,
@@ -961,7 +961,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "No ADU rule. Open: whether 1726 (uses not permitted anywhere, conditional use) reaches a second unit, since two-family is listed in R-T. Parts 9 to 16-A not read in full."
+      "status_note": "No ADU rule. Open: whether 1726 (uses not permitted anywhere, conditional use) reaches a second unit, since two-family is listed in R-T. Parts 9 to 16-A not read in full. Code host blocks automated reading (403) on 2026-11-26."
     },
     {
       "geoid": "4204513208",
@@ -1191,8 +1191,8 @@
       "pop_rank": 48,
       "file": "pa_allegheny_monroeville",
       "batch": 8,
-      "status": "drafted",
-      "checked_on": "2026-11-12",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11510889",
       "plain_fetch": false,
@@ -1201,7 +1201,7 @@
       "why": [
         "top 60 by 2020 population"
       ],
-      "status_note": "Reviewed 2026-11-12 (town-rules-review-batch8), review fixes applied. Two open points the code text does not settle: (1) whether 359-19F (500 sq ft or 20% of the house) and 359-30A(1) (15 ft mean height) reach a detached dependent dwelling, which 359-54Z lets reach 625 sq ft a story and 25 ft (the file applies both caps); (2) whether the unit counts toward the Table 359-20C(1) lot area per dwelling unit. 2026-11-13: attached unit height 25 ft and two stories (359-54Z(4)) with internal_uses_district_height false, a reading (secondary)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201172824",
@@ -1527,8 +1527,8 @@
       "pop_rank": 229,
       "file": "pa_chester_westtown",
       "batch": 10,
-      "status": "drafted",
-      "checked_on": "2026-11-13",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/12396615",
       "plain_fetch": false,
@@ -1537,7 +1537,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Reviewed 2026-11-13 (town-rules-review-batch10), fixes applied (702E note, 1603C(3)(a) accessory cap, 1502F yards). Open point: whether the unit may be in a new accessory structure or an addition, or only in the house or an existing structure (170-1603A(2)(b), (f), (i): exterior alterations barred, but reviewed by the Zoning Hearing Board and shown on the plan)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4202946792",
@@ -1671,8 +1671,8 @@
       "pop_rank": 337,
       "file": "pa_bucks_doylestown_borough",
       "batch": 11,
-      "status": "drafted",
-      "checked_on": "2026-11-13",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11768539",
       "plain_fetch": false,
@@ -1681,7 +1681,7 @@
       "why": [
         "in shared/legal_status.csv"
       ],
-      "status_note": "Drafted 2026-11-13. Review fixes applied (spacing ratio, district height with the 27-518 rear-yard 15 ft, effective date). Open: the adopting ordinance is not confirmed. The 5-11-2026 committee minutes show the ADU ordinance still in draft, so it is most likely Ord. 2026-13 (9/22/2026), not 2026-5. Ord. 2026-13 could not be found. Also open: the greater-of size rule (800 or 600 sq ft or 50%) cannot be held by the schema."
+      "status_note": "Verified 2026-11-26. Adopted by Ord. 2026-13 (9/22/2026); the ordinance PDF itself not read."
     },
     {
       "geoid": "4202935536",
@@ -1743,8 +1743,8 @@
       "pop_rank": 485,
       "file": "pa_delaware_media",
       "batch": 12,
-      "status": "drafted",
-      "checked_on": "2026-11-13",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6866878",
       "plain_fetch": false,
@@ -1753,7 +1753,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 311.A-13 definition and Article B-XV)"
       ],
-      "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: R-3 and R-4 lot tables (311.B-37B, 311.B-44B) mark the ADU external form prohibited on lots 60 ft wide or more, added as a condition (no lot-width test in the schema, so the tool still says by right), TwoPlex alternative in R-4, half-height side and rear setbacks. Open: how the Borough applies the lot-width table (the detached house form is marked the same way). Office map code assumed O. No count per lot in the code, one assumed. 0 ft / 8 ft separation read as attached / detached."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4202960120",
@@ -1791,8 +1791,8 @@
       "pop_rank": 109,
       "file": "pa_centre_ferguson",
       "batch": 12,
-      "status": "drafted",
-      "checked_on": "2026-11-13",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30847049",
       "plain_fetch": false,
@@ -1801,7 +1801,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code Chapter 27 Part 11 definition and 27-1503 Accessory Dwelling)"
       ],
-      "status_note": "Drafted, reviewed 2026-11-13 (review12) and fixed: 800 sq ft for every form and the designated-lot and 10% limit (27-303.3C(1)(b)2)), 27-207 items removed in the TTD (27-303.2F), TTD accessory rear 5 ft, 0 from an alley (27-303.3D(1)(k)), three stories, parking reading from 22-5C01. Open: whether a TTD lot not designated at plan submission can get an ADU (the tool shows by right with the condition), whether the RA and RR accessory Dwelling Unit(s) are ADUs, code current only to 03-04-2025."
+      "status_note": "Verified 2026-11-26. For a later check: RA and RR \"Dwelling Unit(s)\" (image tables), code current to 03-04-2025, and TTD lot designation."
     },
     {
       "geoid": "4204575648",
@@ -1863,8 +1863,8 @@
       "pop_rank": 421,
       "file": "pa_montgomery_ambler",
       "batch": 13,
-      "status": "drafted",
-      "checked_on": "2026-11-13",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "own site",
       "code_url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
       "plain_fetch": true,
@@ -1873,7 +1873,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-407.A(8) family occupied ADUs)"
       ],
-      "status_note": "Drafted, reviewed 2026-11-13 (review13): every value agrees with the 2011 compiled text; fixed the attached ADU rear-yard rule, the 1,200 sq ft house floor (400 sq ft minimum against the one-third cap) and the twin lot minimums. Open: the Borough's Chapter 27 PDF is compiled only to about 2011 (ADU text last amended 2008) and the later zoning ordinances (1084, 1086, 1087, 1097 removing residential special exceptions, 1117, 1131 on R-3, 1133, 1134 and untitled 2021 to 2026 ones) were not read; they open only as downloads and need the owner's OK, or ask the Borough for a current Chapter 27; whether the 27-408 conversion special exception survives Ord. 1097; whether a suite inside the house and a converted garage count as the attached and detached kinds. The old index link returns Page not found. The chapter PDF was read from a copy the browser saved to the Downloads folder."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200134424",
@@ -1960,7 +1960,7 @@
       "file": "pa_lancaster_east_hempfield",
       "batch": 14,
       "status": "drafted",
-      "checked_on": "2026-11-14",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14043769",
       "plain_fetch": false,
@@ -1969,7 +1969,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 270-5.2A accessory dwelling units by right, family only)"
       ],
-      "status_note": "Drafted 2026-11-14, review14 fixes applied: the E zone (270-3.12B(5)(c)) added with its row; RB, CBC, AH, RCC rows and zone lot coverage added; C, ME and ROS confirmed without an ADU listing; code date 2025-03-19. Open: Ord. No. 2026-02 'Zoning Amendment' (2026-11-04) is not codified and not read (PDF only), so the code caution stays. Also open: whether zone densities or the VR/VC 8,700 sq ft per unit count the ADU; whether historic conversions (270-5.2FF) can add a dwelling."
+      "status_note": "Second reading 2026-11-26 found no open code point, but Ord. 2026-02 (adopted 2026-11-04) is not yet read: https://ecode360.com/EA2319/laws/LF2894089.pdf. Density counting under 270-5.2A(1) is a point to ask."
     },
     {
       "geoid": "4209506096",
@@ -2055,8 +2055,8 @@
       "pop_rank": 65,
       "file": "pa_montgomery_montgomery",
       "batch": 14,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11516266",
       "plain_fetch": false,
@@ -2065,7 +2065,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 230-149C accessory family dwelling)"
       ],
-      "status_note": "Drafted 2026-11-14, review14 fixes applied: scope set to the districts whose use lists permit a single-family detached dwelling (R-1, R-2, R-3, R-3A, R-3B, R-5, R-6, all read); path note quotes fixed; R-1 height 35 ft and 2 1/2 stories. Open: C and the other nonresidential districts permit the uses in Appendix Table 230-A, an attachment not opened, so whether a house (and this unit) is allowed there is not confirmed; MHP not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201124384",
@@ -2127,8 +2127,8 @@
       "pop_rank": 72,
       "file": "pa_montgomery_upper_providence",
       "batch": 15,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/42975244",
       "plain_fetch": false,
@@ -2137,7 +2137,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 300-15B(4) temporary unit for relative (in-law suite))"
       ],
-      "status_note": "Drafted 2026-11-14, review15 fixes applied: MH added to scope and kept in doubt with R-4; ARR age rule (300-345A, 300-350G); VCO existing-structure rule; 300-15E limit; rows for OSR-1, OSR-2, GCR, ARR, VCO. Open: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) not codified and not read; whether the unit applies in MH and R-4; whether the R-1 and R-2 lot area 'per dwelling unit' counts the in-law suite."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204178736",
@@ -2151,8 +2151,8 @@
       "pop_rank": 74,
       "file": "pa_cumberland_upper_allen",
       "batch": 15,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8577949",
       "plain_fetch": false,
@@ -2161,7 +2161,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 245-14.3 accessory apartment)"
       ],
-      "status_note": "Drafted 2026-11-14, review15 fixes applied: conversion apartment standards (245-14.20), 245-14.61 density, 245-16.7 minimum floor area (400 sq ft against 300 in 245-14.3G), A and R-1 coverage. Open: the definition (245-2.1) allows a unit only in or added to an existing house while 245-14.3B allows a detached one; whether the 20 ft accessory height binds a detached apartment; whether R-2 and R-3 lot size per dwelling unit counts the apartment."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4213319704",
@@ -2176,7 +2176,7 @@
       "file": "pa_york_dover",
       "batch": 15,
       "status": "drafted",
-      "checked_on": "2026-11-14",
+      "checked_on": "2026-11-26",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/dovertwp/latest/dovertwp_pa/0-0-0-24543",
       "plain_fetch": false,
@@ -2185,7 +2185,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-602 accessory apartment and 27-603 accessory family dwelling unit)"
       ],
-      "status_note": "Drafted 2026-11-14, review15 fixes applied: family unit limited to lineal relatives (27-603.6), residential conversion from 27-667, R-1 Growth Boundary condition, 27-502.1.D versus 27-602.2 note, adaptive reuse note. Open: the use table row 'Accessory Dwelling Units' read as the 27-603 family unit; whether density limits count the apartment; whether a lot is inside the Growth Boundary Area; 27-504 floor area and Part 7 parking not read; adaptive reuse districts not matched to columns."
+      "status_note": "Drafted 2026-11-14, review15 fixes applied: family unit limited to lineal relatives (27-603.6), residential conversion from 27-667, R-1 Growth Boundary condition, 27-502.1.D versus 27-602.2 note, adaptive reuse note. Open: the use table row 'Accessory Dwelling Units' read as the 27-603 family unit; whether density limits count the apartment; whether a lot is inside the Growth Boundary Area; 27-504 floor area and Part 7 parking not read; adaptive reuse districts not matched to columns. Code host blocks automated reading (403) on 2026-11-26."
     },
     {
       "geoid": "4202983080",
@@ -2295,8 +2295,8 @@
       "pop_rank": 93,
       "file": "pa_montgomery_limerick",
       "batch": 16,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11206587",
       "plain_fetch": false,
@@ -2305,7 +2305,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 184-71B(6) temporary unit for relative)"
       ],
-      "status_note": "Drafted 2026-11-14, review16 fixes applied: HC not permitted (184-139A(16)), VC left as ask (village house permitted, 184-71 not named), VC twin/duplex and multifamily conversion and R-4/R-5 two-family alternatives, 184-87 parking. Open: Ord. No. 438 (2026 zoning amendment) not read (PDF); R-4 and R-5 lot figures only in PDF attachments; MHP scope from snippets; whether the unit adds parking."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204144832",
@@ -2319,8 +2319,8 @@
       "pop_rank": 96,
       "file": "pa_cumberland_lower_allen",
       "batch": 16,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11213000",
       "plain_fetch": false,
@@ -2329,7 +2329,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 220-149 accessory dwellings)"
       ],
-      "status_note": "Drafted 2026-11-14, review16 fixes applied: TND and NR need the overlay conditional use and master plan first, TND lot row (220-127), 220-239 parking (multifamily row excludes accessory apartments), both readings of the 220-149F 10% limit. Open: the 220-6C definition names a unit in an accessory structure while 220-149 speaks only of the house; whether the unit counts toward density; whether it adds 2 parking spaces; TND height (220-125) not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209173088",
@@ -2391,8 +2391,8 @@
       "pop_rank": 102,
       "file": "pa_chester_west_whiteland",
       "batch": 17,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11701933",
       "plain_fetch": false,
@@ -2401,7 +2401,7 @@
       "why": [
         "added as batch 17 by population. Code Chapter 325 has no ADU text"
       ],
-      "status_note": "Open: Ord. No. 492 (2026-10-14, zoning) not read. Historic residential conversion path (325-86) added after review. Town Center, Institutional, UDA and Rail Transit Overlay articles not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4212958880",
@@ -2416,7 +2416,7 @@
       "file": "pa_westmoreland_penn",
       "batch": 17,
       "status": "drafted",
-      "checked_on": "2026-11-14",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9968279",
       "plain_fetch": false,
@@ -2425,7 +2425,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 190-202 and 190-405 conversion apartment)"
       ],
-      "status_note": "Open: conversion apartment vs multifamily definition (conflicting text, ask); Ord. No. 973-2025 (zoning) and Table 2 (Appendix A) not read."
+      "status_note": "Ord. 973-2025 read 2026-11-26. Open: two-unit conversion apartment against the multifamily definition (190-202); the use table marks conversion apartments permitted in MDR, 190-403B omits them."
     },
     {
       "geoid": "4212952432",
@@ -2463,8 +2463,8 @@
       "pop_rank": 92,
       "file": "pa_bucks_lower_southampton",
       "batch": 17,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/29169162",
       "plain_fetch": false,
@@ -2473,7 +2473,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1403H(11) accessory in-law dwelling)"
       ],
-      "status_note": "Open: 27-1403H(11)(d) and (g) conflict on an accessory building; family reading of the relationship affidavit. Heights 27-1718 added after review."
+      "status_note": "Verified 2026-11-26. For the Zoning Officer: the 27-1403H(11)(d)/(g) accessory building conflict, and which relatives qualify under the affidavit."
     },
     {
       "geoid": "4209184624",
@@ -2487,8 +2487,8 @@
       "pop_rank": 101,
       "file": "pa_montgomery_whitemarsh",
       "batch": 18,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11708888",
       "plain_fetch": false,
@@ -2497,7 +2497,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 116-272E accessory dwelling units (Conservation Design Overlay, Option One))"
       ],
-      "status_note": "Open: Ord. No. 1049 (2026 zoning amendment, touches Article XXXVI) not read; 15 acre tract test (tract vs lot) and AAA accessory height 20 ft vs ADU 25 ft (116-268C vs 116-33.2) are conflicting text; 116-23A 30 ft accessory yards without sewer and water cannot be held in utility rows; use lists of LR/HR, MHP, CR, AR, industrial, EX, CCRC not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201754192",
@@ -2559,8 +2559,8 @@
       "pop_rank": 108,
       "file": "pa_lancaster_warwick",
       "batch": 18,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11671452",
       "plain_fetch": false,
@@ -2569,7 +2569,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 340-67 ECHO housing)"
       ],
-      "status_note": "Open: Ord. No. 306 and 307 (2026 zoning) not read; VO accessory building apartment is conditional use (340-23E(9)) or special exception (J(1) note 4, 340-65), conflicting text, and its 340-64 cross-reference is stale; the tool cannot key status on the VO overlay, so R-2 is held as a district in doubt; other zone use lists, 340-14, 340-25, 340-35 and 340-121 not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4213383432",
@@ -2607,8 +2607,8 @@
       "pop_rank": 110,
       "file": "pa_montgomery_lansdale",
       "batch": 18,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11763313",
       "plain_fetch": false,
@@ -2617,7 +2617,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 405-1913 accessory dwelling units, family only)"
       ],
-      "status_note": "Open: Ord. 2012 (Residential B and C amendments, PDF, not read; listed as adopted Nov 19, 2026 though titled 8.19.2026) rewrites the B and C tables and the conversion row; Ord. 2013 (TOD) not read; whether the ADU counts as a dwelling unit for lot area per unit; whether 405-901's 7,500 sq ft reaches a PO-B conversion; LPO yards come from the abutting residential district; commercial, business, industrial and other overlay use lists not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207121344",
@@ -2824,7 +2824,7 @@
       "file": "pa_montgomery_towamencin",
       "batch": 21,
       "status": "drafted",
-      "checked_on": "2026-11-14",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14342706",
       "plain_fetch": false,
@@ -2833,7 +2833,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 153-502H(1) accessory apartments for family members)"
       ],
-      "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open: RBP is an overlay and 153-418 does not say whether a lot in it keeps its base district's A-1 special exception, so the 80,000 sq ft and service gates carry that dispute; check which code the zoning layer gives a lot in the RBP overlay (base district or 'RBP'); the Table of Permitted Land Uses (Attachment 2, PDF) has an A-1 footnote 'Only for family member in residential district or watchman in industrial district', which may list the accessory apartment in an industrial district (not opened); Ord. No. 25-08 (zoning and map amendment, Towamencin Village and Main Street overlays) and Ord. No. 26-04 (data centers) are uncodified New Laws not read (PDF); R-14 cluster lots in R-175 (153-502F(14)) have their own figures, shown as a condition only (no lot fact tells a cluster lot apart); residential accessory structures (153-502H(8)) not read."
+      "status_note": "Open: Ord. 25-08, Ord. 26-04 and the Table of Permitted Land Uses are PDFs not read on 2026-11-26 (ecode360 LF2804705, LF2804703, attachment 319104); the RBP overlay dispute."
     },
     {
       "geoid": "4202138288",
@@ -2871,8 +2871,8 @@
       "pop_rank": 130,
       "file": "pa_lancaster_west_lampeter",
       "batch": 21,
-      "status": "drafted",
-      "checked_on": "2026-11-14",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11694778",
       "plain_fetch": false,
@@ -2881,7 +2881,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 285-49D(1) accessory dwelling unit for a relative)"
       ],
-      "status_note": "Drafted 2026-11-14, independently reviewed and fixed the same day. Open: the dwelling unit definition (285-33) asks for 800 sq ft and bars two kitchens while the ADU cap is 40% or 800 sq ft (whichever less), stored as size.min_sqft 800 (secondary) with a condition; which districts the conversion apartment reaches: MS lists 'Conversion of existing building into dwellings' by right (285-43B(1)(e)) while 285-48A(16)(a) makes it a special exception in RR, TV and MS and only R-3 names it in its use list; the A district larger ADU (60% or 1,200 sq ft) by conditional use is stored as an ADU listing alternative; parking table row for an accessory apartment 'within a neighborhood development' has no matching section; district summary PDFs, TV in full, commercial districts and 285-6 special exception criteria not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209179056",
@@ -2967,8 +2967,8 @@
       "pop_rank": 146,
       "file": "pa_northampton_forks",
       "batch": 23,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8571248",
       "plain_fetch": false,
@@ -2977,7 +2977,7 @@
       "why": [
         "added as batch 23 by population. Code 200-7 accessory apartment and unit for care of relative (defined, not listed). Its code as read has no ADU rule (not addressed)"
       ],
-      "status_note": "Reviewed and fixed. Open point: Ord. 415 (growth management, 2026-07-02) rewrites the FP district table (Agricultural Conservation Ratio, new rows), restates 200-13D and changes the lot area definition. Its PDF was not read, so the FP row is marked probably superseded. Re-read FP once Ord. 415 is codified. Also open: whether the 200-79F conditional use reaches an accessory apartment or is read as a residential conversion (TC, TC-1 only). Ord. 414 and 416 (solar, data center) not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204503336",
@@ -3064,7 +3064,7 @@
       "file": "pa_montgomery_lower_salford",
       "batch": 24,
       "status": "drafted",
-      "checked_on": "2026-11-15",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9509651",
       "plain_fetch": false,
@@ -3073,7 +3073,7 @@
       "why": [
         "added as batch 24 by population. Code Chapter 164 has no ADU text"
       ],
-      "status_note": "Independently reviewed, findings fixed. Open: R-4 lot figures are only in Attachment 3 (PDF, not opened); whether R-2 and C carry the R-1 conditional use for altering a house into a two-family dwelling (164-38A, 164-64A); OLC houses have two conflicting standards (R-3 through 164-62.9A against the 164-62.12 by-right column), the stricter of each is stored."
+      "status_note": "Open: R-4 lot figures (Attachment 3, ecode360 attachment 335547) and Ords. 2026-06 and 2026-07 (LF2776868, LF2776869) are PDFs not read on 2026-11-26."
     },
     {
       "geoid": "4213353224",
@@ -3183,8 +3183,8 @@
       "pop_rank": 164,
       "file": "pa_butler_adams",
       "batch": 26,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/12752118",
       "plain_fetch": false,
@@ -3193,7 +3193,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 192-54E and 167-21.1 temporary second dwelling, family hardship)"
       ],
-      "status_note": "Independently reviewed, findings fixed, stays drafted. Open: the use, dimensional and density schedules (Attachments 1, 3, 4) are PDFs and were not read, and a search excerpt shows four marks on the temporary second dwelling row of Attachment 1 while the district text lists RC, RAL and RAM only; the code's text conflicts on the unit's form (192-54E(1) apartment in the house or carriage house, 192-54C no dwelling in an accessory building, 167-21.1A, D a manufactured home not on a foundation); 167-9 (two acres, 2011) against 167-21.1A(2) (one acre with public sewer, 2010); density per gross acre in the district sections against per net acre in 192-6, and how the RC density applies to one lot; the Board of Supervisors' hardship permission is read as a conditional use though the code names no hearing; a merger with Mars Borough is pending (Ord. No. 194); Article VA not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200365352",
@@ -3207,8 +3207,8 @@
       "pop_rank": 155,
       "file": "pa_allegheny_robinson",
       "batch": 26,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14125507",
       "plain_fetch": false,
@@ -3217,7 +3217,7 @@
       "why": [
         "added as batch 26 by population. Code Chapter 300 has no ADU text"
       ],
-      "status_note": "Independently reviewed, findings fixed, stays drafted. Open: four zoning amendments (Ord. No. 2-2025, 3-2025, 4-2025, 2-2026) are PDF only and known from search excerpts; the R-1 lot (17,500 sq ft) and front yard (35 ft) come from Ord. No. 2-2026 excerpts, and the other R-1 figures may also have changed; Mobility Overlay figures supersede the base district but the lot answer shows the base district yards; Article VI (planned residential developments) not read; whether R-3's 'Conversion: 1,200 square feet' is per unit or per lot."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4205581240",
@@ -3351,8 +3351,8 @@
       "pop_rank": 172,
       "file": "pa_chester_west_bradford",
       "batch": 28,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/16247593",
       "plain_fetch": false,
@@ -3361,7 +3361,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 450-64H accessory suite by conditional use)"
       ],
-      "status_note": "Accessory suite by conditional use in R-1 and R-1C, family or employees only. Open: in R-1C the suite sits in a conditional use list that needs a 200 acre tract (450-12B(2)(b)) and approval with subdivision or land development plans (450-12N(1)), and whether that reaches a suite on one existing lot is not settled. Open: whether the suite counts as a dwelling unit toward R-1 density (450-8 against 450-64H(1) and (2)(e)). TND-2 area rules (450-47 to 450-53) not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209171016",
@@ -3447,8 +3447,8 @@
       "pop_rank": 175,
       "file": "pa_bucks_plumstead",
       "batch": 29,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11770606",
       "plain_fetch": false,
@@ -3457,7 +3457,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-304.19 B11 accessory dwelling for relatives or caretakers)"
       ],
-      "status_note": "Use B11 accessory dwelling by right in RP, RO, R-1, VR, R-2, R-3, R-4/CA-1 and VC for relatives of the owner or caretakers and employees (27-304.19). Independently reviewed and fixed. Open points: (1) which lot the 1.5 times rule in 27-304.19A uses, the district's B1 lot or its larger lot for all other permitted uses (RP 10 acres, R-1, R-2, R-3 two acres), and whether it reaches a unit over a new garage or in an existing building. Both are disputed gates. (2) Ord. No. 2026-02 (6-10-2026, data centers, Chapter 27) is a PDF only and its effect on B11 is unknown. (3) cluster lots in R-1, R-2 and R-3, and in VR and VC whether the district tables supersede the 1.5 times rule (27-703, 27-1203)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209121600",
@@ -3543,8 +3543,8 @@
       "pop_rank": 185,
       "file": "pa_butler_butler_city",
       "batch": 31,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/12072159",
       "plain_fetch": false,
@@ -3553,7 +3553,7 @@
       "why": [
         "added as batch 31 by population. Code Chapter 260 has no ADU text (use variance barred, 260-132C(4))"
       ],
-      "status_note": "Open: the conversion cutoff date (read as the chapter's adoption on 2-19-1987, which may re-enact an older ordinance), whether a dwelling unit in an accessory building is allowed at all (260-10N counts such units, but no use list names one), and the four PDF attachments (bulk table, lot area table, use table, zoning map), which were not checked."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201102328",
@@ -3567,8 +3567,8 @@
       "pop_rank": 187,
       "file": "pa_berks_amity",
       "batch": 31,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/34014197",
       "plain_fetch": false,
@@ -3577,7 +3577,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 32-957 family member suites)"
       ],
-      "status_note": "Open: how far 32-949 reaches (read as not reaching a family member suite, so outside the suite districts the path is a use variance), whether a twin qualifies as a single-family dwelling, and what 'minimum lot area per family' (32-904) means for a conversion (read as twice the district lot)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209127280",
@@ -3591,8 +3591,8 @@
       "pop_rank": 191,
       "file": "pa_montgomery_franconia",
       "batch": 31,
-      "status": "drafted",
-      "checked_on": "2026-11-15",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8789917",
       "plain_fetch": false,
@@ -3601,7 +3601,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 145-157B in-law suite by special exception)"
       ],
-      "status_note": "Open: whether the R-130 (145-35.1) and R-175 (145-31.1, 145-98) special exception figures reach an in-law suite in an existing house, whether the suite may have its own entrance (145-157B(3)(c) against (5)(b)), and the parts not read: NOD from 145-189.4 on and Articles XX, XXII, XXIV to XXVI and XXXI."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4203948360",
@@ -3687,8 +3687,8 @@
       "pop_rank": 197,
       "file": "pa_elk_st_marys",
       "batch": 33,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/15734800",
       "plain_fetch": false,
@@ -3697,7 +3697,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 402 accessory dwelling units by special exception (RU))"
       ],
-      "status_note": "Open points: 402 names no form, so which forms the Board will hear is not settled (104.2 reads doubt in the owner's favor, so all five are shown). A twin may not qualify: 402.4 measures against the 'principal detached dwelling unit' and the code defines a twin as a duplex. Parking is two, three or four spaces in all (312.2 against the 312.19 schedule). Whether a lot only partly in the Floodplain Overlay may take a unit outside it (230.6G). Not read: Chapter 17 Planned Residential Development."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4203707128",
@@ -3711,8 +3711,8 @@
       "pop_rank": 198,
       "file": "pa_columbia_bloomsburg",
       "batch": 33,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11770028",
       "plain_fetch": false,
@@ -3721,7 +3721,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-605.1 accessory dwelling for family members by special exception)"
       ],
-      "status_note": "Open points: whether a new structure for the unit counts as the one accessory building of 27-503.2B (27-605.1C(3)). Whether 27-605.1 reaches the by-right accessory apartment. Whether the unit counts toward the lot area per dwelling unit (27-306.2 R-U, 27-307.2 C-R). R-U allows two accessory dwellings, but the file shows one. Not read: Part 4 airport overlay."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201344328",
@@ -3784,7 +3784,7 @@
       "file": "pa_chester_upper_uwchlan",
       "batch": 34,
       "status": "drafted",
-      "checked_on": "2026-11-16",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/8342086",
       "plain_fetch": false,
@@ -3793,7 +3793,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 200-62B(1) quarters for guests and for servants or tenants employed on the premises)"
       ],
-      "status_note": "Open points: whether the 200-62B(1) quarters for non-paying guests or people employed on the premises may be a full dwelling unit with a kitchen. Parking for the quarters (200-73G(2) still lists 'Accessory apartments for family members' after 200-63 was repealed). Whether a dwelling unit can be the additional principal use of 200-72.1B(2) on a historic tract (rest of 200-72.1 not read). Not read: C-1 in full, C-3, LI and PI use lists (200-33 and Articles X to XII), 200-71 planned residential development, 200-72.3 short-term rentals (a conditional use in R-1 and R-2), Chapter 82 floodplain."
+      "status_note": "Rewritten 2026-11-26 for Ord. No. 2026-04 (ADU by right in R-1 to R-3); needs an independent second reading. Open: R-4 through 200-27C; enactment date."
     },
     {
       "geoid": "4202164544",
@@ -3903,8 +3903,8 @@
       "pop_rank": 211,
       "file": "pa_lebanon_north_lebanon",
       "batch": 36,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30841097",
       "plain_fetch": false,
@@ -3913,7 +3913,7 @@
       "why": [
         "added as batch 36 by population. Code Chapter 27 has no ADU text (27-602 two-family and conversion in R-2, 27-1208 second principal structure)"
       ],
-      "status_note": "Open: whether 27-204.1E(1)(b) ('Is not permitted in any other zoning district') shuts out an ADU because R-2 permits two-family dwellings. It decides between a special exception and a use variance on every lot. A detached unit is not a two-family dwelling, an internal unit may be. Also open: whether two units count as 'apartments' under 27-602.5 and which parking row applies. Not read: the IA figures in 27-3A03.1G beyond the A reference, the PRD rules of 27-1702 in full, the C and MR/I use lists in detail, Parts 13, 15, 18, 19, 21 to 23, most of Parts 11 and 24, 27-1231 and 27-1232."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209532432",
@@ -3951,8 +3951,8 @@
       "pop_rank": 221,
       "file": "pa_lancaster_elizabethtown",
       "batch": 36,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/27498291",
       "plain_fetch": false,
@@ -3961,7 +3961,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1333 accessory dwelling units by right in R-1, R-2, R-3 and MU)"
       ],
-      "status_note": "Open: whether the R-2 and R-3 lot area 'established for each dwelling unit' (27-707.1, 27-807.1) reaches the ADU, since R-1 has no such sentence and Ord. 983 put ADUs in all three. Whether a new detached ADU in MU is 'new construction of residential buildings' needing a conditional use (27-12A04.H, 27-12A06.1). The MU and CBD minimum building height of 35 ft (27-12A12, 27-908) read literally would keep out a detached ADU. Whether the MU accessory setbacks (27-1302.2(4)) or the ADU's 6 ft (27-1333.9) govern. Not read: Parts 4, 5, 10, 11, 12, 14, 15, 17 to 21 (27-2008 aside), 27-1318, and Chapter 22 (land development)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207932416",
@@ -4047,8 +4047,8 @@
       "pop_rank": 233,
       "file": "pa_northampton_lower_saucon",
       "batch": 38,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/6775923",
       "plain_fetch": null,
@@ -4057,7 +4057,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 180-137 accessory relative apartments by right in RA, R80, R40, R20, R12, UR and VC)"
       ],
-      "status_note": "Open: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart) are PDF attachments and were not opened, so whether they list or limit accessory relative apartments is not checked. Also open: whether an addition in the Floodplain district is an improvement Chapter 90 allows (90-33) or a substantial improvement it bars with no variance (90-26, 90-27, 90-35B), shown as disputed. Whether 180-94A's on-lot sewage figures count the apartment as a second unit, so a lot that needs an alternate system may need four acres. The parking total, five on the literal fraction rule of 180-98C(2)(h) or four on the plain reading. The pre-2011 impervious percentages that 180-127.3C keeps for existing lots."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207151664",
@@ -4071,8 +4071,8 @@
       "pop_rank": 244,
       "file": "pa_lancaster_mount_joy",
       "batch": 38,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11526470",
       "plain_fetch": null,
@@ -4081,7 +4081,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 135-225 echo housing by special exception, family only)"
       ],
-      "status_note": "Open: 135-32 defines echo housing to include conversion of an existing dwelling while 135-225C and D allow only an addition or a manufactured home (internal form shown as in conflict). Also open: whether an addition in the floodplain is an improvement 70-62 allows or is barred by 70-42 and the 135-306 riparian corridor (shown as disputed, while a detached echo unit is barred there). Whether R-1 lot area per dwelling unit (135-95B) counts the echo unit. Whether the 20 ft accessory height binds an echo manufactured home. Whether 135-295 lets a second house stand as a second principal use. The Village Design Option accessory apartment (135-353E(2)(e)) is cited from quoted text, and the rest of 135-353 and of Chapter 70 was not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207952584",
@@ -4095,8 +4095,8 @@
       "pop_rank": 247,
       "file": "pa_luzerne_nanticoke",
       "batch": 38,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/14394494",
       "plain_fetch": null,
@@ -4105,7 +4105,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 500-305 accessory dwelling units by right on a single-family detached lot (Ord. No. 9-2025))"
       ],
-      "status_note": "Open: 500-802.12 bars converting an existing single-family dwelling into two or more units in R-1, against the 2025 ADU rule that names a unit in an expanded or remodeled dwelling (shown as disputed for internal and attached units in R-1). Also open: whether 500-308 lets a detached ADU stand on an existing house lot in C-2, C-3, I-1 and S-1, where the house is a nonconforming use (shown as in doubt, with internal and attached barred by 500-906E). Whether the R-1, R-2 and R-3 density per dwelling unit counts the ADU. The tension between the 500-203 single-family detached definition (one dwelling unit) and a unit inside or added onto the house. The 70% size cap is strictly less than 70%. Chapter 267 beyond 267-19 was not read in full."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4209119672",
@@ -4264,7 +4264,7 @@
       "file": "pa_delaware_bethel",
       "batch": 41,
       "status": "drafted",
-      "checked_on": "2026-11-16",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11463872",
       "plain_fetch": null,
@@ -4273,7 +4273,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 480-136B(5) living quarters for household employees, caretakers, or watchmen (R-1, R-3, R-4))"
       ],
-      "status_note": "Batch 41 fix round. Open points the code text does not settle: whether 'living quarters for household employees, caretakers, or watchmen' (480-136B(5)) may hold their own kitchen, and whether quarters in or attached to the house make it a two-family dwelling (shown as a disputed bar in R-1, R-3, R-4). The status is family only as the nearest fit for quarters tied to the household. Whether the listing reaches a lot in an approved active adult community (480-101H against 480-100B). Parking for the quarters is not listed (480-125A): 6, or 4 to 5 spaces in all. The detached garage area cap reads 'eight 860 square feet' (480-136D). The R-4 side-yard line still names the 25 ft and 60 ft detached figures for a twin, with a condition giving the 15 ft twin yard. Article XX and the C-2, LI-1 and T use lists not read in full."
+      "status_note": "Code text read in full 2026-11-26. Open in the engine: the file uses family_only for living quarters for household employees, caretakers or watchmen (480-136B(5))."
     },
     {
       "geoid": "4212381000",
@@ -4431,8 +4431,8 @@
       "pop_rank": 292,
       "file": "pa_berks_maidencreek",
       "batch": 43,
-      "status": "drafted",
-      "checked_on": "2026-11-16",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/11752776",
       "plain_fetch": null,
@@ -4441,7 +4441,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 220-83 in-law quarters by conditional use, family only (AP, R-1, R-2))"
       ],
-      "status_note": "Batch 43 fix. Open points the code text does not settle. Whether in-law quarters, defined as an accessory dwelling unit, count toward the AP sliding scale of dwelling units (220-17A). Whether 220-83A ties the quarters to a lot that meets the district minimum and maximum (shown as a condition). Whether a two-family dwelling in R-2a, R-3, R-4 and CR needs the lot area once or once for each unit of use (220-11 'Unit of use', shown as a disputed lot minimum). The AP coverage and impervious figures could not be tied to a column (220-17B(3)). R-1 gives figures only for lots with on-site water or sewage (220-23A). 220-62 to 220-82, 220-85 to 220-102, Chapter 190 and the Table of Uses (PDF, text controls per 220-125) not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4201759384",
@@ -4527,8 +4527,8 @@
       "pop_rank": 299,
       "file": "pa_chester_east_nottingham",
       "batch": 44,
-      "status": "drafted",
-      "checked_on": "2026-11-17",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/30831666",
       "plain_fetch": null,
@@ -4537,7 +4537,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1602.1C(7) temporary home for family members (mobile home), family only)"
       ],
-      "status_note": "Batch 44 fix round. Open points the code text does not settle. Who may live in the temporary home: any family member (27-1602.1C(7)), parents or grandparents (27-503.1A(3)(c)), or the immediate family list of 27-1602.1C(1)(b)3). Whether the temporary home is a by-right accessory use under 27-1602 in every district that permits customary residential accessory uses, and whether it reaches C-1 and C-2. Whether 27-803.1E gives one acre to a two-family dwelling without public sewage and water. Whether the accessory structure heights of 27-1602.1B(1) reach the mobile home. The online code runs only to 09-21-2024. Not read: Part 2 definitions, Part 13, 27-1604, Parts 20, 21 and 25, Chapter 8."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4202982664",
@@ -4551,8 +4551,8 @@
       "pop_rank": 306,
       "file": "pa_chester_west_caln",
       "batch": 45,
-      "status": "drafted",
-      "checked_on": "2026-11-17",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/38019890",
       "plain_fetch": null,
@@ -4561,7 +4561,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 350-1101C(13) supplemental dwelling unit by right in AP, special exception in V, conditional use in SRR, RR and RC)"
       ],
-      "status_note": "Fix round 2026-11-17. MP now reads by right for a unit on a farm lot (350-901A(2), 350-1101B(6), B(9)), with a conditional use for a similar use off a farm (350-901C(35)). Open: on a farm lot in SRR and RR a unit may be by right as an agricultural accessory use (350-501A(6), 350-601A(7), 350-1101B(6)) or a conditional use (350-501C(5), 350-601C(4)). The height of a unit in an accessory building on a farm (district height under the 350-1101B lead, or 15 ft under 350-1101A(4)). Whether an existing lot below the district minimum may hold a unit (350-1504, read as yes for a unit inside the house)."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204515232",
@@ -4623,8 +4623,8 @@
       "pop_rank": 312,
       "file": "pa_chester_schuylkill",
       "batch": 46,
-      "status": "drafted",
-      "checked_on": "2026-11-17",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/13604405",
       "plain_fetch": null,
@@ -4633,7 +4633,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 370-229C accessory dwelling unit by right on an Option 2 conservancy lot of 10 acres or more (FR, R-1))"
       ],
-      "status_note": "Drafted 2026-11-17, fix round done. Open: whether a conservancy lot in an Option 3 subdivision can hold the ADU (370-7 'Conservancy lot', 370-229B(3)), though the weight of the text is Option 2, whether R-2 and APO I reach the conservation options through 370-25A and 370-31A(1), whether the ADU's yards are the 370-17 and 370-21 district figures or the 370-230 option tables, and the size cap for a unit in the house or in an existing building that is not historic (370-229C(3)). The 370-230B impervious cap on an Option 2 lot is only in a note. 370-143, the APO II lot minimum and Chapter 320 were not read."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4207121032",
@@ -4863,8 +4863,8 @@
       "pop_rank": 355,
       "file": "pa_monroe_smithfield",
       "batch": 49,
-      "status": "drafted",
-      "checked_on": "2026-11-18",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/41765428",
       "plain_fetch": null,
@@ -4873,7 +4873,7 @@
       "why": [
         "added as batch 49 by population. Code Chapter 27 has no ADU text (27-511.6 residential conversion by conditional use and two-family by right in R-2 and R-C)"
       ],
-      "status_note": "Drafted 2026-11-18 (fix round). Open: Ord. No. 272 of 11-10-2026 (Enhanced Design Incentive) is posted as a PDF only, was not read and may amend Chapter 27 after the code's 09-09-2026 currency date. Also open: whether 27-502.5 lets a two-family building stand beside the house, whether 27-401.2 (twice the minimum lot) or 27-511.6B (75% more) sets the lot for a conversion (shown as disputed), whether the Board of Supervisors would hear a second unit in R-2 or R-C under 27-302.2, and the floodplain bar on an addition to a house begun on or after 5-2-2013, shown as disputed since it reaches only the floodway and the 50 ft from the top of bank."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4202919752",
@@ -4935,8 +4935,8 @@
       "pop_rank": 362,
       "file": "pa_mckean_bradford",
       "batch": 50,
-      "status": "drafted",
-      "checked_on": "2026-11-18",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/9030425",
       "plain_fetch": null,
@@ -4945,7 +4945,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 220-8 and 220-23B(2)(e) guesthouse by special exception (R-1, R-2, R-3, C-1, C-2))"
       ],
-      "status_note": "Open points: whether a guesthouse, 'used for accommodating guests', may ever be let as a home of its own (the code's words and 127-10 point to guests of the household only), and whether Chapter 191, not read, exempts a guesthouse beside a house from land development review. Chapter 125 historic review and the zoning map were not read either."
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4200384704",
@@ -4960,7 +4960,7 @@
       "file": "pa_allegheny_white_oak",
       "batch": 50,
       "status": "drafted",
-      "checked_on": "2026-11-18",
+      "checked_on": "2026-11-26",
       "code_host": "amlegal",
       "code_url": "https://codelibrary.amlegal.com/codes/whiteoak/latest/whiteoak_pa/0-0-0-7310",
       "plain_fetch": null,
@@ -4969,7 +4969,7 @@
       "why": [
         "added as batch 50 by population. Code Part Thirteen has no ADU text (1327.02(b)(1)C conversion of an older dwelling by special exception in R-3, two-family by right in R-4)"
       ],
-      "status_note": "Open points: the online code is complete only to April 2, 2017. Ordinances adopted since (2018-17, 2018-18, 2018-28, 2020-29 and 2023-11 to 2023-19) are posted only as PDFs and were not read, and the floodplain article cites a 1995 FIRM. Also open: where the Lincoln Way Transitional Zone lies, whether an existing R-4 house may become two units by right, and whether a second dwelling in C-1 or C-2 is a similar use."
+      "status_note": "Open points: the online code is complete only to April 2, 2017. Ordinances adopted since (2018-17, 2018-18, 2018-28, 2020-29 and 2023-11 to 2023-19) are posted only as PDFs and were not read, and the floodplain article cites a 1995 FIRM. Also open: where the Lincoln Way Transitional Zone lies, whether an existing R-4 house may become two units by right, and whether a second dwelling in C-1 or C-2 is a similar use. Code host blocks automated reading (403) on 2026-11-26."
     },
     {
       "geoid": "4202921104",
@@ -5176,7 +5176,7 @@
       "file": "pa_dauphin_south_hanover",
       "batch": 53,
       "status": "drafted",
-      "checked_on": "2026-11-18",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/34457097",
       "plain_fetch": null,
@@ -5185,7 +5185,7 @@
       "why": [
         "named as a town with an ADU ordinance (Code 27-1502.15 accessory apartment by conditional use, family only (R-A, ESC, R-S, R-U, R-C))"
       ],
-      "status_note": "Open points: the online code stops at 10-10-2023, and a data center overlay ordinance with its own overlay map was advertised with a vote set for March 24, 2026. Whether it was adopted, its text and which residential land it covers were not confirmed. Also open: whether the base district's conditional uses still apply inside the FP District (27-301, 27-302, 27-1403), the parking count for the apartment (3 under 27-1502.15H or 4 under 27-1802), whether density counts the apartment in R-A, R-S and R-C, whether an apartment may be added on an R-C cluster lot (27-1010.1A), the minimum apartment size (300 sq ft, or 150 sq ft for one person under 27-1509) and whether the guesthouse path reaches R-MH"
+      "status_note": "Online code stops at 10-10-2023 and no list of later zoning ordinances was found (2026-11-26); final vote on Ord. 1-2026 (data center overlay) not found. Parking, density, cluster lot, minimum size, FP conditional use and guesthouse points remain."
     },
     {
       "geoid": "4207939792",
@@ -5297,8 +5297,8 @@
       "pop_rank": 409,
       "file": "pa_beaver_ambridge",
       "batch": 55,
-      "status": "drafted",
-      "checked_on": "2026-11-18",
+      "status": "verified",
+      "checked_on": "2026-11-26",
       "code_host": "ecode360",
       "code_url": "https://ecode360.com/15265289",
       "plain_fetch": null,
@@ -5307,7 +5307,7 @@
       "why": [
         "added as batch 55 by population. Code Chapter 310 has no ADU text (conversion apartments and multiple-family dwellings by right in R and C, 310-11)"
       ],
-      "status_note": "Open: code currency (eCode360 through 11-13-2018, Ord. Nos. 1314 and 1315 of 2019 not seen, council minutes from 2023 to 2026 that mention the zoning ordinance not readable), so the borough office must confirm Chapter 310 has not changed. Also open: whether a two-unit conversion apartment qualifies (310-3 calls it multifamily, more than two families, while an apartment house is two or more), C building area 50% (310-16 by 310-22A) against 70% (310-25), and whether the 140-24E accessory rules and the 140-23D top of bank bar reach a conversion inside an existing building. Not addressed. R permits conversion apartments and multiple-family dwellings by right (310-11B), and C takes the R uses (310-22A). A use not listed anywhere may be a conditional use in M (310-31)"
+      "status_note": "Verified 2026-11-26 after a second reading of the code text. Points the code does not settle stay in the file as disputed or secondary readings, to ask the zoning officer (provenance.notes)."
     },
     {
       "geoid": "4204576576",

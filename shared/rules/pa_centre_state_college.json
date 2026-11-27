@@ -52,7 +52,7 @@
       "Renting any dwelling unit needs a housing permit from the Code Official. In State College the threshold is 1 day (4-504b(3), amending Centre Region code 802.1)",
       "Short-term rental: allowed with a license in all zones. The apartment may be rented short term only if the owner or tenant lives in the main dwelling. Limit 120 days a year (10-901b, 10-906a and c)",
       "District permission for R-2 to UV comes through 'Any use permitted in' chains back to R-1. Confirm with the Planning Department",
-      "Parking is the one open reading: 2 or 4 spaces in total. Ask the Zoning Officer",
+      "Parking: 4 spaces in total (2 for each unit, 19-2403.c), reading the apartment unit as a second unit. The code has no row for the apartment use, so this is a secondary reading. Confirm with the Zoning Officer",
       "Undersized lot: lot area and width rules 'shall not be construed to prevent the erection of a single-family dwelling on any lot plotted of record' if yards are met (19-502.f(2)). The apartment text does not require a conforming lot. Ask the Zoning Officer"
     ],
     "notes": "Zoning office: Borough Planning Department. Rewrite page: https://www.statecollegepa.us/225/New-Zoning-Ordinance. Pending: a new comprehensive Zoning Ordinance and SALDO are in draft. A revised draft was posted for public review as of June 1, 2026, and Council meetings ran through Sep 9, 2026. A news report says Council may add ADU rules. Not adopted. Not law."
@@ -338,20 +338,20 @@
   },
   "parking": {
     "spaces_required": {
-      "value": null,
+      "value": 2,
+      "section": "19-2403.c, 19-201 'Dwelling Unit', 19-501.l(2)",
+      "url": "https://ecode360.com/32912666",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "19-2403.c: 'One- and Two-Family Dwellings: 2 spaces for each unit.' 19-201 defines a dwelling unit as rooms 'with exclusive cooking and sanitary facilities for one person or one family', and 19-501.l(2) calls the apartment an 'apartment unit', so the apartment is read as a second unit needing 2 more spaces. Reading checked 2026-11-26. 19-501.l(3) also asks for parking for all residents' vehicles. Confirm with the Zoning Officer."
+    },
+    "total_on_site": {
+      "value": 4,
       "section": "19-2403.c, 19-501.l(3)",
       "url": "https://ecode360.com/32912666",
-      "verified_on": "2026-11-11",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "Open reading. 'One- and Two-Family Dwellings: 2 spaces for each unit.' If the apartment is a unit, 2 more (4 in total). If the use stays one one-family dwelling, 0 more (2 in total). Plus parking for all residents' vehicles (19-501.l(3))."
-    },
-    "reading": {
-      "value": "2 spaces in total if the use stays one one-family dwelling, or 4 in total if the apartment counts as a second unit. Plus room for all residents' vehicles.",
-      "section": "19-2403.c and 19-501.l(3)",
-      "url": "https://ecode360.com/32912666",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary",
-      "note": "19-2403.c: 'One- and Two-Family Dwellings, 2 spaces for each unit'. No row for the apartment use. Ask the Zoning Officer."
+      "note": "2 spaces for the house plus 2 for the apartment unit (2 for each unit), and room for every vehicle the residents keep (19-501.l(3))."
     }
   },
   "utilities": {
@@ -412,12 +412,12 @@
         "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": null,
+        "value": 2,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
-        "verified_on": "2026-11-11",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
+        "note": "2 added spaces (4 in total), reading the apartment as a second unit under 19-2403.c ('2 spaces for each unit'). Secondary reading. See parking."
       }
     },
     "R-2": {
@@ -468,12 +468,12 @@
         "note": "25 ft, not exceeding two stories. Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": null,
+        "value": 2,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
-        "verified_on": "2026-11-11",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
+        "note": "2 added spaces (4 in total), reading the apartment as a second unit under 19-2403.c ('2 spaces for each unit'). Secondary reading. See parking."
       }
     },
     "R-3": {
@@ -524,12 +524,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": null,
+        "value": 2,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
-        "verified_on": "2026-11-11",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
+        "note": "2 added spaces (4 in total), reading the apartment as a second unit under 19-2403.c ('2 spaces for each unit'). Secondary reading. See parking."
       }
     },
     "R-3A": {
@@ -580,12 +580,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": null,
+        "value": 2,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
-        "verified_on": "2026-11-11",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
+        "note": "2 added spaces (4 in total), reading the apartment as a second unit under 19-2403.c ('2 spaces for each unit'). Secondary reading. See parking."
       }
     },
     "R-3B": {
@@ -635,12 +635,12 @@
         "note": "Accessory building: 15 ft, one story."
       },
       "parking_spaces": {
-        "value": null,
+        "value": 2,
         "section": "19-2403.c",
         "url": "https://ecode360.com/32912666",
-        "verified_on": "2026-11-11",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Open reading: 2 or 0 added spaces (4 or 2 in total). See parking."
+        "note": "2 added spaces (4 in total), reading the apartment as a second unit under 19-2403.c ('2 spaces for each unit'). Secondary reading. See parking."
       }
     }
   }

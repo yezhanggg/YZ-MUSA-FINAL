@@ -63,6 +63,13 @@ describe('unitVerdict on real lots', () => {
   it('assumes a height by stories and says so', () => {
     expect(unitVerdict(fixture('easy_fit'), cottage()).assumed).toContain('height 15 ft for 1 story');
     expect(unitVerdict(fixture('easy_fit'), cottage({ stories: 2 })).height_ft).toBe(25);
+    // The code's own story height, when lower, is used (as pipeline/fit.py); a higher one never raises the unit.
+    const own = fixture('easy_fit');
+    own.rules.today!.story_height_ft = { '1': 13, '2': 30 };
+    const v = unitVerdict(own, cottage());
+    expect(v.height_ft).toBe(13);
+    expect(v.assumed).toContain("height 13 ft for 1 story: the code's own figure");
+    expect(unitVerdict(own, cottage({ stories: 2 })).height_ft).toBe(25);
   });
 
   it('no fit: rowhouse yard has no room after setbacks', () => {

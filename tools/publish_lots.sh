@@ -10,8 +10,9 @@
 #
 # Output (LOT_HOST_DIR):
 #   README.md  .nojekyll  .gitignore
-#   lots/<place>/manifest.json  stats.json  lot_tract.json
-#   lots/<place>/detail/<GEOID>.json.gz  (+ <GEOID>.geom.json.gz, <GEOID>.pN.json.gz when the build split a tract)
+#   lots/<place>/manifest.json  stats.json  lot_tract.json.gz
+#   lots/<place>/detail/<GEOID>.json.gz  (+ <GEOID>.geom.json.gz, <GEOID>.pN.json.gz when the build split a tract),
+#                                         packed by tools/pack_lots.py (format pack1)
 #   lots/<place>/tiles/parcels.pmtiles  (when built; Allentown has none, the app treats it as optional)
 #   lots/<place>/tiles/lots.pmtiles  overview.pmtiles  (when built: "Show testable lots", app/build_lot_tiles.py)
 #   lots/<place>/tiles/terrain.pmtiles  (when built: terrarium raster-DEM tiles, tools/terrain_tiles.py)
@@ -70,7 +71,11 @@ mkdir -p "$OUT/lots"
 for p in $PLACES; do
   dst="$OUT/lots/$p"
   mkdir -p "$dst/detail" "$dst/tiles"
-  cp "$SRC/$p/stats.json" "$SRC/$p/lot_tract.json" "$dst/"
+  cp "$SRC/$p/stats.json" "$dst/"
+  # lot id -> tract, gzipped (the app reads the name from manifest.json "published"). The plain copy is not published.
+  python3 -c 'import gzip,sys; open(sys.argv[2],"wb").write(gzip.compress(open(sys.argv[1],"rb").read(),9,mtime=0))' \
+    "$SRC/$p/lot_tract.json" "$dst/lot_tract.json.gz"
+  rm -f "$dst/lot_tract.json"
   rm -rf "$dst/addresses"
   if [ -f "$SRC/$p/addresses/index.json.gz" ]; then
     cp -R "$SRC/$p/addresses" "$dst/addresses"
@@ -80,12 +85,18 @@ for p in $PLACES; do
 done
 
 # Tract files: the head file and its split parts, with the sale and assessment facts left out (the app and the
-# assistant never read them; see PUBLIC_DROP). Same gzip level as the build (6), no timestamp. Tracts that are gone
-# from the build are removed. The drive files are not changed.
-python3 - "$SRC" "$OUT/lots" $PLACES <<'PY'
+# assistant never read them; see PUBLIC_DROP), packed by tools/pack_lots.py (repeats gzip cannot reach, undone in
+# the browser by unpackRecords in app/src/lib/lot/load.ts) and gzipped at level 9, no timestamp. Every packed file is
+# unpacked again and compared with the stripped record text before it is written. Geometry files are copied as is.
+# Tracts that are gone from the build are removed. The drive files are not changed. LOT_PUBLISH_WORKERS processes.
+python3 - "$SRC" "$OUT/lots" "$REPO/tools" $PLACES <<'PY'
 import gzip, json, os, shutil, sys
+from multiprocessing import get_context
 
-src, out, places = sys.argv[1], sys.argv[2], sys.argv[3:]
+src, out, tools, places = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4:]
+sys.path.insert(0, tools)
+import pack_lots  # noqa: E402
+
 # Facts that stay on the drive and never go out: assessed value and the last sale (date and price).
 PUBLIC_DROP = ("assessed_value", "last_sale_date", "last_sale_price")
 
@@ -100,28 +111,37 @@ def strip(doc):
                     n += 1
     return n
 
+def text(doc):
+    return json.dumps(doc, separators=(",", ":"), ensure_ascii=False)
+
+def one(job):
+    s, d = job
+    if d.endswith(".geom.json.gz"):  # geometry only, no facts, not packed
+        shutil.copyfile(s, d)
+        return 0, os.path.getsize(s), os.path.getsize(d)
+    with gzip.open(s, "rb") as f:
+        doc = json.loads(f.read())
+    n = strip(doc)
+    want = text(doc)
+    body = text(pack_lots.pack(doc))
+    if text(pack_lots.unpack(json.loads(body))) != want:
+        raise SystemExit(f"{s}: packed file does not unpack to the same records")
+    tmp = d + ".tmp"
+    with open(tmp, "wb") as f:
+        f.write(gzip.compress(body.encode(), compresslevel=9, mtime=0))
+    os.replace(tmp, d)
+    return n, os.path.getsize(s), os.path.getsize(d)
+
+workers = int(os.environ.get("LOT_PUBLISH_WORKERS") or max(1, (os.cpu_count() or 2) - 1))
 for p in places:
     sdir, ddir = f"{src}/{p}/detail", f"{out}/{p}/detail"
     names = sorted(f for f in os.listdir(sdir) if f.endswith(".json.gz"))
-    dropped = 0
-    for name in names:
-        s, d = f"{sdir}/{name}", f"{ddir}/{name}"
-        if name.endswith(".geom.json.gz"):  # geometry only, no facts
-            shutil.copyfile(s, d)
-            continue
-        with gzip.open(s, "rb") as f:
-            raw = f.read()
-        doc = json.loads(raw)
-        n = strip(doc)
-        dropped += n
-        body = json.dumps(doc, separators=(",", ":"), ensure_ascii=False).encode() if n else raw
-        tmp = d + ".tmp"
-        with open(tmp, "wb") as f:
-            f.write(gzip.compress(body, compresslevel=6, mtime=0))
-        os.replace(tmp, d)
+    with get_context("fork").Pool(workers) as pool:  # fork: this script comes from stdin
+        res = pool.map(one, [(f"{sdir}/{n}", f"{ddir}/{n}") for n in names], chunksize=1)
     for name in set(os.listdir(ddir)) - set(names):
         os.remove(f"{ddir}/{name}")
-    print(f"{p}: {len(names)} tract files, {dropped:,} sale and assessment values left out")
+    dropped, before, after = (sum(r[i] for r in res) for i in range(3))
+    print(f"{p}: {len(names)} tract files, {dropped:,} sale and assessment values left out, {before / 1e6:.1f} -> {after / 1e6:.1f} MB packed")
 PY
 
 # manifest.json and the PMTiles metadata carry absolute paths of the build machine. Keep file names only.
@@ -185,6 +205,8 @@ def pmtiles_scrub(src_file, dst_file):
 for p in places:
     with open(f"{src}/{p}/manifest.json") as f:
         m = scrub(json.load(f))
+    # What the published copy differs in, for the app (app/src/lib/lot/load.ts).
+    m["published"] = {"lot_tract": "lot_tract.json.gz", "pack": "pack1"}
     with open(f"{out}/{p}/manifest.json", "w") as f:
         json.dump(m, f, indent=1)
         f.write("\n")
@@ -224,8 +246,8 @@ survey lines. Check every answer with the city before you build.
 ```
 lots/<place>/manifest.json            data version, build date, counts
 lots/<place>/stats.json               city-wide shares per scenario
-lots/<place>/lot_tract.json           lot id to census tract
-lots/<place>/detail/<GEOID>.json.gz   lot records of one census tract (gzip JSON)
+lots/<place>/lot_tract.json.gz        lot id to census tract (gzip JSON)
+lots/<place>/detail/<GEOID>.json.gz   lot records of one census tract (gzip JSON, packed: see below)
 lots/<place>/detail/<GEOID>.geom.json.gz   geometry of a large tract, split out
 lots/<place>/tiles/parcels.pmtiles    parcel outlines, read by byte range
 lots/<place>/tiles/lots.pmtiles       the same outlines with each lot's answer per scenario and unit type
@@ -236,6 +258,10 @@ lots/<place>/addresses/shards/<key>.json.gz   house number, lot id, tract and to
 ```
 
 The `.json.gz` files are served as plain gzip bytes. The app decompresses them in the browser.
+
+The tract files are packed (`"pack": "pack1"`): a scenario, or a part of one, that is the same as an earlier
+scenario is stored as `{{"$same": "<scenario>"}}`, and the long `quality` values are stored once per file in `shared`
+and referred to as `{{"$ref": i}}`. `tools/pack_lots.py` in the app repository packs and unpacks them.
 
 Each record holds the lot outline, the address, buildings, land cover, zoning, the rules per scenario, the fit
 result and a few public facts about the house (year built, living area, stories, ZIP code). No owner names. No

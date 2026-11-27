@@ -210,6 +210,8 @@ class FitResult:
     assumed: list[str] = field(default_factory=list)
     largest_if_cleared_sqft: float | None = None
     second: FitResult | None = None
+    # Detached only: the largest rectangle when the only room is in front of the house. Never a fit.
+    front_only_sqft: float | None = None
 
     def to_dict(self, geom: Any = None) -> dict[str, Any]:
         """Plain dict for JSON. `geom` converts a polygon (for example to WGS84 GeoJSON)."""
@@ -234,6 +236,7 @@ class FitResult:
             "warnings": list(self.warnings),
             "assumed": list(self.assumed),
             "second": self.second.to_dict(geom) if self.second else None,
+            **({"front_only_sqft": round(self.front_only_sqft)} if self.front_only_sqft else {}),
         }
 
 
@@ -824,6 +827,8 @@ def front_yard(lot: LotShape, house: BaseGeometry) -> BaseGeometry:
     return front.buffer(d, quad_segs=4)
 
 
+FRONT_ONLY_NOTE = "only room is in front of the house, which the code does not allow: not counted as a fit"
+
 # Checks that are not about this one unit's size. They decide the answer before anything else.
 FIRST_CHECKS = ("allowed", "type_allowed", "min_lot_size")
 NOTES = {
@@ -948,28 +953,30 @@ def _fit_detached(
     min_side = float(want.get("min_side_ft", MIN_SIDE_FT))
     aspect = float(want.get("max_aspect", MAX_ASPECT))
     height = float(want.get("height_ft", STORY_HEIGHT_FT.get(stories, 10.0 * stories + 5.0)))
-    if "height_ft" not in want:
+    code_story = (rules.get("story_height_ft") or {}).get(stories)
+    if "height_ft" not in want and code_story is not None and float(code_story) < height:
+        # The code's own height for this story count (Upper Dublin 255-27E(1)(e): 13 ft for one story).
+        height = float(code_story)
+        assumed.append(f"height {height:g} ft for {stories} story: the code's own figure for that story count")
+    elif "height_ft" not in want:
         assumed.append(f"height {height:.0f} ft for {stories} story")
     b = buildable_area(lot, buildings, rules)
     angles = [lot.edges.front_angle_deg + o for o in ANGLE_OFFSETS]
     house = _union([x.polygon for x in buildings if x.role == "main"])
     smallest_unit = max(float(rules["min_size_sqft"] or 0.0) / stories, min_side * min_side)
-    # Most codes keep accessory buildings out of the front yard. Look behind the house first and
-    # use the front yard only when nothing fits behind.
+    # Most codes keep accessory buildings out of the front yard, and no rule file allows one there.
+    # The unit goes behind the house. Room only in front is kept apart (front_only_sqft) and never fits.
     zone = front_yard(lot, house)
     keep, clear = b.keep, b.clear
-    rect = None
+    front_only = 0.0
     if not zone.is_empty:
-        behind = _polygons_only(b.keep.difference(zone))
-        rect = largest_rectangle(behind, min_side, min_side, angles, aspect)
-        if rect is not None and rect.area_sqft >= smallest_unit - 1e-6:
-            keep, clear = behind, _polygons_only(b.clear.difference(zone))
-        else:
-            rect = None
-    if rect is None:
-        rect = largest_rectangle(keep, min_side, min_side, angles, aspect)
-        if not zone.is_empty and rect is not None:
-            assumed.append("only room is in front of the house: most codes do not allow that")
+        keep, clear = _polygons_only(b.keep.difference(zone)), _polygons_only(b.clear.difference(zone))
+    rect = largest_rectangle(keep, min_side, min_side, angles, aspect)
+    if not zone.is_empty and (rect is None or rect.area_sqft < smallest_unit - 1e-6):
+        whole = largest_rectangle(b.keep, min_side, min_side, angles, aspect)
+        if whole is not None and whole.area_sqft >= smallest_unit - 1e-6:
+            front_only = whole.area_sqft
+            assumed.append(FRONT_ONLY_NOTE)
     rect_clear = rect if b.soft.is_empty else largest_rectangle(clear, min_side, min_side, angles, aspect)
     room = rect.area_sqft if rect else 0.0
 
@@ -997,7 +1004,12 @@ def _fit_detached(
 
     failed = _first_failure(checks)
     if spot is None:
-        if room <= 0:
+        if front_only > 0 and room < smallest:
+            limiting, note = (
+                "no_room",
+                f"the only room ({front_only:.0f} sq ft) is in front of the house, which the code does not allow",
+            )
+        elif room <= 0:
             limiting, note = "no_room", "no room in the yard after setbacks and separation"
         elif room < smallest:
             limiting, note = "no_room", f"the largest open rectangle is {room:.0f} sq ft, too small for a unit"
@@ -1021,6 +1033,7 @@ def _fit_detached(
         note=note,
         warnings=_fire_warning(spot.polygon if spot else None, lot),
         largest_if_cleared_sqft=rect_clear.area_sqft if rect_clear else 0.0,
+        front_only_sqft=front_only or None,
     )
     if rect_clear is not None and rect_clear.area_sqft > room + 1.0:
         res.warnings.append(f"room for {rect_clear.area_sqft:.0f} sq ft if the shed or trees go")

@@ -4,7 +4,7 @@
     "instrument": "Maidencreek Township Zoning Ordinance of 2017 (Chapter 220 Zoning, Ord. No. 243 of 3-27-2017, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 MA2839, Township of Maidencreek, Berks County (220-11 'Board of Supervisors'). District use lists and lot, yard and height figures are text in Articles IV to XV. The Table of Uses is a PDF attachment that 'shall not change, supersede or modify in any way the actual text' (220-125), so it was not opened. Floodplain rules are in Chapter 117. New Laws: Ord. No. 262 (Environmental Advisory Council), not on zoning",
+    "status_detail": "eCode360 MA2839, Township of Maidencreek, Berks County (220-11 'Board of Supervisors'). District use lists and lot, yard and height figures are text in Articles IV to XV. The Table of Uses is a PDF attachment that 'shall not change, supersede or modify in any way the actual text' (220-125), so it was not opened. Floodplain rules are in Chapter 117. New Laws: Ord. No. 262 (Environmental Advisory Council), not on zoning New Laws on 2026-11-26 also list Ord. No. 263 (2026-11-12, Chapter 220), read in full: it adds data centers, data center equipment and accessory uses as a use in the I district (220-11, 220-48, new 220-81.1). It does not touch dwellings or in-law quarters.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/MA2839",
@@ -39,9 +39,12 @@
       "https://ecode360.com/32226858",
       "https://ecode360.com/print/MA2839?guid=6352283",
       "https://ecode360.com/MA2839/search?query=%22in-law%22%20OR%20%22accessory%20apartment%22%20OR%20%22accessory%20dwelling%22%20OR%20%22second%20dwelling%22%20OR%20ECHO%20OR%20caretaker%20OR%20%22living%20quarters%22%20OR%20%22guest%20house%22%20OR%20%22garage%20apartment%22%20OR%20%22extended%20family%22%20OR%20%22household%20employee%22%20OR%20conversion%20OR%20servant%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/MA2839/search?query=%22two-family%20conversions%22%20OR%20%22dwelling%20unit%22%20OR%20%22family%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/MA2839/search?query=%22two-family%20conversions%22%20OR%20%22dwelling%20unit%22%20OR%20%22family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/MA2839/laws/LF2909313.pdf",
+      "https://ecode360.com/attachment/307623/MA2839-220b%20Table%20of%20Uses.pdf",
+      "https://ecode360.com/print/MA2839?guid=11752776"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Berks",
     "municipality_type": "township",
     "geoid": "4201146680",
@@ -66,7 +69,8 @@
       "No use variance bar was found. The Zoning Hearing Board decides variances on the hardship findings of 220-119F",
       "Wetlands and hydric soils: a subdivision or land development must keep a 50 ft buffer from hydric soils and wetlands, with no earth disturbance in it (220-59B(3))"
     ],
-    "notes": "Zoning office: Maidencreek Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles IV to XV (C-1 area figures, C-2 design standards and I and SIA area figures skimmed), 220-55 to 220-61, 220-83, 220-84, Articles XVII, XIX and XX, 220-111, 220-11 from 'Access drive' to 'Impervious surface coverage' and the definitions of in-law quarters and two-family conversions, Chapter 117 to 117-34 'Flood', the New Laws and Notes pages and code searches. Not read: 220-62 to 220-82, 220-85 to 220-102 (220-71 planned residential developments, 220-87 agricultural use rules), the rest of Article XVIII, the rest of 220-11, Chapter 190 and the Table of Uses (PDF). Also cited from a later reading of the same code: 220-11 'Unit of use' and 'Land development', 220-19, 220-58C(2), 220-59B(3), 117-22E(1) and 117-34 'Development'."
+    "notes": "Zoning office: Maidencreek Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles IV to XV (C-1 area figures, C-2 design standards and I and SIA area figures skimmed), 220-55 to 220-61, 220-83, 220-84, Articles XVII, XIX and XX, 220-111, 220-11 from 'Access drive' to 'Impervious surface coverage' and the definitions of in-law quarters and two-family conversions, Chapter 117 to 117-34 'Flood', the New Laws and Notes pages and code searches. Not read: 220-62 to 220-82, 220-85 to 220-102 (220-71 planned residential developments, 220-87 agricultural use rules), the rest of Article XVIII, the rest of 220-11, Chapter 190 and the Table of Uses (PDF). Also cited from a later reading of the same code: 220-11 'Unit of use' and 'Land development', 220-19, 220-58C(2), 220-59B(3), 117-22E(1) and 117-34 'Development'. Second review, 2026-11-26: Ord. No. 263 and the Table of Uses (PDF) read; the table marks in-law quarters 'C' in AP, R-1 and R-2 only, as the district text does. The whole chapter was read in one print view and searched by section for in-law, accessory dwelling, apartment, conversion, second dwelling, caretaker, tenant house, guest house, ECHO, elder and farm employee housing: no listing beyond 220-16, 220-22, 220-25, 220-83 and the I caretaker unit (220-48, 220-58C(2)). Left for a later check, shown as conditions or disputed readings: whether in-law quarters count toward the AP sliding scale (220-17A), whether 220-83A ties the quarters to a lot that meets the district minimum and maximum, the 'unit of use' lot area for a two-family dwelling, which AP column the coverage figures belong to (220-17B(3)), and R-1 figures that the code gives only for on-site water or sewage (220-23A).",
+    "code_caution": "Ord. No. 263 (2026-11-12, data centers in the I district) is not yet in the online code. It changes no rule below."
   },
   "adu": {
     "term": {

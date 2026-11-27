@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated": "2026-11-11",
-  "code_hash": "f0f7ae8c9fc7",
+  "generated": "2026-11-26",
+  "code_hash": "4709e20272c0",
   "n": 50,
   "tolerance": {
    "area_rel": 0.01,
@@ -164,8 +164,8 @@
     "today": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 432.7,
-     "buildable_clear_sqft": 432.7,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -177,9 +177,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 230,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -207,8 +207,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 432.7,
-     "buildable_clear_sqft": 432.7,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -220,9 +220,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 230,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -250,8 +250,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 461.3,
-     "buildable_clear_sqft": 461.3,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -263,9 +263,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": true,
-       "largest_sqft": 245,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -1433,8 +1433,8 @@
     "today": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 190.0,
-     "buildable_clear_sqft": 190.0,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1476,8 +1476,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 190.0,
-     "buildable_clear_sqft": 190.0,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1519,8 +1519,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 218.9,
-     "buildable_clear_sqft": 218.9,
+     "buildable_keep_sqft": 235.3,
+     "buildable_clear_sqft": 235.3,
      "types": {
       "attached": {
        "allowed": true,
@@ -1574,8 +1574,8 @@
     "today": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 891.5,
-     "buildable_clear_sqft": 891.5,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1587,9 +1587,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 881,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -1617,8 +1617,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 891.5,
-     "buildable_clear_sqft": 891.5,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1630,9 +1630,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 881,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -1660,8 +1660,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 891.5,
-     "buildable_clear_sqft": 891.5,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1673,9 +1673,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": true,
-       "largest_sqft": 881,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -1801,8 +1801,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 227.7,
-     "buildable_clear_sqft": 227.7,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -1814,9 +1814,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": true,
-       "largest_sqft": 211,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -1997,8 +1997,8 @@
     "today": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 430.2,
-     "buildable_clear_sqft": 430.2,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -2010,9 +2010,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 424,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -2040,8 +2040,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 430.2,
-     "buildable_clear_sqft": 430.2,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -2053,9 +2053,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 424,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -2083,8 +2083,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 430.2,
-     "buildable_clear_sqft": 430.2,
+     "buildable_keep_sqft": 0.0,
+     "buildable_clear_sqft": 0.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -2096,9 +2096,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": true,
-       "largest_sqft": 424,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": true,
@@ -2647,8 +2647,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 0.0,
-     "buildable_clear_sqft": 0.0,
+     "buildable_keep_sqft": 0.1,
+     "buildable_clear_sqft": 0.1,
      "types": {
       "attached": {
        "allowed": true,
@@ -2702,8 +2702,8 @@
     "today": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 626.1,
-     "buildable_clear_sqft": 626.1,
+     "buildable_keep_sqft": 0.8,
+     "buildable_clear_sqft": 0.8,
      "types": {
       "attached": {
        "allowed": true,
@@ -2715,9 +2715,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 592,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -2745,8 +2745,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 626.1,
-     "buildable_clear_sqft": 626.1,
+     "buildable_keep_sqft": 0.8,
+     "buildable_clear_sqft": 0.8,
      "types": {
       "attached": {
        "allowed": true,
@@ -2758,9 +2758,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "administrator_exception",
-       "fits": true,
-       "largest_sqft": 592,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -2788,8 +2788,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 626.1,
-     "buildable_clear_sqft": 626.1,
+     "buildable_keep_sqft": 0.8,
+     "buildable_clear_sqft": 0.8,
      "types": {
       "attached": {
        "allowed": true,
@@ -2801,9 +2801,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": true,
-       "largest_sqft": 592,
-       "limiting": "yard_space"
+       "fits": false,
+       "largest_sqft": 0,
+       "limiting": "no_room"
       },
       "garage_conversion": {
        "allowed": false,
@@ -4958,8 +4958,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 140.0,
-     "buildable_clear_sqft": 140.0,
+     "buildable_keep_sqft": 850.0,
+     "buildable_clear_sqft": 850.0,
      "types": {
       "attached": {
        "allowed": false,
@@ -4972,7 +4972,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 0,
+       "largest_sqft": 800,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -5001,8 +5001,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 140.0,
-     "buildable_clear_sqft": 140.0,
+     "buildable_keep_sqft": 850.0,
+     "buildable_clear_sqft": 850.0,
      "types": {
       "attached": {
        "allowed": false,
@@ -5015,7 +5015,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 0,
+       "largest_sqft": 844,
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
@@ -5044,8 +5044,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 189.0,
-     "buildable_clear_sqft": 189.0,
+     "buildable_keep_sqft": 850.0,
+     "buildable_clear_sqft": 850.0,
      "types": {
       "attached": {
        "allowed": true,
@@ -5057,9 +5057,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": false,
-       "largest_sqft": 0,
-       "limiting": "no_room"
+       "fits": true,
+       "largest_sqft": 844,
+       "limiting": "yard_space"
       },
       "garage_conversion": {
        "allowed": false,
@@ -5240,8 +5240,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 1048.9,
-     "buildable_clear_sqft": 1048.9,
+     "buildable_keep_sqft": 1526.2,
+     "buildable_clear_sqft": 1526.2,
      "types": {
       "attached": {
        "allowed": false,
@@ -5254,7 +5254,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 537,
+       "largest_sqft": 800,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -5283,8 +5283,8 @@
     "local_reform": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 1048.9,
-     "buildable_clear_sqft": 1048.9,
+     "buildable_keep_sqft": 1526.2,
+     "buildable_clear_sqft": 1526.2,
      "types": {
       "attached": {
        "allowed": false,
@@ -5297,7 +5297,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 537,
+       "largest_sqft": 995,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -5326,8 +5326,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 1139.9,
-     "buildable_clear_sqft": 1139.9,
+     "buildable_keep_sqft": 1526.2,
+     "buildable_clear_sqft": 1526.2,
      "types": {
       "attached": {
        "allowed": true,
@@ -5340,8 +5340,8 @@
        "allowed": true,
        "approval": "by_right",
        "fits": true,
-       "largest_sqft": 624,
-       "limiting": "yard_space"
+       "largest_sqft": 800,
+       "limiting": "size_cap"
       },
       "garage_conversion": {
        "allowed": true,
@@ -5522,8 +5522,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 901.5,
-     "buildable_clear_sqft": 901.5,
+     "buildable_keep_sqft": 1015.4,
+     "buildable_clear_sqft": 1015.4,
      "types": {
       "attached": {
        "allowed": false,
@@ -5536,7 +5536,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 800,
+       "largest_sqft": 219,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -5565,8 +5565,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 901.5,
-     "buildable_clear_sqft": 901.5,
+     "buildable_keep_sqft": 1015.4,
+     "buildable_clear_sqft": 1015.4,
      "types": {
       "attached": {
        "allowed": false,
@@ -5579,7 +5579,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 880,
+       "largest_sqft": 219,
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
@@ -5608,8 +5608,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 994.2,
-     "buildable_clear_sqft": 994.2,
+     "buildable_keep_sqft": 1317.6,
+     "buildable_clear_sqft": 1317.6,
      "types": {
       "attached": {
        "allowed": true,
@@ -6086,8 +6086,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 0.0,
-     "buildable_clear_sqft": 0.0,
+     "buildable_keep_sqft": 49.1,
+     "buildable_clear_sqft": 49.1,
      "types": {
       "attached": {
        "allowed": false,
@@ -6129,8 +6129,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 0.0,
-     "buildable_clear_sqft": 0.0,
+     "buildable_keep_sqft": 49.1,
+     "buildable_clear_sqft": 49.1,
      "types": {
       "attached": {
        "allowed": false,
@@ -6172,8 +6172,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 0.0,
-     "buildable_clear_sqft": 0.0,
+     "buildable_keep_sqft": 49.1,
+     "buildable_clear_sqft": 49.1,
      "types": {
       "attached": {
        "allowed": true,
@@ -6368,8 +6368,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 480.5,
-     "buildable_clear_sqft": 480.5,
+     "buildable_keep_sqft": 801.3,
+     "buildable_clear_sqft": 801.3,
      "types": {
       "attached": {
        "allowed": false,
@@ -6382,7 +6382,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 0,
+       "largest_sqft": 189,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -6411,8 +6411,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 480.5,
-     "buildable_clear_sqft": 480.5,
+     "buildable_keep_sqft": 801.3,
+     "buildable_clear_sqft": 801.3,
      "types": {
       "attached": {
        "allowed": false,
@@ -6425,7 +6425,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 0,
+       "largest_sqft": 189,
        "limiting": "type_not_allowed"
       },
       "garage_conversion": {
@@ -6454,8 +6454,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 569.3,
-     "buildable_clear_sqft": 569.3,
+     "buildable_keep_sqft": 876.6,
+     "buildable_clear_sqft": 876.6,
      "types": {
       "attached": {
        "allowed": true,
@@ -6467,9 +6467,9 @@
       "detached_new": {
        "allowed": true,
        "approval": "by_right",
-       "fits": false,
-       "largest_sqft": 0,
-       "limiting": "no_room"
+       "fits": true,
+       "largest_sqft": 254,
+       "limiting": "yard_space"
       },
       "garage_conversion": {
        "allowed": false,
@@ -6509,8 +6509,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 267.7,
-     "buildable_clear_sqft": 267.7,
+     "buildable_keep_sqft": 53.0,
+     "buildable_clear_sqft": 53.0,
      "types": {
       "attached": {
        "allowed": false,
@@ -6523,7 +6523,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 187,
+       "largest_sqft": 0,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -6552,8 +6552,8 @@
     "local_reform": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 267.7,
-     "buildable_clear_sqft": 267.7,
+     "buildable_keep_sqft": 53.0,
+     "buildable_clear_sqft": 53.0,
      "types": {
       "attached": {
        "allowed": false,
@@ -6566,7 +6566,7 @@
        "allowed": false,
        "approval": "variance",
        "fits": false,
-       "largest_sqft": 187,
+       "largest_sqft": 0,
        "limiting": "not_allowed"
       },
       "garage_conversion": {
@@ -6932,8 +6932,8 @@
     "today": {
      "allowed": false,
      "approval_path": "variance",
-     "buildable_keep_sqft": 15.7,
-     "buildable_clear_sqft": 15.7,
+     "buildable_keep_sqft": 112.4,
+     "buildable_clear_sqft": 112.4,
      "types": {
       "attached": {
        "allowed": false,
@@ -6975,8 +6975,8 @@
     "local_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 15.7,
-     "buildable_clear_sqft": 15.7,
+     "buildable_keep_sqft": 112.4,
+     "buildable_clear_sqft": 112.4,
      "types": {
       "attached": {
        "allowed": false,
@@ -7018,8 +7018,8 @@
     "state_reform": {
      "allowed": true,
      "approval_path": "by_right",
-     "buildable_keep_sqft": 31.0,
-     "buildable_clear_sqft": 31.0,
+     "buildable_keep_sqft": 112.4,
+     "buildable_clear_sqft": 112.4,
      "types": {
       "attached": {
        "allowed": true,

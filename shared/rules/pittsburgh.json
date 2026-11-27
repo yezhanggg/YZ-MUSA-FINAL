@@ -389,9 +389,9 @@
           "applies_by": "The mapped UM-O district.",
           "exempt": "None. A single-unit dwelling or a comparable structure is approved with evidence of more than 100 ft of overburden and no known subsidence history (906.05.B.2).",
           "adds": "Mine information from the PA Department of Environmental Protection, Bureau of Mining and Reclamation (B.1). Otherwise a site investigation by a registered professional, and Building Inspection approval of plans where it recommends special construction (B.3, B.4).",
-          "area_on_lot_data": false,
-          "area_layer": "Not in the lot files. Needed: the City of Pittsburgh UM-O Undermined Area Overlay boundary from the city zoning map (City Planning GIS, the same ArcGIS Online organization as PGHWebLandslideProne). It is not in PGHWebZoningOverlays, which the lots use. A stand-in is the PA DEP mine subsidence or abandoned mine land layers on PASDA, which are not the overlay.",
-          "note": "The resolver says this row only when a lot carries undermined_area true. No Pittsburgh lot does today."
+          "area_on_lot_data": true,
+          "area_layer": "City of Pittsburgh Undermined Areas (PGHWebUndermined, 47 polygons, 15.2 sq mi), the layer the city's Pittsburgh Zoning Map web map lists under Environment next to Landslide Prone. A lot is flagged when at least 25% of it is inside (assumption lots.flag.undermined_min_share).",
+          "note": "Lot data 12 (Nov 26): 32,865 of 92,081 Pittsburgh lots (35.7%) carry zoning.flags.undermined true. The resolver says this row only for those lots. It is a condition, never a bar, so it changes the next steps, not the fit or legal shares. The layer is coarse; the zoning officer decides whether a lot is in the overlay."
         }
       ],
       "section": "915.02 and 906.04, 906.05, 906.08",

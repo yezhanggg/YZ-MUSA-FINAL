@@ -4,7 +4,7 @@
     "instrument": "Limerick Township Code Chapter 184 Zoning (Ord. No. 146, 9-29-1992, readopted 10-26-2006 by Ord. No. 269, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2026-03-03 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 438, adopted 2026-07-07, 'Zoning Amendment', Ch 184, PDF only, not opened and not yet in the online text. 184-71 was last amended 6-3-2025 by Ord. No. 434.",
+    "status_detail": "eCode360 code date 2026-03-03 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 438, adopted 2026-07-07, 'Zoning Amendment', Ch 184, PDF read on 2026-11-26: it amends 184-10 definitions, the LLI data center overlay option (184-163.2), the logistics center overlay conditional use (184-246), data center standards (184-76.7) and industrial performance standards (184-83). It has no dwelling or residential district text. 184-71 was last amended 6-3-2025 by Ord. No. 434.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11206587",
@@ -23,9 +23,12 @@
       "https://ecode360.com/LI1176/search?query=%22accessory%20dwelling%22%20OR%20relative%20OR%20relatives%20OR%20%22second%20dwelling%22%20OR%20%22two-family%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/LI1176/search?query=%22temporary%20unit%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/LI1176/search?query=%22184-71%22%20AND%20%22single-family%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/LI1176/search?query=%22residential%20conversions%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/LI1176/search?query=%22residential%20conversions%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+      "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+      "https://ecode360.com/LI1176/laws/LF2744631.pdf"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "township",
     "geoid": "4209143312",
@@ -33,7 +36,6 @@
     "code_url": "https://ecode360.com/11206587",
     "code_current_through": "2026-03-03",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-03-03'. Ord. No. 438 (2026-07-07, zoning) is listed under New Laws and not yet codified.",
-    "code_caution": "A zoning amendment, Ord. No. 438, was adopted on 2026-07-07 and is not yet in the online code. It was not read, so it may change these rules. Ask the Township.",
     "checks": [
       "A 'temporary unit for relative' is a permitted accessory use to a single-family dwelling wherever the district allows accessory uses under 184-71: R-1, R-2, R-3, R-4, R-5 and individual lots in MHP (184-71B(6), 184-98C, 184-104C, 184-108E, 184-112F, 184-117E, 184-122)",
       "The unit must be totally enclosed within the house, with an internal connection and access through the main unit. Detached temporary dwellings are prohibited (184-71B(6)(a), (c), (i), (j))",
@@ -42,14 +44,14 @@
       "With an on-lot septic system, the County Health Department must find it adequate for the added use (184-71B(6)(f))",
       "An addition for the unit must keep the look of a single-family detached house from the street and neighbors (184-71B(6)(g))",
       "A single-family detached house may be converted into a dwelling for more families by special exception: each unit at least 500 sq ft, the lot area per unit not below the district requirement, no outside change except for safety (184-70)",
-      "R-4 and R-5 lot and yard figures are in PDF attachments that were not read. Tracts under 10 acres there follow the R-3 rules (184-114A, 184-119A)",
+      "R-4 and R-5 lot and yard figures come from the district charts (184 Attachments 1 and 2). Tracts under 10 acres, and lots on both on-site water and on-site sewage, follow the R-3 rules (184-114A, B, 184-119A, B)",
       "VC permits a single-family detached village house, but its use list does not refer to the 184-71 accessory uses, and a lot without public water or sewer may hold only one dwelling unit (184-129R, 184-131). Ask the Zoning Officer whether the unit is allowed there",
       "HC permits one residential use per lot, either one apartment or one single-family detached unit, so a second unit is not permitted there (184-139A(16))",
       "In VC a twin or duplex is permitted (5,000 sq ft per unit with public sewer and water), and an existing single-family house may be converted to at most four apartments with 2,000 sq ft of lot per unit, keeping the front facade (184-129S, V, 184-133A)",
       "Parking: 2 spaces per dwelling unit for a single-family dwelling. Other dwellings: 1 per studio unit, 2 per other unit (184-87)",
       "On lots under 3 acres no accessory building in the front yard or between the house and the street (184-71C(1))"
     ],
-    "notes": "Zoning office: Limerick Township (limerickpa.org). Read on eCode360 (LI1176) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4 and R-5. A code search for '184-71' with 'single-family' also returned the MHP sections (snippets only). The VC and HC use lists were read. The MS, O/LI, LLI, HI, HI/E and RB use lists were not read. The R-4 and R-5 development standards (Attachments 1 and 2) are PDF only and were not opened. Parking (184-87) was read."
+    "notes": "Zoning office: Limerick Township (limerickpa.org). Read on eCode360 (LI1176) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4 and R-5. A code search for '184-71' with 'single-family' also returned the MHP sections (read in full on 2026-11-26: 184-122C permits accessory structures on individual lots as specified in 184-71). The VC and HC use lists were read. The MS, O/LI, LLI, HI, HI/E and RB use lists were not read. The R-4 and R-5 development standards (Attachments 1 and 2) were read on 2026-11-26 and fill the district rows. Parking (184-87) was read. Second reading 2026-11-26 (G0): 184-71B(6) read again in the chapter print view (enclosed in the principal building, owner-occupied, internal connection, recorded covenant with removal of cooking facilities, annual permit renewal). Ord. No. 438 (2026-07-07) PDF read: data center and industrial standards only. R-4 and R-5 charts (184 Attachments 1 and 2) read and stored. MHP 184-122A and C read in full. Left as a dispute the code does not settle: whether the unit adds parking under 184-87 (2 more, 1 for a studio, or none as the covenant keeps one dwelling), held as secondary. Later check: the MS, O/LI, LLI, HI, HI/E and RB use lists (no single-family dwelling use expected)."
   },
   "adu": {
     "term": {
@@ -110,7 +112,7 @@
       "url": "https://ecode360.com/print/LI1176?guid=11207372",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "184-71 names no district. The rule reaches a principal single-family dwelling where the district permits it with accessory uses under 184-71. MHP from search snippets only. HC allows one residential use per lot (184-139A(16)). VC permits a village house (184-129R) but its use list does not name the 184-71 accessory uses, so it is left out of both lists and reads as ask."
+      "note": "184-71 names no district. The rule reaches a principal single-family dwelling where the district permits it with accessory uses under 184-71. MHP: 184-122A permits conventionally built single-family detached homes (up to 40% of park units) and 184-122C applies 184-71 on individual lots (read 2026-11-26). HC allows one residential use per lot (184-139A(16)). VC permits a village house (184-129R) but its use list does not name the 184-71 accessory uses, so it is left out of both lists and reads as ask."
     }
   },
   "approval": {
@@ -213,7 +215,7 @@
           "section": "184-112B, 184-114A, 184-117B, 184-119A, 184-110C",
           "url": "https://ecode360.com/print/LI1176?guid=11207971",
           "confidence": "secondary",
-          "note": "The R-4 and R-5 lot figures are in PDF attachments that were not read."
+          "note": "The R-4 and R-5 lot figures are in the district rows (184 Attachments 1 and 2, read 2026-11-26)."
         }
       ],
       "section": "184-70, 184-112, 184-129",
@@ -658,22 +660,80 @@
     },
     "R-4": {
       "min_lot_sqft": {
-        "value": null,
-        "section": "184-114, 184-115",
-        "url": "https://ecode360.com/print/LI1176?guid=11207971",
-        "verified_on": null,
-        "confidence": "unverified",
-        "note": "The R-4 development standards are in a PDF attachment that was not read. Tracts under 10 acres follow R-3 rules."
+        "value": 8000,
+        "section": "184-115, 184 Attachment 1 (R-4 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family detached, traditional, from the 'R-4 District Development Standards' chart (184 Attachment 1): 8,000 sq ft, 80 ft wide, 2.50 dwelling units per net buildable acre. The chart applies to a tract developed under R-4 standards (10 acres, public sewer and water) and to a lot with an existing single-family house served by public water or public sewer (184-114A, B). A tract under 10 acres, or a lot on both on-site water and on-site sewage, follows the R-3 rules."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "184-115, 184 Attachment 1 (R-4 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "184-115, 184 Attachment 1 (R-4 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "25 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "184-115, 184 Attachment 1 (R-4 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "184-115, 184 Attachment 1 (R-4 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184a%20R-4%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
       }
     },
     "R-5": {
       "min_lot_sqft": {
-        "value": null,
-        "section": "184-119, 184-120",
-        "url": "https://ecode360.com/print/LI1176?guid=11208013",
-        "verified_on": null,
-        "confidence": "unverified",
-        "note": "The R-5 development standards are in a PDF attachment that was not read. Tracts under 10 acres follow R-3 rules."
+        "value": 10000,
+        "section": "184-120, 184 Attachment 2 (R-5 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family detached, traditional, from the 'R-5 District Development Standards' chart (184 Attachment 2): 10,000 sq ft, 60 ft wide, 3.00 dwelling units per net buildable acre. The chart applies to a tract developed under R-5 standards (10 acres, public sewer and water) and to a lot with an existing single-family house served by public water or public sewer (184-119A, B). A tract under 10 acres, or a lot on both on-site water and on-site sewage, follows the R-3 rules."
+      },
+      "setback_front_ft": {
+        "value": 25,
+        "section": "184-120, 184 Attachment 2 (R-5 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "184-120, 184 Attachment 2 (R-5 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "25 ft aggregate."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "184-120, 184 Attachment 2 (R-5 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "184-120, 184 Attachment 2 (R-5 District Development Standards)",
+        "url": "https://ecode360.com/attachment/333726/LI1176-184b%20R-5%20District%20Table.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
       }
     },
     "VC": {

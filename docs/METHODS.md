@@ -226,7 +226,7 @@ The product knows zoning at three levels:
 | Tier | Coverage | How it is used |
 |---|---|---|
 | 1. Lot-level rules | The six lot places: Philadelphia, Pittsburgh, Allentown, and 9 towns in Chester, Centre and Montgomery counties | Resolved for every lot and scenario and saved in the lot record |
-| 2. Town rule files | 221 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 146 verified, 77 drafted (as of Nov 18, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
+| 2. Town rule files | 221 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 198 verified, 25 drafted (as of Nov 26, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
 | 3. Statewide baseline | Every other town (`pa_statewide.json`) | The assistant answers with MPC paths, building code, sewage rules and the bills, and says it is not the town's own code |
 
 <!-- source: shared/rules/towns_index.json status field, shared/rules/pa_*.json adu.status.value, at commit 751cfaf (2026-11-16) -->
@@ -659,19 +659,19 @@ On Nov 18 Montgomery County was rebuilt in full with the rules engine passes 18 
 | Place and town | Lots | Any legal ADU path today | Detached unit legal today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|---|
 | Allentown | 29,158 | 0.883 | 0.285 | 0.215 | 0.713 |
-| Chester County, all | 14,847 | 0.689 | 0.544 | 0.231 | 0.588 |
-| West Chester | 3,070 | 0.898 | 0.898 | 0.428 | 0.449 |
-| Phoenixville | 5,375 | 0.941 | 0.941 | 0.346 | 0.413 |
-| West Vincent | 2,014 | 0.847 | 0.128 | 0.128 | 0.876 |
-| Malvern | 766 | 0.486 | 0.0 | 0.0 | 0.606 |
-| East Brandywine | 3,622 | 0.092 | 0.0 | 0.0 | 0.8 |
-| Centre County, College Township | 3,484 | 0.538 | 0.538 | 0.487 | 0.805 |
-| Montgomery County, all | 26,119 | 0.783 | 0.304 | 0.256 | 0.86 |
-| Narberth | 1,296 | 0.861 | 0.861 | 0.769 | 0.868 |
-| Upper Dublin | 8,562 | 0.796 | 0.796 | 0.666 | 0.784 |
-| Lower Merion | 16,261 | 0.769 | 0.0 | 0.0 | 0.899 |
+| Chester County, all | 14,847 | 0.689 | 0.544 | 0.287 | 0.642 |
+| West Chester | 3,070 | 0.898 | 0.898 | 0.438 | 0.458 |
+| Phoenixville | 5,375 | 0.941 | 0.941 | 0.495 | 0.556 |
+| West Vincent | 2,014 | 0.847 | 0.128 | 0.128 | 0.877 |
+| Malvern | 766 | 0.486 | 0.0 | 0.0 | 0.615 |
+| East Brandywine | 3,622 | 0.092 | 0.0 | 0.0 | 0.802 |
+| Centre County, College Township | 3,484 | 0.538 | 0.538 | 0.477 | 0.81 |
+| Montgomery County, all | 26,119 | 0.783 | 0.304 | 0.252 | 0.839 |
+| Narberth | 1,296 | 0.861 | 0.861 | 0.772 | 0.874 |
+| Upper Dublin | 8,562 | 0.796 | 0.796 | 0.65 | 0.717 |
+| Lower Merion | 16,261 | 0.769 | 0.0 | 0.0 | 0.9 |
 
-In Lower Merion, Malvern and East Brandywine the code allows no new detached unit, so the law is the limit. In Phoenixville many lots fail the "no taller than the house" test or the share-of-house cap. In Upper Dublin, Microsoft heights read low, so the height test reads "not checked".
+In Lower Merion, Malvern and East Brandywine the code allows no new detached unit, so the law is the limit. In Phoenixville many lots meet the share-of-house cap first. On Nov 26 (lot data 12) Phoenixville rose from 0.346 to 0.495: on 800 through lots the front moved to the street in the address (the house sits on it on 797 of the 830 lots that changed), so the yard behind the house is now the rear yard. Upper Dublin fell from 0.666 to 0.650 today and from 0.784 to 0.717 under HB 2186: its house heights now come from the DVRPC 2015 lidar landbase, so the "no taller than the house" test runs, and its MD rowhouse lots take their district yards.
 
 ### Steep slope rules
 
@@ -697,7 +697,7 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **The fit has no measured accuracy.** The hand-label check has 250 lots drawn and 0 labeled.
 - **The assistant can be wrong.** It scored 114 of 119 on the newest eval run (Nov 16), and scores move by a few questions between runs.
 - **Most towns have no rule file.** 221 towns beyond the two cities have one (as of Nov 18, 2026). 77 of the 223 files stay first readings (drafted). Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
-- **Heights from Microsoft outlines read low** in Upper Dublin, so the height test reads "not checked" in Montgomery County.
-- **Pittsburgh's undermined-area overlay (UM-O)** is not in the lot data. The rule is in the file but no lot carries the flag.
+- **House heights.** Montgomery County heights come from the DVRPC 2015 lidar landbase (Nov 26). Microsoft heights read about 6 ft low against it. A house built after 2015 has no height, and a house under 10 ft reads "not checked". The highest-hit height can pick up overhanging trees, which makes the height test more lenient on wooded lots.
+- **Pittsburgh's undermined-area overlay (UM-O)** comes from the city's Undermined Areas layer (PGHWebUndermined) since Nov 26. A lot is flagged when at least 25% of it is inside (`lots.flag.undermined_min_share`). The layer is coarse, so a flagged lot gets a condition to confirm, never a bar.
 - **Land cover in the new lot places is not validated.** Allentown, Chester and Montgomery have no labels to check the model against. Centre County lies in a test county (about 0.70 test mIoU). 36 Centre County lots have no cover. The tree figures inside the suggested spot come from the same model, so they are not validated either.
 - **The detector is still on unchecked labels.** Garage AP50 0.469 against a target of 0.50 (final for the Nov 12 to 14 rounds).

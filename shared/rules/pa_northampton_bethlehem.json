@@ -4,7 +4,7 @@
     "instrument": "City of Bethlehem Zoning Ordinance, Part 13 of the Codified Ordinances (effective June 15, 2012, last revised August 21, 2023): 1302.146 and 1322.03(bbb) Unit for Care of Relative, 1304 and 1305 use tables, 1306 dimensional rules",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Read from the PDF linked on the city Zoning Office page (cover: Last Revised August 21, 2023, Effective Date June 15, 2012). The link points to host k12.bethlehem-pa.gov. The same path on www returns 404. Pending: Bill No. 22-2026 (council packet PDF) adds 1318.26(e): no more than one single-family detached dwelling may be located on a lot. Listed for final passage on the 8-4-2026 council agenda (item 8A). No minutes, vote or ordinance number found on 2026-11-11. Treated as pending, not law.",
+    "status_detail": "Read from the PDF linked on the city Zoning Office page (cover: Last Revised August 21, 2023, Effective Date June 15, 2012). The link points to host k12.bethlehem-pa.gov. The same path on www returns 404. Two zoning text ordinances passed since that copy: Ord. No. 2026-22 (Bill No. 22-2026, passed on Final Reading 8-4-2026, minutes p. 4) and Ord. No. 2026-28 (Bill No. 28-2026, data centers, passed on Final Reading 10-20-2026). Both were read in the final-passage packets. Ord. No. 2026-22 adds 1318.26(e): 'No more than one single-family detached dwelling may be located on a lot', and changes the boardinghouse, hotel and transient guest definitions, 1322.03(h) and the workforce housing incentive (1307). Ord. No. 2026-28 adds the Data Center use in LI, IN and PI. Neither changes the Unit for Care of Relative text.",
     "effective_date": "2012-06-15",
     "source_urls": [
       "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
@@ -12,9 +12,13 @@
       "https://www.bethlehem-pa.gov/getmedia/25aeead7-b20e-461d-9519-47d39c9bc5dd/09a-Bill-22-2026-%e2%80%93-Amendments-to-Zoning-Ordinance.pdf",
       "https://www.bethlehem-pa.gov/getattachment/f796d7a6-8ce6-47bc-ac36-a077f720632c/00-Agenda-080426.pdf",
       "https://www.bethlehem-pa.gov/ordinances/",
-      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
+      "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22",
+      "https://www.bethlehem-pa.gov/getattachment/2e416c3f-0e33-4336-b187-35b9d8d0a1d1/08042026-Council-Minutes.pdf",
+      "https://www.bethlehem-pa.gov/getmedia/4b36e4e1-fb2c-4806-bb26-63408fdca7a8/08a-Bill-22-2026-%e2%80%93-Amendments-to-Zoning-Ordinance.pdf",
+      "https://www.bethlehem-pa.gov/getmedia/648da1eb-cc04-4fb3-9fc7-c2a85e311b18/08a-Bill-28-2026-Amending-Part-13-of-the-Zoning-Ordinance-Data-Centers.pdf",
+      "https://www.bethlehem-pa.gov/calendar/meetings/2026/city-council-meetings/438/"
     ],
-    "verified_on": "2026-11-11",
+    "verified_on": "2026-11-26",
     "county": "Northampton",
     "municipality_type": "city",
     "geoid": "4209506088",
@@ -24,7 +28,7 @@
     "code_host": "own site",
     "code_url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
     "code_current_through": "2023-08-21",
-    "code_current_through_note": "PDF cover: Last Revised: August 21, 2023. Amendment list ends with Ordinance 2023-32 (08/15/23). Later amendments are not in this copy.",
+    "code_current_through_note": "PDF cover: Last Revised: August 21, 2023. Amendment list ends with Ordinance 2023-32 (08/15/23). The council minutes of every meeting from August 2023 to October 2026 were searched: every bill number from 2024, 2025 and 2026 appears, and the only later zoning text ordinances are Ord. No. 2026-22 and 2026-28 (the rest are map amendments: Ord. No. 2024-02 Walnut Street Garage, Bills 19, 20 and 21 of 2025).",
     "checks": [
       "The code has no general ADU. The only accessory unit is a Unit for Care of Relative: up to two persons, relatives of the residents of the main unit, at least one needing care for illness, old age or disability (1322.03(bbb)(2))",
       "The unit must be built to be reconverted into the main house, or be a modular cottage removed when the relative leaves. A lawful detached garage may be converted and later reconverted (1322.03(bbb)(3))",
@@ -38,7 +42,8 @@
       "This copy of the ordinance ends at Ordinance 2023-32 (8-15-2023). Amendments from 2024 to 2026 are not in it. Ask the Zoning Office for later changes",
       "Bethlehem spans Northampton and Lehigh counties. Lehigh part county subdivision GEOID is 4207706088. The same rules apply there"
     ],
-    "notes": "Zoning office: City of Bethlehem Zoning Office (page in source_urls). Census GEOID is the 2020 county subdivision code for the Northampton County part, from TIGERweb."
+    "notes": "Zoning office: City of Bethlehem Zoning Office (page in source_urls). Census GEOID is the 2020 county subdivision code for the Northampton County part, from TIGERweb. Second review, 2026-11-26: final passage of Bill No. 22-2026 confirmed (Ord. No. 2026-22, 8-4-2026 minutes, 6 ayes). Its 1318.26(e) bars a second single-family detached dwelling on a lot; the Unit for Care of Relative is an accessory use (1304 table (5)) and a detached one is a removable modular cottage (1322.03(bbb)(3)), not a second principal dwelling, so the ADU answer does not change. Minutes of all council meetings from 8-2023 to 10-2026 searched for zoning bills (see code_current_through_note).",
+    "code_caution": "The published PDF still uses the 2023 numbering. Ord. No. 2026-22 inserts a new 1302.44 (transient guest) and Ord. No. 2026-28 a new 1302.35 (data center) and a new 1322.03(q), each renumbering what follows. So the Unit for Care of Relative definition cited here as 1302.146 is now 1302.148, and its standards cited as 1322.03(bbb) are now 1322.03(ccc). The file keeps the numbers of the published text."
   },
   "adu": {
     "status": {
@@ -209,7 +214,7 @@
       "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US",
       "verified_on": "2026-11-11",
       "confidence": "verified",
-      "note": "Inside or attached if it can be easily reconverted. Detached only as a removable modular cottage. A lawful detached garage may be converted. Over a garage is not named."
+      "note": "Inside or attached if it can be easily reconverted. Detached only as a removable modular cottage. A lawful detached garage may be converted. Over a garage is not named. A second single-family detached dwelling on the lot is not this unit and is barred (1318.26(e), added by Ord. No. 2026-22, 8-4-2026)."
     }
   },
   "size": {

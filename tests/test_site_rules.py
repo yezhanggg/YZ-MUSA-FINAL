@@ -86,7 +86,7 @@ def test_pittsburgh_moderate_not_in_ss_o() -> None:
 
 def test_pittsburgh_undermined_needs_its_flag() -> None:
     um = next(r for r in rows("pittsburgh") if r["id"] == "um_o")
-    assert um["area_on_lot_data"] is False and "Not in the lot files" in um["area_layer"]
+    assert um["area_on_lot_data"] is True and "PGHWebUndermined" in um["area_layer"]
     assert um["text"] not in site_lines("pittsburgh", {**PGH, "slope_class": "steep"})
     assert um["text"] in site_lines("pittsburgh", {**PGH, "undermined_area": True})
 

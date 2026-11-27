@@ -50,3 +50,36 @@ def test_towns_name_their_rule_files() -> None:
     for module in (chester, centre, mont):
         for t in module.TOWNS:
             assert chester.district_names(t.rule_file), t.rule_file
+
+
+def test_dvrpc_heights_match_only_shared_outlines() -> None:
+    import geopandas as gpd
+    from shapely.geometry import box
+
+    crs = "EPSG:2272"
+    msft = gpd.GeoDataFrame(
+        geometry=[box(0, 0, 40, 30), box(100, 0, 140, 30), box(200, 0, 240, 30), box(300, 0, 340, 30)],
+        crs=crs,
+        index=[10, 11, 12, 13],
+    )
+    dvrpc = gpd.GeoDataFrame(
+        {"height_estimate": [27, 31, 22, 0]},
+        geometry=[
+            box(2, 1, 41, 31),  # same house: matched
+            box(100, 0, 112, 30),  # covers under half of the Microsoft outline: no height
+            box(180, -40, 260, 70),  # much bigger outline (merged block): no height
+            box(300, 0, 340, 30),  # zero height: treated as missing
+        ],
+        crs=crs,
+    )
+    h = mont.match_dvrpc_heights(msft, dvrpc)
+    assert list(h.index) == [10, 11, 12, 13]
+    assert h[10] == 27
+    assert h[[11, 12, 13]].isna().all()
+
+
+def test_dvrpc_heights_empty_inputs() -> None:
+    import geopandas as gpd
+
+    empty = gpd.GeoDataFrame({"height_estimate": []}, geometry=[], crs="EPSG:2272")
+    assert mont.match_dvrpc_heights(empty, empty).empty

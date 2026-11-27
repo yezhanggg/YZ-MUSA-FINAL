@@ -40,9 +40,9 @@
       "Size: 720 sq ft or 40% of the house total area including the garage, whichever is less. At most two bedrooms",
       "One In-Law Apartment per house",
       "An accessory structure may not be used for living space unless the chapter provides otherwise (145-27B)",
-      "The parking table has no In-Law Apartment row. A single-family detached house needs 2 spaces per dwelling unit. So 2 in total, or 4 if the apartment counts as a unit (145-92)",
+      "Parking: 2 spaces in total. The table has no In-Law Apartment row, and the house stays a single-family detached dwelling, one dwelling unit for one Family (145-92, 145-11, 145-58F). Secondary reading",
       "Size in practice: the owner's unit must be over 70% of living space, garage excluded. So the apartment is under 30% of living space. This usually binds before 720 sq ft or 40% of total area",
-      "Districts set a maximum density (CR 2.5, R1 4.25, R2 8.0, units not stated). The definition calls the apartment 'separate living space within a Single-Family Dwelling', so it likely does not count as a unit. Ask",
+      "Districts set a maximum density (CR 2.5, R1 4.25, R2 8.0 dwelling units per acre of developable land, 145-11 'Density'). The in-law apartment is space within the house for the same Family, and a dwelling unit is for the exclusive use of a single Family (145-11), so it is read as not adding a dwelling unit. Secondary reading",
       "For a second unit that is not for family: a duplex is a permitted use in CR and R2 (145-14B(2), 145-16B(1)). In R1 and R2 only one single-family house or duplex per lot (145-28A)"
     ],
     "notes": "Zoning office: Zoning and Development Division, Planning and Development Department, https://millcreektownship.com/340/Zoning-Development-Division. Pending: Ord. 2026-10 adopted 2026-09-22, not yet in the online code. It does not touch 145-58. No pending ADU change found on the Zoning Code Update page."
@@ -348,20 +348,21 @@
     }
   },
   "parking": {
-    "reading": {
-      "value": "2 in total, or 4 if the apartment counts as a dwelling unit. Table VII-1 has no In-Law Apartment row and sets 'Dwelling, Single-Family Detached 2 per dwelling unit'.",
-      "section": "145-92 Table VII-1",
-      "url": "https://ecode360.com/43576972",
-      "verified_on": "2026-11-11",
-      "confidence": "secondary"
-    },
     "spaces_required": {
-      "value": null,
-      "section": "145-92 Table VII-1",
+      "value": 0,
+      "section": "145-92 Table VII-1, 145-11 'Dwelling Unit', 'In-Law Apartment', 145-58F",
       "url": "https://ecode360.com/43576972",
-      "verified_on": "2026-11-11",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "No In-Law Apartment row. 'Dwelling, Single-Family Detached 2 per dwelling unit'. Whether the apartment counts as a unit is not stated."
+      "note": "Table VII-1 has no In-Law Apartment row: 'Dwelling, Single-Family Detached 2 per dwelling unit'. 145-11 defines a dwelling unit as living facilities 'for the exclusive use of a single Family maintaining a household', and the in-law apartment as space within the house for a member of 'the Family unit occupying the main portion of the Dwelling'. 145-58F keeps the house's 'Use as a Single-Family Detached Dwelling'. So no added space is read. Reading checked 2026-11-26. Confirm with the Zoning Officer."
+    },
+    "total_on_site": {
+      "value": 2,
+      "section": "145-92 Table VII-1, 145-58F",
+      "url": "https://ecode360.com/43576972",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "2 spaces for the single-family detached dwelling, which stays one dwelling unit with its in-law apartment."
     }
   },
   "utilities": {

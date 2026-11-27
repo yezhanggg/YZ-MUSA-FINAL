@@ -627,7 +627,12 @@ def test_site_facts_reach_the_resolver() -> None:
     lot = bl.resolver_lot({"zoning": "R1D-L"}, flags, False, None, 5000.0, None)
     assert lot["steep_slope_area"] is True and lot["landslide_area"] is False
     rec = {"zoning": {"flags": flags}, "terrain": {"slope_class": "moderate"}}
-    assert bl.site_facts(rec) == {"slope_class": "moderate", "steep_slope_area": True, "landslide_area": False}
+    assert bl.site_facts(rec) == {
+        "slope_class": "moderate",
+        "steep_slope_area": True,
+        "landslide_area": False,
+        "undermined_area": None,
+    }
     ctx = bl.Ctx("allentown", "42077", 2272, "v", {})
     town = {
         "lot": {},
@@ -690,3 +695,71 @@ def test_phoenixville_share_caps_reach_the_record() -> None:
     }
     assert bl.rules_for_type(rules, "detached_new")["max_share_of_house"] == 0.667
     assert bl.rules_for_type(rules, "internal")["max_share_of_house"] is None
+
+
+def test_undermined_flag_from_its_share() -> None:
+    """Pittsburgh UM-O: the lot is flagged from a quarter of its area in the Undermined Areas layer, and the
+    flag reaches the resolver as undermined_area. Places without the layer read None (not on file)."""
+    assert bl.UNDERMINED_MIN_SHARE == 0.25
+    assert bl.flags_for({"undermined_share": 0.3})["undermined"] is True
+    assert bl.flags_for({"undermined_share": 0.1})["undermined"] is False
+    assert bl.flags_for({})["undermined"] is None
+    flags = {"steep_slope": None, "landslide": None, "undermined": True, "flood": None, "historic": None, "sewer": None}
+    assert bl.resolver_lot({"zoning": "R1D-L"}, flags, False, None, 5000.0, None)["undermined_area"] is True
+    assert bl.site_facts({"zoning": {"flags": flags}})["undermined_area"] is True
+
+
+def test_street_core_matches_address_and_street_names() -> None:
+    assert bl.street_core("1318 W SYCAMORE ST", address=True) == bl.street_core("W Sycamore St") == "SYCAMORE"
+    assert bl.street_core("614 N 5TH ST", address=True) == bl.street_core("N 5TH ST") == "5TH"
+    assert bl.street_core("1922 1924 E GREENLEAF ST", address=True) == "GREENLEAF"
+    assert bl.street_core("200 JEFFERSON AVE 214", address=True) == "JEFFERSON"
+    assert bl.street_core("Ridge") == bl.street_core("10 RIDGE AVE", address=True) == "RIDGE"
+    assert bl.street_core("WEST ST") == "WEST" and bl.street_core("EAST ST") == "EAST"
+    assert bl.street_core(None) == ""
+
+
+def test_front_on_the_street_in_the_address() -> None:
+    from shapely.geometry import LineString, box
+
+    # A through lot: a wide avenue in front (centreline 30 ft off), a lane behind (centreline 8 ft off).
+    lot = box(0, 0, 30, 120)
+    house = box(5, 10, 25, 45)  # at the avenue end
+    avenue = LineString([(-50, -30), (80, -30)])
+    lane = LineString([(-50, 128), (80, 128)])
+    near = bl.Near(shapely.union(avenue, lane), None, None, None, {"INTERBORO": avenue, "PLAPORT": lane})
+    plain = bl.classify(lot, house, bl.Near(shapely.union(avenue, lane), None, None, None), [])
+    assert plain.edges[plain.front[0]].line.centroid.y == pytest.approx(120.0)  # nearest centreline: the lane
+    edges = bl.classify(lot, house, near, [], "4732 INTERBORO AVE")
+    assert edges.edges[edges.front[0]].line.centroid.y == pytest.approx(0.0)
+    assert any("street in the address" in n for n in edges.notes)
+    assert any("through lot" in n for n in edges.notes)
+    # The house at the lane end: the house faces the lane, so the first reading stands.
+    lane_house = box(5, 80, 25, 115)
+    assert (
+        bl.classify(lot, lane_house, near, [], "4732 INTERBORO AVE").front
+        == bl.classify(lot, lane_house, bl.Near(shapely.union(avenue, lane), None, None, None), []).front
+    )
+    # Address on the lane: the nearest-street front stands. No address or an unknown street: unchanged.
+    assert bl.classify(lot, house, near, [], "12 PLAPORT ST").front == plain.front
+    assert bl.classify(lot, house, near, [], None).front == plain.front
+    assert bl.classify(lot, house, near, [], "5 ELSEWHERE RD").front == plain.front
+    # The StreetIndex groups named lines by their core.
+    rows = [("street", "AVE", shapely.to_wkb(avenue)), ("street", "ST", shapely.to_wkb(lane))]
+    si = bl.StreetIndex(rows, (), ["INTERBORO AVE", "PLAPORT ST"])
+    got = si.near(lot)
+    assert got.by_name is not None and set(got.by_name) == {"INTERBORO", "PLAPORT"}
+    assert bl.StreetIndex(rows, ()).near(lot).by_name is None
+
+
+def test_low_house_height_reads_unknown_and_story_heights() -> None:
+    from shapely.geometry import box
+
+    low = [bl.fit.Building(box(0, 0, 30, 30), "main", 8.0)]
+    ok = [bl.fit.Building(box(0, 0, 30, 30), "main", 13.0)]
+    assert bl.house_height({}, low) is None  # an 8 ft house is a bad reading
+    assert bl.house_height({}, ok) == 13.0
+    assert bl.house_height({"main_bldg_height_ft": 9.0}, []) is None
+    assert bl.story_heights("pa_montgomery_upper_dublin") == {1: 13.0, 2: 22.0}
+    assert bl.story_heights("pittsburgh") is None
+    assert bl.story_heights("no_such_file") is None

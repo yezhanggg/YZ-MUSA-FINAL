@@ -132,6 +132,8 @@ export interface ZoningFlags {
   historic?: boolean | null;
   steep_slope?: boolean | null;
   landslide?: boolean | null;
+  /** Pittsburgh UM-O: the lot is in the city's Undermined Areas layer. */
+  undermined?: boolean | null;
   /** True when public sewer serves the lot. */
   sewer?: boolean | null;
 }
@@ -204,6 +206,8 @@ export interface Rules {
   // Added in rules pass 25 (town lots). Only where the town file holds one. Records built before it lack it.
   /** A cap on the ground the unit's building covers, apart from the floor area cap (a garage unit: the garage). */
   max_footprint_sqft?: number;
+  /** Town lots (Nov 26, 2026): the code's own height (ft) for a detached unit by story count, keys "1" and "2". */
+  story_height_ft?: Record<string, number>;
 }
 
 /** Why a town lot's path is qualified (rules.<scenario>.approval_qualifier). */
@@ -216,7 +220,7 @@ export interface Buildable {
   /** Same, if sheds and trees go. */
   clear?: AreaGeom | null;
   clear_sqft?: number;
-  /** Buildable ground in front of the house, left out of keep and clear because the unit fits behind. */
+  /** Buildable ground in front of the house, left out of keep and clear: a new unit never goes there. */
   front_sqft?: number;
 }
 
@@ -240,6 +244,8 @@ export interface FitResult {
   fits: boolean;
   largest_sqft: number;
   largest_if_cleared_sqft?: number | null;
+  /** Detached only: room only in front of the house, which never counts as a fit (records from Nov 26, 2026 on). */
+  front_only_sqft?: number;
   spot: AreaGeom | null;
   width_ft: number | null;
   depth_ft: number | null;
@@ -388,19 +394,19 @@ export const LOT_KEYS = {
   cover: keysOf<Cover>()(['building', 'tree', 'open', 'hard', 'impervious_pct', 'source', 'date']),
   object: keysOf<LotObject>()(['class', 'box', 'score']),
   zoning: keysOf<Zoning>()(['district', 'overlays', 'council_district', 'flags']),
-  zoning_flags: keysOf<ZoningFlags>()(['flood', 'historic', 'steep_slope', 'landslide', 'sewer']),
+  zoning_flags: keysOf<ZoningFlags>()(['flood', 'historic', 'steep_slope', 'landslide', 'undermined', 'sewer']),
   rules: keysOf<Rules>()([
     'allowed', 'approval_path', 'reasons', 'types_allowed', 'max_adus', 'max_size_sqft', 'min_size_sqft',
     'max_share_of_house', 'min_lot_sqft', 'max_height_ft', 'setback_front_ft', 'setback_side_ft', 'setback_rear_ft',
     'setback_rear_alley_ft', 'separation_ft', 'max_building_coverage', 'max_impervious', 'owner_occupancy',
     'parking_spaces', 'citations', 'assumed', 'approval_by_type', 'max_height_by_type', 'setback_rear_effective_ft',
     'rear_setback_rule', 'state_limits', 'fire_separation', 'historic_path', 'rule_path_by_type',
-    'lot_conditions_by_type', 'citations_by_type', 'approval_qualifier', 'max_share_by_type', 'max_footprint_sqft',
+    'lot_conditions_by_type', 'citations_by_type', 'approval_qualifier', 'max_share_by_type', 'max_footprint_sqft', 'story_height_ft',
   ]),
   buildable: keysOf<Buildable>()(['keep', 'keep_sqft', 'clear', 'clear_sqft', 'front_sqft']),
   check: keysOf<Check>()(['pass', 'value', 'limit', 'note']),
   fit_result: keysOf<FitResult>()([
-    'adu_type', 'fits', 'largest_sqft', 'largest_if_cleared_sqft', 'spot', 'width_ft', 'depth_ft', 'angle_deg', 'bearing_deg',
+    'adu_type', 'fits', 'largest_sqft', 'largest_if_cleared_sqft', 'front_only_sqft', 'spot', 'width_ft', 'depth_ft', 'angle_deg', 'bearing_deg',
     'limiting', 'note', 'checks', 'warnings', 'assumed', 'approval_path', 'max_height_ft', 'second', 'spot_cover',
   ]),
   fit_checks: CHECK_NAMES,

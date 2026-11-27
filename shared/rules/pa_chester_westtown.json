@@ -27,7 +27,7 @@
       "https://www.chescoplanning.org/MuniCorner/eTools/14-AccessoryUnits.cfm",
       "https://chescoplanning.org/Housing/MissingMiddle/Opportunities/Low-ADU.cfm"
     ],
-    "verified_on": "2026-11-13",
+    "verified_on": "2026-11-26",
     "county": "Chester",
     "municipality_type": "township",
     "geoid": "4202984104",
@@ -47,7 +47,7 @@
       "Septic lots: a Chester County Health Department permit showing the system can serve the added residents (170-1603A(2)(g))",
       "Detached accessory structures stand only in side and rear yards. Footprint at most 50% of the house footprint or 1,000 sq ft, whichever is less. Structures of 250 sq ft or more, or 12 ft or taller, are set back from side and rear lines a distance equal to their height (170-1603C(3), 170-1502F)"
     ],
-    "notes": "Zoning office: Westtown Township (westtown.org). Read on eCode360 in a browser, one section print view at a time, and the chapter print view searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, short-term. Historic Preservation (Article XXIV, Ord. No. 2013-1) sets up a commission only. No historic ADU path. Chester County Planning Commission eTool 14 and the Missing Middle guide (cross-check only) describe 'family-occupied ADUs ... by special exception in most residential districts' with a rental conversion by special exception (170-1603(A), 170-1619). That matches the code."
+    "notes": "Zoning office: Westtown Township (westtown.org). Read on eCode360 in a browser, one section print view at a time, and the chapter print view searched in the page. Searched for accessory dwelling, accessory apartment, in-law, granny, elder cottage, caretaker, guest house, carriage house, tenant house, second dwelling, tiny house, family suite, short-term. Historic Preservation (Article XXIV, Ord. No. 2013-1) sets up a commission only. No historic ADU path. Chester County Planning Commission eTool 14 and the Missing Middle guide (cross-check only) describe 'family-occupied ADUs ... by special exception in most residential districts' with a rental conversion by special exception (170-1603(A), 170-1619). That matches the code. Second review, 2026-11-26: the chapter print view (legislation through 06-01-2026, New Laws: none) and 170-1603 read again. The one open point, a new accessory building or an addition, is now stored as forms in conflict (detached_new, attached) with both passages, instead of a firm no; the tool says the text conflicts and to ask the Zoning Hearing Board. Left for a later check: the Zoning Hearing Board's reading of 170-1603A(2)(b), (f) and (i)."
   },
   "adu": {
     "term": {
@@ -161,9 +161,9 @@
       "value": true,
       "section": "170-201, 170-1603A(2)(b), (f), (i)",
       "url": "https://ecode360.com/print/WE1870?guid=12398469",
-      "verified_on": "2026-11-13",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "Open point, two readings. For: the intent clause (existing building stock), the definition ('accessory to the existing primary dwelling unit') and (f) 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons.' Against: (f) also lets the Zoning Hearing Board judge exterior changes against the single-family character, (i) asks for a plan of 'any proposed exterior alterations', and (b) says 'a structure which is accessory', not an existing one. Stored as existing only. The tool's variance for a new building or an addition is firmer than the code. Ask the Zoning Hearing Board."
+      "note": "Read as the house or an existing accessory structure (a garage, including space over it). Whether a new accessory building or an addition may hold the unit is in conflict in the code's own text (see form.types_in_conflict); ask the Zoning Hearing Board."
     },
     "historic_bypass": {
       "value": false,
@@ -271,15 +271,16 @@
       "confidence": "secondary",
       "note": "'The accessory dwelling unit may be located in the principal dwelling or in a structure which is accessory to the principal dwelling'. With the bar on exterior alterations, read as the house or an existing accessory structure (a garage, including space over it). No addition and no new building."
     },
-    "types_not_addressed": {
+    "types_in_conflict": {
       "value": [
-        "detached_new"
+        "detached_new",
+        "attached"
       ],
-      "section": "170-1603A(2)(b), (f)",
+      "section": "170-201, 170-1603A(2)(b), (f), (i)",
       "url": "https://ecode360.com/print/WE1870?guid=12398469",
-      "verified_on": "2026-11-13",
-      "confidence": "secondary",
-      "note": "'The accessory dwelling unit may be located in the principal dwelling or in a structure which is accessory to the principal dwelling'. A new accessory structure is not named. With the bar on exterior alterations it is read as an existing one."
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "The code's passages pull both ways on a new accessory building or an addition. For existing buildings only: the definition ('accessory to the existing primary dwelling unit') and (f) 'No other alterations to the exterior of the structure shall be permitted unless necessary for health or safety reasons.' Against: (b) 'a structure which is accessory to the principal dwelling', not an existing one, (f) lets the Zoning Hearing Board weigh exterior changes against the single-family character, and (i) asks for a plan of 'any proposed exterior alterations'. Ask the Zoning Hearing Board."
     }
   },
   "size": {

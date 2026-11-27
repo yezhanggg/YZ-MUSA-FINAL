@@ -641,9 +641,10 @@ describe('get_rule_text pass 8', () => {
   });
 
   it('reads a district whose use list is not on file as only if, and a disputed septic bar as ask', async () => {
-    const c = await town6('pa_montgomery_montgomery', 'approval', 'C');
+    // LI (230-145) is not on file either way; C is now read as not permitted (Table 230-A)
+    const c = await town6('pa_montgomery_montgomery', 'approval', 'LI');
     expect(c.approval.qualifier).toBe('conditional_on_reading');
-    expect(c.approval.qualifier_text).toMatch(/^By right only if a single-family detached dwelling is a permitted use in C/);
+    expect(c.approval.qualifier_text).toMatch(/^By right only if a single-family detached dwelling is a permitted use in LI/);
     expect(c.approval.by_form_today.internal).toBe('by_right');
     expect(c.path_to_ask?.path).not.toBe('variance');
     const wa = await town6('pa_bucks_warrington', 'approval', 'R1');
@@ -707,9 +708,10 @@ describe('steep slope rules', () => {
     expect(siteLines(phl, { steep_slope_area: true, slope_class: 'steep' }, ['garage_conversion', 'internal'])).toEqual([]);
   });
 
-  it('the undermined area row waits for a flag the lot files do not carry', () => {
+  it('the undermined area row follows the lot flag from the city layer', () => {
     const um = pgh.site.steep_slopes.value.find((r: { id: string }) => r.id === 'um_o');
-    expect(um.area_on_lot_data).toBe(false);
+    expect(um.area_on_lot_data).toBe(true);
+    expect(siteLines(pgh, { undermined_area: false }, GROUND)).toEqual([]);
     expect(ids(siteLines(pgh, { undermined_area: true }, GROUND))).toEqual(['um_o']);
   });
 

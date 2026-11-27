@@ -312,11 +312,11 @@ The rules for building on steep, landslide-prone or undermined ground (`site.ste
 | ss_o_mapped | ask | steep_slope_area true | 906.08.A.1, C.1 to C.5 | "all uses and structures permitted in the base underlying district shall be reviewed and approved by the Planning Commission per the procedures of this Section." | yes |
 | ss_o_measured | ask | measured slope steep, steep_slope_area false or unknown | 906.08.A.1, C.1 | "includes any land comprising a steep slope (i.e. a natural slope of twenty-five (25) percent or greater)." | yes |
 | ls_o | condition | landslide_area true | 906.04.B.1, B.2, B.3 | "No Certificate of Occupancy application shall be approved for zoning for any structure or for any use of land requiring excavation, fill or removal of vegetation until the applicant has submitted evidence" | yes |
-| um_o | condition | undermined_area true | 906.05.B.1 to B.4 | "provided that competent evidence is provided to the Zoning Administrator showing that the site has more than one hundred (100) feet of overburden above the mine" | no |
+| um_o | condition | undermined_area true | 906.05.B.1 to B.4 | "provided that competent evidence is provided to the Zoning Administrator showing that the site has more than one hundred (100) feet of overburden above the mine" | yes |
 
 Read on 2026-11-14: https://ecode360.com/45478229 (915) and https://ecode360.com/45474902 (906), code version 2026-09-16. Exempt: no section exempts small or accessory structures or existing lots. In the UM-O a single-unit dwelling or a comparable structure is approved with evidence of more than 100 ft of overburden and no known subsidence (906.05.B.2). The Planning Commission may waive any of the 14 SS-O review standards (906.08.C.5). Grading applies by the slope on the site; the LS-O and UM-O are mapped; the SS-O is land with a natural slope of 25 percent or more.
 
-Data gap (um_o): Not in the lot files. Needed: the City of Pittsburgh UM-O Undermined Area Overlay boundary from the city zoning map (City Planning GIS, the same ArcGIS Online organization as PGHWebLandslideProne). It is not in PGHWebZoningOverlays, which the lots use. A stand-in is the PA DEP mine subsidence or abandoned mine land layers on PASDA, which are not the overlay.
+Lot data (um_o): City of Pittsburgh Undermined Areas (PGHWebUndermined, 47 polygons, 15.2 sq mi), the layer the city's zoning map lists under Environment. A lot is flagged when at least 25% of it is inside. Lot data 12 (Nov 26): 32,865 of 92,081 Pittsburgh lots (35.7%) carry the flag. The layer is coarse; the zoning officer decides whether a lot is in the overlay.
 
 ### Administrator's Exception
 

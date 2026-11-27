@@ -62,7 +62,7 @@ export const RULE_TEXT_TOOL: ToolDef = {
     "A town without a rule file gets the statewide baseline (MPC approval paths, building code, sewage, bills), not its own code. " +
     'Give `district` (for example RSA-5 or R1D-L) to add that district row. ' +
     'Topic steep_slopes (Philadelphia and Pittsburgh): the steep slope, landslide and undermined area rules; give the lot\'s slope_class, ' +
-    'steep_slope_area, landslide_area and types_allowed to get the lines that apply to it (conditions or questions, never a bar).',
+    'steep_slope_area, landslide_area, undermined_area and types_allowed to get the lines that apply to it (conditions or questions, never a bar).',
   input_schema: {
     type: 'object',
     properties: {
@@ -73,6 +73,7 @@ export const RULE_TEXT_TOOL: ToolDef = {
       slope_class: { type: 'string', enum: ['ordinary', 'moderate', 'steep'], description: "steep_slopes only: the lot record's terrain.slope_class" },
       steep_slope_area: { type: 'boolean', description: 'steep_slopes only: the lot record zoning.flags.steep_slope (city steep slope map)' },
       landslide_area: { type: 'boolean', description: 'steep_slopes only: the lot record zoning.flags.landslide (Pittsburgh)' },
+      undermined_area: { type: 'boolean', description: 'steep_slopes only: the lot record zoning.flags.undermined (Pittsburgh UM-O)' },
       types_allowed: { type: 'array', items: { type: 'string' }, description: 'steep_slopes only: the ADU forms allowed on the lot (rules.<scenario>.types_allowed)' },
     },
     required: ['place', 'topic'],

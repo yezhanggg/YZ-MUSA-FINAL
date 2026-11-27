@@ -32,9 +32,10 @@
       "https://ecode360.com/print/AM1620?guid=34015993",
       "https://ecode360.com/print/AM1620?guid=34054283",
       "https://ecode360.com/print/AM1620?guid=34016292",
-      "https://ecode360.com/print/AM1620?guid=34016386"
+      "https://ecode360.com/print/AM1620?guid=34016386",
+      "https://ecode360.com/print/AM1620?guid=34015764"
     ],
-    "verified_on": "2026-11-15",
+    "verified_on": "2026-11-26",
     "county": "Berks",
     "municipality_type": "township",
     "geoid": "4201102328",
@@ -59,7 +60,7 @@
       "Detached garages and outbuildings must stand within the building setback lines (32-902(b)(2))",
       "Multifamily developments: by right in RV at two units per acre (32-409(b)(3)), special exception in MDR (32-403(d)(4))"
     ],
-    "notes": "Zoning office: Amity Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were 32-957 (family member suites), 32-904 (conversions), 32-933 (two-family developments), 32-902 (caretaker quarters) and the definitions. Read: Part 3, every district section in Part 4 (32-401 to 32-409), 32-507 (Route 422 Overlay), Part 6 (cluster), 32-902, 32-904, 32-911, 32-924 in part, 32-933, 32-949, 32-957, Part 10 and 32-1105. Read in part: 32-202 definitions (through 'Transitional-age development', not 'Use' onward). Not read: Part 1, 32-502 to 32-506 (environmental overlays), Part 7 (PRD), Part 8 (mobile home parks), the other Part 9 sections, the rest of Part 11 and the Zoning Map. Lot coverage counts buildings only. The Route 422 Overlay is a development option for tracts of 50 acres with 300 ft on Route 422 and allows only townhouses, twins and apartments as homes (32-507). The district sections allow 'a single principal use' and list family member suites among those uses. The building height definition names RC, LDR, MDR and MHP but not RV."
+    "notes": "Zoning office: Amity Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were 32-957 (family member suites), 32-904 (conversions), 32-933 (two-family developments), 32-902 (caretaker quarters) and the definitions. Read: Part 3, every district section in Part 4 (32-401 to 32-409), 32-507 (Route 422 Overlay), Part 6 (cluster), 32-902, 32-904, 32-911, 32-924 in part, 32-933, 32-949, 32-957, Part 10 and 32-1105. Read in part: 32-202 definitions (through 'Transitional-age development', not 'Use' onward). Not read: Part 1, 32-502 to 32-506 (environmental overlays), Part 7 (PRD), Part 8 (mobile home parks), the other Part 9 sections, the rest of Part 11 and the Zoning Map. Lot coverage counts buildings only. The Route 422 Overlay is a development option for tracts of 50 acres with 300 ft on Route 422 and allows only townhouses, twins and apartments as homes (32-507). The district sections allow 'a single principal use' and list family member suites among those uses. The building height definition names RC, LDR, MDR and MHP but not RV. Second reading on 2026-11-26 in a browser on eCode360 (code through 03-18-2026, no New Laws): 32-402(e) LDR table, 32-405(b)(13), 32-932 (twin figures per dwelling unit, now in the RV twin path) and 32-949. The reach of 32-949, whether a twin is a single-family dwelling for 32-957(e)(1) and the 32-904 lot area per family stay points to ask the zoning officer."
   },
   "adu": {
     "term": {
@@ -321,11 +322,12 @@
           "districts": [
             "RV"
           ],
-          "conditions": "'Single-family semi-detached dwellings, subject to § 32-932 of this chapter, except that the maximum density shall be three dwelling units per acre' are a by-right use in RV (32-409(b)(2)). A twin has two units side by side with a common wall",
+          "conditions": "'Single-family semi-detached dwellings, subject to § 32-932 of this chapter, except that the maximum density shall be three dwelling units per acre' are a by-right use in RV (32-409(b)(2)). A twin has two units side by side with a common wall. 32-932(a) imposes its figures on each dwelling unit: with public sewage and water 6,000 sq ft net, 50 ft wide, building setback 40 ft, rear 20 ft, side 20 ft, coverage 40%; with public sewage or water 30,000 sq ft, 100 ft, rear 30 ft, coverage 30%; on-lot 2 acres, 150 ft, side 30 ft, coverage 20%; 35 ft high in each case. In RV the density is also at most three dwelling units per acre",
           "section": "32-409(b)(2), 32-932",
-          "url": "https://ecode360.com/print/AM1620?guid=34014807",
+          "url": "https://ecode360.com/print/AM1620?guid=34015764",
           "confidence": "secondary",
-          "note": "32-932 was not read, so the lot figures for a twin are not on file. Whether an existing detached house can become a twin is not said"
+          "note": "The stricter figure is stored: three dwelling units per acre (32-409(b)(2)) asks about 29,040 sq ft for two units, while 32-932 alone asks 12,000 sq ft with public sewage and water. Whether an existing detached house can become a twin is not said",
+          "min_lot_sqft": 29040
         },
         {
           "name": "Semi-detached dwelling development (MDR)",

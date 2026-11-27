@@ -21,9 +21,11 @@
       "https://ecode360.com/print/MO1293?guid=11516896",
       "https://ecode360.com/print/MO1293?guid=11516961",
       "https://ecode360.com/print/MO1293?guid=11517054",
-      "https://ecode360.com/MO1293/laws"
+      "https://ecode360.com/MO1293/laws",
+      "https://ecode360.com/attachment/336782/MO1293-230b%20Table%20230-A.pdf",
+      "https://ecode360.com/print/MO1293?guid=11516266"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "township",
     "geoid": "4209150640",
@@ -42,7 +44,7 @@
       "Allowed where a single-family detached house is a permitted use: R-1, R-2, R-3, R-3A, R-3B (age-qualified housing), R-5 and R-6. Nonresidential districts use Appendix Table 230-A, which was not read",
       "230-149C(3) calls the unit 'the conversion'. A new addition built for the unit may be read differently. Ask the zoning officer"
     ],
-    "notes": "Zoning office: Montgomery Township (montgomerytwp.org). Read on eCode360 in a browser, one section print view at a time. District use lists read for R-1, R-2, R-3, R-3A, R-3B, R-5, R-6 and C. C permits the uses in Appendix Table 230-A (an attachment, not opened). Dimensional rules read for R-1 and R-2."
+    "notes": "Zoning office: Montgomery Township (montgomerytwp.org). Read on eCode360 in a browser, one section print view at a time. District use lists read for R-1, R-2, R-3, R-3A, R-3B, R-5, R-6 and C. C permits the uses in Appendix Table 230-A (an attachment, not opened). Dimensional rules read for R-1 and R-2. Second review, 2026-11-26: Table 230-A (Attachment 2, amended through Ord. No. 25-346Z, 1-27-2025) read; 230-80 (BP), 230-55 (MHP), 230-42 and 230-43 (Cluster Development overlay on R-1 and R-2, same uses) and 230-145 read in the chapter print view. New Laws: 'no known new laws'. Left for a later check: whether the unit can go with a house in LI under 230-145 or with a conventionally built house inside an MHP park."
   },
   "adu": {
     "term": {
@@ -69,13 +71,14 @@
         "R-3A",
         "R-3B",
         "R-5",
-        "R-6"
+        "R-6",
+        "BP"
       ],
-      "section": "230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b)",
+      "section": "230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b), 230-80A(1)",
       "url": "https://ecode360.com/print/MO1293?guid=11516607",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "verified",
-      "note": "Districts whose use lists permit a single-family detached dwelling by right, with accessory uses customarily incidental to it. 230-149C itself names no district."
+      "note": "Districts whose use lists permit a single-family detached dwelling, with accessory uses customarily incidental to it. 230-149C itself names no district. BP permits 'Residential' in Table 230-A, and 230-80A(1) limits it to 'one single-family detached dwelling on an individual lot'."
     },
     "scope_by_use": {
       "value": {
@@ -87,23 +90,28 @@
           "R-3A",
           "R-3B",
           "R-5",
-          "R-6"
+          "R-6",
+          "BP"
         ],
-        "not_permitted_in": null
+        "not_permitted_in": [
+          "C",
+          "S",
+          "RS"
+        ]
       },
-      "section": "230-149C; 230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b)",
+      "section": "230-149C; 230-26A, 230-31A, 230-36A(1)(c), 230-49A(1), 230-53.2A(1), 230-64A(1), 230-70A(1)(b), 230-75A, 230-80A(1), 230-86A, 230-94A, Table 230-A",
       "url": "https://ecode360.com/print/MO1293?guid=11517634",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "verified",
-      "note": "230-149C: 'One accessory dwelling unit to a single-family detached dwelling shall be permitted ...' and names no district. Each district list allows 'Accessory use on the same lot with and customarily incidental to any of the foregoing uses'. So the unit reaches every district where a single-family detached dwelling is permitted. permitted_in: the use lists read. The C district and other nonresidential lists (Appendix Table 230-A) were not opened."
+      "note": "230-149C: 'One accessory dwelling unit to a single-family detached dwelling shall be permitted ...' and names no district. Each district list allows 'Accessory use on the same lot with and customarily incidental to any of the foregoing uses'. So the unit reaches every district where a single-family detached dwelling is permitted. C, S and RS permit only the uses in Table 230-A, which marks 'Residential' N in all three; BP marks it P (one single-family detached dwelling per lot, 230-80A(1)). In LI a house is allowed only on a lot unimproved and in separate ownership when the chapter took effect (230-145), and an MHP park may include conventionally built houses (230-55A); in those the unit is a question for the zoning officer."
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "230-75A(1)",
-      "url": "https://ecode360.com/print/MO1293?guid=11517054",
-      "verified_on": "2026-11-14",
-      "confidence": "secondary",
-      "note": "The C district (and other nonresidential districts) permit uses listed in Appendix Table 230-A, an attachment that was not opened. Whether a house, and so this unit, is permitted there was not confirmed. Ask the zoning officer."
+      "section": "230-75A, 230-86A, 230-94A, Table 230-A",
+      "url": "https://ecode360.com/attachment/336782/MO1293-230b%20Table%20230-A.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "Table 230-A marks 'Residential' N in C, S and RS, so no house and no unit there. In LI (230-145, houses only on lots unimproved when the chapter took effect) and MHP (230-55A, houses inside a mobile home park) the code does not settle it. Ask the zoning officer."
     }
   },
   "approval": {

@@ -101,6 +101,7 @@ class Flags(TypedDict, total=False):
     historic: bool | None
     steep_slope: bool | None
     landslide: bool | None
+    undermined: bool | None
     sewer: bool | None
 
 

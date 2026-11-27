@@ -588,7 +588,7 @@ interface Sizes {
   heightAssumed: string | null;
 }
 
-function sizesOf(lot: LotRecord, unit: UnitInput, stored: FitResult | undefined): Sizes {
+function sizesOf(lot: LotRecord, unit: UnitInput, stored: FitResult | undefined, rules?: Rules): Sizes {
   const stories = unit.stories ?? 1;
   if (unit.type === 'garage_conversion' || unit.type === 'over_garage') {
     const g = garages(lot)[0];
@@ -605,12 +605,16 @@ function sizesOf(lot: LotRecord, unit: UnitInput, stored: FitResult | undefined)
   }
   const area = unit.width_ft * unit.depth_ft;
   if (unit.type === 'internal') return { footprint: 0, floor: area, height: null, heightAssumed: null };
-  const height = isNum(unit.height_ft) ? unit.height_ft : STORY_HEIGHT_FT[stories];
+  // The code's own height for this story count, when lower than the default (as pipeline/fit.py).
+  const code = rules?.story_height_ft?.[String(stories)];
+  const own = !isNum(unit.height_ft) && isNum(code) && code < STORY_HEIGHT_FT[stories];
+  const height = isNum(unit.height_ft) ? unit.height_ft : own ? (code as number) : STORY_HEIGHT_FT[stories];
+  const word = `${stories} ${stories === 2 ? 'stories' : 'story'}`;
   return {
     footprint: area,
     floor: area * stories,
     height,
-    heightAssumed: isNum(unit.height_ft) ? null : `height ${ftText(height)} for ${stories} ${stories === 2 ? 'stories' : 'story'}`,
+    heightAssumed: isNum(unit.height_ft) ? null : own ? `height ${ftText(height)} for ${word}: the code's own figure` : `height ${ftText(height)} for ${word}`,
   };
 }
 
@@ -774,7 +778,7 @@ function warningsFor(lot: LotRecord, rules: Rules, unit: UnitInput, stored: FitR
   if (stored?.warnings?.some((w) => /building date/.test(w)) || (unit.type === 'garage_conversion' && rules.reasons.some((r) => /existed/.test(r)))) {
     add('building_date', 'Check when the garage was built. The rule covers only a building that already existed.', rules.citations.types_allowed ?? null);
   }
-  if (stored?.assumed?.some((a) => /in front of the house/.test(a))) add('front_yard', 'The only room is in front of the house. Most codes do not allow a unit there.');
+  if (stored?.assumed?.some((a) => /in front of the house/.test(a))) add('front_yard', 'The only room is in front of the house. The code does not allow a unit there, so it does not count.');
   if (lot.lot.shape_confidence === 'low' || lot.quality.confidence === 'low') {
     const notes = (lot.lot.shape_notes ?? []).filter(Boolean);
     add('low_confidence', `The lot shape here is uncertain. Check the lot lines before you design.${notes.length ? ` Note: ${notes[0]}.` : ''}`);
@@ -851,7 +855,10 @@ export function tidyReason(r: string): string {
 // ------------------------------------------------------------------ plain words for limits
 const LIMIT_TEXT: Record<string, (r: Rules, f: FitResult | undefined) => string> = {
   yard_space: (_r, f) => `The open yard is the limit. The largest spot is about ${sqftText(f?.largest_sqft)}.`,
-  no_room: () => 'There is no open space left in the yard after setbacks and the distance from the house.',
+  no_room: (_r, f) =>
+    isNum(f?.front_only_sqft) && f.front_only_sqft > 0
+      ? `The only open space (about ${sqftText(f.front_only_sqft)}) is in front of the house. The code does not allow a unit there.`
+      : 'There is no open space left in the yard after setbacks and the distance from the house.',
   size_cap: (r) => `The size cap of ${sqftText(r.max_size_sqft)} is the limit.`,
   footprint_cap: (r) => `The footprint cap of ${sqftText(r.max_footprint_sqft)} is the limit.`,
   share_of_house: (r, f) => {
@@ -1016,7 +1023,7 @@ function qualifiersOf(approval: ApprovalInfo, checks: VerdictCheck[], q: { text:
 export function unitVerdict(lot: LotRecord, unit: UnitInput): UnitVerdict {
   const rules = lot.rules[unit.scenario];
   const stored = lot.fit[unit.scenario]?.[unit.type];
-  const s = sizesOf(lot, unit, stored);
+  const s = sizesOf(lot, unit, stored, rules);
   const shell = {
     scenario: unit.scenario, type: unit.type, footprint_sqft: s.footprint, floor_sqft: s.floor, height_ft: s.height,
     largest_sqft: stored ? stored.largest_sqft : null, qualifiers: [] as Qualifier[],

@@ -4,7 +4,7 @@
     "instrument": "Robinson Township Zoning Ordinance (Chapter 300 Zoning, Ord. No. 3-1993, amended in its entirety 6-5-2017 by Res. No. 8-2017, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 RO0250 (Township of Robinson, Allegheny County: Board of Commissioners, appeals to the Allegheny County Court of Common Pleas, 300-27M(3)). 'Includes legislation through 04-01-2024'. The New Laws list on the chapter shows four uncodified zoning amendments: Ord. No. 2-2025 and 3-2025 (3-3-2025), 4-2025 (7-7-2025) and 2-2026 (5-4-2026), PDF only. Their content is known from search excerpts.",
+    "status_detail": "eCode360 RO0250 (Township of Robinson, Allegheny County: Board of Commissioners, appeals to the Allegheny County Court of Common Pleas, 300-27M(3)). 'Includes legislation through 04-01-2024'. The New Laws list on the chapter shows four uncodified zoning amendments: Ord. No. 2-2025 and 3-2025 (3-3-2025), 4-2025 (7-7-2025) and 2-2026 (5-4-2026). All four PDFs were read in full on 2026-11-26.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/RO0250",
@@ -33,9 +33,15 @@
       "https://ecode360.com/print/RO0250?guid=14126528",
       "https://ecode360.com/print/RO0250?guid=14126641",
       "https://ecode360.com/print/RO0250?guid=14126713",
-      "https://ecode360.com/print/RO0250?guid=14126897"
+      "https://ecode360.com/print/RO0250?guid=14126897",
+      "https://ecode360.com/RO0250/laws",
+      "https://ecode360.com/RO0250/laws/LF2715410.pdf",
+      "https://ecode360.com/RO0250/laws/LF2715407.pdf",
+      "https://ecode360.com/RO0250/laws/LF2715408.pdf",
+      "https://ecode360.com/RO0250/laws/LF2790681.pdf",
+      "https://ecode360.com/print/RO0250?guid=14125507"
     ],
-    "verified_on": "2026-11-15",
+    "verified_on": "2026-11-26",
     "county": "Allegheny",
     "municipality_type": "township",
     "geoid": "4200365352",
@@ -43,7 +49,7 @@
     "code_url": "https://ecode360.com/14125507",
     "code_current_through": "2024-04-01",
     "code_current_through_note": "eCode360: 'Includes legislation through 04-01-2024'. New Laws: Ord. No. 2-2025, 3-2025, 4-2025 and 2-2026, each 'Zoning Amendment' to Chapter 300, not codified.",
-    "code_caution": "Four zoning amendments are not in the online code and were read only in search excerpts (PDF only). Ord. No. 2-2026 (5-4-2026) amends 300-36 R-1: single-family lots 17,500 sq ft (was 25,000), 100 ft wide (was 150), front yard 35 ft (was 75). The file uses these figures. Other R-1 figures may also have changed. Ord. No. 2-2025 (3-3-2025) amends 300-39 R-4: townhouses 2,200 sq ft of lot area per unit, front yards 45 ft from the curb on a public street and 30 ft on a private street, side 10 ft, townhouse rear 20 ft, building spacing. Ord. No. 3-2025 (3-3-2025) creates the High-Density Multiple-Family Low-Rise Apartment Dwelling Overlay District on land in C-3 (300-43), for low-rise apartments up to four stories. Ord. No. 4-2025 (7-7-2025) lowers the R-3 side yard for 'All other principal uses' from 20 to 10 ft. The single-family side yard of 7 ft is unchanged. Article VI (planned residential developments) was not read.",
+    "code_caution": "Four zoning amendments are not yet in the online code. Their PDFs were read in full on 2026-11-26. Ord. No. 2-2026 (5-4-2026) amends 300-36 R-1: single-family lots 17,500 sq ft (was 25,000), 100 ft wide (was 150), front yard 35 ft (was 75); all other R-1 provisions stay. The file uses these figures. Ord. No. 2-2025 (3-3-2025) amends 300-39 R-4: townhouses 2,200 sq ft of lot area per unit, multi-family lots 100 ft wide, coverage 50% for townhouses and multi-family and 40% for other uses, front yards 45 ft from the curb on a public street and 30 ft on a private street, townhouse and garden apartment side yards 10 ft, townhouse rear 20 ft, building spacing 20 ft. Ord. No. 3-2025 (3-3-2025) creates the High-Density Multiple-Family Low-Rise Apartment Dwelling Overlay District on land in C-3, for low-rise apartments (1,700 sq ft of lot area per unit, four stories and 60 ft, R-4 rules otherwise). Ord. No. 4-2025 (7-7-2025) lowers the R-3 side yard for 'All other principal uses' from 20 to 10 ft. The single-family side yard of 7 ft is unchanged. None of the four names an accessory or second dwelling unit.",
     "checks": [
       "The zoning code has no accessory dwelling unit, in-law suite or similar listing. 'No accessory structure shall be used for dwelling purposes' (300-73D(2)), so a unit in a garage or other accessory building is barred",
       "A single-family dwelling is 'a detached residential building, other than a mobile home, designed for or occupied exclusively by one family, which is the only principal structure on the lot and is permanently attached to a foundation' (300-12). A second unit inside the house makes it a two-family or multiple-family dwelling",
@@ -55,7 +61,7 @@
       "C-4 and C-5 allow temporary living quarters for a caretaker, watchman or security personnel (300-73A(16)), and in C-4 and I-1 a guard or custodian may reside on the premises. These are not homes on a house lot",
       "Mobility Overlay Districts supersede the base district (300-50). Airport Hazard and Parkway Protection Overlays add rules. Ord. No. 3-2025 adds a High-Density Multiple-Family Low-Rise Apartment Dwelling Overlay District on land in C-3"
     ],
-    "notes": "Fix round after independent review, 2026-11-15: R-1 lot and front yard from Ord. No. 2-2026 (search excerpts), the four amendments described in code_caution, accessory rear and side yards by district, the 150 ft overlay lot width and 300-35A added. Zoning office: Robinson Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling and non-family, then for two-family, duplex, conversion, converted, manufactured home, mobile home, farm dwelling, age-restricted, agricultural employ, family dwelling and one principal, then for not listed, not specifically, unlisted, dictionary and mobility overlay. Read in full: 300-11, 300-27, Article IV (300-31 to 300-49), 300-50 to 300-52, 300-64, 300-73, 300-103A(4). Read on screen: the 300-12 definitions named in the notes and the 300-79E parking schedule. 300-11 has no rule for undefined words ('The particular shall control the general'). No unlisted-use clause and no bar on use variances was found. 300-64D speaks of 'the farm residence' only. Not read: Article VI, 300-98, 300-105, the rest of Articles VII to XIII, the New Laws PDFs and the attachments"
+    "notes": "Fix round after independent review, 2026-11-15: R-1 lot and front yard from Ord. No. 2-2026 (search excerpts), the four amendments described in code_caution, accessory rear and side yards by district, the 150 ft overlay lot width and 300-35A added. Zoning office: Robinson Township Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15. Searched the code (scope all) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, relative, housekeeping unit, caretaker, guest house, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities, tiny house, caregiver, second dwelling and non-family, then for two-family, duplex, conversion, converted, manufactured home, mobile home, farm dwelling, age-restricted, agricultural employ, family dwelling and one principal, then for not listed, not specifically, unlisted, dictionary and mobility overlay. Read in full: 300-11, 300-27, Article IV (300-31 to 300-49), 300-50 to 300-52, 300-64, 300-73, 300-103A(4). Read on screen: the 300-12 definitions named in the notes and the 300-79E parking schedule. 300-11 has no rule for undefined words ('The particular shall control the general'). No unlisted-use clause and no bar on use variances was found. 300-64D speaks of 'the farm residence' only. Not read: Article VI, 300-98, 300-105, the rest of Articles VII to XIII, the New Laws PDFs and the attachments Second review, 2026-11-26: the four New Laws PDFs (Ord. No. 2-2025, 3-2025, 4-2025, 2-2026) read in full; the R-1 lot and front yard now rest on Ord. No. 2-2026 itself, and its Section 5 keeps the other R-1 figures. Article VI (300-53 and on, planned residential developments) read: a PRD permits single-family, two-family, townhouse and multiple-family dwellings and residential accessory uses (300-53B), no accessory or second unit with a house. Left for a later check, neither changes the ADU answer: whether R-3's 'Conversion (single-family to a multiple-family dwelling): 1,200 square feet' (300-38C(1)(e)) is lot area per unit (the neighbouring rows say 'per dwelling unit', this one does not), and the lot answer shows base district yards where a Mobility Overlay supersedes them (said as a condition)."
   },
   "adu": {
     "term": {
@@ -279,19 +285,19 @@
     "R-1": {
       "min_lot_sqft": {
         "value": 17500,
-        "section": "300-36C(1)(a), (5)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
-        "url": "https://ecode360.com/RO0250/search?query=%22300-36%22%20%22lot%20width%22&scope=all&sortOrder=relevance",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Ord. No. 2-2026 (New Laws, PDF only, read in search excerpts): 'Minimum lot area (a) - Single family dwellings: 17,500 square feet', reduced from 25,000. Lot width 100 ft, reduced from 150. The R-1 side and rear yards and coverage are the codified figures and may also have changed. Accessory structures 20 ft, accessory rear yard 10 ft, accessory side yards on corner lots 8 ft"
+        "section": "300-36C(1)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
+        "url": "https://ecode360.com/RO0250/laws/LF2790681.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. No. 2-2026, Section 2: 'Minimum lot area (a) - Single family dwellings: 17,500 square feet' (was 25,000). Section 3: lot width 100 ft (was 150). Section 5: 'All other provisions of Section 300-36 ... shall remain in full force', so the codified side and rear yards and coverage stand. Accessory structures 20 ft, accessory rear yard 10 ft, accessory side yards on corner lots 8 ft"
       },
       "setback_front_ft": {
         "value": 35,
-        "section": "300-36C(1)(a), (5)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
-        "url": "https://ecode360.com/RO0250/search?query=%2217%2C500%20square%20feet%22%20OR%20%22Front%20yard%3A%2035%20feet%22&scope=all&sortOrder=relevance",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Ord. No. 2-2026 (New Laws, PDF only, read in search excerpts): 'Minimum Yard Requirements (a) Front yard: 35 feet'. The codified figure was 75 ft"
+        "section": "300-36C(5)(a), as amended by Ord. No. 2-2026 (5-4-2026)",
+        "url": "https://ecode360.com/RO0250/laws/LF2790681.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. No. 2-2026, Section 4: 'Minimum Yard Requirements (a) Front yard: 35 feet'. The codified figure was 75 ft (the ordinance's recital calls it the side yard, but the enacted text amends the front yard)"
       },
       "setback_side_ft": {
         "value": 15,

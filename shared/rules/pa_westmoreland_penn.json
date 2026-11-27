@@ -4,7 +4,7 @@
     "instrument": "Township of Penn (Westmoreland County) Code Chapter 190 Zoning (Ord. No. 912-2016, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-05-21 (breadcrumb). New Laws on 2026-11-14: nine, of which Ord. No. 973-2025 (2025-10-15) is a zoning amendment to Chapter 190, not opened (PDF).",
+    "status_detail": "eCode360 code date 2025-05-21 (breadcrumb). New Laws on 2026-11-26: Ord. No. 973-2025 (2025-10-15) is the only zoning amendment since; read in full on 2026-11-26. The others (972, 974 to 980) are an alley vacation, budget, traffic, tax, property maintenance, parks and impact fees.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/9968279",
@@ -17,27 +17,30 @@
       "https://ecode360.com/print/PE1662?guid=9969490",
       "https://ecode360.com/PE1662/laws",
       "https://ecode360.com/PE1662/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20conversion%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/PE1662/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22conversion%20apartment%22%20OR%20%22conversion%20apartments%22%20OR%20caretaker%20OR%20%22accessory%20unit%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/PE1662/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22conversion%20apartment%22%20OR%20%22conversion%20apartments%22%20OR%20caretaker%20OR%20%22accessory%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+      "https://ecode360.com/attachment/311545/PE1662-190b%20Zoning%20Use%20Table.pdf",
+      "https://ecode360.com/print/PE1662?guid=9968279"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Westmoreland",
     "municipality_type": "township",
     "geoid": "4212958880",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/9968279",
     "code_current_through": "2025-05-21",
-    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-05-21'. Ord. No. 973-2025 (zoning amendment, 2025-10-15) is listed under New Laws and not yet in the code.",
-    "code_caution": "Ord. No. 973-2025 (adopted 2025-10-15) amends the zoning chapter and is not in the online code. It was not read. The code site's search shows it restates the IC use list with '11) Conversion apartments'. The district lot and bulk table (Table 2, Appendix A) is an attachment and was not read.",
+    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-05-21'. Ord. No. 973-2025 (zoning amendment, 2025-10-15) is listed under New Laws, not yet in the code, and read from its PDF.",
+    "code_caution": "Ord. No. 973-2025 (adopted 2025-10-15, not yet in the online code, read from the New Laws PDF) renames the Industrial Commerce (IC) district the Light Industrial and Commerce District (LICD), strikes '(11) Conversion apartments' from its permitted uses, keeps 'Single-family detached' with a new '(2-acre minimum)', and resets its dimensional standards; it also creates a Heavy Industrial (HI) district and a Mineral Processing Overlay. Attachment 2 (Zoning Use Table, 'Amended 2-21-2018 by Ord. No. 919') predates Ord. No. 955 (2022) and 973-2025 and disagrees with the text in places: it marks 'Conversions apartments' P in MDR, CC and IC and 'Single-family detached dwelling' P in CC and C in IC, while 190-403B lists no conversion apartments in MDR, Ord. No. 955 removed single-family detached from CC, and 190-406 permits it in LICD. No section says whether the table or the district text controls.",
     "checks": [
-      "A 'conversion apartment' is 'a dwelling unit created within an existing single-family dwelling in accordance with all applicable requirements of this chapter' (190-202). It is a permitted principal use only in the CC Commercial Corridor and IC Industrial Commerce districts (190-405B(11), 190-406B(11))",
+      "A 'conversion apartment' is 'a dwelling unit created within an existing single-family dwelling in accordance with all applicable requirements of this chapter' (190-202). In the district text it is a permitted principal use only in the CC Commercial Corridor district (190-405B(11)). Ord. No. 973-2025 struck it from the former IC district, now LICD",
       "Conflicting text, ask the Zoning Officer: the multifamily dwelling definition is 'a building containing three or more dwelling units, including conversion apartments' (190-202), so it is not settled whether one apartment added to a house (two units) is a conversion apartment or must meet multifamily rules",
-      "In CC a single-family detached dwelling is no longer a permitted use (repealed by Ord. No. 955 in 2022), so a house there is likely nonconforming. In IC it is permitted (190-405B(34), 190-406B(33))",
-      "No standards section for conversion apartments was found. The district rules apply: CC lot 21,780 sq ft with public water and sewer (43,560 without either), at most four dwelling units per acre for multifamily. IC 'service and residential uses' 65,340 sq ft, at most four dwelling units per acre (190-405F, 190-406F)",
+      "In CC a single-family detached dwelling is no longer a permitted use (repealed by Ord. No. 955 in 2022), so a house there is likely nonconforming. In LICD it is permitted on at least two acres (190-406C(28) as amended by Ord. No. 973-2025)",
+      "No standards section for conversion apartments was found. The district rules apply: CC lot 21,780 sq ft with public water and sewer (43,560 without either), at most four dwelling units per acre for multifamily (190-405F)",
       "In MDR a duplex (two independent dwelling units, each with a separate entrance, the only principal building on the lot) is a permitted use on at least 2/3 acre (190-403B(6), 190-202)",
-      "RR, MDR and NC do not list conversion apartments. The search found no other ADU text (accessory dwelling, accessory apartment, in-law, ECHO, granny, caretaker, accessory unit)",
+      "RR, MDR, NC, LICD and HI do not list conversion apartments in their text. Conflicting text, ask: the Zoning Use Table (Attachment 2, 2018) marks conversion apartments permitted in MDR. The search found no other ADU text (accessory dwelling, accessory apartment, in-law, ECHO, granny, caretaker, accessory unit)",
       "Parking: 'Single-family dwelling 2 for each unit'. 'Multiple-family dwelling 1 1/3 spaces for each unit with 2 bedrooms or less, and 2 for each unit having more than 2 bedrooms'. Fractions round up (190-623B, C)"
     ],
-    "notes": "Zoning office: Penn Township (Westmoreland County). Read on eCode360 (PE1662) in a browser, one print view at a time, on 2026-11-14. Code and New Laws search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters' and 'conversion apartment(s)' found the conversion apartment definition and the CC and IC listings. Use lists read for RR, MDR, NC, CC, IC and the MEO and DIO overlays (Article IV). Table 2 (Appendix A) was not opened."
+    "notes": "Zoning office: Penn Township (Westmoreland County). Read on eCode360 (PE1662) in a browser, one print view at a time, on 2026-11-14. Code and New Laws search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters' and 'conversion apartment(s)' found the conversion apartment definition and the CC and IC listings. Use lists read for RR, MDR, NC, CC, IC and the MEO and DIO overlays (Article IV). Table 2 (Appendix A) was not opened. Second review, 2026-11-26: Ord. No. 973-2025 read in full from the New Laws PDF (strikeouts checked on the page images); Attachment 2 (Zoning Use Table) read; 190-102 and 190-403 read again in the chapter print view. Still open, the text does not settle: whether one apartment added to a house (two units) is a conversion apartment or a multifamily dwelling (190-202), and whether MDR permits conversion apartments (Attachment 2 says P, 190-403B omits them)."
   },
   "adu": {
     "term": {
@@ -50,47 +53,46 @@
     },
     "status": {
       "value": "conversion_only",
-      "section": "190-405B(11), 190-406B(11)",
+      "section": "190-405B(11)",
       "url": "https://ecode360.com/print/PE1662?guid=9968587",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "A permitted principal use in CC and IC, only inside an existing single-family dwelling. The multifamily definition also names conversion apartments, so the two-unit case is not settled."
+      "note": "A permitted principal use in CC only, inside an existing single-family dwelling (Ord. No. 973-2025 struck it from the former IC district). The multifamily definition also names conversion apartments, so the two-unit case is not settled."
     },
     "scope_districts": {
       "value": [
-        "CC",
-        "IC"
+        "CC"
       ],
-      "section": "190-405B(11), 190-406B(11)",
-      "url": "https://ecode360.com/print/PE1662?guid=9968587",
-      "verified_on": "2026-11-14",
+      "section": "190-405B(11), 190-406C as amended by Ord. No. 973-2025",
+      "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "190-402, 190-403, 190-404",
+      "section": "190-402, 190-403, 190-404, 190-406, 190-410",
       "url": "https://ecode360.com/print/PE1662?guid=9968587",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "RR, MDR and NC do not list conversion apartments. Each lists its permitted uses."
+      "note": "RR, MDR, NC, LICD and HI do not list conversion apartments in their use lists. The Zoning Use Table (Attachment 2, 2018) marks them permitted in MDR; the text and the table disagree there, so ask the Zoning Officer."
     }
   },
   "approval": {
     "path": {
       "value": "by_right",
-      "section": "190-405B(11), 190-406B(11)",
+      "section": "190-405B(11)",
       "url": "https://ecode360.com/print/PE1662?guid=9968587",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "Listed among the permitted principal uses in CC and IC. Conflicting text, ask: the multifamily definition counts conversion apartments among buildings of three or more units."
+      "note": "Listed among the permitted principal uses in CC. Conflicting text, ask: the multifamily definition counts conversion apartments among buildings of three or more units."
     },
     "fallback_path": {
       "value": "variance",
       "section": "Chapter 190",
       "url": "https://ecode360.com/9968279",
-      "verified_on": "2026-11-14",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "Outside CC and IC a second unit in a house is not a listed use. It needs a use variance from the Zoning Hearing Board."
+      "note": "Outside CC a second unit in a house is not a listed use in the district text. It needs a use variance from the Zoning Hearing Board. In MDR the Zoning Use Table (Attachment 2) marks conversion apartments permitted, which the district text does not; ask."
     },
     "alternatives": {
       "value": [
@@ -117,12 +119,11 @@
   "eligibility": {
     "zoning_districts": {
       "value": [
-        "CC",
-        "IC"
+        "CC"
       ],
-      "section": "190-405B(11), 190-406B(11)",
-      "url": "https://ecode360.com/print/PE1662?guid=9968587",
-      "verified_on": "2026-11-14",
+      "section": "190-405B(11), 190-406C as amended by Ord. No. 973-2025",
+      "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     },
     "building_types": {
@@ -220,11 +221,11 @@
   "envelope": {
     "internal_uses_district_height": {
       "value": true,
-      "section": "190-405F(4), 190-406F(4)",
+      "section": "190-405F(4)",
       "url": "https://ecode360.com/print/PE1662?guid=9968587",
       "verified_on": "2026-11-14",
       "confidence": "verified",
-      "note": "Inside the house. District principal height 75 ft in CC and IC."
+      "note": "Inside the house. District principal height 75 ft in CC."
     }
   },
   "use": {
@@ -463,58 +464,76 @@
         "note": "'Uses without either public water or sanitary sewerage: 43,560 square feet (one acre).' A lot with only one of them is not settled by the text."
       }
     },
-    "IC": {
+    "LICD": {
       "min_lot_sqft": {
-        "value": 65340,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
+        "value": 87120,
+        "section": "190-406C(28), 190-406F(1) as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "verified",
-        "note": "'Service and residential uses: 65,340 square feet (1.5 acres).' Frontage 120 ft."
+        "note": "'Single-family detached (2-acre minimum)' (190-406C(28)). 'Service and residential uses' otherwise 21,780 sq ft with public water and sewer, 43,560 sq ft without. Frontage 100 ft for service and residential uses."
       },
       "setback_front_ft": {
-        "value": 75,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "value": 50,
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "75 ft if the lot or use is across from a residential district or use."
       },
       "setback_side_ft": {
         "value": 40,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
-        "confidence": "verified"
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "50 ft when the use abuts a residential use or district."
       },
       "setback_rear_ft": {
         "value": 35,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "50 ft if it abuts a residential district or use."
+      },
+      "accessory_setback_side_ft": {
+        "value": 20,
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory structures 20 ft from side and rear lot lines."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 20,
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "verified"
       },
       "principal_max_height_ft": {
         "value": 75,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "verified"
       },
       "max_building_coverage": {
         "value": 0.8,
-        "section": "190-406F",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "verified",
-        "note": "All structures."
+        "note": "Lot coverage, all structures."
       },
       "lot_area_per_unit_sqft": {
         "value": 10890,
-        "section": "190-406F(5)",
-        "url": "https://ecode360.com/print/PE1662?guid=9968587",
-        "verified_on": "2026-11-14",
+        "section": "190-406F as amended by Ord. No. 973-2025",
+        "url": "https://ecode360.com/PE1662/laws/LF2499459.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "Four dwelling units per acre."
+        "note": "Four dwelling units per acre, unless otherwise specified."
       }
     }
   }

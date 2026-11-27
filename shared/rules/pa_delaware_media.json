@@ -25,7 +25,7 @@
       "https://ecode360.com/print/ME1269?guid=44886659",
       "https://ecode360.com/ME1269/laws"
     ],
-    "verified_on": "2026-11-13",
+    "verified_on": "2026-11-26",
     "county": "Delaware",
     "municipality_type": "borough",
     "geoid": "4204548480",
@@ -53,7 +53,7 @@
       "Historic Resources Overlay: if a demolition permit is denied, Borough Council may allow a conversion to up to three units (R-1, R-2) or five (R-3, R-4) by conditional use (311.D-9A(1)(c))",
       "R-4: a TwoPlex (a second house at the rear of the lot) is permitted by right on lots at least 60 ft wide and 120 ft deep (311.B-42, B-44, B-61)"
     ],
-    "notes": "Zoning office: Borough of Media. Read on eCode360 in a browser, one article print view at a time. The use tables show permitted and special exception cells as symbols, so they were read from the page as displayed. Searched the definitions and the supplemental regulations for accessory dwelling, accessory apartment, supplemental dwelling, in-law, conversion and short-term rental. The older 'supplemental dwelling unit' or 'accessory apartment' text the index note mentions is not in the current Chapter 311. The Office district is shown as 'O' in the building form tables. Other districts (MERC, ROA, HBO, I) are outside Article B and have no ADU text. The earlier town survey has no Media entry."
+    "notes": "Zoning office: Borough of Media. Read on eCode360 in a browser, one article print view at a time. The use tables show permitted and special exception cells as symbols, so they were read from the page as displayed. Searched the definitions and the supplemental regulations for accessory dwelling, accessory apartment, supplemental dwelling, in-law, conversion and short-term rental. The older 'supplemental dwelling unit' or 'accessory apartment' text the index note mentions is not in the current Chapter 311. The Office district is shown as 'O' in the building form tables. Other districts (MERC, ROA, HBO, I) are outside Article B and have no ADU text. The earlier town survey has no Media entry. Second reading 2026-11-26 (G0): eCode360 header still 'legislation through 05-21-2026', New Laws empty. The R-3 Table of Permitted Lots and Building Forms (311.B-37B) read again cell by cell: 'Accessory dwelling unit, external' is X (prohibited) in the 60-69, 70-99 and 100+ ft width columns and permitted in the four columns below 60 ft; the detached, semi-detached and attached house rows carry the same X marks. The gate uses the lot_width_below 60 test, so the tool now bars the external forms on wide lots. Open dispute the code does not settle: whether the Borough really bars a house form, and so an external ADU, on lots 60 ft or wider, or reads the table otherwise. Ask the zoning officer."
   },
   "adu": {
     "term": {

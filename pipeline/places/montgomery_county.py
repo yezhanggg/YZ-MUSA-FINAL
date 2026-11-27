@@ -18,6 +18,7 @@ Sources (Montgomery County GIS on gis.montcopa.org, the Census, FEMA and Microso
   (District or Overlay) and the map date per town. Narberth's codes are lower case (3a); they take the
   rule file's spelling (3A).
 - Building outlines: Microsoft Global ML Building Footprints (no county outline layer is published).
+  House heights: DVRPC 2015 impervious landbase (lidar height_estimate) of the matching outline.
 - Street centerlines (NG911, St_PosTyp, FuncClass). Flood: FEMA NFHL.
 No living area in the open data.
 """
@@ -69,6 +70,8 @@ LIC_COUNTY = (
 LIC_FEMA = "FEMA NFHL, US federal government data (public domain)"
 LIC_CENSUS = "US Census Bureau TIGERweb, US government work (public domain)"
 LIC_MSFT = "ODbL (Microsoft Global ML Building Footprints)"
+DVRPC_2015 = "https://arcgis.dvrpc.org/portal/rest/services/Structures/impervious_2015_montgomery/FeatureServer/0"
+LIC_DVRPC = "DVRPC 2015 impervious landbase (Montgomery County). DVRPC data license, catalog.dvrpc.org"
 
 
 @dataclass(frozen=True)
@@ -144,6 +147,18 @@ LAYERS: tuple[Layer, ...] = (
         "ZCTA5,GEOID",
         bbox=TOWNS_BBOX,
         note="2020 Census ZIP Code Tabulation Areas, for lots whose property location has no ZIP",
+    ),
+    Layer(
+        "buildings_dvrpc",
+        DVRPC_2015,
+        LIC_DVRPC,
+        "class,height_estimate",
+        where="class = 'Building'",
+        bbox=TOWNS_BBOX,
+        page=1000,
+        note="DVRPC 2015 impervious landbase, Building class only. height_estimate is the 90th percentile "
+        "height in feet from a normalized DSM built from lidar (highest hit). Used only for the house "
+        "height of a Microsoft outline it matches (match_dvrpc_heights)",
     ),
     Layer(
         "flood_nfhl",
@@ -360,17 +375,57 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(out, geometry="geometry", crs=lots.crs)
 
 
+DVRPC_MIN_SHARE = 0.5  # both outlines must cover at least half of each other to share a height
+
+
+def match_dvrpc_heights(
+    msft: gpd.GeoDataFrame, dvrpc: gpd.GeoDataFrame, min_share: float = DVRPC_MIN_SHARE
+) -> pd.Series:
+    """DVRPC 2015 lidar height (feet) for each Microsoft outline, by index of `msft`.
+
+    The DVRPC outline with the largest overlap is taken when the overlap covers at least `min_share`
+    of both outlines, so a split, merged or newer (post 2015) building gets no height (NaN)."""
+    out = pd.Series(np.nan, index=msft.index, dtype=float)
+    if msft.empty or dvrpc.empty:
+        return out
+    a = gpd.GeoDataFrame({"_m": msft.index, "_ma": msft.geometry.area}, geometry=msft.geometry.values, crs=msft.crs)
+    h = pd.to_numeric(dvrpc["height_estimate"], errors="coerce")
+    b = gpd.GeoDataFrame(
+        {"_d": np.arange(len(dvrpc)), "_da": dvrpc.geometry.area.to_numpy(), "_h": h.to_numpy()},
+        geometry=dvrpc.geometry.values,
+        crs=dvrpc.crs,
+    )
+    ix = gpd.overlay(a, b, how="intersection", keep_geom_type=True)
+    if ix.empty:
+        return out
+    ix["_ia"] = ix.geometry.area
+    ix = ix[(ix["_ia"] >= min_share * ix["_ma"]) & (ix["_ia"] >= min_share * ix["_da"])]
+    best = ix.sort_values("_ia", ascending=False).drop_duplicates("_m").set_index("_m")["_h"]
+    best = best.where(best > 0)
+    out.loc[best.index] = best.to_numpy(dtype=float)
+    return out
+
+
 def load_buildings(lots_all: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     msft = read_layer("footprints_msft")[["height_m", "geometry"]].assign(source="msft")
     msft["geometry"] = msft.geometry.make_valid()
-    # Microsoft's model heights read low here (median house 15.7 ft in Upper Dublin, where most houses
-    # have two stories), and the town tests the unit against the house height. They are kept apart
-    # (height_msft_ft) and not used: the house height stays unknown, so that test reads "not checked".
+    # Microsoft's model heights read low here (median house 15.3 ft in Upper Dublin, 5.7 ft under the
+    # DVRPC 2015 lidar heights of the same outlines; 3.2 ft under Centre County's 3D buildings), and the
+    # towns test the unit against the house height. They are kept apart (height_msft_ft) and not used.
+    # The outlines stay Microsoft's; the height comes from the DVRPC 2015 outline that matches it
+    # (lidar 90th percentile, as in Chester County). An outline with no match keeps no height.
     msft["height_msft_ft"] = (msft.pop("height_m") * 3.28084).round(1)
-    msft["height_ft"] = np.nan
     msft = msft[msft.geometry.area > 1.0]
-    msft["height_source"] = None
-    step(f"buildings: {len(msft)} msft")
+    dv_path = raw_dir(PLACE) / "buildings_dvrpc.gpkg"
+    if dv_path.exists():
+        dv = read_layer("buildings_dvrpc")
+        dv = dv[dv["class"].astype(str).str.lower() == "building"]
+        dv["geometry"] = dv.geometry.make_valid()
+        msft["height_ft"] = match_dvrpc_heights(msft, dv)
+    else:
+        msft["height_ft"] = np.nan
+    msft["height_source"] = np.where(msft["height_ft"].notna(), "dvrpc_2015", None)  # type: ignore[call-overload]  # numpy stubs reject None
+    step(f"buildings: {len(msft)} msft, {int(msft['height_ft'].notna().sum())} with a DVRPC 2015 height")
     bldgs = assign_buildings(gpd.GeoDataFrame(msft, geometry="geometry", crs=WORK_CRS), lots_all)
     bldgs = bldgs[bldgs["lot_id"].notna()]
     return pgh.add_roles(bldgs)

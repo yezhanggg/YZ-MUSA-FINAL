@@ -20,7 +20,7 @@
       "https://www.wilkes-barre.city/node/31",
       "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
     ],
-    "verified_on": "2026-11-11",
+    "verified_on": "2026-11-26",
     "county": "Luzerne",
     "municipality_type": "city",
     "geoid": "4207985152",
@@ -39,7 +39,7 @@
       "A rented unit needs registration, a rental inspection report and an occupancy license (Chapter 7, Article VII, 7-218 to 7-226)",
       "A dwelling unit is for one family. More than four unrelated persons is not a family (Section 203)"
     ],
-    "notes": "Zoning office: Office of Planning and Zoning, https://www.wilkes-barre.city/node/31. Pending: none found affecting Appendix A. Searched Article 2 definitions, the Article 5 use tables, Article 3 and Article 7 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, second dwelling, accessory residential. No ADU term."
+    "notes": "Zoning office: Office of Planning and Zoning, https://www.wilkes-barre.city/node/31. Pending: none found affecting Appendix A. Searched Article 2 definitions, the Article 5 use tables, Article 3 and Article 7 for: accessory dwelling, accessory apartment, in-law, elder cottage, ECHO, granny, carriage house, second dwelling, accessory residential. No ADU term. Second reading 2026-11-26 in a browser on Municode: Section 501 (the 'Accessory Residential Uses' row is X in R-1, R-2, R-3 and five other districts), Section 508 and Article 2. Article 2 does not define 'Accessory Residential Uses'; Section 202 sends undefined words to The Latest Illustrated Book of Development Definitions or their ordinary meaning. The R-2 height row gives stories by type and one feet value (60 ft)."
   },
   "adu": {
     "term": {
@@ -352,12 +352,12 @@
         "note": "Maximum building coverage of lot."
       },
       "principal_max_height_ft": {
-        "value": null,
+        "value": 60,
         "section": "Section 508 Residential uses: Table of area and bulk regulations",
         "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
-        "verified_on": null,
-        "confidence": "unverified",
-        "note": "Table row lists 2.5 SF stories. The feet value for single family is not clear in the table text."
+        "verified_on": "2026-11-26",
+        "confidence": "secondary",
+        "note": "The table gives stories by dwelling type (2.5 single family, 3.5 two-family, 4.0 multi-family) and one height in feet for the district (60 ft). A single-family house is read as 2.5 stories and at most 60 ft."
       }
     },
     "R-3": {
@@ -394,12 +394,12 @@
         "note": "Maximum building coverage of lot."
       },
       "principal_max_height_ft": {
-        "value": null,
+        "value": 180,
         "section": "Section 508 Residential uses: Table of area and bulk regulations",
         "url": "https://library.municode.com/pa/wilkes-barre/codes/code_of_ordinances?nodeId=PTIICOOR_APXAZOOR_ART5ZODIRE",
-        "verified_on": null,
-        "confidence": "unverified",
-        "note": "Table row lists 2.5 SF stories. The feet value for single family is not clear in the table text."
+        "verified_on": "2026-11-26",
+        "confidence": "secondary",
+        "note": "The table gives stories by dwelling type (2.5 single family, 3.5 two-family, 15.0 multi-family) and one height in feet for the district (180 ft). A single-family house is read as 2.5 stories, with 180 ft the district figure."
       }
     }
   }

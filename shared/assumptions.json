@@ -677,6 +677,14 @@
       "confidence": "assumption",
       "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
     },
+    "lots.flag.undermined_min_share": {
+      "label": "Undermined area flag: share of the lot in the layer",
+      "unit": "share of lot area",
+      "value": 0.25,
+      "note": "Pittsburgh's Undermined Areas (UM-O) are mapped as coarsely as the landslide areas, so the same quarter of the lot is needed before the lot is flagged.",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py), same as the landslide flag", "url": "", "date": "2026-11-26"}]
+    },
     "lots.flag.flood_min_share": {
       "label": "Flood flag: share of the lot in the floodplain",
       "unit": "share of lot area",

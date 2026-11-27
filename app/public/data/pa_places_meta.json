@@ -1,6 +1,6 @@
 {
  "about": "Where can you build an ADU today, for every Pennsylvania county subdivision. One tier and one status per place. Not legal advice. Not a zoning determination. See docs/PLACES.md.",
- "built_on": "2026-11-16",
+ "built_on": "2026-11-26",
  "file": "pa_places.json",
  "fields": [
   "geoid",
@@ -137,6 +137,13 @@
   "pop_total": 13060017,
   "by_tier": [
    {
+    "tier": "verified",
+    "places": 200,
+    "pop": 6161137,
+    "pop_share": 0.4718,
+    "housing_units": 2639559
+   },
+   {
     "tier": "baseline",
     "places": 1741,
     "pop": 5571761,
@@ -144,25 +151,18 @@
     "housing_units": 2503453
    },
    {
-    "tier": "verified",
-    "places": 147,
-    "pop": 4975895,
-    "pop_share": 0.381,
-    "housing_units": 2146400
-   },
-   {
-    "tier": "drafted",
-    "places": 78,
-    "pop": 1628755,
-    "pop_share": 0.1247,
-    "housing_units": 667980
-   },
-   {
     "tier": "reported",
     "places": 554,
     "pop": 781869,
     "pop_share": 0.0599,
     "housing_units": 377333
+   },
+   {
+    "tier": "drafted",
+    "places": 25,
+    "pop": 443513,
+    "pop_share": 0.034,
+    "housing_units": 174821
    },
    {
     "tier": "text_search",
@@ -255,21 +255,15 @@
    },
    {
     "tier": "drafted",
-    "status": "by_right",
-    "places": 6,
-    "pop": 240122
-   },
-   {
-    "tier": "drafted",
     "status": "limited",
-    "places": 52,
-    "pop": 981903
+    "places": 17,
+    "pop": 310929
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 20,
-    "pop": 406730
+    "places": 8,
+    "pop": 132584
    },
    {
     "tier": "reported",
@@ -304,20 +298,20 @@
    {
     "tier": "verified",
     "status": "by_right",
-    "places": 4,
-    "pop": 417967
+    "places": 10,
+    "pop": 658089
    },
    {
     "tier": "verified",
     "status": "limited",
-    "places": 69,
-    "pop": 3013233
+    "places": 104,
+    "pop": 3684207
    },
    {
     "tier": "verified",
     "status": "not_addressed",
-    "places": 73,
-    "pop": 1448863
+    "places": 85,
+    "pop": 1723009
    },
    {
     "tier": "verified",

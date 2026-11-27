@@ -60,6 +60,8 @@ export const FLAG_STEP_TEXT = {
   site_risk: 'The lot is on a steep slope or in a landslide-prone area. Expect a soils report and extra review.',
   flood: 'Part of the lot is in a flood zone. Building there needs a floodplain review and may need a raised floor.',
   no_sewer: 'The lot has no public sewer, so a septic system is needed.',
+  undermined:
+    "The lot is in Pittsburgh's Undermined Area Overlay. Before zoning approval, bring the state mine records for the site; without evidence of more than 100 ft of cover over the mine, a site investigation is needed (906.05.B).",
 } as const;
 
 interface Offices {

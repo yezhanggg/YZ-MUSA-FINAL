@@ -4,7 +4,7 @@
     "instrument": "Upper Uwchlan Township Zoning Ordinance (Chapter 200 Zoning, Ord. No. 89-06 of 6-7-1989, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 UP2148, Township of Upper Uwchlan, Chester County. Chapter 200 Zoning was adopted 6-7-1989 by Ord. No. 89-06 and amended many times, most recently by Ord. No. 2026-03 (8-17-2026), which is folded into the definitions and the parking section. 200-62 was last amended by Ord. No. 2025-05 (10-20-2025). The former conversion of dwellings section (200-63) was repealed by Ord. No. 2024-01 (7-15-2024). New Laws: none. Each district article sets its uses and figures in text. The chapter page lists no attachments",
+    "status_detail": "eCode360 UP2148, Township of Upper Uwchlan, Chester County. Chapter 200 Zoning was adopted 6-7-1989 by Ord. No. 89-06 and amended many times, most recently by Ord. No. 2026-03 (8-17-2026), which is folded into the definitions and the parking section. 200-62 was last amended by Ord. No. 2025-05 (10-20-2025). The former conversion of dwellings section (200-63) was repealed by Ord. No. 2024-01 (7-15-2024). New Laws: none. Each district article sets its uses and figures in text. The chapter page lists no attachments Ord. No. 2026-04 (New Laws, listed as 'Upper Uwchlan Ord 2026-04 111626', enacted in 2026 and effective on enactment; the signature page gives the day as the 16th) adds an accessory dwelling unit: a definition in 200-7, 'Accessory dwelling unit' in the R-1 accessory uses (200-13E(4)) and standards in a new 200-62B(6). Read in full on 2026-11-26. Not yet in the online code.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/UP2148",
@@ -22,9 +22,11 @@
       "https://ecode360.com/print/UP2148?guid=8343129",
       "https://ecode360.com/print/UP2148?guid=8343617",
       "https://ecode360.com/print/UP2148?guid=8344101",
-      "https://ecode360.com/print/UP2148?guid=8344390"
+      "https://ecode360.com/print/UP2148?guid=8344390",
+      "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "https://ecode360.com/UP2148/laws"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Chester",
     "municipality_type": "township",
     "geoid": "4202979352",
@@ -33,67 +35,67 @@
     "code_current_through": "2026-08-17",
     "code_current_through_note": "eCode360: 'Includes legislation through 08-17-2026.' New Laws: none",
     "checks": [
-      "The code has no accessory dwelling unit listing. The nearest rule is a use accessory to a single-family dwelling: 'quarters for guests and for servants or tenants, employed on the premises' (200-62B(1)). R-1 permits 'Customary residential accessory uses', and R-2, R-3 and R-4 permit any accessory use permitted in R-1 (200-13E, 200-17C, 200-21C, 200-27C)",
-      "Where the quarters are in a building detached from the house, the lot needs the district's minimum lot area times the number of separate housekeeping units on the lot. For a house and one detached unit that is twice the minimum: 4 acres in R-1 and 2 acres in R-2. In R-3 it is 60,000 sq ft and in R-4 40,000 sq ft with centralized sewer and public water. Without both, the R-2 figures apply in R-3 and R-4, so 2 acres (200-62B(1), 200-14A, 200-18A, 200-22A(5), 200-28A(4))",
-      "'The rental or leasing of any of such quarters shall not be permitted' (200-62B(1)). A family includes 'domestic servants or gratuitous guests' living in a common household (200-7)",
-      "The code does not say whether such quarters may have their own kitchen. A dwelling unit has 'its own permanently installed cooking and sanitary facilities' (200-7). A duplex is two units 'located one over the other' (200-7), by right only in R-3 and R-4 (200-21A, 200-27A). So only a second unit stacked over the first could be a duplex. A side-by-side second unit fits no dwelling type the code lists",
+      "Ord. No. 2026-04 adds an accessory dwelling unit: 'A dwelling unit located on the same lot as a single-family detached dwelling which provides complete independent living facilities for a maximum of two persons' (200-7). An accessory use to a single-family detached dwelling in R-1, R-2 and R-3 (200-62B(6)(2)); R-1 lists it (200-13E(4))",
+      "Owner lives in one of the two units. One ADU per lot. Not with a multifamily or attached dwelling. At most 1,200 sq ft and two bedrooms, at most two residents. No mobile home or RV (200-62B(6)(3))",
+      "The ADU meets the principal structure's yards and other dimensional rules, but not the lot minimum or the principal height. A detached ADU is at most 24 ft tall, or the height of an existing taller accessory structure (200-62B(6)(4))",
+      "One parking space more than the house needs, and a common driveway (200-62B(6)(5), (6)). Septic or sewer, water and electric approvals (200-62B(6)(7)). Stormwater under Chapter 152 (200-62B(6)(8))",
+      "An ADU in an accessory structure stays on the same lot as the house. Architectural plan with the building permit, and a use and occupancy permit before occupancy (200-62B(6)(9) to (11))",
+      "In a historic structure on a tract in the Historic Resources Inventory the ADU is exempt from the impervious and floor area caps if the conversion adds no more than 1,000 sq ft of impervious cover (200-62B(6)(3)(a))",
+      "R-4 permits any accessory use permitted in R-1 (200-27C), so it may reach the ADU, but 200-62B(6)(2) names only R-1, R-2 and R-3. Ask the zoning officer",
+      "The older accessory use 'quarters for guests and for servants or tenants, employed on the premises', not for rent, stays in 200-62B(1), with the lot area multiplied by the housekeeping units when the quarters are detached",
       "A two-family detached dwelling (duplex, one unit over the other) is by right in R-3 and R-4, at 20,000 sq ft per unit in R-3 and 15,000 sq ft per unit in R-4, with centralized sewer and public water (200-22A(2), 200-28A(2)). 'Without public or centralized sewer and public water, the density shall be one unit per one gross acre' (200-23A)",
-      "The former section on conversion of dwellings (200-63) was repealed by Ord. No. 2024-01. The parking table still lists 'Accessory apartments for family members' at 1.0 space, 'Apartment in combination with a business' and 'Residential conversions' (200-73G(2)), but the chapter as read defines and lists none of them",
-      "Accessory buildings may not stand in the front yard and may not be taller than 25 ft (200-14E, F, 200-18E, F, 200-22E, F, 200-28E, F)",
       "On a lot under two acres, lot area does not count land in the Flood Hazard District, rights-of-way and easements, or slopes over 25% (200-7 'Lot area')",
       "A building may be constructed on a nonconforming lot of record. Yards that cannot be met need a special exception, and contiguous nonconforming lots in common ownership count as one lot (200-104A)",
-      "No section read bars a use variance or gives a path for uses the code does not list. Each district permits uses 'for any of the following purposes, and no other' (200-13). Variances need the findings of 200-126I",
-      "Quarters for a caretaker are also listed as accessory to industrial activities (200-62F). They are not quarters on a house lot",
       "200-72.1 allows adaptive reuse of 'Any identified historic structure located on a tract listed in the Historic Resources Inventory'. In any district a structure may be reused as an additional principal use otherwise permitted by the base district, on the same lot as another permitted principal use, by conditional use after Historical Commission review (200-72.1B(2)). Multifamily reuse is a conditional use in R-1 to R-4, with units of at least 600 sq ft (400 sq ft by conditional use) (200-72.1B(1)(b)). Lot area and yards may be reduced by up to 50% (200-72.1C(1))"
     ],
-    "notes": "Zoning office: Upper Uwchlan Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 200-7 (definitions from the start through 'Municipal use'), Articles IV to VIII (R-1, R-2, R-3, R-4, C-1), 200-62, 200-63, 200-73, 200-104, 200-126, the quoted parts of 200-72.1 and the New Laws page. Not read: Articles X to XII (C-3, LI, PI), the definitions after 'Municipal use', 200-64 to 200-72.4 (including 200-71 planned residential development and 200-72.1 adaptive reuse for historic preservation), the rest of Article XV, Articles XVI to XVIII (including the Steep Slope Conservation District), Article XIX, the rest of Article XX, Article XXI and Chapter 82 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite and relative. Building coverage counts accessory buildings and lot coverage is impervious cover (200-7). A lot holds one principal building except for multifamily and multiuse commercial and industrial developments (200-7 'Lot')."
+    "notes": "Zoning office: Upper Uwchlan Township, Zoning Officer. Read in a browser on eCode360, one page at a time, on 2026-11-16, mostly in print view. Read: 200-7 (definitions from the start through 'Municipal use'), Articles IV to VIII (R-1, R-2, R-3, R-4, C-1), 200-62, 200-63, 200-73, 200-104, 200-126, the quoted parts of 200-72.1 and the New Laws page. Not read: Articles X to XII (C-3, LI, PI), the definitions after 'Municipal use', 200-64 to 200-72.4 (including 200-71 planned residential development and 200-72.1 adaptive reuse for historic preservation), the rest of Article XV, Articles XVI to XVIII (including the Steep Slope Conservation District), Article XIX, the rest of Article XX, Article XXI and Chapter 82 (floodplain). The code search was run for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite and relative. Building coverage counts accessory buildings and lot coverage is impervious cover (200-7). A lot holds one principal building except for multifamily and multiuse commercial and industrial developments (200-7 'Lot'). Second review, 2026-11-26: Ord. No. 2026-04 (ADUs) found under New Laws and read in full; the file was rewritten for it (status, term, districts, size, height, yards, owner, parking). The guest quarters of 200-62B(1) stay as an alternative. Left for a later check: R-4 (listed through 200-27C, not named in 200-62B(6)(2)); the parking table row 'Accessory apartments for family members' (200-73G(2)) next to the new 1 space rule; and the parts not read before (Articles X to XII, 200-64 to 200-72.4, Articles XVI to XXI, Chapter 82), which the ADU section does not cite.",
+    "code_caution": "Ord. No. 2026-04 (ADUs) is not yet in the online code and was read from the New Laws PDF. The enactment date reads as 11-16-2026 from the New Laws label; the month on the signature page is handwritten and not legible in the text layer."
   },
   "adu": {
     "term": {
-      "value": "quarters for guests and for servants or tenants, employed on the premises",
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Not called an accessory dwelling. Listed among the uses accessory to a single-family dwelling. 200-62 permits the listed accessory uses 'and uses of the same general character'. Searched the code for accessory dwelling, in-law, accessory apartment, family member, living quarters, ECHO, guest house, tenant house, caretaker, conversion, second dwelling, carriage house, granny, accessory suite and relative"
+      "value": "accessory dwelling unit",
+      "section": "200-7 (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'ACCESSORY DWELLING UNIT or ADU - A dwelling unit located on the same lot as a single-family detached dwelling which provides complete independent living facilities for a maximum of two persons.'"
     },
     "status": {
-      "value": "family_only",
-      "section": "200-62B(1), 200-7 'Family'",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Quarters only for non-paying guests, or for servants or tenants employed on the premises. They may not be rented or leased. The code's family includes 'domestic servants or gratuitous guests'. Allowed as a customary residential accessory use in R-1 to R-4"
+      "value": "allowed_by_right",
+      "section": "200-62B(6)(2), 200-13E(4) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'An ADU may be permitted as an accessory use to a single-family detached dwelling in the R-1, R-2, and R-3 Districts'. R-1 lists it among accessory uses (200-13E(4)); R-2 and R-3 permit the accessory uses of R-1. Building permit and a use and occupancy permit (200-62B(6)(10), (11))."
     },
     "scope_districts": {
       "value": [
         "R-1",
         "R-2",
-        "R-3",
-        "R-4"
+        "R-3"
       ],
-      "section": "200-13E, 200-17C, 200-21C, 200-27C",
-      "url": "https://ecode360.com/print/UP2148?guid=8342420",
-      "verified_on": "2026-11-16",
+      "section": "200-62B(6)(2) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     },
     "status_outside": {
       "value": "not_addressed",
-      "section": "200-33",
-      "url": "https://ecode360.com/print/UP2148?guid=8342588",
-      "verified_on": "2026-11-16",
+      "section": "200-62B(6)(2), 200-27C, 200-33",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "C-1 permits no house by right and only customary commercial accessory uses. C-3, LI and PI were not read"
+      "note": "The ADU section names R-1, R-2 and R-3 only. R-4 permits 'any accessory use permitted in R-1' (200-27C), which now includes the ADU, so R-4 is listed but in doubt; ask the zoning officer. C-1 and the nonresidential districts list no ADU."
     }
   },
   "approval": {
     "path": {
       "value": "by_right",
-      "section": "200-13E(1), 200-62B(1), 200-111",
-      "url": "https://ecode360.com/print/UP2148?guid=8342420",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "A customary residential accessory use, so a zoning permit. No hearing is named"
+      "section": "200-62B(6), 200-13E(4) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "An accessory use by right. An architectural plan with the building permit, then a use and occupancy permit before anyone moves in (200-62B(6)(10), (11)). Sewer or septic and water approvals as needed (200-62B(6)(7))."
     },
     "fallback_path": {
       "value": "variance",
@@ -105,6 +107,21 @@
     },
     "alternatives": {
       "value": [
+        {
+          "name": "Quarters for guests or household employees (not for rent)",
+          "path": "by_right",
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-3",
+            "R-4"
+          ],
+          "conditions": "'Quarters for guests and for servants or tenants, employed on the premises', in the house or in a detached building such as a private garage. 'The rental or leasing of any of such quarters shall not be permitted.' In a detached building the lot needs the district minimum times the number of housekeeping units: 4 acres in R-1, 2 acres in R-2, 60,000 sq ft in R-3 and 40,000 sq ft in R-4 with centralized sewer and public water (2 acres without)",
+          "section": "200-62B(1), 200-13E, 200-14A, 200-18A, 200-22A, 200-28A",
+          "url": "https://ecode360.com/print/UP2148?guid=8343068",
+          "confidence": "verified",
+          "note": "An older accessory use the 2026 ADU rules did not repeal. Whether such quarters may have a kitchen is not stated"
+        },
         {
           "name": "Two-family detached dwelling (duplex, R-3)",
           "path": "by_right",
@@ -191,7 +208,7 @@
       ],
       "section": "200-21A, 200-27A, 200-72.1",
       "url": "https://ecode360.com/print/UP2148?guid=8342480",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     }
   },
@@ -200,21 +217,20 @@
       "value": [
         "R-1",
         "R-2",
-        "R-3",
-        "R-4"
+        "R-3"
       ],
-      "section": "200-13E, 200-17C, 200-21C, 200-27C",
-      "url": "https://ecode360.com/print/UP2148?guid=8342420",
-      "verified_on": "2026-11-16",
+      "section": "200-62B(6)(2) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     },
     "historic_bypass": {
       "value": false,
-      "section": "200-72.1",
-      "url": "https://ecode360.com/8342086",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "No historic path for the quarters themselves. 200-72.1 lets a historic structure on a tract in the Historic Resources Inventory be reused as an additional principal use by conditional use. It is shown as an alternative"
+      "section": "200-62B(6)(3)(a) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No separate path. An ADU in a historic structure on a tract in the Historic Resources Inventory is exempt from the impervious cover and floor area caps if the conversion adds no more than 1,000 sq ft of impervious cover."
     },
     "districts_read_no_listing": {
       "value": [
@@ -227,180 +243,32 @@
       "note": "C-1 permits offices, shops, restaurants and similar uses, mixed-use dwellings by conditional use, and customary commercial accessory uses"
     },
     "gates": {
+      "value": [],
+      "section": "200-62B(6) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No lot size, family or age test. 'An ADU ... shall be subject to all applicable residential zoning dimensional requirements for the principal structure, except minimum lot area and maximum building height' (200-62B(6)(4)(a))."
+    },
+    "building_types": {
       "value": [
-        {
-          "kind": "family",
-          "condition": "The quarters are for guests, or for servants or tenants employed on the premises. 'The rental or leasing of any of such quarters shall not be permitted.'",
-          "effect": "condition",
-          "applies_to": null,
-          "districts": null,
-          "building_types": null,
-          "section": "200-62B(1)",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Quarters in a detached building need the district minimum times the number of housekeeping units on the lot. In R-1 that is 4 acres for the house and one unit",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-1"
-          ],
-          "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 174240,
-          "section": "200-62B(1), 200-14A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Quarters in a detached building need the district minimum times the number of housekeeping units on the lot. In R-2 that is 2 acres for the house and one unit",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-2"
-          ],
-          "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 87120,
-          "section": "200-62B(1), 200-18A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Quarters in a detached building need the district minimum times the number of housekeeping units on the lot. In R-3 with centralized sewer and public water that is 60,000 sq ft for the house and one unit",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-3"
-          ],
-          "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 60000,
-          "section": "200-62B(1), 200-22A(1), (5)",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "utilities",
-          "condition": "In R-3 a lot without centralized sewer takes the R-2 figures, so quarters in a detached building need 2 acres (87,120 sq ft) for the house and one unit. On a lot under 87,120 sq ft they need centralized sewer",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-3"
-          ],
-          "building_types": null,
-          "test": "public_sewer",
-          "only_below_lot_sqft": 87120,
-          "section": "200-62B(1), 200-22A(5), 200-18A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "utilities",
-          "condition": "In R-3 a lot without public water takes the R-2 figures, so quarters in a detached building need 2 acres (87,120 sq ft) for the house and one unit. On a lot under 87,120 sq ft they need public water",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-3"
-          ],
-          "building_types": null,
-          "test": "public_water",
-          "only_below_lot_sqft": 87120,
-          "section": "200-62B(1), 200-22A(5), 200-18A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "lot_size",
-          "condition": "Quarters in a detached building need the district minimum times the number of housekeeping units on the lot. In R-4 with centralized sewer and public water that is 40,000 sq ft for the house and one unit",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-4"
-          ],
-          "building_types": null,
-          "test": "lot_sqft_at_least",
-          "value": 40000,
-          "section": "200-62B(1), 200-28A(1), (4)",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "utilities",
-          "condition": "In R-4 a lot without centralized sewer takes the R-2 figures, so quarters in a detached building need 2 acres (87,120 sq ft) for the house and one unit. On a lot under 87,120 sq ft they need centralized sewer",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-4"
-          ],
-          "building_types": null,
-          "test": "public_sewer",
-          "only_below_lot_sqft": 87120,
-          "section": "200-62B(1), 200-28A(4), 200-18A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "utilities",
-          "condition": "In R-4 a lot without public water takes the R-2 figures, so quarters in a detached building need 2 acres (87,120 sq ft) for the house and one unit. On a lot under 87,120 sq ft they need public water",
-          "effect": "bars",
-          "applies_to": [
-            "detached_new",
-            "garage_conversion",
-            "over_garage"
-          ],
-          "districts": [
-            "R-4"
-          ],
-          "building_types": null,
-          "test": "public_water",
-          "only_below_lot_sqft": 87120,
-          "section": "200-62B(1), 200-28A(4), 200-18A",
-          "url": "https://ecode360.com/print/UP2148?guid=8343068"
-        },
-        {
-          "kind": "design",
-          "condition": "The code does not say whether the quarters may have their own kitchen. A dwelling unit has its own cooking and sanitary facilities (200-7). A duplex is two units one over the other, permitted only in R-3 and R-4. So a second unit with a kitchen could only be a duplex if it sits over the first unit. A side-by-side unit fits no dwelling type the code lists.",
-          "effect": "condition",
-          "applies_to": [
-            "internal",
-            "attached"
-          ],
-          "districts": null,
-          "building_types": null,
-          "section": "200-7 'Dwelling unit', 'Dwelling, two-family detached', 200-62B(1)",
-          "url": "https://ecode360.com/print/UP2148?guid=8342109",
-          "confidence": "secondary"
-        }
+        "detached"
       ],
-      "section": "200-62B(1), 200-22A(5), 200-28A(4)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
-      "confidence": "verified"
+      "section": "200-62B(6)(2), (3)(d) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "Accessory to a single-family detached dwelling. 'No ADU shall be permitted when accessory to a multifamily dwelling or attached dwelling.'"
+    },
+    "districts_in_doubt": {
+      "value": [
+        "R-4"
+      ],
+      "section": "200-27C, 200-62B(6)(2)",
+      "url": "https://ecode360.com/print/UP2148?guid=8342420",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "R-4 permits any accessory use permitted in R-1, and R-1 now lists the ADU (200-13E(4)), but 200-62B(6)(2) names only R-1, R-2 and R-3."
     }
   },
   "form": {
@@ -412,78 +280,96 @@
         "garage_conversion",
         "over_garage"
       ],
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
+      "section": "200-62B(6)(3)(a), (4), (9) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "200-62B(1) names quarters in the house and 'within a building detached and separate from the principal dwelling', among them a detached private garage"
+      "note": "'An ADU whether attached to an existing structure or detached' (4)(a); an ADU may be 'within an accessory structure' on the same lot (9), including one existing when the ordinance was adopted (4)(b). No mobile home or recreational vehicle (3)(g)."
     }
   },
   "envelope": {
     "max_height_ft": {
-      "value": 25,
-      "section": "200-14E, 200-18E, 200-22E, 200-28E",
-      "url": "https://ecode360.com/print/UP2148?guid=8342420",
-      "verified_on": "2026-11-16",
+      "value": 24,
+      "section": "200-62B(6)(4)(b) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified",
-      "note": "No accessory building, other than an accessory farm building, may exceed 25 ft"
+      "note": "'The maximum building height for a detached ADU shall not exceed 24 feet.' An accessory structure taller than 24 ft that existed when the ordinance was adopted keeps its height. A unit in or attached to the house takes the district height (35 ft)."
     },
     "front_yard_barred": {
       "value": true,
       "section": "200-14F, 200-18F, 200-22F, 200-28F",
       "url": "https://ecode360.com/print/UP2148?guid=8342420",
-      "verified_on": "2026-11-16",
+      "verified_on": "2026-11-26",
       "confidence": "verified",
       "note": "'No accessory buildings or structures shall be situated within the front yard'"
+    },
+    "district_yards_bind_accessory": {
+      "value": true,
+      "section": "200-62B(6)(4)(a) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'An ADU whether attached to an existing structure or detached shall be subject to all applicable residential zoning dimensional requirements for the principal structure, except minimum lot area and maximum building height.'"
     }
   },
   "use": {
     "family_only": {
-      "value": true,
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "Guests, or servants or tenants employed on the premises"
+      "value": false,
+      "section": "200-62B(6) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No family rule. 'A maximum of two people may reside in the ADU' (200-62B(6)(3)(f))."
     },
     "occupancy": {
-      "value": "Guests, or servants or tenants employed on the premises. The quarters may not be rented or leased.",
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
+      "value": "At most two people live in the ADU. The owner lives in the house or the ADU.",
+      "section": "200-62B(6)(3)(b), (f) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified"
     },
     "owner_occupancy": {
-      "value": false,
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary",
-      "note": "No owner occupancy rule"
+      "value": true,
+      "section": "200-62B(6)(3)(b) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'One of the two dwelling units shall be occupied by the owner of the lot on which both dwelling units are located.'"
     },
     "short_term_rental_banned": {
-      "value": true,
-      "section": "200-62B(1)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343068",
-      "verified_on": "2026-11-16",
+      "value": null,
+      "section": "200-62B(6) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "The ADU section does not address short-term rental. Short-term rentals are regulated in 200-72.3 (a conditional use in R-1 and R-2)."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "200-62B(6)(3)(c) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
       "confidence": "verified",
-      "note": "'the rental or leasing of any of such quarters shall not be permitted'"
+      "note": "'There shall be no more than one ADU built on each lot.'"
     }
   },
   "parking": {
     "spaces_required": {
-      "value": null,
-      "section": "200-73G(2)",
-      "url": "https://ecode360.com/print/UP2148?guid=8343617",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "value": 1,
+      "section": "200-62B(6)(5), (6) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'One (1) off-street parking space shall be required for an ADU, in addition to those required for the principal dwelling.' A common driveway serves the house and the ADU."
     },
-    "reading": {
-      "value": "A single-family home needs 3 spaces per dwelling unit. The first garage bay counts as half a space and each further bay as one (200-73G(1)). If the quarters are a dwelling unit they need 3 more, so 6 in all. The table also lists 'Accessory apartments for family members' at 1.0 space, a use the chapter no longer defines. Ask the zoning officer",
-      "section": "200-73G(1), (2)",
+    "total_on_site": {
+      "value": 4,
+      "section": "200-62B(6)(5), 200-73G(1), (2)",
       "url": "https://ecode360.com/print/UP2148?guid=8343617",
-      "verified_on": "2026-11-16",
-      "confidence": "secondary"
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "The house needs 3 spaces (200-73G(2), the first garage bay counts as half a space), plus 1 for the ADU."
     }
   },
   "districts": {
@@ -540,29 +426,6 @@
         "url": "https://ecode360.com/print/UP2148?guid=8342420",
         "verified_on": "2026-11-16",
         "confidence": "verified"
-      },
-      "accessory_setback_side_ft": {
-        "value": 20,
-        "section": "200-14F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342420",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building in the front yard"
-      },
-      "accessory_setback_rear_ft": {
-        "value": 20,
-        "section": "200-14F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342420",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 25,
-        "section": "200-14E",
-        "url": "https://ecode360.com/print/UP2148?guid=8342420",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building, other than an accessory farm building, over 25 ft"
       }
     },
     "R-2": {
@@ -618,29 +481,6 @@
         "url": "https://ecode360.com/print/UP2148?guid=8342456",
         "verified_on": "2026-11-16",
         "confidence": "verified"
-      },
-      "accessory_setback_side_ft": {
-        "value": 15,
-        "section": "200-18F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342456",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building in the front yard"
-      },
-      "accessory_setback_rear_ft": {
-        "value": 15,
-        "section": "200-18F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342456",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 25,
-        "section": "200-18E",
-        "url": "https://ecode360.com/print/UP2148?guid=8342456",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building, other than an accessory farm building, over 25 ft"
       }
     },
     "R-3": {
@@ -696,29 +536,6 @@
         "url": "https://ecode360.com/print/UP2148?guid=8342480",
         "verified_on": "2026-11-16",
         "confidence": "verified"
-      },
-      "accessory_setback_side_ft": {
-        "value": 10,
-        "section": "200-22F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342480",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building in the front yard"
-      },
-      "accessory_setback_rear_ft": {
-        "value": 10,
-        "section": "200-22F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342480",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 25,
-        "section": "200-22E",
-        "url": "https://ecode360.com/print/UP2148?guid=8342480",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building, other than an accessory farm building, over 25 ft"
       },
       "utility_rows": {
         "value": [
@@ -811,29 +628,6 @@
         "verified_on": "2026-11-16",
         "confidence": "verified"
       },
-      "accessory_setback_side_ft": {
-        "value": 10,
-        "section": "200-28F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342552",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building in the front yard"
-      },
-      "accessory_setback_rear_ft": {
-        "value": 10,
-        "section": "200-28F",
-        "url": "https://ecode360.com/print/UP2148?guid=8342552",
-        "verified_on": "2026-11-16",
-        "confidence": "verified"
-      },
-      "accessory_structure_max_height_ft": {
-        "value": 25,
-        "section": "200-28E",
-        "url": "https://ecode360.com/print/UP2148?guid=8342552",
-        "verified_on": "2026-11-16",
-        "confidence": "verified",
-        "note": "No accessory building, other than an accessory farm building, over 25 ft"
-      },
       "utility_rows": {
         "value": [
           {
@@ -870,6 +664,35 @@
         "verified_on": "2026-11-16",
         "confidence": "verified"
       }
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": 1200,
+      "section": "200-62B(6)(3)(e) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'The floor area of an ADU shall be limited to a maximum of twelve hundred (1,200) square feet and shall contain no more than two (2) bedrooms.'"
+    },
+    "exempt_building": {
+      "value": {
+        "forms": [
+          "garage_conversion",
+          "internal"
+        ],
+        "caps": [
+          "size"
+        ],
+        "older_than_years": null,
+        "historic": true,
+        "what": "a historic structure on a tract listed in the Historic Resources Inventory, if the conversion adds no more than 1,000 sq ft of impervious cover"
+      },
+      "section": "200-62B(6)(3)(a) (Ord. No. 2026-04)",
+      "url": "https://ecode360.com/UP2148/laws/LF2914417.pdf",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "'Accessory dwelling units shall be permitted in historic structures located on a tract listed in the Historic Resources Inventory ... irrespective of maximum impervious coverage or maximum habitable floor area requirements'."
     }
   }
 }

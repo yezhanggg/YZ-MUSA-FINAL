@@ -4,7 +4,7 @@
     "instrument": "Code of Ordinances of the Borough of Doylestown, Chapter 27 Zoning (Ord. 1972-10, as amended), with Attachment 5 (Table of Use Regulations) and Attachment 6 (Table of Dimensional Requirements), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "Chapter 27 rests on Ord. 1972-10 (10/16/1972). Use 61.1, Accessory Dwelling Unit, sits in 27-406, whose amendment line ends with Ord. No. 2024-5 (7/15/2024), 2025-2 (4/21/2025), 2026-5 (4/20/2026) and 2026-13 (9/22/2026). The adopting ordinance is not confirmed. The Borough Zoning and Planning Committee minutes of 5-11-2026 show the ADU ordinance still in draft ('The Committee agreed to allow the Ordinance to move forward to the Planning Commission'), so Ord. 2026-5 (4/20/2026) is unlikely to be it. The only later ordinance on the 27-406 and Attachment 5 amendment lines is Ord. No. 2026-13 (9/22/2026), and Attachment 5 carries Supp 115, Sep 2026. So the ADU rule most likely took effect 9-22-2026 by Ord. 2026-13. Ord. 2026-13 itself could not be found: it is codified, so it is no longer on eCode360 New Laws, and searches of the borough's own pages found no copy. eCode360 shows 'Includes legislation through 09-22-2026'. New Laws (read 2026-11-13): none.",
+    "status_detail": "Chapter 27 rests on Ord. 1972-10 (10/16/1972). Use 61.1, Accessory Dwelling Unit, sits in 27-406, whose amendment line ends with Ord. No. 2024-5 (7/15/2024), 2025-2 (4/21/2025), 2026-5 (4/20/2026) and 2026-13 (9/22/2026). The ADU rule was adopted by Ord. No. 2026-13 on 9-22-2026 (confirmed 2026-11-26): eCode360 lists 'ORDINANCE NO. 2026-13 AN ORDINANCE OF THE BOROUGH OF DOYLESTOWN' (DO1641/laws/LF2818354.pdf), whose recitals cite the DB2035 comprehensive plan's call for ADUs, and a meeting report says Council adopted Ord. No. 2026-13 on Sept. 22 unanimously, allowing ADUs in R-1, R-2, R-3 and CR by special exception with definitions, parking and standards. Council authorized advertising the draft on 8-17-2026. The ordinance PDF itself was not read (the codified text in 27-406(61.1) and Attachment 5 was). eCode360 shows 'Includes legislation through 09-22-2026'.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11768539",
@@ -20,9 +20,12 @@
       "https://ecode360.com/attachment/339140/DO1641-27e%20Table%20of%20Use%20Regulations.pdf",
       "https://ecode360.com/attachment/339140/DO1641-27f%20Table%20of%20Dimensional%20Requirements.pdf",
       "https://ecode360.com/DO1641/laws",
-      "https://storage.googleapis.com/dtown/ZP-MAY-2026-MINUTES.pdf"
+      "https://storage.googleapis.com/dtown/ZP-MAY-2026-MINUTES.pdf",
+      "https://ecode360.com/DO1641/laws/LF2818354.pdf",
+      "https://citizenportal.ai/articles/11304970/pennsylvania/bucks-county/doylestown/council-approves-ordinance-allowing-accessory-dwelling-units-by-special-exception",
+      "https://storage.googleapis.com/dtown/Meetings/Council/01-Agenda-08-17-2026-Council-Meeting.pdf"
     ],
-    "verified_on": "2026-11-13",
+    "verified_on": "2026-11-26",
     "county": "Bucks",
     "municipality_type": "borough",
     "geoid": "4201719784",

@@ -4,7 +4,7 @@
     "instrument": "Lower Saucon Township Zoning Ordinance (Chapter 180 Zoning, adopted by the Township Council 2-20-2002 by Ord. No. 2002-03, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 LO1675, Township of Lower Saucon (180-15 adopts the 'Zoning Map for the Township of Lower Saucon, Northampton County, PA', and the code cites the Soil Survey of Northampton County). The township website (lowersaucontownship.org, Council, Recently Adopted Ordinances) lists Ord. No. 2026-02 (data centers) and 2026-03 (striking Appendix A from Chapter 180) of 5-20-2026, both in the code, and later ordinances on solid waste (2026-04), stormwater (2026-05) and the official map (2026-06), none of them zoning. The eCode360 New Laws page lists the same three later ordinances. District uses, lot and yard figures are text in each district article. Two attachments are PDFs and were not opened: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart)",
+    "status_detail": "eCode360 LO1675, Township of Lower Saucon (180-15 adopts the 'Zoning Map for the Township of Lower Saucon, Northampton County, PA', and the code cites the Soil Survey of Northampton County). The township website (lowersaucontownship.org, Council, Recently Adopted Ordinances) lists Ord. No. 2026-02 (data centers) and 2026-03 (striking Appendix A from Chapter 180) of 5-20-2026, both in the code, and later ordinances on solid waste (2026-04), stormwater (2026-05) and the official map (2026-06), none of them zoning. The eCode360 New Laws page lists the same three later ordinances. District uses, lot and yard figures are text in each district article. Two attachments are PDFs and were not opened: Appendix B (Accessory Land Uses) and Appendix D (Lot Area and Bulk Chart) Appendix B (Accessory Land Uses, amended through Ord. No. 2019-01) and Appendix D (Lot Area and Bulk Chart, dated 11-01-2008) were read on 2026-11-26. Appendix B has no row for an accessory relative apartment and says the chart is for reference only and not regulation. Appendix D predates later text amendments (for example RA 3 acres and older coverage figures), so the file keeps the district text and 180-127.3A.",
     "effective_date": null,
     "source_urls": [
       "https://lowersaucontownship.org/government/council/recently_adopted_ordinances.php",
@@ -33,9 +33,11 @@
       "https://ecode360.com/print/LO1675?guid=6778089",
       "https://ecode360.com/print/LO1675?guid=6778525",
       "https://ecode360.com/print/LO1675?guid=6773122",
-      "https://ecode360.com/6772919"
+      "https://ecode360.com/6772919",
+      "https://ecode360.com/attachment/333600/LO1675-180b%20App%20B.pdf",
+      "https://ecode360.com/attachment/333600/LO1675-180d%20App%20D.pdf"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Northampton",
     "municipality_type": "township",
     "geoid": "4209545104",
@@ -68,7 +70,7 @@
       "In the WP overlay, an on-lot sewage system is inspected by the Sewage Enforcement Officer before an 'expansion or conversion of the land use served' (180-95B(18)(e)[2][d][ii])",
       "In VC a building may have at most 6,000 sq ft of floor area on all floors, the house and the apartment together (180-64E)"
     ],
-    "notes": "Zoning office: Lower Saucon Township Zoning Department. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (180-1 to 180-5, definitions A to N in full and 'Principal building structure or use'), Article II (180-6 to 180-12.2), Article III, every district article (IV to XV, 180-18 to 180-89.2), 180-91 to 180-95 (to 180-95B(18)(e)), 180-98C, 180-99, 180-115, 180-127.3, Article XVIII (180-128 to 180-137), Chapter 90 Article VI (90-24 to 90-31) and the parts of Article VII and 90-35B quoted here, the New Laws page and the township's recently adopted ordinances page. The code search for ADU terms found 180-137 and the 'Conversion' and 'Accessory relative apartment' definitions. Not read: definitions after 'Nontower commercial communications facility' except 'Principal building', 180-95B(18)(f) onward, 180-96, 180-97, 180-98A, B and D onward, 180-100.1 to 180-100.13 (signs), 180-101 to 180-114, 180-116 to 180-127.2, 180-127.4, Chapter 90 Articles I to V and the rest of Articles VII and VIII, Chapter 145, and the PDF attachments (Appendix B Accessory Land Uses, Appendix D Lot Area and Bulk Chart)."
+    "notes": "Zoning office: Lower Saucon Township Zoning Department. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I (180-1 to 180-5, definitions A to N in full and 'Principal building structure or use'), Article II (180-6 to 180-12.2), Article III, every district article (IV to XV, 180-18 to 180-89.2), 180-91 to 180-95 (to 180-95B(18)(e)), 180-98C, 180-99, 180-115, 180-127.3, Article XVIII (180-128 to 180-137), Chapter 90 Article VI (90-24 to 90-31) and the parts of Article VII and 90-35B quoted here, the New Laws page and the township's recently adopted ordinances page. The code search for ADU terms found 180-137 and the 'Conversion' and 'Accessory relative apartment' definitions. Not read: definitions after 'Nontower commercial communications facility' except 'Principal building', 180-95B(18)(f) onward, 180-96, 180-97, 180-98A, B and D onward, 180-100.1 to 180-100.13 (signs), 180-101 to 180-114, 180-116 to 180-127.2, 180-127.4, Chapter 90 Articles I to V and the rest of Articles VII and VIII, Chapter 145, and the PDF attachments (Appendix B Accessory Land Uses, Appendix D Lot Area and Bulk Chart). Second reading 2026-11-26 (G0): Appendices B and D read by cell position (see status_detail); neither lists or limits the accessory relative apartment, and both are reference charts behind the text. Left as disputes the code does not settle: an addition in the Floodplain district as an allowed improvement (90-33) or a barred substantial improvement (90-26, 90-27, 90-35B), shown as disputed; whether 180-94A counts the apartment as a second unit for on-lot sewage (four acres with an alternate system); parking of five (literal fraction rule, 180-98C(2)(h)) or four; and the pre-2011 impervious percentages 180-127.3C keeps for existing lots."
   },
   "adu": {
     "term": {

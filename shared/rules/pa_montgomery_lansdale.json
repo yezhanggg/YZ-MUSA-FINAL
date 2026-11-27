@@ -4,7 +4,7 @@
     "instrument": "Borough of Lansdale Code Chapter 405 Zoning (Ord. No. 1393, 11-16-1988, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2026-05-20 (breadcrumb). New Laws for Chapter 405 on 2026-11-14: Ord. 2012 'Residential B&C amendments 8.19.2026(A)', listed as adopted 2026-11-19, and Ord. 2013 'TOD text amendment', adopted 2026-08-19. PDF only, not read.",
+    "status_detail": "eCode360 code date 2026-05-20. New Laws for Chapter 405: Ord. 2026-2012 (Residential B and C amendments, motion dated 2026-08-19, listed as adopted 2026-11-19) and Ord. 2013 (TOD overlay text, 2026-08-19), not yet codified. Both PDFs were read on 2026-11-26. Ord. 2012 restates the Class B (405-502) and Class C (405-602) use lists (single-family detached, semidetached, two-family duplex and single-family attached still permitted; C adds stacked townhomes; the conversion row now reads 'Conversion of single-family detached dwelling to other non-residential uses: Not permitted'), sets attached and stacked townhome widths and side yards (405-504B(4), 405-604A(5), B(4), B(5), D(3), 405-706C), rewrites unlotted development (405-605, 405-1515B(5)) and adds a stacked townhome definition (405-201). It leaves the single-family detached and duplex figures of 405-504 and 405-604 and the ADU rule (405-1913) as they were. Ord. 2013 amends the TOD overlay (Article XXXII) with no ADU text.",
     "effective_date": "2018-02-21",
     "source_urls": [
       "https://ecode360.com/11763313",
@@ -20,9 +20,11 @@
       "https://ecode360.com/print/LA0393?guid=12266892",
       "https://ecode360.com/print/LA0393?guid=12268475",
       "https://ecode360.com/LA0393/laws",
-      "https://ecode360.com/LA0393/search?query=%22conversion%20of%20single-family%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/LA0393/search?query=%22conversion%20of%20single-family%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/LA0393/laws/LF2881931.pdf",
+      "https://ecode360.com/LA0393/laws/LF2881930.pdf"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "borough",
     "geoid": "4209141432",
@@ -30,7 +32,6 @@
     "code_url": "https://ecode360.com/11763313",
     "code_current_through": "2026-05-20",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2026-05-20'. Two 2026 zoning amendments (Residential B and C, TOD) are listed as New Laws, not yet in the code text.",
-    "code_caution": "Ord. 2012 (Residential B and C amendments) is listed as a New Law for Chapter 405 and was not read (PDF only). It is listed as adopted on Nov 19, 2026, although its title says 8.19.2026. Search excerpts show it rewrites the Class B and C use and dimensional tables, adds a stacked townhome, and changes the row on conversion of single-family detached dwellings (to 'other non-residential' uses). The B and C figures and the duplex note below may change. Ord. 2013 amends the TOD overlay text.",
     "checks": [
       "'Accessory dwelling units shall be permitted by right attached to or contained within single-family detached homes only' (405-1913B). Not in a separate building, not joined by a corridor or breezeway (405-1913E)",
       "Single-family detached dwellings are permitted in Class A, B and C Residential and in LPO (405-402, 405-502, 405-602, 405-1001A), not in Residential Apartment, Professional Office A or Professional Office B (405-700, 405-800, 405-900). Other districts were not read",
@@ -44,7 +45,7 @@
       "TOD overlay: single-family detached dwellings within an approved TOD development and 'Accessory residential uses or buildings' are listed (405-3202A, K). Ord. 2013 amends this text and was not read",
       "An accessory building is 'subordinate, uninhabitable' by definition, so a unit in a detached garage or outbuilding is not allowed (405-201)"
     ],
-    "notes": "Zoning office: Borough of Lansdale Department of Code Enforcement. Read on eCode360 (LA0393) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found 405-1913 and the ADU definition (405-201). Neither 2026 New Law shows an 'accessory dwelling' hit. Read in full: 405-1913, the definitions page (ADU, accessory building), Class A, B and C Residential (Articles IV to VI), Residential Apartment (Article VII), Professional Office A and B (Articles VIII, IX) and LPO (Article X). TOD overlay (Article XXXII) read for its use list only. Not read: Commercial, Business, B-2, Industrial and the other overlays, accessory structures (405-1904) and parking (405-1703). Ord. 2012 and 2013 are PDF only and were not opened. Fix round 2026-11-14 after an independent review: scope now names PO-A, PO-B (not permitted) and LPO (permitted), PO-B conversion read in full, RA duplex added, Ord. 2012 caution rewritten, density reading quotes and design review added."
+    "notes": "Zoning office: Borough of Lansdale Department of Code Enforcement. Read on eCode360 (LA0393) in a browser, one page at a time, on 2026-11-14. Code search (all content, New Laws included) for 'accessory apartment', 'accessory dwelling', 'in-law', ECHO, 'elder cottage', granny, 'family dwelling', relative, 'housekeeping unit', caretaker, 'tenant house' and 'guest house' found 405-1913 and the ADU definition (405-201). Neither 2026 New Law shows an 'accessory dwelling' hit. Read in full: 405-1913, the definitions page (ADU, accessory building), Class A, B and C Residential (Articles IV to VI), Residential Apartment (Article VII), Professional Office A and B (Articles VIII, IX) and LPO (Article X). TOD overlay (Article XXXII) read for its use list only. Not read: Commercial, Business, B-2, Industrial and the other overlays, accessory structures (405-1904) and parking (405-1703). Ord. 2012 and 2013 are PDF only and were not opened. Fix round 2026-11-14 after an independent review: scope now names PO-A, PO-B (not permitted) and LPO (permitted), PO-B conversion read in full, RA duplex added, Ord. 2012 caution rewritten, density reading quotes and design review added. Second reading 2026-11-26 (G0): Ord. 2026-2012 and Ord. 2013 PDFs read (see status_detail); neither changes 405-1913 or the single-family figures the file uses; the duplex alternative note updated for the restated B and C use lists. The earlier code search for ADU terms (405-1913 only) covers the use lists of the other districts. Left as disputes the code does not settle: whether the ADU counts as a dwelling unit for lot area per unit, whether 405-901's 7,500 sq ft reaches a PO-B conversion, and LPO yards taken from the abutting residential district."
   },
   "adu": {
     "term": {
@@ -119,7 +120,7 @@
             "B",
             "C"
           ],
-          "conditions": "Two-family duplex dwellings are permitted. Lot area per dwelling unit 5,600 sq ft (B) or 4,500 sq ft (C), side yards 8 ft, rear 20 ft. 'Conversion of single-family detached dwelling to other uses' is listed as not permitted.",
+          "conditions": "Two-family duplex dwellings are permitted. Lot area per dwelling unit 5,600 sq ft (B) or 4,500 sq ft (C), side yards 8 ft, rear 20 ft. The use lists permit the listed uses 'and no other', and name a conversion of a single-family detached dwelling only to non-residential uses, as not permitted.",
           "min_lot_sqft": 9000,
           "min_lot_by_district": {
             "B": 11200,
@@ -128,7 +129,7 @@
           "section": "405-502, 405-504, 405-602, 405-604",
           "url": "https://ecode360.com/print/LA0393?guid=12266756",
           "confidence": "secondary",
-          "note": "Lot figures are two units at the per-unit area. 'Conversion of single-family detached dwelling to other uses' is listed as not permitted, so today this is a path for a new duplex, not for converting a house. Ord. 2012 (not read) changes that row to conversion 'to other non-residential' uses and rewrites the B and C tables, so this may change. Ask the Code Enforcement Officer."
+          "note": "Lot figures are two units at the per-unit area. Ord. 2026-2012 (read 2026-11-26, not yet codified) restates the B and C use lists: duplexes stay permitted, and the conversion row now reads 'to other non-residential uses: Not permitted'. A conversion of a house into two units is not listed, so this is a path for a new duplex, not for converting a house. Ask the Code Enforcement Officer."
         },
         {
           "name": "Conversion of a single-family dwelling to apartment conversion units in Professional Office District B",

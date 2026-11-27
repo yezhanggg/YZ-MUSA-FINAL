@@ -4,7 +4,7 @@
     "instrument": "Forks Township Code Chapter 200 Zoning (Ord. No. 331, 8-21-2014, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code through 09-04-2025 (breadcrumb 'Code 2025-09-04'). New Laws on 2026-11-15 list three zoning amendments not yet in the code: Ord. 414 (2026-04-02), Ord. 416 (2026-06-18) and Ord. 415 (2026-07-02).",
+    "status_detail": "eCode360 code through 09-04-2025 (breadcrumb 'Code 2025-09-04'). New Laws on 2026-11-15 list three zoning amendments not yet in the code: Ord. 414 (2026-04-02), Ord. 416 (2026-06-18) and Ord. 415 (2026-07-02). The three PDFs were read on 2026-11-26. Ord. 415 replaces the FP performance and dimensional tables (200-13B, C; now in the FP row), restates 200-13D, deletes golf courses from FP uses, and amends definitions, 200-28G, 200-31 to 200-33 (site capacity, natural resources). Ord. 414 (solar farms) and Ord. 416 (data centers) add use standards. None of the three mentions accessory apartments or units for care of a relative.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/8571248",
@@ -31,9 +31,10 @@
       "https://ecode360.com/FO1696/search?query=%22Except%20as%20provided%20by%20law%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/FO1696/search?query=%22Agricultural%20Conservation%20Ratio%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/FO1696/search?query=%22second%20dwelling%20unit%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/FO1696/search?query=%22accessory%20apartment%22%20OR%20%22unit%20for%20care%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/FO1696/search?query=%22accessory%20apartment%22%20OR%20%22unit%20for%20care%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/FO1696/laws/LF2741368.pdf"
     ],
-    "verified_on": "2026-11-15",
+    "verified_on": "2026-11-26",
     "county": "Northampton",
     "municipality_type": "township",
     "geoid": "4209526728",
@@ -41,7 +42,6 @@
     "code_url": "https://ecode360.com/8571248",
     "code_current_through": "2025-09-04",
     "code_current_through_note": "eCode360 'Includes legislation through 09-04-2025.' Chapter 200 adopted 8-21-2014 by Ord. No. 331.",
-    "code_caution": "Ord. 415 Zoning Text Amendment (growth management), adopted 2026-07-02, is not yet in the online code. Its text (PDF) was not opened, but the site's search over it shows that it rewrites the FP Farmland Protection district: it restates the 200-13D easement text, adds an 'Agricultural Conservation Ratio' and new rows to the FP table (for example a single-family dwelling row), and changes how lot area is measured for the minimum lot area. So the FP lot size, width and yards shown here (from the code before Ord. 415) are probably superseded. Ask the township for the FP figures in force. The search found no Ord. 415 text on accessory apartments or units for care of a relative. Two other zoning amendments are also not yet in the code: Ord. 414 Solar Farms (2026-04-02) and Ord. 416 Data Center amendment (2026-06-18).",
     "checks": [
       "The code defines an 'accessory apartment' ('One dwelling unit that is created within part of a single-family detached dwelling or above a vehicle garage on a residential lot') and a 'unit for care of relative' (a dwelling unit 'limited to occupancy by a close relative of the permanent residents of the principal dwelling unit'), but no district lists either use and 200-28 has no rules for them. Use numbers H-9, H-11 and H-12 are reserved (200-7, 200-28H)",
       "200-7 also defines a 'conversion apartment' as a dwelling type ('A new dwelling unit created within an existing building'). No district lists it as its own use. The listed use that converts an existing dwelling is the residential conversion (B-14), a special exception only in TC and TC-1",
@@ -50,10 +50,10 @@
       "Residential conversion (the conversion of an existing dwelling into more than one dwelling, or of an accessory building into one dwelling) is a special exception only in TC and TC-1 (200-18A(3), 200-18.1A, 200-28B(14))",
       "Age-restricted housing (B-15, a head of household 55 or older in every unit) may include duplexes. It is by right in CR on a 5-acre site and a conditional use in SR and SR-1 on a 10-acre site (200-15, 200-16A(2), 200-28B(15))",
       "On a lot greater than one acre, one facility for domestic servants or caretakers employed on the premises and for occasional gratuitous guests is allowed as a residential accessory use (200-28H(3)(c)[3])",
-      "In FP, where a Northampton County agricultural conservation easement expressly allows a second dwelling unit on the lot, the chapter allows it (200-13D). Ord. 415 (2026-07-02) restates this text. Its final wording was not read",
+      "In FP, where a Northampton County agricultural conservation easement expressly allows a second dwelling unit on the lot, the chapter allows it (200-13D). Ord. 415 (2026-07-02) restates it: a perpetual Type 2 Agricultural Conservation Easement acquired by Northampton County whose terms specifically allow a second dwelling unit (read 2026-11-26)",
       "Buildings accessory to a dwelling are at most 16 ft tall. A shed under 200 sq ft may stand 5 ft from a side or rear line. Other accessory buildings meet the principal building setbacks. All sheds on a residential lot together may not exceed 400 sq ft. No accessory building in the minimum front yard (200-28H(3)(c), 200-35E(4))"
     ],
-    "notes": "Zoning office: Forks Township Zoning Officer. eCode360 code FO1696 is the Township of Forks, Northampton County (200-13D names a Northampton County agricultural conservation easement). Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found the definitions of accessory apartment, unit for care of relative, related, dwelling and dwelling unit. Searches for unit for care, residential conversion, care of, second dwelling, apartment and kitchen found only definitions and district sections. Every district section was read (Article IV in full) and 200-28B and H were read in full. Read in full: 200-7 definitions up to lot width and the definitions of related and unit for care of relative, 200-12, Article IV (200-13 to 200-24.1), 200-25, 200-26, 200-27, 200-28B, 200-28H, 200-35, 200-78, 200-79. Read in part: 200-36 (searched on screen for dwelling and apartment parking). Not read: 200-28A, C to G, 200-31, 200-40, Article X (nonconformities), the three New Laws (PDF). Fix round on 2026-11-15 after an independent review: re-read in a browser 200-22B and C (RC yards by lot size), 200-79F, 200-25 (search excerpt), 200-28B(15), 200-28H(3)(c), the 200-7 dwelling types (conversion apartment), 200-13 to 200-16, and site searches that reach the Ord. 415 text (Agricultural Conservation Ratio, second dwelling unit, accessory apartment, unit for care). The Ord. 415 PDF itself was not opened."
+    "notes": "Zoning office: Forks Township Zoning Officer. eCode360 code FO1696 is the Township of Forks, Northampton County (200-13D names a Northampton County agricultural conservation easement). Read on eCode360 in a browser, one page at a time, on 2026-11-15. Code search (all content) for accessory apartment, accessory dwelling, in-law, ECHO, elder cottage, granny, family dwelling, relative, housekeeping unit, caretaker, guest house, accessory living, tenant house, living quarters, sleeping quarters, immediate family, watchman, separate living, cooking facilities and farm employee found the definitions of accessory apartment, unit for care of relative, related, dwelling and dwelling unit. Searches for unit for care, residential conversion, care of, second dwelling, apartment and kitchen found only definitions and district sections. Every district section was read (Article IV in full) and 200-28B and H were read in full. Read in full: 200-7 definitions up to lot width and the definitions of related and unit for care of relative, 200-12, Article IV (200-13 to 200-24.1), 200-25, 200-26, 200-27, 200-28B, 200-28H, 200-35, 200-78, 200-79. Read in part: 200-36 (searched on screen for dwelling and apartment parking). Not read: 200-28A, C to G, 200-31, 200-40, Article X (nonconformities), the three New Laws (PDF). Fix round on 2026-11-15 after an independent review: re-read in a browser 200-22B and C (RC yards by lot size), 200-79F, 200-25 (search excerpt), 200-28B(15), 200-28H(3)(c), the 200-7 dwelling types (conversion apartment), 200-13 to 200-16, and site searches that reach the Ord. 415 text (Agricultural Conservation Ratio, second dwelling unit, accessory apartment, unit for care). The Ord. 415 PDF itself was not opened. Second reading 2026-11-26 (G0): Ord. 414, 415 and 416 PDFs read. Ord. 415 replaces the FP tables, now stored in the FP row (2 acres per dwelling unit secondary, as the scanned table was read by column position) and restates 200-13D (Type 2 county easement allowing a second dwelling unit). No accessory apartment or care-of-relative text in any of the three. Left as a dispute the code does not settle: whether the 200-79F conditional use reaches an accessory apartment or the unit is read as a residential conversion (TC and TC-1 only)."
   },
   "adu": {
     "term": {
@@ -171,7 +171,7 @@
           "section": "200-13D",
           "url": "https://ecode360.com/print/FO1696?guid=8571635",
           "confidence": "secondary",
-          "note": "Not an ADU listing. The FP lot area of 3 acres per dwelling unit (200-13B) is not said to apply to it. Ord. 415 (2026-07-02) restates 200-13D: its search excerpt shows the same easement wording, but the final text was not read"
+          "note": "Not an ADU listing. The FP lot area of 3 acres per dwelling unit (200-13B) is not said to apply to it. Ord. 415 (2026-07-02) restates 200-13D for a perpetual Type 2 Agricultural Conservation Easement acquired by Northampton County whose terms specifically allow a second dwelling unit (read in the ordinance PDF on 2026-11-26)"
         },
         {
           "name": "Duplex or twin in a performance subdivision (SR, SR-1; twin also OR, CR, EC-1)",
@@ -317,16 +317,16 @@
         },
         {
           "kind": "other",
-          "condition": "The FP lot size, width and yards shown come from the code before Ord. 415 (adopted 2026-07-02). Ord. 415 rewrites the FP district table (an Agricultural Conservation Ratio and new rows) and the lot area definition, so these FP figures are probably superseded. Ask the township for the FP figures in force.",
+          "condition": "The FP figures come from Ord. 415 (adopted 2026-07-02), which is not yet in the online code: 2 acres per dwelling unit, 130 ft wide, yards 50 ft front, 25 ft each side and rear, impervious surface at most 20% of the lot. Ord. 415 also changes how lot area is measured for the minimum lot area. Confirm the figures in force with the township.",
           "effect": "condition",
           "applies_to": null,
           "districts": [
             "FP"
           ],
           "building_types": null,
-          "section": "200-13B, C, Ord. 415 (search excerpt)",
-          "url": "https://ecode360.com/FO1696/search?query=%22Agricultural%20Conservation%20Ratio%22&scope=all&sortOrder=relevance",
-          "confidence": "secondary"
+          "section": "200-13B, C as replaced by Ord. 415",
+          "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+          "confidence": "verified"
         }
       ],
       "section": "200-13 to 200-24.1",
@@ -466,60 +466,60 @@
   "districts": {
     "FP": {
       "min_lot_sqft": {
-        "value": 130680,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
+        "value": 87120,
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
         "confidence": "secondary",
-        "note": "3 acres per dwelling unit for other allowed uses, including a single-family detached dwelling. Width 200 ft. Cluster lots 1 acre on a 2-acre site. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'. Minimum lot area per dwelling unit 2 acres, width 130 ft at the building setback line. A cluster lot in a cluster development on a 2-acre minimum gross site takes 1 acre and 25 ft front and 15 ft side yards. The scanned table also sets an agricultural conservation ratio for subdivisions. Secondary because the PDF table is a scan whose columns were read by position."
       },
       "setback_front_ft": {
-        "value": 35,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "value": 50,
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'."
       },
       "setback_side_ft": {
         "value": 25,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Each side. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'. Each side."
       },
       "setback_rear_ft": {
-        "value": 40,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "value": 25,
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'."
       },
       "principal_max_height_ft": {
         "value": 35,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
-      },
-      "max_impervious_coverage": {
-        "value": 0.2,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Maximum impervious surface ratio per lot for a single-family detached dwelling. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'. Or 3 stories, whichever is more restrictive."
       },
       "principal_max_stories": {
         "value": 3,
-        "section": "200-13B, C",
-        "url": "https://ecode360.com/print/FO1696?guid=8571635",
-        "verified_on": "2026-11-15",
-        "confidence": "secondary",
-        "note": "Stories or feet, whichever is more restrictive. Probably superseded by Ord. 415 (2026-07-02), which rewrites the FP table. Code before Ord. 415."
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'. Feet or stories, whichever is more restrictive."
+      },
+      "max_impervious_coverage": {
+        "value": 0.2,
+        "section": "200-13B, C as replaced by Ord. 415 (2026-07-02)",
+        "url": "https://ecode360.com/FO1696/laws/LF2741368.pdf",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Ord. 415 (adopted 2026-07-02, not yet in the online code) replaces the FP tables; read in its PDF on 2026-11-26. Row 'Single-family detached dwelling unit'. Maximum impervious surface ratio per lot area."
       }
     },
     "OR": {

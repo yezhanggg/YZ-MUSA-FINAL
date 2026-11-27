@@ -23,7 +23,7 @@
       "https://www.lowerpaxton-pa.gov/560/Zoning-Hearing-Board-Dockets",
       "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
     ],
-    "verified_on": "2026-11-11",
+    "verified_on": "2026-11-26",
     "county": "Dauphin",
     "municipality_type": "township",
     "geoid": "4204345056",
@@ -45,7 +45,7 @@
       "Carriage houses and flex flats (living space over a detached garage) are separate uses, permitted only in the Neighborhood Design District",
       "R-2 and R-3 set lot area per dwelling unit for some uses. The code does not say whether an ADU counts"
     ],
-    "notes": "Zoning office: Community Development Department, https://www.lowerpaxton-pa.gov/169/Community-Development. Pending: Ord. 2026-02 adopted 2026-05-20, not yet in the online code, does not touch ADUs. The definition of conversion dwelling says ADUs and in-law suites are 'primarily intended to house family members'. This is descriptive, not a use rule."
+    "notes": "Zoning office: Community Development Department, https://www.lowerpaxton-pa.gov/169/Community-Development. Pending: Ord. 2026-02 adopted 2026-05-20, not yet in the online code, does not touch ADUs. The definition of conversion dwelling says ADUs and in-law suites are 'primarily intended to house family members'. This is descriptive, not a use rule. Second reading 2026-11-26 (G0): 203-202 ADU definition ('attached or detached to the primary dwelling'), Table of Authorized Accessory Uses (ADU P in nine districts) and 203-314C(2) ('No part of an accessory garage shall be occupied as a residential living area') read again in eCode360 and match the file. New Laws still list only Ord. No. 26-02 (2026-05-20, no ADU text). The two open points are disputes the code does not settle and stay secondary: a full garage conversion against 203-314C(2) (garage forms left out), and 2 or 4 parking spaces (203-903 Table 1)."
   },
   "adu": {
     "term": {

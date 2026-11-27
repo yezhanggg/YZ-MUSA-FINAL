@@ -4,7 +4,7 @@
     "instrument": "Lower Allen Township Code Chapter 220 Zoning (Ord. No. 2009-2, 7-13-2009, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-01-27 (breadcrumb). New Laws on 2026-11-14: nine ordinances (2025-2026), none amending Chapter 220. The R-1 use list was last amended 1-27-2025 by Ord. No. 2025-01.",
+    "status_detail": "eCode360 code date 2025-01-27 (breadcrumb). New Laws on 2026-11-14: nine ordinances (2025-2026), none amending Chapter 220. The R-1 use list was last amended 1-27-2025 by Ord. No. 2025-01. New Laws on 2026-11-26 list Ord. No. 2026-04 (2026-07-13, filed as 'Data Centers Amendment', Zoning Amendment). Its PDF was not read.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11213000",
@@ -23,9 +23,10 @@
       "https://ecode360.com/print/LO1571?guid=11213813",
       "https://ecode360.com/LO1571/laws",
       "https://ecode360.com/LO1571/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20dwellings%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20caretaker%20OR%20%22conversion%20apartment%22&scope=all&sortOrder=relevance",
-      "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/LO1571/search?query=%22per%20dwelling%20unit%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/11214424"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Cumberland",
     "municipality_type": "township",
     "geoid": "4204144832",
@@ -48,7 +49,7 @@
       "Parking: 'Single-family dwellings: 2 per dwelling unit'. The multifamily row includes conversion apartments and excludes accessory apartments, so only the single-family row can apply. Whether the accessory dwelling adds 2 spaces is not settled (220-239)",
       "Accessory structures may not stand in a front yard setback and must be at least 5 ft from side and rear lot lines. Accessory buildings are capped at 25 ft (220-150A, B(1), 220-12B)"
     ],
-    "notes": "Zoning office: Lower Allen Township (latwp.org). Read on eCode360 (LO1571) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, MUN and R-3. 220-6C (accessory dwelling), 220-124, 220-127, 220-139 and 220-239 were read in the print view. 220-142 (NR) was seen as a search snippet only. The commercial and industrial lists allow only watchman or caretaker dwellings (I-1, I-2, I-3, search snippets)."
+    "notes": "Zoning office: Lower Allen Township (latwp.org). Read on eCode360 (LO1571) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, MUN and R-3. 220-6C (accessory dwelling), 220-124, 220-127, 220-139 and 220-239 were read in the print view. 220-142 (NR) was seen as a search snippet only. The commercial and industrial lists allow only watchman or caretaker dwellings (I-1, I-2, I-3, search snippets). Second reading on 2026-11-26 in a browser on eCode360: 220-125 (TND heights: principal 40 ft, 50 ft with multifamily or live-work units, accessory buildings 25 ft), now in the TND row."
   },
   "adu": {
     "term": {
@@ -629,6 +630,22 @@
         "url": "https://ecode360.com/print/LO1571?guid=11214604",
         "verified_on": "2026-11-14",
         "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "220-125A",
+        "url": "https://ecode360.com/11214424",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Principal buildings 40 ft (50 ft for buildings with multifamily dwellings or live-work units)."
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 25,
+        "section": "220-125B",
+        "url": "https://ecode360.com/11214424",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory buildings 25 ft."
       }
     }
   }

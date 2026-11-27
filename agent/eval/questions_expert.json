@@ -881,13 +881,13 @@
    "facts": [
     {
      "kind": "behaviour",
-     "label": "drafted",
+     "label": "verified",
      "accept": [
-      "first reading",
-      "drafted",
-      "open point"
+      "verified",
+      "checked rule file",
+      "checked against the code"
      ],
-     "evidence": "First reading"
+     "evidence": "Checked rule file, verified on"
     },
     {
      "kind": "behaviour",
@@ -924,12 +924,12 @@
     }
    ],
    "scenario": null,
-   "rubric": "Drafted: first reading with open points: garage conversion under 203-314C(2) and parking under 203-903."
+   "rubric": "Verified (Nov 26), with disputes the code does not settle: garage conversion under 203-314C(2) and parking under 203-903."
   },
   {
    "id": "exp-13",
    "category": "expert",
-   "question": "Is the Erie city ADU answer verified? What is still open?",
+   "question": "Is the Erie city ADU answer verified? What is still unsettled?",
    "context": {
     "lot": null,
     "site_lot": null,
@@ -959,15 +959,13 @@
    "facts": [
     {
      "kind": "behaviour",
-     "label": "drafted, not verified",
+     "label": "verified",
      "accept": [
-      "first reading",
-      "drafted",
-      "not verified",
-      "not yet verified",
-      "open point"
+      "verified",
+      "checked rule file",
+      "checked against the code"
      ],
-     "evidence": "First reading"
+     "evidence": "Checked rule file, verified on"
     },
     {
      "kind": "behaviour",
@@ -1003,7 +1001,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "Drafted. Open: whether the ADU counts toward lot area per family (205) and the one principal use rule (204). By right, 720 sq ft cap (205.9)."
+   "rubric": "Verified (Nov 26). Disputes the code does not settle: whether the ADU counts toward lot area per family (205) and the one principal use rule (204). By right, 720 sq ft cap (205.9)."
   },
   {
    "id": "exp-14",

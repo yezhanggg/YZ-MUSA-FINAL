@@ -4,7 +4,7 @@
     "instrument": "Upper Providence Township (Montgomery County) Code Chapter 300 Zoning (Ord. No. 180, 7-7-1976, recodified 2024, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-10-28 (breadcrumb). New Laws on the chapter page on 2026-11-14: Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21), both 'Zoning Amendment', Ch 300, PDF only, not opened.",
+    "status_detail": "eCode360 header now reads 'legislation through 09-21-2026': Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21) are codified. Read in the chapter print view on 2026-11-26: they appear only in the definitions section, 300-433 (IO-1 permitted uses) and 300-560 (M-2 conditional uses), and add data centers. They do not touch 300-15B(4) or any residential district.",
     "effective_date": "2011-08-01",
     "source_urls": [
       "https://ecode360.com/42975244",
@@ -27,15 +27,14 @@
       "https://ecode360.com/UP1236/search?query=%22single-family%20detached%22%20AND%20%22accessory%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/UP1236/search?query=%22300-15%22%20OR%20%22temporary%20unit%22%20OR%20%22relative%22&scope=all&sortOrder=relevance"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "township",
     "geoid": "4209179256",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/42975244",
-    "code_current_through": "2025-10-28",
-    "code_current_through_note": "eCode360 breadcrumb 'Code 2025-10-28'. Ord. No. 619 and Ord. No. 623 (zoning, 2026) are listed under New Laws and not yet codified.",
-    "code_caution": "Two zoning amendments, Ord. No. 619 (2026-06-15) and Ord. No. 623 (2026-09-21), are not yet in the online code. They were not read, so they may change these rules. Ask the Township.",
+    "code_current_through": "2026-09-21",
+    "code_current_through_note": "eCode360 header on 2026-11-26: 'Includes legislation through 09-21-2026.' New Laws: none pending.",
     "checks": [
       "A 'temporary unit for relative (in-law suite)' may be added as an accessory use to a single-family dwelling (300-15B(4), added by Ord. No. 517 in 2011)",
       "The unit must be 'totally enclosed within the principal building', with an internal connection to the main home (300-15B(4)(a), (c))",
@@ -49,7 +48,7 @@
       "R-1 and R-2 tables state lot area 'per dwelling unit'. Whether the in-law suite counts is not settled. The covenant suggests the Township treats the property as one dwelling unit",
       "A zoning permit is needed for any accessory structure or building (300-15D)"
     ],
-    "notes": "Zoning office: Upper Providence Township, Montgomery County (uprov-montco.org). Read on eCode360 (UP1236) in a browser, one print view at a time. Use lists and area rules read for R-1, R-2, R-3, R-4, VP, YMU, CL, OSR-1, OSR-2, GCR, ARR, MH and VCO. The Mixed Residential Community option was seen only in search results. Commercial and industrial district lists were not read."
+    "notes": "Zoning office: Upper Providence Township, Montgomery County (uprov-montco.org). Read on eCode360 (UP1236) in a browser, one print view at a time. Use lists and area rules read for R-1, R-2, R-3, R-4, VP, YMU, CL, OSR-1, OSR-2, GCR, ARR, MH and VCO. The Mixed Residential Community option was seen only in search results. Commercial and industrial district lists were not read. Second reading 2026-11-26 (G0): 300-15B(4) read again in the codified text (through 09-21-2026), unchanged since Ord. No. 517 (2011): enclosed within the principal building, owner-occupied, internal connection, recorded covenant against two or more units, immediate family list. Ord. No. 619 and 623 are data center amendments (definitions, 300-433, 300-560) with no residential reach. Left as disputes the code does not settle: whether the unit applies in MH and R-4 (kept in doubt), and whether the R-1 and R-2 lot area per dwelling unit counts the in-law suite."
   },
   "adu": {
     "term": {

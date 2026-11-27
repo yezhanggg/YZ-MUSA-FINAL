@@ -19,7 +19,7 @@
       "https://www.erie.pa.us/?p=1513",
       "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/22"
     ],
-    "verified_on": "2026-11-11",
+    "verified_on": "2026-11-26",
     "county": "Erie",
     "municipality_type": "city",
     "geoid": "4204924000",
@@ -39,7 +39,7 @@
       "Rental licensing: Ord. No. 40-2026 (7-1-2026) amends Article 330, Landlord and Rental, with new registration and inspection rules. An ADU rented to a tenant falls under it. Not zoning, not codified yet",
       "A dwelling unit holds one family. Family: relatives with up to two boarders, or not more than four unrelated persons (601)"
     ],
-    "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb."
+    "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb. Second reading 2026-11-26 (G0): 204 permitted-use lists (ADU in R-1, R-1A, R-2 and the rest), the 204 lead-in (listed uses are principal uses unless clearly noted; one principal use per lot in any R district), 601 ADU definition and 205.9 (side or rear yard, 6 ft from a dwelling or alley, 3 ft from side and rear lines, 720 sq ft, 15 ft) read again in eCode360 and match the file. New Laws for Article 1303 still list only Ord. No. 45-2026 (historic designation, no ADU text). The two open points are disputes the code does not settle, held as secondary values: whether the ADU counts as a second family for lot area (205 table), and how the one-principal-use rule fits an ADU listed as a permitted use."
   },
   "adu": {
     "status": {

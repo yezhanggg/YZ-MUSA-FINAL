@@ -281,12 +281,15 @@ def test_record_validates():
     assert any("Pennsylvania" in e for e in lotmod.validate(rec))
 
 
-def test_front_yard_only_as_last_resort():
-    # House set far back: a big front yard, a thin strip behind.
+def test_front_yard_only_is_not_a_fit():
+    # House set far back: a big front yard, a thin strip behind. Room only in front is not a fit.
     lot_poly, house = box(0, 0, 60, 120), box(15, 70, 45, 100)
     lot = LotShape(lot_poly, classify_edges(lot_poly, STREET, None, house))
     res = fit_adu(lot, [Building(house, "main")], default_rules(), "detached_new")
-    assert res.fits and res.spot.centroid.y < 70
+    assert not res.fits and res.spot is None and res.largest_sqft == 0
+    assert res.limiting == "no_room" and "in front of the house" in res.note
+    assert res.front_only_sqft is not None and res.front_only_sqft >= 600
+    assert res.to_dict()["front_only_sqft"] == round(res.front_only_sqft)
     assert any("front of the house" in a for a in res.assumed)
     # Room behind the house: the spot goes there even though the front yard is bigger.
     lot_poly, house = box(0, 0, 60, 160), box(15, 60, 45, 90)
@@ -294,6 +297,7 @@ def test_front_yard_only_as_last_resort():
     res = fit_adu(lot, [Building(house, "main")], default_rules(max_size_sqft=None), "detached_new")
     assert res.fits and res.spot.bounds[1] >= 90
     assert not any("front of the house" in a for a in res.assumed)
+    assert res.front_only_sqft is None and "front_only_sqft" not in res.to_dict()
 
 
 def test_corner_cut_is_not_the_front():
@@ -336,3 +340,19 @@ def test_footprint_cap_apart_from_floor_area():
     gb = [Building(house, "main"), Building(garage, "garage", height_ft=14.0)]
     g = fit_adu(glot, gb, {**default_rules(max_size_sqft=1000.0), "max_footprint_sqft": 600.0}, "garage_conversion")
     assert not g.fits and g.limiting == "footprint_cap" and "600 sq ft footprint cap" in g.note
+
+
+def test_code_story_height_sets_the_unit_height():
+    # A code that gives 13 ft for one story (Upper Dublin 255-27E(1)(e)): the unit is built at 13 ft, so a 13 ft
+    # height cap (the house) passes. Without the figure the 15 ft default fails it.
+    lot_poly, house = box(0, 0, 60, 160), box(15, 10, 45, 40)
+    lot = LotShape(lot_poly, classify_edges(lot_poly, STREET, None, house))
+    blds = [Building(house, "main")]
+    plain = fit_adu(lot, blds, default_rules(max_height_ft=13.0), "detached_new")
+    assert not plain.fits and plain.limiting == "height"
+    own = fit_adu(lot, blds, {**default_rules(max_height_ft=13.0), "story_height_ft": {1: 13.0}}, "detached_new")
+    assert own.fits and own.checks["height"].value == 13.0
+    assert any("code's own figure" in a for a in own.assumed)
+    # A code figure above the default never raises the unit.
+    tall = fit_adu(lot, blds, {**default_rules(max_height_ft=13.0), "story_height_ft": {1: 18.0}}, "detached_new")
+    assert tall.checks["height"].value == 15.0

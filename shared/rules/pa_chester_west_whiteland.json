@@ -4,7 +4,7 @@
     "instrument": "West Whiteland Township Code Chapter 325 Zoning, as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2026-08-26 (breadcrumb). New Laws on 2026-11-14: Ord. No. 492 (2026-10-14), 'Noise Disturbance Amendment; Zoning Amendment', affects Chapter 325, not opened (PDF).",
+    "status_detail": "eCode360 code date 2026-10-14 on 2026-11-26. Ord. No. 492 (2026-10-14, data centers and noise) is now in the online code: it amended 325-8 (definitions), 325-19 (I-2), 325-39 (off-street parking) and added 325-28.4 (data centers). The residential parking table 325-39G is unchanged. The only New Law left is Ord. No. 493 (traffic, Chapter 300).",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11701933",
@@ -19,15 +19,14 @@
       "https://ecode360.com/WE2141/search?query=%22two-family%22%20OR%20duplex%20OR%20conversion%20OR%20%22living%20quarters%22%20OR%20%22accessory%20residential%22&scope=code&sortOrder=relevance",
       "https://ecode360.com/WE2141/search?query=%22single-family%20detached%22%20OR%20%22single-family%20dwelling%22%20OR%20%22single-family%20dwellings%22&scope=code&sortOrder=relevance"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Chester",
     "municipality_type": "township",
     "geoid": "4202984192",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/11701933",
-    "code_current_through": "2026-08-26",
-    "code_current_through_note": "eCode360 breadcrumb 'Code 2026-08-26'. Ord. No. 492 (2026-10-14, zoning amendment) is listed under New Laws and not yet in the code.",
-    "code_caution": "Ord. No. 492 (adopted 2026-10-14) amends the zoning chapter and is not yet in the online code. It was not read. The code site's search of New Laws found no ADU terms in it.",
+    "code_current_through": "2026-10-14",
+    "code_current_through_note": "eCode360 on 2026-11-26: 'Includes legislation through 10-14-2026.'",
     "checks": [
       "The zoning code has no accessory dwelling unit, accessory apartment, in-law, ECHO or granny flat provision. Code and New Laws searches for those words and for 'accessory unit', caretaker and 'family suite' found nothing in the zoning chapter",
       "R-1, R-2 and R-3 allow the listed uses 'and no other'. A single-family detached dwelling with residential accessory uses and structures is allowed in R-1 and R-2 (325-9B, 325-10B)",
@@ -40,7 +39,7 @@
       "Parking for a single-family detached dwelling depends on bedrooms: 1.5 for two, 2 for three, 2.5 for four (or when not stated), 3 for five (325-39G)",
       "Lot sizes are counted on developable acreage (325-9C, 325-10C, 325-11C)"
     ],
-    "notes": "Zoning office: West Whiteland Township. Read on eCode360 (WE2141) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, O/L, O/R and O/C. Search for single-family dwellings in use lists found only R-1, R-2, R-3 and O/R. Article XVI (Historic Preservation) was read for its residential conversion path. The Town Center, Neighborhood Commercial, Industrial, Institutional, Unified Development Area and Rail Transit Overlay articles were not read. The 325-8 two-family definition was seen only as a search snippet."
+    "notes": "Zoning office: West Whiteland Township. Read on eCode360 (WE2141) in a browser, one print view at a time, on 2026-11-14. Use lists read for R-1, R-2, R-3, R-4, O/L, O/R and O/C. Search for single-family dwellings in use lists found only R-1, R-2, R-3 and O/R. Article XVI (Historic Preservation) was read for its residential conversion path. The Town Center, Neighborhood Commercial, Industrial, Institutional, Unified Development Area and Rail Transit Overlay articles were not read. The 325-8 two-family definition was seen only as a search snippet. Second reading on 2026-11-26 in a browser on eCode360: a code search for 'No. 492' (325-8, 325-19, 325-28.4, 325-39 and Chapter 213), 325-39G again, and the use lists of TC (325-13: single-family detached and two-family dwellings 'are all hereby prohibited'), IN (325-45: two-family, semidetached, attached and multifamily dwellings only as an interconnected institutional campus), the UDA (Article XI) and the Rail Transit Overlay (Article XXI), none of which name an accessory dwelling or a single-family house."
   },
   "adu": {
     "term": {

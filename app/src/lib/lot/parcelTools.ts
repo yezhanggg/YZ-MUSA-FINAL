@@ -67,6 +67,7 @@ function flagsThatMatter(lot: LotRecord, file: TownsInfoFile) {
   if (f.historic) out.push({ flag: 'Historic district', means: FLAG_STEP_TEXT.historic, ...(office('historic') ? { who: office('historic')! } : {}) });
   if (f.flood) out.push({ flag: 'Flood zone', means: FLAG_STEP_TEXT.flood, ...(office('building') ? { who: office('building')! } : {}) });
   if (f.steep_slope || f.landslide) out.push({ flag: f.landslide ? 'Landslide-prone' : 'Steep slope', means: FLAG_STEP_TEXT.site_risk });
+  if (f.undermined) out.push({ flag: 'Undermined area', means: FLAG_STEP_TEXT.undermined });
   if (f.sewer === false) out.push({ flag: 'No public sewer', means: FLAG_STEP_TEXT.no_sewer });
   return out;
 }

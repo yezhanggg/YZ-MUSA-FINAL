@@ -1823,13 +1823,16 @@ def test_share_of_a_named_part_of_the_house():
 
 
 def test_scope_wherever_the_use_is_permitted():
-    lot = {"zoning_district": "C", "building_type": "detached", "lot_sqft": 20000, "house_sqft": 2400}
+    # LI (230-145) is neither in permitted_in nor not_permitted_in; C is now read as not permitted (Table 230-A)
+    lot = {"zoning_district": "LI", "building_type": "detached", "lot_sqft": 20000, "house_sqft": 2400}
     c = rules.resolve("pa_montgomery_montgomery", "today", lot, extra=True)
     assert c["allowed"] is True and c["approval_qualifier"] == "conditional_on_reading"
-    assert c["reasons"][0].startswith("By right only if a single-family detached dwelling is a permitted use in C")
+    assert c["reasons"][0].startswith("By right only if a single-family detached dwelling is a permitted use in LI")
     assert c["scope"]["in_scope"] is None and c["path_to_ask"] is None
     r1 = rules.resolve("pa_montgomery_montgomery", "today", {**lot, "zoning_district": "R-1"}, extra=True)
     assert r1["approval_qualifier"] is None and r1["scope"]["in_scope"] is True
+    cc = rules.resolve("pa_montgomery_montgomery", "today", {**lot, "zoning_district": "C"}, extra=True)
+    assert cc["allowed"] is False and cc["scope"]["in_scope"] is False
 
 
 def test_scope_by_use_district_read_and_not_permitted(tmp_path, monkeypatch):
@@ -3725,15 +3728,15 @@ def test_second_principal_building_bars_the_unlisted_path():
 
 def test_gate_bar_line_drops_its_own_full_stop_held_for_lot_towns(monkeypatch):
     """A gate's bar line never reads ". (" before its sections. Held for the lot towns (PASS18_HOLD_TOWNS) until their
-    next rebuild. The Montgomery towns left the set at their Nov 18 rebuild."""
+    next rebuild. The Montgomery towns left the set at their Nov 18 rebuild, the other seven at lot data 11 (Nov 26)."""
     lot = {**DET, "zoning_district": "R-2", "lot_sqft": 12000}
     mj = rules.resolve("pa_lancaster_mount_joy", "today", lot)
     assert any(r.endswith("existing dwelling (135-225C, D). Not allowed here: detached new") for r in mj["reasons"])
     assert not any(". (" in r for r in mj["reasons"])
-    assert len(rules.PASS18_HOLD_TOWNS) == 7 and "pa_lehigh_allentown" in rules.PASS18_HOLD_TOWNS
-    assert "pa_montgomery_narberth" not in rules.PASS18_HOLD_TOWNS
+    assert not rules.PASS18_HOLD_TOWNS  # lot data 11: every lot town rebuilt
     al = {"zoning_district": "N3", "building_type": "detached", "lot_sqft": 6000, "has_alley": False}
     line = "A corner lot with a side street also qualifies"
+    monkeypatch.setattr(rules, "PASS18_HOLD_TOWNS", {"pa_lehigh_allentown"})  # how a hold reads
     held = rules.resolve("pa_lehigh_allentown", "today", al)
     assert any(f"{line}. (660-42C(1)(c)). Not allowed here" in r for r in held["reasons"])
     monkeypatch.setattr(rules, "PASS18_HOLD_TOWNS", set())
@@ -4297,7 +4300,9 @@ def test_share_not_a_whole_percent_keeps_one_decimal(monkeypatch):
         out = rules.resolve("pa_chester_malvern", "state_reform", {**DET, "zoning_district": "R1"})
         return next(r for r in out["reasons"] if "Building coverage" in r)
 
-    assert len(rules.PASS23_HOLD_TOWNS) == 7 and "pa_chester_malvern" in rules.PASS23_HOLD_TOWNS
+    assert not rules.PASS23_HOLD_TOWNS  # lot data 11: every lot town rebuilt
+    assert "Building coverage 7.5% (220-402)" in malvern()
+    monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", {"pa_chester_malvern"})  # how a hold reads
     assert "Building coverage 8% (220-402)" in malvern()
     monkeypatch.setattr(rules, "PASS23_HOLD_TOWNS", set())
     assert "Building coverage 7.5% (220-402)" in malvern()
@@ -5104,8 +5109,8 @@ def test_lot_created_before_cumberland_mx():
 
 
 def test_pass29_hold_towns_are_the_ten_lot_towns():
-    """Pass 29 holds its changes for all ten lot towns (the three Montgomery towns rebuilt on Nov 18 included)."""
-    assert rules.PASS29_HOLD_TOWNS == LOT_TOWNS
+    """Pass 29 held its changes for all ten lot towns until lot data 11 (Nov 26), which rebuilt them and emptied it."""
+    assert not rules.PASS29_HOLD_TOWNS
     for name in LOT_TOWNS:  # no lot town uses a pass 29 field
         text = (RULES / f"{name}.json").read_text()
         for key in ("setback_side_is_each_side", "end_unit_only", "accessory_structure_max_height_by_lot_size"):

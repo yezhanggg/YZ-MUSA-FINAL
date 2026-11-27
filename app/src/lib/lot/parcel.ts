@@ -93,6 +93,7 @@ export const FLAG_ROWS = [
   ['historic', 'Historic district'],
   ['steep_slope', 'Steep slope'],
   ['landslide', 'Landslide-prone'],
+  ['undermined', 'Undermined area (old mines)'],
   ['sewer', 'Public sewer'],
 ] as const;
 

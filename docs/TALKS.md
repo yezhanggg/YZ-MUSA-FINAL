@@ -113,20 +113,20 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 ### 7. Lot results (1 min)
 
-<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-16. Data versions pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261116-b1e77f74ac, chester_county-20261116-aa5d870e34, centre_county-20261116-3f43ace3b4, montgomery_county-20261116-08642b411f -->
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-26 (lot data 12). Data versions pittsburgh-20261126-d747c67f1d, philadelphia-20261126-331f84072a, allentown-20261126-dcb22d8b63, chester_county-20261126-3396fbba65, centre_county-20261126-faba91665f, montgomery_county-20261126-39cb1f34c5 -->
 
 | Lot place | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|
 | Philadelphia | 459,998 | 1.2 % | 0 % | 26.0 % |
-| Pittsburgh | 92,081 | 100 % | 65.8 % (Administrator's Exception) | 70.0 % |
+| Pittsburgh | 92,081 | 100 % | 65.4 % (Administrator's Exception) | 69.7 % |
 | Allentown | 29,158 | 88.3 % | 21.5 % | 71.3 % |
-| Montgomery County (Lower Merion, Narberth, Upper Dublin) | 26,119 | 78.3 % | 25.6 % | 86.0 % |
-| Chester County (5 towns) | 14,847 | 68.9 % | 23.1 % | 58.8 % |
-| Centre County (College Township) | 3,484 | 53.8 % | 48.7 % | 80.5 % |
+| Montgomery County (Lower Merion, Narberth, Upper Dublin) | 26,119 | 78.3 % | 25.2 % | 83.9 % |
+| Chester County (5 towns) | 14,847 | 68.9 % | 28.7 % | 64.2 % |
+| Centre County (College Township) | 3,484 | 53.8 % | 47.7 % | 81.0 % |
 
-- What stops it: in Philadelphia the law, in Pittsburgh yard space (41.4 %).
-- Towns differ a lot inside one county: Narberth 76.9 %, Upper Dublin 66.6 %, Lower Merion 0 % (no new detached unit by rule).
-- 600 sq ft detached fits under HB 2186 setbacks: Philadelphia 7.6 %, Pittsburgh 45.9 %.
+- What stops it: in Philadelphia the law, in Pittsburgh yard space (40.7 %).
+- Towns differ a lot inside one county: Narberth 77.2 %, Upper Dublin 65.0 %, Lower Merion 0 % (no new detached unit by rule).
+- 600 sq ft detached fits under HB 2186 setbacks: Philadelphia 7.7 %, Pittsburgh 46.3 %.
 
 ### 8. What is not measured yet (30 s)
 

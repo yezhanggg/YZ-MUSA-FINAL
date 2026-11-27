@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of Hempfield (Westmoreland County), Chapter 87 Zoning, as published on eCode360, with Tables 1 to 4 as attachments",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360: includes legislation through 03-23-2026 (Supp 74, Mar 2026). New Laws (2) listed, not opened. Table 1 and Table 3 amended 3-23-2026 by Ord. No. 2026-03. eCode360 is Cloudflare-walled for plain fetches. Text and table PDFs were read in a browser.",
+    "status_detail": "eCode360: includes legislation through 03-23-2026 (Supp 74, Mar 2026). New Laws on 2026-11-26: none (the two listed earlier are Ord. No. 2026-02 and 2026-03, now codified). Table 1 and Table 3 amended 3-23-2026 by Ord. No. 2026-03. eCode360 is Cloudflare-walled for plain fetches. Text and table PDFs were read in a browser.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/HE0496",
@@ -25,16 +25,17 @@
       "https://ecode360.com/attachment/330310/HE0496-087c%20Table%203.pdf",
       "https://ecode360.com/attachment/330310/HE0496-087c1%20Table%204.pdf",
       "https://www.hempfieldtwp.com/162/Planning-Zoning",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://ecode360.com/HE0496/laws"
     ],
-    "verified_on": "2026-11-11",
+    "verified_on": "2026-11-26",
     "county": "Westmoreland",
     "municipality_type": "township",
     "geoid": "4212933792",
     "code_host": "ecode360",
     "code_url": "https://ecode360.com/10769959",
     "code_current_through": "2026-03-23",
-    "code_current_through_note": "Includes legislation through 03-23-2026. New Laws (2) not yet codified.",
+    "code_current_through_note": "Includes legislation through 03-23-2026 for Chapter 87 (Ord. No. 2026-02 and 2026-03, both codified). On 2026-11-26 the code showed legislation through 09-28-2026 and 'no known new laws'; no Chapter 87 section carries an amendment after 3-23-2026.",
     "checks": [
       "Outside the TND overlay the code has no ADU rule. A second unit may be sought as an unlisted use by special exception from the Zoning Hearing Board (87-15B, 87-186A). The Board must find its impact no greater than a listed use",
       "The accessory apartment rule (87-79) is in Article XV, the TND overlay. The overlay covers six tax parcels (87-71, TND Exhibit A). Single-family dwellings are P in TC-R and N in TC-B (Table 1)",
@@ -46,7 +47,7 @@
       "TND parking: 2 spaces per dwelling unit, garages excluded (87-75, Table 5)",
       "Table 2 also lists 'Other accessory uses customarily associated with permitted uses and special exceptions' as P*: permitted on a Zoning Officer finding that the use is subordinate, or by special exception. A second dwelling unit is not a customary accessory use on its face. Ask the Zoning Officer"
     ],
-    "notes": "Zoning office: Planning and Zoning, https://www.hempfieldtwp.com/162/Planning-Zoning. Pending: New Laws (2) on eCode360 are Ord. 2026-05 (Development Authority) and 2026-06 (stray cats), per the review. Neither is about dwellings. A March 2026 news headline mentions proposed zoning changes. Not checked against an ordinance. Not law."
+    "notes": "Zoning office: Planning and Zoning, https://www.hempfieldtwp.com/162/Planning-Zoning. Pending: New Laws (2) on eCode360 are Ord. 2026-05 (Development Authority) and 2026-06 (stray cats), per the review. Neither is about dwellings. A March 2026 news headline mentions proposed zoning changes. Not checked against an ordinance. Not law. Second review, 2026-11-26: the chapter print view shows Ord. No. 2026-02 and 2026-03 (3-23-2026) codified in 87-100 to 87-106.1 and 87-210 to 87-216, none in 87-79, Tables 1 and 2 or 87-186, and New Laws is empty. Left for a later check: the reading that a second unit outside the TND is an unlisted use by special exception (87-15B, 87-186A), shown as the unlisted-use path, and the Schedule A bulk rules, which go by lot type and are mapped to lot area."
   },
   "adu": {
     "term": {

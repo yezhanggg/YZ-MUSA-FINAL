@@ -4,7 +4,7 @@
     "instrument": "Zoning Ordinance of the City of Butler (Chapter 260 Zoning, adopted 2-19-1987 as Part 13 of the 1987 Codified Ordinances, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 BU1538, City of Butler, Butler County. Chapter 260 was adopted 2-19-1987 and amended many times, most recently by Ord. No. 1825 (9-25-2024, mobile homes). New Laws lists Ord. No. 1842, 1843 and 1844 (2026), none of them on zoning. The Bulk and Dimensional table, the Lot Area Required for Dwelling Units table, the Use Table and the Zoning Map are PDF attachments that were not opened. Each district article lists its uses and lot and yard figures in the text, and those were read",
+    "status_detail": "eCode360 BU1538, City of Butler, Butler County. Chapter 260 was adopted 2-19-1987 and amended many times, most recently by Ord. No. 1825 (9-25-2024, mobile homes). New Laws lists Ord. No. 1842, 1843 and 1844 (2026), none of them on zoning. Each district article lists its uses and lot and yard figures in the text, and those were read. The Bulk and Dimensional table (Attachment 1, 2014) and the Use Table were read on 2026-11-26: the lot areas, front, rear and accessory yards, heights and coverage match the text, side yards are given there as shares of lot width (10% one side, 30% total), and the Use Table permits a conversion of a single-family house to two units in R-2 and R-3 and to multifamily in R-3 (P*), two-family dwellings in R-2, R-3 and R-O, and no accessory dwelling use",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/BU1538",
@@ -28,9 +28,11 @@
       "https://ecode360.com/print/BU1538?guid=12073223",
       "https://ecode360.com/print/BU1538?guid=12073263",
       "https://ecode360.com/print/BU1538?guid=12073287",
-      "https://ecode360.com/print/BU1538?guid=33645596"
+      "https://ecode360.com/print/BU1538?guid=33645596",
+      "https://ecode360.com/attachment/333531/BU1538-260a%20Bulk.pdf",
+      "https://ecode360.com/attachment/333531/BU1538-260d%20Use%20Table.pdf"
     ],
-    "verified_on": "2026-11-15",
+    "verified_on": "2026-11-26",
     "county": "Butler",
     "municipality_type": "city",
     "geoid": "4201910464",
@@ -54,7 +56,7 @@
       "Townhouses are a conditional use in R-1, R-2, R-3, R-O and C-1: a lot of at least 6,000 sq ft and at most one unit per 3,000 sq ft (260-15H, 260-22H, 260-31M, 260-40D, 260-48H). R-3 also lists row dwellings by conditional use (260-31F)",
       "A traditional neighborhood development is a conditional use in R-1, R-2 and R-3 on at least 5 acres (260-15A, 260-97, 260-98D). It is the planned residential development that 260-16A refers to"
     ],
-    "notes": "Zoning office: City of Butler, Zoning and Code Management Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were the two-family and conversion apartment definitions, the conversion listings in R-2 and R-3, the caretaker and watchman quarters in C-1, C-2 and M-1, 260-125 and the rental occupancy chapter. Read: Articles I, III, V to XIII, XV, XVI, XVIII to XX and XXIII. Read in part: Article II definitions (A to 'Lot width' in full, the rest by search and term list). Not read: Article IV (district list), XIV (floodplain), XVII (signs), XXI (amendments), XXII (administration), XXIV (Rotary Arts and Cultural District) and the PDF attachments. Height is measured from the average finished grade to the highest point of a flat roof or the average height of the highest gable of a pitched roof. Coverage counts buildings only. No unlisted-use rule for houses: the R-2 and R-3 'similar' conditional uses reach only neighborhood commercial activities, and the C-1, C-2, M-1 and M-2 ones only commercial or industrial uses."
+    "notes": "Zoning office: City of Butler, Zoning and Code Management Officer. Read in a browser on eCode360, one page at a time, on 2026-11-15, in print view. Searched the code (scope all) for accessory dwelling, in-law, accessory apartment, accessory suite, ECHO, elder cottage, granny, guest house, carriage house, tenant house, living quarters, second dwelling, conversion, two-family, caretaker, farm dwelling, relative and relative quarters. Hits were the two-family and conversion apartment definitions, the conversion listings in R-2 and R-3, the caretaker and watchman quarters in C-1, C-2 and M-1, 260-125 and the rental occupancy chapter. Read: Articles I, III, V to XIII, XV, XVI, XVIII to XX and XXIII. Read in part: Article II definitions (A to 'Lot width' in full, the rest by search and term list). Not read: Article IV (district list), XIV (floodplain), XVII (signs), XXI (amendments), XXII (administration), XXIV (Rotary Arts and Cultural District) and the PDF attachments. Height is measured from the average finished grade to the highest point of a flat roof or the average height of the highest gable of a pitched roof. Coverage counts buildings only. No unlisted-use rule for houses: the R-2 and R-3 'similar' conditional uses reach only neighborhood commercial activities, and the C-1, C-2, M-1 and M-2 ones only commercial or industrial uses. Second reading 2026-11-26 (G0): eCode360 now 'legislation through 05-28-2026'. Bulk and Dimensional table and Use Table read by cell position and match the file (see status_detail). The zoning map is not needed for the rule. Left as disputes the code does not settle: the conversion cutoff date (read as the chapter's adoption, 2-19-1987, which may re-enact an older date), and whether a dwelling unit in an accessory building is allowed at all (260-10N counts such units, but no use list names one; kept as an alternative where two or more units are allowed)."
   },
   "adu": {
     "term": {

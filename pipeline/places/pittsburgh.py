@@ -122,6 +122,13 @@ LAYERS: tuple[Layer, ...] = (
     ),
     Layer("landslide_prone", f"{CITY}/PGHWebLandslideProne/FeatureServer/0", LIC_CITY, fields="landslideprone"),
     Layer(
+        "undermined",
+        f"{CITY}/PGHWebUndermined/FeatureServer/0",
+        LIC_CITY,
+        fields="undermined",
+        note="Undermined Areas, the UM-O overlay (906.05) as the city's Pittsburgh Zoning Map web map shows it",
+    ),
+    Layer(
         "council_districts",
         f"{CITY}/PGHWebCouncilDistricts/FeatureServer/0",
         LIC_CITY,
@@ -563,6 +570,7 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         "historic": hist,
         "steep_slope": read_layer("steep_slope"),
         "landslide": read_layer("landslide_prone"),
+        "undermined": read_layer("undermined"),
     }
     for name, layer in flags.items():
         step(f"flag {name}")

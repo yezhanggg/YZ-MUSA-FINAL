@@ -4,7 +4,7 @@
     "instrument": "Code of the Township of Ross, Chapter 27 Zoning, as published on eCode360, with the Table of Use Regulations (27 Attachment 1) and the Residential Use Dimensional Regulations Table (27 Attachment 2)",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 (code RO2521): includes legislation through 04-20-2026. The use table carries Ord. No. 2564 of 3/16/2026. New Laws (4): Ord. 2568 to 2571 (Ch 1, 13, 15). None amends Chapter 27. Read in the eCode360 print view and the attachment PDFs in a browser. Currency gap: the code runs through 04-20-2026 and New Laws starts at Ord. No. 2568 (2026-09-21). Ordinances 2565 to 2567, if any, were not seen.",
+    "status_detail": "eCode360 (code RO2521): includes legislation through 04-20-2026. The use table carries Ord. No. 2564 of 3/16/2026. New Laws (4): Ord. 2568 to 2571 (Ch 1, 13, 15). None amends Chapter 27. Read in the eCode360 print view and the attachment PDFs in a browser. Currency gap: the code runs through 04-20-2026 and New Laws starts at Ord. No. 2568 (2026-09-21). Ordinances 2565 to 2567, if any, were not seen. Rechecked 2026-11-26: New Laws now Ord. 2568 to 2572 (Ch 1, 13, 15), none amends Chapter 27. Ord. 2565 to 2567 still not seen.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/RO2521",
@@ -37,9 +37,9 @@
     "code_current_through_note": "eCode360: Includes legislation through 04-20-2026. New Laws (4), none for Chapter 27.",
     "checks": [
       "The zoning code has no accessory dwelling unit or accessory apartment rule. The Table of Use Regulations has no ADU row. Land may be used only for uses permitted in 27-906 (27-901.1)",
-      "Uses similar to those in the Table of Use Regulations may be permitted by conditional use (27-904), judged against 'any use specifically listed in the zoning district'. A second unit is a two-family dwelling or a conversion, both listed. In R-1 and R-5 both are N, 'not permitted' (27-902.4). Reading: 27-904 does not reach a second unit. The path is a use variance",
+      "Uses similar to those in the Table of Use Regulations may be permitted by conditional use (27-904.1), judged against 'any use specifically listed in the zoning district' and held to the standards of 'the most nearly comparable use' listed there (27-904.1.A, C). A second unit is a two-family dwelling or a conversion, both listed. In R-1 and R-5 both are N, 'not permitted' (27-902.4). So 27-904 does not reach a second unit there. The path is a use variance",
       "R-1 allows 'Only one primary or main building' per lot (27-901.2)",
-      "The accessory building definition includes 'guest houses, and domestic servant or caretaker living quarters for those employed on the premises'. Residential accessory structures are permitted in all residential districts (27-202, Table of Use Regulations)",
+      "The accessory building definition includes 'guest houses, and domestic servant or caretaker living quarters for those employed on the premises'. Residential accessory structures are permitted in all residential districts (27-202, Table of Use Regulations). The quarters are only for people employed on the premises, so they are recorded as an alternative, not an ADU",
       "Residential accessory buildings: at most two per lot, 720 sq ft combined, 14 ft high to the peak. 5 ft from side lines, 15 ft from the rear line (100 to 720 sq ft). Not in the required front yard (27-906.6.D)",
       "Two-family dwellings are permitted in R-2, R-3 and R-4. Duplex lot area 5,000 sq ft per dwelling unit, 100 ft wide for two units (Table of Use Regulations, 27 Attachment 2)",
       "Conversion of an existing single-family detached dwelling into two or more apartments is a conditional use in R-2 and permitted in R-3 and R-4. 2,000 sq ft of lot per dwelling unit. 1.5 parking spaces per unit (27-202, 27-906.1.E)",
@@ -71,11 +71,11 @@
   "approval": {
     "path": {
       "value": "variance",
-      "section": "27-901.1, 27-902.4, MPC 910.2",
+      "section": "27-901.1, 27-902.4, 27-904, MPC 910.2",
       "url": "https://ecode360.com/31084617",
-      "verified_on": "2026-11-11",
+      "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "No use except 'for the purposes permitted in § 27-906'. A second unit is a two-family dwelling or conversion. In R-1 and R-5 both are N. A use variance is the path. In R-2 to R-4 the two-family and conversion alternatives apply. 27-904 (similar uses) is at most a question to ask."
+      "note": "No use except 'for the purposes permitted in § 27-906'. A second unit is a two-family dwelling or conversion. In R-1 and R-5 both are N. A use variance is the path. In R-2 to R-4 the two-family and conversion alternatives apply. 27-904 (similar uses, conditional use) is judged against 'any use specifically listed in the zoning district' and the 'most nearly comparable use' listed there (27-904.1.A, C). For a second unit that comparable use is the two-family dwelling or conversion itself, which R-1 and R-5 list as N, so 27-904 is read as not reaching it (checked 2026-11-26)."
     },
     "fallback_path": {
       "value": "variance",

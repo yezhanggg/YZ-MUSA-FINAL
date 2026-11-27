@@ -35,9 +35,11 @@
       "https://ecode360.com/print/MO1487?guid=11528659",
       "https://ecode360.com/11523992",
       "https://ecode360.com/print/MO1487?guid=31852565",
-      "https://ecode360.com/print/MO1487?guid=31852660"
+      "https://ecode360.com/print/MO1487?guid=31852660",
+      "https://ecode360.com/print/MO1487?guid=16140671",
+      "https://ecode360.com/print/MO1487?guid=31852669"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Lancaster",
     "municipality_type": "township",
     "geoid": "4207151664",
@@ -69,7 +71,7 @@
       "Expansion of a dimensionally nonconforming structure follows 135-46",
       "Required off-street parking may be reduced by special exception (135-343G)"
     ],
-    "notes": "Zoning office: Mount Joy Township (Lancaster County). Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, V, VI, VII to XV, XVII, XVIII and XX in full, 135-224 and 135-225, 135-291 to 135-297 and 135-300, 135-342 to 135-343A, Article XXVIII, the 135-32 definitions of building, accessory building, building coverage, building height, dwelling, dwelling unit, echo housing and family, Chapter 70 (contents, 70-41 and 70-51), the New Laws page and the code search for ADU terms. Not read: Article II, the other 135-32 definitions, 135-211 to 135-223, 135-226 to 135-275 (so 135-216 apartment houses, 135-262 townhouses and 135-248 were not read), 135-298, 135-299, 135-301 to 135-327 (so the riparian, steep slope and historic sections were not read), Articles XXIV, XXVI (135-351 cluster, 135-353 Village Design Option) and XXVII, the rest of 135-343 and 135-344 onward, and Chapter 70 except 70-41 and 70-51. 70-42, 70-46, 70-62, 135-306, 135-353E(2)(e) and 135-353J(7)(b) are cited from quoted text, and the rest of 135-353 and Chapter 70 were not read."
+    "notes": "Zoning office: Mount Joy Township (Lancaster County). Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, V, VI, VII to XV, XVII, XVIII and XX in full, 135-224 and 135-225, 135-291 to 135-297 and 135-300, 135-342 to 135-343A, Article XXVIII, the 135-32 definitions of building, accessory building, building coverage, building height, dwelling, dwelling unit, echo housing and family, Chapter 70 (contents, 70-41 and 70-51), the New Laws page and the code search for ADU terms. Not read: Article II, the other 135-32 definitions, 135-211 to 135-223, 135-226 to 135-275 (so 135-216 apartment houses, 135-262 townhouses and 135-248 were not read), 135-298, 135-299, 135-301 to 135-327 (so the riparian, steep slope and historic sections were not read), Articles XXIV, XXVI (135-351 cluster, 135-353 Village Design Option) and XXVII, the rest of 135-343 and 135-344 onward, and Chapter 70 except 70-41 and 70-51. 70-42, 70-46, 70-62, 135-306, 135-353E(2)(e) and 135-353J(7)(b) are cited from quoted text, and the rest of 135-353 and Chapter 70 were not read. Second reading on 2026-11-26 in a browser on eCode360 (code through 03-16-2026, no New Laws): 135-353 in full (Village Design Option, the accessory apartment criteria match the file) and 70-62 (improvements to existing structures in the floodplain: no expansion that raises the BFE in a floodway or more than one foot in an AE area, 50% of market value is a substantial improvement). The echo housing conversion conflict (135-32 against 135-225C and D), the floodplain addition question (70-42, 70-62, 135-306), whether R-1 lot area per dwelling unit counts the echo unit, the 20 ft accessory height for an echo manufactured home and 135-295 stay points to ask the township."
   },
   "adu": {
     "term": {
@@ -261,9 +263,9 @@
             }
           ],
           "section": "135-353E(2)(e), 135-353J(7)(b)",
-          "url": "https://ecode360.com/11526470",
+          "url": "https://ecode360.com/print/MO1487?guid=16140671",
           "confidence": "secondary",
-          "note": "Read from quoted text of 135-353. The 10 acres is the development tract. Not limited to relatives. Whether a lot outside a Village Design Option plan can use it is not settled, and the rest of 135-353 was not read",
+          "note": "Read in full on 2026-11-26 (135-353): the 10 contiguous acres is the development tract (135-353F(1)), principal residences 1 1/2 to three stories and at most 40 ft, accessory buildings at most 25 ft (J(7)), and each dwelling unit needs space for three parking spaces, at least one off street (J(8)(a)). Not limited to relatives. Whether a lot outside a Village Design Option plan can use it is not said",
           "accessory_max_height_ft": 25,
           "parking_spaces": 2
         }

@@ -11,9 +11,12 @@
       "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
       "https://boroughofambler.com/departments/code-enforcement/code-of-ordinances/",
       "https://boroughofambler.com/zoning-ordinance-amendment-public-hearing-information/",
-      "https://boroughofambler.com/?s=zoning+chapter+27"
+      "https://boroughofambler.com/?s=zoning+chapter+27",
+      "https://boroughofambler.com/wpfd_file/ordinance-1097-zoning-removing-residential-special-exceptions/",
+      "https://boroughofambler.com/wpfd_file/ordinance_1131_r3_2023/",
+      "https://boroughofambler.com/wp-sitemap-posts-wpfd_file-1.xml"
     ],
-    "verified_on": "2026-11-13",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "borough",
     "geoid": "4209102264",
@@ -21,7 +24,7 @@
     "code_url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf",
     "code_current_through": null,
     "code_current_through_note": "No currency date. Page footers 5/18/2011. Latest history note Ord. 1055 (1/18/2011).",
-    "code_caution": "Read with care: this is the Borough's Chapter 27 PDF, compiled only to about 2011. The ADU text (27-407) was last amended by Ord. 1021 on 9/16/2008. At least eight later zoning ordinances are posted separately and were not read, among them Ord. 1097 'Zoning Removing Residential Special Exceptions' and Ord. 1131 on R-3 (2023), one of the five ADU districts, plus 1084, 1086, 1087, 1117, 1133, 1134 and untitled ordinances from 2021 to 2026. A February 2026 hearing considered replacing Part 27 (Redevelopment Overlay). Any of them may change the rules below. Ask the Borough for the current Chapter 27 before relying on this answer.",
+    "code_caution": "The Borough's Chapter 27 PDF is compiled to about 2011 (ADU text 27-407, last amended by Ord. 1021 on 9/16/2008). The later zoning ordinances posted on the Borough site were read on 2026-11-26 (scanned ones by OCR): Ord. 1070 and 1084 and 1117 (map changes), 1072 and 1078 (RO overlay, transit-oriented development), 1073 (corner sight lines, lighting), 1074 (Zoning Hearing Board procedure), 1086 (DC drive-throughs), 1090 (auto sales in C and RSC), 1093 (floodplain, Part 19 replaced), 1097 (removes special exception uses in R-1, R-1-A, R-2 and R-3 and conditional uses in R-3), 1131 (R-3 parking setbacks for redevelopment), 1134, 1140 and 1147 (RO overlay), 1139 (lighting) and 1145 (heights in C and DC). None amends 27-407 or the permitted uses of the residential districts. Ord. 1097 removed the residential conversion special exception (27-702(2)B), so that path is gone. Ordinances later than 1147 (February 2026), if any, are not posted.",
     "checks": [
       "An ADU is a permitted accessory use to a dwelling (27-407A(8)) in R-1, R-1-A, R-2, R-3 and MR, by zoning permit. The permit lasts at most one year and is renewed after an inspection by the Zoning Officer. It ends when the occupancy changes (27-407C(6))",
       "Only for the lot owner's family: the ADU may be occupied only while the owner's family lives in the house, and at least one occupant must be a parent or grandparent, a spouse, partner or sibling of one of them, or a relative needing continuous care for injury, illness or a serious disability (27-202, 27-407C(2)(b))",
@@ -43,7 +46,7 @@
       "Garden apartment, elderly housing, commercial, office, industrial and institutional districts also list accessory uses under 27-407, but have no single-family house. Ask the zoning officer",
       "No short-term rental rule in Chapter 27. The ADU may not be rented at all"
     ],
-    "notes": "Zoning office: Ambler Borough. The index link (.../download/code_of_ordinances/code-of-ordinances-by-chapter/Chapter27.pdf) now returns 'Page not found' in a browser. A plain fetch meets a script cookie check, which was not worked around. The current chapter link was found with the Borough site search. Opening it in the browser saved a copy to the Downloads folder, which was read. The post-2012 ordinance PDFs open only as downloads and were not opened. The text was searched for accessory dwelling, ADU, conversion, nonconforming, similar, short-term. No unlisted-use or similar-use section was found."
+    "notes": "Zoning office: Ambler Borough. The index link (.../download/code_of_ordinances/code-of-ordinances-by-chapter/Chapter27.pdf) now returns 'Page not found' in a browser. A plain fetch meets a script cookie check, which was not worked around. The current chapter link was found with the Borough site search. Opening it in the browser saved a copy to the Downloads folder, which was read. The post-2012 ordinance PDFs open only as downloads and were not opened. The text was searched for accessory dwelling, ADU, conversion, nonconforming, similar, short-term. No unlisted-use or similar-use section was found. Second review, 2026-11-26: every zoning ordinance in the Borough's posted file list after the 2011 compilation was opened and read (OCR for scanned ones), see code_caution. The 2011 PDF stays the base text for 27-407 since nothing amends it. Fixed: the 27-408 conversion alternative was removed (Ord. 1097). Left for a later check: whether a suite inside the house and a converted garage count as the attached and detached kinds the 27-202 definition names, and whether any ordinance after 1147 exists."
   },
   "adu": {
     "term": {
@@ -137,26 +140,13 @@
           "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
           "confidence": "secondary",
           "note": "Rooms, not a separate dwelling unit"
-        },
-        {
-          "name": "Conversion of a house to two or more families",
-          "path": "special_exception",
-          "districts": [
-            "R-2",
-            "R-3"
-          ],
-          "conditions": "Each unit at least 700 sq ft plus 100 sq ft per bedroom over one. Lot size per unit at least 75% of the district minimum. Outside stairs to the rear. Parking met. Not in a floodplain area.",
-          "min_lot_sqft": null,
-          "section": "27-408, 27-702.2.B",
-          "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=45",
-          "confidence": "secondary",
-          "note": "Ord. 1097 'Zoning Removing Residential Special Exceptions' was adopted after this compilation and may have removed it. Ask the Borough"
         }
       ],
-      "section": "27-407A, 27-408",
+      "section": "27-407A",
       "url": "https://boroughofambler.com/download/137/code-of-ordinances-by-chapter/6843/27-chapter-zoning.pdf#page=41",
-      "verified_on": "2026-11-13",
-      "confidence": "secondary"
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "Ord. 1097 (2016) deleted 27-702(2) 'Special Exception Uses' in its entirety, and with it 'Residential conversions, in accordance with §27-408' in R-2 (R-3 takes only the R-2 permitted uses). No district lists a 27-408 conversion now."
     }
   },
   "eligibility": {

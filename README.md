@@ -34,7 +34,7 @@ The search box doubles as a chat assistant. Ask things like *"Can I build an ADU
 | Centre County: College Township | 3,484 |
 | **Total** | **625,687** |
 
-Outside these places, the map still shows the ADU rule for every county, town, census tract and ZIP code in Pennsylvania. 223 towns have their own rule file (146 checked by a second reading). Every other town uses a statewide baseline.
+Outside these places, the map still shows the ADU rule for every county, town, census tract and ZIP code in Pennsylvania. 223 towns have their own rule file (198 checked by a second reading). Every other town uses a statewide baseline.
 
 ## How it works
 

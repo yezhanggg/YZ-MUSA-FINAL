@@ -425,13 +425,12 @@
     },
     {
      "kind": "behaviour",
-     "label": "tier: first reading",
+     "label": "tier: checked rule file",
      "accept": [
-      "first reading",
-      "drafted",
-      "open point"
+      "checked rule file",
+      "verified"
      ],
-     "evidence": "First reading"
+     "evidence": "Checked rule file"
     },
     {
      "kind": "behaviour",
@@ -451,7 +450,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "Drafted: family only, zoning permit; first reading with open points."
+   "rubric": "Verified (Nov 26): family only, zoning permit; verified, with points to ask."
   },
   {
    "id": "ladder-07",
@@ -495,13 +494,12 @@
     },
     {
      "kind": "behaviour",
-     "label": "tier: first reading",
+     "label": "tier: checked rule file",
      "accept": [
-      "first reading",
-      "drafted",
-      "open point"
+      "checked rule file",
+      "verified"
      ],
-     "evidence": "First reading"
+     "evidence": "Checked rule file"
     },
     {
      "kind": "behaviour",
@@ -521,7 +519,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "Drafted, not addressed: not allowed today, variance; open points."
+   "rubric": "Verified (Nov 26), not addressed: not allowed today, variance, with points to ask."
   },
   {
    "id": "ladder-08",
@@ -1190,7 +1188,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     }
    ],
@@ -1270,7 +1268,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     },
     {
@@ -1331,7 +1329,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     }
    ],
@@ -1509,7 +1507,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     },
     {
@@ -1561,7 +1559,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     }
    ],
@@ -1628,7 +1626,7 @@
      "why": "a dead-end answer"
     },
     {
-     "pattern": "(\u00a7|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
+     "pattern": "(§|\\bsection|\\bsec\\.)\\s*\\d{2,4}(?![\\d.]*\\s*\\(53)",
      "why": "a town code section with no rule file behind it"
     }
    ],

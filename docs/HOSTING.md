@@ -35,6 +35,10 @@ The app does not read `app/`, `index.parquet`, `lot_tract.parquet`, `parts/`, `q
 
 <!-- source: file sizes under ~/musa-drive/host/, summed 2026-11-15 and 2026-11-18 -->
 
+Nov 26 (lot data 12): the tract files are packed (format pack1, `tools/pack_lots.py`), and the bundle is 714.2 MB (Philadelphia 390.6, Pittsburgh 127.9, Montgomery County 62.6, Chester County 61.4, Centre County 21.2 MB, plus Allentown and the shared files), about 286 MB under the 1 GB Pages limit. A scenario, or a part of one, that is the same JSON text as an earlier scenario becomes `{"$same": "<scenario>"}`, and repeated `quality` values are stored once per file and become `{"$ref": i}`. Files are gzipped at level 9 with no timestamp. `tools/publish_lots.sh` unpacks every packed file and compares it with the record text before writing it; `tools/compare_bundles.ts` found the same answers on all 625,687 lots. The browser undoes the packing in `unpackRecords` (`app/src/lib/lot/load.ts`), and the manifest says `"pack": "pack1"`.
+
+**Publish order with pack1: deploy the app first, then push the data.** An app built before Nov 26 cannot read packed files. The new app still reads unpacked files, so deploying it first is safe.
+
 Nov 18: after the Montgomery County rebuild and the Pittsburgh land cover refresh the bundle is 999,918,964 bytes (999.9 MB, 1,738 files): Pittsburgh 188.2 MB, Montgomery County 107.8 MB. About 0.1 MB is left under the 1 GB Pages limit. Make room before the next lot data change.
 
 

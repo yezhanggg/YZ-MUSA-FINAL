@@ -233,6 +233,15 @@ describe('parcel tools', () => {
     expect(r.zoning.district_name).toBe('Residential 3-B');
   });
 
+  it('get_parcel_info says what the Pittsburgh undermined area flag means', () => {
+    const base = fixture('nar_detached');
+    const lot = { ...base, zoning: { ...base.zoning, flags: { ...base.zoning.flags, undermined: true } } };
+    const um = getParcelInfo(lot, FAKE).zoning.flags_that_matter.find((f) => f.flag === 'Undermined area');
+    expect(um?.means).toMatch(/mine records/);
+    expect(um?.means).toMatch(/906\.05\.B/);
+    expect(getParcelInfo(base, FAKE).zoning.flags_that_matter.some((f) => f.flag === 'Undermined area')).toBe(false);
+  });
+
   it("get_property_tax gives the rates with their year and the unit's yearly tax", () => {
     const r = getPropertyTax(fixture('nar_detached'), unit(), { rent_by_bedroom: RENTS }, FAKE);
     expect(r.total_mills).toBe(40);

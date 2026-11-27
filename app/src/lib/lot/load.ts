@@ -57,6 +57,8 @@ export interface Manifest {
   rule_files_verified_on?: Record<string, string | null>;
   /** Tracts in the build, by GEOID. A tract not listed has no file. */
   tracts?: Record<string, unknown>;
+  /** Set by tools/publish_lots.sh: the lot id -> tract file of the published bundle (gzip), and the tract file packing. */
+  published?: { lot_tract?: string; pack?: string };
 }
 
 export interface TractLots {
@@ -153,6 +155,9 @@ interface HeadFile {
   more?: string[];
   /** Citation table: a lot's rules.<scenario>.citations may be {"$cite": i}, meaning citations[i]. */
   citations?: unknown[];
+  /** "pack1" when tools/pack_lots.py packed the file (published bundle). See unpackRecords. */
+  pack?: string;
+  shared?: unknown[];
   lots: unknown[];
 }
 interface GeomEntry {
@@ -184,6 +189,47 @@ function asRecord(v: unknown, url: string): LotRecord {
     throw new LotLoadError('bad_data', `${url} holds a lot that is not a lot record`, { url });
   }
   return v as unknown as LotRecord;
+}
+
+/** Packing of the published tract files (tools/pack_lots.py, format "pack1"). Files without `pack` are read as is. */
+const PACK_FORMAT = 'pack1';
+const SCENARIO_BLOCKS = ['fit', 'rules', 'buildable'] as const;
+const PACK_SCENARIOS = ['today', 'local_reform', 'state_reform'] as const;
+const isMarker = (v: unknown, key: string): v is Record<string, unknown> => isObj(v) && Object.keys(v).length === 1 && Object.hasOwn(v, key);
+
+function unpackChildren(v: Record<string, unknown>, block: Record<string, unknown>, path: string[]): void {
+  for (const [k, x] of Object.entries(v)) {
+    if (isMarker(x, '$same')) {
+      let src: unknown = block[x.$same as string];
+      for (const p of [...path, k]) src = (src as Record<string, unknown>)[p];
+      v[k] = structuredClone(src);
+    } else if (isObj(x)) unpackChildren(x, block, [...path, k]);
+  }
+}
+
+/** Undo the packing of one tract file: scenarios (or parts of them) stored as {"$same": earlier scenario} and quality
+ *  values stored once in `shared` as {"$ref": i}. Same as unpack in tools/pack_lots.py. Runs before unpackCitations. */
+export function unpackRecords(file: { pack?: unknown; shared?: unknown[]; lots: unknown[] }, url = ''): unknown[] {
+  if (file.pack === undefined) return file.lots;
+  if (file.pack !== PACK_FORMAT) throw new LotLoadError('version_mismatch', `${url} uses packing ${String(file.pack)}, app reads ${PACK_FORMAT}`, { url });
+  const shared = file.shared ?? [];
+  for (const rec of file.lots) {
+    if (!isObj(rec)) continue;
+    for (const name of SCENARIO_BLOCKS) {
+      const block = rec[name];
+      if (!isObj(block)) continue;
+      for (const s of PACK_SCENARIOS) {
+        const v = block[s];
+        if (isMarker(v, '$same')) block[s] = structuredClone(block[v.$same as string]);
+        else if (isObj(v)) unpackChildren(v, block, []);
+      }
+    }
+    const q = rec.quality;
+    if (isObj(q)) {
+      for (const [k, x] of Object.entries(q)) if (isMarker(x, '$ref')) q[k] = structuredClone(shared[x.$ref as number]);
+    }
+  }
+  return file.lots;
 }
 
 /** Put the shared citation tables back into the rules. Same as unpack_citations in pipeline/build_lots.py. */
@@ -382,7 +428,10 @@ async function readTract(geoid: string, place: string, base: string, f: Fetcher,
     return h;
   };
   const more = await Promise.all((head.more ?? []).map((name) => getJson(`${root}detail/${name}`, f, signal).then((v) => sameBuild(v, `${root}detail/${name}`))));
-  let lots = [...unpackCitations(head.lots, head.citations), ...more.flatMap((m) => unpackCitations(m.lots, m.citations))].map((r) => asRecord(r, headUrl));
+  let lots = [
+    ...unpackCitations(unpackRecords(head, headUrl), head.citations),
+    ...more.flatMap((m, i) => unpackCitations(unpackRecords(m, `${root}detail/${(head.more ?? [])[i]}`), m.citations)),
+  ].map((r) => asRecord(r, headUrl));
   if (head.geometry && head.geometry !== 'inline') {
     const geomUrl = `${root}detail/${head.geometry}`;
     const geom = sameBuild(await getJson(geomUrl, f, signal), geomUrl);
@@ -440,11 +489,19 @@ export async function lotTractOf(lotId: string, opts: LoadOptions = {}): Promise
   const place = PLACE_BY_COUNTY[lotId.slice(0, 5)];
   if (!place) return null;
   const { base, f } = settings(opts);
-  const url = `${base}${place}/lot_tract.json`;
-  let p = tractIndex.get(url);
+  const key = `${base}${place}/lot_tract`;
+  let p = tractIndex.get(key);
   if (!p) {
-    p = getJson(url, f, opts.signal).then((v) => (isObj(v) ? (v as Record<string, string>) : null)).catch(() => null);
-    tractIndex.set(url, p);
+    // The published bundle names a gzip copy in the manifest; a build on disk has the plain lot_tract.json.
+    const manifestUrl = `${base}${place}/manifest.json`;
+    const cache = opts.cache ?? sharedCache;
+    p = cache
+      .manifest(manifestUrl, async () => asManifest(await getJson(manifestUrl, f), manifestUrl))
+      .then((m) => m.published?.lot_tract ?? 'lot_tract.json', () => 'lot_tract.json')
+      .then((name) => getJson(`${base}${place}/${name}`, f, opts.signal))
+      .then((v) => (isObj(v) ? (v as Record<string, string>) : null))
+      .catch(() => null);
+    tractIndex.set(key, p);
   }
   const table = await p;
   return table?.[lotId] ?? null;

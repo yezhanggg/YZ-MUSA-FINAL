@@ -4,7 +4,7 @@
     "instrument": "Warwick Township (Lancaster County) Code Chapter 340 Zoning (Warwick Township Zoning Ordinance of 1993, Ord. No. 159, 8-30-1993, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-02-19 (breadcrumb). New Laws on 2026-11-14 for Chapter 340: Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15), Zoning Amendments, PDF only, not read.",
+    "status_detail": "eCode360 code date 2025-02-19 (breadcrumb). New Laws on 2026-11-26 for Chapter 340: Ord. No. 306 (2026-04-15), Ord. No. 307 (2026-07-15) and Ord. No. 308 (undated rezoning), all read on 2026-11-26. None touches a dwelling use.",
     "effective_date": null,
     "source_urls": [
       "https://ecode360.com/11671452",
@@ -17,9 +17,13 @@
       "https://ecode360.com/11673786",
       "https://ecode360.com/WA2488/search?query=%22farm%20employee%22&scope=code&sortOrder=relevance",
       "https://ecode360.com/WA2488/laws",
-      "https://ecode360.com/WA2488/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22Lancaster%20County%22&scope=all&sortOrder=relevance"
+      "https://ecode360.com/WA2488/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22%20OR%20conversion%20OR%20%22Lancaster%20County%22&scope=all&sortOrder=relevance",
+      "https://ecode360.com/WA2488/laws/LF2655794.pdf",
+      "https://ecode360.com/WA2488/laws/LF2751707.pdf",
+      "https://ecode360.com/WA2488/laws/LF2909974.pdf",
+      "https://ecode360.com/print/WA2488?guid=11671452"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Lancaster",
     "municipality_type": "township",
     "geoid": "4207181168",
@@ -27,7 +31,7 @@
     "code_url": "https://ecode360.com/11671452",
     "code_current_through": "2025-02-19",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2025-02-19'. Ord. No. 306 and 307 (2026) are listed as New Laws, not yet in the code text.",
-    "code_caution": "Zoning amendments Ord. No. 306 (2026-04-15) and Ord. No. 307 (2026-07-15) are listed as New Laws for Chapter 340 and were not read (PDF only). They may change the rules below.",
+    "code_caution": "Not yet in the online code, read from the New Laws PDFs: Ord. No. 306 (2026-04-15) adds drive-through fast-food restaurants as a conditional use in LC (340-16.1D(4), 340-66). Ord. No. 307 (2026-07-15) creates a Quarry Support Overlay Zone (340-20.1) on two parcels on Erbs Quarry Road and adds a TDR rule (340-45G(1)(d)). Ord. No. 308 rezones part of the former Weiser tract from CC to I-2. None changes the rules below.",
     "checks": [
       "ECHO housing is a special exception only in the Agricultural (A) Zone: a portable elder cottage of at most 900 sq ft (340-11C(1), 340-67)",
       "At least one occupant is 50 or older, handicapped or disabled, and related to the occupants of the house by blood, marriage or adoption. At most two people (340-67C, D)",
@@ -40,7 +44,7 @@
       "Temporary farm employee housing: one mobile home per farm for farm workers and their families, in the rear yard of the farm dwelling, by special exception in the A Zone. Occupied at least 120 days a year by a farm employee, or removed within 120 days (340-101)",
       "Other paths: two-family conversion of a house of at least 3,000 sq ft that existed in 1993 (A and RE, special exception), conversion apartment in an existing house (MU and LC, conditional use), conversion of an accessory building of an owner-occupied house into one dwelling (VO overlay, special exception), and historic conversion apartments (A, C, RE, MU by special exception, LC and VO by conditional use) (340-103, 340-65, 340-61)"
     ],
-    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Fix round 2026-11-14: read 340-23 (VO) in full, 340-101, and the Article IV contents (340-64 is now conservation cluster developments). Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q), definitions (340-10), accessory uses (340-25), parking (340-35), 340-14 and 340-121."
+    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Fix round 2026-11-14: read 340-23 (VO) in full, 340-101, and the Article IV contents (340-64 is now conservation cluster developments). Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q), definitions (340-10), accessory uses (340-25), parking (340-35), 340-14 and 340-121. Second review, 2026-11-26: Ord. No. 306, 307 and 308 read in full. The whole of Chapter 340 was read in one print view and searched by section for ECHO, apartment, accessory dwelling, in-law, elder cottage, two-family, duplex, conversion, caretaker, tenant house and farm employee: the listings are 340-11 (ECHO, farm employee housing, two-family conversions), 340-12 RE and 340-15 R-2 (two-family conversions), 340-12, 340-13, 340-16, 340-16.1 (historic conversions), 340-16 MU and 340-16.1 LC (conversion apartments), 340-23 VO, and duplexes by right in R-2, R-3 and VO. New finding fixed: R-2 lists two-family conversions as a special exception (340-15C(6)) though 340-103 names only A and RE (shown as disputed). Left for a later check: the VO accessory building apartment path (conditional use in 340-23E(9), special exception in note 4 of the lot table) and its stale 340-64 reference; the tool cannot key a status on the VO overlay, so R-2 keeps it as an alternative."
   },
   "adu": {
     "term": {
@@ -102,10 +106,11 @@
           "path": "special_exception",
           "districts": [
             "A",
-            "RE"
+            "RE",
+            "R-2"
           ],
           "conditions": "A detached single-family dwelling that existed on the effective date of the chapter and then had at least 3,000 sq ft may become two dwelling units. Approved water and sewage, no extensions or outside changes, escape from upper floors, 4 off-street parking spaces, land development approval if required.",
-          "section": "340-103, 340-11C(7)",
+          "section": "340-103, 340-11C(7), 340-12C(7), 340-15C(6)",
           "url": "https://ecode360.com/print/WA2488?guid=11673794",
           "confidence": "secondary",
           "requires": [
@@ -122,7 +127,15 @@
               "section": "340-103"
             }
           ],
-          "note": "The chapter was adopted 8-30-1993 (Ord. No. 159). Its effective date is read as that date, a reading to confirm with the Zoning Officer. Lot rules for RE were not read."
+          "note": "The chapter was adopted 8-30-1993 (Ord. No. 159). Its effective date is read as that date, a reading to confirm with the Zoning Officer.",
+          "disputed_districts": {
+            "districts": [
+              "R-2"
+            ],
+            "section": "340-15C(6), 340-103",
+            "url": "https://ecode360.com/print/WA2488?guid=11671452",
+            "note": "The R-2 special exception list names 'Two-family conversions. (See § 340-103.)', but 340-103 opens 'Within the (A) and (RE) Zones'"
+          }
         },
         {
           "name": "Conversion apartment in an existing house",

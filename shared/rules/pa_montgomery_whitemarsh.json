@@ -4,7 +4,7 @@
     "instrument": "Whitemarsh Township Code Chapter 116 Zoning (Ord. No. 112, 9-26-1957, amended in its entirety by Ord. No. 409, 6-18-1981, as amended), as published on eCode360",
     "kind": "place",
     "status": "in_force",
-    "status_detail": "eCode360 code date 2025-04-10 (breadcrumb). Chapter 116 New Laws on 2026-11-14: Ord. No. 1049 (2026-01-08), Zoning Amendment, shown only as a PDF and not read.",
+    "status_detail": "eCode360 code date 2025-04-10 (breadcrumb). Chapter 116 New Laws on 2026-11-14: Ord. No. 1049 (2026-01-08), Zoning Amendment, shown only as a PDF and not read. Ord. No. 1049 (2026-01-08), not yet codified, was read on 2026-11-26: it amends 116-11 definitions, 116-168 average lot area by steep slope ratio (lots in a conservation design subdivision under Article XXXVI stay exempt) and 116-169 steep slope disturbance limits. It does not touch 116-272E or any use list.",
     "effective_date": "2006-04-06",
     "source_urls": [
       "https://ecode360.com/11708888",
@@ -35,9 +35,10 @@
       "https://ecode360.com/WH0819/search?query=%22accessory%20dwelling%22%20OR%20%22accessory%20apartment%22%20OR%20%22in-law%22%20OR%20ECHO%20OR%20granny%20OR%20%22family%20dwelling%22%20OR%20relative%20OR%20caretaker%20OR%20%22housekeeping%20unit%22%20OR%20%22guest%20house%22%20OR%20%22accessory%20unit%22%20OR%20%22living%20quarters%22&scope=all&sortOrder=relevance",
       "https://ecode360.com/WH0819/search?query=%22accessory%20use%22%20OR%20conversion%20OR%20%22two-family%22%20OR%20duplex&scope=code&sortOrder=relevance",
       "https://ecode360.com/WH0819/search?query=%22single-family%20detached%22%20OR%20%22single-family%20dwelling%22%20OR%20%22single-family%20dwellings%22&scope=code&sortOrder=relevance",
-      "https://ecode360.com/WH0819/search?query=%22historic%20structure%22%20OR%20%22historic%20structures%22%20OR%20%22historic%20building%22%20OR%20%22historic%20resource%22%20OR%20%22adaptive%20reuse%22&scope=code&sortOrder=relevance"
+      "https://ecode360.com/WH0819/search?query=%22historic%20structure%22%20OR%20%22historic%20structures%22%20OR%20%22historic%20building%22%20OR%20%22historic%20resource%22%20OR%20%22adaptive%20reuse%22&scope=code&sortOrder=relevance",
+      "https://ecode360.com/WH0819/laws/LF2634320.pdf"
     ],
-    "verified_on": "2026-11-14",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "township",
     "geoid": "4209184624",
@@ -45,7 +46,6 @@
     "code_url": "https://ecode360.com/11708888",
     "code_current_through": "2025-04-10",
     "code_current_through_note": "eCode360 breadcrumb 'Code 2025-04-10'. Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed under New Laws for Chapter 116 and is not yet in the code text.",
-    "code_caution": "Ord. No. 1049 (Zoning Amendment, adopted 2026-01-08) is listed as a New Law for Chapter 116 and was not read (PDF only). A code search shows it amends conservation feature definitions and the Conservation Design Overlay average lot area, with no hit on dwellings, accessory uses or ADUs. It touches Article XXXVI, where the ADU rule sits, so check it.",
     "checks": [
       "The code's accessory dwelling unit is tied to a conservation design subdivision: 'Accessory dwelling units (ADU) including, but not limited to, elder cottages for relatives and tenant houses for employees of a farm or estate and proposed in Option One subdivisions, are permitted within the Conservation Overlay Design District' (116-272E, 116-11)",
       "Option One is a by-right conservation design option only in AAAA and AAA, inside the Conservation Design Overlay shown on the Zoning Map, with a permanent conservation easement and a density of one dwelling unit per 10 acres of base site area (116-270A(1), 116-42A, 116-46A, 116-268A). Ask the Zoning Officer whether the lot is in an Option One subdivision",
@@ -58,7 +58,7 @@
       "Conversion of a single-family dwelling into more dwelling units is a special exception anywhere: a petition signed by owners of 60% of the street frontage within 500 ft, 750 sq ft per unit, lot area per family at least 75% of the district requirement, no outside change except for safety, only for a large dwelling with relatively little economic usefulness as a single-family house (116-26)",
       "Without public sewer and public water, lots in AAA, AA, A and B need 2 acres, the house 60 ft and accessory buildings 30 ft from the nearest property line or street, accessory buildings at most 20 ft and one story. With one of the two, 1.5 acres (116-23)"
     ],
-    "notes": "Zoning office: Whitemarsh Township (Montgomery County) Zoning Officer. Read on eCode360 (WH0819) in a browser, one page at a time, on 2026-11-14. Fix round 2026-11-14: read again 116-272, Article IV (116-16 to 116-33.4, incl. 116-23, 116-24, 116-30, 116-33.2), 116-268 and the tract area definition (116-11 search excerpt). The 15 acre test is now a condition, the size and height caps are held so a historic building does not show them, and 116-23A and 116-30 are added. The front-yard bar (116-24E(3)(a)) stays in checks because the tool hides the district front yard on lots outside the ADU scope when the envelope flag is set. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit' and 'living quarters' found the ADU definition (116-11), the Conservation Design Overlay ADU (116-272E), quarters of a household employee, caretaker or watchman (116-24B(14)), conversions (116-26) and a caretaker residence in HVY (116-155). Searches for two-family, duplex, conversion and historic structures found 116-26, the SM-MU and VC use lists and 116-293 (VC historic building reuse, no dwelling path). Use lists read: AAAA to B (116-35), AD (116-74), SM-MU (116-310), VC (116-290). TDO bars single-family and two-family dwellings (116-318, search excerpt). Use lists not read: LR and HR, MHP, CR, AR, CLI, CLI-X, LIM, HVY, EX, CCRC and the Institutional and Recreational overlays. The definition of residential districts names a C Residential District, but Article XI is reserved."
+    "notes": "Zoning office: Whitemarsh Township (Montgomery County) Zoning Officer. Read on eCode360 (WH0819) in a browser, one page at a time, on 2026-11-14. Fix round 2026-11-14: read again 116-272, Article IV (116-16 to 116-33.4, incl. 116-23, 116-24, 116-30, 116-33.2), 116-268 and the tract area definition (116-11 search excerpt). The 15 acre test is now a condition, the size and height caps are held so a historic building does not show them, and 116-23A and 116-30 are added. The front-yard bar (116-24E(3)(a)) stays in checks because the tool hides the district front yard on lots outside the ADU scope when the envelope flag is set. Code search (all content, New Laws included) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit' and 'living quarters' found the ADU definition (116-11), the Conservation Design Overlay ADU (116-272E), quarters of a household employee, caretaker or watchman (116-24B(14)), conversions (116-26) and a caretaker residence in HVY (116-155). Searches for two-family, duplex, conversion and historic structures found 116-26, the SM-MU and VC use lists and 116-293 (VC historic building reuse, no dwelling path). Use lists read: AAAA to B (116-35), AD (116-74), SM-MU (116-310), VC (116-290). TDO bars single-family and two-family dwellings (116-318, search excerpt). Use lists not read: LR and HR, MHP, CR, AR, CLI, CLI-X, LIM, HVY, EX, CCRC and the Institutional and Recreational overlays. The definition of residential districts names a C Residential District, but Article XI is reserved. Second reading 2026-11-26 (G0): Ord. No. 1049 PDF read (steep slopes, 116-11, 116-168, 116-169; no ADU or use-list text); its slope disturbance limits added as a condition. A full-text search of the Chapter 116 print view finds 'accessory dwelling unit' only in the 116-11 definition and the Option One ADU rule, and no elder cottage, tenant house, accessory apartment or in-law unit in any other district's use list, so the unread use lists (LR/HR, MHP, CR, AR, industrial, EX, CCRC) hold no ADU path. Left as disputes the code does not settle: tract against lot for the 15-acre test, AAA accessory height 20 ft (116-268C) against the 25 ft ADU height (116-33.2 overlay precedence), and the 116-23A 30 ft accessory yards without public sewer and water (said as a condition)."
   },
   "adu": {
     "term": {
@@ -299,6 +299,21 @@
           "building_types": null,
           "section": "116-272E(1)",
           "url": "https://ecode360.com/print/WH0819?guid=11710782"
+        },
+        {
+          "kind": "other",
+          "condition": "Steep slopes, in every district (116-169B as amended by Ord. No. 1049, 2026-01-08): on parts of a lot sloped 15% to 25% at most 25% of that area may be regraded, stripped of vegetation or otherwise disturbed; 25% to 35% at most 10%; over 35% no disturbance. An existing improved lot in AAAA to B is exempt from 116-169A only for improvements up to 1% of the lot and 200 sq ft on ground under 15%. Ask the Township Engineer where a new unit or addition would sit.",
+          "effect": "condition",
+          "applies_to": [
+            "attached",
+            "detached_new"
+          ],
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "116-169B, C (Ord. No. 1049)",
+          "url": "https://ecode360.com/WH0819/laws/LF2634320.pdf"
         }
       ],
       "section": "116-272E",
