@@ -2,7 +2,7 @@
 // the city-wide picture from stats.json, what is on the lot (land cover), and what the chosen spot covers.
 import { SCENARIOS, type LotRecord, type Scenario, type SpotCover } from '../../lib/lot/types';
 import { tidyReason, type UnitVerdict } from '../../lib/lot/verdict';
-import { SCENARIO_NAME, SCENARIO_PHRASE, TYPE_LABEL, sqftText } from '../../lib/lot/words';
+import { SCENARIO_NAME, SCENARIO_PHRASE, TYPE_LABEL, largestText, overCeiling, sqftText } from '../../lib/lot/words';
 import { KV } from '../Report';
 import { typeOptions, type UnitDraft } from '../testState';
 import { PLACE_TITLE, usePlaceStats } from './placeData';
@@ -18,7 +18,7 @@ function changeLine(lot: LotRecord, s: Scenario): string {
   const allowed = typeOptions(lot, s).filter((o) => o.enabled).map((o) => `a ${TYPE_LABEL[o.type]}`);
   const fit = lot.fit[s]?.detached_new;
   const path = allowed.length ? `${list(allowed)} would have a legal path.` : 'No kind of unit would have a legal path.';
-  const cottage = allowed.some((a) => a.includes(TYPE_LABEL.detached_new)) ? (fit?.fits ? ` A backyard cottage fits, up to about ${sqftText(fit.largest_sqft)}.` : ' A backyard cottage would not fit this lot.') : '';
+  const cottage = allowed.some((a) => a.includes(TYPE_LABEL.detached_new)) ? (fit?.fits ? (overCeiling(fit.largest_sqft, fit.limiting) ? ` A backyard cottage fits: the yard holds ${largestText(fit.largest_sqft, fit.limiting)}.` : ` A backyard cottage fits, up to about ${sqftText(fit.largest_sqft)}.`) : ' A backyard cottage would not fit this lot.') : '';
   return `${path}${cottage}`.replace(/^a /, 'A ');
 }
 
@@ -50,11 +50,17 @@ export function WhyNot({ lot, v }: { lot: LotRecord; v: UnitVerdict }) {
   );
 }
 
-function cottageToday(t: { detached_by_right: number; detached_legal?: number }): string {
-  const legal = t.detached_legal ?? t.detached_by_right;
+/**
+ * The cottage sentence after "Today N% have a legal path for any ADU". A form counts only on a lot that has a legal
+ * path (stats legal_type_mask): a town with no ADU rule whose hearing for an unlisted use is only a path to ask reads
+ * 0% for both. Older stats files counted that path per form, so the share is held to the lot share here too.
+ */
+export function cottageToday(t: { allowed: number; detached_by_right: number; detached_legal?: number }): string {
+  const legal = Math.min(t.detached_legal ?? t.detached_by_right, t.allowed);
   if (legal <= 0) return 'No lot can add a new backyard cottage.';
-  if (t.detached_by_right <= 0) return `A new backyard cottage has a legal path on ${pct(legal)}, never by right: it needs an approval step.`;
-  return `A new backyard cottage has a legal path on ${pct(legal)}, by right on ${pct(t.detached_by_right)}.`;
+  const byRight = Math.min(t.detached_by_right, legal);
+  if (byRight <= 0) return `A new backyard cottage has a legal path on ${pct(legal)}, never by right: it needs an approval step.`;
+  return `A new backyard cottage has a legal path on ${pct(legal)}, by right on ${pct(byRight)}.`;
 }
 
 /** The city-wide picture for the lot's place, from <lot data>/<place>/stats.json. A county place with several towns

@@ -1,0 +1,2311 @@
+{
+  "about": "Questions about the tool itself, hand-written: what the project is, lot places and shares, lot lines, slope, house heights, undermined areas, the detector, fit accuracy (vision-model check), rule file checking, the places table, Test Site, address search, ParcelIQ, data sources and licences, privacy, the lot data bundle, money sources, MUSA 5500, a glossary and recent changes. Facts come from get_methods results.",
+  "generated_at": "2026-11-28",
+  "data_roots": {},
+  "data_versions": {},
+  "questions": [
+    {
+      "id": "tool-01",
+      "category": "tool",
+      "question": "How accurate is the fit test?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "fit_accuracy"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "Pittsburgh agreement at 600 sq ft",
+          "value": 84.2,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "number",
+          "label": "Philadelphia agreement at 600 sq ft",
+          "value": 84.7,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "behaviour",
+          "label": "not hand labels",
+          "accept": [
+            "not hand label",
+            "not hand-label",
+            "no person has labeled",
+            "not labeled by a person",
+            "not a true accuracy",
+            "not true accuracy"
+          ],
+          "evidence": "not hand labels"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\b(people|a person|humans?) (labeled|checked) (the|all|every)\\b",
+          "why": "says people labeled the sample"
+        }
+      ],
+      "scenario": null,
+      "rubric": "A vision model labeled the 250-lot sample (not hand labels): 84.2% Pittsburgh, 84.7% Philadelphia at 600 sq ft. Not a true accuracy."
+    },
+    {
+      "id": "tool-02",
+      "category": "tool",
+      "question": "Where does your data come from?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "data_sources"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "parcel layers",
+          "accept": [
+            "parcel"
+          ],
+          "evidence": "parcel layers"
+        },
+        {
+          "kind": "behaviour",
+          "label": "HUD rents",
+          "accept": [
+            "hud",
+            "fair market rent"
+          ],
+          "evidence": "HUD Small Area Fair Market Rents"
+        },
+        {
+          "kind": "behaviour",
+          "label": "USGS lidar",
+          "accept": [
+            "3dep",
+            "usgs",
+            "lidar"
+          ],
+          "evidence": "USGS 3DEP"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "City and county parcel, zoning and building layers, USGS 3DEP lidar, NAIP and PEMA photos, Census, HUD SAFMR, DCED."
+    },
+    {
+      "id": "tool-03",
+      "category": "tool",
+      "question": "Can I reuse your data? What licences apply?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "data_sources"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "ODbL share alike",
+          "accept": [
+            "odbl"
+          ],
+          "evidence": "ODbL"
+        },
+        {
+          "kind": "behaviour",
+          "label": "code Apache-2.0",
+          "accept": [
+            "apache"
+          ],
+          "evidence": "Apache-2.0"
+        },
+        {
+          "kind": "behaviour",
+          "label": "some layers unclear",
+          "accept": [
+            "unclear",
+            "no licence",
+            "no license",
+            "ask the provider"
+          ],
+          "evidence": "unclear, ask the provider"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Code Apache-2.0, Microsoft outlines and OSM ODbL, several layers state no licence (unclear, ask the provider)."
+    },
+    {
+      "id": "tool-04",
+      "category": "tool",
+      "question": "Is my data private? Do you keep owner names?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "privacy"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "no owner names",
+          "accept": [
+            "never requested",
+            "not kept",
+            "no owner name",
+            "not in the data",
+            "does not keep",
+            "doesn't keep",
+            "never kept"
+          ],
+          "evidence": "never requested or kept"
+        },
+        {
+          "kind": "behaviour",
+          "label": "no sales or assessed values",
+          "accept": [
+            "sale",
+            "assessed"
+          ],
+          "evidence": "no sale dates or prices"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Owner names and mailing addresses are never requested or kept. No assessed values or sales in the published files."
+    },
+    {
+      "id": "tool-05",
+      "category": "tool",
+      "question": "Who made this tool and why?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "about_project"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "MUSA 6950 final project",
+          "accept": [
+            "musa 6950"
+          ],
+          "evidence": "MUSA 6950"
+        },
+        {
+          "kind": "behaviour",
+          "label": "University of Pennsylvania",
+          "accept": [
+            "university of pennsylvania",
+            "penn"
+          ],
+          "evidence": "University of Pennsylvania"
+        },
+        {
+          "kind": "behaviour",
+          "label": "answers the backyard home question",
+          "accept": [
+            "backyard home",
+            "adu",
+            "accessory dwelling"
+          ],
+          "evidence": "backyard home"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\bYe Zhang\\b",
+          "why": "a personal name the README does not state"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Final project for MUSA 6950, University of Pennsylvania, Fall 2026. It answers whether a backyard home can go on one lot. No personal details beyond the README."
+    },
+    {
+      "id": "tool-06",
+      "category": "tool",
+      "question": "What changed in the tool recently?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "recent_changes"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "14 lot places",
+          "accept": [
+            "14 lot places",
+            "14 places",
+            "1,134,553"
+          ],
+          "evidence": "14 lot places"
+        },
+        {
+          "kind": "behaviour",
+          "label": "201 verified rule files",
+          "accept": [
+            "201"
+          ],
+          "evidence": "201 verified"
+        },
+        {
+          "kind": "behaviour",
+          "label": "separation fix",
+          "accept": [
+            "separation",
+            "against the house",
+            "clear of the house"
+          ],
+          "evidence": "10 ft planning separation"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Nov 27 and 28: lot data 13 (14 lot places, 1,134,553 lots, Berks held for its license), the drawn unit keeps 10 ft from the house, Lower Providence back to drafted, 225 rule files with 201 verified and 24 drafted, 203 places verified (47.4%). Earlier: lot data 12 on Nov 26."
+    },
+    {
+      "id": "tool-07",
+      "category": "tool",
+      "question": "What does 'drafted' mean on a town answer?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "answer_ladder"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "open points",
+          "accept": [
+            "open point"
+          ],
+          "evidence": "open point"
+        },
+        {
+          "kind": "behaviour",
+          "label": "first reading",
+          "accept": [
+            "first reading"
+          ],
+          "evidence": "First reading"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Drafted: a first reading of the town's code with at least one open point the code text did not settle."
+    },
+    {
+      "id": "tool-08",
+      "category": "tool",
+      "question": "If a town is 'verified', is every point of its code settled?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "answer_ladder"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "can keep a disputed reading",
+          "accept": [
+            "disputed",
+            "secondary reading",
+            "does not settle",
+            "doesn't settle",
+            "not every",
+            "not always"
+          ],
+          "evidence": "disputed or secondary reading"
+        },
+        {
+          "kind": "behaviour",
+          "label": "ask the zoning officer",
+          "accept": [
+            "zoning officer"
+          ],
+          "evidence": "ask the zoning officer"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Verified means every finding of the second reading is resolved. Where the code itself does not settle a point, the file keeps a disputed or secondary reading to ask the zoning officer."
+    },
+    {
+      "id": "tool-09",
+      "category": "tool",
+      "question": "How are the town rule files checked?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "rule_verification"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "a second, separate reader",
+          "accept": [
+            "second",
+            "separate reader",
+            "independent"
+          ],
+          "evidence": "separate reader"
+        },
+        {
+          "kind": "behaviour",
+          "label": "value by value against the code",
+          "accept": [
+            "value by value",
+            "against the code"
+          ],
+          "evidence": "value by value"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Written by hand from the code, then a separate reader checks it a second time value by value against the code link."
+    },
+    {
+      "id": "tool-10",
+      "category": "tool",
+      "question": "Why did Whitpain and Patton have no rule file on Nov 26, 2026?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "rule_verification"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "not in the online code yet",
+          "accept": [
+            "online code",
+            "not yet in"
+          ],
+          "evidence": "not yet in their online codes"
+        },
+        {
+          "kind": "behaviour",
+          "label": "new ADU ordinances",
+          "accept": [
+            "new adu ordinance",
+            "new ordinance",
+            "autumn 2026",
+            "adopted"
+          ],
+          "evidence": "new ADU ordinances"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Both adopted new ADU ordinances in autumn 2026 that are not yet in their online codes."
+    },
+    {
+      "id": "tool-11",
+      "category": "tool",
+      "question": "Which towns have lot-by-lot data?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_places"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "Harrisburg",
+          "accept": [
+            "harrisburg"
+          ],
+          "evidence": "Harrisburg"
+        },
+        {
+          "kind": "behaviour",
+          "label": "College Township",
+          "accept": [
+            "college township"
+          ],
+          "evidence": "College Township"
+        },
+        {
+          "kind": "number",
+          "label": "lots in all",
+          "value": 1134553,
+          "tol_pct": 1,
+          "unit": "count"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "14 lot places (lot data 13, Nov 28, 2026): Philadelphia, Pittsburgh, Allentown, Erie, and towns in Montgomery, Delaware, Lancaster, Bucks, Chester, York, Dauphin, Northampton, Cumberland and Centre counties: 100 towns, 1,134,553 lots. Berks is built but not in the tool."
+    },
+    {
+      "id": "tool-12",
+      "category": "tool",
+      "question": "In the Montgomery County lot place, on what share of lots is a detached ADU legal and does it fit today, and under HB 2186?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_places"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "today",
+          "value": 7.0,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "number",
+          "label": "under HB 2186",
+          "value": 63.0,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "behaviour",
+          "label": "bill is not law",
+          "accept": [
+            "not law",
+            "not yet law",
+            "has not passed",
+            "hasn't passed",
+            "not been enacted",
+            "not enacted",
+            "is a bill",
+            "only a bill",
+            "still a bill",
+            "pending"
+          ]
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\bHB ?2186 (is|became) (now )?law\\b",
+          "why": "says the bill is law"
+        }
+      ],
+      "scenario": null,
+      "rubric": "7.0% today, 63.0% under HB 2186 (a bill, not law), lot data 13: 24 towns, 142,072 lots."
+    },
+    {
+      "id": "tool-13",
+      "category": "tool",
+      "question": "Why does Lower Merion show 0 percent for a backyard cottage?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_places"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "no new detached unit allowed",
+          "accept": [
+            "no new detached",
+            "allow no new",
+            "does not allow a new detached",
+            "doesn't allow a new detached",
+            "not allow a new detached"
+          ],
+          "evidence": "allow no new detached unit"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Lower Merion, Malvern and East Brandywine allow no new detached unit, so 0%."
+    },
+    {
+      "id": "tool-14",
+      "category": "tool",
+      "question": "How does the tool decide which side of my lot is the front?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_lines"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "faces a street",
+          "accept": [
+            "faces a street",
+            "street"
+          ],
+          "evidence": "faces a street"
+        },
+        {
+          "kind": "behaviour",
+          "label": "the street in the address",
+          "accept": [
+            "address"
+          ],
+          "evidence": "street in the lot's address"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "The front faces a street. Since Nov 26 it is the street in the address when another street is near."
+    },
+    {
+      "id": "tool-15",
+      "category": "tool",
+      "question": "I'm on a corner lot. Which street does the tool take as my front?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_lines"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "the shorter street line",
+          "accept": [
+            "shorter"
+          ],
+          "evidence": "shorter street line becomes the front"
+        },
+        {
+          "kind": "behaviour",
+          "label": "low confidence",
+          "accept": [
+            "low confidence",
+            "confidence drops",
+            "confidence is low"
+          ],
+          "evidence": "Confidence drops to low"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Corner lot: the shorter street line becomes the front, as most codes say, and confidence drops to low."
+    },
+    {
+      "id": "tool-16",
+      "category": "tool",
+      "question": "My lot has a street at both ends. Which yard is the rear?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_lines"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "front is the address street",
+          "accept": [
+            "address"
+          ],
+          "evidence": "the front is the street in the address"
+        },
+        {
+          "kind": "behaviour",
+          "label": "yard behind the house is the rear",
+          "accept": [
+            "behind the house",
+            "rear yard"
+          ],
+          "evidence": "the yard behind the house is the rear yard"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Through lot: the front is the street in the address, so the yard behind the house is the rear yard."
+    },
+    {
+      "id": "tool-17",
+      "category": "tool",
+      "question": "The only open space on my lot is the front yard. Does the tool count a cottage there as fitting?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_lines"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "does not count",
+          "accept": [
+            "does not count",
+            "doesn't count",
+            "not count",
+            "no longer counts",
+            "won't count",
+            "not as fitting"
+          ],
+          "evidence": "does not count as fitting"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\byes,? (it|the front yard|that) (counts|does)\\b",
+          "why": "says front-yard-only room counts"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Since Nov 26, a detached unit whose only room is the front yard does not count as fitting."
+    },
+    {
+      "id": "tool-18",
+      "category": "tool",
+      "question": "How does the tool know how tall my house is in Montgomery County?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "house_heights"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "DVRPC lidar landbase",
+          "accept": [
+            "dvrpc"
+          ],
+          "evidence": "DVRPC 2015 lidar landbase"
+        },
+        {
+          "kind": "behaviour",
+          "label": "missing heights read not checked",
+          "accept": [
+            "not checked"
+          ],
+          "evidence": "not checked"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "DVRPC 2015 lidar landbase since Nov 26. Houses built after 2015 have no height, a house under 10 ft reads not checked."
+    },
+    {
+      "id": "tool-19",
+      "category": "tool",
+      "question": "Why doesn't the tool use Microsoft building heights in Montgomery County?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "house_heights"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "reads low by",
+          "value": 6,
+          "tol_pct": 0,
+          "unit": "ft"
+        },
+        {
+          "kind": "behaviour",
+          "label": "they read low",
+          "accept": [
+            "low"
+          ],
+          "evidence": "about 6 ft low"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Microsoft heights read about 6 ft low against the DVRPC landbase and Centre County's 3D buildings."
+    },
+    {
+      "id": "tool-20",
+      "category": "tool",
+      "question": "My Pittsburgh lot is in an undermined area. Does that stop an ADU?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "undermined"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "flag share",
+          "value": 25,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "behaviour",
+          "label": "a condition, not a bar",
+          "accept": [
+            "never a bar",
+            "not a bar",
+            "condition",
+            "confirm"
+          ],
+          "evidence": "never a bar"
+        },
+        {
+          "kind": "behaviour",
+          "label": "the zoning officer decides",
+          "accept": [
+            "zoning officer"
+          ],
+          "evidence": "zoning officer decides"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "UM-O flag at 25% of the lot inside the city's Undermined Areas layer. A condition to confirm, never a bar. The zoning officer decides."
+    },
+    {
+      "id": "tool-21",
+      "category": "tool",
+      "question": "What does the slope class on my lot report mean?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "terrain"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "moderate from",
+          "value": 15,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "number",
+          "label": "steep from",
+          "value": 25,
+          "tol_pct": 0,
+          "unit": "pct"
+        },
+        {
+          "kind": "behaviour",
+          "label": "does not change the fit",
+          "accept": [
+            "never changes",
+            "does not change",
+            "doesn't change",
+            "not change"
+          ],
+          "evidence": "never changes the fit"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Under 15% ordinary, 15 to 25% moderate, 25% or more steep. Slope never changes the fit's yes or no."
+    },
+    {
+      "id": "tool-22",
+      "category": "tool",
+      "question": "Where does the ground slope come from, and is it a survey?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "terrain"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "USGS lidar",
+          "accept": [
+            "3dep",
+            "usgs",
+            "lidar"
+          ],
+          "evidence": "USGS 3DEP"
+        },
+        {
+          "kind": "behaviour",
+          "label": "not a survey",
+          "accept": [
+            "not a site survey",
+            "planning signal",
+            "not a survey"
+          ],
+          "evidence": "planning signal"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "USGS 3DEP 1 m bare-earth lidar. A planning signal, not a site survey."
+    },
+    {
+      "id": "tool-23",
+      "category": "tool",
+      "question": "How good is your garage and shed detector?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "detector"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "garage AP50",
+          "value": 0.469,
+          "tol_pct": 1,
+          "unit": "none"
+        },
+        {
+          "kind": "behaviour",
+          "label": "not true accuracy",
+          "accept": [
+            "not true accuracy",
+            "not a true accuracy",
+            "first-pass",
+            "unchecked"
+          ],
+          "evidence": "not true accuracy"
+        },
+        {
+          "kind": "behaviour",
+          "label": "not in the lot records",
+          "accept": [
+            "not in the lot records",
+            "not used",
+            "building outlines"
+          ],
+          "evidence": "not in the lot records"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Garage AP50 0.469 against a 0.50 target, on unchecked first-pass labels, so not true accuracy. Detections are not in the lot records."
+    },
+    {
+      "id": "tool-24",
+      "category": "tool",
+      "question": "Does the detector decide whether my garage counts for a garage conversion?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "detector"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "garages come from building outlines",
+          "accept": [
+            "building outline",
+            "outlines"
+          ],
+          "evidence": "come from building outlines"
+        },
+        {
+          "kind": "number",
+          "label": "garage size",
+          "value": 180,
+          "tol_pct": 0,
+          "unit": "sqft"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "No. Garages come from building outlines: an accessory building of 180 sq ft or more is a garage candidate."
+    },
+    {
+      "id": "tool-25",
+      "category": "tool",
+      "question": "Can you look up any address, even one that is not on the map?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "address_search"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "in the lot places",
+          "accept": [
+            "lot places"
+          ],
+          "evidence": "any address in the lot places"
+        },
+        {
+          "kind": "behaviour",
+          "label": "needs the published bundle",
+          "accept": [
+            "published",
+            "live site"
+          ],
+          "evidence": "only after the lot data bundle is published"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "find_lot reads the static address index of the lot places, on the map or not (Delaware County lots have no address). Live only after the bundle is published."
+    },
+    {
+      "id": "tool-26",
+      "category": "tool",
+      "question": "What is on the Parcel tab?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "parcel_tab"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "parcel number",
+          "accept": [
+            "parcel number"
+          ],
+          "evidence": "parcel number"
+        },
+        {
+          "kind": "behaviour",
+          "label": "school district",
+          "accept": [
+            "school district"
+          ],
+          "evidence": "school district"
+        },
+        {
+          "kind": "behaviour",
+          "label": "property tax",
+          "accept": [
+            "tax",
+            "millage"
+          ],
+          "evidence": "property tax"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Parcel number, address, school district, lot size, district rules, property tax, documents and who to call."
+    },
+    {
+      "id": "tool-27",
+      "category": "tool",
+      "question": "What tabs does Test Site have?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "app_views"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "Results",
+          "accept": [
+            "results"
+          ],
+          "evidence": "Results"
+        },
+        {
+          "kind": "behaviour",
+          "label": "Compare",
+          "accept": [
+            "compare"
+          ],
+          "evidence": "Compare"
+        },
+        {
+          "kind": "behaviour",
+          "label": "Parcel",
+          "accept": [
+            "parcel"
+          ],
+          "evidence": "Parcel"
+        },
+        {
+          "kind": "behaviour",
+          "label": "Next Step",
+          "accept": [
+            "next step"
+          ],
+          "evidence": "Next Step"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Results, Compare, Parcel and Next Step."
+    },
+    {
+      "id": "tool-28",
+      "category": "tool",
+      "question": "What does the Testable Lots switch do?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "app_views"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "puts every lot with a record on the map",
+          "accept": [
+            "every lot",
+            "all lots",
+            "each lot"
+          ],
+          "evidence": "puts every lot with a lot record on the map"
+        },
+        {
+          "kind": "behaviour",
+          "label": "coloured by its answer",
+          "accept": [
+            "coloured",
+            "colored"
+          ],
+          "evidence": "coloured by its answer"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "It puts every lot with a lot record on the map, coloured by its answer for the scenario and unit type picked."
+    },
+    {
+      "id": "tool-29",
+      "category": "tool",
+      "question": "What is ParcelIQ and can it be wrong?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "parceliq"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "runs on Claude Haiku",
+          "accept": [
+            "haiku",
+            "claude"
+          ],
+          "evidence": "Claude Haiku 5.5"
+        },
+        {
+          "kind": "behaviour",
+          "label": "can be wrong",
+          "accept": [
+            "can be wrong",
+            "may be wrong",
+            "might be wrong",
+            "make mistakes",
+            "can make mistakes"
+          ],
+          "evidence": "It can be wrong"
+        },
+        {
+          "kind": "behaviour",
+          "label": "says not on file instead of guessing",
+          "accept": [
+            "not on file",
+            "not in my data",
+            "instead of guessing",
+            "does not guess",
+            "doesn't guess"
+          ],
+          "evidence": "not on file"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\bnever wrong\\b|\\balways (right|correct)\\b",
+          "why": "claims it cannot be wrong"
+        }
+      ],
+      "scenario": null,
+      "rubric": "The Ask assistant on Claude Haiku 5.5. Answers only from tool results, says not on file instead of guessing, can be wrong."
+    },
+    {
+      "id": "tool-30",
+      "category": "tool",
+      "question": "How well does ParcelIQ score on its tests?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "parceliq"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "correct in the last live run",
+          "value": 118,
+          "tol_pct": 0,
+          "unit": "count"
+        },
+        {
+          "kind": "number",
+          "label": "questions in that run",
+          "value": 120,
+          "tol_pct": 0,
+          "unit": "count"
+        },
+        {
+          "kind": "behaviour",
+          "label": "scores move between runs",
+          "accept": [
+            "run to run",
+            "move",
+            "vary",
+            "varies",
+            "few questions"
+          ],
+          "evidence": "run to run"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "The last full live run (Nov 18) scored 118 of 120. Scores move by a few questions from run to run. Target 90% correct, 0 made-up citations."
+    },
+    {
+      "id": "tool-31",
+      "category": "tool",
+      "question": "How big is the lot data and when was it last updated?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "lot_bundle"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "split over two repositories",
+          "accept": [
+            "two",
+            "split",
+            "repositories",
+            "repos"
+          ],
+          "evidence": "split over two GitHub Pages data repositories"
+        },
+        {
+          "kind": "behaviour",
+          "label": "updated Nov 27 and 28",
+          "accept": [
+            "nov 27",
+            "nov 28",
+            "november 27",
+            "november 28",
+            "27 nov",
+            "28 nov"
+          ],
+          "evidence": "Nov 27 and 28, 2026"
+        },
+        {
+          "kind": "behaviour",
+          "label": "not yet pushed",
+          "accept": [
+            "not yet pushed",
+            "not yet published",
+            "not pushed",
+            "not published"
+          ],
+          "evidence": "not yet pushed"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Lot data 13 of Nov 27 and 28, 2026 (Philadelphia and Pittsburgh from Nov 26). The bundle is over the 1 GB Pages limit, so it is split over two GitHub Pages data repositories (1,713.2 MB in all, Nov 28). Built but not yet pushed."
+    },
+    {
+      "id": "tool-32",
+      "category": "tool",
+      "question": "Where do the rents and the building costs come from?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "money_sources"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "HUD rents",
+          "accept": [
+            "hud",
+            "fair market rent",
+            "safmr"
+          ],
+          "evidence": "HUD Small Area Fair Market Rents"
+        },
+        {
+          "kind": "behaviour",
+          "label": "vendor build costs",
+          "accept": [
+            "vendor"
+          ],
+          "evidence": "vendor numbers"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "Rents: HUD SAFMR FY2026 by ZIP. Build costs: vendor numbers (no official Pennsylvania ADU cost data), DoD area cost factors."
+    },
+    {
+      "id": "tool-33",
+      "category": "tool",
+      "question": "What does FAR mean, and does the tool use it?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "glossary_zoning"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "floor area ratio",
+          "accept": [
+            "floor area ratio"
+          ],
+          "evidence": "Floor area ratio"
+        },
+        {
+          "kind": "behaviour",
+          "label": "no FAR bound in the fit",
+          "accept": [
+            "no far",
+            "does not use",
+            "doesn't use",
+            "no floor area ratio",
+            "has no"
+          ],
+          "evidence": "no FAR bound"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "FAR is floor area ratio. The fit test has no FAR bound."
+    },
+    {
+      "id": "tool-34",
+      "category": "tool",
+      "question": "What is a zoning overlay?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "glossary_zoning"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "a layer over the districts",
+          "accept": [
+            "layer"
+          ],
+          "evidence": "a map layer over the districts"
+        },
+        {
+          "kind": "behaviour",
+          "label": "examples",
+          "accept": [
+            "flood",
+            "historic",
+            "steep"
+          ],
+          "evidence": "floodplain, historic or steep slope overlay"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "A map layer over the base districts that adds rules, such as a floodplain, historic or steep slope overlay."
+    },
+    {
+      "id": "tool-35",
+      "category": "tool",
+      "question": "Does the tool still have the Explore map and the ADUs by 2031 forecast?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "musa5500"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "behaviour",
+          "label": "moved to its own repository",
+          "accept": [
+            "own repository",
+            "own site",
+            "moved",
+            "yzmusa5500",
+            "no longer"
+          ],
+          "evidence": "own repository"
+        },
+        {
+          "kind": "number",
+          "label": "ADUs by 2031 under HB 2186, mid",
+          "value": 13455,
+          "tol_pct": 1,
+          "unit": "count"
+        },
+        {
+          "kind": "behaviour",
+          "label": "bill is not law",
+          "accept": [
+            "not law",
+            "not yet law",
+            "has not passed",
+            "hasn't passed",
+            "not been enacted",
+            "not enacted",
+            "is a bill",
+            "only a bill",
+            "still a bill",
+            "pending"
+          ]
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        },
+        {
+          "pattern": "\\bHB ?2186 (is|became) (now )?law\\b",
+          "why": "says the bill is law"
+        }
+      ],
+      "scenario": null,
+      "rubric": "MUSA 5500 moved to its own repository on Nov 22. ADUs by 2031 mid case: 1,012 today, 13,455 under HB 2186 (not law)."
+    },
+    {
+      "id": "tool-36",
+      "category": "tool",
+      "question": "How many Pennsylvania places answer from a verified rule file?",
+      "context": {
+        "lot": null,
+        "site_lot": null,
+        "town": null,
+        "scenario": null,
+        "unit": null,
+        "adu": {
+          "bedrooms": 1,
+          "size_sqft": 600,
+          "stories": 1
+        },
+        "rule": "current"
+      },
+      "tools_required": [
+        [
+          "get_methods"
+        ]
+      ],
+      "calls": [
+        {
+          "name": "get_methods",
+          "input": {
+            "topic": "places_table"
+          }
+        }
+      ],
+      "facts": [
+        {
+          "kind": "number",
+          "label": "verified places",
+          "value": 203,
+          "tol_pct": 0,
+          "unit": "count"
+        },
+        {
+          "kind": "number",
+          "label": "share of Pennsylvanians",
+          "value": 47.4,
+          "tol_pct": 0,
+          "unit": "pct"
+        }
+      ],
+      "forbidden": [
+        {
+          "pattern": "\\bI don'?t know\\b|\\bI do not know\\b|\\bI'?m not sure\\b|\\bI am not sure\\b",
+          "why": "a dead-end answer"
+        }
+      ],
+      "scenario": null,
+      "rubric": "On Nov 27 the place table was rebuilt: 203 places answer from a verified file, 47.4% of Pennsylvanians."
+    }
+  ]
+}

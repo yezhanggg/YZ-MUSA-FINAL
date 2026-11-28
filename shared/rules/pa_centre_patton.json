@@ -1,0 +1,362 @@
+{
+  "provenance": {
+    "jurisdiction": "Patton township",
+    "instrument": "Code of the Township of Patton, Chapter 425 Zoning (Zoning Ordinance of the Township of Patton, Centre County, Pennsylvania), as published on eCode360 and copied by Zoneomics",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "Chapter 425 was read in the Zoneomics copy (latest amendment seen: 425-6 by Ord. No. 2025-648 of 6-18-2025). eCode360 answers 403 to the fetch tool. Ord. No. 2026-658, 'Adding Residential Rental Housing Regulations', was adopted 5-0 on 10-28-2026 after a public hearing (minutes). The minutes say it 'adds residential rental housing regulations to the Township Code' and that 'The Township will permit one accessory dwelling unit per owner-occupied dwelling unit'. Its text is only in the 9-23-2026 and 10-28-2026 agenda packets, which are over the fetch tool's 10 MB limit, so it was not read. Whether it amends Chapter 425 or only adds a rental chapter is not known.",
+    "effective_date": null,
+    "source_urls": [
+      "https://www.zoneomics.com/code/patton-township-PA/chapter_1",
+      "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "https://www.zoneomics.com/code/patton-township-PA/chapter_14",
+      "https://www.zoneomics.com/code/patton-township-PA/chapter_5",
+      "https://www.zoneomics.com/code/patton-township-PA/chapter_17",
+      "https://ecode360.com/42483863",
+      "https://www.twp.patton.pa.us/AgendaCenter/ViewFile/Minutes/_10282026-265",
+      "https://www.twp.patton.pa.us/AgendaCenter/ViewFile/Minutes/_09232026-261",
+      "https://www.twp.patton.pa.us/AgendaCenter/ViewFile/Agenda/_09232026-261",
+      "https://www.twp.patton.pa.us/AgendaCenter/ViewFile/Agenda/_10282026-265",
+      "https://www.twp.patton.pa.us/AgendaCenter",
+      "https://www.statecollege.com/articles/local-news/patton-township-adopts-new-short-term-rental-regulations/"
+    ],
+    "verified_on": "2026-11-26",
+    "county": "Centre",
+    "municipality_type": "township",
+    "geoid": "4202758440",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/42483863",
+    "code_current_through": null,
+    "code_current_through_note": "eCode360 could not be read (403 to the fetch tool). Zoneomics shows amendments through Ord. No. 2025-648 (6-18-2025). Ord. No. 2026-658 (10-28-2026) is not in it.",
+    "code_caution": "Ord. No. 2026-658 (adopted 10-28-2026, rental housing and short-term rental rules) was not read. Per the minutes it permits one accessory dwelling unit per owner-occupied dwelling unit, with the owner living in the main unit. If it amends the zoning chapter, Patton has an ADU rule that this file does not hold. Ask the Township.",
+    "checks": [
+      "The zoning chapter as read has no accessory dwelling unit, accessory apartment, in-law or ECHO provision",
+      "A-1 Rural: Table 425-31B(1) lists '1 additional single-family dwelling, or 1 additional dwelling unit within or attached to principal structure'. The copy read does not show whether it is an accessory use (by right) or a conditional use, or whether it needs a farm or a 10 acre estate lot. Ask the Township",
+      "Ord. No. 2026-658 (10-28-2026) speaks of one accessory dwelling unit per owner-occupied dwelling unit, one per lot, the owner living in the main unit, and one rental permit per single-family lot. Its text was not read. Ask the Township whether it changes zoning",
+      "R-1, R-2 and R-3 are used 'by right only for' the uses in their tables (425-10B, 425-11B, 425-12B). A single-family dwelling is 'occupied exclusively by one family' (425-6)",
+      "R-3 with off-site sewer and water lists two-family, semidetached, duplex and apartment uses by right (Table 425-12B)",
+      "A family may include up to two unrelated persons besides the related members (425-6 'Family')",
+      "R-1: accessory structures may stand in the rear yard setback area if at least 40 ft from the rear line (Table 425-10B note 2)",
+      "Lot size with on-site sewage disposal is at least one acre in every district (425-56I)"
+    ],
+    "notes": "Zoning office: Patton Township planning and zoning, https://twp.patton.pa.us/181/Engineering-Planning-Zoning. Searched the 425-6 definitions and Articles II, XIV and XVII (Zoneomics copy) for: accessory dwelling, accessory apartment, in-law, elder, ECHO, granny, guest house, carriage house, caretaker, servant, secondary, second dwelling, kitchen, housekeeping unit, conversion. None found, except a farm rule (one more dwelling per 10 acres of farm, 425-56E). Article V (A-1, NR-1, NR-2, floodplain) was read too: A-1 Table 425-31B(1) lists one additional dwelling or dwelling unit, column not readable in the flattened copy. Articles III, IV and VI to XIII, XV and XVI were not searched page by page. The 9-23-2026 minutes (Word file) give the draft's points: non-owner-occupied short-term rentals only in C-1, C-2, C-T, PC and PAD (non-residential), owner-occupied short-term rentals in R-1, R-2, R-3, R-MHP, R-M, A-1, PC and PAD (residential), owner in residence six months a year. Second pass on 2026-11-26: the definitions, the R-1 to R-3 figures and the minutes were read again."
+  },
+  "adu": {
+    "term": {
+      "value": null,
+      "section": "425-6",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_1",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No ADU term in the zoning chapter as read. Searched for accessory dwelling, accessory apartment, in-law, elder, ECHO, granny, guest house, carriage house, caretaker, servant, secondary, kitchen, housekeeping unit."
+    },
+    "status": {
+      "value": "not_addressed",
+      "section": "425-10B, 425-11B, 425-12B, 425-6, Table 425-31B(1)",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "The zoning chapter as read has no ADU text. A-1 lists '1 additional single-family dwelling, or 1 additional dwelling unit within or attached to principal structure' (Table 425-31B(1)), kept as another path because its column and conditions are not readable in the copy. Ord. No. 2026-658 (10-28-2026), not read, may add an ADU rule."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "variance",
+      "section": "425-10B(1), 425-11B(1), 425-12B(1), 425-82D",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "'shall be used by right only for one of the uses shown in Table 425-10B'. A second dwelling unit on a single-family lot is not listed, so a use variance from the Zoning Hearing Board (425-82D)."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "425-82D",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_17",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "'Applications for variances from the terms of this chapter.'"
+    },
+    "alternatives": {
+      "value": [
+        {
+          "name": "Two-family dwelling, semidetached or duplex",
+          "path": "by_right",
+          "districts": [
+            "R-3"
+          ],
+          "conditions": "Only where off-site sewer and water are provided. Table 425-12C gives multiple units (2 to 4 per structure) 15,000 sq ft or 5,000 sq ft per dwelling unit, whichever is greater.",
+          "min_lot_sqft": 15000,
+          "section": "425-12B(1), Table 425-12B, Table 425-12C",
+          "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+          "confidence": "secondary",
+          "note": "Not an ADU. Whether the 15,000 sq ft multiple-unit row is the figure for a two-family dwelling is not settled."
+        },
+        {
+          "name": "1 additional single-family dwelling, or 1 additional dwelling unit within or attached to the principal structure (A-1 Rural)",
+          "path": "by_right",
+          "districts": [
+            "A-1"
+          ],
+          "conditions": "One more house, or one more unit inside or attached to the house. The copy read does not show the column of Table 425-31B(1) the row sits in, nor any acreage or farm condition on it.",
+          "min_lot_sqft": null,
+          "section": "Table 425-31B(1), Table 425-31B(3) item 3",
+          "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_5",
+          "confidence": "secondary",
+          "covers_forms": [
+            "internal",
+            "attached",
+            "detached_new"
+          ],
+          "requires": [
+            {
+              "test": null,
+              "condition": "The row may be tied to a farm or to an estate lot of 10 acres or more ('An estate lot of 10 acres or more is entitled to accessory uses and additional uses by right as described in § 425-31B'). Not settled in the copy read",
+              "section": "Table 425-31B(3) item 3"
+            }
+          ],
+          "disputed_path": {
+            "path": "conditional_use",
+            "section": "Table 425-31B(1)",
+            "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_5",
+            "note": "The Zoneomics copy flattens the table, so the row may sit in the Accessory Uses column (by right) or the Conditional Uses column. A 2017 Centre Regional Planning Agency inventory lists it as an accessory use in A-1. Check the eCode360 table"
+          },
+          "note": "The code does not call it an accessory dwelling unit. Amended 7-19-2017 by Ord. No. 2017-586 (table bracket)."
+        }
+      ],
+      "section": "425-12B, Table 425-31B(1)",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "A two-family dwelling is 'A building designed for and occupied exclusively by two families' (425-6)."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [],
+      "section": "425-10B, 425-11B, 425-12B",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No district lists an ADU. Reading of a silent code."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "Chapter 425",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No ADU text, so no historic path."
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [],
+      "section": "425-10B, 425-11B, 425-12B",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No ADU form is listed."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": null,
+      "section": "425-6 'Family'",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_1",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU rule. A family may include 'two or fewer unrelated persons' besides the related members."
+    },
+    "max_adus": {
+      "value": 0,
+      "section": "425-10B, 425-11B, 425-12B",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "Reading: 0 means the zoning chapter as read allows no ADU."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": null,
+      "section": "425-61",
+      "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_14",
+      "verified_on": null,
+      "confidence": "unverified",
+      "note": "No ADU row. Parking rules are in Chapter 350, Subdivision and Land Development (not read)."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 43560,
+        "section": "425-10C, Table 425-10C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Minimum lot size 1 acre. Width 150 ft at the building setback line, 100 ft at the street line."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 425-10C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Front: 30, 40 on collector streets'"
+      },
+      "setback_side_ft": {
+        "value": 30,
+        "section": "Table 425-10C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Side: 30 each'"
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "Table 425-10C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "Table 425-10C, 425-6",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Maximum lot coverage for buildings: 'the footprint area of all buildings'."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 425-10C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Building 35 ft, structure 50 ft."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 40,
+        "section": "Table 425-10B note 2",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Accessory structures are permitted in the rear yard setback area provided they are a minimum of 40 feet from the rear property line.'"
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 10000,
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'With public sewer: 10,000 feet' (square feet). Without public sewer 1 acre."
+      },
+      "utility_rows": {
+        "value": [
+          {
+            "when": "Without public sewer",
+            "public_sewer": false,
+            "min_lot_sqft": 43560,
+            "section": "Table 425-11C, 425-56I"
+          }
+        ],
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Side: 10 each'"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.25,
+        "section": "Table 425-11C, 425-6",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 30,
+        "section": "Table 425-11C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Building 30 ft, structure 50 ft."
+      }
+    },
+    "R-3": {
+      "min_lot_sqft": {
+        "value": 8000,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family detached or semidetached, with off-site sewer and water. Without them the R-2 area and bulk rules apply (425-12C)."
+      },
+      "setback_front_ft": {
+        "value": 30,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 10,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'25 aggregate, 10 minimum'. An average of 15 ft may be used when the house is set at an angle (425-12C(1)(a))."
+      },
+      "setback_sides_total_ft": {
+        "value": 25,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "max_building_coverage": {
+        "value": 0.35,
+        "section": "Table 425-12C, 425-6",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "Table 425-12C",
+        "url": "https://www.zoneomics.com/code/patton-township-PA/chapter_2",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      }
+    }
+  }
+}

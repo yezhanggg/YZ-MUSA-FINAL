@@ -2,8 +2,10 @@
 
 One place (`chester_county`, county FIPS 42029) holds the lots of several towns. Each lot carries the rule
 file of its town in `rule_file`, and pipeline/build_lots.py resolves the rules per lot with it. Towns and
-files are in TOWNS. A town joins when its rule file is verified and the county zoning layer uses its
-district names.
+files are in TOWNS. A town joins when its rule file is verified, the county zoning layer uses its
+district names and the file gives the ADU a path the lot record can hold somewhere in the town. Lots
+whose path is a conditional use are left out (conditional_use_keys). The five towns of lot data 12 read
+their parcels and the box layers from the 2026-11-13 copies in raw/<place>/base_lotdata12/ (BASE_DIR).
 
     python -m pipeline.places.chester_county download   # fetch each layer once
     python -m pipeline.places.chester_county build      # lots, buildings, streets
@@ -79,19 +81,63 @@ class Town:
     rule_file: str
 
 
-# Towns with a verified rule file whose districts the county zoning layer names (checked 2026-11-13).
-# Left out: Honey Brook Twp (layer has AR, file has A under the 2025 code), Tredyffrin (no ADU path).
+# Towns with a verified rule file whose districts the county zoning layer names and where the file gives
+# an ADU a path the lot record can hold (by right, administrator or special exception) in at least one
+# mapped district. First five checked 2026-11-13, the rest 2026-11-26 (rules.resolve on each layer
+# district, several lot sizes and house types).
+# Left out (verified files): Tredyffrin, West Whiteland, Uwchlan, Downingtown, East Fallowfield and
+# West Brandywine (no ADU path: variance everywhere, or a conditional use only), West Bradford (the
+# in-law unit is a conditional use in R-1 and R-1C, 450-11B(3)(e) and 450-12B(2)(d), variance
+# elsewhere), New Garden (the layer still has the old R-1 to R-4 map, 2016; the file has the new RL,
+# RM, RF, VC, VG and MUL districts).
+# Drafted files (Kennett Square, Upper Uwchlan, East Vincent) wait for their check.
 TOWNS: tuple[Town, ...] = (
     Town(1, "West Chester borough", "pa_chester_west_chester"),
     Town(2, "Malvern borough", "pa_chester_malvern"),
     Town(15, "Phoenixville borough", "pa_chester_phoenixville"),
     Town(25, "West Vincent township", "pa_chester_west_vincent"),
     Town(30, "East Brandywine township", "pa_chester_east_brandywine"),
+    Town(17, "North Coventry township", "pa_chester_north_coventry"),
+    Town(18, "East Coventry township", "pa_chester_east_coventry"),
+    Town(22, "Honey Brook township", "pa_chester_honey_brook"),
+    Town(27, "Schuylkill township", "pa_chester_schuylkill"),
+    Town(28, "West Caln township", "pa_chester_west_caln"),
+    Town(52, "West Goshen township", "pa_chester_west_goshen"),
+    Town(53, "East Goshen township", "pa_chester_east_goshen"),
+    Town(67, "Westtown township", "pa_chester_westtown"),
+    Town(69, "East Nottingham township", "pa_chester_east_nottingham"),
 )
 MUNIS = tuple(t.muni for t in TOWNS)
 MUNI_SQL = ",".join(str(m) for m in MUNIS)
-# Loose lon/lat box around the five towns (for footprints, roads, flood, ZCTAs and Microsoft tiles).
-TOWNS_BBOX = (-75.80, 39.93, -75.47, 40.17)
+# Loose lon/lat box around the towns (for footprints, roads, flood, ZCTAs and Microsoft tiles): from
+# Honey Brook in the west and East Nottingham in the south to North and East Coventry in the north and
+# Phoenixville and Malvern in the east.
+TOWNS_BBOX = (-76.06, 39.70, -75.44, 40.26)
+
+# Layer codes that name a district of the rule file under another code. Honey Brook: the county layer
+# holds the map of Chapter 27 as adopted 9-12-2018 (LAST_UPDATED 2018-09-12), with "AR Agricultural";
+# the ordinance's agricultural district is A (27-1702). Its other codes (RC, NR, MUR, MUC, BI)
+# are the ordinance's.
+LAYER_ALIASES: dict[str, dict[str, str]] = {"pa_chester_honey_brook": {"AR": "A"}}
+
+# Lots whose ADU path is a conditional use are left out: the lot record has no conditional use path
+# (lot_schema.json, the app's APPROVAL_PATHS). Found from the rule files per district and house type
+# (conditional_use_keys): West Vincent BV (390-48B(4)) and West Caln SRR, RR, RC and MP today.
+CU_LOT_SQFT = (None, 5000.0, 20000.0, 100000.0, 500000.0)  # lot sizes probed: a size gate can change the path
+
+# Lot data 12 (the first five towns) was built on the 2026-11-13 pulls of the box layers. Their copies sit
+# in raw/<place>/base_lotdata12/. Inside the old box (the old towns for the Microsoft outlines, which were
+# clipped to them) the old rows are read, in their old order; the new pull gives only the rows that do not
+# touch that area. So the five towns' outlines, streets and flood zones stay as built and their answers do
+# not move with later edits of the county layers.
+BASE_DIR = "base_lotdata12"
+BASE_BBOX = (-75.80, 39.93, -75.47, 40.17)
+BASE_MUNIS = (1, 2, 15, 25, 30)
+BASE_LAYERS = ("buildings_dvrpc", "streets", "flood_nfhl", "zcta", "footprints_msft")
+# Layers pulled per town: the five towns' rows come from the copy (the county edits parcels every week:
+# 157 land use codes, about 1,000 addresses and 39 outlines in the five towns between 2026-11-13 and
+# 2026-11-26). The zoning of the five towns was the same in both pulls.
+BASE_BY_MUNI = {"parcels": "MUNI", "town_boundaries": "Muni_Num"}
 
 
 @dataclass(frozen=True)
@@ -115,7 +161,7 @@ LAYERS: tuple[Layer, ...] = (
         LIC_COUNTY,
         "Muni_Num,Muni_Name",
         where=f"Muni_Num in ({','.join(repr(f'{m:02d}') for m in MUNIS)})",
-        note="Municipal boundaries (parcel based), the five towns only",
+        note="Municipal boundaries (parcel based), the towns only",
     ),
     Layer(
         "parcels",
@@ -123,7 +169,7 @@ LAYERS: tuple[Layer, ...] = (
         LIC_COUNTY,
         "UPI,PIN_MAP,LOC_ADDRESS,MUNI,LUC,CLASS,SQFT_PLAN_TOT,ACRE_PLAN_TOT,MULTI_POLY",
         where=f"MUNI in ({MUNI_SQL})",
-        note="Parcels of the five towns. Only id, address, municipality, land use code and plan area are "
+        note="Parcels of the towns. Only id, address, municipality, land use code and plan area are "
         "requested. Owner, mailing, sale and assessment fields stay on the server",
     ),
     Layer(
@@ -166,9 +212,12 @@ LAYERS: tuple[Layer, ...] = (
         NFHL,
         LIC_FEMA,
         "FLD_ZONE,ZONE_SUBTY,SFHA_TF,DFIRM_ID",
+        # The 1 percent annual chance areas only, the only rows the build reads. The full set failed on a zone X
+        # shape the server cannot return (object 1716155, 2026-11-27). The lot data 12 copy holds every zone.
+        where="SFHA_TF = 'T'",
         bbox=TOWNS_BBOX,
         page=25,
-        note="Flood hazard zones touching the towns box. SFHA_TF = T is the 1 percent annual chance area",
+        note="Flood hazard zones touching the towns box, SFHA_TF = T (the 1 percent annual chance area) only",
     ),
 )
 
@@ -196,7 +245,7 @@ def fetch_layer(layer: Layer, out: Path) -> int:
 
 
 def fetch_msft(out: Path, boundary: Path) -> int:
-    """Microsoft outlines inside the five towns, from the zoom 9 tiles over the towns box."""
+    """Microsoft outlines inside the towns, from the zoom 9 tiles over the towns box."""
     urls = pgh.msft_tile_urls(TOWNS_BBOX)
     rows: list[dict[str, Any]] = []
     for url in urls:
@@ -250,7 +299,7 @@ def download(only: list[str] | None = None) -> None:
                     LIC_MSFT,
                     n,
                     out,
-                    "Zoom 9 quadkey tiles clipped to the five towns. Used only for outlines the DVRPC set misses",
+                    "Zoom 9 quadkey tiles clipped to the towns. Used only for outlines the DVRPC set misses",
                 ),
             )
     record_source("imagery", IMAGERY)
@@ -273,8 +322,42 @@ def step(msg: str) -> None:
     print(f"[{time.time() - _T0:7.1f}s] {msg}", flush=True)
 
 
+def base_area(key: str) -> Any:
+    """The area (WORK_CRS) whose rows come from the lot data 12 copy of a layer."""
+    from shapely.geometry import box
+
+    if key == "footprints_msft":
+        towns = common.read_layer(PLACE, "town_boundaries", WORK_CRS)
+        return towns[pd.to_numeric(towns["Muni_Num"], errors="coerce").isin(BASE_MUNIS)].union_all()
+    return gpd.GeoSeries([box(*BASE_BBOX)], crs=LONLAT).to_crs(WORK_CRS).iloc[0]
+
+
+def with_base(new: gpd.GeoDataFrame, base: gpd.GeoDataFrame, area: Any) -> gpd.GeoDataFrame:
+    """Base rows first (as they were), then the new rows that do not touch `area`."""
+    extra = new[~new.intersects(area)]
+    out = pd.concat([base, extra[[c for c in extra.columns if c in base.columns]]], ignore_index=True)
+    return gpd.GeoDataFrame(out, geometry="geometry", crs=new.crs)
+
+
+def with_base_towns(new: gpd.GeoDataFrame, base: gpd.GeoDataFrame, col: str) -> gpd.GeoDataFrame:
+    """Base rows of the base towns first (as they were), then the new rows of the other towns."""
+    in_base = pd.to_numeric(new[col], errors="coerce").isin(BASE_MUNIS)
+    old = base[pd.to_numeric(base[col], errors="coerce").isin(BASE_MUNIS)]
+    extra = new[~in_base]
+    out = pd.concat([old, extra[[c for c in extra.columns if c in old.columns]]], ignore_index=True)
+    return gpd.GeoDataFrame(out, geometry="geometry", crs=new.crs)
+
+
 def read_layer(key: str) -> gpd.GeoDataFrame:
-    return common.read_layer(PLACE, key, WORK_CRS)
+    new = common.read_layer(PLACE, key, WORK_CRS)
+    base_path = raw_dir(PLACE) / BASE_DIR / f"{key}.gpkg"
+    if not base_path.exists():
+        return new
+    if key in BASE_BY_MUNI:
+        return with_base_towns(new, gpd.read_file(base_path).to_crs(WORK_CRS), BASE_BY_MUNI[key])
+    if key in BASE_LAYERS:
+        return with_base(new, gpd.read_file(base_path).to_crs(WORK_CRS), base_area(key))
+    return new
 
 
 def town_of(muni: Any) -> Town | None:
@@ -313,8 +396,45 @@ def rule_district(code: Any, rule_file: str, names: dict[str, list[str]]) -> str
     return hit[0] if len(hit) == 1 else c
 
 
+def _cu_paths(res: dict[str, Any]) -> bool:
+    """True when a path the lot record keeps is a conditional use."""
+    by_type = res.get("approval_by_type") or {}
+    nested = [(res.get(k) or {}).get("path") for k in ("district_path", "path_to_ask")]
+    return "conditional_use" in [res.get("approval_path"), *by_type.values(), *nested]
+
+
+def conditional_use_keys(lots: pd.DataFrame) -> set[tuple[str, str | None, str]]:
+    """(rule_file, zoning, housing_type) whose path under any scenario, at any probed lot size, is a
+    conditional use. Read only."""
+    from pipeline import build_lots as bl
+    from pipeline import rules as rulesmod
+
+    combos = lots[["rule_file", "zoning", "housing_type"]].astype(object).drop_duplicates()
+    out: set[tuple[str, str | None, str]] = set()
+    for rf, z, ht in combos.itertuples(index=False):
+        if not isinstance(rf, str):
+            continue
+        zone = None if pd.isna(z) else str(z)
+        lot = {"zoning_district": zone, "building_type": bl.HOUSING_TO_BUILDING.get(str(ht), ht), "overlays": []}
+        if any(
+            _cu_paths(rulesmod.resolve(rf, sc, {**lot, "lot_sqft": size}, extra=True))
+            for sc in rulesmod.SCENARIOS
+            for size in CU_LOT_SQFT
+        ):
+            out.add((rf, zone, str(ht)))
+    return out
+
+
+def conditional_use_mask(lots: pd.DataFrame) -> pd.Series:
+    """True for lots whose ADU path is a conditional use (conditional_use_keys)."""
+    keys = conditional_use_keys(lots)
+    zone = lots["zoning"].astype(object).where(lots["zoning"].notna(), None)
+    k = zip(lots["rule_file"], zone, lots["housing_type"].astype(str), strict=True)
+    return pd.Series([x in keys for x in k], index=lots.index, dtype=bool)
+
+
 def load_parcels() -> gpd.GeoDataFrame:
-    """Parcels of the five towns, one row per UPI. A UPI drawn in pieces is merged."""
+    """Parcels of the towns, one row per UPI. A UPI drawn in pieces is merged."""
     p = read_layer("parcels")
     p = p[p["UPI"].notna() & (p["UPI"].astype(str).str.strip() != "")].copy()
     p["geometry"] = p.geometry.make_valid()
@@ -353,7 +473,8 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
         if sub.empty or zt.empty:
             continue
         z = largest_overlap(sub, zt, "lot_id", ["ZONE_ABBR", "ZONE_DISTRICT"])
-        z["zoning"] = [rule_district(c, t.rule_file, names) for c in z["ZONE_ABBR"]]
+        alias = LAYER_ALIASES.get(t.rule_file, {})
+        z["zoning"] = [rule_district(alias.get(str(c).strip(), c), t.rule_file, names) for c in z["ZONE_ABBR"]]
         parts.append(z.rename(columns={"ZONE_ABBR": "zoning_layer_code", "ZONE_DISTRICT": "zoning_name"}))
     z = pd.concat(parts, ignore_index=True).rename(columns={"share": "zoning_share"})
     out = out.merge(z, on="lot_id", how="left")
@@ -487,10 +608,10 @@ def build() -> None:
     lots = lots[lots["housing_type"].isin(HOUSING_TYPES) & lots["rule_file"].notna()].reset_index(drop=True)
     step(f"{len(parcels)} parcels, {len(lots)} lots with 1 to 4 units")
     lots = join_lot_layers(lots)
-    # West Vincent BV: the ADU is a conditional use (390-48B(4)). The lot record has no conditional use
-    # path (lot_schema.json, the app's APPROVAL_PATHS), so these lots are left out rather than mislabelled.
-    cu = ((lots["rule_file"] == "pa_chester_west_vincent") & (lots["zoning"] == "BV")).fillna(False).astype(bool)
-    step(f"left out {int(cu.sum())} West Vincent BV lots (conditional use)")
+    # Conditional use paths (West Vincent BV, West Caln SRR, RR, RC and MP): left out, see CU_LOT_SQFT.
+    cu = conditional_use_mask(lots)
+    for (town, zone), n in lots[cu].groupby(["municipality", "zoning"]).size().items():
+        step(f"left out {n} {town} {zone} lots (conditional use)")
     lots = lots[~cu].reset_index(drop=True)
     bldgs = bldgs[bldgs["lot_id"].isin(lots["lot_id"])].reset_index(drop=True)
     lots = pgh.summarize_buildings(lots, bldgs)

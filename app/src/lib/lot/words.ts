@@ -9,6 +9,20 @@ const US = 'en-US';
 /** 1,000 sq ft */
 export const sqftText = (v: number | null | undefined) => (isNum(v) ? `${Math.round(v).toLocaleString(US)} sq ft` : 'unknown size');
 
+/**
+ * A largest footprint above this reads "more than": where no size cap binds the unit, the fit's largest is the whole
+ * open yard, not a unit size (shared/assumptions.json lots.largest_report_ceiling_sqft, pipeline/build_lots.py
+ * LARGEST_CEILING_SQFT; words.test.ts checks they agree). Presentation only: the record's largest_sqft is unchanged.
+ */
+export const LARGEST_CEILING_SQFT = 2000;
+
+/** The largest is shown as "more than the ceiling": over it, and set by the open yard (no cap of any kind won). */
+export const overCeiling = (sqft: number | null | undefined, limiting?: string | null) => isNum(sqft) && sqft > LARGEST_CEILING_SQFT && (limiting == null || limiting === 'yard_space');
+
+/** "1,450 sq ft", or "more than 2,000 sq ft, with no size cap in the code" for a whole-yard largest. */
+export const largestText = (sqft: number | null | undefined, limiting?: string | null) =>
+  overCeiling(sqft, limiting) ? `more than ${sqftText(LARGEST_CEILING_SQFT)}, with no size cap in the code` : sqftText(isNum(sqft) ? Math.floor(sqft) : sqft);
+
 /** 4.5 ft (one decimal only when it matters) */
 export const ftText = (v: number | null | undefined) => (isNum(v) ? `${Number(v.toFixed(1)).toLocaleString(US)} ft` : 'unknown');
 

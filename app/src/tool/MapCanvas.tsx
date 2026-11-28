@@ -15,7 +15,7 @@ import { aerialSource, watchAerial } from './aerial';
 import { addSiteLayers, updateSite } from './siteLayers';
 import { attachBoxDrag, consumeBoxPress } from './boxDrag';
 import { siteData, unitInput } from './testState';
-import { lotDataUrl } from '../lib/lot/load';
+import { PLACE_BY_COUNTY, placeDataUrl } from '../lib/lot/load';
 import { unitVerdict } from '../lib/lot/verdict';
 import { FLY_IN_ZOOM, LOT_ZOOM, answerColorExpr, answerOf, lotFillOpacity, lotTipHtml, overviewOpacity, squareTipHtml } from './testable';
 import { TestableLegend } from './test/TestableLots';
@@ -28,22 +28,23 @@ addProtocol('pmtiles', new Protocol().tile);
 
 const selFilter = (id: string | null): ExpressionSpecification => ['==', ['get', 'id'], id ?? '__none__'];
 
-const tilesUrl = (place: string, file: string) => new URL(`${lotDataUrl()}${place}/tiles/${file}`, window.location.href).href;
+const tilesUrl = (place: string, file: string) => new URL(`${placeDataUrl(place)}tiles/${file}`, window.location.href).href;
 
 /**
  * Parcel tiles for the places with lot records, next to those records (app/build_lot_tiles.py). Test Project only.
  * lots.pmtiles is parcels.pmtiles plus each lot's answers (Show testable lots), used when it is there.
  * overview.pmtiles holds the grid squares for lower zooms, loaded the first time the switch is on.
  */
-const PARCEL_SOURCES = [
-  { id: 'parcels-pgh', url: () => tilesUrl('pittsburgh', 'parcels.pmtiles'), lots: () => tilesUrl('pittsburgh', 'lots.pmtiles'), overview: () => tilesUrl('pittsburgh', 'overview.pmtiles') },
-  { id: 'parcels-phl', url: () => tilesUrl('philadelphia', 'parcels.pmtiles'), lots: () => tilesUrl('philadelphia', 'lots.pmtiles'), overview: () => tilesUrl('philadelphia', 'overview.pmtiles') },
-  { id: 'parcels-abe', url: () => tilesUrl('allentown', 'parcels.pmtiles'), lots: () => tilesUrl('allentown', 'lots.pmtiles'), overview: () => tilesUrl('allentown', 'overview.pmtiles') },
-  { id: 'parcels-chc', url: () => tilesUrl('chester_county', 'parcels.pmtiles'), lots: () => tilesUrl('chester_county', 'lots.pmtiles'), overview: () => tilesUrl('chester_county', 'overview.pmtiles') },
-  { id: 'parcels-cen', url: () => tilesUrl('centre_county', 'parcels.pmtiles'), lots: () => tilesUrl('centre_county', 'lots.pmtiles'), overview: () => tilesUrl('centre_county', 'overview.pmtiles') },
-  { id: 'parcels-mont', url: () => tilesUrl('montgomery_county', 'parcels.pmtiles'), lots: () => tilesUrl('montgomery_county', 'lots.pmtiles'), overview: () => tilesUrl('montgomery_county', 'overview.pmtiles') },
-] as const;
-type ParcelSource = (typeof PARCEL_SOURCES)[number]['id'];
+/** Short source ids of the first places (the browser tests read them); later places use their folder name. */
+const SOURCE_SHORT: Readonly<Record<string, string>> = { pittsburgh: 'pgh', philadelphia: 'phl', allentown: 'abe', chester_county: 'chc', centre_county: 'cen', montgomery_county: 'mont' };
+/** One parcel source per lot place in the loader's registry (PLACE_BY_COUNTY), so a new place needs no change here. */
+const PARCEL_SOURCES = [...new Set(Object.values(PLACE_BY_COUNTY))].map((place) => ({
+  id: `parcels-${SOURCE_SHORT[place] ?? place}`,
+  url: () => tilesUrl(place, 'parcels.pmtiles'),
+  lots: () => tilesUrl(place, 'lots.pmtiles'),
+  overview: () => tilesUrl(place, 'overview.pmtiles'),
+}));
+type ParcelSource = string;
 const fillOf = (src: ParcelSource) => `${src}-fill`;
 const lineOf = (src: ParcelSource) => `${src}-line`;
 const overviewOf = (src: ParcelSource) => `${src}-overview`;

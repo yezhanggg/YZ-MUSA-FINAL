@@ -114,6 +114,10 @@ COORD_DIGITS = 7
 FIT_SIZES = (400, 600, 800, 1000)
 APP_FIT_SQFT = 600
 APP_MAX_FIT_SQFT = 2000
+# A largest detached footprint above this is reported as 'more than' it: with no size cap binding the unit, the
+# fit's largest is the whole open yard (shared/assumptions.json lots.largest_report_ceiling_sqft). Presentation only:
+# the fit, detached_sqft_* and the fit_N shares are not changed.
+LARGEST_CEILING_SQFT = _lots_value("largest_report_ceiling_sqft")
 # Target size of one gzipped tract detail file.
 MAX_TRACT_BYTES = 1_500_000
 
@@ -270,12 +274,24 @@ PLACES = {
             "pa_chester_phoenixville",
             "pa_chester_west_vincent",
             "pa_chester_east_brandywine",
+            "pa_chester_north_coventry",
+            "pa_chester_east_coventry",
+            "pa_chester_honey_brook",
+            "pa_chester_schuylkill",
+            "pa_chester_west_caln",
+            "pa_chester_west_goshen",
+            "pa_chester_east_goshen",
+            "pa_chester_westtown",
+            "pa_chester_east_nottingham",
         ),
-        front_by_rule_file=(("pa_chester_west_chester", "behind_house"),),
+        # Schuylkill R-1: an accessory building only in the rear yard (370-22, accessory_rear_yard_only), so
+        # behind the house too. Read for the whole town: its FR lots get the stricter reading.
+        front_by_rule_file=(("pa_chester_west_chester", "behind_house"), ("pa_chester_schuylkill", "behind_house")),
         footprint_share=(("pa_chester_phoenixville", ("detached_new", "garage_conversion", "over_garage")),),
     ),
-    # Centre County (pipeline/places/centre_county.py): College Township today (pa_centre_college).
-    # The county parcels carry the assessor's living area, so share-of-house caps are checked.
+    # Centre County (pipeline/places/centre_county.py): College Township (pa_centre_college) and State
+    # College borough (pa_centre_state_college). The county parcels carry the assessor's living area, so
+    # share-of-house caps are checked.
     "centre_county": Place(
         "centre_county",
         "42027",
@@ -284,10 +300,10 @@ PLACES = {
         imagery_key="pema_2022_half_foot",
         not_checked=TOWN_NOT_CHECKED,
         share_cap_from_footprint=False,
-        rule_files=("pa_centre_college",),
+        rule_files=("pa_centre_college", "pa_centre_state_college"),
     ),
-    # Montgomery County (pipeline/places/montgomery_county.py): Narberth, Lower Merion and Upper Dublin,
-    # the verified towns with an ADU path. Microsoft outlines only. No living area in the open data.
+    # Montgomery County (pipeline/places/montgomery_county.py): the 24 towns with a verified rule file whose
+    # districts the county zoning layer names. Microsoft outlines only. No living area in the open data.
     "montgomery_county": Place(
         "montgomery_county",
         "42091",
@@ -296,7 +312,214 @@ PLACES = {
         imagery_key="pema_2022_half_foot",
         not_checked=TOWN_NOT_CHECKED,
         share_cap_from_footprint=False,
-        rule_files=("pa_montgomery_narberth", "pa_montgomery_lower_merion", "pa_montgomery_upper_dublin"),
+        rule_files=(
+            "pa_montgomery_narberth",
+            "pa_montgomery_lower_merion",
+            "pa_montgomery_upper_dublin",
+            # Added 2026-11-26 (the verified towns whose districts the county zoning layer names).
+            "pa_montgomery_ambler",
+            "pa_montgomery_conshohocken",
+            "pa_montgomery_lansdale",
+            "pa_montgomery_norristown",
+            "pa_montgomery_cheltenham",
+            "pa_montgomery_douglass",
+            "pa_montgomery_franconia",
+            "pa_montgomery_hatfield",
+            "pa_montgomery_horsham",
+            "pa_montgomery_limerick",
+            "pa_montgomery_lower_pottsgrove",
+            "pa_montgomery_lower_providence",
+            "pa_montgomery_montgomery",
+            "pa_montgomery_plymouth",
+            "pa_montgomery_skippack",
+            "pa_montgomery_springfield",
+            "pa_montgomery_upper_gwynedd",
+            "pa_montgomery_upper_merion",
+            "pa_montgomery_upper_providence",
+            "pa_montgomery_west_norriton",
+            "pa_montgomery_whitemarsh",
+            "pa_montgomery_whitpain",
+        ),
+    ),
+    # Dauphin County (pipeline/places/dauphin_county.py): Harrisburg, Lower Paxton and Swatara, the
+    # verified towns with an ADU path, each on its own government's zoning layer. County outlines plus
+    # Microsoft. No living area and no building height in the open data.
+    "dauphin_county": Place(
+        "dauphin_county",
+        "42043",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_dauphin_harrisburg", "pa_dauphin_lower_paxton", "pa_dauphin_swatara"),
+    ),
+    # Lancaster County (pipeline/places/lancaster_county.py): the twelve towns with a verified rule file
+    # whose districts the county zoning layer names. County outlines plus Microsoft. No living area and
+    # no building height in the open data. East Donegal's conditional use lots are left out.
+    "lancaster_county": Place(
+        "lancaster_county",
+        "42071",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_lancaster_lancaster",
+            "pa_lancaster_manheim",
+            "pa_lancaster_penn",
+            "pa_lancaster_warwick",
+            "pa_lancaster_east_lampeter",
+            "pa_lancaster_lancaster_township",
+            "pa_lancaster_west_lampeter",
+            "pa_lancaster_west_hempfield",
+            "pa_lancaster_elizabethtown",
+            "pa_lancaster_mount_joy",
+            "pa_lancaster_east_donegal",
+            "pa_lancaster_west_earl",
+        ),
+    ),
+    # Erie County (pipeline/places/erie_county.py): Erie city (ADU by right). EPSG:2271, Pennsylvania North:
+    # Erie (42.1 N) is north of the South zone's band. Microsoft outlines, no heights. Living area from the
+    # county assessor layer, so share-of-house caps are checked.
+    "erie_county": Place(
+        "erie_county",
+        "42049",
+        2271,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_erie_erie",),
+    ),
+    # Cumberland County (pipeline/places/cumberland_county.py): Upper Allen, Lower Allen and Camp Hill, on
+    # the county's compiled zoning layers. Microsoft outlines, no heights. Living area from the county
+    # assessor layer, so share-of-house caps are checked.
+    "cumberland_county": Place(
+        "cumberland_county",
+        "42041",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_cumberland_upper_allen", "pa_cumberland_lower_allen", "pa_cumberland_camp_hill"),
+    ),
+    # Northampton County (pipeline/places/northampton_county.py): Bethlehem city (Northampton part), Easton,
+    # Bethlehem township, Lower Saucon and Wilson. Microsoft outlines, no heights. Living area from the county
+    # assessor table, so share-of-house caps are checked. Forks (conditional use) and Hanover (no path) out.
+    "northampton_county": Place(
+        "northampton_county",
+        "42095",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_northampton_bethlehem",
+            "pa_northampton_easton",
+            "pa_northampton_bethlehem_township",
+            "pa_northampton_lower_saucon",
+            "pa_northampton_wilson",
+        ),
+    ),
+    # Delaware County (pipeline/places/delaware_county.py): the 19 verified towns, on the county's compiled
+    # zoning layer. Microsoft outlines with DVRPC 2015 lidar heights. No living area, no address in the open
+    # data. Bethel, Clifton Heights and Media keep accessory buildings behind the house.
+    "delaware_county": Place(
+        "delaware_county",
+        "42045",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_delaware_upper_darby",
+            "pa_delaware_haverford",
+            "pa_delaware_radnor",
+            "pa_delaware_chester",
+            "pa_delaware_ridley",
+            "pa_delaware_springfield",
+            "pa_delaware_concord",
+            "pa_delaware_upper_chichester",
+            "pa_delaware_aston",
+            "pa_delaware_nether_providence",
+            "pa_delaware_yeadon",
+            "pa_delaware_bethel",
+            "pa_delaware_darby_township",
+            "pa_delaware_collingdale",
+            "pa_delaware_glenolden",
+            "pa_delaware_thornbury",
+            "pa_delaware_clifton_heights",
+            "pa_delaware_media",
+            "pa_delaware_swarthmore",
+        ),
+        front_by_rule_file=(
+            ("pa_delaware_bethel", "behind_house"),
+            ("pa_delaware_clifton_heights", "behind_house"),
+            ("pa_delaware_media", "behind_house"),
+        ),
+    ),
+    # York County (pipeline/places/york_county.py): the eight verified towns with an ADU path whose districts
+    # the county zoning layer names (York city, York, Springettsbury, Penn, Hanover, Newberry, East
+    # Manchester, Lower Windsor). County outlines plus Microsoft, no building height. Living area from the
+    # county assessor layer.
+    "york_county": Place(
+        "york_county",
+        "42133",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_york_york",
+            "pa_york_york_township",
+            "pa_york_springettsbury",
+            "pa_york_penn",
+            "pa_york_hanover",
+            "pa_york_newberry",
+            "pa_york_east_manchester",
+            "pa_york_lower_windsor",
+        ),
+    ),
+    # Berks County (pipeline/places/berks_county.py): Amity township (family member suite by right in RC, LDR,
+    # MDR and RV, inside or attached only), on the county's compiled zoning layer. PBOI lots (conditional
+    # use) are left out. Microsoft outlines, no heights. Living area from the county CAMA residential file.
+    "berks_county": Place(
+        "berks_county",
+        "42011",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=("pa_berks_amity",),
+    ),
+    # Bucks County (pipeline/places/bucks_county.py): the eight verified towns with an ADU path, on the county
+    # Planning Commission's compiled zoning layer. Microsoft outlines with DVRPC 2015 lidar heights. No
+    # living area in the open data. The seven towns with no ADU text are left out.
+    "bucks_county": Place(
+        "bucks_county",
+        "42017",
+        2272,
+        front_when_null="contextual",
+        imagery_key="pema_2022_half_foot",
+        not_checked=TOWN_NOT_CHECKED,
+        share_cap_from_footprint=False,
+        rule_files=(
+            "pa_bucks_bristol",
+            "pa_bucks_warminster",
+            "pa_bucks_lower_southampton",
+            "pa_bucks_doylestown",
+            "pa_bucks_warwick",
+            "pa_bucks_plumstead",
+            "pa_bucks_new_britain",
+            "pa_bucks_doylestown_borough",
+        ),
     ),
 }
 
@@ -886,6 +1109,24 @@ def add_site_lines(rec: dict[str, Any], ctx: Ctx) -> None:
         rules["reasons"] = [x for x in rules.get("reasons") or [] if x not in texts] + lines
 
 
+# Rules pass 10 citation for a separation left out where no detached form is allowed. The record keeps 0 ft, not
+# checked. The fit still draws a detached unit there for information (METHODS 1.x), so it keeps the planning
+# separation from the house (fit_separation): with 0 ft an uncapped unit was placed against the house.
+NO_DETACHED_SEPARATION = "not checked: no detached form is allowed here, so no separation applies"
+NO_DETACHED_FIT_NOTE = (
+    "no detached form is allowed: the unit drawn for information keeps the {:.0f} ft planning separation from the house"
+)
+
+
+def fit_separation(filled: dict[str, Any]) -> float | None:
+    """The separation the fit uses where it is not the record's: the planning figure where rules pass 10 left
+    the separation out because no detached form is allowed. None when the record's own figure applies."""
+    cit = (filled.get("citations") or {}).get("separation_ft") or {}
+    if filled.get("separation_ft") == 0.0 and cit.get("section") == NO_DETACHED_SEPARATION:
+        return FALLBACK_SETBACKS_FT["separation_ft"]
+    return None
+
+
 def fill_rules(
     raw: dict[str, Any],
     district: str | None,
@@ -915,7 +1156,7 @@ def fill_rules(
         elif key == "separation_ft" and key in not_checked and no_detached:
             # rules pass 10: no separation where no detached form is allowed (the town file's figure does not apply)
             val = 0.0
-            section = "not checked: no detached form is allowed here, so no separation applies"
+            section = NO_DETACHED_SEPARATION
             notes.append(f"{key} not checked: no detached form is allowed in district {district or 'unknown'}")
         elif key in not_checked:
             val = 0.0
@@ -1413,6 +1654,12 @@ def build_lot(
         notes += [n for n in fill_notes if n not in notes]
         # the record keeps the qualifier and the per-form shares (pass 17). The fit reads the shares from SIZE_BY_TYPE
         fit_in = {k: v for k, v in filled.items() if k not in RECORD_TOWN_KEYS}
+        sep = fit_separation(filled)
+        if sep is not None:  # the record keeps 0 ft (not checked), the drawn unit keeps clear of the house
+            fit_in = {**fit_in, "separation_ft": sep}
+            note = NO_DETACHED_FIT_NOTE.format(sep)
+            if note not in notes:
+                notes.append(note)
         if not ctx.share_cap_from_footprint and filled.get("max_share_of_house") is not None and not shape.living_sqft:
             fit_in = {**fit_in, "max_share_of_house": None}  # the record keeps the cap, the fit skips it
             note = "share-of-house size cap not checked: no living area on file for this house"
@@ -1872,8 +2119,14 @@ def write_tract(
 # ---------------------------------------------------------------- run
 
 
-def data_version(place: str, paths: dict[str, Path]) -> str:
-    """Changes when an input table, a rule file or this code changes."""
+def data_version(
+    place: str, paths: dict[str, Path], out: Path | None = None, started: dt.date | None = None
+) -> str:
+    """Changes when an input table, a rule file or this code changes: <place>-<YYYYMMDD>-<hash>. The date is fixed
+    once per build: the date a tract was first built with this same hash (read from out's progress log and
+    manifest), else the start date of this run (started, default today). So a build or a one-tract rebuild that
+    crosses midnight with the same inputs keeps one version, and the tracts built before midnight are not stale."""
+    started = started or dt.date.today()
     h = hashlib.sha1()
     for p in sorted(paths.values()):
         if p.exists():
@@ -1892,7 +2145,24 @@ def data_version(place: str, paths: dict[str, Path]) -> str:
         rulesmod.SCHEMA_PATH,
     ):
         h.update(mod.read_bytes())
-    return f"{place}-{dt.date.today():%Y%m%d}-{h.hexdigest()[:10]}"
+    digest = h.hexdigest()[:10]
+    date = min([started.strftime("%Y%m%d"), *_version_dates(out, place, digest)])
+    return f"{place}-{date}-{digest}"
+
+
+def _version_dates(out: Path | None, place: str, digest: str) -> list[str]:
+    """Dates of the versions with this hash already in out's progress log or manifest."""
+    if out is None:
+        return []
+    pat = re.compile(rf"^{re.escape(place)}-(\d{{8}})-{re.escape(digest)}$")
+    found = [e.get("data_version") for e in read_progress(out).values()]
+    mpath = out / "manifest.json"
+    if mpath.exists():
+        try:
+            found.append(json.loads(mpath.read_text()).get("data_version"))
+        except (OSError, ValueError):
+            pass
+    return [m.group(1) for v in found if isinstance(v, str) and (m := pat.match(v))]
 
 
 def rule_dates(place: str) -> dict[str, str | None]:
@@ -1979,7 +2249,8 @@ def progress_note(out: Path, place: str, text: str) -> None:
 
 def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
     """What every lot of a run shares. The version covers the inputs, the cover file, the rule
-    files of this place and the code."""
+    files of this place and the code. It is computed once, at the start of the run, and keeps the date of the
+    tracts already built with the same hash (data_version)."""
     cov = cover_path(place.name)
     dem = terrainmod.dem_dir(place.name) / "SOURCES.json"
     vpaths = {**paths, **({"cover": cov} if cov else {}), **({"terrain": dem} if dem.exists() else {})}
@@ -1987,7 +2258,7 @@ def make_ctx(place: Place, paths: dict[str, Path]) -> Ctx:
         place.name,
         place.county_fips,
         place.crs,
-        data_version(place.name, vpaths),
+        data_version(place.name, vpaths, out_dir(place.name)),
         {
             **{k: file_date(p) for k, p in paths.items()},
             **source_dates(place.name),
@@ -2465,7 +2736,9 @@ def group_stats(g: pd.DataFrame) -> dict[str, Any]:
     out: dict[str, Any] = {"lots": int(len(g)), "allowed_today": _share(allowed)}
     for size in FIT_SIZES:
         out[f"fit_{size}"] = _share(fits & (sq >= size))
-    out["median_largest_sqft"] = float(sq[fits].median()) if fits.any() else 0.0
+    # Each lot held to the reporting ceiling, so a yard with no size cap reads as the ceiling, not as the yard
+    out["median_largest_sqft"] = float(sq[fits].clip(upper=LARGEST_CEILING_SQFT).median()) if fits.any() else 0.0
+    out["largest_over_ceiling"] = _share(fits & (sq > LARGEST_CEILING_SQFT))
     out["garage_candidate"] = _share(g["garage_present"])
     out["two_units"] = _share(g["two_units_today"] & allowed)
     out["fit_600_state_reform"] = _share(
@@ -2515,16 +2788,38 @@ def terrain_stats(g: pd.DataFrame) -> dict[str, Any]:
     return out
 
 
+def legal_type_mask(g: pd.DataFrame, name: str, s: str) -> pd.Series:
+    """Lots where one ADU form has a legal path under scenario s. The per-type path counts only on a lot the
+    resolver allows: on a not-addressed town whose path is a special exception for an unlisted ('similar') use, the
+    resolver keeps that path per type but reads the lot as not allowed, with a path to ask (TOWNS.md). The one
+    exception is a garage form held back only by the lot having no garage (type_paths), which the fit reports as
+    no_garage: it counts when no other form is open on the lot, so the lot is not a path-to-ask lot."""
+    ok = g[f"approval_{name}_{s}"].isin(OK_PATHS)
+    allowed = g[f"allowed_{s}"].astype(bool)
+    if name != "garage":
+        return ok & allowed
+    others = pd.Series(False, index=g.index)
+    for other in ("detached", "internal"):
+        col = f"approval_{other}_{s}"
+        if col in g.columns:
+            others |= g[col].isin(OK_PATHS)
+    no_garage = ~g["garage_present"].astype(bool) if "garage_present" in g.columns else pd.Series(False, index=g.index)
+    return ok & (allowed | (no_garage & ~others))
+
+
 def path_stats(g: pd.DataFrame) -> dict[str, dict[str, float]]:
-    """Per scenario: share with any legal path, per ADU type, and through the historic path."""
+    """Per scenario: share with any legal path, per ADU type, and through the historic path. A per-type share
+    counts a lot only where that form is legal on the lot (legal_type_mask), so it never exceeds 'allowed' except
+    for a garage form on a lot with no garage."""
     out = {}
     for s in SCENARIOS:
         row = {"allowed": _share(g[f"allowed_{s}"])}
         for name in ("detached", "internal", "garage"):
             col = f"approval_{name}_{s}"
             if col in g.columns:
-                row[f"{name}_legal"] = _share(g[col].isin(OK_PATHS))
-                row[f"{name}_by_right"] = _share(g[col] == "by_right")
+                legal = legal_type_mask(g, name, s)
+                row[f"{name}_legal"] = _share(legal)
+                row[f"{name}_by_right"] = _share(legal & (g[col] == "by_right"))
         if f"historic_path_{s}" in g.columns:
             row["historic_path"] = _share(g[f"historic_path_{s}"])
         row["detached_fits"] = _share(g[f"detached_fits_{s}"] & g[f"allowed_{s}"])
@@ -2542,7 +2837,11 @@ STATS_LABELS = {
     "paths": "per scenario: share with a legal path (by right, administrator or special exception) by ADU type, "
     "by right only, through the historic path, and where a detached unit fits",
     "fit_N": "a detached unit of N sq ft fits the yard and today's size cap",
-    "median_largest_sqft": "median largest detached footprint where one fits",
+    "median_largest_sqft": "median largest detached footprint where one fits, each lot held to "
+    f"{LARGEST_CEILING_SQFT:,.0f} sq ft (lots.largest_report_ceiling_sqft): with no size cap binding the unit the "
+    "largest is the whole open yard",
+    "largest_over_ceiling": f"a detached unit fits today and the largest is over {LARGEST_CEILING_SQFT:,.0f} sq ft "
+    "(no size cap holds it, so the yard is the limit)",
     "garage_candidate": "an accessory building of the garage size is on the lot",
     "two_units": "two detached units fit today",
     "top_limiting": "what stops the detached unit growing or fitting today",
@@ -2550,21 +2849,102 @@ STATS_LABELS = {
 # Approval caveats by place that the rule files do not carry yet.
 STATS_CAVEATS = {
     "chester_county": [
-        "Five towns, each on its own rule file (by_town). Zoning from the county's compiled 'working' layer: "
-        "map dates by town 2013 (Phoenixville, whose code was replaced in 2025), 2014 (West Vincent), 2018 (Malvern), "
-        "2021 (West Chester), 2024 (East Brandywine). West Vincent BV lots (conditional use) are left out.",
+        "Fourteen towns, each on its own rule file (by_town). Zoning from the county's compiled 'working' layer: "
+        "map dates by town 2005 (East Goshen), 2007 (North Coventry; West Caln, whose code was replaced in 2026), "
+        "2008 (East Nottingham), 2013 (Phoenixville, whose code was replaced in 2025), 2014 (West Vincent), "
+        "2017 (Westtown), 2018 (Malvern, Honey Brook), 2019 (East Coventry, Schuylkill, West Goshen), "
+        "2021 (West Chester), 2024 (East Brandywine). Lots in a district where the ADU is a conditional use "
+        "(West Vincent BV; West Caln SRR, RR, RC and MP) are left out.",
         "No living area in the open data: share-of-house caps are not checked, except Phoenixville's two thirds of "
         "the house footprint for an accessory building. House heights are DVRPC 2015 lidar estimates.",
     ],
     "centre_county": [
-        "College Township only. Zoning from the county's unofficial combined layer. Residential parcels are read as "
-        "one unit houses (the open data has no unit count), so a duplex reads as a house.",
+        "College Township and State College borough, each on its own rule file (by_town). Zoning from the county's "
+        "unofficial combined layer. Residential parcels are read as one unit houses (the open data has no unit "
+        "count), so a duplex reads as a house.",
     ],
     "montgomery_county": [
-        "Three towns, each on its own rule file (by_town). Building outlines are Microsoft's only; their model heights "
+        "24 towns, each on its own rule file (by_town). Lower Providence is left out: it adopted a new zoning "
+        "ordinance and map on 2026-11-05 and its rule file reads the old one. Zoning from the county's aggregated municipal zoning layer, "
+        "map dates by town from 2014 (Norristown, West Norriton) to 2025 (Douglass). Lots whose path is a conditional "
+        "use (Skippack VC, GC and LI; Conshohocken R-O; Upper Gwynedd IN) are left out. Seven towns (Cheltenham, "
+        "Norristown, Upper Merion, Horsham, Springfield, Skippack, Conshohocken) have no ADU rule: a use variance.",
+        "Building outlines are Microsoft's only; their model heights "
         "are not used. House heights are DVRPC 2015 lidar estimates of the matching outline; a house with no match "
         "(new since 2015, or outlines that disagree) has no height, so tests against it read not checked. No living "
         "area: share-of-house caps are not checked.",
+    ],
+    "lancaster_county": [
+        "Eleven towns, each on its own rule file (by_town), zoning from the county's compiled layer "
+        "(Zoning_Authoritative, map dates 2018 to 2026 by town). East Donegal is left out: its ADU path is a "
+        "conditional use, or a reading its rule file marks secondary. East Hempfield's rule file is drafted, so it "
+        "is left out. Lots in a district a town's rule file does not name (West Hempfield RA, West Lampeter TV, "
+        "Warwick R-1, R-2 and RE) take the file's fallback, often a variance. Lancaster city and West Earl have no ADU "
+        "text in their codes: their lots read the code's unlisted-use path (Lancaster city 300-17), not an ADU rule.",
+        "Units from the assessor's land use code; Lancaster city rows are cut from outlines drawn across a whole row. "
+        "No living area and no building height in the open data: share-of-house caps and height tests read not "
+        "checked. The city's Heritage Conservation District is a flag only.",
+    ],
+    "erie_county": [
+        "Erie city only. Millcreek and Harborcreek are left out: no public layer of their current zoning. "
+        "Zoning from the city's 2023 layer. Microsoft outlines (they miss many small garages). Living area from "
+        "the county assessor layer. No building heights: height tests read not checked. By right rests on one "
+        "reading of the lot area per family rule (205 table), held as secondary in the rule file. A fit is any unit at "
+        "least 12 ft wide, so small units count; Microsoft outlines miss many small garages.",
+    ],
+    "cumberland_county": [
+        "Three towns on the county's zoning layers (one per town; the county says they may not be the adopted map): "
+        "Upper Allen, Lower Allen and Camp Hill. Lots in a district the town's rule file has no row for are left out "
+        "(Upper Allen PRD, VIL, PO; Lower Allen R3; Camp Hill DT, CN). Carlisle (no ADU path in its code) is left out.",
+        "Microsoft outlines; about 12% of Upper and Lower Allen parcels have none and are left out. Living area from "
+        "the assessor. No building heights: height tests read not checked.",
+    ],
+    "berks_county": [
+        "Amity township only: its family member suite is by right inside or attached to the house in RC, LDR, MDR and "
+        "RV. PBOI lots (conditional use) are left out. Reading (prohibited), Spring and Exeter (no ADU text) and "
+        "Maidencreek (conditional use) have no lot path and are left out.",
+        "Information is based on geospatial data from the County of Berks. Microsoft outlines, no heights; living "
+        "area from the county assessment file.",
+    ],
+    "northampton_county": [
+        "Five towns on their own rule files. Zoning: Bethlehem city layer, Easton General Code 2022 map, LVPC regional "
+        "layer for Bethlehem township, Lower Saucon and Wilson. Bethlehem's Lehigh County part (about 5,400 houses) "
+        "and its RR-F, RR-T and RT-SH overlay lots are not included. Forks (conditional use) and Hanover (no path) "
+        "are left out. Easton has no ADU text in its code. Bethlehem's path is a family-only 'Unit for Care of "
+        "Relative' (detached only as a removable modular cottage, deed restriction, permit renewed each year).",
+        "Microsoft outlines, no heights; living area from the county assessor.",
+    ],
+    "bucks_county": [
+        "Eight towns on the county Planning Commission's compiled zoning layer, each on its own rule file. Lots in a "
+        "district the town's rule file does not name are left out. Bensalem, Middletown, Northampton, Falls, Lower "
+        "Makefield, Bristol borough and Quakertown (no ADU text) are left out.",
+        "Microsoft outlines with DVRPC 2015 lidar heights. Units from the assessor's land use code; no living area, so "
+        "share-of-house caps are not checked. County data: not for commercial use or resale.",
+    ],
+    "delaware_county": [
+        "Nineteen towns on the county's compiled zoning layer (map dates by town, some old: Upper Darby 2010, Glenolden "
+        "2004, Yeadon 2002). Thirteen have no ADU text in their code: their lots read a use variance today. Newtown and "
+        "Lansdowne (drafted rule files) are left out.",
+        "No assessor data (the county's service needs a token): no address, unit count or living area. House type from "
+        "DVRPC Land Use 2023 and the outlines; a twin or row in a multifamily area is assumed to be one unit, and "
+        "free-standing houses there are left out. Microsoft outlines with DVRPC 2015 lidar heights.",
+    ],
+    "york_county": [
+        "Seven towns on the county Planning Commission's zoning layer, each on its own rule file: York city, York "
+        "township, Springettsbury, Hanover, Newberry, East Manchester and Lower Windsor. Penn township is left out: it "
+        "replaced its zoning map in 2025 and the county layer still draws the old one. West Manchester, Spring Garden "
+        "and Carroll (no ADU text) and West Manheim (conditional use) are left out.",
+        "County outlines (no heights) plus Microsoft outlines where the county misses one. Living area from the "
+        "assessor. Few York city alleys are in the street data, so many lots that back onto an alley read no alley.",
+    ],
+    "dauphin_county": [
+        "Three towns, each on its own rule file (by_town) and its own government's zoning layer: Harrisburg (city "
+        "'Zoning 2025'), Lower Paxton (township layer, edited 2025), Swatara (General Code map of 2026-04-22). "
+        "Lower Paxton lots in OSD and TND, which the rule file does not name, are left out. Susquehanna township "
+        "(no ADU path in its code) is left out.",
+        "Units from the assessor's land use code: one unit houses only, split into detached, twin and row by the "
+        "outlines. No living area and no building height in the open data: share-of-house caps and height tests "
+        "read not checked.",
     ],
     "pittsburgh": [
         "A detached ADU in a side or rear yard needs an Administrator's Exception (925.06.G), "

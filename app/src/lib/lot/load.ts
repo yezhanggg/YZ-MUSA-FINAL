@@ -18,7 +18,7 @@ export const CACHE_TRACTS = 12;
 
 /** County FIPS (state + county) -> place folder. Only places with built lot files are listed. A city place is one
  * town; a county place (chester_county) holds the lots of several towns (lib/lot/towns.ts). */
-export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia', '42077': 'allentown', '42029': 'chester_county', '42027': 'centre_county', '42091': 'montgomery_county' };
+export const PLACE_BY_COUNTY: Readonly<Record<string, string>> = { '42003': 'pittsburgh', '42101': 'philadelphia', '42077': 'allentown', '42029': 'chester_county', '42027': 'centre_county', '42091': 'montgomery_county', '42043': 'dauphin_county', '42049': 'erie_county', '42041': 'cumberland_county', '42095': 'northampton_county', '42017': 'bucks_county', '42133': 'york_county', '42045': 'delaware_county', '42071': 'lancaster_county' };
 
 export type LotLoadErrorKind = 'not_found' | 'offline' | 'server' | 'bad_data' | 'version_mismatch' | 'aborted';
 
@@ -99,6 +99,37 @@ function envBase(): string | undefined {
 export function lotDataUrl(base: string | undefined = envBase()): string {
   const b = base && base.trim() ? base.trim() : DEFAULT_LOT_DATA_URL;
   return b.endsWith('/') ? b : `${b}/`;
+}
+
+/** Per-place base URLs, for a bundle split over more than one host (the 1 GB Pages limit).
+ *  VITE_LOT_DATA_URLS="lancaster_county=https://x.github.io/lots-b/lots/;erie_county=..." . A place not named uses the
+ *  one base URL. Only applies when the caller uses the default base (tests that pass a base are not redirected). */
+export function parsePlaceBases(raw: string | undefined | null): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const part of (raw ?? '').split(/[;,\s]+/)) {
+    const i = part.indexOf('=');
+    if (i <= 0) continue;
+    const place = part.slice(0, i).trim();
+    const url = part.slice(i + 1).trim();
+    if (/^[a-z0-9_]+$/.test(place) && url) out[place] = lotDataUrl(url);
+  }
+  return out;
+}
+
+function envPlaceBases(): Record<string, string> {
+  return parsePlaceBases(typeof import.meta.env === 'object' ? import.meta.env.VITE_LOT_DATA_URLS : undefined);
+}
+
+/** The folder URL of one place, ending in a slash: `<base><place>/`, or the place's own base when one is set. */
+export function placeDataUrl(place: string, base: string = lotDataUrl(), placeBases: Record<string, string> = envPlaceBases()): string {
+  const own = base === lotDataUrl() ? placeBases[place] : undefined;
+  return `${own ?? base}${place}/`;
+}
+
+/** URL of a file by its path under the base ("pittsburgh/addresses/index.json.gz"), following placeDataUrl. */
+export function lotFileUrl(path: string, base: string = lotDataUrl()): string {
+  const i = path.indexOf('/');
+  return i > 0 ? `${placeDataUrl(path.slice(0, i), base)}${path.slice(i + 1)}` : `${base}${path}`;
 }
 
 /** Place folder of a tract GEOID (11 digits, starts with the 5 digit county FIPS). */
@@ -390,7 +421,7 @@ function settings(opts: LoadOptions) {
 }
 
 async function readTract(geoid: string, place: string, base: string, f: Fetcher, cache: TractCache, strict: boolean, signal: AbortSignal): Promise<TractLots> {
-  const root = `${base}${place}/`;
+  const root = placeDataUrl(place, base);
   const manifestUrl = `${root}manifest.json`;
   const manifestP = cache.manifest(manifestUrl, async () => asManifest(await getJson(manifestUrl, f), manifestUrl));
   const headUrl = `${root}detail/${geoid}.json.gz`;
@@ -476,7 +507,7 @@ export async function loadLot(lotId: string, geoid: string, opts: LoadOptions = 
  *  Same fetch, retry and errors as the tract files. */
 export function fetchLotFile(path: string, opts: LoadOptions = {}): Promise<unknown> {
   const { base, f } = settings(opts);
-  return getJson(`${base}${path}`, f, opts.signal);
+  return getJson(lotFileUrl(path, base), f, opts.signal);
 }
 
 /** Every lot record in memory (the assistant's address search in the browser). */
@@ -493,12 +524,12 @@ export async function lotTractOf(lotId: string, opts: LoadOptions = {}): Promise
   let p = tractIndex.get(key);
   if (!p) {
     // The published bundle names a gzip copy in the manifest; a build on disk has the plain lot_tract.json.
-    const manifestUrl = `${base}${place}/manifest.json`;
+    const manifestUrl = `${placeDataUrl(place, base)}manifest.json`;
     const cache = opts.cache ?? sharedCache;
     p = cache
       .manifest(manifestUrl, async () => asManifest(await getJson(manifestUrl, f), manifestUrl))
       .then((m) => m.published?.lot_tract ?? 'lot_tract.json', () => 'lot_tract.json')
-      .then((name) => getJson(`${base}${place}/${name}`, f, opts.signal))
+      .then((name) => getJson(`${placeDataUrl(place, base)}${name}`, f, opts.signal))
       .then((v) => (isObj(v) ? (v as Record<string, string>) : null))
       .catch(() => null);
     tractIndex.set(key, p);

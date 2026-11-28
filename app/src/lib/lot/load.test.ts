@@ -99,7 +99,7 @@ describe('settings', () => {
   it('finds the place folder from the county in the GEOID', () => {
     expect(placeOfGeoid(T1)).toBe('pittsburgh');
     expect(placeOfGeoid('42101000102')).toBe('philadelphia');
-    expect(placeOfGeoid('42041010100')).toBeNull();
+    expect(placeOfGeoid('42069010100')).toBeNull(); // Lackawanna: no lot data
     expect(placeOfGeoid('bad')).toBeNull();
   });
 });
@@ -186,7 +186,7 @@ describe('loadTractLots', () => {
     const { f, calls } = server(inlineFiles());
     expect((await failure(loadTractLots('42003999999', opts(f)))).kind).toBe('not_found');
     const before = calls.length;
-    const e = await failure(loadTractLots('42041010100', opts(f)));
+    const e = await failure(loadTractLots('42069010100', opts(f))); // Lackawanna: no lot data
     expect(e.kind).toBe('not_found');
     expect(e.userMessage).toBe('We have no lot data for this place yet.');
     expect(calls.length).toBe(before);
@@ -340,5 +340,23 @@ describe('packed tract files (tools/pack_lots.py, pack1)', () => {
 
   it('refuses a packing it does not know', () => {
     expect(() => unpackRecords({ pack: 'pack9', lots: [] })).toThrow(LotLoadError);
+  });
+});
+
+describe('per-place base URLs (bundle split over hosts)', () => {
+  it('parses place=url pairs and ignores junk', async () => {
+    const { parsePlaceBases } = await import('./load');
+    expect(parsePlaceBases('lancaster_county=https://a.example/lots-b/lots;erie_county=https://b.example/x/, bad, =x, Bad=y')).toEqual({
+      lancaster_county: 'https://a.example/lots-b/lots/',
+      erie_county: 'https://b.example/x/',
+    });
+    expect(parsePlaceBases(undefined)).toEqual({});
+  });
+  it('sends a named place to its own host and the rest to the base', async () => {
+    const { placeDataUrl, lotDataUrl } = await import('./load');
+    const own = { lancaster_county: 'https://b.example/lots/' };
+    expect(placeDataUrl('lancaster_county', lotDataUrl(), own)).toBe('https://b.example/lots/lancaster_county/');
+    expect(placeDataUrl('pittsburgh', lotDataUrl(), own)).toBe(`${lotDataUrl()}pittsburgh/`);
+    expect(placeDataUrl('lancaster_county', 'https://test.example/', own)).toBe('https://test.example/lancaster_county/');
   });
 });

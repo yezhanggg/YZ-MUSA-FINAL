@@ -45,7 +45,7 @@
       "Carriage houses and flex flats (living space over a detached garage) are separate uses, permitted only in the Neighborhood Design District",
       "R-2 and R-3 set lot area per dwelling unit for some uses. The code does not say whether an ADU counts"
     ],
-    "notes": "Zoning office: Community Development Department, https://www.lowerpaxton-pa.gov/169/Community-Development. Pending: Ord. 2026-02 adopted 2026-05-20, not yet in the online code, does not touch ADUs. The definition of conversion dwelling says ADUs and in-law suites are 'primarily intended to house family members'. This is descriptive, not a use rule. Second reading 2026-11-26 (G0): 203-202 ADU definition ('attached or detached to the primary dwelling'), Table of Authorized Accessory Uses (ADU P in nine districts) and 203-314C(2) ('No part of an accessory garage shall be occupied as a residential living area') read again in eCode360 and match the file. New Laws still list only Ord. No. 26-02 (2026-05-20, no ADU text). The two open points are disputes the code does not settle and stay secondary: a full garage conversion against 203-314C(2) (garage forms left out), and 2 or 4 parking spaces (203-903 Table 1)."
+    "notes": "Zoning office: Community Development Department, https://www.lowerpaxton-pa.gov/169/Community-Development. Pending: Ord. 2026-02 adopted 2026-05-20, not yet in the online code, does not touch ADUs. The definition of conversion dwelling says ADUs and in-law suites are 'primarily intended to house family members'. This is descriptive, not a use rule. Second reading 2026-11-26 (G0): 203-202 ADU definition ('attached or detached to the primary dwelling'), Table of Authorized Accessory Uses (ADU P in nine districts) and 203-314C(2) ('No part of an accessory garage shall be occupied as a residential living area') read again in eCode360 and match the file. New Laws still list only Ord. No. 26-02 (2026-05-20, no ADU text). The two open points are disputes the code does not settle and stay secondary: a full garage conversion against 203-314C(2) (garage forms left out), and 2 or 4 parking spaces (203-903 Table 1). 2026-11-28: envelope.accessory_cap_binds_adu set true from the file's 2026-11-11 reading of 203-202 and 203-313 (eCode360 refused a fresh read, HTTP 403, so the text was not read again)."
   },
   "adu": {
     "term": {
@@ -356,6 +356,14 @@
       "verified_on": "2026-11-11",
       "confidence": "verified",
       "note": "Residential lots under two acres: 'maximum total floor area of all accessory buildings: 1,000 square feet'. At most two accessory buildings."
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "203-202, 203-313C, 203-313G, 203-313H",
+      "url": "https://ecode360.com/47371092",
+      "verified_on": "2026-11-11",
+      "confidence": "secondary",
+      "note": "The file reads a detached ADU as an accessory structure (its yards, front yard bar and height come from 203-313C and 203-313H), and 203-313G caps 'all accessory buildings' on residential lots under two acres at 1,000 sq ft in total. The ADU text sets no size of its own, so the cap is read as binding a unit in an accessory building. The total counts every accessory building on the lot, and the two-acre limit is not a lot test here, so on a lot of two acres or more the cap may not hold: ask the zoning officer."
     },
     "setback_front_ft": {
       "value": null,

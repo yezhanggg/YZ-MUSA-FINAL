@@ -157,3 +157,10 @@ describe('place card wording (smoke test of Nov 16)', () => {
     expect(placeAnswer(row('Reading city'), 'hb2186').sub).toBe('Under the state bill. Today: not allowed.');
   });
 });
+
+describe('pass 30: a disputed ADU status', () => {
+  it('reads Disputed, never allowed or barred', () => {
+    const base = parsePlaces([{ geoid: '4200356384', name: "O'Hara township", county: 'Allegheny', status: 'limited', tier: 'verified', approval: null, unit_types: ['internal'], status_detail: 'ADU status disputed: the code supports two readings, so ask the zoning officer, family only' }]).rows[0];
+    expect(placeAnswer(base, 'current')).toMatchObject({ answer: 'approval', title: 'Disputed' });
+  });
+});

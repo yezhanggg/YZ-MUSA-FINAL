@@ -1,0 +1,872 @@
+{
+  "provenance": {
+    "jurisdiction": "Whitpain township",
+    "instrument": "Code of the Township of Whitpain, Chapter 160 Zoning (Whitpain Township Zoning Ordinance of 1950, as amended), with 160-207A as enacted by Ord. No. 4-269 of 9-15-2026",
+    "kind": "place",
+    "status": "in_force",
+    "status_detail": "The ADU rule is 160-207A, added by Ord. No. 4-269, enacted 9-15-2026 and 'effective immediately upon enactment' (Section 21). Read in the signed copy on the township website (Ordinances page) and in the Board of Supervisors minutes of 9-15-2026 (hearing held, approved unanimously). The ADU definition (160-7B) and the family definition come from Ord. No. 4-260 of 10-18-2022. Ord. No. 4-270 (10-6-2026, R-3B and a rezoning) was opened and has no ADU text. eCode360 (the official online code) answers 403 to the fetch tool, so the district figures were read in the Zoneomics copy of Chapter 160.",
+    "effective_date": "2026-09-15",
+    "source_urls": [
+      "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "https://www.whitpaintownship.org/DocumentCenter/View/3675/Ordinance-No-4-260---Ord-Updates-Inc-Family-Definition",
+      "https://www.whitpaintownship.org/AgendaCenter/ViewFile/Minutes/_09152026-767",
+      "https://www.whitpaintownship.org/AgendaCenter/ViewFile/Agenda/_09152026-767",
+      "https://www.whitpaintownship.org/AgendaCenter/ViewFile/Agenda/_08112026-757",
+      "https://www.whitpaintownship.org/218/Ordinances",
+      "https://www.whitpaintownship.org/DocumentCenter/View/5474/Ordinance-No-4-270---R-3BAmendment-and-Rezoning",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+      "https://www.zoneomics.com/code/whitpain-township-PA/chapter_42",
+      "https://ecode360.com/10515979"
+    ],
+    "verified_on": "2026-11-26",
+    "county": "Montgomery",
+    "municipality_type": "township",
+    "geoid": "4209184888",
+    "code_host": "ecode360",
+    "code_url": "https://ecode360.com/10515979",
+    "code_current_through": null,
+    "code_current_through_note": "eCode360 could not be read (403 to the fetch tool). Ord. No. 4-269 (9-15-2026) and 4-270 (10-6-2026) are on the township Ordinances page and may not be codified yet.",
+    "code_caution": "The ADU rule (160-207A) was added by Ord. No. 4-269 on 9-15-2026 and was read in the signed ordinance, not in the online code, which may not show it yet. District figures were read in the Zoneomics copy of Chapter 160, not on eCode360.",
+    "checks": [
+      "One ADU on a lot with a single-family detached dwelling in R-1, R-2, R-4, R-5, R-6 and R-7 (160-207A(1)). No other district is listed",
+      "Only family of the people living in the house may live in or use the unit, and it may not be rented (160-207A(2)). Family is defined in 160-7B",
+      "If the unit has plumbing, one more sewer Equivalent Dwelling Unit (EDU) must be acquired for it (160-207A(3))",
+      "Two more off-street parking spaces for the unit (160-207A(4))",
+      "The unit must be stationary and of permanent construction (160-207A(5)). No unit on wheels",
+      "A resident of the unit may run a no-impact home-based business, not a low-impact one or other home occupation (160-207A(6))",
+      "A lot in a homeowners' or community association needs the association's written permission, given to the Township (160-207A(7))",
+      "No size cap for the unit in 160-207A. A detached accessory building stands in the rear yard only, 10 ft from the house (160-204D), and in R-1, R-2 and R-7 accessory buildings may take at most 20% of the rear yard (160-19, 160-36, 160-83C(2))",
+      "Green area (160-214) and floodplain rules (Article XXV) were not read"
+    ],
+    "notes": "Zoning office: Whitpain Township, https://www.whitpaintownship.org/. Read on 2026-11-26: the signed Ord. No. 4-269 (24 pages, scanned, read as images, Section 13 on pages 7 and 8), the 9-15-2026 minutes (OCR of the scan), the signed Ord. No. 4-260 (definitions of accessory dwelling unit and family) and the Zoneomics copy of Articles V, VII, XI, XII, XIII and XIV. Second pass on 2026-11-26: each figure and quote re-read against the ordinance page images and a second Zoneomics read of each district article. Readings for the zoning officer: (1) 160-207A(1) says one ADU 'shall be permitted' in the six districts and names no hearing, so the file reads a zoning permit (by right). The district use lists (for example 160-13, 160-30) still say 'for any one of the following purposes and no other' and do not name an ADU. The file reads 160-207A, the later and more specific text, with the repeal clause of Ord. 4-269 (Section 19), as controlling. (2) 160-207A(2) limits the unit to 'Family, as defined by this Chapter, of the occupants of the principal dwelling'. The family definition covers relatives by blood, marriage or adoption with domestic servants or foster children, or a group of up to five unrelated people living as one household. The file reads the rule as relatives (and household staff) of the house's occupants. Whether a group of unrelated people could qualify is for the zoning officer. (3) The ADU definition (160-7B) is 'a dwelling unit ... sharing a lot with a principal building'. It does not name a form, so the file allows a unit inside or attached to the house as well as a detached one. 160-207B separately allows a second kitchen in the house without a second household. (4) The ADU text sets no height. A unit in an accessory building is read as taking the district accessory building rules (10 ft, up to 16 ft with more setback)."
+  },
+  "adu": {
+    "term": {
+      "value": "accessory dwelling unit",
+      "section": "160-7B 'Accessory dwelling unit', 160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/3675/Ordinance-No-4-260---Ord-Updates-Inc-Family-Definition",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'A dwelling unit providing complete housekeeping facilities for one (1) family sharing a lot with a principal building that may be used independently of the use of the principal building.' (Ord. No. 4-260, 2022)"
+    },
+    "status": {
+      "value": "family_only",
+      "section": "160-207A(1), (2)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'One (1) Accessory Dwelling Unit shall be permitted on any single lot containing a single-family detached dwelling' in six districts. 'An Accessory Dwelling Unit shall not be used as a rental unit and shall be limited to occupation and/or use by Family, as defined by this Chapter, of the occupants of the principal dwelling.'"
+    },
+    "scope_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-4",
+        "R-5",
+        "R-6",
+        "R-7"
+      ],
+      "section": "160-207A(1)(a) to (f)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "R-1 Residential, R-2 Residential, R-4 Village Preservation, R-5 and R-6 Agricultural/Rural Residence, R-7 Residential."
+    },
+    "status_outside": {
+      "value": "not_addressed",
+      "section": "160-207A(1)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "160-207A lists only six districts. Elsewhere (R-3, R-3A, R-3B, R-8, R-9 and the nonresidential districts) the district use lists name no ADU, so a use variance is the path."
+    }
+  },
+  "approval": {
+    "path": {
+      "value": "by_right",
+      "section": "160-207A(1)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "'shall be permitted'. No special exception or conditional use is named, so a zoning permit."
+    },
+    "fallback_path": {
+      "value": "variance",
+      "section": "160-207A(1), Article XXXI",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "A unit outside the six districts, on a lot without a single-family detached dwelling, or one that fails a district rule needs a variance from the Zoning Hearing Board (MPC 910.2)."
+    }
+  },
+  "eligibility": {
+    "zoning_districts": {
+      "value": [
+        "R-1",
+        "R-2",
+        "R-4",
+        "R-5",
+        "R-6",
+        "R-7"
+      ],
+      "section": "160-207A(1)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified"
+    },
+    "building_types": {
+      "value": [
+        "detached"
+      ],
+      "section": "160-207A(1)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'any single lot containing a single-family detached dwelling'. Not a twin, duplex or row house (R-4 allows those)."
+    },
+    "existing_structure_only": {
+      "value": false,
+      "section": "160-7B, 160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No rule limits the unit to an existing building."
+    },
+    "historic_bypass": {
+      "value": false,
+      "section": "160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No historic path in the ADU text."
+    },
+    "gates": {
+      "value": [
+        {
+          "kind": "utilities",
+          "condition": "If any plumbing is proposed for the unit, one more sewer Equivalent Dwelling Unit (EDU) must be acquired for it, on top of the EDUs that already serve the lot.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "160-207A(3)",
+          "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment"
+        },
+        {
+          "kind": "design",
+          "condition": "The unit must be stationary and of permanent construction. A unit on wheels does not qualify.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "160-207A(5)",
+          "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment"
+        },
+        {
+          "kind": "other",
+          "condition": "A resident of the unit may run a no-impact home-based business, but not a low-impact home-based business or other home occupation.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "160-207A(6)",
+          "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment"
+        },
+        {
+          "kind": "other",
+          "condition": "If the lot is in a homeowners' or other community association, written permission for the unit from the association must be given to the Township.",
+          "effect": "condition",
+          "applies_to": null,
+          "districts": null,
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "160-207A(7)",
+          "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment"
+        },
+        {
+          "kind": "size",
+          "condition": "In R-1, R-2 and R-7 accessory buildings may take at most 20% of the rear yard area.",
+          "effect": "condition",
+          "applies_to": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "districts": [
+            "R-1",
+            "R-2",
+            "R-7"
+          ],
+          "building_types": null,
+          "when": "always",
+          "test": null,
+          "section": "160-19, 160-36, 160-83C(2)",
+          "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5"
+        }
+      ],
+      "section": "160-207A(3), (5) to (7)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified"
+    }
+  },
+  "form": {
+    "types_allowed": {
+      "value": [
+        "internal",
+        "attached",
+        "detached_new",
+        "garage_conversion",
+        "over_garage"
+      ],
+      "section": "160-7B, 160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "The definition and 160-207A name no form. 'sharing a lot with a principal building' and 'stationary and of permanent construction'. Read as any form."
+    }
+  },
+  "envelope": {
+    "max_height_ft": {
+      "value": 10,
+      "section": "160-21, 160-38, 160-55F(1), 160-62, 160-71, 160-83C(1)",
+      "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "District accessory building rule, not ADU text: 'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'."
+    },
+    "max_height_where": {
+      "value": [
+        {
+          "max_height_ft": 16,
+          "where": "with more setback from both the side and rear lines than the district accessory setback, 1 ft more height for each 2 ft more setback (16 ft with 12 ft more). Never over 25 ft from grade to the highest point",
+          "section": "160-21, 160-38, 160-55F(1), 160-62, 160-71, 160-83C(1)",
+          "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5"
+        }
+      ],
+      "section": "160-21",
+      "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "Same in R-4 (160-55F(1))."
+    },
+    "accessory_structure_max_height_ft": {
+      "value": 10,
+      "section": "160-21, 160-38, 160-55F(1), 160-62, 160-71, 160-83C(1)",
+      "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "10 ft, and 15 ft from grade to the highest point (chimneys and similar projections included)."
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "160-207A, 160-21",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "160-207A sets no height or yard, so a unit in an accessory building is read as taking the accessory building rules."
+    },
+    "accessory_rear_yard_only": {
+      "value": true,
+      "section": "160-204D, 160-21",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'Accessory buildings may be permitted within a rear yard only, if entirely separated from the principal building by no less than 10 feet' (160-204D as amended by Ord. 4-269). Each district's accessory rule also says 'in the rear yard only'."
+    },
+    "front_yard_barred": {
+      "value": true,
+      "section": "160-204D",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "Rear yard only."
+    },
+    "separation_ft": {
+      "value": 10,
+      "section": "160-204D",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'entirely separated from the principal building by no less than 10 feet'. Not required for an open structure such as a pergola."
+    },
+    "setback_side_ft": {
+      "value": null,
+      "section": "160-21, 160-38, 160-55F(1), 160-62, 160-71, 160-83C(1)",
+      "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "By district: 10 ft in R-1, R-5 and R-6, 5 ft in R-2, R-4 and R-7 (district rows)."
+    },
+    "setback_rear_ft": {
+      "value": null,
+      "section": "160-21, 160-38, 160-55F(1), 160-62, 160-71, 160-83C(1)",
+      "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "By district, as the side yard."
+    }
+  },
+  "size": {
+    "max_sqft": {
+      "value": null,
+      "section": "160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No size cap in 160-207A."
+    },
+    "max_share_of_house": {
+      "value": null,
+      "section": "160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No share cap in 160-207A."
+    },
+    "min_sqft": {
+      "value": null,
+      "section": "160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "No minimum."
+    }
+  },
+  "use": {
+    "family_only": {
+      "value": true,
+      "section": "160-207A(2), 160-7B 'Family'",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'shall be limited to occupation and/or use by Family, as defined by this Chapter, of the occupants of the principal dwelling.'"
+    },
+    "occupancy": {
+      "value": "Only family of the people who live in the house: relatives by blood, marriage or adoption, with their domestic servants or foster children. The unit may not be rented. The family definition also covers up to five unrelated people living as one household, and whether such a group qualifies is not settled.",
+      "section": "160-207A(2), 160-7B 'Family'",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary"
+    },
+    "owner_occupancy": {
+      "value": false,
+      "section": "160-207A",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No owner rule. The unit is tied to the family of whoever lives in the house, and it may not be rented."
+    },
+    "max_adus": {
+      "value": 1,
+      "section": "160-207A(1)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'One (1) Accessory Dwelling Unit shall be permitted on any single lot'."
+    }
+  },
+  "parking": {
+    "spaces_required": {
+      "value": 2,
+      "section": "160-207A(4)",
+      "url": "https://www.whitpaintownship.org/DocumentCenter/View/5458/Ordinance-No-4-269---Zoning-Amendment",
+      "verified_on": "2026-11-26",
+      "confidence": "verified",
+      "note": "'Two (2) additional off-street parking spaces shall be required for the Accessory Dwelling Unit.' The house's own spaces (Article XXVII) were not read."
+    }
+  },
+  "districts": {
+    "R-1": {
+      "min_lot_sqft": {
+        "value": 30000,
+        "section": "160-14",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 30,000 square feet and a lot width of not less than 150 feet at the building line'."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "160-15",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a minimum of 50 feet'. The Planning Commission may allow an average of 45 ft (40 ft at least) on three or more contiguous lots."
+      },
+      "setback_side_ft": {
+        "value": 45,
+        "section": "160-17",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family dwelling: two side yards, aggregate at least 100 ft, 'neither side yard shall be less than 45 feet wide'."
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "160-17",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-17",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "160-19",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'There shall be a rear yard of not less than 75 feet in depth.' Accessory buildings may take up to 20% of the rear yard."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-22",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'No building or structure shall be erected to a height in excess of 40 feet.'"
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "160-21",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 10 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "160-21",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-21",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_5",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      }
+    },
+    "R-2": {
+      "min_lot_sqft": {
+        "value": 12500,
+        "section": "160-31",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'A lot area of not less than 12,500 square feet and a lot width of not less than 100 feet at the building line'."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "160-32",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 25,
+        "section": "160-34",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "One-family detached: aggregate at least 60 ft, 'Neither side yard shall be less than 25 feet wide.'"
+      },
+      "setback_sides_total_ft": {
+        "value": 60,
+        "section": "160-34",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-34",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "160-36",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'not less than 50 feet in depth'. Accessory buildings may take up to 20% of the rear yard."
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-39",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "160-38",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 5 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "160-38",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-38",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_7",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      }
+    },
+    "R-4": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family detached column of the 160-56A table: lot area 4,000 sq ft per dwelling unit, width 40 ft."
+      },
+      "setback_front_ft": {
+        "value": 15,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 5,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 15,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-56B",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "160-55F(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 5 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "160-55F(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-55F(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      },
+      "max_building_coverage": {
+        "value": 0.45,
+        "section": "160-56A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_11",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      }
+    },
+    "R-5": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "160-61C",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Minimum lot size per dwelling unit: 80,000 square feet'. 65,000 sq ft for a tract held on the effective date of Article XII that is too small for a rural cluster subdivision. Rural cluster lots (160-66) have their own figures. Impervious cover: see 160-214C (not read)."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "160-61B",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'Minimum building setback from street right-of-way line: 75 feet.'"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "160-61E",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-63",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "40 ft, agricultural buildings excepted."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "160-62",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 10 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "160-62",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-62",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_12",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      }
+    },
+    "R-6": {
+      "min_lot_sqft": {
+        "value": 80000,
+        "section": "160-70, 160-61C",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary",
+        "note": "160-70: 'all area regulations set forth in § 160-61 shall apply in the R-6 District', except 160-75, 160-78 and 160-80 (cluster, golf course and other developments). The figures are R-5's."
+      },
+      "setback_front_ft": {
+        "value": 75,
+        "section": "160-70, 160-61B",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary"
+      },
+      "setback_side_ft": {
+        "value": 40,
+        "section": "160-70, 160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary"
+      },
+      "setback_sides_total_ft": {
+        "value": 100,
+        "section": "160-70, 160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-70, 160-61F, G",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 75,
+        "section": "160-70, 160-61E",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-72",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "secondary",
+        "note": "40 ft, agricultural buildings excepted."
+      },
+      "accessory_setback_side_ft": {
+        "value": 10,
+        "section": "160-71",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 10 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 10,
+        "section": "160-71",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-71",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_13",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      }
+    },
+    "R-7": {
+      "min_lot_sqft": {
+        "value": 15000,
+        "section": "160-83A",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Single-family detached: 15,000 sq ft and 100 ft wide at the building line. Lots under 160-85 and 160-85.1 (conditional use) differ."
+      },
+      "setback_front_ft": {
+        "value": 50,
+        "section": "160-83B(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_ft": {
+        "value": 20,
+        "section": "160-83B(2), (3)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_sides_total_ft": {
+        "value": 45,
+        "section": "160-83B(2), (3)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "setback_side_is_each_side": {
+        "value": true,
+        "section": "160-83B(2), (3)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Neither side yard may be less than the one-side figure."
+      },
+      "setback_rear_ft": {
+        "value": 50,
+        "section": "160-83B(4)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "principal_max_height_ft": {
+        "value": 40,
+        "section": "160-83B(6)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_setback_side_ft": {
+        "value": 5,
+        "section": "160-83C(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "Accessory building or structure 'no closer to the side or rear line of the lot than 5 feet', rear yard only."
+      },
+      "accessory_setback_rear_ft": {
+        "value": 5,
+        "section": "160-83C(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      },
+      "accessory_structure_max_height_ft": {
+        "value": 10,
+        "section": "160-83C(1)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified",
+        "note": "'a maximum height of 10 feet, but not exceeding 15 feet measured from grade to the highest point'. Up to 16 ft (25 ft to the highest point) with 1 ft more height for each 2 ft more setback from both the side and rear lines."
+      },
+      "max_building_coverage": {
+        "value": 0.2,
+        "section": "160-83B(5)",
+        "url": "https://www.zoneomics.com/code/whitpain-township-PA/chapter_14",
+        "verified_on": "2026-11-26",
+        "confidence": "verified"
+      }
+    }
+  }
+}

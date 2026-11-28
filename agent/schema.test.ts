@@ -21,11 +21,17 @@ describe('system prompt', () => {
     ['says what a flag means and who reviews it', /flags_that_matter/],
     ['sends HB 2186 for this lot to get_lot_rules changes_from_today', /HB 2186[\s\S]*get_lot_rules with scenario state_reform[\s\S]*changes_from_today/],
     ['redraws the unit with set_unit, then tests it', /action set_unit[\s\S]*then test_unit_on_lot/],
+    ['sends questions about the tool itself to get_methods, then search_tool_docs, with a cited document', /about this tool itself[\s\S]*get_methods first, then search_tool_docs[\s\S]*cite the document and heading[\s\S]*do not cover it/],
   ])('%s', (_name, re) => expect(SYSTEM_PROMPT).toMatch(re));
 
   it('names only tools that exist', () => {
     const names = new Set(TOOLS.map((t) => t.name));
     for (const m of SYSTEM_PROMPT.matchAll(/\b(get_[a-z_]+|test_[a-z_]+|compare_[a-z_]+|lot_money|explain_limit|find_lots|set_map)\b/g)) expect(names.has(m[1]), m[1]).toBe(true);
+  });
+
+  it('names search_tool_docs, which exists', () => {
+    expect(SYSTEM_PROMPT).toMatch(/search_tool_docs/);
+    expect(TOOLS.some((t) => t.name === 'search_tool_docs')).toBe(true);
   });
 
   it('tool names are unique', () => {

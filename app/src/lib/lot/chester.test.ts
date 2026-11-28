@@ -23,7 +23,8 @@ describe('Chester County lots (a county place with several towns)', () => {
     expect(PLACE_BY_COUNTY['42029']).toBe('chester_county');
     expect(placeOfGeoid('42029302400')).toBe('chester_county');
     expect(fixture('wch_detached').lot.place).toBe('chester_county');
-    expect(townsOfPlace('chester_county').map((t) => t.name)).toEqual(['West Chester borough', 'Phoenixville borough', 'West Vincent township', 'Malvern borough', 'East Brandywine township']);
+    expect(townsOfPlace('chester_county').map((t) => t.name).slice(0, 5)).toEqual(['West Chester borough', 'Phoenixville borough', 'West Vincent township', 'Malvern borough', 'East Brandywine township']);
+    expect(townsOfPlace('chester_county')).toHaveLength(14);
   });
 
   it('a lot resolves to its own town from its rule file, and a record field wins when the build writes one', () => {
@@ -63,8 +64,8 @@ describe('Chester County lots (a county place with several towns)', () => {
     expect(testUnitOnLot(lot, cottage)).toMatchObject({ town: 'West Chester borough', status: 'fits' });
     expect(lotPlaceOfTown(WEST_CHESTER, 'West Chester borough')).toBe('chester_county');
     expect(lotPlaceOfTown('4207784528', 'Whitehall township')).toBeNull();
-    expect(lotPlacesText()).toMatch(/Chester County \(West Chester, Phoenixville, West Vincent Township, Malvern, East Brandywine Township\)/);
-    expect(lotPlacesText()).toMatch(/Centre County \(College Township\)/);
+    expect(lotPlacesText()).toMatch(/Chester County \(West Chester, Phoenixville, West Vincent Township, Malvern, East Brandywine Township, /);
+    expect(lotPlacesText()).toMatch(/Centre County \(College Township, State College\)/);
     const hit = matchAddress('307 W Marshall Street', [{ lot_id: lot.lot.id, tract: '42029302400', place: 'chester_county', town: 'West Chester borough', address: '307 W MARSHALL ST' }]);
     expect(hit[0]).toMatchObject({ lot_id: '42029-1-4-50', town: 'West Chester borough' });
   });

@@ -2156,7 +2156,7 @@ def _town_conditions(
         and status["value"] != "allowed_by_right"
         and not (said and status.get("section"))
     ):
-        words = status["value"].replace("_", " ")
+        words = _status_words(status["value"])  # pass 30: employee quarters only
         note = status.get("note") or ""
         if hold13:  # a lot town: the pass 12 wording until its next lot rebuild (PASS13_HOLD_TOWNS)
             text = f"{words}. {note}".strip()
@@ -3966,6 +3966,137 @@ def _alt_tests(a: dict[str, Any], lot: dict[str, Any]) -> list[tuple[bool | None
     return out
 
 
+# Pass 30: status nuances. adu.status employee_quarters, adu.status_dispute, adu.status_by_overlay and a gate's
+# status_only_if. Each reaches only a file that sets it, so no lot town's answer changes.
+STATUS_WORDS = {"employee_quarters": "employee quarters only"}
+# More limiting last, for counting a disputed status (pipeline/places_index/ladder.py uses the same order)
+STATUS_RANK = {
+    "allowed_by_right": 0,
+    "special_exception": 1,
+    "conditional_use": 1,
+    "family_only": 1,
+    "conversion_only": 1,
+    "employee_quarters": 1,
+    "not_addressed": 2,
+    "prohibited": 3,
+}
+
+
+def _lower_lead(text: str) -> str:
+    """A note after a colon: its first letter lower case, unless it opens an acronym or a quote."""
+    return text[:1].lower() + text[1:] if text[1:2].islower() else text
+
+
+def _status_words(status: Any) -> str:
+    return STATUS_WORDS.get(str(status), str(status).replace("_", " "))
+
+
+def _more_limiting(a: tuple[str, str], b: tuple[str, str]) -> bool:
+    """Pass 30: is reading a (status, path) more limiting than reading b? The status first, then the path."""
+    ra, rb = STATUS_RANK.get(a[0], 1), STATUS_RANK.get(b[0], 1)
+    if ra != rb:
+        return ra > rb
+    pa, pb = (PATH_ORDER.index(p) if p in PATH_ORDER else 0 for p in (a[1], b[1]))
+    return pa > pb
+
+
+def _overlay_status(data: dict[str, Any], lot: dict[str, Any]) -> tuple[str, dict[str, Any], dict[str, Any]] | None:
+    """Pass 30: adu.status_by_overlay. ("in", item, leaf) when the lot is known to be in one of the item's overlays
+    (and, when the item lists districts and the lot's district is given, in one of them). ("open", item, leaf) when
+    the lot's overlays were not given. None otherwise."""
+    leaf = _leaf(data, ("adu", "status_by_overlay"))
+    if not (_usable(leaf) and leaf.get("value")):
+        return None
+    d, ov = lot.get("zoning_district"), lot.get("overlays")
+    opened = None
+    for it in leaf["value"]:
+        if it.get("districts") and d is not None and _match_code(d, it["districts"]) is None:
+            continue
+        if ov is None:
+            opened = opened or ("open", it, leaf)
+        elif any(_match_code(o, it["overlays"]) is not None for o in ov):
+            return ("in", it, leaf)
+    return opened
+
+
+def _overlay_status_line(hit: tuple[str, dict[str, Any], dict[str, Any]]) -> str:
+    how, it, leaf = hit
+    where = f"the {it['overlays'][0]} overlay" + (
+        f" on {' or '.join(it['districts'])} land" if it.get("districts") else ""
+    )
+    words = _status_words(it["status"])
+    note = f". {it['note'].rstrip('.')}" if it.get("note") else ""
+    if how == "in":
+        return f"This lot is in {where}, where the code's ADU status is {words} ({it['section']}){note}"
+    return (
+        f"In {where} the code's ADU status is {words} ({it['section']}){note}. Only if the lot is in the overlay. "
+        "The lot's overlays were not given"
+    )
+
+
+def _status_dispute(data: dict[str, Any], lot: dict[str, Any], scope: dict[str, Any]) -> dict[str, Any] | None:
+    """Pass 30: adu.status_dispute when it reaches the lot. here: the lot is in the dispute's districts (True), or
+    the dispute names districts and the lot's district was not given (None)."""
+    leaf = _leaf(data, ("adu", "status_dispute"))
+    if not (_usable(leaf) and leaf.get("readings")):
+        return None
+    where, d = leaf.get("districts"), lot.get("zoning_district")
+    if where:
+        here = None if d is None else _match_code(d, where) is not None
+        if here is False:
+            return None
+    elif scope["in_scope"] is False:
+        return None  # the dispute is about the ADU rule, which does not reach this district
+    else:
+        here = True
+    return {"leaf": leaf, "here": here}
+
+
+def _dispute_line(dis: dict[str, Any], own: tuple[dict[str, Any], str] | None, lot: dict[str, Any]) -> tuple[str, bool]:
+    """Pass 30: both readings of a disputed ADU status, each cited, and whether the file's own reading (own: the
+    status leaf and the lot's path) is less limiting than another one."""
+    leaf = dis["leaf"]
+    table = leaf["value"] == "table_vs_text"
+    where = leaf.get("districts")
+    at = "" if not where else f" in {lot['zoning_district'] if dis['here'] else ', '.join(where)}"
+    lead = (
+        f"The use table and the text conflict on the ADU status{at}"
+        if table
+        else f"The code's ADU status is disputed{at}"
+    )
+    own_src = leaf.get("own_source") or "text"
+    said: list[str] = []
+
+    def opener(source: str) -> str:
+        if table:
+            return "The use table gives" if source == "table" else "The text gives"
+        return "Read one way it is" if not said else "Read another way it is"
+
+    own_less = False
+    if own and dis["here"] and own[0].get("value"):
+        said.append(f"{opener(own_src)} {_status_words(own[0]['value'])} ({own[0].get('section')})")
+        own_less = any(_more_limiting((r["status"], r["path"]), (own[0]["value"], own[1])) for r in leaf["readings"])
+    for r in leaf["readings"]:
+        src = r.get("source") or ("table" if own_src == "text" else "text")
+        said.append(
+            f"{opener(src)} {_status_words(r['status'])}, {r['path'].replace('_', ' ')} ({r['section']})"
+            + (f": {_lower_lead(r['note'].rstrip('.'))}" if r.get("note") else "")
+        )
+    note = f". {leaf['note'].rstrip('.')}" if leaf.get("note") else ""
+    tail = "" if own_less or not (own and dis["here"]) else ". The tool reads the more limiting one"
+    return f"{lead}. " + ". ".join(said) + f"{note}{tail}. Ask the zoning officer", own_less
+
+
+def _status_only_if(data: dict[str, Any], lot: dict[str, Any], historic: bool) -> list[tuple[dict[str, Any], Any]]:
+    """Pass 30: gates whose test is a condition of the ADU status itself (status_only_if), with the test's result."""
+    leaf = _leaf(data, ("eligibility", "gates")) or {}
+    return [
+        (g, _gate_met(g, lot))
+        for g in leaf.get("value") or []
+        if g.get("status_only_if") and _gate_scope(g, lot, historic)
+    ]
+
+
 @_pct_hold
 def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, Any]:
     reasons: list[str] = []
@@ -3973,6 +4104,10 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     file_data = load_rules(place)
     scope = _scope(file_data, lot)
     data = _outside_scope_data(file_data, scope, lot) if scope["in_scope"] is False else file_data
+    ov_status = None if scenario == "state_reform" else _overlay_status(file_data, lot)
+    if ov_status and ov_status[0] == "in":  # pass 30: inside the overlay the item's status is the lot's status
+        _, it, ov_leaf = ov_status
+        data = {**data, "adu": {**(data.get("adu") or {}), "status": _leaf_from(it, ov_leaf, it["status"])}}
     hist_leaf = _leaf(data, ("approval", "historic_path"))
     historic = False
     if (_leaf(data, ("eligibility", "historic_bypass")) or {}).get("value") or (
@@ -4354,25 +4489,25 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             dp0 = picked[("approval", "path")][0]
             head.append(
                 f"In {lot.get('zoning_district')} the district path is {dp0['value'].replace('_', ' ')} ({dp0['section']}). "
-                f"{when} code's ADU status elsewhere is {status.replace('_', ' ')} ({status_leaf['section']})"
+                f"{when} code's ADU status elsewhere is {_status_words(status)} ({status_leaf['section']})"
             )
         elif how == "historic" and status in NO_ADU_STATUSES and _usable(hist_leaf):
             # pass 9: a historic-only path allows the unit. Never "not addressed" beside "allowed" with no word of it
             head.append(
-                f"{when} code has no general ADU rule (status {status.replace('_', ' ')}, {status_leaf['section']}). "
+                f"{when} code has no general ADU rule (status {_status_words(status)}, {status_leaf['section']}). "
                 f"On this lot the historic path applies: {hist_leaf['value'].replace('_', ' ')} ({hist_leaf['section']})"
             )
         elif how == "district" and status in NO_ADU_STATUSES:
             dp0 = picked[("approval", "path")][0]
             head.append(
-                f"{when} code's ADU status town-wide is {status.replace('_', ' ')} ({status_leaf['section']}). "
+                f"{when} code's ADU status town-wide is {_status_words(status)} ({status_leaf['section']}). "
                 f"In {lot.get('zoning_district')} the district path applies: {dp0['value'].replace('_', ' ')}"
                 + (f" for the '{dp0['term']}' listing" if dp0.get("term") else "")
                 + f" ({dp0['section']})"
             )
         else:
             head.append(
-                f"{when} code's ADU status is {status.replace('_', ' ')} ({status_leaf['section']})"
+                f"{when} code's ADU status is {_status_words(status)} ({status_leaf['section']})"
                 + (f". {status_leaf['note']}" if status_leaf.get("note") and status in NO_ADU_STATUSES else "")
             )
     if by_form and by_form_leaf:
@@ -4573,6 +4708,42 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
             )
             + "Ask the zoning officer",
         )
+    only_if_failed = False
+    if not state:
+        # pass 30: a gate whose test is a condition of the ADU status itself (Worcester: Option 3 only)
+        for g, met in _status_only_if(data, lot, historic):
+            words = _status_words(status)
+            if met is None:
+                text = (
+                    f"The code's ADU status is {words} only if {g['status_only_if']} ({g['section']}). "
+                    "That was not given for this lot"
+                )
+            elif met is False:
+                only_if_failed = True
+                text = (
+                    f"The code's ADU status ({words}) holds only if {g['status_only_if']} ({g['section']}). "
+                    "This lot does not qualify"
+                )
+            else:
+                text = f"The code's ADU status is {words}: {g['status_only_if']} ({g['section']})"
+            conditions.append(_cond("adu_status", text, g, met))
+        if ov_status and ov_status[1]["status"] != (status_leaf.get("value") if ov_status[0] == "open" else None):
+            line = _overlay_status_line(ov_status)
+            conditions.append(_cond("adu_status", line, ov_status[1] | {"confidence": ov_status[2]["confidence"]}))
+            out["reasons"].insert(0, line)
+        dispute = _status_dispute(data, lot, scope)
+        if dispute:  # pass 30: the code supports more than one reading of the ADU status here
+            own_path = (_leaf(data, ("approval", "path")) or {}).get("value") or approval
+            line, own_less = _dispute_line(dispute, (status_leaf, own_path), lot)
+            conditions.append(_cond("status_dispute", line, dispute["leaf"]))
+            if allowed and own_less:
+                qualifier = qualifier or "conditional_on_reading"
+                out["reasons"].insert(
+                    0,
+                    f"{approval.replace('_', ' ').capitalize()} only if the reading that lets this lot in holds: {line}",
+                )
+            else:
+                out["reasons"].insert(0, line)
     path_key = ("approval", "path") if (allowed or path_to_ask) else ("approval", "fallback_path")
     for key, path in (("approval_path", path_key), ("types_allowed", ("form", "types_allowed"))):
         if picked.get(path):
@@ -4983,6 +5154,8 @@ def _resolve_town(place: str, scenario: str, lot: dict[str, Any]) -> dict[str, A
     if not state and status == "allowed_by_right" and dp_path in BOARDS:
         # pass 7: a district whose path is a hearing never reads "allowed by right"
         out["adu_status"] = dp_path
+    if not state and only_if_failed and approval not in OK_PATHS:
+        out["adu_status"] = approval  # pass 30: the lot fails a test the status itself hangs on (status_only_if)
     if not state and out["adu_status"] == "allowed_by_right" and approval in ("variance", "not_allowed"):
         # pass 18: the lot fails a test of the by-right rule (Worcester: a lot outside an Option 3 subdivision), so
         # its path is a variance. The status never reads "allowed by right" there
@@ -5501,6 +5674,8 @@ def _town_type_reasons(picked: Picked, by_type: dict[str, str], hold: bool = Fal
             line += f". The ADU text replaces them for the unit ({leaf['section']})"
         else:
             line += f". Whether they also bind the ADU is not settled ({leaf['section']}). Ask the zoning officer"
+    else:  # no accessory_cap_binds_adu leaf: the cap is not applied to the unit, so never said flatly
+        line += ". Not settled whether it binds the unit, so the unit's size is not held to it. Ask the zoning officer"
     return [line]
 
 
@@ -6254,6 +6429,24 @@ def lint(data: dict[str, Any]) -> list[str]:
             out.append(
                 f"approval.alternatives[{i}] ({a.get('section')}): districts is null but the text names an overlay. "
                 "Set overlays so it does not read as applying everywhere"
+            )
+    # pass 30: a status that hangs on a lot fact needs the fact's test, and an overlay status needs the listing that
+    # gives its forms their path
+    for i, g in enumerate(((data.get("eligibility") or {}).get("gates") or {}).get("value") or []):
+        if g.get("status_only_if") and not g.get("test"):
+            out.append(
+                f"eligibility.gates[{i}] ({g.get('section')}): status_only_if with no test. The status line would "
+                "never say whether the lot qualifies"
+            )
+    for it in (((data.get("adu") or {}).get("status_by_overlay") or {}).get("value")) or []:
+        if it.get("status") in ("not_addressed", "prohibited"):
+            continue
+        if not any(
+            a.get("adu_listing") and a.get("forms") and set(a.get("overlays") or []) & set(it["overlays"]) for a in alts
+        ):
+            out.append(
+                f"adu.status_by_overlay ({it.get('section')}): no approval.alternatives listing with adu_listing, forms "
+                "and the same overlays, so no form takes the status's path inside the overlay"
             )
     return out
 

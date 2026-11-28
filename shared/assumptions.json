@@ -773,6 +773,14 @@
       "confidence": "assumption",
       "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py)", "url": "", "date": "2026-11-11"}]
     },
+    "lots.largest_report_ceiling_sqft": {
+      "label": "Largest detached unit reported",
+      "unit": "sq ft footprint",
+      "value": 2000,
+      "note": "Where no size cap binds the unit (no ADU cap, and the accessory building cap absent or not settled to bind it), the fit's largest footprint is the whole open yard, up to hundreds of thousands of sq ft on a farm lot. That is a measure of the yard, not a unit to plan for, so a largest above this reads 'more than 2,000 sq ft' and the stats median holds each lot to it. A real size cap above it (limiting size_cap) is shown as it is. The fit and the fit_N shares are not changed. Same figure as the app's 2,000 sq ft fit test ceiling (APP_MAX_FIT_SQFT).",
+      "confidence": "assumption",
+      "sources": [{"title": "Owner setting (lot builder, pipeline/build_lots.py; docs/METHODS.md section 1)", "url": "", "date": "2026-11-28"}]
+    },
     "lots.fallback_setbacks_ft": {
       "label": "Setbacks used when the rule files give none",
       "unit": "ft",

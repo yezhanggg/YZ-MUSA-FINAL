@@ -11,8 +11,10 @@ import type { LotUnit } from '../nodeProvider';
  *  expert: how towns regulate ADUs, the bills, site and size rules, confidence labels, how the tool works, tricks and
  *  follow-ups, hand-written in questions_expert.json.
  *  parcel: parcel facts, property tax, documents, offices, what to bring and ask, made by make_parcel_questions.ts.
- *  map: asks to move the map or change the unit or ADU (set_map), hand-written in questions_map.json. */
-export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map'] as const;
+ *  map: asks to move the map or change the unit or ADU (set_map), hand-written in questions_map.json.
+ *  tool: questions about the tool itself (the project, lot places, lot lines, accuracy, data, privacy, ParcelIQ, recent
+ *  changes), answered from get_methods, hand-written in questions_tool.json. */
+export const CATEGORIES = ['lot_facts', 'fit', 'zoning', 'money', 'market', 'traps', 'town_rules', 'tier_b', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map', 'tool'] as const;
 export type Category = (typeof CATEGORIES)[number];
 
 /** Units a number fact is written in. pct is a percent (7.5 means 7.5 percent), the answer may also give 0.075. */

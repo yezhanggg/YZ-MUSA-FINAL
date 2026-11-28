@@ -40,7 +40,7 @@
       "RR, MDR, NC, LICD and HI do not list conversion apartments in their text. Conflicting text, ask: the Zoning Use Table (Attachment 2, 2018) marks conversion apartments permitted in MDR. The search found no other ADU text (accessory dwelling, accessory apartment, in-law, ECHO, granny, caretaker, accessory unit)",
       "Parking: 'Single-family dwelling 2 for each unit'. 'Multiple-family dwelling 1 1/3 spaces for each unit with 2 bedrooms or less, and 2 for each unit having more than 2 bedrooms'. Fractions round up (190-623B, C)"
     ],
-    "notes": "Zoning office: Penn Township (Westmoreland County). Read on eCode360 (PE1662) in a browser, one print view at a time, on 2026-11-14. Code and New Laws search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters' and 'conversion apartment(s)' found the conversion apartment definition and the CC and IC listings. Use lists read for RR, MDR, NC, CC, IC and the MEO and DIO overlays (Article IV). Table 2 (Appendix A) was not opened. Second review, 2026-11-26: Ord. No. 973-2025 read in full from the New Laws PDF (strikeouts checked on the page images); Attachment 2 (Zoning Use Table) read; 190-102 and 190-403 read again in the chapter print view. Still open, the text does not settle: whether one apartment added to a house (two units) is a conversion apartment or a multifamily dwelling (190-202), and whether MDR permits conversion apartments (Attachment 2 says P, 190-403B omits them)."
+    "notes": "Zoning office: Penn Township (Westmoreland County). Read on eCode360 (PE1662) in a browser, one print view at a time, on 2026-11-14. Code and New Laws search for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, conversion, 'accessory unit', 'living quarters' and 'conversion apartment(s)' found the conversion apartment definition and the CC and IC listings. Use lists read for RR, MDR, NC, CC, IC and the MEO and DIO overlays (Article IV). Table 2 (Appendix A) was not opened. Second review, 2026-11-26: Ord. No. 973-2025 read in full from the New Laws PDF (strikeouts checked on the page images); Attachment 2 (Zoning Use Table) read; 190-102 and 190-403 read again in the chapter print view. Still open, the text does not settle: whether one apartment added to a house (two units) is a conversion apartment or a multifamily dwelling (190-202), and whether MDR permits conversion apartments (Attachment 2 says P, 190-403B omits them). Pass 30 (2026-11-26): the MDR table and text conflict is adu.status_dispute (table_vs_text), with the text's reading (not addressed) the one the tool counts."
   },
   "adu": {
     "term": {
@@ -74,7 +74,29 @@
       "url": "https://ecode360.com/print/PE1662?guid=9968587",
       "verified_on": "2026-11-26",
       "confidence": "secondary",
-      "note": "RR, MDR, NC, LICD and HI do not list conversion apartments in their use lists. The Zoning Use Table (Attachment 2, 2018) marks them permitted in MDR; the text and the table disagree there, so ask the Zoning Officer."
+      "note": "RR, MDR, NC, LICD and HI do not list conversion apartments in their use lists."
+    },
+    "status_dispute": {
+      "value": "table_vs_text",
+      "districts": [
+        "MDR"
+      ],
+      "own_source": "text",
+      "readings": [
+        {
+          "status": "conversion_only",
+          "path": "by_right",
+          "source": "table",
+          "section": "Attachment 2",
+          "url": "https://ecode360.com/attachment/311545/PE1662-190b%20Zoning%20Use%20Table.pdf",
+          "note": "The Zoning Use Table (amended 2-21-2018 by Ord. No. 919) marks 'Conversions apartments' P in MDR, while the MDR use list (190-403B) does not name them"
+        }
+      ],
+      "section": "190-403B, Attachment 2",
+      "url": "https://ecode360.com/print/PE1662?guid=9968587",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "No section says whether the table or the district text controls"
     }
   },
   "approval": {

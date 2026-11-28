@@ -91,7 +91,22 @@ const APPROVAL_TEXT: Record<string, string> = {
   not_allowed: 'no approval path',
 };
 
+/** Pass 30 (pipeline/places_index/ladder.py DISPUTED_DETAIL): a town whose ADU status the code leaves in dispute. */
+const DISPUTED_DETAIL = 'ADU status disputed';
+const disputed = (r: PlaceRow): boolean => !!r.status_detail?.startsWith(`${DISPUTED_DETAIL}:`);
+/** Pass 30 (pipeline/places_index/ladder.py status_detail, employee_quarters): quarters for the household's own employees. */
+const EMPLOYEE_DETAIL = "quarters for the household's own employees";
+const employeeQuarters = (r: PlaceRow): boolean => !!r.status_detail?.startsWith(EMPLOYEE_DETAIL);
+const EMPLOYEE_VERDICT = 'Employee or caretaker quarters only, not an ADU open to the public';
+/** The qualifier a form the file's reading allows takes when the ADU status is disputed town-wide (pipeline/rules.py conditional_on_reading). */
+/** A code caution that opens with this (shared/rules/TOWNS.md, provenance.code_caution) means the town replaced the code the file reads. */
+const REPEALED_LEAD = 'This file reads the repealed chapter.';
+const ONLY_IF_READING = 'only if the reading that lets this lot in holds (the ADU status is disputed: ask the zoning officer)';
+
 export function verdictOf(r: PlaceRow): string {
+  if (r.status === 'limited' && disputed(r)) return 'Disputed: the code supports two readings of whether an ADU is allowed here. Neither a clear yes nor a firm no. Ask the zoning officer';
+  if (r.status === 'limited' && employeeQuarters(r))
+    return `${EMPLOYEE_VERDICT}${r.approval && r.approval !== 'variance' && r.approval !== 'not_allowed' ? ` (${r.approval === 'by_right' ? 'zoning permit, no hearing' : APPROVAL_TEXT[r.approval] ?? r.approval})` : ''}`;
   switch (r.status) {
     case 'by_right':
       return r.approval === 'by_right' || !r.approval ? 'Allowed by right' : `Allowed, with ${APPROVAL_TEXT[r.approval] ?? r.approval} for some forms`;
@@ -274,6 +289,11 @@ async function ruleDetails(r: PlaceRow) {
     const o = otherPaths.find((p) => Array.isArray(p.forms) && (p.forms as string[]).includes(x.form));
     if (o) x.verdict = `${x.verdict}. Not as an ADU: ${APPROVAL_TEXT[String(o.path)] ?? String(o.path).replace(/_/g, ' ')} as ${String(o.name).replace(/^./, (c) => c.toLowerCase())} (${o.section ?? 'rule file'})`;
   }
+  // Pass 30: a town-wide disputed status. A form the file's reading allows holds only if that reading does.
+  const aduOut = (out.adu ?? {}) as Obj;
+  const dispute = (aduOut.status_dispute ?? null) as Obj | null;
+  const townWideDispute = !!dispute && !(Array.isArray(dispute.districts) && dispute.districts.length);
+  if (townWideDispute) for (const x of formRows) if (x.verdict.startsWith('Allowed')) x.verdict = `${x.verdict}, ${ONLY_IF_READING}`;
   const differs = new Set(formRows.map((x) => x.verdict)).size > 1;
   const alts = ((out.other_ways_to_add_a_unit as Obj | undefined)?.options ?? []) as Obj[];
   const accCap = leafOut(acc.max_sqft);
@@ -291,9 +311,16 @@ async function ruleDetails(r: PlaceRow) {
       ...(Array.isArray(c.applies_to) ? { forms: (c.applies_to as string[]).filter((t) => t in FORM_TEXT).map((t) => FORM_TEXT[t]) } : {}),
       ...(Array.isArray(c.districts) ? { districts: c.districts } : {}),
     }));
+  // Pass 30: a disputed status, the status inside an overlay, and a status that holds only if a lot fact does.
+  const overlay = (aduOut.status_by_overlay ?? null) as Obj | null;
+  const onlyIf = Array.isArray(aduOut.status_only_if) ? (aduOut.status_only_if as Obj[]) : [];
   return {
     summary: (out.summary as string) ?? null,
     ...(definedNotListed ? { adu_defined_not_listed: true } : {}),
+    ...(dispute ? { status_dispute: { text: dispute.text ?? null, districts: dispute.districts ?? null, section: dispute.section ?? null, town_wide: townWideDispute } } : {}),
+    ...(overall === 'employee_quarters' ? { employee_quarters: true } : {}),
+    ...(overlay && Array.isArray(overlay.text) ? { status_by_overlay: overlay.text as string[] } : {}),
+    ...(onlyIf.length ? { status_only_if: onlyIf.map((g) => ({ condition: g.condition ?? null, section: g.section ?? null })) } : {}),
     code_caution: typeof out.code_caution === 'string' ? out.code_caution : null,
     approval_path: leafOut(approval.path),
     max_sqft_accessory_building: accCap,
@@ -340,6 +367,9 @@ function checkProposal(r: PlaceRow, unit: UnitType | null, size: number | null, 
   // exception, 300-17). Say that path, as the verdict does, not "a variance".
   const askPath = r.status === 'not_addressed' && r.approval && !['variance', 'not_allowed', 'by_right'].includes(r.approval) ? r.approval : null;
   if (askPath) return { fits_zoning: 'not_addressed', why: [`The code has no ADU rule. The path to ask about is ${APPROVAL_TEXT[askPath] ?? askPath}. Not a firm yes or no. Ask the zoning officer.`] };
+  // Pass 30: the ADU status itself is disputed town-wide. Not settled, so neither a yes nor a no.
+  if (r.status === 'limited' && disputed(r) && rule?.status_dispute && !rule.status_dispute.districts)
+    return { fits_zoning: 'not_settled', why: [`${String(rule.status_dispute.text ?? 'The code supports two readings of the ADU status').replace(/\.?$/, '.')}`] };
   if (r.status === 'prohibited' || r.status === 'not_addressed') {
     why.push(r.status === 'prohibited' ? 'The code bars ADUs.' : `${rule?.adu_defined_not_listed ? 'The code defines an ADU but no district permits it.' : 'The code has no ADU rule.'} A variance or a code change would be needed.`);
     return { fits_zoning: 'no', why };
@@ -502,6 +532,7 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
       for (const f of rule.by_form) groups.set(f.verdict, [...(groups.get(f.verdict) ?? []), f.form]);
       const list = (fs: string[]) => (fs.length < 2 ? fs[0] : `${fs.slice(0, -1).join(', ')} or ${fs[fs.length - 1]}`);
       out.verdict = `Depends on the form. ${[...groups].map(([v, fs]) => `${list(fs).replace(/^a/, 'A')}: ${v}`).join('. ')}.`;
+      if (rule.employee_quarters) out.verdict = `${EMPLOYEE_VERDICT}. ${out.verdict as string}`;
     }
     out.zoning_allows = {
       forms: Array.isArray(r.unit_types) ? r.unit_types.map((t) => UNIT_TEXT[t]) : 'not on file',
@@ -520,7 +551,13 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
         ? { adu_under_another_listing: rule.adu_under_another_listing, adu_under_another_listing_note: 'The code also lists an ADU under another name, with its own path and standards. Name it as such.' }
         : {}),
     };
+    // The town replaced the code this file reads: every verdict line is the old chapter's, and says so.
+    if (rule.code_caution?.startsWith(REPEALED_LEAD)) out.verdict = `Under the repealed chapter this file reads, not the town's new ordinance (see code_caution): ${String(out.verdict).replace(/^./, (c) => c.toLowerCase())}`;
     if (r.tier === 'drafted') out.open_points = r.status_detail;
+    // Pass 30: say the dispute, the overlay status and the lot fact the status hangs on, each with its sections.
+    if (rule.status_dispute) out.status_dispute = rule.status_dispute.text;
+    if (rule.status_by_overlay) out.status_by_overlay = rule.status_by_overlay;
+    if (rule.status_only_if) out.status_only_if = rule.status_only_if;
     if (rule.depends_on.length) {
       // A bar that hangs on a lot or house fact: never a plain yes, never a dead end. Say what it depends on.
       const facts = [...new Set(rule.depends_on.map((d) => d.fact))];
@@ -576,6 +613,10 @@ export async function getPlaceAnswer(input: { place?: unknown; county?: unknown;
   const extra = [
     out.code_caution ? 'Start with the code caution line, in its words.' : null,
     rule?.by_form ? 'The answer differs by form: give one line per form from zoning_allows.by_form.' : null,
+    rule?.status_dispute ? `The code supports more than one reading of the ADU status: give status_dispute with both readings and their sections, never a plain yes or no, and say to ask the zoning officer.${rule.status_dispute.town_wide ? ' The dispute holds town-wide: a form the verdict allows is allowed only if the reading that lets the lot in holds, so say that with it.' : ''}` : null,
+    rule?.employee_quarters ? 'The code allows only quarters for the household\'s own employees, caretakers or watchmen: say so with the verdict, and that it is not an ADU open to the public.' : null,
+    rule?.status_by_overlay ? 'Inside an overlay the ADU status differs: give status_by_overlay and say it holds only if the lot is in that overlay.' : null,
+    rule?.status_only_if ? 'The ADU status holds only if a fact about the lot holds: give status_only_if with its section, and say the fact is not known here.' : null,
     rule?.size_rule_accessory_building || rule?.size_rule_inside_or_attached ? 'Give the size cap as the size_rule sentence (it says which limit wins, or that it is a share of the house).' : null,
     rule?.hearing ? (/names no hearing/.test(String(rule.hearing.who_decides)) ? 'Say who decides (who_decides) and that the code names no hearing for it, in those words.' : 'Say who decides (who_decides) and that it is a public hearing.') : null,
     rule?.depends_on.length ? 'Say what the answer depends on: each fact in depends_on with its rule and section, and that the zoning officer or the lot records can settle it. Say an unknown fact is "not known here", in those words, never "I don\'t know". If the owner already said the fact (for example "my carriage house" or "my garage"), take their word for it: say the rule then applies and that the zoning officer confirms it.' : null,

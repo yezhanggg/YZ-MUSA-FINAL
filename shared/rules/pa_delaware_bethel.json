@@ -62,7 +62,7 @@
       "The Active Adult Community Overlay (AACOD) may be applied in R-1, R-3, R-4 and T by conditional use on a tract of at least 75 acres with public sewer and water. Its households must include someone 55 or older. Its accessory uses are 'accessory only to the overall active adult community', and that list has no living quarters. A detached house lot there is 6,000 sq ft, 60 ft wide, with yards of 25 ft front, 5 ft side (20 ft for both) and 20 ft rear, 60% impervious cover, two stories and 28 ft, and 2 parking spaces (480-100, 480-101H, 480-103G, 480-104A)",
       "Historic preservation (Chapter 239) covers only demolition of structures on the Township's historic list. It has no ADU rule"
     ],
-    "notes": "Zoning office: Bethel Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I, Article II (480-5 to 480-24), Article IV (480-31 to 480-35), Article V, Articles VI to XIII, XV and XVI (district use and area rules, M-H and AACOD read in full), Article XVIII (parking, by screen view), Article XIX 480-130 to 480-149.2, Chapter 222 sections 16, 20, 21 and 27, Chapter 239, Chapter 384 section 24, the New Laws page and code searches. Not read: Article III, Article XVII signs, Article XX, the C-2, LI-1 and T use lists in full, the rest of Chapters 222 and 384, and Chapter 395. Second reading 2026-11-26 (G0): eCode360 'legislation through 12-09-2025', no zoning law pending. A full-text search of the Chapter 480 print view finds no accessory dwelling, accessory apartment, in-law, elder cottage, tenant house, guest house or second dwelling use anywhere (Article XX and the C-2, LI-1 and T use lists included); the only listing is 'Living quarters for household employees, caretakers, or watchmen' (480-136B(5)), read again. The 'eight 860 square feet' typo in 480-136D is still in the text. Stays drafted: the status family_only is a stand-in, since the engine has no status for employee or caretaker quarters (TOWNS.md pass notes, 'Not done'). The kitchen, two-family, active adult community and parking points remain disputes the code does not settle."
+    "notes": "Zoning office: Bethel Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article I, Article II (480-5 to 480-24), Article IV (480-31 to 480-35), Article V, Articles VI to XIII, XV and XVI (district use and area rules, M-H and AACOD read in full), Article XVIII (parking, by screen view), Article XIX 480-130 to 480-149.2, Chapter 222 sections 16, 20, 21 and 27, Chapter 239, Chapter 384 section 24, the New Laws page and code searches. Not read: Article III, Article XVII signs, Article XX, the C-2, LI-1 and T use lists in full, the rest of Chapters 222 and 384, and Chapter 395. Second reading 2026-11-26 (G0): eCode360 'legislation through 12-09-2025', no zoning law pending. A full-text search of the Chapter 480 print view finds no accessory dwelling, accessory apartment, in-law, elder cottage, tenant house, guest house or second dwelling use anywhere (Article XX and the C-2, LI-1 and T use lists included); the only listing is 'Living quarters for household employees, caretakers, or watchmen' (480-136B(5)), read again. The 'eight 860 square feet' typo in 480-136D is still in the text. Pass 30 (2026-11-26): adu.status is now employee_quarters, in place of the family_only stand-in, and use.family_only is false (the code names no relatives). The kitchen, two-family, active adult community and parking points remain disputes the code does not settle."
   },
   "adu": {
     "term": {
@@ -74,12 +74,12 @@
       "note": "Not called an accessory dwelling. Listed among the uses accessory to dwellings. Searched for accessory dwelling, in-law, accessory apartment, garage apartment, domestic employee, second dwelling, ECHO, granny, caretaker, guest house, servant, living quarters and conversion"
     },
     "status": {
-      "value": "family_only",
+      "value": "employee_quarters",
       "section": "480-41H(5), 480-47E(5), 480-52I(5), 480-136B(5)",
       "url": "https://ecode360.com/print/BE2833?guid=14418896",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "Tied to the household. Only its own household employees, caretakers or watchmen may live there, so the quarters cannot be rented to the public. The tool has no status for employee quarters, and family only is the nearest. A permitted accessory use with no hearing named"
+      "note": "Tied to the household. Only its own household employees, caretakers or watchmen may live there, so the quarters cannot be rented to the public and are not an ADU open to anyone. A permitted accessory use with no hearing named"
     },
     "scope_districts": {
       "value": [
@@ -483,12 +483,12 @@
   },
   "use": {
     "family_only": {
-      "value": true,
+      "value": false,
       "section": "480-136B(5)",
       "url": "https://ecode360.com/print/BE2833?guid=14418896",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "Read as tied to the household. Only its household employees, caretakers or watchmen may live there. The code does not name relatives"
+      "note": "No family rule. The code does not name relatives. The quarters are for household employees, caretakers or watchmen (480-136B(5))"
     },
     "occupancy": {
       "value": "Household employees, caretakers or watchmen",

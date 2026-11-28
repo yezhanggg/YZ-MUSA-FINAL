@@ -403,6 +403,8 @@ function frontBarTail(file: Obj, district: string | null): string {
 const LIMITED: Record<string, string> = {
   family_only: 'Limited: family members only',
   conversion_only: 'Limited: only inside an existing building',
+  // Pass 30 (pipeline/rules.py STATUS_WORDS): quarters for the household's own employees, never a unit for the public.
+  employee_quarters: "Limited: quarters for the household's own employees, caretakers or watchmen only, not an ADU open to the public",
   special_exception: 'Needs a special exception (Zoning Hearing Board)',
   conditional_use: 'Needs conditional use approval (governing body)',
   not_addressed: 'The code does not mention ADUs',
@@ -931,7 +933,8 @@ function formsOf(file: Obj, district: string | null, noAdu: boolean): Obj {
           ...(accH && typeof accH.value === 'number' ? { max_height_ft: ruleOut('envelope.accessory_structure_max_height_ft', accH) } : {}),
           ...(binds
             ? { binds_adu: binds.value === true ? 'yes: the unit must meet these caps too' : binds.value === false ? 'no: the ADU text replaces them' : 'not settled: ask the zoning officer', binds_section: binds.section ?? null }
-            : {}),
+            : // No accessory_cap_binds_adu leaf (pipeline/rules.py _town_type_reasons): not applied to the unit, so not settled.
+              { binds_adu: "not settled: the rule file does not say whether these caps bind the unit, so the unit's size is not held to them. Ask the zoning officer", binds_section: null }),
         }
       : // Pass 8: a height cap stored without a floor area cap is shown too (pipeline/rules.py _height_cap_reasons).
         accH && typeof accH.value === 'number' && !noAdu
@@ -1139,6 +1142,57 @@ function approvalOf(file: Obj, district: string | null) {
 }
 
 /** adu, approval, conditions, checks and (when it is not allowed) the reasons and fallback. */
+/** Pass 30 (pipeline/rules.py STATUS_RANK, _more_limiting): more limiting last. The status first, then the path. */
+const STATUS_RANK: Record<string, number> = { allowed_by_right: 0, special_exception: 1, conditional_use: 1, family_only: 1, conversion_only: 1, employee_quarters: 1, not_addressed: 2, prohibited: 3 };
+const moreLimiting = (a: { status: string; path: string }, b: { status: string; path: string }): boolean => {
+  const ra = STATUS_RANK[a.status] ?? 1;
+  const rb = STATUS_RANK[b.status] ?? 1;
+  return ra !== rb ? ra > rb : PATH_ORDER.indexOf(a.path) > PATH_ORDER.indexOf(b.path);
+};
+const statusWords = (s: unknown): string => (s === 'employee_quarters' ? 'employee quarters only' : String(label(s as Json)));
+const lowerLead = (s: string): string => (/^.[a-z]/.test(s) ? s.charAt(0).toLowerCase() + s.slice(1) : s);
+
+/** Pass 30 (pipeline/rules.py _status_only_if): gates whose test is a condition of the ADU status, in the district. */
+function statusOnlyIf(file: Obj, district: string | null): Obj[] {
+  const gates = leafAt(file, 'eligibility', 'gates');
+  return (Array.isArray(gates?.value) ? gates!.value.filter(isObj) : []).filter(
+    (g) => typeof g.status_only_if === 'string' && (!district || !Array.isArray(g.districts) || g.districts.some((d) => typeof d === 'string' && dkey(d) === dkey(district))),
+  );
+}
+
+/** Pass 30 (pipeline/rules.py _overlay_status_line, the lot's overlays not given). */
+function overlayStatusLine(it: Obj): string {
+  const ovs = Array.isArray(it.overlays) ? (it.overlays as string[]) : [];
+  const on = Array.isArray(it.districts) && it.districts.length ? ` on ${(it.districts as string[]).join(' or ')} land` : '';
+  const note = typeof it.note === 'string' && it.note ? `. ${ownerText(it.note).replace(/\.$/, '')}` : '';
+  return `In the ${ovs[0] ?? 'named'} overlay${on} the code's ADU status is ${statusWords(it.status)} (${it.section ?? ''})${note}. Only if the lot is in the overlay`;
+}
+
+/** Pass 30 (pipeline/rules.py _dispute_line): both readings of a disputed status, each cited. own: the status the file
+ * gives this district, with its path, when the district is given. */
+function disputeLine(leaf: Obj, own: { status: string; path: string; section: string } | null, district: string | null): { text: string; ownLess: boolean } {
+  const table = leaf.value === 'table_vs_text';
+  const where = Array.isArray(leaf.districts) && leaf.districts.length ? ` in ${district ?? (leaf.districts as string[]).join(', ')}` : '';
+  const lead = table ? `The use table and the text conflict on the ADU status${where}` : `The code's ADU status is disputed${where}`;
+  const ownSrc = leaf.own_source === 'table' ? 'table' : 'text';
+  const said: string[] = [];
+  const opener = (src: string) => (table ? (src === 'table' ? 'The use table gives' : 'The text gives') : said.length ? 'Read another way it is' : 'Read one way it is');
+  const readings = (Array.isArray(leaf.readings) ? leaf.readings : []).filter(isObj);
+  let ownLess = false;
+  if (own) {
+    said.push(`${opener(ownSrc)} ${statusWords(own.status)} (${own.section})`);
+    ownLess = readings.some((r) => moreLimiting({ status: String(r.status), path: String(r.path) }, own));
+  }
+  for (const r of readings) {
+    const src = typeof r.source === 'string' ? r.source : ownSrc === 'text' ? 'table' : 'text';
+    const note = typeof r.note === 'string' && r.note ? `: ${lowerLead(ownerText(r.note).replace(/\.$/, ''))}` : '';
+    said.push(`${opener(src)} ${statusWords(r.status)}, ${label(r.path)} (${r.section ?? ''})${note}`);
+  }
+  const note = typeof leaf.note === 'string' && leaf.note ? `. ${ownerText(leaf.note).replace(/\.$/, '')}` : '';
+  const tail = ownLess || !own ? '' : '. The tool reads the more limiting one';
+  return { text: `${lead}. ${said.join('. ')}${note}${tail}. Ask the zoning officer`, ownLess };
+}
+
 function placeTerms(file: Obj, district: string | null, name: string): Obj {
   const prov = isObj(file.provenance) ? file.provenance : {};
   const st = leafAt(file, 'adu', 'status');
@@ -1263,6 +1317,44 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
     approval.qualifier_text = text.charAt(0).toUpperCase() + text.slice(1);
     parts.splice(1, 1, approval.qualifier_text as string);
   }
+  // Pass 30 (pipeline/rules.py _status_only_if): a gate whose test is a condition of the status itself.
+  const onlyIf = statusOnlyIf(file, district);
+  if (onlyIf.length && inScope !== false && status && !NO_ADU.has(status)) {
+    const words = onlyIf.map((g) => `${String(g.status_only_if)} (${g.section ?? ''})`).join(', and ');
+    const lead = head ?? `${label(status).charAt(0).toUpperCase()}${label(status).slice(1)}`;
+    const line = `${lead}, only if ${words}. That is a fact about the lot, not given here`;
+    const at = head ? parts.indexOf(head) : -1;
+    if (at >= 0) parts.splice(at, 1, line);
+    else parts.splice(1, 0, line);
+    if (effective && !NOT_OK.has(effective) && !approval.qualifier) {
+      approval.qualifier = 'depends_on_lot_facts';
+      approval.qualifier_text = line;
+    }
+  }
+  // Pass 30 (pipeline/rules.py _overlay_status): the ADU status inside an overlay. Only the district is given here, so
+  // it reads "only if the lot is in the overlay".
+  const ovLeaf = leafAt(file, 'adu', 'status_by_overlay');
+  const ovItems = (Array.isArray(ovLeaf?.value) ? ovLeaf!.value.filter(isObj) : []).filter((it) => !district || !Array.isArray(it.districts) || listedIn(it.districts, district));
+  for (const it of ovItems) parts.push(overlayStatusLine(it));
+  // Pass 30 (pipeline/rules.py _status_dispute): the code supports more than one reading of the status here.
+  const dispLeaf = leafAt(file, 'adu', 'status_dispute');
+  const dispWhere = dispLeaf && Array.isArray(dispLeaf.districts) ? (dispLeaf.districts as string[]) : null;
+  const dispHere: boolean | null = !dispLeaf || !Array.isArray(dispLeaf.readings) ? false : dispWhere ? (district ? listedIn(dispWhere, district) : null) : inScope !== false;
+  let disputeText: string | null = null;
+  if (dispHere !== false && dispLeaf) {
+    const ownLeaf = inScope === false ? (outHit ? { value: outside, section: outHit.section ?? byOut?.section ?? null } : outsideLeaf) : st;
+    const own = dispHere && ownLeaf && typeof ownLeaf.value === 'string' ? { status: ownLeaf.value as string, path: effective ?? 'variance', section: String(ownLeaf.section ?? '') } : null;
+    const d = disputeLine(dispLeaf, own, dispHere ? district : null);
+    disputeText = d.text;
+    if (own && d.ownLess && effective && !NOT_OK.has(effective)) {
+      approval.qualifier = 'conditional_on_reading';
+      approval.qualifier_text = `${label(effective).charAt(0).toUpperCase()}${label(effective).slice(1)} only if the reading that lets this lot in holds: ${d.text}`;
+      // In place of the "path:" part, which the line says (the head stays: the scope line may lead)
+      const at = parts.findIndex((x) => typeof x === 'string' && x.startsWith('path: '));
+      if (at >= 0) parts.splice(at, 1, approval.qualifier_text as string);
+      else parts.push(approval.qualifier_text as string);
+    } else parts.push(d.text);
+  }
   const byForm = leafAt(file, 'adu', 'status_by_form');
   // The path per form today (pipeline/rules.py by_type, no lot facts): the base path for an allowed form, else the
   // fallback; a form's own path when it is more demanding; a form the code bars or leaves out takes the fallback.
@@ -1340,6 +1432,10 @@ function placeTerms(file: Obj, district: string | null, name: string): Obj {
       // Pass 28: the code defines an ADU that no district lists (adu.defined_not_listed).
       ...(definedNotListed(file) ? { defined_not_listed: ruleOut('adu.defined_not_listed', leafAt(file, 'adu', 'defined_not_listed')!) } : {}),
       ...(byForm && isObj(byForm.value) && inScope !== false ? { status_by_form: ruleOut('adu.status_by_form', byForm) } : {}),
+      // Pass 30: a disputed status, the status inside an overlay, a status that holds only if a lot fact does.
+      ...(disputeText && dispLeaf ? { status_dispute: { ...ruleOut('adu.status_dispute', dispLeaf), districts: dispWhere, readings: dispLeaf.readings ?? [], text: disputeText } } : {}),
+      ...(ovItems.length && ovLeaf ? { status_by_overlay: { ...ruleOut('adu.status_by_overlay', ovLeaf), value: ovItems, text: ovItems.map(overlayStatusLine) } } : {}),
+      ...(onlyIf.length && inScope !== false ? { status_only_if: onlyIf.map((g) => ({ condition: g.status_only_if, test: g.test ?? null, section: g.section ?? null, url: g.url ?? null })) } : {}),
       // Pass 7: a district whose path is a hearing never reads "allowed by right" (pipeline/rules.py adu_status).
       ...(dpLess ? { status_in_district: { value: status ?? null, district, town_status: townStatus ?? null, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),
       ...(status === 'allowed_by_right' && typeof dpath === 'string' && dpath in BOARDS ? { status_in_district: { value: dpath, district, section: isObj(approval.district_path) ? approval.district_path.section ?? null : null } } : {}),

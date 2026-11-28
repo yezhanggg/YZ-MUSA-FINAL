@@ -248,6 +248,10 @@ export interface PlaceAnswerView {
 }
 
 const HEARING = new Set<PlaceApproval>(['special_exception', 'conditional_use']);
+/** Pass 30 (pipeline/places_index/ladder.py DISPUTED_DETAIL): a town whose ADU status the code leaves in dispute. Its
+ * detail starts with these words, and it is never a clear allow or a firm no. */
+export const DISPUTED_DETAIL = 'ADU status disputed';
+export const isDisputed = (r: PlaceRow | undefined): boolean => !!r?.status_detail?.startsWith(`${DISPUTED_DETAIL}:`);
 
 /** One plain answer line for a place: "Allowed by right", "Allowed with a hearing", "Not allowed today", ... */
 export function placeAnswer(r: PlaceRow | undefined, mode: PlaceMode): PlaceAnswerView {
@@ -263,6 +267,7 @@ export function placeAnswer(r: PlaceRow | undefined, mode: PlaceMode): PlaceAnsw
       return { answer: 'yes', title: 'Allowed by right', sub: 'No hearing. Zoning and building permits still apply.', notLaw: false };
     case 'limited': {
       const a = r?.approval ?? null;
+      if (isDisputed(r)) return { answer: 'approval', title: 'Disputed', sub: 'The code supports two readings of whether an ADU is allowed. Ask the zoning officer.', notLaw: false };
       if (a && HEARING.has(a)) return { answer: 'approval', title: 'Allowed with a hearing', sub: firstClause(detail) ?? APPROVAL_LONG[a], notLaw: false };
       if (a === 'variance') return { answer: 'no', title: 'Only with a variance', sub: APPROVAL_LONG.variance, notLaw: false };
       if (a === 'administrator_exception') return { answer: 'approval', title: 'Allowed with sign-off', sub: firstClause(detail) ?? APPROVAL_LONG[a], notLaw: false };

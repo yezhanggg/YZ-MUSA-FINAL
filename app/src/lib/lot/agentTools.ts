@@ -10,7 +10,7 @@ import { lotTownOf } from './towns.js';
 import { PARCEL_TOOLS, getNextSteps, getParcelInfo, getPropertyTax, type ParcelToolName } from './parcelTools.js';
 import { ADU_TYPES, SCENARIOS, isAduType, isScenario, type AduType, type LotRecord, type RentByBedroom, type RuleType, type Rules, type Scenario } from './types.js';
 import { approvalFor, compareScenarios, suggestedUnit, unitVerdict, type UnitInput, type UnitVerdict } from './verdict.js';
-import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum } from './words.js';
+import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_TITLE, isNum, largestText, overCeiling } from './words.js';
 
 type JsonSchema = Record<string, unknown>;
 /** Same as ToolDef in agent/schema.ts. */
@@ -431,6 +431,8 @@ export function explainLimit(lot: LotRecord, unit: UnitInput) {
     ...(v.status === 'not_allowed' && whyNotAllowed(lot, v.scenario, v.type).length ? { why_not_allowed: whyNotAllowed(lot, v.scenario, v.type) } : {}),
     what_would_help: v.changes,
     largest_footprint_sqft: v.largest_sqft ?? 'not on file',
+    // A whole-yard largest (no size cap binds the unit) is no unit size: say it as "more than 2,000 sq ft".
+    ...(overCeiling(v.largest_sqft, lot.fit[v.scenario]?.[v.type]?.limiting) ? { largest_footprint_text: largestText(v.largest_sqft) } : {}),
     approval: v.approval.label,
     notice: NOTICE,
     sources: collectSources(v).map(src),

@@ -42,7 +42,7 @@ const jsonNumbers = (text: string) => [...text.matchAll(/-?\d+(?:\.\d+)?/g)].map
 
 describe('eval set shape', () => {
   it.skipIf(!set)('has 10 questions in each main category, up to 5 on town rule files, unique ids', () => {
-    for (const c of CATEGORIES.filter((c) => !['town_rules', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map'].includes(c))) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
+    for (const c of CATEGORIES.filter((c) => !['town_rules', 'ladder', 'allentown', 'rule_text', 'features', 'expert', 'parcel', 'map', 'tool'].includes(c))) expect(set!.questions.filter((q) => q.category === c), c).toHaveLength(10);
     // Made by make_more_questions.ts, make_feature_questions.ts and make_parcel_questions.ts, when their files are there.
     for (const [c, k] of [['allentown', 8], ['rule_text', 6], ['features', 5], ['parcel', 38]] as const) expect([0, k]).toContain(set!.questions.filter((q) => q.category === c).length);
     expect(set!.questions.filter((q) => q.category === 'town_rules').length).toBeLessThanOrEqual(5);
@@ -53,6 +53,10 @@ describe('eval set shape', () => {
     const expert = set!.questions.filter((q) => q.category === 'expert');
     if (expert.length) expect(expert.length).toBeGreaterThanOrEqual(40);
     for (const q of expert.filter((x) => x.history)) expect(q.history!.at(-1)?.role, q.id).toBe('assistant');
+    // questions_tool.json: 30 or more questions about the tool itself, each answered first from get_methods.
+    const tool = set!.questions.filter((q) => q.category === 'tool');
+    if (tool.length) expect(tool.length).toBeGreaterThanOrEqual(30);
+    for (const q of tool) expect(q.calls[0]?.name, q.id).toBe('get_methods');
     expect(new Set(set!.questions.map((q) => q.id)).size).toBe(set!.questions.length);
   });
 
@@ -69,7 +73,7 @@ describe('eval set shape', () => {
       // Tier B questions check behaviour (labels, wording) on top of the text the tool returns.
       if (q.category === 'traps' || q.category === 'tier_b' || q.category === 'ladder') expect(q.facts.some((f) => f.kind === 'behaviour'), q.id).toBe(true);
       // Allentown and rule text questions check data or wording ("not checked", who decides), at least one fact each.
-      else if (q.category === 'allentown' || q.category === 'rule_text' || q.category === 'features' || q.category === 'expert' || q.category === 'parcel' || q.category === 'map') expect(q.facts.length, q.id).toBeGreaterThan(0);
+      else if (q.category === 'allentown' || q.category === 'rule_text' || q.category === 'features' || q.category === 'expert' || q.category === 'parcel' || q.category === 'map' || q.category === 'tool') expect(q.facts.length, q.id).toBeGreaterThan(0);
       else expect(q.facts.some((f) => f.kind !== 'behaviour'), q.id).toBe(true);
     }
   });

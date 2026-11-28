@@ -8,7 +8,7 @@ import { RULE_TYPES, type LotRecord, type RuleType, type Rules } from './types';
 import type { UnitVerdict, VerdictCheck } from './verdict';
 import { NO_GARAGE, barReason, sameAsToday } from './verdict';
 import { slopeOf } from './slope';
-import { TYPE_LABEL, ftText, isNum, pctText, sqftText } from './words';
+import { TYPE_LABEL, ftText, isNum, largestText, overCeiling, pctText, sqftText } from './words';
 
 export interface WhyNot {
   /** What the zoning here allows. */
@@ -170,7 +170,7 @@ export function answerFor(lot: LotRecord, v: UnitVerdict): AnswerView {
   }
   // A bill picked and the answer is yes: lead with the largest unit that fits (the record's own largest_sqft).
   // A bill with the same rules as today (the local bill outside Philadelphia) reads like today.
-  if (base.answer === 'yes' && v.scenario !== 'today' && !sameAsToday(lot, v.scenario) && !v.qualifiers?.length && isNum(v.largest_sqft) && v.largest_sqft > 0) sub = `Up to ${sqftText(Math.floor(v.largest_sqft))} fits here`;
+  if (base.answer === 'yes' && v.scenario !== 'today' && !sameAsToday(lot, v.scenario) && !v.qualifiers?.length && isNum(v.largest_sqft) && v.largest_sqft > 0) sub = overCeiling(v.largest_sqft, lot.fit[v.scenario]?.[v.type]?.limiting) ? `It fits: the yard holds ${largestText(v.largest_sqft)}` : `Up to ${sqftText(Math.floor(v.largest_sqft))} fits here`;
   if ((base.answer === 'yes' || base.answer === 'approval') && slopeOf(lot, v)?.cls === 'steep') sub = `${end(sub)} Steep site.`;
   return { ...base, sub };
 }

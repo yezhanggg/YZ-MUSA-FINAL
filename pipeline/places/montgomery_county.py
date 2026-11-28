@@ -1,9 +1,14 @@
-"""Montgomery County lot data: download, build and check, for the towns with a verified rule file and an ADU path.
+"""Montgomery County lot data: download, build and check, for the towns with a verified rule file.
 
 One place (`montgomery_county`, county FIPS 42091). Each lot names its town's rule file in `rule_file`,
-and pipeline/build_lots.py resolves the rules per lot with it. Towns: Narberth borough (ADU by right in
-an accessory building), Upper Dublin township and Lower Merion township (family ADU by special
-exception). Towns whose code does not address ADUs (Cheltenham, Horsham, Norristown) are left out.
+and pipeline/build_lots.py resolves the rules per lot with it. A town joins when its rule file is verified
+in towns_index.json and the county zoning layer names its residential districts (TOWNS, checked
+2026-11-26). The first three towns (Narberth, Lower Merion, Upper Dublin) were lot data 12; 22 more joined
+on 2026-11-26 and 27 (Whitpain). Towns whose code does not address ADUs (Cheltenham, Norristown, Upper Merion, Horsham,
+Springfield, Skippack, Conshohocken) are in: the resolver gives the form a use variance with the reason.
+Lots whose path is a conditional use (Skippack VC, GC and LI; Conshohocken R-O; Upper Gwynedd IN) are
+left out (conditional_use_keys), as West Vincent BV in chester_county.py. Lots in a district the town's
+rule file does not list keep the layer's code and take the file's fallback path, as in Chester County.
 
     python -m pipeline.places.montgomery_county download
     python -m pipeline.places.montgomery_county build
@@ -83,12 +88,41 @@ class Town:
     rule_file: str
 
 
+# Lot data 12 towns first (their answers must not move), then the towns added on 2026-11-26.
 TOWNS: tuple[Town, ...] = (
     Town("12", "Narberth borough", "Narberth Borough", "4209152664", "pa_montgomery_narberth"),
     Town("40", "Lower Merion township", "Lower Merion Township", "4209144976", "pa_montgomery_lower_merion"),
     Town("54", "Upper Dublin township", "Upper Dublin Township", "4209179008", "pa_montgomery_upper_dublin"),
+    Town("01", "Ambler borough", "Ambler Borough", "4209102264", "pa_montgomery_ambler"),
+    Town("05", "Conshohocken borough", "Conshohocken Borough", "4209115848", "pa_montgomery_conshohocken"),
+    Town("11", "Lansdale borough", "Lansdale Borough", "4209141432", "pa_montgomery_lansdale"),
+    Town("13", "Norristown borough", "Municipality of Norristown", "4209154656", "pa_montgomery_norristown"),
+    Town("31", "Cheltenham township", "Cheltenham Township", "4209112968", "pa_montgomery_cheltenham"),
+    Town("32", "Douglass township", "Douglass Township", "4209119672", "pa_montgomery_douglass"),
+    Town("34", "Franconia township", "Franconia Township", "4209127280", "pa_montgomery_franconia"),
+    Town("35", "Hatfield township", "Hatfield Township", "4209133120", "pa_montgomery_hatfield"),
+    Town("36", "Horsham township", "Horsham Township", "4209135808", "pa_montgomery_horsham"),
+    Town("37", "Limerick township", "Limerick Township", "4209143312", "pa_montgomery_limerick"),
+    Town("42", "Lower Pottsgrove township", "Lower Pottsgrove Township", "4209145072", "pa_montgomery_lower_pottsgrove"),
+    Town("43", "Lower Providence township", "Lower Providence Township", "4209145080", "pa_montgomery_lower_providence"),
+    Town("46", "Montgomery township", "Montgomery Township", "4209150640", "pa_montgomery_montgomery"),
+    Town("49", "Plymouth township", "Plymouth Township", "4209161664", "pa_montgomery_plymouth"),
+    Town("51", "Skippack township", "Skippack Township", "4209171016", "pa_montgomery_skippack"),
+    Town("52", "Springfield township", "Springfield Township", "4209173088", "pa_montgomery_springfield"),
+    Town("56", "Upper Gwynedd township", "Upper Gwynedd Township", "4209179056", "pa_montgomery_upper_gwynedd"),
+    Town("58", "Upper Merion township", "Upper Merion Township", "4209179136", "pa_montgomery_upper_merion"),
+    Town("61", "Upper Providence township", "Upper Providence Township", "4209179256", "pa_montgomery_upper_providence"),
+    Town("63", "West Norriton township", "West Norriton Township", "4209183696", "pa_montgomery_west_norriton"),
+    Town("65", "Whitemarsh township", "Whitemarsh Township", "4209184624", "pa_montgomery_whitemarsh"),
+    Town("66", "Whitpain township", "Whitpain Township", "4209184888", "pa_montgomery_whitpain"),
 )
-TOWNS_BBOX = (-75.36, 39.97, -75.12, 40.20)
+# Towns read on download but left out of the lots whole (coordinator, 2026-11-27). Lower Providence adopted a new
+# zoning ordinance and map on 2026-11-05 (R-1 to R-5 replaced by LDR, MDR, SLR, ...); its rule file reads the old one.
+LEFT_OUT_TOWNS: dict[str, str] = {
+    "pa_montgomery_lower_providence": "new zoning ordinance and map adopted 2026-11-05; the rule file reads the old chapter",
+}
+# Lon/lat box around the towns (Douglass to Cheltenham, Lower Merion to Franconia).
+TOWNS_BBOX = (-75.70, 39.97, -75.08, 40.41)
 PIN_SQL = " or ".join(f"TAXPIN like '{t.muni}%'" for t in TOWNS)
 MUNI_SQL = ",".join(f"'{t.muni}   '" for t in TOWNS)  # MUNI_CODE is padded to five characters
 ZONING_SQL = ",".join(f"'{t.zoning_name}'" for t in TOWNS)
@@ -165,9 +199,12 @@ LAYERS: tuple[Layer, ...] = (
         NFHL,
         LIC_FEMA,
         "FLD_ZONE,ZONE_SUBTY,SFHA_TF,DFIRM_ID",
+        # Only the 1 percent annual chance areas, the only ones the build reads. The county-wide zone X
+        # shapes are tens of MB each and the server fails on them (2026-11-26).
+        where="SFHA_TF = 'T'",
         bbox=TOWNS_BBOX,
         page=25,
-        note="Flood hazard zones touching the towns box. SFHA_TF = T is the 1 percent annual chance area",
+        note="Flood hazard zones touching the towns box, SFHA_TF = T (the 1 percent annual chance area) only",
     ),
 )
 BOA = f"{MC}/Parcels/GIS_BOA_LAND/FeatureServer/0"
@@ -277,6 +314,17 @@ def download(only: list[str] | None = None) -> None:
                 "footprints_msft",
                 common.source_entry(MSFT_INDEX, LIC_MSFT, n, out, "Zoom 9 quadkey tiles clipped to the towns"),
             )
+    if (root / BASE_DIR).exists():
+        record_source(
+            BASE_DIR,
+            {
+                "folder": BASE_DIR,
+                "layers": [*BASE_LAYERS, "assessment"],
+                "note": "Copies of the 2026-11-14 pulls that lot data 12 (Narberth, Lower Merion, Upper Dublin) was "
+                "built on. Read inside the old box (streets, flood) or the old towns (outlines, assessment rows) so "
+                "those towns' answers stay as built; see read_layer and read_assessment",
+            },
+        )
     record_source("imagery", IMAGERY)
     record_source("towns", {"towns": [t.__dict__ for t in TOWNS], "note": "Towns built and their rule files"})
 
@@ -293,8 +341,42 @@ def step(msg: str) -> None:
     print(f"[{time.time() - _T0:7.1f}s] {msg}", flush=True)
 
 
+# Lot data 12 (Narberth, Lower Merion, Upper Dublin) was built on the 2026-11-14 pulls of the box layers.
+# Their copies sit in raw/<place>/base_lotdata12/. Inside the old box (the old towns for the Microsoft
+# outlines, which were clipped to them) the old rows are read, ahead of and in their old order; the new
+# county-wide pull gives only the rows that do not touch that area. So the three towns' streets, outlines and
+# flood zones stay as built and their answers do not move with later edits of the county layers. Parcels,
+# zoning, ZCTAs, flood zones and the DVRPC heights were pulled again with no change in the old towns (checked
+# 2026-11-26); the assessment table keeps its old rows there too (read_assessment).
+BASE_DIR = "base_lotdata12"
+BASE_BBOX = (-75.36, 39.97, -75.12, 40.20)
+BASE_TOWNS = ("4209152664", "4209144976", "4209179008")
+BASE_LAYERS = ("streets", "flood_nfhl", "footprints_msft")
+
+
+def base_area(key: str) -> Any:
+    """The area (WORK_CRS) whose rows come from the lot data 12 copy of a layer."""
+    from shapely.geometry import box
+
+    if key == "footprints_msft":
+        towns = common.read_layer(PLACE, "town_boundaries", WORK_CRS)
+        return towns[towns["GEOID"].astype(str).isin(BASE_TOWNS)].union_all()
+    return gpd.GeoSeries([box(*BASE_BBOX)], crs=LONLAT).to_crs(WORK_CRS).iloc[0]
+
+
+def with_base(new: gpd.GeoDataFrame, base: gpd.GeoDataFrame, area: Any) -> gpd.GeoDataFrame:
+    """Base rows first (as they were), then the new rows that do not touch `area`."""
+    extra = new[~new.intersects(area)]
+    out = pd.concat([base, extra[[c for c in extra.columns if c in base.columns]]], ignore_index=True)
+    return gpd.GeoDataFrame(out, geometry="geometry", crs=new.crs)
+
+
 def read_layer(key: str) -> gpd.GeoDataFrame:
-    return common.read_layer(PLACE, key, WORK_CRS)
+    new = common.read_layer(PLACE, key, WORK_CRS)
+    base_path = raw_dir(PLACE) / BASE_DIR / f"{key}.gpkg"
+    if key not in BASE_LAYERS or not base_path.exists():
+        return new
+    return with_base(new, gpd.read_file(base_path).to_crs(WORK_CRS), base_area(key))
 
 
 def town_of(muni: Any) -> Town | None:
@@ -316,6 +398,21 @@ def units_from(land_use: Any, cls: Any, liv_units: Any) -> int | None:
     return u if 1 <= u <= 4 else None
 
 
+BASE_MUNIS = ("12", "40", "54")
+
+
+def read_assessment() -> pd.DataFrame:
+    """The assessment table. The lot data 12 towns keep their 2026-11-14 rows (14 land use codes and 3
+    unit counts changed there by 2026-11-26), the other towns take the new pull."""
+    new = pd.read_parquet(raw_dir(PLACE) / "assessment.parquet")
+    base_path = raw_dir(PLACE) / BASE_DIR / "assessment.parquet"
+    if not base_path.exists():
+        return new
+    base = pd.read_parquet(base_path)
+    old_town = new["MUNI_CODE"].astype("string").str.strip().isin(BASE_MUNIS)
+    return pd.concat([base, new[~old_town]], ignore_index=True)
+
+
 def load_parcels() -> gpd.GeoDataFrame:
     p = read_layer("parcels")
     p = p[p["TAXPIN"].notna() & (p["TAXPIN"].astype(str).str.strip() != "")].copy()
@@ -323,7 +420,7 @@ def load_parcels() -> gpd.GeoDataFrame:
     p = p.dissolve(by="TAXPIN", as_index=False, aggfunc={"PARCELTYPE": "first"})
     p["pin"] = p["TAXPIN"].astype(str).str.strip()
     p["lot_id"] = COUNTY_FIPS + "-" + p["pin"]
-    boa = pd.read_parquet(raw_dir(PLACE) / "assessment.parquet").drop_duplicates("PARCEL_NUMBER")
+    boa = read_assessment().drop_duplicates("PARCEL_NUMBER")
     boa = boa.rename(columns={"PARCEL_NUMBER": "pin"})
     p = p.merge(boa, on="pin", how="left")
     towns = [town_of(m) for m in p["pin"]]
@@ -481,6 +578,52 @@ def zoning_dates() -> dict[str, Any]:
     return out
 
 
+CU_LOT_SQFT = (None, 5000.0, 20000.0, 100000.0)  # lot sizes probed: a size gate can change the path
+
+
+def _cu_paths(res: dict[str, Any]) -> bool:
+    """True when a path the lot record keeps is a conditional use."""
+    by_type = res.get("approval_by_type") or {}
+    nested = [(res.get(k) or {}).get("path") for k in ("district_path", "path_to_ask")]
+    paths = [res.get("approval_path"), *by_type.values(), *nested]
+    return "conditional_use" in paths
+
+
+def conditional_use_keys(lots: pd.DataFrame) -> set[tuple[str, str | None, str]]:
+    """(rule_file, zoning, housing_type) whose path under any scenario is a conditional use.
+
+    The lot record has no conditional use path (lot_schema.json, the app's APPROVAL_PATHS), so those lots
+    are left out rather than mislabelled. Probed per combination at a few lot sizes, read only."""
+    from pipeline import build_lots as bl
+    from pipeline import rules as rulesmod
+
+    combos = lots[["rule_file", "zoning", "housing_type"]].astype(object).drop_duplicates()
+    out: set[tuple[str, str | None, str]] = set()
+    for rf, z, ht in combos.itertuples(index=False):
+        zone = None if pd.isna(z) else str(z)
+        lot = {"zoning_district": zone, "building_type": bl.HOUSING_TO_BUILDING.get(str(ht), ht), "overlays": []}
+        if any(
+            _cu_paths(rulesmod.resolve(rf, sc, {**lot, "lot_sqft": size}, extra=True))
+            for sc in rulesmod.SCENARIOS
+            for size in CU_LOT_SQFT
+        ):
+            out.add((rf, zone, str(ht)))
+    return out
+
+
+def drop_conditional_use(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    keys = conditional_use_keys(lots)
+    if not keys:
+        return lots
+    zone = lots["zoning"].astype(object).where(lots["zoning"].notna(), None)
+    k = list(zip(lots["rule_file"], zone, lots["housing_type"].astype(str), strict=True))
+    cu = np.array([x in keys for x in k])
+    left = pd.DataFrame([x for x, c in zip(k, cu, strict=True) if c], columns=["rule_file", "zoning", "type"])
+    for (rf, z), n in left.groupby(["rule_file", "zoning"], dropna=False).size().items():
+        step(f"left out {n} lots in {rf} {z} (conditional use)")
+    return lots[~cu].reset_index(drop=True)
+
+
 def build() -> None:
     out_dir = processed_dir(PLACE, create=True)
     step("parcels")
@@ -491,6 +634,10 @@ def build() -> None:
     lots = lots[lots["housing_type"].isin(HOUSING_TYPES) & lots["rule_file"].notna()].reset_index(drop=True)
     step(f"{len(parcels)} parcels, {len(lots)} lots with 1 to 4 units")
     lots = join_lot_layers(lots)
+    lots = drop_conditional_use(lots)
+    gone = lots["rule_file"].isin(LEFT_OUT_TOWNS)
+    step(f"left out {int(gone.sum())} lots of towns left out whole ({', '.join(LEFT_OUT_TOWNS)})")
+    lots = lots[~gone].reset_index(drop=True)
     bldgs = bldgs[bldgs["lot_id"].isin(lots["lot_id"])].reset_index(drop=True)
     lots = pgh.summarize_buildings(lots, bldgs)
     publish_tables({out_dir / "lots.parquet": lots, out_dir / "buildings.parquet": bldgs[BUILDING_KEEP]})

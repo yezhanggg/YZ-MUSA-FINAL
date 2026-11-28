@@ -1497,7 +1497,7 @@
     {
      "kind": "number",
      "label": "lots",
-     "value": 625687,
+     "value": 1134553,
      "tol_pct": 1,
      "unit": "count"
     }
@@ -1509,7 +1509,7 @@
     }
    ],
    "scenario": null,
-   "rubric": "2,572 place rows on the ladder. 625,687 lots in six lot places."
+   "rubric": "2,572 place rows on the ladder. 1,134,553 lots in 14 lot places (lot data 13, Nov 28, 2026)."
   },
   {
    "id": "exp-21",

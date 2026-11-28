@@ -43,3 +43,18 @@ def test_pmtiles_write_and_read(tmp_path: Path) -> None:
 def test_step_rounds(step: float) -> None:
     h = np.array([[10.04, 10.06]])
     assert np.allclose(tt.decode_terrarium(tt.terrarium(h, step)), np.round(h / step) * step, atol=0.005)
+
+
+def test_lot_tile_mask_keeps_tiles_near_lots_only(tmp_path) -> None:
+    import pandas as pd
+
+    from tools import terrain_tiles as tt
+
+    (tmp_path / "p").mkdir()
+    # Two lots far apart: the mask holds their tiles and rings, not the land between.
+    pd.DataFrame({"lon": [-75.6, -75.2], "lat": [40.0, 40.0]}).to_parquet(tmp_path / "p" / "index.parquet")
+    keep = tt.lot_tile_mask("p", tmp_path, 10, 16)
+    assert len(keep[16]) == 18  # 2 lots x 3 x 3
+    mid = tt.lonlat_to_tile(-75.4, 40.0, 16)
+    assert mid not in keep[16]
+    assert all((x >> 6, y >> 6) in keep[10] for x, y in keep[16])

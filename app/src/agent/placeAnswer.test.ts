@@ -135,7 +135,7 @@ describe.skipIf(!existsSync(TABLE))('the real place table', () => {
       expect(out.found, place).toBe(true);
       expect(String(out.verdict), place).not.toBe('');
       expect(String(out.confidence), place).not.toBe('');
-      expect(String(out.next_step), place).toMatch(/zoning officer|Ask/);
+      expect(String(out.next_step), place).toMatch(/zoning office|Ask/);
     }
   });
 });
@@ -301,5 +301,45 @@ describe('checked offices and documents of a lot town', () => {
     const r = await ask({ place: 'Reading city' }, { townInfo: () => null } as never);
     expect(r).not.toHaveProperty('town_offices');
     expect(String(r.next_step)).toContain('Borough office ((717) 555-0100)');
+  });
+});
+
+describe('pass 30: a disputed ADU status', () => {
+  const oh = row({ geoid: '4200356384', name: "O'Hara township", county: 'Allegheny', tier: 'verified', status: 'limited', approval: null, rule_file: 'pa_allegheny_ohara', status_detail: 'ADU status disputed: the code supports two readings, so ask the zoning officer, family only' });
+  it('is never a clear allow or a firm no', async () => {
+    expect(verdictOf(oh)).toMatch(/^Disputed: the code supports two readings/);
+    const out = (await getPlaceAnswer({ place: "O'Hara township", unit_type: 'internal' }, { ...deps, places: memoryPlaces([oh]) })) as Out;
+    expect(String(out.status_dispute)).toContain('455-1.3');
+    expect((out.proposal as { check: { fits_zoning: string } }).check.fits_zoning).toBe('not_settled');
+  });
+  it('a town-wide dispute is in the verdict line itself, never a plain "Allowed by right"', async () => {
+    const out = (await getPlaceAnswer({ place: "O'Hara township" }, { ...deps, places: memoryPlaces([{ ...oh, unit_types: ['attached', 'internal'] }]) })) as Out;
+    const v = String(out.verdict);
+    expect(v).not.toMatch(/Allowed by right \(zoning permit, no hearing\)(\.|$)/);
+    if (/Allowed/.test(v)) expect(v).toContain('only if the reading that lets this lot in holds');
+    expect(String(out.how_to_answer)).toContain('only if the reading that lets the lot in holds');
+  });
+  it('a dispute in one district does not change the town verdict', () => {
+    expect(verdictOf({ ...oh, approval: 'by_right', status_detail: 'conversion of an existing building only, ADU status disputed in MDR: the use table and the text conflict, so ask the zoning officer' })).toBe('Allowed with conditions');
+  });
+});
+
+describe('pass 30: employee quarters', () => {
+  const be = row({ geoid: '4204506024', name: 'Bethel township', county: 'Delaware', tier: 'verified', status: 'limited', approval: 'by_right', unit_types: ['detached', 'attached', 'internal', 'garage'], rule_file: 'pa_delaware_bethel', status_detail: "quarters for the household's own employees, caretakers or watchmen only, not a unit open to the public, zoning permit, only in R-1, R-3, R-4, not addressed elsewhere" });
+  it('names the quarters in the verdict, not "Allowed with conditions"', async () => {
+    expect(verdictOf(be)).toBe('Employee or caretaker quarters only, not an ADU open to the public (zoning permit, no hearing)');
+    const out = (await getPlaceAnswer({ place: 'Bethel township', county: 'Delaware' }, { ...deps, places: memoryPlaces([be]) })) as Out;
+    expect(String(out.verdict)).toMatch(/^Employee or caretaker quarters only, not an ADU open to the public/);
+  });
+});
+
+describe('a code caution leads the answer (Lower Providence: a new ordinance, the file reads the repealed chapter)', () => {
+  const lp = row({ geoid: '4209145080', name: 'Lower Providence township', county: 'Montgomery', tier: 'drafted', status: 'limited', approval: 'by_right', unit_types: ['attached', 'internal', 'garage'], rule_file: 'pa_montgomery_lower_providence', status_detail: 'family only. This file reads the repealed chapter.' });
+  it('puts the code caution first, before the verdict', async () => {
+    const out = (await getPlaceAnswer({ place: 'Lower Providence township' }, { ...deps, places: memoryPlaces([lp]) })) as Out;
+    const keys = Object.keys(out);
+    expect(keys.indexOf('code_caution')).toBeLessThan(keys.indexOf('verdict'));
+    expect(String(out.code_caution)).toMatch(/^Code caution: This file reads the repealed chapter\. Lower Providence adopted a new zoning ordinance and map on 2026-11-05/);
+    expect(String(out.verdict)).toMatch(/^Under the repealed chapter this file reads, not the town's new ordinance \(see code_caution\): depends on the form/);
   });
 });

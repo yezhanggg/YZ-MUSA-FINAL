@@ -370,7 +370,23 @@ def fill_tile(h: np.ndarray, valid: np.ndarray) -> np.ndarray:
     return out
 
 
-def build(place: str, lots_dir: Path, minzoom: int, maxzoom: int, step: float, work: Path) -> dict[str, object]:
+def lot_tile_mask(place: str, lots_dir: Path, minzoom: int, maxzoom: int, ring: int = 1) -> dict[int, set[tuple[int, int]]]:
+    """Tiles to write per zoom: the max-zoom tiles that hold a lot, with a ring of `ring` tiles around them, and their
+    parents. A county place spreads its towns over a wide box; without the mask the file covers the empty land between
+    them too (Chester County's 14 towns: 380 MB against GitHub's 100 MiB file limit)."""
+    import pandas as pd
+
+    idx = pd.read_parquet(lots_dir / place / "index.parquet", columns=["lon", "lat"]).dropna()
+    base: set[tuple[int, int]] = set()
+    for lon, lat in zip(idx["lon"].to_numpy(), idx["lat"].to_numpy(), strict=True):
+        x, y = lonlat_to_tile(float(lon), float(lat), maxzoom)
+        for dx in range(-ring, ring + 1):
+            for dy in range(-ring, ring + 1):
+                base.add((x + dx, y + dy))
+    return {z: {(x >> (maxzoom - z), y >> (maxzoom - z)) for x, y in base} for z in range(minzoom, maxzoom + 1)}
+
+
+def build(place: str, lots_dir: Path, minzoom: int, maxzoom: int, step: float, work: Path, ring: int = 1) -> dict[str, object]:
     import rasterio
 
     data_root = lots_dir.parent
@@ -381,13 +397,15 @@ def build(place: str, lots_dir: Path, minzoom: int, maxzoom: int, step: float, w
     x0, y0 = lonlat_to_tile(w, n, maxzoom)
     x1, y1 = lonlat_to_tile(e, s, maxzoom)
     t0 = time.time()
-    merc = work / f"{place}_3857_z{maxzoom}.tif"
+    # The cache name carries the tile range: a place whose lots grew (new towns) must not reuse an older, smaller warp.
+    merc = work / f"{place}_3857_z{maxzoom}_{x0}_{y0}_{x1}_{y1}.tif"
     if not merc.exists():
         print(f"warp {dem.name} -> {merc.name} ({x1 - x0 + 1} x {y1 - y0 + 1} tiles at z{maxzoom})", flush=True)
         part = merc.with_name(merc.name + ".part.tif")
         warp(dem, part, (x0, y0, x1, y1), maxzoom)
         os.replace(part, merc)
     print(f"  warp done {time.time() - t0:.0f} s", flush=True)
+    keep = lot_tile_mask(place, lots_dir, minzoom, maxzoom, ring)
     tiles: dict[int, bytes] = {}
     counts: dict[int, int] = {}
     with rasterio.open(merc) as src:
@@ -400,6 +418,8 @@ def build(place: str, lots_dir: Path, minzoom: int, maxzoom: int, step: float, w
         n_here = 0
         for j in range(nty):
             for i in range(ntx):
+                if (gx + i, gy + j) not in keep[z]:
+                    continue  # no lot under this tile or next to it
                 block = level[j * TILE : (j + 1) * TILE, i * TILE : (i + 1) * TILE]
                 ok = ~np.isnan(block)
                 if not ok.any():
@@ -431,12 +451,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--maxzoom", type=int, default=16)
     ap.add_argument("--step", type=float, default=0.1, help="height rounding in metres before encoding")
     ap.add_argument("--lots-dir", default=os.environ.get("LOT_DATA_DIR", str(Path.home() / "musa-drive" / "lots")))
+    ap.add_argument("--ring", type=int, default=1, help="tiles kept around each lot's max-zoom tile (0: only tiles under lots)")
     ap.add_argument("--work", default=str(Path.home() / "Library" / "Caches" / "yz-musa" / "terrain-tiles"))
     a = ap.parse_args(argv)
     lots_dir = Path(a.lots_dir)
     work = Path(a.work)
     work.mkdir(parents=True, exist_ok=True)
-    res = build(a.place, lots_dir, a.minzoom, a.maxzoom, a.step, work)
+    res = build(a.place, lots_dir, a.minzoom, a.maxzoom, a.step, work, a.ring)
     tiles: dict[int, bytes] = res["tiles"]  # type: ignore[assignment]
     sources = json.loads((lots_dir.parent / "raw" / "elevation" / a.place / "SOURCES.json").read_text())
     dem_meta = sources.get("dem", sources) if isinstance(sources, dict) else {}

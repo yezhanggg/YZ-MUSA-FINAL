@@ -15,7 +15,7 @@ Say once in the talk: not legal advice, not a zoning determination, parcel lines
 
 - Can a backyard home fit on this lot, and what is on the lot now?
 - Aerial images give land cover: buildings, trees, open ground, hard surface. Lot, building and street data give the geometry.
-- The tool answers for every 1 to 4 unit lot in six lot places: Philadelphia, Pittsburgh, Allentown, and parts of Chester, Centre and Montgomery counties (625,687 lots).
+- The tool answers for every 1 to 4 unit lot in 14 lot places: Philadelphia, Pittsburgh, Allentown, Erie, and towns in ten more counties (1,134,553 lots, Nov 28, 2026).
 
 ### 2. Data and labels (1.5 min)
 
@@ -102,10 +102,10 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 <!-- source: pipeline/build_lots.py COVER_FILES_BY_PLACE, ~/musa-drive/processed/pittsburgh/cover_compare_r34_c5_s0.json, ~/musa-drive/processed/philadelphia/cover_compare.json -->
 
 - The fit test does not use the land cover. It is a vector geometry test on the lot outline, the buildings and the streets, with setbacks from the rule files. It finds the largest unit that fits and where.
-- Land cover adds context to each lot: tree canopy, open ground, hard surface and impervious share. In all six lot places it also gives the trees and paving inside the suggested spot (the four town places since Nov 15).
-- Sources: the Pittsburgh lots use the original 5-class model. The Philadelphia lots use the 2018 raster. Allentown and the three county places use the same 5-class model (added Nov 14). Only Centre County lies in a test county (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so.
+- Land cover adds context to each lot: tree canopy, open ground, hard surface and impervious share. In the six places of lot data 12 it also gives the trees and paving inside the suggested spot (the four town places since Nov 15). The places added on Nov 27 and 28 have no land cover yet.
+- Sources: since Nov 18 the Pittsburgh lots use the three-model ensemble (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34). Before that they used the original 5-class model. The Philadelphia lots use the 2018 raster. Allentown and the first 9 county-place towns use the 5-class model (added Nov 14). Only Centre County lies in a test county (about 0.70). Allentown, Chester and Montgomery are not validated, and each record says so.
 - Per-lot check against the city rasters (tree share):
-  - Pittsburgh: off by 8.41 points on average, but only 128 lots could be checked.
+  - Pittsburgh: the ensemble is off by 8.1 points on average since Nov 18 (the 5-class model by 8.41), but only 128 lots could be checked.
   - Philadelphia: the model is off by 6.71 points on 430,161 lots, which is why it is not used.
 - The detector (YOLO, outbuildings), final: garage AP50 0.469 (target 0.50). The first run scored 0.2584. Two changes did it: 80 epochs at 640 px (0.4062), then setting garage, shed or other by the same size and distance rule that made the labels (0.469, with Pittsburgh 0.504 and Philadelphia 0.409). That score is against first-pass labels from footprints, not hand-checked labels, so it is not a true accuracy. Detections are not in the lot records. Garages come from building footprints.
   <!-- source: ~/musa-drive/models/yolo/runs/long640/eval_rule/eval_rule.json, ~/musa-drive/ops/logs/yolo.md FINAL table -->
@@ -113,31 +113,41 @@ All runs are scored on the same 109,183,195 test pixels, with 8 flips and turns 
 
 ### 7. Lot results (1 min)
 
-<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-26 (lot data 12). Data versions pittsburgh-20261126-d747c67f1d, philadelphia-20261126-331f84072a, allentown-20261126-dcb22d8b63, chester_county-20261126-3396fbba65, centre_county-20261126-faba91665f, montgomery_county-20261126-39cb1f34c5 -->
+<!-- source: ~/musa-drive/lots/<place>/stats.json all.paths and by_town, read 2026-11-28 (lot data 13). Data versions as in docs/LIMITS.md "What works today" -->
+
+Lot data 13, Nov 28, 2026: 14 lot places, 100 towns, 1,134,553 lots.
 
 | Lot place | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
 |---|---|---|---|---|
 | Philadelphia | 459,998 | 1.2 % | 0 % | 26.0 % |
 | Pittsburgh | 92,081 | 100 % | 65.4 % (Administrator's Exception) | 69.7 % |
 | Allentown | 29,158 | 88.3 % | 21.5 % | 71.3 % |
-| Montgomery County (Lower Merion, Narberth, Upper Dublin) | 26,119 | 78.3 % | 25.2 % | 83.9 % |
-| Chester County (5 towns) | 14,847 | 68.9 % | 28.7 % | 64.2 % |
-| Centre County (College Township) | 3,484 | 53.8 % | 47.7 % | 81.0 % |
+| Montgomery County (24 towns) | 142,072 | 47.2 % | 7.0 % | 63.0 % |
+| Delaware County (19 towns) | 104,738 | 26.9 % | 4.5 % | 63.1 % |
+| Lancaster County (11 towns) | 62,735 | 43.0 % | 20.4 % | 80.1 % |
+| Bucks County (8 towns) | 48,764 | 76.0 % | 5.0 % | 58.9 % |
+| Chester County (14 towns) | 42,306 | 66.8 % | 16.4 % | 72.3 % |
+| York County (7 towns) | 40,295 | 67.5 % | 13.7 % | 72.7 % |
+| Dauphin County (3 towns) | 35,475 | 92.8 % | 57.2 % | 67.1 % |
+| Northampton County (5 towns) | 33,695 | 66.8 % | 33.3 % | 68.3 % |
+| Erie | 26,150 | 99.6 % | 90.8 % | 90.1 % |
+| Cumberland County (3 towns) | 10,259 | 94.6 % | 53.0 % | 79.9 % |
+| Centre County (2 towns) | 6,827 | 69.6 % | 24.3 % | 81.8 % |
 
 - What stops it: in Philadelphia the law, in Pittsburgh yard space (40.7 %).
-- Towns differ a lot inside one county: Narberth 77.2 %, Upper Dublin 65.0 %, Lower Merion 0 % (no new detached unit by rule).
+- Towns differ a lot inside one county: Narberth 77.2 %, Upper Dublin 65.0 %, Lower Merion 0 % (no new detached unit by rule). In 59 of the 97 county-place towns it is 0 %.
 - 600 sq ft detached fits under HB 2186 setbacks: Philadelphia 7.7 %, Pittsburgh 46.3 %.
 
 ### 8. What is not measured yet (30 s)
 
-- Fit accuracy against a person. 250 lots are sampled, and 0 are labeled.
+- Fit accuracy against a person. 250 lots are sampled, and no person has labeled them. On Nov 26 a vision model labeled them from the aerial photo and the lot outline, following the hand-label protocol (`labels_claude/`). It agrees with the product on 84.2% of Pittsburgh and 84.7% of Philadelphia lots at 600 sq ft. These are not hand labels. `pipeline/validation/protocol_fit.py` scores the product with the protocol's own test (86.5% at 600 sq ft).
 - Detector accuracy against checked labels. The labels are still unchecked.
-- Land cover for Pittsburgh lots is checked on only 128 lots. In Allentown, Chester and Montgomery it is not checked at all.
+- Land cover for Pittsburgh lots is checked on only 128 lots. In Allentown, Chester and Montgomery it is not checked at all. The lots added on Nov 27 and 28 have no land cover yet.
 
 ### 9. Likely questions
 
 1. **"Why not train longer or on a bigger model?"** We tried other model types too. Single models land near 0.70. An ensemble of two model types reached 0.709. The error analysis puts a third of the errors on label edges and half on tree against open ground, where the label and the photo disagree. More training on the same labels would not fix that.
-2. **"So is the fit answer right?"** We do not know yet. The geometry is exact for the data it gets, but parcel lines and footprints have errors. The hand-label check is set up, with 250 lots, sheets and a scoring script, and none are labeled. Until then the fit has no measured accuracy.
+2. **"So is the fit answer right?"** We do not know yet. The geometry is exact for the data it gets, but parcel lines and footprints have errors. The hand-label check is set up, with 250 lots, sheets and a scoring script, and no person has labeled them. A vision model labeled them on Nov 26 and agrees on about 84% at 600 sq ft, but that is not a hand label. Until a person labels them the fit has no measured accuracy.
 3. **"Why keep a model that failed in Philadelphia?"** It works in Pittsburgh on the photos we have. In Philadelphia the 2022 photos do not show the trees, so we used the better source. Reporting that is part of the result.
 
 ---

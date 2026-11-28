@@ -177,6 +177,7 @@ export const VARIANCE_TEXT = 'Needs a variance (zoning board hearing).';
 /** "Allowed here by right (no hearing)." for a rule path, the variance line for a variance. */
 export function allowedPhrase(path: string | null): string {
   if (path === 'variance') return VARIANCE_TEXT;
+  if (path === 'not_allowed') return 'Not allowed here: the hearing the code leaves is only a path to ask about.';
   if (path && path in ALLOWED_PATH) return `Allowed here ${ALLOWED_PATH[path]}.`;
   return 'The rules allow it here.';
 }

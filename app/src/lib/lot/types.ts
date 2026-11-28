@@ -72,7 +72,8 @@ export interface LotPart {
   municipality?: string | null;
   county_fips?: string;
   tract?: string;
-  crs_local: 2272;
+  /** EPSG of the local feet CRS: 2272 Pennsylvania South, 2271 Pennsylvania North (Erie). */
+  crs_local: 2271 | 2272;
   polygon: AreaGeom;
   area_sqft: number;
   edges?: Edge[];

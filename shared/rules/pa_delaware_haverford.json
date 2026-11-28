@@ -21,7 +21,8 @@
       "https://ecode360.com/12436377",
       "https://ecode360.com/HA0527/laws",
       "https://haverfordtownship.com/Planning_and_Zoning_Department.html",
-      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt"
+      "https://www2.census.gov/geo/docs/reference/codes2020/cousub/st42_pa_cousub2020.txt",
+      "https://www.zoneomics.com/code/haverford-township-PA/chapter_2"
     ],
     "verified_on": "2026-11-11",
     "county": "Delaware",
@@ -41,7 +42,7 @@
       "Private garages may not be larger than 25 ft by 25 ft or more than 50% of the house area (182-1310(2)(c))",
       "Closest options: two-family detached by conditional use in R-6, and conversion of a single-family house to two-family or multifamily by special exception in C-3 (182-1208: 3,000 sq ft of lot per family, 1.5 spaces per added unit, 600 sq ft per unit)"
     ],
-    "notes": "Zoning office: Planning and Zoning Department, https://haverfordtownship.com/Planning_and_Zoning_Department.html. Searched both texts for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, accessory residential, guest house, kitchen, servant quarters. No ADU provision. Pending: no ADU ordinance found."
+    "notes": "Zoning office: Planning and Zoning Department, https://haverfordtownship.com/Planning_and_Zoning_Department.html. Searched both texts for: accessory dwelling, accessory apartment, in-law, granny, elder cottage, ECHO, carriage house, second dwelling, accessory residential, guest house, kitchen, servant quarters. No ADU provision. Pending: no ADU ordinance found. R-6 row added 2026-11-28 from the codified pre-3048-2026 text (old 182-208C(1), Zoneomics copy, secondary): the Ord. 3048-2026 R-6 dimensional page was not read. Open point: confirm the R-6 figures and section number in Ord. 3048-2026."
   },
   "adu": {
     "term": {
@@ -519,6 +520,55 @@
         "verified_on": "2026-11-11",
         "confidence": "verified",
         "note": "35 ft and 3 stories."
+      }
+    },
+    "R-6": {
+      "min_lot_sqft": {
+        "value": 4000,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary",
+        "note": "Read from the codified Chapter 182 before Ord. 3048-2026 (old 182-208, Zoneomics copy). Ord. 3048-2026 is a 'policy-neutral' recodification and the old R-5 figures (182-207C) match its 182-407 figures, but its R-6 page was not read (eCode360 PDF). Single-family detached figures (182-208C(1))."
+      },
+      "setback_front_ft": {
+        "value": 20,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary",
+        "note": "Interior lots. Corner lots 20 and 12."
+      },
+      "setback_side_ft": {
+        "value": 7,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary",
+        "note": "Each 7 ft, 14 ft total (residential use)."
+      },
+      "setback_rear_ft": {
+        "value": 25,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary"
+      },
+      "max_building_coverage": {
+        "value": 0.4,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary",
+        "note": "Impervious surface ratio max 65%."
+      },
+      "principal_max_height_ft": {
+        "value": 35,
+        "section": "182-208C(1) (pre-3048-2026 numbering)",
+        "url": "https://www.zoneomics.com/code/haverford-township-PA/chapter_2",
+        "verified_on": "2026-11-28",
+        "confidence": "secondary",
+        "note": "35 ft and 3 stories, subject to 182-705B."
       }
     }
   }

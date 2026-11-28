@@ -7,7 +7,8 @@
 // A lookup reads the index file of each place (5 to 40 KB) and one shard per matching street (under 35 KB).
 // The normalisation is the same as pipeline/address_index.py (shared cases: tests/fixtures/address_norm_cases.json).
 import { PLACE_BY_COUNTY, fetchLotFile, type LoadOptions } from './load.js';
-import { townShortName, townsOfPlace } from './towns.js';
+import { countyOfPlace, nameKeys, NICKNAMES, POST_OFFICES } from './placeNames.js';
+import { LOT_TOWNS, townShortName, townsOfPlace } from './towns.js';
 
 // ------------------------------------------------------------------ normalising
 /** Street words to their short form. Same table as WORD in pipeline/address_index.py. */
@@ -93,25 +94,34 @@ export function parseAddress(text: string): ParsedAddress {
 }
 
 // ------------------------------------------------------------------ place hints
-/** Names a user may add to an address, to the place folder: place names, lot towns and their post office names. */
-const POSTAL: Readonly<Record<string, string>> = {
-  philly: 'philadelphia', phila: 'philadelphia',
-  'state college': 'centre_county', boalsburg: 'centre_county', lemont: 'centre_county',
-  'west chester': 'chester_county', 'chester springs': 'chester_county', downingtown: 'chester_county', glenmoore: 'chester_county',
-  'bryn mawr': 'montgomery_county', ardmore: 'montgomery_county', 'bala cynwyd': 'montgomery_county', gladwyne: 'montgomery_county',
-  haverford: 'montgomery_county', 'merion station': 'montgomery_county', villanova: 'montgomery_county', wynnewood: 'montgomery_county',
-  'penn valley': 'montgomery_county', rosemont: 'montgomery_county', ambler: 'montgomery_county', 'fort washington': 'montgomery_county',
-  dresher: 'montgomery_county', 'maple glen': 'montgomery_county',
-};
+/** Address-only post office names: Haverford is a Delaware County lot town and a post office of Lower Merion too. */
+const ADDRESS_ONLY: Readonly<Record<string, readonly string[]>> = { haverford: ['delaware_county', 'montgomery_county'] };
 const PLACES = [...new Set(Object.values(PLACE_BY_COUNTY))];
 
-function hintNames(): [string, string][] {
-  const out: [string, string][] = Object.entries(POSTAL);
+/**
+ * Names a user may add to an address, longest first, with the lot places each can mean: the lot towns' names (from
+ * towns.ts, so a new town needs no edit), nicknames, post office names and "<county> county". A name of two places
+ * ("springfield", "warwick", "bryn mawr") has both. "Chester" in an address is Chester city, the post office name.
+ */
+let hintCache: [string, string[]][] | null = null;
+function hintNames(): [string, string[]][] {
+  if (hintCache) return hintCache;
+  const m = new Map<string, Set<string>>();
+  const add = (name: string, places: readonly string[]) => {
+    const k = name.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, ' ').trim();
+    // "Penn" alone is the state in an address ("Penn township" is the town).
+    if (k && !/^(pa|penn|pennsylvania)$/.test(k)) for (const p of places) (m.get(k) ?? m.set(k, new Set()).get(k)!).add(p);
+  };
+  for (const [k, p] of Object.entries(NICKNAMES)) add(k, [p]);
+  for (const [k, ps] of [...Object.entries(POST_OFFICES), ...Object.entries(ADDRESS_ONLY)]) add(k, ps);
   for (const p of PLACES) {
-    out.push([p.replace(/_/g, ' '), p]);
-    for (const t of townsOfPlace(p)) out.push([townShortName(t).toLowerCase(), p], [t.name.toLowerCase(), p]);
+    add(p.replace(/_/g, ' '), [p]);
+    const c = countyOfPlace(p);
+    if (c) add(`${c} county`, [p]);
   }
-  return out.sort((a, b) => b[0].length - a[0].length);
+  for (const t of LOT_TOWNS) for (const k of [t.name, townShortName(t), ...nameKeys(t.name)]) add(k, [t.place]);
+  hintCache = [...m].map(([k, ps]): [string, string[]] => [k, [...ps]]).sort((a, b) => b[0].length - a[0].length);
+  return hintCache;
 }
 
 /** ZIP code prefixes of the city places. */
@@ -136,24 +146,30 @@ export function splitPlace(input: string): { text: string; place: string | null;
     text = strip(text).slice(0, m.index);
   }
   const names = hintNames();
-  if (comma < 0) {
+  // Up to two names: "100 Main St Springfield Montgomery County".
+  for (let i = 0; comma < 0 && i < 2; i++) {
     const hit = names.find(([name]) => text.endsWith(` ${name}`) && text.length > name.length + 4);
-    if (hit) {
-      tail = `${hit[0]} ${tail}`;
-      text = text.slice(0, -hit[0].length - 1);
-    }
+    if (!hit) break;
+    tail = `${hit[0]} ${tail}`;
+    text = text.slice(0, -hit[0].length - 1);
   }
   const t = tail.replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
-  let place: string | null = null;
-  for (const [name, p] of names)
-    if (new RegExp(`(^| )${name.replace(/[^a-z0-9 ]/g, '')}( |$)`).test(t)) {
-      place = p;
-      break;
-    }
+  const has = (name: string) => new RegExp(`(^| )${name}( |$)`).test(t);
+  // A county named with the town decides ("Springfield, Montgomery County"); a county with no lot records means the
+  // address is not in a lot place. Else the longest name; a name of two places gives no hint (all places are searched).
+  const county = /\b([a-z]+(?: [a-z]+)?) county\b/.exec(t);
+  const countyPlace = county ? (names.find(([n, ps]) => n.endsWith(' county') && ps.length === 1 && has(n))?.[1][0] ?? null) : null;
+  let place: string | null = countyPlace;
+  let ambiguous = false;
+  if (!place && !county) {
+    const hit = names.find(([n]) => has(n));
+    if (hit && hit[1].length === 1) place = hit[1][0];
+    else ambiguous = !!hit;
+  }
   const zip = /\b(\d{5})\b/.exec(t)?.[1];
-  if (!place && zip) place = ZIP3[zip.slice(0, 3)] ?? null;
-  const other = t.replace(/\b(pa|penn|pennsylvania|usa|us)\b/g, '').replace(/\b\d{5}(-\d{4})?\b/g, '').replace(/\s+/g, ' ').trim();
-  return { text: text.trim(), place, other: place ? null : other || null };
+  if (!place && !ambiguous && zip) place = ZIP3[zip.slice(0, 3)] ?? null;
+  const other = t.replace(/\b(pa|penn(?! (township|twp)\b)|pennsylvania|usa|us)\b/g, '').replace(/\b\d{5}(-\d{4})?\b/g, '').replace(/\s+/g, ' ').trim();
+  return { text: text.trim(), place, other: place || ambiguous ? null : other || null };
 }
 
 // ------------------------------------------------------------------ files

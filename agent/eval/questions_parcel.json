@@ -1,6 +1,6 @@
 {
  "about": "Questions on the Parcel tab and Be prepared (Nov 21), and on areas picked on a boundary and the district tables (Nov 22): parcel facts, district yards, height and coverage, flags, property tax, documents, offices, what to bring and ask, county, tract and ZIP code answers, and two general passages. Made by agent/eval/make_parcel_questions.ts: expected values read from tool results. Do not edit by hand.",
- "generated_at": "2026-11-23T04:33:54.351Z",
+ "generated_at": "2026-11-27T05:02:06.860Z",
  "data_roots": {
   "pittsburgh": "/Users/ye/musa-drive/lots/pittsburgh",
   "philadelphia": "/Users/ye/musa-drive/lots/philadelphia",
@@ -8,10 +8,10 @@
   "chester_county": "/Users/ye/musa-drive/lots/chester_county"
  },
  "data_versions": {
-  "pittsburgh": "pittsburgh-20261118-c11c62f00e",
-  "philadelphia": "philadelphia-20261114-2a67293eaa",
-  "montgomery_county": "montgomery_county-20261118-e05e33d1ea",
-  "chester_county": "chester_county-20261116-aa5d870e34"
+  "pittsburgh": "pittsburgh-20261126-d747c67f1d",
+  "philadelphia": "philadelphia-20261126-331f84072a",
+  "montgomery_county": "montgomery_county-20261126-39cb1f34c5",
+  "chester_county": "chester_county-20261126-3396fbba65"
  },
  "questions": [
   {
@@ -1031,7 +1031,7 @@
     {
      "kind": "number",
      "label": "share of people in towns that allow it",
-     "value": 53,
+     "value": 55,
      "tol_pct": 0,
      "unit": "pct"
     },

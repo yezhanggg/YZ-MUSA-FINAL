@@ -35,7 +35,7 @@
       "https://ecode360.com/print/OH0217?guid=31394337",
       "https://ecode360.com/print/OH0217?guid=38033396"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Allegheny",
     "municipality_type": "township",
     "geoid": "4200356384",
@@ -59,7 +59,7 @@
       "Riparian buffer: a riparian buffer easement at least 35 ft from the top of the stream bank on each side is recorded with any subdivision or land development that holds a stream with a watershed over 10 acres, and no use or construction inconsistent with it is permitted in it (385-16). It reaches a lot only where such an easement is recorded",
       "Nonconformities may not be grounds for adding structures or uses prohibited elsewhere in the district (455-18.1B). A nonconforming use may expand up to 25% by special exception (455-18.3E)"
     ],
-    "notes": "Zoning office: O'Hara Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, III, IV to XIV, XV (455-15.1 to 455-15.45), XVI, XVIII, XIX, XX, XXI and XXII, 455-2.2, Chapter 230 in full, 385-16, the New Laws page and code searches. Not read: Article XVII (signs). 'Conversion apartment' is defined in 455-2.2 but no district lists it."
+    "notes": "Zoning office: O'Hara Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Articles I, III, IV to XIV, XV (455-15.1 to 455-15.45), XVI, XVIII, XIX, XX, XXI and XXII, 455-2.2, Chapter 230 in full, 385-16, the New Laws page and code searches. Not read: Article XVII (signs). 'Conversion apartment' is defined in 455-2.2 but no district lists it. Pass 30 (2026-11-26): the 455-1.3 bar gate is now adu.status_dispute, the status read two ways (a permitted accessory use under the district lists, or not permitted for its absence of standards under 455-1.3), with no code text changed."
   },
   "adu": {
     "term": {
@@ -76,7 +76,7 @@
       "url": "https://ecode360.com/print/OH0217?guid=31391591",
       "verified_on": "2026-11-16",
       "confidence": "secondary",
-      "note": "A permitted accessory use, for relatives of the homeowner only. No hearing named. 455-1.3 says an accessory use with an 'absence of standards' in the chapter shall not be permitted, and the code gives the area no standards beyond its definition, so the by-right reading is not settled (see the conditions)"
+      "note": "A permitted accessory use, for relatives of the homeowner only. No hearing named. 455-1.3 says an accessory use with an 'absence of standards' in the chapter shall not be permitted, and the code gives the area no standards beyond its definition, so the by-right reading is disputed"
     },
     "scope_districts": {
       "value": [
@@ -109,6 +109,23 @@
       "verified_on": "2026-11-16",
       "confidence": "secondary",
       "note": "The area must be in the home, joined to it through a common door (455-2.2), and a single-family dwelling may not share a lot with another principal building (455-1.4). These forms mean a detached garage or other separate building. A garage attached to the house is part of it (455-15.19F), so an area in or over an attached garage, joined by a common door, is the internal or attached form. 'No accessory structure in the rear of a principal structure and on the same non-through lot shall be used in whole or in part as a dwelling' (455-15.19G)"
+    },
+    "status_dispute": {
+      "value": "disputed",
+      "readings": [
+        {
+          "status": "prohibited",
+          "path": "not_allowed",
+          "section": "455-1.3, 455-20.7C",
+          "url": "https://ecode360.com/print/OH0217?guid=31391571",
+          "note": "'Unless a proposed use can clearly comply with all of the conditions and standards provided in this chapter, or if there is any ambiguity, indefiniteness or absence of standards in this chapter pertaining to an accessory use, conditional use or a special exception, such use shall not be permitted.' The code gives the extended family living area no standards beyond its definition, and it does not say whether the area may have a kitchen. A use the chapter does not permit cannot get a use variance (455-20.7C)"
+        }
+      ],
+      "section": "455-1.3, 455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)",
+      "url": "https://ecode360.com/print/OH0217?guid=31391917",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "Each district lists the extended family living area as a permitted accessory use, and its definition says what it is: a living area in the home, joined through a common door, for relatives of the homeowner, never rented"
     }
   },
   "approval": {
@@ -220,27 +237,6 @@
           "building_types": null,
           "section": "455-2.2 'Dwelling', 'Dwelling unit', 'Extended family living area', 455-6.3E",
           "url": "https://ecode360.com/print/OH0217?guid=31391591",
-          "confidence": "secondary"
-        },
-        {
-          "kind": "other",
-          "condition": "'Unless a proposed use can clearly comply with all of the conditions and standards provided in this chapter, or if there is any ambiguity, indefiniteness or absence of standards in this chapter pertaining to an accessory use, conditional use or a special exception, such use shall not be permitted.' The code gives the extended family living area no standards beyond its definition, and it does not say whether the area may have a kitchen.",
-          "effect": "bars",
-          "applies_to": null,
-          "districts": [
-            "R-1",
-            "R-2",
-            "R-3",
-            "R-4"
-          ],
-          "building_types": null,
-          "disputed_by": {
-            "section": "455-4.2B(14), 455-5.2B(13), 455-6.2B(13), 455-7.2B(13)",
-            "url": "https://ecode360.com/print/OH0217?guid=31391917",
-            "note": "Each district lists the extended family living area as a permitted accessory use, and its definition says what it is: a living area in the home, joined through a common door, for relatives of the homeowner, never rented"
-          },
-          "section": "455-1.3",
-          "url": "https://ecode360.com/print/OH0217?guid=31391571",
           "confidence": "secondary"
         },
         {

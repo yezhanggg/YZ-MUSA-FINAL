@@ -21,7 +21,7 @@ A U-Net that labels each pixel of a 4-band aerial image (red, green, blue, near 
 
 - Lot records carry a `cover` block: building, tree, open ground and hard surface in sq ft and percent, plus impervious share, source and date. It also gives what lies inside the suggested spot (`spot_cover`), so the tool can say how much canopy a unit would remove.
 - In Pittsburgh the source is the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), on NAIP 2022 (`model:div7_3m_tta`). Its `spot_cover` comes from the ensemble's class maps (`processed/pittsburgh/cover_work/div7_3m_tta/tiles/`).
-- In Allentown and the three county places the source is `r34_c5_s0` (`model:r34_c5_s0`, NAIP 2022). Their `spot_cover` comes from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`), so it has the same accuracy as the lot shares. The four town places have it since the Nov 15 rebuild.
+- In Allentown and the first 9 county-place towns (lot data 12) the source is `r34_c5_s0` (`model:r34_c5_s0`, NAIP 2022). Their `spot_cover` comes from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`), so it has the same accuracy as the lot shares. The four town places have it since the Nov 15 rebuild. The lots added on Nov 27 and 28 (the 8 new places and the new towns of Chester, Montgomery and Centre) have an empty cover block: the model has not been run on them yet (as of 2026-11-28).
 - In Philadelphia the source is **not** this model. It is the city's 2018 land cover raster (`landcover_2018`). See "Transfer to the two cities" below for why.
 - Land cover is context only. The fit test is a vector test on lot, building and street data. It does not steer around trees.
 
@@ -189,7 +189,7 @@ Decision: Philadelphia lot cover uses the city's 2018 raster. The model output i
 ## Limits
 
 - Single models cluster near 0.70 test mIoU on the Chesapeake labels. The best ensemble reaches 0.709. The labels set the ceiling.
-- Allentown and the three county lot places use `r34_c5_s0` per lot. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery are not validated.
+- Allentown and the first 9 county-place towns use `r34_c5_s0` per lot. The lots added on Nov 27 and 28 have no cover yet. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery are not validated.
 - Urban areas score lowest. Urban tree IoU is about 0.59.
 - 0.6 m pixels: a small shed is a few pixels and a narrow side yard is a handful.
 - Tree canopy over paving is labeled tree. The model cannot see a patio under a tree.

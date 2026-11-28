@@ -1457,3 +1457,48 @@ describe('get_rule_text pass 29 fields', () => {
     expect(JSON.stringify(ag)).toContain('Not settled. The other reading gives 25 ft (175-95.1A, 175-15F). Ask the zoning officer which governs');
   });
 });
+
+describe('get_rule_text pass 30 status nuances', () => {
+  type A30 = { summary: string; approval: { qualifier?: string; qualifier_text?: string }; adu: Record<string, { text?: unknown; value?: unknown; districts?: unknown }> };
+  const t30 = async (file: string, district?: string) => (await getRuleText({ place: file, topic: 'status', ...(district ? { district } : {}) })) as unknown as A30;
+
+  it('names employee quarters as their own status, not family only (Bethel 480-136B(5))', async () => {
+    const out = await t30('pa_delaware_bethel', 'R-1');
+    expect(out.summary.startsWith("Limited: quarters for the household's own employees, caretakers or watchmen only, not an ADU open to the public")).toBe(true);
+    expect(out.summary).not.toContain('family members only');
+  });
+
+  it('says both readings of a disputed status, and qualifies the path (O\'Hara 455-1.3)', async () => {
+    const out = await t30('pa_allegheny_ohara', 'R-1');
+    expect(out.approval.qualifier).toBe('conditional_on_reading');
+    expect(out.approval.qualifier_text).toMatch(/^By right only if the reading that lets this lot in holds: The code's ADU status is disputed\. Read one way it is family only \(455-2\.2/);
+    expect(String(out.adu.status_dispute.text)).toContain('Read another way it is prohibited, not allowed (455-1.3, 455-20.7C)');
+    expect(out.summary).toContain('Limited: family members only');
+    expect((await t30('pa_allegheny_ohara', 'C')).adu.status_dispute).toBeUndefined();
+  });
+
+  it('says the use table and text conflict and takes the more limiting reading (Penn, Westmoreland, MDR)', async () => {
+    const mdr = await t30('pa_westmoreland_penn', 'MDR');
+    expect(mdr.summary).toContain('path: variance in MDR');
+    expect(mdr.summary).toContain('The use table and the text conflict on the ADU status in MDR. The text gives not addressed (190-402');
+    expect(mdr.summary).toContain('The use table gives conversion only, by right (Attachment 2)');
+    expect(mdr.summary).toContain('The tool reads the more limiting one. Ask the zoning officer');
+    expect(mdr.approval.qualifier).toBeUndefined();
+    expect((await t30('pa_westmoreland_penn')).adu.status_dispute.districts).toEqual(['MDR']);
+    expect((await t30('pa_westmoreland_penn', 'RR')).adu.status_dispute).toBeUndefined();
+  });
+
+  it('states the lot fact the status hangs on (Worcester 150-110.2A(1)(c), Option 3)', async () => {
+    const out = await t30('pa_montgomery_worcester', 'AGR');
+    expect(out.summary.startsWith('Allowed by right, only if the lot is in a conservation subdivision developed under Option 3, country properties (150-110.2A(1)(c)')).toBe(true);
+    expect(out.approval.qualifier).toBe('depends_on_lot_facts');
+    expect(out.adu.status_only_if).toBeTruthy();
+  });
+
+  it('gives the status inside an overlay, only if the lot is in it (Warwick, Lancaster, VO)', async () => {
+    const out = await t30('pa_lancaster_warwick', 'R-2');
+    expect(out.summary).toContain("In the VO overlay on R-2 land the code's ADU status is conditional use (340-23E(9))");
+    expect((out.adu.status_by_overlay.text as string[])[0]).toMatch(/Only if the lot is in the overlay$/);
+    expect((await t30('pa_lancaster_warwick', 'A')).adu.status_by_overlay).toBeUndefined();
+  });
+});

@@ -4,7 +4,7 @@ import { proForma, type FinancingInput, type ProForma, type RentByBedroom as Mon
 import { NOTICE, sourcesOf, verdictCitations, type CitationView } from './citations.js';
 import { SCENARIOS, type LotRecord, type RentByBedroom, type Scenario } from './types.js';
 import { compareScenarios, unitVerdict, approvalFor, type UnitInput, type UnitVerdict, type VerdictCheck, type VerdictWarning } from './verdict.js';
-import { SCENARIO_TITLE, TYPE_TITLE, dateText, ftText, isNum, sqftText, usdText } from './words.js';
+import { SCENARIO_TITLE, TYPE_TITLE, dateText, ftText, isNum, largestText, sqftText, usdText } from './words.js';
 import { townTaxRate } from './lotTax.js';
 
 export interface Fact {
@@ -21,6 +21,9 @@ export interface ScenarioRow {
   approval: string;
   /** Largest backyard cottage footprint the pipeline found. */
   largest_cottage_sqft: number | null;
+  /** The same in words: "1,450 sq ft", or "more than 2,000 sq ft, with no size cap in the code" when the largest is the
+   * whole open yard. null when no cottage fits. */
+  largest_cottage_text: string | null;
 }
 
 export interface MoneySummary {
@@ -191,6 +194,8 @@ export function lotSummary(input: SummaryInput): LotSummary {
       headline: r.verdict.headline,
       approval: r.verdict.approval.label,
       largest_cottage_sqft: lot.fit[r.scenario]?.detached_new?.largest_sqft ?? null,
+      // A whole-yard largest (no size cap binds the unit) reads "more than 2,000 sq ft" (words.ts largestText).
+      largest_cottage_text: lot.fit[r.scenario]?.detached_new?.fits ? largestText(lot.fit[r.scenario]?.detached_new?.largest_sqft, lot.fit[r.scenario]?.detached_new?.limiting) : null,
     })),
     unit: { title: `${TYPE_TITLE[unit.type]}, ${SCENARIO_TITLE[unit.scenario].toLowerCase()}`, size: unitSize(chosen), verdict: chosen },
     checks: chosen.checks,

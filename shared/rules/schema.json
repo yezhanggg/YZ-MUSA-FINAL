@@ -177,6 +177,12 @@
         "defined_not_listed": {
           "$ref": "#/$defs/leaf_bool",
           "description": "Pass 28. With status not_addressed: the code defines an ADU, but no district use list names it (Kingston township 27-202). The path to ask then says the code defines an ADU but no district permits it, never that the code has no ADU rule."
+        },
+        "status_dispute": {
+          "$ref": "#/$defs/leaf_status_dispute"
+        },
+        "status_by_overlay": {
+          "$ref": "#/$defs/leaf_status_by_overlay"
         }
       }
     },
@@ -1440,7 +1446,7 @@
     },
     "leaf_adu_status": {
       "type": "object",
-      "description": "How the town code treats an ADU. family_only: occupants must be family or caregivers. conversion_only: only inside an existing building. not_addressed: the code has no ADU text.",
+      "description": "How the town code treats an ADU. family_only: occupants must be family or caregivers. conversion_only: only inside an existing building. employee_quarters (pass 30): only living quarters for the household's own employees, caretakers or watchmen, never a unit open to the public. not_addressed: the code has no ADU text.",
       "required": [
         "value",
         "section",
@@ -1457,6 +1463,7 @@
             "conditional_use",
             "family_only",
             "conversion_only",
+            "employee_quarters",
             "not_addressed",
             "prohibited",
             null
@@ -1951,6 +1958,11 @@
                     ]
                   }
                 }
+              },
+              "status_only_if": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Pass 30: the gate's test is a condition of the ADU status itself, in plain words after 'only if' ('the lot was developed under Option 3 ...'). Every status line says it (the lot answer, the summary, the statewide table, the docs table). A lot that fails the test never reads the status. Use it on a gate with a lot test (Worcester 150-110.2A(1)(c), test in_planned_development with planned_development_kinds)."
               }
             }
           }
@@ -3037,6 +3049,7 @@
                 "conditional_use",
                 "family_only",
                 "conversion_only",
+                "employee_quarters",
                 "not_addressed",
                 "prohibited"
               ]
@@ -3048,6 +3061,7 @@
                 "conditional_use",
                 "family_only",
                 "conversion_only",
+                "employee_quarters",
                 "not_addressed",
                 "prohibited"
               ]
@@ -3059,6 +3073,7 @@
                 "conditional_use",
                 "family_only",
                 "conversion_only",
+                "employee_quarters",
                 "not_addressed",
                 "prohibited"
               ]
@@ -3070,6 +3085,7 @@
                 "conditional_use",
                 "family_only",
                 "conversion_only",
+                "employee_quarters",
                 "not_addressed",
                 "prohibited"
               ]
@@ -3081,6 +3097,7 @@
                 "conditional_use",
                 "family_only",
                 "conversion_only",
+                "employee_quarters",
                 "not_addressed",
                 "prohibited"
               ]
@@ -3462,6 +3479,7 @@
                   "conditional_use",
                   "family_only",
                   "conversion_only",
+                  "employee_quarters",
                   "not_addressed",
                   "prohibited"
                 ]
@@ -5639,6 +5657,237 @@
                   "null"
                 ],
                 "minimum": 0
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_status_dispute": {
+      "type": "object",
+      "description": "Pass 30: the code text supports more than one reading of the ADU status. value disputed: two readings of the text. table_vs_text: the use table and the district text conflict. The status the file gives the lot (adu.status, or status_outside outside the scope) is one reading. readings holds the other ones, each cited. districts: where the dispute holds (left out: wherever the ADU rule reaches). Every answer names both readings and says to ask the zoning officer. Counting (the statewide table, the legal class) takes the more limiting reading. A lot the file's reading lets in reads 'only if the reading that lets this lot in holds'.",
+      "required": [
+        "value",
+        "readings",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "enum": [
+            "disputed",
+            "table_vs_text"
+          ]
+        },
+        "districts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "readings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "status",
+              "path",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "enum": [
+                  "allowed_by_right",
+                  "special_exception",
+                  "conditional_use",
+                  "family_only",
+                  "conversion_only",
+                  "employee_quarters",
+                  "not_addressed",
+                  "prohibited"
+                ]
+              },
+              "path": {
+                "enum": [
+                  "by_right",
+                  "administrator_exception",
+                  "special_exception",
+                  "conditional_use",
+                  "variance",
+                  "not_allowed"
+                ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "source": {
+                "enum": [
+                  "text",
+                  "table"
+                ],
+                "description": "table_vs_text: which of the two this reading comes from"
+              }
+            }
+          }
+        },
+        "own_source": {
+          "enum": [
+            "text",
+            "table"
+          ],
+          "description": "table_vs_text: which of the two the file's own status comes from"
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "confidence": {
+          "enum": [
+            "verified",
+            "secondary",
+            "unverified"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "leaf_status_by_overlay": {
+      "type": "object",
+      "description": "Pass 30: the ADU status inside an overlay, when it differs from the status the lot takes otherwise (Warwick, Lancaster: an accessory building apartment by conditional use inside an approved Village Overlay development on R-2 land). Each item: overlays (as the lot's overlays name them), districts (the base districts it reaches, null for any), status. On a lot known to be in the overlay the item's status is the lot's status. With the lot's overlays not given it is said with 'only if the lot is in the overlay'. The paths per form come from an approval.alternatives listing with adu_listing, forms and the same overlays.",
+      "required": [
+        "value",
+        "section",
+        "url",
+        "verified_on",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "overlays",
+              "status",
+              "section"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "overlays": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "districts": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "status": {
+                "enum": [
+                  "allowed_by_right",
+                  "special_exception",
+                  "conditional_use",
+                  "family_only",
+                  "conversion_only",
+                  "employee_quarters",
+                  "not_addressed",
+                  "prohibited"
+                ]
+              },
+              "section": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "note": {
                 "type": [

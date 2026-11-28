@@ -17,7 +17,7 @@ describe('terrain source per place', () => {
     expect(placeOfLot('42101-011307005')).toBe('philadelphia');
     expect(placeOfLot('42077-548659263446')).toBe('allentown');
     expect(placeOfLot('42029-1-4-50')).toBe('chester_county');
-    expect(placeOfLot('42045-123')).toBeNull();
+    expect(placeOfLot('42069-123')).toBeNull(); // Lackawanna: no lot data
     expect(placeOfLot(null)).toBeNull();
   });
 

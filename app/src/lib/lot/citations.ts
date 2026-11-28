@@ -3,6 +3,7 @@
 import type { Citation, CitationConfidence } from './types.js';
 import type { UnitVerdict } from './verdict.js';
 import { dateText } from './words.js';
+import { lotTownByFile, townShortName } from './towns.js';
 
 /** Shown under every lot answer, the report and the assistant's rule answers. */
 export const NOTICE =
@@ -28,6 +29,16 @@ const SOURCE_LABEL: Record<string, string> = {
   pa_montgomery_lower_merion: 'Lower Merion Zoning Code (Ch. 155)',
   pa_montgomery_narberth: 'Narberth Zoning Code (Ch. 500)',
   pa_montgomery_upper_dublin: 'Upper Dublin Zoning Code (Ch. 255)',
+  pa_centre_state_college: 'State College Zoning Code (Ch. XIX)',
+  pa_chester_north_coventry: 'North Coventry Zoning Code (Ch. 370)',
+  pa_chester_east_coventry: 'East Coventry Zoning Code (Ch. 27)',
+  pa_chester_honey_brook: 'Honey Brook Township Zoning Code (Ch. 27)',
+  pa_chester_schuylkill: 'Schuylkill Township Zoning Code (Ch. 370)',
+  pa_chester_west_caln: 'West Caln Zoning Code (Ch. 350)',
+  pa_chester_west_goshen: 'West Goshen Zoning Code (Ch. 84)',
+  pa_chester_east_goshen: 'East Goshen Zoning Code (Ch. 240)',
+  pa_chester_westtown: 'Westtown Zoning Code (Ch. 170)',
+  pa_chester_east_nottingham: 'East Nottingham Zoning Code (Ch. 27)',
   default: 'Building code default',
   hb2186: 'State bill HB 2186 (not law)',
   sb1346: 'State bill SB 1346 (not law)',
@@ -58,7 +69,9 @@ export interface CitationView {
 export function sourceLabel(file: string | undefined): string | null {
   if (!file) return null;
   const [name, part] = file.split('#');
-  const label = SOURCE_LABEL[name] ?? null;
+  // A lot town with no hand label: "<town> Zoning Code", from the lot town list (lib/lot/towns.ts).
+  const town = SOURCE_LABEL[name] ? null : lotTownByFile(name);
+  const label = SOURCE_LABEL[name] ?? (town ? `${townShortName(town)} Zoning Code` : null);
   if (!label) return null;
   return part?.startsWith('districts') ? `${label}, district table` : label;
 }

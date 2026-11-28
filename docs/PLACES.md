@@ -153,24 +153,24 @@ No rule file disagrees with the DCED zoning record.
 
 ## Coverage
 
-Build of 2026-11-15, as committed with town rules batch 26 (commit ce8d21a). People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file.
+Build of 2026-11-28 (`built_on` in `app/public/data/pa_places_meta.json`, read 2026-11-28). People: Census Vintage 2025 estimates (13.06 million). Live counts: `counts` in the meta file. The build of 2026-11-15 (commit ce8d21a) had 88 verified and 46 drafted places.
 
 | Tier | Places | Share of people |
 |---|---|---|
-| verified | 88 | 33.7% |
-| drafted | 46 | 9.8% |
-| reported | 560 (527 no zoning, 33 from inventories) | 6.4% |
-| text_search | 53 | 0.9% |
-| baseline | 1,825 | 49.3% |
+| verified | 203 | 47.4% |
+| drafted | 24 | 3.4% |
+| reported | 554 (527 no zoning, 27 from inventories) | 6.0% |
+| text_search | 52 | 0.8% |
+| baseline | 1,739 | 42.4% |
 
 | Status | Places | Share of people |
 |---|---|---|
-| by_right | 14 | 5.1% |
+| by_right | 15 | 5.2% |
 | no_zoning | 527 | 5.0% |
-| limited | 101 | 28.0% |
-| not_addressed | 49 | 11.0% |
+| limited | 142 | 31.6% |
+| not_addressed | 94 | 14.3% |
 | prohibited | 3 | 0.8% |
-| unknown | 1,878 | 50.2% |
+| unknown | 1,791 | 43.2% |
 
 | zoning_authority | Places | Share of people |
 |---|---|---|
@@ -179,7 +179,7 @@ Build of 2026-11-15, as committed with town rules batch 26 (commit ce8d21a). Peo
 | unknown | 267 | 1.9% |
 | county | 138 | 1.7% |
 
-A status is known for 49.8% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
+A status is known for 56.8% of residents. The tier B corpus holds text for 66 places (has_text_search). The tier B worker
 is still adding places, and the town rule authors are still writing files. Rerun the builder after either changes.
 
 ## File size

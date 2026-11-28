@@ -3,7 +3,7 @@
 // cannot decide (pass === null) reads "not checked", never a pass.
 import type { Citation, LotRecord } from './types.js';
 import { NO_GARAGE, type CheckKey, type UnitVerdict, type VerdictCheck } from './verdict.js';
-import { ftText, isNum, pctText, sqftText } from './words.js';
+import { ftText, isNum, largestText, overCeiling, pctText, sqftText } from './words.js';
 
 /** yes: allowed as drawn, no hearing. approval: allowed as drawn with an approval step. no: not as drawn. */
 export type Answer = 'yes' | 'approval' | 'no' | 'unknown';
@@ -70,6 +70,7 @@ function changeLine(v: UnitVerdict): string {
   }
   if (v.placed?.needs_clearing) return 'Fits if a shed or trees go';
   if (v.placed?.where === 'best') return 'Fits at the marked spot';
+  if (overCeiling(v.largest_sqft, v.limit?.code)) return `Fits, the yard holds ${largestText(v.largest_sqft)}`;
   if (isNum(v.largest_sqft) && v.largest_sqft > 0) return `Fits at ${area(Math.floor(v.largest_sqft))} or less`;
   return 'Fits with a change';
 }

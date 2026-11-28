@@ -7,6 +7,7 @@ import { LIST_TEXT_PLACES_TOOL, SEARCH_TEXT_TOOL } from '../app/src/agent/zoning
 import { PLACE_ANSWER_TOOL } from '../app/src/agent/placeAnswer.js';
 import { BOUNDARY_ANSWER_TOOL } from '../app/src/agent/boundaryTool.js';
 import { METHODS_TOOL } from '../app/src/agent/methods.js';
+import { DOCS_TOOL } from '../app/src/agent/docsSearch.js';
 import { lotPlacesText } from '../app/src/agent/lotPlaces.js';
 import type { Scenario } from '../app/src/lib/lot/types.js';
 
@@ -30,6 +31,7 @@ Rules:
 - Cite only code sections and links that a tool returned in this conversation. Never cite from memory. For a town's rule text use get_rule_text (the towns in list_rule_places, Philadelphia and Pittsburgh included, and the bills) or get_rules (town summary).
 - For any question about what a Pennsylvania town allows, call get_place_answer first (for one lot in ${lotPlacesText('or')}, the lot tools come first). It walks the answer ladder: verified rule file, drafted rule file, reported record, public text search, statewide baseline. Follow its how_to_answer. Use get_rule_text for more sections of a town with a rule file. Cite only what the tools return. For the statewide baseline say it is not the town's own code.
 - For a general question, with no one town or lot in it, call get_methods and answer from its passages: what an approval path or a status means for an owner (by right, special exception, conditional use, variance, family only, conversion only, not addressed, prohibited, no zoning), the bills against today, floodplain, top of bank, riparian and steep slope rules, yards, height, size and footprint caps, parking, owner occupancy, how to read a confidence label or open points, and how this tool works (fit test, land cover, money, Build steps, Test Site and its boundaries, tracts that cross town lines, what data each place has). For one town, get_place_answer or get_rule_text comes first, and get_methods can add what a term means.
+- For any other question about this tool itself (how it works, data sources, accuracy, limits, coverage, its figures, what changed when, each view, hosting, models, the bills): call get_methods first, then search_tool_docs when its passages do not answer it. Answer only from the passages and cite the document and heading. If neither has it, say the project documents do not cover it.
 - When the data has no figure for what was asked (a fee, a waiting time, a person's name, a town's number with no rule file), say "not in my data" in those words, give what is known, and name who to ask.
 - Never predict what a board, a council or a zoning officer will decide. Say who decides, at what kind of hearing, and the standards on file.
 - In a follow-up, keep the place, the unit and the topic of the earlier turns unless the user changes them, and call the tools for any fact not already in this conversation.
@@ -124,7 +126,7 @@ const SITE_TOOLS: ToolDef[] = [
   },
   {
     name: 'set_map',
-    description: 'Change the map: fly to a lot, fly to a place (a city, town or county, or the whole state: the map moves there and, in the six lot places, shows the lots that can be tested), highlight lots, set the ADU scenario, switch today / HB 2186 rules, or, in Test Site, change the unit on screen (set_unit: type, size or width and depth, stories, height).',
+    description: 'Change the map: fly to a lot, fly to a place (a city, town or county, or the whole state: the map moves there and, in the lot places, shows the lots that can be tested), highlight lots, set the ADU scenario, switch today / HB 2186 rules, or, in Test Site, change the unit on screen (set_unit: type, size or width and depth, stories, height).',
     input_schema: {
       type: 'object',
       properties: {
@@ -145,7 +147,7 @@ const SITE_TOOLS: ToolDef[] = [
 ];
 
 /** The tract and town tools, the rule file lookup (app/src/agent/ruleText.ts), then the lot record tools (app/src/lib/lot/agentTools.ts). */
-export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, BOUNDARY_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, METHODS_TOOL, ...LOT_TOOLS];
+export const TOOLS: ToolDef[] = [...SITE_TOOLS, PLACE_ANSWER_TOOL, BOUNDARY_ANSWER_TOOL, RULE_TEXT_TOOL, LIST_PLACES_TOOL, SEARCH_TEXT_TOOL, LIST_TEXT_PLACES_TOOL, FIND_LOT_TOOL, AREA_STATS_TOOL, METHODS_TOOL, DOCS_TOOL, ...LOT_TOOLS];
 
 /** What the browser sends along with each question. */
 export interface AgentContext {

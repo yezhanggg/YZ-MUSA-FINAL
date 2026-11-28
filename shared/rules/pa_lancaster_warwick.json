@@ -44,7 +44,7 @@
       "Temporary farm employee housing: one mobile home per farm for farm workers and their families, in the rear yard of the farm dwelling, by special exception in the A Zone. Occupied at least 120 days a year by a farm employee, or removed within 120 days (340-101)",
       "Other paths: two-family conversion of a house of at least 3,000 sq ft that existed in 1993 (A and RE, special exception), conversion apartment in an existing house (MU and LC, conditional use), conversion of an accessory building of an owner-occupied house into one dwelling (VO overlay, special exception), and historic conversion apartments (A, C, RE, MU by special exception, LC and VO by conditional use) (340-103, 340-65, 340-61)"
     ],
-    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Fix round 2026-11-14: read 340-23 (VO) in full, 340-101, and the Article IV contents (340-64 is now conservation cluster developments). Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q), definitions (340-10), accessory uses (340-25), parking (340-35), 340-14 and 340-121. Second review, 2026-11-26: Ord. No. 306, 307 and 308 read in full. The whole of Chapter 340 was read in one print view and searched by section for ECHO, apartment, accessory dwelling, in-law, elder cottage, two-family, duplex, conversion, caretaker, tenant house and farm employee: the listings are 340-11 (ECHO, farm employee housing, two-family conversions), 340-12 RE and 340-15 R-2 (two-family conversions), 340-12, 340-13, 340-16, 340-16.1 (historic conversions), 340-16 MU and 340-16.1 LC (conversion apartments), 340-23 VO, and duplexes by right in R-2, R-3 and VO. New finding fixed: R-2 lists two-family conversions as a special exception (340-15C(6)) though 340-103 names only A and RE (shown as disputed). Left for a later check: the VO accessory building apartment path (conditional use in 340-23E(9), special exception in note 4 of the lot table) and its stale 340-64 reference; the tool cannot key a status on the VO overlay, so R-2 keeps it as an alternative."
+    "notes": "Zoning office: Warwick Township (Lancaster County) Zoning Officer. Read on eCode360 (WA2488) in a browser, one page at a time, on 2026-11-14. eCode360 WA1313 'Township of Warwick' is Warwick Township in Bucks County and was not used. Code search (all content) for 'accessory dwelling', 'accessory apartment', 'in-law', ECHO, granny, 'family dwelling', relative, caretaker, 'housekeeping unit', 'guest house', 'accessory unit', 'living quarters' and conversion found 340-65 and 340-103. The table of contents shows ECHO housing (340-67), conversion of historic structures (340-61) and temporary farm employee housing (340-101). Read: 340-11 (A Zone), 340-61, 340-65, 340-67, 340-103. Fix round 2026-11-14: read 340-23 (VO) in full, 340-101, and the Article IV contents (340-64 is now conservation cluster developments). Not read: the other zone use lists and tables (RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2, Q), definitions (340-10), accessory uses (340-25), parking (340-35), 340-14 and 340-121. Second review, 2026-11-26: Ord. No. 306, 307 and 308 read in full. The whole of Chapter 340 was read in one print view and searched by section for ECHO, apartment, accessory dwelling, in-law, elder cottage, two-family, duplex, conversion, caretaker, tenant house and farm employee: the listings are 340-11 (ECHO, farm employee housing, two-family conversions), 340-12 RE and 340-15 R-2 (two-family conversions), 340-12, 340-13, 340-16, 340-16.1 (historic conversions), 340-16 MU and 340-16.1 LC (conversion apartments), 340-23 VO, and duplexes by right in R-2, R-3 and VO. New finding fixed: R-2 lists two-family conversions as a special exception (340-15C(6)) though 340-103 names only A and RE (shown as disputed). Left for a later check: the VO accessory building apartment path (conditional use in 340-23E(9), special exception in note 4 of the lot table) and its stale 340-64 reference; the tool cannot key a status on the VO overlay, so R-2 keeps it as an alternative. Pass 30 (2026-11-26): adu.status_by_overlay gives an R-2 lot in the VO overlay the conditional use status, and the listing names the accessory building forms (detached new, garage conversion, over garage) and its owner rule."
   },
   "adu": {
     "term": {
@@ -79,7 +79,28 @@
       "url": "https://ecode360.com/print/WA2488?guid=11673258",
       "verified_on": "2026-11-14",
       "confidence": "secondary",
-      "note": "No other zone lists ECHO housing in the sections read. The RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2 and Q use lists were not read. Inside an approved Village Overlay development on R-2 land an accessory building apartment is listed (340-23E(9)), shown under the alternatives."
+      "note": "No other zone lists ECHO housing in the sections read. The RE, C, R-1, R-2, R-3, MU, LC, CC, I-1, I-2 and Q use lists were not read. Inside an approved Village Overlay development on R-2 land the status differs (340-23E(9))."
+    },
+    "status_by_overlay": {
+      "value": [
+        {
+          "overlays": [
+            "VO",
+            "Village Overlay Zone"
+          ],
+          "districts": [
+            "R-2"
+          ],
+          "status": "conditional_use",
+          "section": "340-23E(9)",
+          "url": "https://ecode360.com/print/WA2488?guid=11672529",
+          "note": "Inside an approved Village Overlay development an accessory building apartment with no more than one dwelling unit is listed as a conditional use. Note 4 of the lot table and 340-65 say special exception, so the path is not settled"
+        }
+      ],
+      "section": "340-23E(9), 340-23J(1) note 4, 340-65",
+      "url": "https://ecode360.com/print/WA2488?guid=11672529",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary"
     }
   },
   "approval": {
@@ -181,7 +202,13 @@
             "section": "340-23J(1) note 4, 340-65",
             "url": "https://ecode360.com/print/WA2488?guid=11672529",
             "note": "Note 4 of the lot table says 'an accessory building apartment is permitted by special exception', and 340-65 says the conversion of an accessory building in the VO Zone is by special exception"
-          }
+          },
+          "forms": [
+            "detached_new",
+            "garage_conversion",
+            "over_garage"
+          ],
+          "owner_occupancy": true
         },
         {
           "name": "Temporary farm employee housing (one mobile home per farm)",

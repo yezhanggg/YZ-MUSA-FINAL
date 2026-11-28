@@ -260,6 +260,22 @@
       "confidence": "verified",
       "note": "In no case shall the floor area of an accessory building exceed 1,000 square feet in a residential district."
     },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "1302.02, 1306.03(d), 1322.03(bbb)(3)",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US#page=65",
+      "verified_on": "2026-11-28",
+      "confidence": "secondary",
+      "note": "A detached unit is a 'modular cottage that will be completely removed from the lot' or a converted 'lawful detached garage' (1322.03(bbb)(3)): a detached building subordinate to the house. 1302.02 counts a 'guesthouse, caretaker's cottage, or servants' quarters' as an accessory building, and 1306.03(d) says 'In no case shall the floor area of an accessory building exceed 1,000 square feet in a residential district'. The Unit for Care of Relative text sets no size of its own, so the 1,000 sq ft cap is read as binding the detached unit. A unit inside or attached to the house is part of the main building (1302.02) and is not reached."
+    },
+    "accessory_cap_districts": {
+      "value": ["RR", "RS", "RG", "RT", "R-RC"],
+      "section": "1306.03(d), 1303.02",
+      "url": "https://k12.bethlehem-pa.gov/getattachment/Community-Economic-Development/Planning-Zoning/Zoning-Office/Zoning-Ordinance-August-2023.pdf.aspx?lang=en-US#page=27",
+      "verified_on": "2026-11-28",
+      "confidence": "verified",
+      "note": "The 1,000 sq ft cap holds 'in a residential district'. 1303.02 names RR, RS, RG, RT and R-RC as residential districts (RR-F and RR-T are overlays). Commercial districts (CL, CB, CG, CS) have no accessory building floor area cap."
+    },
     "setback_front_ft": {
       "value": null,
       "section": "1306.03(c)",

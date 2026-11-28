@@ -17,6 +17,7 @@ import { lotTownOf } from '../lib/lot/towns';
 import { flyToPlace } from '../tool/flyToPlace';
 import { addressIndexSource } from '../lib/lot/addressIndex';
 import { ruleFileByKey } from './ruleText';
+import { bundledDocs } from './docsSearch';
 
 /** { town } of a lot record for find_lot, when its town is known. */
 const townOf = (r: LotRecord) => {
@@ -103,6 +104,8 @@ export const browserProvider: DataProvider = {
   lots: lotProvider,
   // Public zoning text (tier B), one file per town, loaded when the assistant searches it.
   zoningText: zoningTextSource(),
+  // search_tool_docs: the project documents index, a lazy chunk loaded on the first search.
+  docs: bundledDocs,
   // The statewide place table for get_place_answer, from the app's own data folder.
   places: placesSource(),
   tractTowns: tractTownsSource(),

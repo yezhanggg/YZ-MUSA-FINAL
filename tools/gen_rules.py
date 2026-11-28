@@ -282,10 +282,31 @@ NAMES.update(
         "allowed_by_right": "by right",
         "family_only": "family only",
         "conversion_only": "conversion only",
+        "employee_quarters": "employee quarters only",
         "not_addressed": "not in the code",
         "prohibited": "prohibited",
     }
 )
+
+
+def _status_extras(d):
+    """Pass 30: a status that holds only if a lot fact does, the status inside an overlay, and a disputed status."""
+    adu = d.get("adu") or {}
+    out = ""
+    gates = ((d.get("eligibility") or {}).get("gates") or {}).get("value") or []
+    for g in gates:
+        if g.get("status_only_if"):
+            out += f", only if {g['status_only_if']} ({clean(g.get('section'))})"
+    for it in (adu.get("status_by_overlay") or {}).get("value") or []:
+        on = f" on {', '.join(it['districts'])}" if it.get("districts") else ""
+        out += f", {val(it['status'])} in the {it['overlays'][0]} overlay{on} ({clean(it.get('section'))})"
+    dis = adu.get("status_dispute") or {}
+    if dis.get("readings"):
+        where = f" in {', '.join(dis['districts'])}" if dis.get("districts") else ""
+        what = "table and text conflict" if dis.get("value") == "table_vs_text" else "disputed"
+        other = ", ".join(f"{val(r['status'])} ({clean(r.get('section'))})" for r in dis["readings"])
+        out += f", {what}{where}: also read as {other}"
+    return out
 
 
 def _v(d, sec, key):
@@ -505,6 +526,7 @@ def towns():
         by_form = (adu.get("status_by_form") or {}).get("value")
         if by_form:  # pass 15: a status set by form (New Britain: internal and attached prohibited)
             status += " (" + ", ".join(f"{f.replace('_', ' ')} {val(v)}" for f, v in by_form.items()) + ")"
+        status += _status_extras(d)
         out.append(
             f"| {t['name']} | {t['county']} | {t['status']} | {clean(term)} | {status} | {_path_cell(d)} | {_conditions_cell(d)} | "
             f"{_size_cell(d)} | {_v(d, 'use', 'owner_occupancy')} | {_adus_cell(d)} | {d['provenance'].get('verified_on')} |"

@@ -25,6 +25,15 @@ LOCAL_CRS = {
     "chester_county": 2272,
     "centre_county": 2272,
     "montgomery_county": 2272,
+    "dauphin_county": 2272,
+    "lancaster_county": 2272,
+    "erie_county": 2271,  # Pennsylvania North: Erie is north of the South zone's band
+    "cumberland_county": 2272,
+    "northampton_county": 2272,
+    "delaware_county": 2272,
+    "york_county": 2272,
+    "berks_county": 2272,
+    "bucks_county": 2272,
 }
 PA_BOX = (-80.6, 39.6, -74.6, 42.4)  # lon / lat around Pennsylvania with a margin
 # Keys that would carry a person's name. The schema already forbids unknown keys in facts,

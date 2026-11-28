@@ -1,7 +1,7 @@
 # Hosting the lot data
 
-Testing mode reads per-tract lot files and parcel tiles that are too big for this repository. They are served from a
-second public GitHub repository through GitHub Pages. It costs nothing and needs no new account.
+Testing mode reads per-tract lot files and parcel tiles that are too big for this repository. They are served from
+other public GitHub repositories through GitHub Pages. Since Nov 28 the lot data bundle is 1,713.5 MB, split over two repositories of 867.1 MB and 846.4 MB (see below). It costs nothing and needs no new account.
 
 This page has the decision, the steps to publish, how to update the data, and how to roll back.
 
@@ -39,6 +39,10 @@ Nov 26 (lot data 12): the tract files are packed (format pack1, `tools/pack_lots
 
 **Publish order with pack1: deploy the app first, then push the data.** An app built before Nov 26 cannot read packed files. The new app still reads unpacked files, so deploying it first is safe.
 
+**Nov 28 (lot data 13): the bundle is over 1 GB, so it is split over two data repos.** The Nov 28 build is 1,713.5 MB on disk in two folders. `~/musa-drive/host_a` (867.1 MB, for `backyard-homes-lots`): 862.8 MB of lots (Philadelphia 390.6, Pittsburgh 127.9, Chester County 122.1, Dauphin 75.1, Allentown 45.8, Cumberland 43.0, Erie 36.4 and Centre 21.9 MB) plus `zoning_text/` (4.4 MB, copied from the earlier bundle). `~/musa-drive/host_b` (846.4 MB, for a second repository such as `backyard-homes-lots-b`): Montgomery 234.4, Delaware 171.7, Lancaster 141.2, York 107.9, Bucks 95.5 and Northampton 95.4 MB. No file is over 50 MB: the terrain tiles cover only the ground near lots (`lot_tile_mask` in `tools/terrain_tiles.py`), up to zoom 16 in most places, zoom 15 in York, Delaware, Bucks, Chester and Lancaster (the last two only tiles under lots, `--ring 0`) and zoom 14 in Montgomery. With bundle B on its own repository, set `VITE_LOT_DATA_URLS` to `montgomery_county=<B>/lots/;delaware_county=<B>/lots/;lancaster_county=<B>/lots/;northampton_county=<B>/lots/;bucks_county=<B>/lots/;york_county=<B>/lots/`, where `<B>` is that repository's Pages address. Each GitHub Pages site holds up to 1 GB, so each repository takes a group of whole places that fits under it. Build each group into its own folder with `LOT_PLACES` and `LOT_HOST_DIR`, for example `LOT_PLACES="pittsburgh philadelphia allentown" LOT_HOST_DIR=~/musa-drive/host_a tools/publish_lots.sh`, then the next group with `LOT_HOST_DIR=~/musa-drive/host_b`, and so on. Always name the places: without `LOT_PLACES` the script takes every place with a `manifest.json`, and that includes Berks County, which is held back for its data license. Push each folder to its own public repository with Pages on (`backyard-homes-lots` for the first, then for example `backyard-homes-lots-b`, `backyard-homes-lots-c`).
+
+In Vercel keep `VITE_LOT_DATA_URL` on the first repository. Add `VITE_LOT_DATA_URLS` with one `place=url` pair for every place outside the first repository, separated by `;`, for example `lancaster_county=https://<user>.github.io/backyard-homes-lots-b/lots/;erie_county=https://<user>.github.io/backyard-homes-lots-b/lots/;delaware_county=https://<user>.github.io/backyard-homes-lots-c/lots/`. A place not named reads from `VITE_LOT_DATA_URL`. The app reads it in `placeDataUrl` (`app/src/lib/lot/load.ts`), for the lot files, the tiles and the terrain. The zoning text still comes from the first repository (section "Zoning text for the assistant"). Redeploy the app after changing either variable. Moving a place to another repository needs only a new pair and a redeploy.
+
 Nov 18: after the Montgomery County rebuild and the Pittsburgh land cover refresh the bundle is 999,918,964 bytes (999.9 MB, 1,738 files): Pittsburgh 188.2 MB, Montgomery County 107.8 MB. About 0.1 MB is left under the 1 GB Pages limit. Make room before the next lot data change.
 
 
@@ -53,17 +57,22 @@ The spot cover rebuild added 8.9 MB (976.3 MB on the evening of Nov 14). The Nov
 was 718.3 MB. The Nov 12 bundle (two places, no terrain blocks) was 456.5 MB.
 
 `<place>/tiles/terrain.pmtiles` holds ground heights for a 3D map: Terrarium PNG tiles (256 px, heights rounded to
-0.1 m) from the USGS 3DEP 1 m DEM, made by `python tools/terrain_tiles.py --place <place>`. Pittsburgh 29.8 MB and
-Philadelphia 40.4 MB at zoom 10 to 15 (`--maxzoom 15`; zoom 16 was 89 MB for Pittsburgh alone), Allentown 15.1 MB at
-zoom 10 to 16, Chester County 43.1 MB and Montgomery County 27.3 MB at zoom 10 to 15, Centre County 16.9 MB at zoom 10
-to 16. The app reads them in its 3D views (the site view in 3D and the main map in 3D, `app/src/tool/terrain.ts`):
+0.1 m) from the USGS 3DEP 1 m DEM, made by `python tools/terrain_tiles.py --place <place>`. Since Nov 28 the tiles of
+the 12 town places cover only the ground near their lots (`lot_tile_mask`: tiles under a lot and one ring around them,
+`--ring 0` for tiles under lots only), and the tile cache is keyed by the tile range. Philadelphia and Pittsburgh keep
+their Nov 15 files (zoom 10 to 15, not masked). Sizes in the Nov 28 bundle: Northampton 43.5,
+York 42.4, Philadelphia 40.4, Chester County 38.3, Lancaster 37.5, Dauphin 35.4, Bucks 34.7, Delaware 33.9,
+Montgomery 31.2, Pittsburgh 29.8, Cumberland 22.9, Centre 14.3, Allentown 13.8 and Erie 13.3 MB. Max zoom 16 in
+Allentown, Centre, Erie, Dauphin, Cumberland and Northampton, 15 in York, Delaware and Bucks, 15 with `--ring 0` in
+Chester and Lancaster, and 14 in Montgomery, so no file is over 50 MB (zoom 16 was 89 MB for Pittsburgh alone). The app reads them in its 3D views (the site view in 3D and the main map in 3D, `app/src/tool/terrain.ts`):
 a MapLibre `raster-dem` source on `pmtiles://` with `encoding: 'terrarium'`, zoom range and bounds from the file
 header, plus a faint hillshade from the same file. Top and 2D views stay flat. A place without the file (or a 404)
 shows flat ground and no error.
 
 The app's own small files come with the app, not from this bundle. One of them, `data/city_tracts.json` (592 KB,
-114 KB gzipped, Nov 14), lists the 749 tracts of the six lot places with their town. A searched address in Testing mode
-finds its tract there, so the first lot opens without the 10 MB tract and town files.
+114 KB gzipped, Nov 14), lists the 749 tracts of the first six lot places with their town. A searched address in Testing mode
+finds its tract there, so the first lot opens without the 10 MB tract and town files. The file was not rebuilt for lot
+data 13 (as of Nov 28), so in the eight places added on Nov 27 and 28 the app loads the tract and town files instead.
 
 ## Decision
 
@@ -83,11 +92,11 @@ Why Pages:
 - It is the only option with no new account, no size split and CORS on by default.
 - Range requests work, so the parcel tiles load piece by piece (about 20 to 120 KB per map view).
 - The first lot of a tract costs about 1 MB. At 100 GB a month that is about 100,000 first lot views.
-- The data lives apart from the app. An app deploy does not upload 985 MB, and the app repo stays small.
+- The data lives apart from the app. An app deploy does not upload the 1.7 GB of lot data, and the app repo stays small.
 
 Fallback if Pages stops serving (bandwidth or policy): push the same bundle as two repos (one per city, Philadelphia
 split in two) and use jsDelivr URLs pinned to a tag. Or enable Vercel Blob in the project. Only `VITE_LOT_DATA_URL`
-changes. The app reads one base URL for both cities, so a split needs the same base path on one host.
+changes. Since Nov 27 the app can also read each place from its own base URL (`VITE_LOT_DATA_URLS`, see above), so a split no longer needs one host.
 
 Sources:
 
@@ -153,8 +162,9 @@ You need: GitHub Desktop signed in as `yezhanggg`, the external drive plugged in
    cd ~/Documents/YZ-MUSA-FINAL
    tools/publish_lots.sh
    ```
-   It takes every place folder of the build that has a `manifest.json` (now Pittsburgh, Philadelphia,
-   Allentown, Chester County, Centre County and Montgomery County) and prints them on its first line. `LOT_PLACES="pittsburgh allentown" tools/publish_lots.sh` limits it
+   It takes every place folder of the build that has a `manifest.json` (15 since Nov 28, Berks County
+   among them, which must not be published) and prints them on its first line. Since the bundle is over 1 GB, build
+   one folder per data repository with `LOT_PLACES` and `LOT_HOST_DIR` (above). `LOT_PLACES="pittsburgh allentown" tools/publish_lots.sh` limits it
    to some places. It ends with `bundle ready in /Users/<you>/musa-drive/host (nothing uploaded)` and prints the
    size per city.
 2. **Create the data repository.** In the browser, open https://github.com/new.
@@ -164,13 +174,13 @@ You need: GitHub Desktop signed in as `yezhanggg`, the external drive plugged in
    - Click "Create repository".
 3. **Clone it with GitHub Desktop.** File > Clone repository > GitHub.com tab > `yezhanggg/backyard-homes-lots`.
    Local path: `/Users/<you>/musa-drive/backyard-homes-lots` (on the external drive). Do not clone into Documents:
-   iCloud would sync 985 MB. Click "Clone".
+   iCloud would sync the bundle (about 870 MB per repository). Click "Clone".
 4. **Copy the bundle in.** In Terminal (the copy includes the hidden `.nojekyll` and `.gitignore`):
    ```bash
    rsync -a --delete --exclude .git ~/musa-drive/host/ ~/musa-drive/backyard-homes-lots/
    ```
 5. **Commit and push.** In GitHub Desktop the Changes tab lists about 1,700 files. Summary:
-   `Lot data 2026-11-15`. Click "Commit to main", then "Push origin". The upload is about 985 MB.
+   `Lot data 2026-11-15`. Click "Commit to main", then "Push origin". The upload is the size of that folder (867.1 MB for `host_a`, 846.4 MB for `host_b` on Nov 28).
 6. **Turn on Pages.** On github.com open the data repo > Settings > Pages. Source: "Deploy from a branch".
    Branch: `main`, folder `/ (root)`. Save. Wait until the page shows "Your site is live at
    https://yezhanggg.github.io/backyard-homes-lots/" (one to three minutes, see the Actions tab).
@@ -203,7 +213,7 @@ a tract part from another build shows "The lot data is being updated. Reload the
 than the manifest still loads (it is marked stale).
 
 Size: each push adds only the files that changed, but a full rebuild changes most of them. The first push is
-already about 985 MB, so the first full update after it passes the 1 GB that GitHub recommends. Then start fresh: delete the data repo (Settings > Danger
+already close to 900 MB per repository, so the first full update after it passes the 1 GB that GitHub recommends. Then start fresh: delete the data repo (Settings > Danger
 Zone), create it again with the same name, and publish once more. The URL stays the same.
 
 ## Roll back

@@ -15,7 +15,7 @@ import { useEffect } from 'react';
 import type { Map as MLMap } from 'maplibre-gl';
 import { PMTiles, TileType } from 'pmtiles';
 import type { Pt } from '../lib/fitBox';
-import { PLACE_BY_COUNTY, lotDataUrl } from '../lib/lot/load';
+import { PLACE_BY_COUNTY, lotDataUrl, placeDataUrl } from '../lib/lot/load';
 import { mapRef, useTool } from './store';
 
 /** 1.0: the ground as measured. Steep lots read clearly at this height in the site view, so no exaggeration. */
@@ -36,7 +36,7 @@ export interface TerrainInfo {
 
 /** The terrain file of a place, as an absolute URL (the pmtiles protocol needs one). */
 export function terrainUrl(place: string, base: string = lotDataUrl(), href: string = typeof window !== 'undefined' ? window.location.href : 'http://localhost/'): string {
-  return new URL(`${base}${place}/tiles/terrain.pmtiles`, href).href;
+  return new URL(`${placeDataUrl(place, base)}tiles/terrain.pmtiles`, href).href;
 }
 
 /** Place folder of a lot id ("42003-..." -> pittsburgh), or null. */

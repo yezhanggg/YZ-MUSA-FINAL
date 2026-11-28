@@ -39,6 +39,7 @@ RULE_STATUS = {
     "conditional_use": "limited",
     "family_only": "limited",
     "conversion_only": "limited",
+    "employee_quarters": "limited",
     "not_addressed": "not_addressed",
     "prohibited": "prohibited",
 }
@@ -49,6 +50,8 @@ RULE_CLASS = {
     "conditional_use": "discretionary",
     "family_only": "family_only",
     "conversion_only": "conversion_only",
+    # Pass 30: quarters for the household's own employees, not open to the public. Occupancy limited as family_only is
+    "employee_quarters": "family_only",
     "not_addressed": "none",
     "prohibited": "none",
 }
@@ -67,6 +70,12 @@ BASELINE_SOURCE = {
 # itself the main limit is it named in the detail (Philadelphia: 14-604(11), RSA-5 and CMX-1).
 DETAIL_EXTRA = {"philadelphia": "RSA-5 and CMX-1 districts only"}
 NO_ZONING_DETAIL = "No zoning, so zoning does not limit an ADU. Building and sewage permits still apply"
+# Pass 30 (adu.status_dispute): the detail of a town whose ADU status is disputed starts with these words, and
+# app/src/agent/placeAnswer.ts reads them for the verdict. Keep the two in step
+DISPUTED_DETAIL = "ADU status disputed"
+# More limiting last (pipeline/rules.py STATUS_RANK)
+STATUS_RANK = {"by_right": 0, "limited": 1, "not_addressed": 2, "prohibited": 3}
+CLASS_RANK = {"by_right": 0, "discretionary": 1, "conversion_only": 1, "family_only": 1, "none": 2}
 
 
 def _v(x: Any) -> Any:
@@ -88,6 +97,16 @@ def short(text: str | None, limit: int = 160) -> str | None:
     if len(t) <= limit:
         return t
     return t[: t.rfind(" ", 0, limit)].rstrip(" ,.") + " ..."
+
+
+def _note_limit(note: str, limit: int = 140, most: int = 300) -> int:
+    """The cut for a drafted town's note in the place detail: 140 characters, or more so the note's first sentence
+    survives whole (up to `most`). The first sentence carries the point the note leads with, such as "This file reads
+    the repealed chapter"."""
+    t = re.sub(r"\s+", " ", note).strip()
+    m = re.search(r"\.(\s|$)", t)
+    first = len(t[: m.start() + 1]) if m else len(t)
+    return max(limit, first + 1) if first <= most else limit
 
 
 def adu_status(rule: dict[str, Any]) -> str | None:
@@ -116,11 +135,25 @@ def status_detail(rule: dict[str, Any], raw: str | None, rule_name: str = "") ->
     path = _v(ap.get("path"))
     owner = bool(_v(use.get("owner_occupancy")))
     parts: list[str] = []
+    dispute = _dispute(rule)
+    if dispute and not dispute.get("districts"):  # pass 30: the status itself is in doubt, so it leads
+        parts.append(_dispute_words(dispute))
     if raw == "family_only":
         parts.append("family only")
     elif raw == "conversion_only":
         parts.append("conversion of an existing building only")
-    with_path = raw in ("family_only", "conversion_only", "special_exception", "conditional_use", "allowed_by_right")
+    elif raw == "employee_quarters":  # pass 30
+        parts.append(
+            "quarters for the household's own employees, caretakers or watchmen only, not a unit open to the public"
+        )
+    with_path = raw in (
+        "family_only",
+        "conversion_only",
+        "employee_quarters",
+        "special_exception",
+        "conditional_use",
+        "allowed_by_right",
+    ) and not (dispute and not dispute.get("districts"))
     if with_path and path in PATH_WORDS and not (raw == "allowed_by_right" and not owner):
         parts.append(PATH_WORDS[path])
     if owner and raw not in ("not_addressed", "prohibited"):
@@ -132,15 +165,64 @@ def status_detail(rule: dict[str, Any], raw: str | None, rule_name: str = "") ->
     detached_path = _v(ap.get("detached_in_yard_path"))
     if detached_path and detached_path != path:
         parts.append(f"new detached unit in the yard: {PATH_WORDS.get(detached_path, detached_path)}")
+    for words in _only_if(rule):  # pass 30: a lot fact the status itself hangs on (gates[].status_only_if)
+        parts.append(f"only if {words}")
     scope = _v(adu.get("scope_districts"))
     if scope:
         outside = _v(adu.get("status_outside")) or "not_addressed"
         parts.append(f"only in {', '.join(scope)}, {outside.replace('_', ' ')} elsewhere")
+    for it in _overlay_items(rule):  # pass 30: the status inside an overlay (adu.status_by_overlay)
+        on = f" on {' or '.join(it['districts'])} land" if it.get("districts") else ""
+        parts.append(f"{it['status'].replace('_', ' ')} in the {it['overlays'][0]} overlay{on}")
+    if dispute and dispute.get("districts"):
+        parts.append(_dispute_words(dispute))
     if raw == "not_addressed":
         parts.append("no ADU text in the code" + _no_rule_path(ap, path))
     if raw == "prohibited":
         parts.append("the code bars ADUs")
     return ", ".join(parts) if parts else None
+
+
+def _dispute(rule: dict[str, Any]) -> dict[str, Any] | None:
+    """Pass 30: adu.status_dispute, when the file sets it."""
+    d = (rule.get("adu") or {}).get("status_dispute")
+    return d if isinstance(d, dict) and d.get("readings") else None
+
+
+def _dispute_words(d: dict[str, Any]) -> str:
+    where = f" in {', '.join(d['districts'])}" if d.get("districts") else ""
+    what = (
+        "the use table and the text conflict" if d.get("value") == "table_vs_text" else "the code supports two readings"
+    )
+    return f"{DISPUTED_DETAIL}{where}: {what}, so ask the zoning officer"
+
+
+def _only_if(rule: dict[str, Any]) -> list[str]:
+    """Pass 30: gates whose test is a condition of the ADU status itself."""
+    gates = _v((rule.get("eligibility") or {}).get("gates")) or []
+    return [g["status_only_if"] for g in gates if isinstance(g, dict) and g.get("status_only_if")]
+
+
+def _overlay_items(rule: dict[str, Any]) -> list[dict[str, Any]]:
+    return list(_v((rule.get("adu") or {}).get("status_by_overlay")) or [])
+
+
+def _counted(rule: dict[str, Any], raw: str | None, status: str, legal: str) -> tuple[str, str, bool]:
+    """Pass 30: a town-wide disputed status counts as its more limiting reading, and a dispute between a reading that
+    allows the unit and one that does not counts as limited, never a clear allow or a firm no. The legal class takes
+    the more limiting reading. Returns the status, the class and whether the approval path is in doubt."""
+    d = _dispute(rule)
+    if not d or d.get("districts"):
+        return status, legal, False
+    readings = [raw or ""] + [r["status"] for r in d["readings"]]
+    statuses = [RULE_STATUS.get(r, "unknown") for r in readings]
+    classes = [RULE_CLASS.get(r, "unknown") for r in readings]
+    allows = [s in ("by_right", "limited") for s in statuses]
+    if any(allows) and not all(allows):
+        out = "limited"
+    else:
+        out = max(statuses + [status], key=lambda s: STATUS_RANK.get(s, 1))
+    return out, max(classes + [legal], key=lambda c: CLASS_RANK.get(c, 1)), True
 
 
 def _no_rule_path(ap: dict[str, Any], path: Any) -> str:
@@ -180,13 +262,19 @@ def rule_answer(rule: dict[str, Any], entry: dict[str, Any]) -> dict[str, Any]:
     raw = adu_status(rule)
     status = RULE_STATUS.get(raw or "", "unknown")
     scope = _v((rule.get("adu") or {}).get("scope_districts"))
-    if status == "by_right" and (scope or _v((rule.get("use") or {}).get("owner_occupancy"))):
-        status = "limited"  # by right but only in some districts, or owner occupancy required
+    if status == "by_right" and (scope or _v((rule.get("use") or {}).get("owner_occupancy")) or _only_if(rule)):
+        status = "limited"  # by right but only in some districts, owner occupancy required, or on some lots (pass 30)
+    legal = RULE_CLASS.get(raw or "", "unknown")
+    status, legal, in_doubt = _counted(rule, raw, status, legal)
+    if status in ("not_addressed", "prohibited") and any(
+        RULE_STATUS.get(it.get("status"), "") in ("by_right", "limited") for it in _overlay_items(rule)
+    ):
+        status = "limited"  # pass 30: no ADU rule town-wide, but an overlay allows one
     detail = status_detail(rule, raw, entry.get("file", ""))
     if entry.get("status") == "drafted" and entry.get("status_note"):
         note = entry["status_note"]
         open_part = note[note.find("Open:") :] if "Open:" in note else note
-        detail = ". ".join(x for x in [detail, short(open_part, 140)] if x)
+        detail = ". ".join(x for x in [detail, short(open_part, _note_limit(open_part))] if x)
     prov = rule.get("provenance") or {}
     approval = _v((rule.get("approval") or {}).get("path"))
     forms = _v((rule.get("form") or {}).get("types_allowed"))
@@ -198,13 +286,14 @@ def rule_answer(rule: dict[str, Any], entry: dict[str, Any]) -> dict[str, Any]:
         "status": status,
         "status_detail": detail,
         "unit_types": types,
-        "approval": approval if approval in APPROVALS else None,
+        # pass 30: the readings of a disputed status give different paths, so no one path is shown
+        "approval": approval if approval in APPROVALS and not in_doubt else None,
         "source": {
             "name": prov.get("instrument") or entry.get("name"),
             "url": entry.get("code_url") or prov.get("code_url") or (prov.get("source_urls") or [None])[0],
             "date": prov.get("verified_on") or entry.get("checked_on"),
         },
-        "legal_class": RULE_CLASS.get(raw or "", "unknown"),
+        "legal_class": legal,
         "adu_status_raw": raw,
     }
 

@@ -1,8 +1,8 @@
 # Architecture
 
-This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. Six lot places are covered lot by lot: Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), and parts of Montgomery County (26,119), Chester County (14,847) and Centre County (3,484), 625,687 lots in all. 185 towns beyond the two cities have a hand-checked rule file (10 of them are in the lot places), as of Nov 16, 2026. Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
+This product answers one question for a home lot in Pennsylvania: can a backyard home (an ADU) go here, how big, under which rules, and does it pay. 14 lot places are covered lot by lot (lot data 13, Nov 28, 2026): Philadelphia (459,998 lots), Pittsburgh (92,081), Allentown (29,158), Erie (26,150), and towns in Montgomery (142,072), Delaware (104,738), Lancaster (62,735), Bucks (48,764), Chester (42,306), York (40,295), Dauphin (35,475), Northampton (33,695), Cumberland (10,259) and Centre (6,827) counties, 1,134,553 lots in all. 223 towns beyond the two cities have a hand-read rule file (98 of them are in the lot places), as of Nov 27, 2026: with the two cities, 201 verified and 24 drafted. Every Pennsylvania place gets one answer from the answer ladder, down to a statewide baseline. Towns outside the lot places have rules but no lot files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots (data versions of 2026-11-14 and 16: pittsburgh-20261114-7ae3f25d22, philadelphia-20261114-2a67293eaa, allentown-20261116-b1e77f74ac, chester_county-20261116-aa5d870e34, centre_county-20261116-3f43ace3b4, montgomery_county-20261118-e05e33d1ea), shared/rules/towns_index.json at commit 751cfaf -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts.lots, read 2026-11-28 (data versions in docs/LIMITS.md "What works today"), shared/rules/towns_index.json status (2026-11-27) -->
 
 Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
@@ -57,14 +57,14 @@ In words:
 1. Each place module downloads its layers once into `raw/<place>/` and records each one in `raw/<place>/SOURCES.json`.
 2. The place `build` step joins parcels, assessor rows, zoning, overlays, flags and building outlines into one lots table and one buildings table per place, in `processed/<place>/`.
 3. The lot builder (`pipeline/build_lots.py`) reads those tables. For every lot and each of the three scenarios (today, local reform, state reform) it resolves the rules (`pipeline/rules.py`), finds the front, rear and side lot lines, cuts the buildable ground and fits each allowed ADU type (`pipeline/fit.py`). The fit is a vector geometry test on lot, building and street lines with rule-based setbacks.
-4. It joins land cover per lot and, in all six places, reads what lies inside the suggested spot (trees a unit would remove, open ground, hard surface). Land cover is context. It does not move or block the unit.
+4. It joins land cover per lot and, in the places of lot data 12, reads what lies inside the suggested spot (trees a unit would remove, open ground, hard surface). Land cover is context. It does not move or block the unit.
    A later refresh step (`build_lots terrain`) adds ground slope from the USGS 3DEP 1 m DEM: over the lot, the buildable ground and under the suggested spot, a steep flag and a second fit on ground under 25 percent. Slope is context too. It does not change the fit's yes or no.
 5. It writes one validated JSON record per lot, grouped by 2020 census tract, plus a compact index, the current app's per-tract lists and a manifest.
 6. The browser loads a tract file, shows the saved answer, and tests a unit the user draws against the saved buildable ground.
 
 Land cover and the detector, by place:
 
-| | Philadelphia | Pittsburgh | Allentown and the three county places |
+| | Philadelphia | Pittsburgh | Allentown and the first 9 county-place towns (lot data 12). The lots added on Nov 27 and 28 have an empty cover block (as of 2026-11-28) |
 |---|---|---|---|
 | Lot `cover` block | The city's 2018 land cover raster (`landcover_2018`), because the model is not reliable for tree and open ground on NAIP 2022 here | The three-model land cover ensemble on NAIP 2022 (`model:div7_3m_tta`), from `cover_model_div7_3m_tta.parquet`, since 2026-11-18. Before that `r34_c5_s0` | The same model, from `cover.parquet` (Nov 14). Validated only in Centre County (a Chesapeake test county). 36 Centre County lots have none |
 | Cover inside the suggested spot (`spot_cover`) | From the same raster | From the same model maps | From the same model maps (since the Nov 15 rebuild) |
@@ -81,8 +81,8 @@ Not legal advice. Not a zoning determination. Parcel lines are not a survey.
 
 | Tier | Where | What it holds | Used by |
 |---|---|---|---|
-| 1. Lot-level rules | The six lot places (`shared/rules/philadelphia.json`, `pittsburgh.json`, the town files of Allentown and the 9 county-place towns, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
-| 2. Town rule files | 221 towns beyond the two cities, mostly the largest by 2020 population (`shared/rules/pa_<county>_<town>.json`). With the two cities, 198 verified and 25 drafted with a stated open point (2026-11-26) | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. Lot files only for the towns in the lot places | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
+| 1. Lot-level rules | The 14 lot places (`shared/rules/philadelphia.json`, `pittsburgh.json`, the town files of Allentown and the 97 county-place towns, plus the bill files) | Every rule resolved for every lot and scenario, with district setbacks and overlays, saved in the lot record | Lot files, Testing mode, the assistant's lot tools |
+| 2. Town rule files | 223 towns beyond the two cities, mostly the largest by 2020 population (`shared/rules/pa_<county>_<town>.json`). With the two cities, 201 verified and 24 drafted with a stated open point (2026-11-27) | ADU status, approval path, size, owner occupancy, conditions and other ways to add a unit, each cited. Lot files only for the towns in the lot places | The assistant (`get_rule_text`, `list_rule_places`), `pipeline/rules.py` town resolver, [RULES_TOWNS.md](RULES_TOWNS.md) |
 | 2b. Public zoning text (unverified) | 66 towns with a public copy of the ordinance on the town or a county site (`<data root>/corpus/tierb/`, published as `zoning_text/` next to the lot data) | Passages copied word for word, with section, pages, link and fetch date. No verdict | The assistant (`search_zoning_text`, `list_text_places`), only for a town with no rule file or a detail the rule file lacks. Labelled "unverified text search" |
 | 3. Statewide baseline | Every other Pennsylvania town (`shared/rules/pa_statewide.json`) | MPC approval paths, building code, sewage rules, the pending bills. No town zoning numbers | The assistant, which says the answer is the statewide baseline and not the town's own code |
 
@@ -133,8 +133,29 @@ What the tool results carry so the model does not have to infer it (the prompt s
   spot, or a line saying they are not available for the place. A `rule` line says to give the accuracy note with the
   figures.
 - Address search: `find_lot` reads a static address index per place (`<place>/addresses/`, 3.6 MB for the six
-  places, in the lot data bundle, see [DATA.md](DATA.md#address-index)). It finds any address in a lot place, on the
+  places of lot data 12, in the lot data bundle; Delaware County lots have no address, see [DATA.md](DATA.md#address-index)). It finds any address in a lot place, on the
   map or not. It works on the live site only once the bundle is published.
+
+Questions about the tool itself (how it works, data sources, accuracy, limits, coverage, figures, what changed when,
+hosting, models, the bills) go to `get_methods` first: short hand-checked passages (`app/src/agent/methods.ts`). When
+those do not answer, `search_tool_docs` (`app/src/agent/docsSearch.ts`) searches the project documents themselves:
+README, LIMITS, METHODS, DATA, PLACES, ARCHITECTURE, RULES, CHANGELOG, the two model cards, LICENSES, TALKS, CORPUS,
+`shared/ASSUMPTIONS.md` and three sections of HOSTING (the intro, the decision, licences and privacy). Operator pages
+(HANDOFF, RUNNING, ADDING_A_CITY) are left out, and so are the district value tables of RULES (the lot tools give those).
+
+- The index is `app/src/agent/docsIndex.json`, made by `tools/gen_docs_index.ts` and committed. It cuts each document
+  by heading into passages of at most about 1,600 characters, text as written, with HTML comments, local paths and
+  anything like an email or a key taken out. Each passage has the document, heading path, anchor
+  (`docs/LIMITS.md#what-does-not-work-yet`) and a date when its heading or text states one.
+- The tool loads the index on first use with a JSON import, the same way `ruleText.ts` loads rule files: a lazy chunk
+  in the browser (the main bundle does not grow) and a plain JSON import in Node (eval, tests).
+- Ranking: BM25 on the text plus BM25 on the heading path (weight 1.5), a bonus for two of the user's words side by
+  side, a light stemmer, project synonyms (ADU, cottage and granny flat; HB 2186 and state bill; Test Site; ParcelIQ
+  and Ask; accuracy and mIoU; and more), and a month and day in the question matched to the ISO dates of the
+  documents. History and talk notes weigh less unless the question asks about a past day or edit. Up to 4 passages come back with a rule:
+  answer only from them, cite the document and heading, and say the documents do not cover it when none matches.
+- After any edit to a listed document, regenerate the index: `node_modules/.bin/jiti tools/gen_docs_index.ts`
+  (`--check` only reports). `app/src/agent/docsSearch.test.ts` fails when the committed index is stale.
 
 Eval files: `questions.json` (generated, two cities), `questions_tierb.json`, `questions_ladder.json`,
 `questions_allentown.json` and `questions_rule_text.json` (both from `agent/eval/make_more_questions.ts`), and
@@ -157,11 +178,11 @@ word with plurals folded.
 | `pipeline/fit.py` | Vector fit engine: lot lines, setbacks, buildable ground, largest rectangle, fit per ADU type |
 | `pipeline/lot.py`, `pipeline/lot_schema.json` | The lot record contract and its validator |
 | `pipeline/build_lots.py` | Lot file builder: `run`, `validate`, `stats`, `qa`, and the refresh steps `cover` (land cover) and `terrain` (ground slope), which fold a block into built records without a fit rerun |
-| `pipeline/terrain.py` | Ground slope from the 3DEP 1 m DEM: slope grid in EPSG:2272, slope over the lot, buildable ground and best spot, and the fit on ground under 25 percent |
+| `pipeline/terrain.py` | Ground slope from the 3DEP 1 m DEM: slope grid in the place's state plane feet (EPSG:2272, Erie 2271), slope over the lot, buildable ground and best spot, and the fit on ground under 25 percent |
 | `pipeline/market.py` | HUD Small Area Fair Market Rents for Pennsylvania ZIP codes |
 | `pipeline/money.py`, `shared/assumptions.json` | Cost, rent and pay-off model. Every number lives in the assumptions file |
 | `pipeline/vision/` | Land cover U-Net: labels, training, scoring, error analysis, city label sets (`city.py`, `city_check.py`), land cover per lot from the model (`infer_lots.py`) or a city raster (`raster_cover.py`), and cover inside any polygon (`cover_lookup.py`) |
-| `pipeline/validation/` | Hand-label check of the lot answers: draw a sample, make labeling sheets, score hand labels against the product. No labels yet |
+| `pipeline/validation/` | Hand-label check of the lot answers: draw a sample, make labeling sheets, score hand labels against the product. No hand labels yet. On Nov 26 a vision model labeled the 250-lot sample (`labels_claude/`, not hand labels): 84.2% (Pittsburgh) and 84.7% (Philadelphia) agreement at 600 sq ft. `protocol_fit.py` scores the product with the protocol's own test |
 | `pipeline/corpus/` | Machine-read zoning text pilot. Not in the product |
 | `musa6950/yolo/` | Object detector. Uses an AGPL library and is kept in its own folder. Only data files leave it |
 | `app/src/lib/lot/` | Browser side: load lot files, verdict, citations, build steps, report data, lot tools for the assistant |
@@ -202,7 +223,7 @@ Some exceptions read other paths:
 
 ## Coordinates
 
-All lengths and areas are computed in a local state plane in feet: EPSG:2272 (NAD83 Pennsylvania South, US feet) for both cities. It is set as `WORK_CRS` in `pipeline/places/philadelphia.py` and `pipeline/places/pittsburgh.py`. Pittsburgh was built in EPSG:2271 (the North zone) before Nov 11, 2026. The current Pittsburgh lot files (data version `pittsburgh-20261114-7ae3f25d22`) record `crs_local` 2272. Lot records store geometry as GeoJSON in WGS84 for the map, and name the local system in `lot.crs_local`.
+All lengths and areas are computed in a local state plane in feet: EPSG:2272 (NAD83 Pennsylvania South, US feet) for both cities. It is set as `WORK_CRS` in `pipeline/places/philadelphia.py` and `pipeline/places/pittsburgh.py`. Pittsburgh was built in EPSG:2271 (the North zone) before Nov 11, 2026. The current Pittsburgh lot files (data version `pittsburgh-20261114-7ae3f25d22`) record `crs_local` 2272. Erie County (since Nov 27, 2026) is built in EPSG:2271, since Erie lies north of the South zone's band; the lot schema accepts 2271 and 2272. Lot records store geometry as GeoJSON in WGS84 for the map, and name the local system in `lot.crs_local`.
 
 ## Ids
 

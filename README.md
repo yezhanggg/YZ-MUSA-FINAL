@@ -28,13 +28,21 @@ The search box doubles as a chat assistant. Ask things like *"Can I build an ADU
 |---|---|
 | Philadelphia | 459,998 |
 | Pittsburgh | 92,081 |
+| Montgomery County (24 towns) | 142,072 |
+| Delaware County (19 towns) | 104,738 |
+| Lancaster County (11 towns) | 62,735 |
+| Bucks County (8 towns) | 48,764 |
+| Chester County (14 towns) | 42,306 |
+| York County (7 towns) | 40,295 |
+| Dauphin County: Harrisburg, Lower Paxton, Swatara | 35,475 |
+| Northampton County (5 towns, with Easton and Bethlehem's Northampton part) | 33,695 |
 | Allentown | 29,158 |
-| Montgomery County: Lower Merion, Narberth, Upper Dublin | 26,119 |
-| Chester County: West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | 14,847 |
-| Centre County: College Township | 3,484 |
-| **Total** | **625,687** |
+| Erie | 26,150 |
+| Cumberland County: Upper Allen, Lower Allen, Camp Hill | 10,259 |
+| Centre County: College Township, State College | 6,827 |
+| **Total** (Nov 28, 2026) | **1,134,553** |
 
-Outside these places, the map still shows the ADU rule for every county, town, census tract and ZIP code in Pennsylvania. 223 towns have their own rule file (198 checked by a second reading). Every other town uses a statewide baseline.
+Outside these places, the map still shows the ADU rule for every county, town, census tract and ZIP code in Pennsylvania. 225 towns and cities have their own rule file (201 checked by a second reading, Nov 27, 2026). Every other town uses a statewide baseline.
 
 ## How it works
 

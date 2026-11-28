@@ -42,6 +42,25 @@ The code in this repository is under the Apache License 2.0 (`LICENSE`). The det
 | Montgomery County GIS (parcels, Board of Assessment land table, municipal zoning, street centerlines) | The zoning item says "Montgomery County provides this data as a free and open resource". The other layers state no license | Not stated. Naming Montgomery County is good practice | Zoning yes as stated; the rest unclear, ask the provider | unclear, ask the provider | Owner, mailing, sale and assessed value fields of the land table are never requested |
 | US Census 2020 ZIP Code Tabulation Areas (TIGERweb) | A US federal government work | Courtesy credit to the US Census Bureau | Yes | Yes | ZIP for rents where no property ZIP is published |
 
+## Data: county places added Nov 27 and 28, 2026
+
+<!-- source: the license fields recorded in ~/musa-drive/raw/<place>/SOURCES.json at download (Nov 27 and 28, 2026), as summarised for the lot data 13 docs pass -->
+
+| Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |
+|---|---|---|---|---|---|
+| Dauphin County GIS (parcels, buildings) | Dauphin County General Public License (share alike). Discrepancies are to be reported to the county within 10 days | Yes, as the license asks | Yes, under the same license | unclear, ask the provider | Zoning for Harrisburg, Lower Paxton and Swatara comes from each town's own layer |
+| Bucks County GIS (parcels, compiled zoning) | "Not for commercial use or resale" | Not stated. Naming Bucks County is good practice | unclear, ask the provider | No | |
+| Cumberland County GIS (parcels, town zoning layers) | "Any resale prohibited" | Not stated. Naming Cumberland County is good practice | unclear, ask the provider | No resale | The county says its zoning layers may not be the adopted map |
+| York County Planning Commission (parcels, zoning, buildings) | For reference only, not a survey. No license stated | Not stated. Naming the York County Planning Commission is good practice | unclear, ask the provider | unclear, ask the provider | |
+| Lancaster County GIS (parcels, compiled zoning) | No license stated. Disclaimer: "educational/demonstration purposes only" | Not stated. Naming Lancaster County GIS is good practice | unclear, ask the provider | unclear, ask the provider | The disclaimer may limit use. Ask the county |
+| Northampton County parcels (via City of Bethlehem GIS), Bethlehem, Easton and LVPC zoning layers | No license stated | Not stated. Naming the county and the city is good practice | unclear, ask the provider | unclear, ask the provider | |
+| Erie County GIS (parcels, assessor layer) and City of Erie zoning | No license stated | Not stated. Naming Erie County is good practice | unclear, ask the provider | unclear, ask the provider | |
+| Delaware County GIS (parcels, compiled zoning) | No license stated. "General informational purposes" | Not stated. Naming Delaware County is good practice | unclear, ask the provider | unclear, ask the provider | No assessor data was used (the service needs a token) |
+| County of Berks data (parcels, zoning, assessment) | Data agreement: the data may not be passed on "in its original format", and products must carry the line "Information is based on geospatial data from the County of Berks" | Yes, that line | Not in its original format | unclear, ask the provider | Built (Amity township) but held out of the app and the bundle until the owner decides |
+| DVRPC data (2015 building footprints and lidar heights, Land Use 2023) | DVRPC data license | Yes, "Delaware Valley Regional Planning Commission (DVRPC)" | Under the DVRPC license | Under the DVRPC license | Heights in Montgomery, Chester, Bucks and Delaware. House type in Delaware from Land Use 2023 |
+| Microsoft Global ML Building Footprints, OpenStreetMap alleys | ODbL | Yes, as in the open data table below | Yes, under ODbL | Yes | Outlines in every new place, alleys where the county has none |
+| FEMA flood, Census tracts and ZIP areas, USGS 3DEP DEM | US federal government works (public domain) | Courtesy credit to FEMA, the Census Bureau and USGS | Yes | Yes | |
+
 ## Data: town details (Parcel tab)
 
 | Data set | License or terms as recorded | Attribution | Redistribute | Commercial use | Notes |
@@ -148,6 +167,6 @@ On the map itself the app shows one small line, "© OpenStreetMap", in the botto
 - Map library: MapLibre GL JS (https://maplibre.org), BSD-3-Clause
 - Address search: Photon by komoot (https://photon.komoot.io), OpenStreetMap data, ODbL
 - Building outlines: Microsoft Global ML Building Footprints (https://github.com/microsoft/GlobalMLBuildingFootprints), ODbL
-- Parcels: City of Philadelphia, Allegheny County, Chester County, Centre County, Montgomery County
+- Parcels: City of Philadelphia, Allegheny County, Chester County, Centre County, Montgomery County, Dauphin County, Erie County, Lancaster County, Cumberland County, Northampton County (via the City of Bethlehem), Bucks County, York County Planning Commission, Delaware County
 - Aerial photo: Pennsylvania Emergency Management Agency (PEMA), imagery hosted by PASDA. Fallback: Esri, Maxar, Earthstar Geographics
 - County, census tract and ZIP code outlines: U.S. Census Bureau, 2020 TIGER/Line and TIGERweb (2020 ZIP Code Tabulation Areas), public domain

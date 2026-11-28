@@ -280,16 +280,34 @@ mailing addresses. No assessed values and no sale dates or prices: those stay ou
   Allentown zoning per parcel, zoning overlays, historic districts, building outlines, street centerlines with
   cartway widths, the A, B and C street designation of the zoning map). Microsoft Global ML Building Footprints for
   outlines the city layer misses. USGS 3DEP 1 m DEM.
-- Chester County (West Chester, Phoenixville, West Vincent, Malvern, East Brandywine): Chester County GIS layers on
+- Chester County (14 towns: West Chester, Phoenixville, West Vincent, Malvern, East Brandywine, North Coventry, East
+  Coventry, Honey Brook, Schuylkill, West Caln, West Goshen, East Goshen, Westtown, East Nottingham): Chester County GIS layers on
   ArcGIS Online (parcels with the land use code, the compiled municipal zoning, road centerlines, municipal
   boundaries). DVRPC 2015 building footprints with estimated heights. Microsoft Global ML Building Footprints for
   outlines the 2015 set misses. Census 2020 ZIP Code Tabulation Areas.
-- Centre County (College Township): Centre County GIS OpenData service (parcels with living area, address points,
+- Centre County (College Township, State College): Centre County GIS OpenData service (parcels with living area, address points,
   the unofficial combined zoning layer, buildings with heights, road centerlines). Microsoft Global ML Building
   Footprints for outlines the county layer misses.
-- Montgomery County (Narberth, Lower Merion, Upper Dublin): Montgomery County GIS (parcels, the Board of Assessment
-  land table for land use, living units and property ZIP, the aggregated municipal zoning, street centerlines).
-  Microsoft Global ML Building Footprints. Census 2020 ZIP Code Tabulation Areas.
+- Montgomery County (24 towns): Montgomery County GIS (parcels, the Board of Assessment land table for land use,
+  living units and property ZIP, the aggregated municipal zoning, street centerlines). Microsoft Global ML Building
+  Footprints with DVRPC 2015 heights. Census 2020 ZIP Code Tabulation Areas.
+- Dauphin County (Harrisburg, Lower Paxton, Swatara): Dauphin County open data (parcels, buildings, streets), City of
+  Harrisburg zoning and historic districts, Lower Paxton and Swatara zoning layers. Microsoft footprints.
+- Erie County (Erie city): Erie County GIS (parcels, address points, road centerlines), City of Erie zoning (2023).
+  Microsoft footprints, OpenStreetMap alleys.
+- Lancaster County (11 towns): Lancaster County GIS (parcels, compiled zoning and overlays, buildings, road
+  centerlines), City of Lancaster historic districts. Microsoft footprints.
+- Cumberland County (Upper Allen, Lower Allen, Camp Hill): Cumberland County GIS (parcels, zoning per town, road
+  centerlines). Microsoft footprints.
+- Northampton County (Bethlehem's Northampton part, Easton, Bethlehem Township, Lower Saucon, Wilson): county parcels
+  with the assessment table via City of Bethlehem GIS, Bethlehem and Easton zoning, LVPC regional zoning. Microsoft
+  footprints, OpenStreetMap alleys.
+- Bucks County (8 towns): Bucks County GIS (parcels, the Planning Commission's compiled zoning, address points, road
+  centerlines). Microsoft footprints with DVRPC 2015 heights, OpenStreetMap alleys.
+- York County (7 towns): York County Planning Commission open data (parcels, zoning, buildings, road centerlines).
+  Microsoft footprints, OpenStreetMap alleys.
+- Delaware County (19 towns): Delaware County GIS (parcels, compiled zoning, road centerlines, ZIP areas), DVRPC
+  Land Use 2023. Microsoft footprints with DVRPC 2015 heights, OpenStreetMap alleys. No assessor data.
 - Ground heights (all places): USGS 3DEP 1 m DEM, public domain. Used for the slope numbers and the terrain tiles.
 - All places: US Census TIGER 2020 tracts. HUD Small Area Fair Market Rents. FEMA National Flood Hazard Layer.
 - Rules: city zoning codes and state bills, each cited with its link and the date it was checked.
@@ -305,7 +323,14 @@ These notes repeat what the providers state. They are not legal advice.
   County, DVRPC and Centre County layers state no licence. Montgomery County says its zoning layer is "a free and open
   resource".
   Republishing these derived files may need the provider's permission. Ask the provider.
-- Microsoft building footprints and OpenStreetMap are under the ODbL. The Pittsburgh, Allentown, Chester County and
+- Dauphin County data is under the Dauphin County General Public License: use and derived works are allowed if they
+  carry the same terms, and discrepancies found must be reported to the county within 10 days.
+- Bucks County data: not for commercial use or resale. Cumberland County data: any resale is prohibited.
+- Lancaster County GIS states no licence and calls its data "educational/demonstration purposes only". York County
+  Planning Commission data is for reference only, not a survey. Erie, Delaware and Northampton (via City of Bethlehem)
+  layers state no licence.
+- Microsoft building footprints and OpenStreetMap are under the ODbL. The outlines of every place except Philadelphia
+  use Microsoft footprints in whole or in part. The Pittsburgh, Allentown, Chester County and
   Centre County building outlines mix county, city or regional and Microsoft outlines, the Montgomery County outlines
   are Microsoft's, and the Philadelphia alleys use OpenStreetMap. Data derived from them is shared under the ODbL:
   © Microsoft, © OpenStreetMap contributors.

@@ -18,7 +18,8 @@ describe('Montgomery County lots (a county place with several towns)', () => {
   it('Montgomery County tracts load from the montgomery_county folder, with its three towns', () => {
     expect(PLACE_BY_COUNTY['42091']).toBe('montgomery_county');
     expect(placeOfGeoid('42091205600')).toBe('montgomery_county');
-    expect(townsOfPlace('montgomery_county').map((t) => t.name)).toEqual(['Lower Merion township', 'Narberth borough', 'Upper Dublin township']);
+    expect(townsOfPlace('montgomery_county').map((t) => t.name).slice(0, 3)).toEqual(['Lower Merion township', 'Narberth borough', 'Upper Dublin township']);
+    expect(townsOfPlace('montgomery_county')).toHaveLength(24);
   });
 
   it('a Narberth lot names its town in the record, and the app reads it', () => {
@@ -46,7 +47,7 @@ describe('Montgomery County lots (a county place with several towns)', () => {
     const lot = fixture('nar_detached');
     expect(getLotFacts(lot)).toMatchObject({ town: 'Narberth borough', address: '203 BARRIE RD' });
     expect(testUnitOnLot(lot, cottage)).toMatchObject({ town: 'Narberth borough', status: 'fits' });
-    expect(lotPlacesText()).toMatch(/Montgomery County \(Lower Merion Township, Narberth, Upper Dublin Township\)/);
+    expect(lotPlacesText()).toMatch(/Montgomery County \(Lower Merion Township, Narberth, Upper Dublin Township, /);
   });
 
   it('rules pass 25: a unit over the footprint cap does not fit, though its floor area is under the floor area cap', () => {

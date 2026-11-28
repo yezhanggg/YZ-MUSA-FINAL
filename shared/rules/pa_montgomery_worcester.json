@@ -29,7 +29,7 @@
       "https://ecode360.com/print/WO1349?guid=11723670",
       "https://ecode360.com/print/WO1349?guid=11723801"
     ],
-    "verified_on": "2026-11-16",
+    "verified_on": "2026-11-26",
     "county": "Montgomery",
     "municipality_type": "township",
     "geoid": "4209186496",
@@ -58,7 +58,7 @@
       "Variances: 150-217C, 150-219. No bar on a use variance",
       "Where the meaning of the chapter is in doubt, including whether a use is permitted as similar to a permitted use or customarily incidental to one, the Zoning Hearing Board may interpret it on application (150-217A(2)). That is the route to settle the outbuilding conflict on a lot"
     ],
-    "notes": "Zoning office: Worcester Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article IV (AGR, with 150-16 parking), Article V (R-AG-200), Article XIII (MR), Article XVIA (Conservation Subdivisions), 150-138, Article XXB, Article XXIII, 150-153, 150-173, 150-177, 150-183, Article XXVI, the 150-9 definitions of single-family detached dwelling and dwelling types, the New Laws page and code searches (ADU terms, conservation subdivision, single-family and two-family, multifamily and conversion). The use lists of R-AG-175 (150-27), R-175 (150-35), R-150 (150-51), R-100 (150-67), R-75 (150-75) and RO (150-91) were read only in search results. Not read: Articles I to III except those definitions, the R-AG-175 to R-75 and RO articles in full, MHD, R-50, LPD (Article XVIB), C, SC, LI, IR, the SS, AQRC, Cedars Village and Billboard overlays, Article XXI signs, the rest of Articles XX, XXII and XXIV, Article XXV, XXVII to XXX. The code search for ADU terms finds them only in Article XVIA."
+    "notes": "Zoning office: Worcester Township Zoning Officer. Read in a browser on eCode360 (print view), one page at a time, on 2026-11-16. Read: Article IV (AGR, with 150-16 parking), Article V (R-AG-200), Article XIII (MR), Article XVIA (Conservation Subdivisions), 150-138, Article XXB, Article XXIII, 150-153, 150-173, 150-177, 150-183, Article XXVI, the 150-9 definitions of single-family detached dwelling and dwelling types, the New Laws page and code searches (ADU terms, conservation subdivision, single-family and two-family, multifamily and conversion). The use lists of R-AG-175 (150-27), R-175 (150-35), R-150 (150-51), R-100 (150-67), R-75 (150-75) and RO (150-91) were read only in search results. Not read: Articles I to III except those definitions, the R-AG-175 to R-75 and RO articles in full, MHD, R-50, LPD (Article XVIB), C, SC, LI, IR, the SS, AQRC, Cedars Village and Billboard overlays, Article XXI signs, the rest of Articles XX, XXII and XXIV, Article XXV, XXVII to XXX. The code search for ADU terms finds them only in Article XVIA. Pass 30 (2026-11-26): the Option 3 gate (150-110.2A(1)(c)) carries status_only_if, so every status line says the by-right status holds only on an Option 3 lot."
   },
   "adu": {
     "term": {
@@ -193,7 +193,8 @@
           "confidence": "secondary",
           "planned_development_kinds": [
             "Option 3"
-          ]
+          ],
+          "status_only_if": "the lot is in a conservation subdivision developed under Option 3, country properties"
         },
         {
           "kind": "lot_size",

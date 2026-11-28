@@ -65,7 +65,7 @@ describe('find_lot on an address that is not on screen', () => {
   });
 
   it('an address in no lot place says so and names the places', async () => {
-    const r = (await runTool(makeExecutors(emptyMap()), 'find_lot', { address: '100 Market St, Harrisburg, PA 17101' })).result as J;
+    const r = (await runTool(makeExecutors(emptyMap()), 'find_lot', { address: '100 Wyoming Ave, Scranton, PA 18503' })).result as J;
     expect(r.candidates).toEqual([]);
     // Four places of the fixture answer 404: the message says they could not be read instead of "outside".
     expect(String(r.message)).toMatch(/could not be read, so it may be there.*Do not guess a lot/);
@@ -74,10 +74,10 @@ describe('find_lot on an address that is not on screen', () => {
   it('with every index read, a miss is outside the places with lot data', async () => {
     const all = fixtureAddressIndex();
     const p = { ...emptyMap(), addressIndex: { search: async (a: string) => ({ ...(await all.search(a)), missing: [], searched: [...LOT_PLACES] }) } };
-    const r = (await runTool(makeExecutors(p), 'find_lot', { address: '100 Market St, Harrisburg, PA 17101' })).result as J;
+    const r = (await runTool(makeExecutors(p), 'find_lot', { address: '100 Wyoming Ave, Scranton, PA 18503' })).result as J;
     expect(String(r.message)).toMatch(/^That address is outside the places with lot data: /);
     for (const pl of LOT_PLACES) expect(String(r.message)).toContain(lotPlaceTitle(pl));
-    expect(String(r.message)).toMatch(/"harrisburg".*Do not guess a lot/);
+    expect(String(r.message)).toMatch(/"scranton".*Do not guess a lot/);
   });
 
   it('falls back to the lots on the map when the index cannot be read', async () => {

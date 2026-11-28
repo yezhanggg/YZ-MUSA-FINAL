@@ -803,6 +803,13 @@ HOSTS: dict[str, dict[str, Any]] = {
         "current_through": None,
         "note": "Zoning: Chapter 27 Zoning (Ord. 1049, 11/18/2019. amended incl. Ord. 1097, 4/16/2024). ADU text seen: accessory dwelling unit - definition in Part 11 (occupied by relatives of owner or caregivers/household staff) plus 'Elder cottage/in-law quarters/carriage house (accessory dwelling unit)' definition (min 600 sf, not counted toward density). ecode360 TOC lists 27-1503 Accessory Dwelling (Part 15 Accessory Uses). Approval path not seen. Definitions read at https://www.zoneomics.com/code/ferguson-township-centre-county-PA/chapter_10. 27-1503 from ecode360 TOC via search (https://www.ecode360.com/32480896). CONFIRMED ADU text (definitions read. 27-1503 heading via search only, body not read). C",
     },
+    "4209184888": {
+        "code_host": "ecode360",
+        "code_url": "https://ecode360.com/10515979",
+        "plain_fetch": False,
+        "current_through": None,
+        "note": "Zoning: Chapter 160 Zoning (Whitpain Township Zoning Ordinance of 1950, as amended). ADU rule 160-207A added by Ord. No. 4-269 (9-15-2026), on the township Ordinances page (https://www.whitpaintownship.org/218/Ordinances), possibly not yet codified. Zoning link from the township Board of Supervisors page. eCode360 403 to WebFetch. Zoneomics copy at https://www.zoneomics.com/code/whitpain-township-PA/chapter_1.",
+    },
     "4202758440": {
         "code_host": "ecode360",
         "code_url": "https://ecode360.com/42483863",
@@ -1485,6 +1492,7 @@ FIXED_BATCH.update({g: 53 for g in ("4204529720", "4208718944", "4204372200")})
 FIXED_BATCH.update({g: 54 for g in ("4207939792", "4202921008", "4200117640")})
 FIXED_BATCH.update({g: 55 for g in ("4207323304", "4200702288", "4204576576")})
 FIXED_BATCH.update({g: 56 for g in ("4204514264", "4213311432", "4201949056")})
+FIXED_BATCH.update({g: 57 for g in ("4209184888", "4202758440")})
 
 EXTRAS = {
     "4202935536": "Chester County Planning Commission ADU eTool. Code 27-1002 Accessory Dwelling Units",
@@ -1878,6 +1886,12 @@ EXTRAS = {
     "4204514264": "batch 56 by population. Code Chapter 340 has no ADU text (two-family dwellings by right in R-2 and R-3, 340-19)",
     "4213311432": "batch 56 by population. Code Chapter 450 has no ADU text beyond the accessory apartment units of a TND development (450-380E(1)(b)), 450-382 two-family conversion by special exception in RS-1, RS-2, RS-3 and by right in MU-1",
     "4201949056": "Code 175-95.1 accessory dwelling unit by special exception (AG-A, AG-B, R-1, R-2, R-AG)",
+    # Batch 57 (2026-11-26): two towns skipped earlier for new ordinances, now read. Whitpain: Ord. No. 4-269 of
+    # 9-15-2026 (160-207A), read in the signed copy on the township website. Patton: Ord. No. 2026-658 of 10-28-2026 is
+    # a rental housing ordinance whose text sits only in agenda packets over the fetch limit, so the zoning chapter was
+    # read and the ordinance left as an open point.
+    "4209184888": "Ord. No. 4-269 (2026). Code 160-207A accessory dwelling units by right, family only (R-1, R-2, R-4 to R-7)",
+    "4202758440": "batch 57 by population. Code Chapter 425 has no ADU text (Ord. No. 2026-658 rental rules, not read, speak of accessory dwelling units)",
 }
 
 if __name__ == "__main__":

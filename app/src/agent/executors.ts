@@ -10,6 +10,7 @@ import { getRuleText, listRulePlaces } from './ruleText';
 import { listTextPlaces, searchZoningText, textHint, type ZoningTextSource } from './zoningText';
 import { getPlaceAnswer, type PlacesSource } from './placeAnswer';
 import { getMethods } from './methods';
+import { searchToolDocs, type DocsLoader } from './docsSearch';
 import { tractTownsOut, type TractTownsSource } from './tractTowns';
 import { boundaryAnswer, type AreaRef } from './boundaryAnswer';
 import { areaStats, findLotIndexResult, findLotResult, forecast, matchAddress, roomOut, type AddressEntry, type AreaData } from './areaTools';
@@ -51,6 +52,8 @@ export interface DataProvider {
   tractTowns?: TractTownsSource | null;
   /** get_boundary_answer on a ZIP code: the towns it sits in (app/public/data/zip_towns.json). */
   zipTowns?: TractTownsSource | null;
+  /** search_tool_docs: the project documents index. Default: the bundled app/src/agent/docsIndex.json, loaded on first use. */
+  docs?: DocsLoader | null;
   /** The area picked on a boundary in Test Site (county, town, tract or ZIP code), when there is one. */
   area?(): AreaRef | null;
 }
@@ -271,6 +274,9 @@ export function makeExecutors(p: DataProvider) {
     },
     async get_methods(input: { topic?: unknown; question?: unknown }) {
       return getMethods(input);
+    },
+    async search_tool_docs(input: { question?: unknown; doc?: unknown }) {
+      return searchToolDocs(input, p.docs ?? undefined);
     },
     async list_rule_places(input: { county?: unknown; with_file_only?: unknown }) {
       return listRulePlaces(input);

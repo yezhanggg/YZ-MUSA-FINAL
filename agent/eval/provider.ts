@@ -59,11 +59,13 @@ export const EXPERT_FILE = resolve(EVAL_DIR, 'questions_expert.json');
 export const PARCEL_FILE = resolve(EVAL_DIR, 'questions_parcel.json');
 /** Hand-written map actions: move the map, change the unit or ADU on screen (set_map). */
 export const MAP_FILE = resolve(EVAL_DIR, 'questions_map.json');
+/** Hand-written questions about the tool itself, answered from get_methods. */
+export const TOOL_FILE = resolve(EVAL_DIR, 'questions_tool.json');
 
 export function readSet(file = QUESTIONS_FILE): QuestionSet {
   const set = JSON.parse(readFileSync(file, 'utf8')) as QuestionSet;
   if (file === QUESTIONS_FILE)
-    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE, EXPERT_FILE, PARCEL_FILE, MAP_FILE])
+    for (const f of [TIERB_FILE, LADDER_FILE, ALLENTOWN_FILE, RULE_TEXT_FILE, FEATURES_FILE, EXPERT_FILE, PARCEL_FILE, MAP_FILE, TOOL_FILE])
       if (existsSync(f)) {
         const extra = JSON.parse(readFileSync(f, 'utf8')) as Partial<QuestionSet> & { questions: QuestionSet['questions'] };
         set.questions = [...set.questions, ...extra.questions];

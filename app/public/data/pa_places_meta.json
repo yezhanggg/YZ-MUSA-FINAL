@@ -1,6 +1,6 @@
 {
  "about": "Where can you build an ADU today, for every Pennsylvania county subdivision. One tier and one status per place. Not legal advice. Not a zoning determination. See docs/PLACES.md.",
- "built_on": "2026-11-26",
+ "built_on": "2026-11-28",
  "file": "pa_places.json",
  "fields": [
   "geoid",
@@ -138,17 +138,17 @@
   "by_tier": [
    {
     "tier": "verified",
-    "places": 200,
-    "pop": 6161137,
-    "pop_share": 0.4718,
-    "housing_units": 2639559
+    "places": 203,
+    "pop": 6194816,
+    "pop_share": 0.4743,
+    "housing_units": 2653493
    },
    {
     "tier": "baseline",
-    "places": 1741,
-    "pop": 5571761,
-    "pop_share": 0.4266,
-    "housing_units": 2503453
+    "places": 1739,
+    "pop": 5535655,
+    "pop_share": 0.4239,
+    "housing_units": 2487334
    },
    {
     "tier": "reported",
@@ -159,10 +159,10 @@
    },
    {
     "tier": "drafted",
-    "places": 25,
-    "pop": 443513,
-    "pop_share": 0.034,
-    "housing_units": 174821
+    "places": 24,
+    "pop": 445940,
+    "pop_share": 0.0341,
+    "housing_units": 177006
    },
    {
     "tier": "text_search",
@@ -175,24 +175,24 @@
   "by_status": [
    {
     "status": "unknown",
-    "places": 1793,
-    "pop": 5673498,
-    "pop_share": 0.4344,
-    "housing_units": 2551115
+    "places": 1791,
+    "pop": 5637392,
+    "pop_share": 0.4317,
+    "housing_units": 2534996
    },
    {
     "status": "limited",
-    "places": 141,
-    "pop": 4099339,
-    "pop_share": 0.3139,
-    "housing_units": 1742146
+    "places": 142,
+    "pop": 4119822,
+    "pop_share": 0.3155,
+    "housing_units": 1750236
    },
    {
     "status": "not_addressed",
-    "places": 93,
-    "pop": 1855593,
-    "pop_share": 0.1421,
-    "housing_units": 769772
+    "places": 94,
+    "pop": 1871216,
+    "pop_share": 0.1433,
+    "housing_units": 777801
    },
    {
     "status": "by_right",
@@ -250,20 +250,20 @@
    {
     "tier": "baseline",
     "status": "unknown",
-    "places": 1741,
-    "pop": 5571761
+    "places": 1739,
+    "pop": 5535655
    },
    {
     "tier": "drafted",
     "status": "limited",
-    "places": 17,
-    "pop": 310929
+    "places": 15,
+    "pop": 297733
    },
    {
     "tier": "drafted",
     "status": "not_addressed",
-    "places": 8,
-    "pop": 132584
+    "places": 9,
+    "pop": 148207
    },
    {
     "tier": "reported",
@@ -304,8 +304,8 @@
    {
     "tier": "verified",
     "status": "limited",
-    "places": 104,
-    "pop": 3684207
+    "places": 107,
+    "pop": 3717886
    },
    {
     "tier": "verified",

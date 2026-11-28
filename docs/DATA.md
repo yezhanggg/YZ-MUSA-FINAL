@@ -141,25 +141,68 @@ Known limits:
 
 ## County places (lot records for several towns)
 
-Built 2026-11-13 and 14. One place per county (the app's registry is by county). Each lot names its town's rule file in `rule_file`. Only towns with a verified rule file and an ADU path whose districts the county zoning layer names are built. Raw files in `raw/<place>/` with `SOURCES.json`, built tables in `processed/<place>/` (`lots`, `buildings`, `streets`, `join_check.json`, `zoning_dates.json`). Owner, mailing, sale and assessed value fields are never requested.
+First built 2026-11-13 and 14 (Chester, Centre and Montgomery County). Grown and added on 2026-11-27 and 28 (lot data 13): Chester County went from 5 to 14 towns, Montgomery County from 3 to 24, Centre County added State College, and nine county places were added. As of 2026-11-28 there are 12 county places. 11 are in the app. Berks County is built but held out of the app and the bundle (see the license notes below). One place per county (the app's registry is by county). Each lot names its town's rule file in `rule_file`. Only towns with a verified rule file and an ADU path whose districts the zoning layer names are built. Raw files in `raw/<place>/` with `SOURCES.json`, built tables in `processed/<place>/` (`lots`, `buildings`, `streets`, `join_check.json`, `zoning_dates.json`). Owner, mailing, sale and assessed value fields are never requested.
 
-<!-- source: raw/<place>/SOURCES.json and processed/<place>/join_check.json, 2026-11-14 -->
+<!-- source: ~/musa-drive/raw/<place>/SOURCES.json, ~/musa-drive/lots/<place>/stats.json "by_town" and "caveats", docstrings of pipeline/places/<place>.py, all read 2026-11-28. The first three rows were first written from join_check.json on 2026-11-14 -->
 
 | Place | Towns (rule file) | Parcels and facts | Zoning | Outlines | Streets | ZIP |
 |---|---|---|---|---|---|---|
-| `chester_county` (42029) | West Chester, Phoenixville, West Vincent, Malvern, East Brandywine | County `Parcels_owners` (UPI, address, land use code: R-10 single family, R-20 two family, R-55 townhouse). No living area | County `Zoning_Edit_Working` (compiled, "working"). Map dates per town: Phoenixville 2013-12-10, West Vincent 2014-10-13, Malvern 2018-10-02, West Chester 2021-10-20, East Brandywine 2024-06-11. Overlays split from districts | DVRPC 2015 (height estimate in feet) plus Microsoft outlines it misses | County centerlines (ROAD_THORO_TYPE AL = alley) | 2020 Census ZCTA |
-| `centre_county` (42027) | College Township | County `ParcelsPlus` (class R, living area). Address points with postal ZIP | County `UnofficialCountyZoning` ("unofficial"; R1, RO read as the file's R-1, R-O) | County `Buildings_3D` (height) plus Microsoft | County NG911 centerlines (St_PosTyp Alley) | Address points |
-| `montgomery_county` (42091) | Narberth, Lower Merion, Upper Dublin | County parcels (TAXPIN) and the Board of Assessment land table (land use 11xx, living units, property location and ZIP). No living area | County `Montgomery_County_Municipal_Zoning` ("free and open"). Map dates: Narberth April 2016, Lower Merion February 2020, Upper Dublin October 2022 | Microsoft only (no county outline layer) | County NG911 centerlines | Assessment ZIP, else 2020 ZCTA |
+| `chester_county` (42029) | 14: East Brandywine, East Coventry, East Goshen, East Nottingham, Honey Brook, Malvern, North Coventry, Phoenixville, Schuylkill, West Caln, West Chester, West Goshen, West Vincent, Westtown | County `Parcels_owners` (UPI, address, land use code: R-10 single family, R-20 two family, R-55 townhouse). No living area. The five towns of lot data 12 read the 2026-11-13 copies in `raw/chester_county/base_lotdata12/` | County `Zoning_Edit_Working` (compiled, "working"). Map dates of the first five: Phoenixville 2013-12-10, West Vincent 2014-10-13, Malvern 2018-10-02, West Chester 2021-10-20, East Brandywine 2024-06-11. The others by year: East Goshen 2005, North Coventry and West Caln 2007, East Nottingham 2008, Westtown 2017, Honey Brook 2018, East Coventry, Schuylkill and West Goshen 2019. West Caln's code was replaced in 2026, Phoenixville's in 2025. Overlays split from districts | DVRPC 2015 (height estimate in feet) plus Microsoft outlines it misses | County centerlines (ROAD_THORO_TYPE AL = alley) | 2020 Census ZCTA |
+| `centre_county` (42027) | College Township, State College borough | County `ParcelsPlus` (class R, living area). Address points with postal ZIP. State College's town layers were pulled 2026-11-26 into their own `-state_college` files | County `UnofficialCountyZoning` ("unofficial"; R1, RO read as the file's R-1, R-O) | County `Buildings_3D` (height) plus Microsoft | County NG911 centerlines (St_PosTyp Alley) | Address points |
+| `montgomery_county` (42091) | 24: Ambler, Cheltenham, Conshohocken, Douglass, Franconia, Hatfield, Horsham, Lansdale, Limerick, Lower Merion, Lower Pottsgrove, Montgomery, Narberth, Norristown, Plymouth, Skippack, Springfield, Upper Dublin, Upper Gwynedd, Upper Merion, Upper Providence, West Norriton, Whitemarsh, Whitpain | County parcels (TAXPIN) and the Board of Assessment land table (land use 11xx, living units, property location and ZIP). No living area | County `Montgomery_County_Municipal_Zoning` ("free and open"). Map dates by town from 2014 (Norristown, West Norriton) to 2025 (Douglass). The first three: Narberth April 2016, Lower Merion February 2020, Upper Dublin October 2022 | Microsoft only (no county outline layer). Heights from the DVRPC 2015 lidar landbase of the matching outline | County NG911 centerlines | Assessment ZIP, else 2020 ZCTA |
+| `dauphin_county` (42043) | Harrisburg city, Lower Paxton township, Swatara township | County `DC_Parcels` (PID, site address, land use code: R01 to R06, R08, R10 and R33 are one unit houses). No living area | One layer per town from its own government: Harrisburg `Zoning_2025` (city GIS), Lower Paxton township layer (edited 2025-07-09), Swatara General Code map of 2026-04-22. Harrisburg's six municipal historic districts and the ACOD overlay | County `DC_Buildings` (no height) plus Microsoft | County `DC_Streets` (FEATYP ALY or CLASS A80, U100 = alley) | 2020 Census ZCTA |
+| `erie_county` (42049) | Erie city | County `TaxParcel049` (tax pin, land use code R-10, R-11, R-20, R-30, living area `sqft`). County NG911 address points with postal ZIP. The first place in EPSG:2271 (Pennsylvania North) | City `Erie_Zoning_2023` | Microsoft only (the county outline layer is a partial change set). Model heights kept apart, not used | County NG911 centerlines (no alleys), plus OSM ways tagged service=alley | Address points |
+| `lancaster_county` (42071) | 11: East Lampeter, Elizabethtown, Lancaster city, Lancaster township, Manheim, Mount Joy, Penn, Warwick, West Earl, West Hempfield, West Lampeter | County `Parcels_HUBnew` (PIN, tax district, address, land use code 113 to 116, 120, 130, 181). No living area | County `Zoning_Authoritative` (compiled, an update date per polygon, map dates 2018 to 2026 by town) and `Zoning_Overlay`. The city's HARB district and Heritage Conservation District (a flag only) | County buildings layer (about 100 sq ft or more, from flights of 2001 to 2024, HEIGHT empty) plus Microsoft | County centerlines (FTYPE ALY = alley) | 2020 Census ZCTA |
+| `cumberland_county` (42041) | Upper Allen township, Lower Allen township, Camp Hill borough | County `Parcels_Basemap` layer 42 (PIN, site address and ZIP, land use code 101 to 103, dwelling type, stories, year built, living area `SQFT`) | County `Zoning_Basemap`, one layer per town. The county says it "may not be the officially adopted zoning map" | Microsoft only (the county publishes no outlines). Model heights kept apart, not used | County NG911 `Road_Centerlines` (RoadClass Alley) | Parcel site ZIP, else 2020 ZCTA |
+| `northampton_county` (42095) | Bethlehem city (its Northampton part), Easton city, Bethlehem township, Lower Saucon township, Wilson borough | `Northampton Parcels` published by the City of Bethlehem GIS: the county parcels joined to the Assessment Office table, edited 2024-07 (land use code 110 and 120, living area `GLA_SQFT`, stories, year built) | Bethlehem `COB Zoning Official` (effective 2012-06-15, revised 2020-02-24), Easton General Code map EA2741 (2022-07-20), the LVPC regional layer `LV_Zoning` for the other three (last edits 2021-04). Historic flags in Bethlehem and Easton | Microsoft only. Model heights kept apart, not used | `COB_STREETS` (City of Bethlehem GIS), plus OSM ways tagged service=alley | 2020 Census ZCTA |
+| `bucks_county` (42017) | 8: Bristol township, Doylestown borough, Doylestown township, Lower Southampton, New Britain township, Plumstead, Warminster, Warwick | County `Bucks_County_Parcels` (parcel number, site address, land use code. 1012 Duplex counts as two units). No living area | County `Bucks_County_Municipal_Zoning` (the Planning Commission's compiled layer, edited 2026-11) and its overlay layer | Microsoft, with DVRPC 2015 lidar heights of the matching outline | County NG911 centerlines, plus OSM ways tagged service=alley | NG911 address points, else 2020 ZCTA |
+| `york_county` (42133) | 7: York city, York township, Springettsbury, Hanover borough, Newberry, East Manchester, Lower Windsor | YCPC `OPEN_DATA/Parcels` (PIDN, site address, land use code 101 to 108, 122, 123, style, stories, living area, year built) | YCPC `OPEN_DATA/Zoning` (compiled) and `ZONING_OVERLAYS` | County `BLDG_Footprint` (no height) plus Microsoft | County NG911 `Roads` (STTYPE ALY), plus OSM ways tagged service=alley | 2020 Census ZCTA |
+| `delaware_county` (42045) | 19: Aston, Bethel, Chester city, Clifton Heights, Collingdale, Concord, Darby township, Glenolden, Haverford, Media, Nether Providence, Radnor, Ridley, Springfield, Swarthmore, Thornbury, Upper Chichester, Upper Darby, Yeadon | County `AssessmentViewers/Parcels` (PIN and municipality only). No assessor data: no address, unit count or living area. House type from DVRPC Land Use 2023 and the outlines | County `SLD_Review/Delaware_County_Zoning` (compiled, source map and date per town, some old: Upper Darby 2010, Glenolden 2004, Yeadon 2002) and its overlay layer | Microsoft, with DVRPC 2015 lidar heights. The county's own outlines (a Nearmap AI product, reuse terms not stated) are not used | County NG911 centerlines (St_PosTyp Alley), plus OSM ways tagged service=alley | County ZIP code areas |
+| `berks_county` (42011), built, held from the app | Amity township | County `Berks_County_Parcels_V2` and the assessor residential file (land use code, living units, living area `SFLA`, stories, year built) | County `Berks_County_Zoning` (compiled. The county says it is for an initial reading only) | Microsoft only. Model heights kept apart, not used | County `Berks_County_Centerline_New` (ST_CLASS LANE or ST_TYPE ALY = alley) | 2020 Census ZCTA |
 
-House type: units from the land use code (or living units), then twin and row from shared walls of the outlines (`pipeline.places.allentown.wall_chains`). Lots left out: condominium units, apartments, parcels without a house, and West Vincent BV lots (an ADU there is a conditional use, which the lot record cannot say).
+House type: units from the land use code (or living units), then twin and row from shared walls of the outlines (`pipeline.places.allentown.wall_chains`). Centre County reads every residential parcel as one unit (no unit count in the open data), so a duplex reads as a house. Delaware County has no unit count at all: a twin or row in a DVRPC multifamily area is assumed to be one unit, and free-standing houses there are left out. Lots left out everywhere: condominium units, apartments and parcels without a house. Lots whose ADU path is a conditional use are left out too (the lot record cannot say it), for example West Vincent BV.
 
-Heights: Microsoft model heights read low in Upper Dublin (median house 15.7 ft where most houses have two stories). They are not used for Montgomery County, so the "no taller than the house" test reads "not checked" there. Allentown has the same problem on 15 to 19 lots.
+Heights (as of 2026-11-28): DVRPC 2015 lidar estimates of the matching outline in Montgomery, Chester, Bucks and Delaware County. County `Buildings_3D` in Centre County. City data in Philadelphia and Pittsburgh. No heights in Erie, Dauphin, Lancaster, York, Cumberland, Northampton and Berks County: the height tests read "not checked" there. Microsoft model heights are not used in the county places. Montgomery moved to DVRPC heights in lot data 12 (2026-11-26). Before that, Microsoft model heights read low in Upper Dublin (median house 15.7 ft where most houses have two stories), so they were not used and the "no taller than the house" test read "not checked". In Allentown, Microsoft outline heights are used only where the city outline is missing. They read low on 15 to 19 lots.
 
-Ground: USGS 3DEP 1 m DEM. Chester and Montgomery: PA_17County_D24 (Montgomery's five tiles are the Philadelphia files, hard-linked). Centre: PA_Northcentral_2019_B19 (zone 18 tiles, flown 2019-03-20 to 2019-11-23). Land cover: the model `r34_c5_s0` on NAIP 2022 (see Land cover per lot below).
+Living area (as of 2026-11-28): none in Montgomery, Chester, Dauphin, Lancaster, Bucks and Delaware County, or in Allentown. There the share-of-house caps are not checked (Chester checks Phoenixville's two thirds of the house footprint for an accessory building). Centre, Erie, Cumberland, Northampton, York and Berks County read it from the assessor.
+
+Ground: USGS 3DEP 1 m DEM, per place in Elevation (ground slope) below. Land cover: only the lots of lot data 12 carry it (the model `r34_c5_s0` on NAIP 2022, see Land cover per lot below). Lots added on 2026-11-27 and 28 have an empty cover block.
+
+<!-- source: ~/musa-drive/lots/<place>/stats.json "caveats", read 2026-11-28 -->
+
+Left out whole (as of 2026-11-28, each with its reason in `stats.json`):
+
+- Chester County: lots where the ADU is a conditional use (West Vincent BV; West Caln SRR, RR, RC and MP).
+- Montgomery County: Lower Providence (new zoning ordinance and map on 2026-11-05, its rule file reads the old one). Conditional use lots (Skippack VC, GC and LI; Conshohocken R-O; Upper Gwynedd IN). Seven towns with no ADU rule are in, as a use variance.
+- Dauphin County: Susquehanna township (no ADU path). Lower Paxton lots in OSD and TND.
+- Erie County: Millcreek and Harborcreek (no public layer of their current zoning).
+- Lancaster County: East Donegal (conditional use, or a secondary reading) and East Hempfield (rule file drafted).
+- Cumberland County: Carlisle (no ADU path). Lots in districts the rule file has no row for (Upper Allen PRD, VIL, PO; Lower Allen R3; Camp Hill DT, CN). About 12% of Upper and Lower Allen parcels have no Microsoft outline and are left out.
+- Northampton County: Bethlehem's Lehigh County part (about 5,400 houses, the app's Lehigh place is Allentown) and its RR-F, RR-T and RT-SH overlay lots. Forks (conditional use) and Hanover (no path).
+- Bucks County: seven towns with no ADU text (Bensalem, Middletown, Northampton, Falls, Lower Makefield, Bristol borough, Quakertown). Lots in districts the rule file does not name.
+- York County: Penn township (it replaced its map in 2025 and the county layer still draws the old one). West Manchester, Spring Garden and Carroll (no ADU text) and West Manheim (conditional use).
+- Delaware County: Newtown and Lansdowne (rule files drafted). Thirteen of its nineteen towns have no ADU text and are in, as a use variance.
+- Berks County: Reading (prohibited), Spring and Exeter (no ADU text) and Maidencreek (conditional use). Amity PBOI lots (conditional use).
+
+<!-- source: "license" in ~/musa-drive/raw/<place>/SOURCES.json, read 2026-11-28 -->
+
+License notes (as recorded at download, 2026-11-26 and 27):
+
+- Dauphin County: Dauphin County General Public License. Use, change and pass on, with the license terms passed on to recipients (share-alike). Discrepancies are to be reported to the county within 10 days. For reference use only.
+- Bucks County: "Not for commercial use or resale". The user holds the county harmless. DVRPC data are under the DVRPC data license.
+- Cumberland County: web disclaimer, informational purposes only, "Any resale of this information is prohibited".
+- York County: York County Planning Commission open data. For illustration and reference, not a survey, not at scales larger than 1:2400.
+- Lancaster County: Lancaster County GIS. No license stated. The disclaimer says "for educational/demonstration purposes only".
+- Northampton County: parcels published by the City of Bethlehem GIS. No license stated.
+- Erie County: Erie County and City of Erie GIS. No license stated.
+- Delaware County: no license stated. The county's data FAQ says "provided for general informational purposes only".
+- Berks County: the County of Berks GIS Data General Agreement bars passing the data on "in its original format". A derived product must state "Information is based on geospatial data from the County of Berks." So the Berks lots are built but not in the app or the bundle.
 
 ## Town details for the Parcel tab
 
-`shared/lot_towns_info.json`, one entry per lot town (the 12 rule file towns) and per county, read by `app/src/lib/lot/townInfo.ts`. Checked 2026-11-21. Every value carries its source (title, link, the page's own date when shown) and the date it was opened. A value whose page could not be opened is left out.
+`shared/lot_towns_info.json`, one entry per lot town and per county, read by `app/src/lib/lot/townInfo.ts`. As of 2026-11-28 it has 102 town entries and 15 county entries: every lot town of the 15 built places (Berks's Amity included), plus Lower Providence, whose lots are left out. It had 12 rule file towns on 2026-11-21. The file's `checked_on` reads 2026-11-22, and the entries were opened between 2026-11-11 and 2026-11-28.
+
+<!-- source: count of "towns" and "counties" keys in shared/lot_towns_info.json, and the dates inside it, read 2026-11-28 --> Every value carries its source (title, link, the page's own date when shown) and the date it was opened. A value whose page could not be opened is left out. The table below names the sources of the first six places, as of 2026-11-21.
 
 | Part | Source |
 |---|---|
@@ -190,18 +233,37 @@ ACS table B25031 (median rent by bedrooms, tract) is named as the rent fallback 
 
 The lot builder writes one record per lot into `<data root>/lots/<place>/`. [ARCHITECTURE.md](ARCHITECTURE.md) lists the files.
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-16 ("data_version", "built_at", "counts", "sizes") -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json, read 2026-11-28 ("data_version", "built_at", "counts", "sizes": detail_total_bytes and split_tracts) -->
+
+As of 2026-11-28. Philadelphia and Pittsburgh are lot data 12. The other places are lot data 13.
 
 | Place | Data version | Built | Lots | Tracts | Errors | Detail files |
 |---|---|---|---|---|---|---|
-| Pittsburgh | `pittsburgh-20261118-c11c62f00e` | 2026-11-18 13:17 (land cover refresh: the three-model ensemble) | 92,081 | 128 | 0 | 147,647,223 bytes, 73 tracts split into chunks |
-| Philadelphia | `philadelphia-20261114-2a67293eaa` | 2026-11-14 10:11 (steep slope lines, refresh of the Nov 12 build) | 459,998 | 385 | 0 | 357,632,218 bytes, 50 tracts split into chunks |
-| Allentown | `allentown-20261116-b1e77f74ac` | 2026-11-16 07:55 (rule refresh: pass 15 to 17 record keys; 4 tracts rebuilt for lots with no district) | 29,158 | 31 | 0 | 101,754,615 bytes, 26 tracts split into chunks |
-| Chester County | `chester_county-20261116-aa5d870e34` | 2026-11-16 07:47 (rule refresh: pass 15 to 17 record keys; 4 tracts rebuilt for lots with no district) | 14,847 | 15 | 0 | 59,831,005 bytes, 11 tracts split into chunks |
-| Centre County | `centre_county-20261116-3f43ace3b4` | 2026-11-16 07:38 (rule refresh: pass 15 to 17 record keys; 1 tract rebuilt for a lot with no district) | 3,484 | 3 | 0 | 12,730,795 bytes, 2 tracts split into chunks |
-| Montgomery County | `montgomery_county-20261118-e05e33d1ea` | 2026-11-18 12:10 (full rebuild with rules engine passes 18 to 28: Narberth footprint cap) | 26,119 | 28 | 0 | 78,061,700 bytes, 25 tracts split into chunks |
+| Philadelphia | `philadelphia-20261126-331f84072a` | 2026-11-26 18:17 (lot data 12) | 459,998 | 385 | 0 | 358,567,552 bytes, 52 tracts split into chunks |
+| Pittsburgh | `pittsburgh-20261126-d747c67f1d` | 2026-11-26 16:13 (lot data 12) | 92,081 | 128 | 0 | 152,764,190 bytes, 74 tracts split |
+| Allentown | `allentown-20261127-9be163090f` | 2026-11-27 06:09 | 29,158 | 31 | 0 | 111,649,146 bytes, 26 tracts split |
+| Chester County | `chester_county-20261127-61e3e7c924` | 2026-11-27 05:28 | 42,306 | 41 | 1 | 198,981,207 bytes, 30 tracts split |
+| Centre County | `centre_county-20261127-ad60715d09` | 2026-11-27 02:01 | 6,827 | 11 | 0 | 18,659,613 bytes, 6 tracts split |
+| Montgomery County | `montgomery_county-20261128-a60d9ea1ce` | 2026-11-28 10:21 | 142,072 | 140 | 0 | 595,366,309 bytes, 122 tracts split |
+| Dauphin County | `dauphin_county-20261128-d423841a40` | 2026-11-28 07:34 | 35,475 | 35 | 0 | 94,393,097 bytes, 25 tracts split |
+| Erie County | `erie_county-20261128-89125fe9da` | 2026-11-28 07:51 | 26,150 | 31 | 0 | 82,429,477 bytes, 25 tracts split |
+| Lancaster County | `lancaster_county-20261128-b62011a32a` | 2026-11-28 11:04 | 62,735 | 61 | 0 | 249,341,279 bytes, 49 tracts split |
+| Cumberland County | `cumberland_county-20261127-0e017dd0c9` | 2026-11-27 02:57 | 10,259 | 19 | 0 | 51,902,929 bytes, 10 tracts split |
+| Northampton County | `northampton_county-20261128-11547385f4` | 2026-11-28 07:12 | 33,695 | 34 | 0 | 121,318,932 bytes, 28 tracts split |
+| Bucks County | `bucks_county-20261127-669c83737a` | 2026-11-27 03:52 | 48,764 | 42 | 1 | 197,181,355 bytes, 35 tracts split |
+| York County | `york_county-20261127-170b781fee` | 2026-11-27 04:40 | 40,295 | 56 | 0 | 160,742,362 bytes, 39 tracts split |
+| Delaware County | `delaware_county-20261128-c88715b1cd` | 2026-11-28 09:02 | 104,738 | 105 | 0 | 368,559,307 bytes, 95 tracts split |
+| Berks County (built, not in the app) | `berks_county-20261127-e6dec1911f` | 2026-11-27 03:06 | 3,746 | 6 | 0 | 14,748,171 bytes, 3 tracts split |
 
-625,687 lots in all.
+1,134,553 lots in the app (14 places), 1,138,299 with Berks. Before lot data 13 there were 625,687 lots in 6 places.
+
+The two errors are one lot each, in `errors.jsonl`: Chester County `42029-67-2H-73` (a lot edge with no line, so the record failed the schema) and Bucks County `42017-51-003-143-001` (a GEOS topology error on its outline). Neither lot has a record.
+
+On 2026-11-26 (lot data 12) all six places of the time were rebuilt. The front of a lot is now the street in its address when another street is near. A detached unit whose only room is the front yard no longer counts as fitting. Montgomery County house heights come from the DVRPC 2015 lidar landbase. Pittsburgh lots carry the city's Undermined Areas layer (UM-O) as a condition, never a bar. See [CHANGELOG.md](CHANGELOG.md) for the shares that moved.
+
+On 2026-11-27 and 28 (lot data 13) eight places were added to the app: Dauphin, Erie, Lancaster, Cumberland, Northampton, Bucks, York and Delaware County. Berks County was built too, but is held. Chester County grew from 5 to 14 towns, Montgomery County from 3 to 24, and Centre County added State College. A separation fix came with it: where a scenario allows no detached form, the unit drawn for information now keeps the 10 ft planning separation from the house (the record rules are unchanged). All town places were rebuilt for it. Philadelphia and Pittsburgh were not affected. No share moved.
+
+Older history, kept as dated notes:
 
 On 2026-11-15 the four town places were rebuilt (full run). Their records now carry `spot_cover`, the trees and paving inside the suggested spot. The rules engine pass 10 wording reached them too: where no detached form is allowed, the record has no separation figure from the rules (the fit uses 0 ft, cited as "no detached form is allowed here"). No yes or no, approval path or fit result changed. On lots where no detached form is allowed, the largest size shown for information changed, because the assumed 10 ft separation is gone (128 lots in Centre County, 630 in Chester County, 13,932 in Montgomery County). So the spot moved on those lots, and the slope class shares in `stats.json` moved a little (under one point for each place as a whole). The files before it are in `~/musa-drive/backups/lots-<place>-pre-spotcover-<old version>/`.
 
@@ -225,7 +287,9 @@ Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (fron
 
 `python -m pipeline.build_lots addresses --place <place>` (same as `python -m pipeline.address_index --place <place>`) reads `index.parquet` (columns `lot_id`, `tract`, `address` and, for a county place, `municipality`; nothing else) and writes `<data root>/lots/<place>/addresses/`: `index.json.gz` (the towns, the shard keys and every street name with its lot count and lowest and highest house number) and `shards/<key>.json.gz` (house number, lot id, tract and town of each lot on the streets whose name, without a leading N, S, E or W, starts with `<key>`). A key gets one letter longer until its shard holds at most 4,000 lots. No owner, sale or value field. The run replaces the folder as a whole and gives the same bytes for the same input, so it is safe to rerun after a rebuild of one place. `tools/publish_lots.sh` builds it when it is missing or older than `index.parquet`, and publishes it. The assistant's `find_lot` reads it (`app/src/lib/lot/addressIndex.ts`); the address normalisation is shared with the app (cases in `tests/fixtures/address_norm_cases.json`).
 
-<!-- source: python -m pipeline.build_lots addresses, run 2026-11-14 on the builds in the table above and the county builds of 2026-11-14 -->
+<!-- source: python -m pipeline.build_lots addresses, run 2026-11-14 on the builds of 2026-11-14 -->
+
+The table is as of 2026-11-14, before lot data 12 and 13. The new places of lot data 13 are not in it.
 
 | Place | Lots with an address | Streets | Shards | `index.json.gz` | Largest shard | All files |
 |---|---|---|---|---|---|---|
@@ -238,21 +302,40 @@ Allentown was rebuilt on 2026-11-13 with the A, B and C street designation (fron
 
 3,565,111 bytes in all. The lots left out have no address (8 in Allentown, 9 in Chester County, 10 in Centre County) or no house number (1 in Montgomery County, `CHURCH ST`).
 
-Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10. The Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-11. The county builds read their town files as of 2026-11-11 to 2026-11-13 (`rule_files_verified_on` in each manifest). Lots without a cover row (42 in Pittsburgh, 36 in Centre County) keep an empty `cover` block.
+Rule files used by the Pittsburgh and Philadelphia builds were checked on 2026-11-10. The Allentown build reads `pa_lehigh_allentown.json` as of 2026-11-11. The county builds read their town files as of 2026-11-11 to 2026-11-13 (`rule_files_verified_on` in each manifest). Those were the builds of 2026-11-14. In the current manifests (read 2026-11-28) the dates run from 2026-11-10 to 2026-11-26. Lots without a cover row keep an empty `cover` block. As of 2026-11-28 that is 42 lots in Pittsburgh, 36 College Township lots, and every lot added on 2026-11-27 and 28 (see Land cover per lot).
 
 ## Elevation (ground slope)
 
-USGS 3DEP standard 1 m DEM, bare earth from lidar. Pittsburgh and Philadelphia: project PA_17County_D24 (flown 2024-04-14 to 2025-04-02, published 2026-10-23). Allentown: PA_AllentownOrthoLidar_D24 (flown 2024-11-25 to 2024-12-07). Public domain ("All 3DEP products are public domain"). Downloaded tile by tile from the USGS staged products bucket listed by the TNM Access API. `build_lots terrain` reads it through `dem.vrt` (see [METHODS.md](METHODS.md) section 1.10).
+USGS 3DEP standard 1 m DEM, bare earth from lidar. Public domain ("All 3DEP products are public domain"). Downloaded tile by tile from the USGS staged products bucket listed by the TNM Access API. `build_lots terrain` reads it through `dem.vrt` (see [METHODS.md](METHODS.md) section 1.10). Each place uses one project, so its mosaic has one flight and one CRS.
 
-<!-- source: ~/musa-drive/raw/elevation/<city>/SOURCES.json, tile metadata begdate/enddate -->
+Four projects as of 2026-11-28:
 
-| City | Tiles | CRS | Folder | Size |
-|---|---|---|---|---|
-| Pittsburgh | 9 (x57 to x59, y447 to y449) | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | 2.7 GB |
-| Philadelphia | 13 (x47 to x50, y442 to y445) | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | 4.0 GB |
-| Allentown | 4 (x45 to x46, y449 to y450), project PA_AllentownOrthoLidar_D24, flown 2024-11-25 to 2024-12-07 | UTM 18N, metres, NAVD88 | `raw/elevation/allentown/` | 273 MB |
+- PA_17County_D24, flown 2024-04-14 to 2025-04-02, published 2026-10-23.
+- PA_Northcentral_2019_B19, flown 2019-03-20 to 2019-11-23, published 2022-04-29 (zone 18 tiles only).
+- PA_WesternPA_2019_D20, flown 2019-11-18 to 2020-05-02, published 2021-11-22.
+- PA_AllentownOrthoLidar_D24, flown 2024-11-25 to 2024-12-07, published 2026-10-26.
 
-An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, flown 2019 to 2020; Philadelphia a 2015 project). They are not used.
+<!-- source: ~/musa-drive/raw/elevation/<place>/SOURCES.json "dem" (source_key, flown_from, flown_to, published, pulled, records, crs, note) and the tile file names, read 2026-11-28. Size: du -sh of each folder on its own, so tiles hard-linked between folders count in each -->
+
+| Place | Tiles | Project | Flown | CRS | Folder | Size |
+|---|---|---|---|---|---|---|
+| Philadelphia | 13 (x47 to x50, y442 to y445) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/philadelphia/` | 4.0 GB |
+| Pittsburgh | 9 (x57 to x59, y447 to y449) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 17N, metres, NAVD88 | `raw/elevation/pittsburgh/` | 2.7 GB |
+| Allentown | 4 (x45 to x46, y449 to y450) | PA_AllentownOrthoLidar_D24 | 2024-11-25 to 2024-12-07 | UTM 18N, metres, NAVD88 | `raw/elevation/allentown/` | 273 MB |
+| Chester County | 25 (x41 to x46, y440 to y446). 8 pulled 2026-11-13, 17 more on 2026-11-27 | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/chester_county/` | 7.2 GB |
+| Centre County | 4 (x25 to x26, y452 to y453), listed over College Township | PA_Northcentral_2019_B19 | 2019-03-20 to 2019-11-23 | UTM 18N, metres, NAVD88 | `raw/elevation/centre_county/` | 1.2 GB |
+| Montgomery County | 21 (x44 to x49, y443 to y447). Tiles shared with Philadelphia are hard links | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/montgomery_county/` | 7.3 GB |
+| Dauphin County | 7 (x33 to x35, y446 to y448) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/dauphin_county/` | 2.1 GB |
+| Erie County | 4 (x57 to x58, y466 to y467) | PA_WesternPA_2019_D20 | 2019-11-18 to 2020-05-02 | UTM 17N, metres, NAVD88 | `raw/elevation/erie_county/` | 1.0 GB |
+| Lancaster County | 18 (x35 to x40, y443 to y446) | PA_Northcentral_2019_B19 (PA_17County_D24 covers only 6 of the 18 tiles) | 2019-03-20 to 2019-11-23 | UTM 18N, metres, NAVD88 | `raw/elevation/lancaster_county/` | 4.9 GB |
+| Cumberland County | 5 (x32 to x34, y445 to y446) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/cumberland_county/` | 1.6 GB |
+| Northampton County | 8 (x46 to x48, y449 to y451) | PA_Northcentral_2019_B19 (the newer projects cover only part of the box) | 2019-03-20 to 2019-11-23 | UTM 18N, metres, NAVD88 | `raw/elevation/northampton_county/` | 1.9 GB |
+| Bucks County | 14 (x47 to x51, y444 to y448) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/bucks_county/` | 4.2 GB |
+| York County | 18 (x32 to x37, y441 to y445) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/york_county/` | 4.9 GB |
+| Delaware County | 10 (x45 to x47, y441 to y444). x47y442 to x47y444 are hard links to the Philadelphia files | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/delaware_county/` | 2.9 GB |
+| Berks County (held) | 4 (x43 to x44, y446 to y447) | PA_17County_D24 | 2024-04-14 to 2025-04-02 | UTM 18N, metres, NAVD88 | `raw/elevation/berks_county/` | 1.4 GB |
+
+An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, flown 2019 to 2020; Philadelphia a 2015 project). They are not used. In Chester County, MD_PA_SandySupp_2014 and DE_DelawareValley_HD_2015 are not used. In Lancaster County, PA_Sandy_2014 is not used.
 
 ## Imagery
 
@@ -265,7 +348,7 @@ An older 1 m project also covers each city (Pittsburgh PA_WesternPA_2019_D20, fl
 | PEMA imagery service `PEMAImagery2021_2023` on PASDA, and its tile cache `PEMAImagery2021_2023cache` | about 0.5 ft | 2021 to 2023 | Garage check chips (`python -m pipeline.places.philadelphia garage-qa`), hand-label sheets (`pipeline.validation.sheets`), and the aerial layer in the app. When PASDA does not answer, the app falls back to Esri World Imagery under Esri's terms | PEMA terms, as above |
 | Philadelphia City Imagery 2025, 3 inch | about 0.037 m at level 22 | 2025 | Recorded only. Not downloaded. Its year is written to `quality.imagery_date` in Philadelphia lot records | No license text in the service. City keeps all rights, as is. No statement about machine learning use |
 | Allegheny County Imagery 2017, 3 inch | 3 inch | 2017 | Recorded only. Not used | Access: call for details. Informational purposes only, as is. No open license stated |
-| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022. Philadelphia flown 2022-04-30 to 05-17, Pittsburgh 2022-05-09 | Land cover model training and test (173 boxes of 1 km), the city boxes, and the lot cover of Pittsburgh, Allentown and the three county places | Public domain (USDA), as listed in the course data notes |
+| NAIP 2022 (red, green, blue, near infrared) | 0.6 m | 2022. Philadelphia flown 2022-04-30 to 05-17, Pittsburgh 2022-05-09 | Land cover model training and test (173 boxes of 1 km), the city boxes, and the lot cover of Pittsburgh, Allentown and the first towns of the county places (5 Chester County towns, 3 Montgomery County towns, College Township) | Public domain (USDA), as listed in the course data notes |
 
 Detector support data:
 
@@ -314,21 +397,24 @@ In Pittsburgh, 34.8 percent of the test box area also sat inside train or valida
 
 ### Land cover per lot
 
-<!-- source: pipeline/build_lots.py COVER_FILES and COVER_FILES_BY_PLACE, row counts of ~/musa-drive/processed/<place>/cover*.parquet read on 2026-11-11 (the two cities) and 2026-11-14 (the four town places) -->
+<!-- source: pipeline/build_lots.py COVER_FILES and COVER_FILES_BY_PLACE, row counts of ~/musa-drive/processed/<place>/cover*.parquet (pyarrow metadata) read again on 2026-11-28, lots per place from ~/musa-drive/lots/<place>/manifest.json and stats.json "by_town" -->
+
+As of 2026-11-28 only the lots of lot data 12 carry land cover. Pittsburgh uses the three-model ensemble since 2026-11-18. The lots added on 2026-11-27 and 28 have an empty cover block: the nine new places (no `cover*.parquet` in their `processed/` folder) and the towns added to Chester, Montgomery and Centre County. The cover files of the town places were not remade for lot data 13.
 
 | City | File the lot builder reads | Source | Date of the picture | Lots with a row |
 |---|---|---|---|---|
-| Philadelphia | `processed/philadelphia/cover.parquet` | The 2018 city raster | 2017 photos, 2018 lidar | 459,998 |
-| Pittsburgh | `processed/pittsburgh/cover_model_div7_3m_tta.parquet` | Since 2026-11-18: the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), "other" split by `r34_c5_s0`. The earlier file `cover_model_r34_c5_s0.parquet` is the fallback | 2022 | 92,039 |
-| Allentown | `processed/allentown/cover.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022 | 2022 | 29,158 |
-| Chester County | `processed/chester_county/cover.parquet` | The same model | 2022 | 14,847 |
-| Centre County | `processed/centre_county/cover.parquet` | The same model | 2022 | 3,448 |
-| Montgomery County | `processed/montgomery_county/cover.parquet` | The same model | 2022 | 26,119 |
+| Philadelphia | `processed/philadelphia/cover.parquet` | The 2018 city raster | 2017 photos, 2018 lidar | 459,998 of 459,998 |
+| Pittsburgh | `processed/pittsburgh/cover_model_div7_3m_tta.parquet` | Since 2026-11-18: the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each), "other" split by `r34_c5_s0`. The earlier file `cover_model_r34_c5_s0.parquet` is the fallback | 2022 | 92,039 of 92,081 |
+| Allentown | `processed/allentown/cover.parquet` | The 5-class U-Net `r34_c5_s0` on NAIP 2022 | 2022 | 29,158 of 29,158 |
+| Chester County | `processed/chester_county/cover.parquet` | The same model | 2022 | 14,847 of 42,306 (the five towns of lot data 12: West Chester, Phoenixville, West Vincent, Malvern, East Brandywine) |
+| Centre County | `processed/centre_county/cover.parquet` | The same model | 2022 | 3,448 of 6,827 (College Township only, 36 of its lots have no row) |
+| Montgomery County | `processed/montgomery_county/cover.parquet` | The same model | 2022 | 26,119 of 142,072 (Narberth, Lower Merion, Upper Dublin) |
+| The nine places of lot data 13 | none | | | 0 |
 
 - Philadelphia does not use the model. On NAIP 2022 (flown April 30 to May 17, early leaf, deep rowhouse shadow) the model misses most trees and open ground. The model's numbers stay beside the raster in `cover_model.parquet` for comparison.
 - 3,007 Philadelphia lots have a house built in 2018 or later. They carry `built_after_cover`, because the raster may still show the old use of the lot.
 - Pittsburgh keeps the fine-tuned model's numbers in `cover.parquet`, but the builder reads the ensemble file first, then `cover_model_r34_c5_s0.parquet`. See [MODEL_CARD_landcover.md](MODEL_CARD_landcover.md).
-- Allentown and the three county places: only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. Since the Nov 15 rebuild their `spot_cover` is filled from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`, read by `pipeline/vision/cover_lookup.py`). So the spot figures have the same accuracy as the lot shares. 36 Centre County lots have no cover row. The assistant's lot tools give the accuracy note with the tree and paving shares, and with the figures inside the suggested spot.
+- Allentown and the first towns of the three older county places (Chester, Centre, Montgomery): only Centre County lies in a Chesapeake test county (about 0.70 test mIoU there, with Cumberland). Allentown, Chester and Montgomery are not validated: no labeled land cover there. Each record says so in `quality.assumptions`. The hard surface counts toward an impervious cap where a town file sets one. Since the Nov 15 rebuild their `spot_cover` is filled from the same model's class maps (`processed/<place>/cover_work/r34_c5_s0/tiles/`, read by `pipeline/vision/cover_lookup.py`). So the spot figures have the same accuracy as the lot shares. 36 College Township lots have no cover row. The towns added to Chester, Montgomery and Centre County on 2026-11-27 and 28 have no cover row. Their `spot_cover` reads the same class maps (the tile folders were last written 2026-11-15), so it is filled only where those maps reach (West Goshen lots carry it, checked 2026-11-28). The nine new places have no class maps, so no `spot_cover`. The assistant's lot tools give the accuracy note with the tree and paving shares, and with the figures inside the suggested spot.
 
 Known limits:
 

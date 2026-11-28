@@ -8,7 +8,7 @@
 import { fitBox, type BoxSpec } from '../fitBox.js';
 import { areaFeet, boxToArea, boxToLine, centroid, bounds, frameOf, lineAngle, lineFeet, longSideAngle, type Frame, type Poly, type Pt } from './geometry.js';
 import { APPROVAL_PATHS, type AduType, type ApprovalPath, type Citation, type FitResult, type LotRecord, type Rules, type Scenario, SCENARIOS } from './types.js';
-import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_LABEL, ftText, isNum, pctText, sqftText } from './words.js';
+import { SCENARIO_PHRASE, SCENARIO_TITLE, TYPE_LABEL, ftText, isNum, largestText, overCeiling, pctText, sqftText } from './words.js';
 
 // Mirrors pipeline/fit.py so the browser and the pipeline agree.
 /** Peak height used when the user gives none. */
@@ -264,6 +264,7 @@ function plainApproval(lot: LotRecord, scenario: Scenario, type: AduType): Appro
   const own = stored && 'approval_path' in stored ? stored.approval_path ?? null : rules.approval_by_type?.[type];
   if (own !== undefined) {
     const cite = typeCite ?? (own === 'administrator_exception' ? exceptionCitation(rules) ?? base : base);
+    if (own && askOnly(rules, type, own)) return askApproval(rules, own, cite);
     return approvalInfo(own, 'by_type', cite);
   }
   if (!rules.allowed) return approvalInfo(rules.approval_path === 'by_right' ? 'not_allowed' : rules.approval_path, 'rule', base);
@@ -274,6 +275,36 @@ function plainApproval(lot: LotRecord, scenario: Scenario, type: AduType): Appro
     return approvalInfo('administrator_exception', 'rule_notes', exception);
   }
   return approvalInfo(rules.approval_path, 'rule', base);
+}
+
+/** The resolver's note for a hearing path on a lot with no ADU rule (pipeline/rules.py path_to_ask). */
+const ASK_NOTE = /^(?:The code has no ADU rule here|The code defines an ADU but no district permits it|The code bars ADUs here)\. (?:A use|The rule file gives)/;
+
+/**
+ * A form the resolver keeps an open path for but does not allow on this lot: a town with no ADU rule whose special
+ * exception for a use the code does not list (or a 'similar' use) is a hearing to ask about, not an ADU rule. The
+ * resolver reads that lot as not allowed, with a path to ask (shared/rules/TOWNS.md, rules passes 12 and 15), and the
+ * city numbers do not count it as a legal path (pipeline/build_lots.py legal_type_mask). A form held back only by a lot
+ * fact (no garage) is lotCondition's.
+ */
+export function askOnly(rules: Rules, type: AduType, path: string | null | undefined): boolean {
+  if (!path || !OPEN_PATHS.has(path) || rules.types_allowed === null || rules.types_allowed.includes(type)) return false;
+  return !rules.lot_conditions_by_type?.[type];
+}
+
+/** A lot where some form has only a path to ask (askOnly), so a garage form held back by the lot reads the same. */
+function askLot(rules: Rules): boolean {
+  return Object.entries(rules.approval_by_type ?? {}).some(([t, p]) => askOnly(rules, t as AduType, p));
+}
+
+/** Not allowed, with the hearing named as the path to ask about. */
+function askApproval(rules: Rules, path: string, citation: Citation | null): ApprovalInfo {
+  const note = rules.reasons.find((r) => ASK_NOTE.test(r));
+  const label = isApprovalPath(path) ? APPROVAL_LABEL[path].replace(/ \(.*\)$/, '').toLowerCase() : path.replace(/_/g, ' ');
+  const extra = note
+    ? `${tidyReason(note).replace(/\.?$/, '.')} It is a path to ask about, not a legal path for an ADU.`
+    : `The code has no ADU rule here. A ${label} for a use the code does not list is a path to ask about, not a legal path for an ADU. Ask the zoning officer.`;
+  return approvalInfo('not_allowed', 'by_type', citation, extra);
 }
 
 /** The height limit for one type: per type when the record has it, else the lot-wide limit. */
@@ -357,6 +388,8 @@ export function lotCondition(lot: LotRecord, scenario: Scenario, type: AduType):
   const path = rules?.rule_path_by_type?.[type];
   if (!rules || !fact || !path || path === 'not_allowed') return null;
   const text = /garage or outbuilding/i.test(fact) ? NO_GARAGE : fact.replace(/\.?$/, '.');
+  // A lot whose other forms have only a path to ask: the rule path of this form is the same hearing, not an ADU rule.
+  if (OPEN_PATHS.has(path) && askLot(rules)) return { approval: askApproval(rules, path, rules.citations_by_type?.[type] ?? rules.citations.approval_path ?? null), text };
   // Rules pass 25 (pipeline/rules.py _new_garage_line): over a garage with no garage on the lot means a new garage, a
   // new detached building, so the record gives it the detached new unit's path. Older records hold a variance there.
   const own = rules.approval_by_type?.over_garage;
@@ -854,7 +887,10 @@ export function tidyReason(r: string): string {
 
 // ------------------------------------------------------------------ plain words for limits
 const LIMIT_TEXT: Record<string, (r: Rules, f: FitResult | undefined) => string> = {
-  yard_space: (_r, f) => `The open yard is the limit. The largest spot is about ${sqftText(f?.largest_sqft)}.`,
+  yard_space: (_r, f) =>
+    overCeiling(f?.largest_sqft)
+      ? `The open yard is the limit, and it holds ${largestText(f?.largest_sqft)}.`
+      : `The open yard is the limit. The largest spot is about ${sqftText(f?.largest_sqft)}.`,
   no_room: (_r, f) =>
     isNum(f?.front_only_sqft) && f.front_only_sqft > 0
       ? `The only open space (about ${sqftText(f.front_only_sqft)}) is in front of the house. The code does not allow a unit there.`

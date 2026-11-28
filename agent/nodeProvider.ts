@@ -13,12 +13,13 @@ import type { Citation, LotRecord, Scenario } from '../app/src/lib/lot/types';
 import { lotTownByFile, townsOfPlace } from '../app/src/lib/lot/towns';
 import { DEFAULT_MONEY, DEFAULT_UNIT, moneyOptions, tractRents, unitFromInput, type UnitDraft } from '../app/src/tool/testState';
 import { SET_UNIT_NO_LOT, aduFromInput, aduText, ruleText, unitText } from '../app/src/agent/mapText';
-import { STATE_TEXT, isState, lotPlaceOf, lotPlaceText, notFoundText, outlineOf, outlineText } from '../app/src/tool/placeMatch';
+import { STATE_TEXT, ambiguousText, isState, lotPlaceText, matchLotPlace, notFoundText, outlineOf, outlineText } from '../app/src/tool/placeMatch';
 import { zoningTextSource, type ZoningTextSource } from '../app/src/agent/zoningText';
 import { memoryPlaces, type PlaceRow, type PlacesSource } from '../app/src/agent/placeAnswer';
 import { memoryTractTowns, type TractTowns, type TractTownsSource } from '../app/src/agent/tractTowns';
 import { addressIndexSource } from '../app/src/lib/lot/addressIndex';
 import { ruleFileByKey } from '../app/src/agent/ruleText';
+import { bundledDocs } from '../app/src/agent/docsSearch';
 import type { AreaRef } from '../app/src/agent/boundaryTool';
 
 /** The unit drawn on screen in testing mode, as the lot tools take it. */
@@ -245,6 +246,8 @@ export function nodeProvider(
   return {
     lots: nodeLots(opts.lot, opts.scenario ?? 'today', () => unit),
     zoningText: nodeZoningText(),
+    // search_tool_docs: the committed app/src/agent/docsIndex.json, read as a JSON import.
+    docs: bundledDocs,
     places: nodePlaces(),
     tractTowns: nodeTractTowns(),
     zipTowns: nodeZipTowns(),
@@ -297,8 +300,9 @@ export function nodeProvider(
         case 'fly_to_place': {
           if (!input.place) return 'No place was given.';
           if (isState(input.place)) return STATE_TEXT;
-          const lp = lotPlaceOf(input.place);
-          if (lp) return lotPlaceText(lp);
+          const m = matchLotPlace(input.place, data().towns.features);
+          if (m.kind === 'ambiguous') return ambiguousText(m);
+          if (m.kind === 'lot') return lotPlaceText(m.place);
           const f = outlineOf(input.place, countiesFc()?.features) ?? outlineOf(input.place, data().towns.features);
           return f ? outlineText(String(f.properties.NAMELSAD ?? f.properties.NAME)) : notFoundText(input.place);
         }

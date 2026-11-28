@@ -3,6 +3,8 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { LOT_TOWNS, townShortName } from './towns';
+import { TOWNS_BY_KEY, nameKeys } from './placeNames';
 import { addressIndexSource, edits, parseAddress, shardKeyOf, splitPlace, streetBare, streetCore } from './addressIndex';
 import { FIXTURE_BASE as BASE, fixtureAddressIndex as source } from './__fixtures__/addressFixture';
 
@@ -23,8 +25,32 @@ describe('address normalisation', () => {
     expect(splitPlace('5704 Pocusset St, Pittsburgh, PA 15217')).toEqual({ text: '5704 pocusset st', place: 'pittsburgh', other: null });
     expect(splitPlace('75 Washington Ave Phoenixville PA 19460')).toMatchObject({ text: '75 washington ave', place: 'chester_county' });
     expect(splitPlace('1204 Spruce St 19107')).toMatchObject({ text: '1204 spruce st', place: 'philadelphia' });
-    expect(splitPlace('100 Market St, Harrisburg, PA')).toEqual({ text: '100 market st', place: null, other: 'harrisburg' });
-    expect(splitPlace('12 Bryn Mawr Ave, Bryn Mawr')).toMatchObject({ text: '12 bryn mawr ave', place: 'montgomery_county' });
+    expect(splitPlace('100 Wyoming Ave, Scranton, PA')).toEqual({ text: '100 wyoming ave', place: null, other: 'scranton' });
+    // Bryn Mawr is a post office of Lower Merion (Montgomery) and Radnor (Delaware): no hint, every place is searched.
+    expect(splitPlace('12 Bryn Mawr Ave, Bryn Mawr')).toEqual({ text: '12 bryn mawr ave', place: null, other: null });
+    expect(splitPlace('12 Bryn Mawr Ave, Bryn Mawr, Montgomery County')).toMatchObject({ place: 'montgomery_county' });
+  });
+  it('place hints of every lot town, and of names two places share', () => {
+    for (const t of LOT_TOWNS) {
+      const shared = (k: string) => (TOWNS_BY_KEY.get(k) ?? []).some((o) => o.place !== t.place);
+      for (const name of [t.name, townShortName(t)]) {
+        const want = nameKeys(t.name).some(shared) && !/ city$/.test(name) ? null : t.place;
+        expect(splitPlace(`100 Main St, ${name}, PA`).place, name).toBe(want);
+      }
+    }
+    expect(splitPlace('100 Main St, Springfield, PA 19064')).toEqual({ text: '100 main st', place: null, other: null });
+    expect(splitPlace('100 Main St, Springfield, Montgomery County')).toMatchObject({ place: 'montgomery_county' });
+    expect(splitPlace('100 Main St Springfield Delaware County')).toMatchObject({ text: '100 main st', place: 'delaware_county' });
+    expect(splitPlace('100 Main St, Warwick, Lancaster County, PA')).toMatchObject({ place: 'lancaster_county' });
+    // In an address "Chester" is Chester city, the post office; West Chester is Chester County.
+    expect(splitPlace('100 Edgmont Ave, Chester, PA 19013')).toMatchObject({ place: 'delaware_county' });
+    expect(splitPlace('100 High St, West Chester PA')).toMatchObject({ text: '100 high st', place: 'chester_county' });
+    expect(splitPlace('100 Swede St, Norristown, PA')).toMatchObject({ place: 'montgomery_county' });
+    expect(splitPlace('100 Main St, College Township')).toMatchObject({ place: 'centre_county' });
+    expect(splitPlace('100 Main St, Haverford, PA')).toMatchObject({ place: null, other: null });
+    // A county with no lot records: not a lot place.
+    expect(splitPlace('100 Main St, Penn Township, Butler County')).toMatchObject({ place: null, other: 'penn township butler county' });
+    expect(splitPlace('100 Main St, Philly')).toMatchObject({ place: 'philadelphia' });
   });
   it('picks the longest shard key', () => {
     expect(shardKeyOf('sapphire way', ['s', 'sa', 'sap'])).toBe('sap');
@@ -82,8 +108,8 @@ describe('address index lookup', () => {
     expect(r.nearest_streets?.[0]).toMatchObject({ street: 'woods run ave', place: 'pittsburgh', numbers: '618 to 1436' });
   });
   it('an unknown street lists nothing', async () => {
-    const r = await source().search('100 Market St, Harrisburg, PA');
-    expect(r).toMatchObject({ candidates: [], nearest_streets: [], other_place: 'harrisburg' });
+    const r = await source().search('100 Wyoming Ave, Scranton, PA');
+    expect(r).toMatchObject({ candidates: [], nearest_streets: [], other_place: 'scranton' });
   });
   it('one lookup reads each place index once and one shard', async () => {
     const log: string[] = [];

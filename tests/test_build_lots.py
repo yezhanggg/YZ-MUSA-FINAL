@@ -8,6 +8,7 @@ named Way behind it, and one broken parcel that must be recorded as an error.
 
 from __future__ import annotations
 
+import dataclasses
 import gzip
 import json
 from pathlib import Path
@@ -384,6 +385,33 @@ def test_height_from_stories() -> None:
     assert out[1][1].height_ft is None
     rec = bl.building_rec(out[0][0], out[0][1], 2272)
     assert rec["height_source"] == "stories"
+
+
+def test_data_version_date_is_fixed_per_build(tmp_path: Path) -> None:
+    """A build (or a one-tract rebuild) that crosses midnight with the same inputs keeps one version: the date is the
+    one the hash was first built with, else the run's start date. Lancaster had 61 of 62 tracts read as stale."""
+    import datetime as dt
+
+    day1, day2 = dt.date(2026, 11, 27), dt.date(2026, 11, 28)
+    first = bl.data_version("pittsburgh", {}, tmp_path, started=day1)
+    assert first.startswith("pittsburgh-20261127-")
+    digest = first.rsplit("-", 1)[1]
+    # No tract built yet: the start date of the run
+    assert bl.data_version("pittsburgh", {}, tmp_path, started=day2) == f"pittsburgh-20261128-{digest}"
+    # Tracts built before midnight with this hash: the next day's run keeps their date
+    (tmp_path / "progress.jsonl").write_text(
+        json.dumps({"tract": "42003000100", "ok": 1, "errors": 0, "data_version": first}) + "\n"
+        + json.dumps({"tract": "42003000200", "ok": 1, "errors": 0, "data_version": "pittsburgh-20261101-0000000000"})
+        + "\n"
+    )
+    assert bl.data_version("pittsburgh", {}, tmp_path, started=day2) == first
+    # A manifest from an earlier run with the same hash counts too
+    (tmp_path / "progress.jsonl").unlink()
+    (tmp_path / "manifest.json").write_text(json.dumps({"data_version": first}))
+    assert bl.data_version("pittsburgh", {}, tmp_path, started=day2) == first
+    # Another hash never lends its date
+    (tmp_path / "manifest.json").write_text(json.dumps({"data_version": "pittsburgh-20261101-0000000000"}))
+    assert bl.data_version("pittsburgh", {}, tmp_path, started=day2) == f"pittsburgh-20261128-{digest}"
 
 
 def test_broken_town_rule_file_is_never_read(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
@@ -763,3 +791,91 @@ def test_low_house_height_reads_unknown_and_story_heights() -> None:
     assert bl.story_heights("pa_montgomery_upper_dublin") == {1: 13.0, 2: 22.0}
     assert bl.story_heights("pittsburgh") is None
     assert bl.story_heights("no_such_file") is None
+
+
+def _horsham_lot() -> tuple[dict, list[dict], bl.Near]:
+    """Lot 42091-360002221002 (104 Clayton Rd, Horsham R-4) in EPSG:2272 feet, rounded to 0.1 ft. Horsham's file has
+    no ADU rule, so today no detached form is allowed (rules pass 10: no separation figure) and no size cap."""
+    x0, y0 = 2704362.6, 322587.8
+    lot = shapely.Polygon(
+        [
+            (x0 + x, y0 + y)
+            for x, y in [
+                (139.7, 26.3),
+                (124.7, 4.9),
+                (122.7, 2.5),
+                (120.8, 0.0),
+                (0.0, 95.7),
+                (46.1, 159.7),
+                (170.4, 69.9),
+            ]
+        ]
+    )
+    house = shapely.Polygon(
+        [
+            (x0 + x, y0 + y)
+            for x, y in [(91.0, 43.8), (57.7, 66.1), (87.9, 110.9), (113.7, 93.7), (103.0, 77.9), (110.6, 72.8)]
+        ]
+    )
+    r = {
+        "lot_id": "42091-360002221002",
+        "pin": "360002221002",
+        "geometry": lot,
+        "lot_area_sqft": lot.area,
+        "address": "104 CLAYTON RD",
+        "zip": "19040",
+        "housing_type": "single_family",
+        "units": 1.0,
+        "zoning": "R-4",
+        "rule_file": "pa_montgomery_horsham",
+        "municipality": "Horsham township",
+        "tract": "42091200501",
+    }
+    brows = [
+        {
+            "building_id": "42091-360002221002-b1",
+            "lot_id": r["lot_id"],
+            "role": "main",
+            "source": "msft",
+            "area_sqft": house.area,
+            "height_ft": 19.0,
+            "height_source": "dvrpc_2015",
+            "geometry": house,
+        }
+    ]
+    # The street runs along the front lot line, 20 ft out.
+    front = shapely.LineString([(x0 + 120.8, y0 + 0.0), (x0 + 170.4, y0 + 69.9)])
+    street = shapely.offset_curve(front, -20.0)
+    if street.distance(lot) < 10:
+        street = shapely.offset_curve(front, 20.0)
+    near = bl.StreetIndex([("street", "RD", shapely.to_wkb(street))]).near(lot)
+    return r, brows, near
+
+
+def test_no_detached_unit_keeps_clear_of_house(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Rules pass 10 leaves the separation out where no detached form is allowed (record: 0 ft, not checked). The
+    detached unit drawn there for information still keeps the planning separation from the house. With 0 ft the
+    largest rectangle (no size cap in Horsham) was placed against the house on every Horsham R-4 lot."""
+    place = bl.get_place("montgomery_county")
+    kw = {f.name: getattr(place, f.name) for f in dataclasses.fields(bl.Ctx) if hasattr(place, f.name)}
+    ctx = bl.Ctx(**{**kw, "place": place.name, "data_version": "test", "data_dates": {}})
+    r, brows, near = _horsham_lot()
+    house = brows[0]["geometry"]
+
+    def spot_gap(rec: dict) -> float:
+        return float(_feet(rec["fit"]["today"]["detached_new"]["spot"]).distance(house))
+
+    rec, _ = bl.build_lot(r, brows, near, ctx)
+    today = rec["rules"]["today"]
+    assert today["separation_ft"] == 0.0 and today["citations"]["separation_ft"]["section"] == bl.NO_DETACHED_SEPARATION
+    sep = bl.FALLBACK_SETBACKS_FT["separation_ft"]
+    assert spot_gap(rec) >= sep - 0.5
+    assert _feet(rec["buildable"]["today"]["keep"]).distance(house) >= sep - 0.5
+    assert bl.NO_DETACHED_FIT_NOTE.format(sep) in rec["quality"]["assumptions"]
+    assert rec["fit"]["today"]["detached_new"]["limiting"] == "not_allowed"
+    # The bug: the fit took the record's 0 ft and put the unit against the house.
+    monkeypatch.setattr(bl, "fit_separation", lambda filled: None)
+    old, _ = bl.build_lot(r, brows, near, ctx)
+    assert spot_gap(old) < 1.0
+    # Where a detached form is allowed the record's own figure is used, unchanged.
+    assert bl.fit_separation({"separation_ft": 10.0, "citations": {}}) is None

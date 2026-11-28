@@ -1,9 +1,17 @@
 """Centre County lot data: download, build and check, for the towns with a verified rule file.
 
 One place (`centre_county`, county FIPS 42027). Each lot names its town's rule file in `rule_file`, and
-pipeline/build_lots.py resolves the rules per lot with it. Today one town is built: College Township
-(pa_centre_college, verified). State College borough and Ferguson Township have rule files that are
-still first readings; they join by adding a line to TOWNS once verified (the county layers cover them).
+pipeline/build_lots.py resolves the rules per lot with it. Two towns are built: College Township
+(pa_centre_college) and State College borough (pa_centre_state_college), both verified. A town joins by
+adding a line to TOWNS once its rule file is verified and has a `districts` table for the codes the county
+zoning layer uses (the county layers cover every municipality). Ferguson Township (verified) is not in yet:
+its file has no `districts` table, and its accessory yards (27-207) were not read.
+
+Town layers (boundary, parcels, zoning, Microsoft outlines) are kept per town: College Township in
+`<key>.gpkg` (pulled 2026-11-13), each added town in `<key>-<slug>.gpkg`, so adding a town never refetches
+the towns already built. The box layers (address points, county buildings, streets, flood) cover
+TOWNS_BBOX; a town outside it gets its own `<key>-<slug>.gpkg` for those too, and reads drop shapes that
+come twice.
 
     python -m pipeline.places.centre_county download   # fetch each layer once
     python -m pipeline.places.centre_county build      # lots, buildings, streets
@@ -16,8 +24,9 @@ Sources (Centre County GIS "OpenData" map service, the Census, FEMA and Microsof
   requested.
 - Address points: address and postal ZIP code, put on lots by location.
 - Zoning (`UnofficialCountyZoning`): every municipality's districts in one layer. The county calls it
-  unofficial; each municipality keeps the official map. College Township's codes are written without the
-  hyphen (R1, RO); they take the rule file's spelling (R-1, R-O) when they match without it.
+  unofficial; each municipality keeps the official map. Codes are written without the hyphen (R1, RO,
+  RO-A); they take the rule file's spelling (R-1, R-O, R-OA) when they match without it. The layer names
+  State College "State College" where the parcels say "State College Borough".
 - Building outlines (`Buildings_3D`, with a height), plus Microsoft outlines the county set misses.
 - Road centerlines (RoadClass, St_PosTyp: "Alley" is an alley).
 - Flood: FEMA NFHL. Census county subdivision outline for the town box.
@@ -62,8 +71,10 @@ from pipeline.places.common import cut_buildings_to_lots as assign_buildings
 PLACE = "centre_county"
 COUNTY_FIPS = "42027"
 # NAD83 / Pennsylvania South (ftUS). Centre County is in the PA North zone, but the lot schema takes one
-# local CRS. College Township (40.8 N, 77.8 W) lies between the South zone's standard parallels
-# (39 56' and 40 58') and next to its central meridian (77 45' W), so lengths and areas are as true there.
+# local CRS. College Township (40.77 to 40.85 N) and State College (40.77 to 40.81 N, 77.82 to 77.89 W) lie
+# between the South zone's standard parallels (39 56' and 40 58') and next to its central meridian
+# (77 45' W), so lengths and areas are as true there. Ferguson (to 40.82 N, 78.09 W), Patton (to 40.88 N)
+# and Harris (to 40.83 N) are inside the band too.
 WORK_CRS = "EPSG:2272"
 
 OPEN = "https://gissites4.centrecountypa.gov/arcgis/rest/services/OpenData/MapServer"
@@ -79,15 +90,54 @@ LIC_MSFT = "ODbL (Microsoft Global ML Building Footprints)"
 
 @dataclass(frozen=True)
 class Town:
-    township: str  # ParcelsPlus Township and zoning Municipality value
+    township: str  # ParcelsPlus Township value
     name: str  # Census name
     geoid: str
     rule_file: str
+    zoning_muni: str = ""  # zoning Municipality value, when it differs from `township`
+    slug: str = ""  # file suffix of the town's own layers. Empty: the first town's files (no suffix)
+    bbox: tuple[float, float, float, float] | None = None  # lon/lat box of the town, when outside TOWNS_BBOX
+    # Leave out parcels drawn with the same outline as another parcel (condominium units stacked on one
+    # building: not a lot one owner builds on). False for College Township, built before the rule (53 such
+    # lots, kept so its lot data does not move); set it there with the next full College rebuild.
+    drop_stacked: bool = True
+
+    @property
+    def zoning_name(self) -> str:
+        return self.zoning_muni or self.township
 
 
-TOWNS: tuple[Town, ...] = (Town("College Township", "College township", "4202715136", "pa_centre_college"),)
-TOWN_SQL = ",".join(f"'{t.township}'" for t in TOWNS)
+TOWNS: tuple[Town, ...] = (
+    Town("College Township", "College township", "4202715136", "pa_centre_college", drop_stacked=False),
+    Town(
+        "State College Borough",
+        "State College borough",
+        "4202773808",
+        "pa_centre_state_college",
+        zoning_muni="State College",
+        slug="state_college",
+    ),
+)
+# The box the box layers were pulled for (2026-11-13). State College (-77.886, 40.768, -77.819, 40.808) is
+# inside it. A town outside it sets Town.bbox and gets its own box layer files.
 TOWNS_BBOX = (-77.89, 40.76, -77.74, 40.86)
+TOWN_KEYS = ("town_boundaries", "parcels", "zoning", "footprints_msft")
+BOX_KEYS = ("address_points", "buildings_county", "streets", "flood_nfhl")
+
+
+def town_where(layer_key: str, t: Town) -> str:
+    """The layer's filter for one town."""
+    if layer_key == "town_boundaries":
+        return f"GEOID = '{t.geoid}'"
+    if layer_key == "parcels":
+        return f"Township = '{t.township}'"
+    if layer_key == "zoning":
+        return f"Municipality = '{t.zoning_name}'"
+    raise ValueError(layer_key)
+
+
+def file_key(key: str, t: Town) -> str:
+    return f"{key}-{t.slug}" if t.slug else key
 
 
 @dataclass(frozen=True)
@@ -96,7 +146,7 @@ class Layer:
     url: str
     license: str
     fields: str
-    where: str = "1=1"
+    where: str = "1=1"  # box layers. Town layers take town_where per town
     bbox: tuple[float, float, float, float] | None = None
     note: str = ""
     page: int = 1000
@@ -108,7 +158,6 @@ LAYERS: tuple[Layer, ...] = (
         COUSUB,
         LIC_CENSUS,
         "GEOID,NAME",
-        where=f"GEOID in ({','.join(repr(t.geoid) for t in TOWNS)})",
         note="Census county subdivisions of the towns",
     ),
     Layer(
@@ -116,7 +165,6 @@ LAYERS: tuple[Layer, ...] = (
         f"{OPEN}/0",
         LIC_COUNTY,
         "TAXIDNUM,PARCEL_TYPE,Type_,Township,District,LivingArea,MAP_ACRES",
-        where=f"Township in ({TOWN_SQL})",
         note="ParcelsPlus of the towns. Only id, class, municipality and living area are requested. Sale, deed "
         "and assessed value fields stay on the server",
     ),
@@ -133,7 +181,6 @@ LAYERS: tuple[Layer, ...] = (
         f"{OPEN}/21",
         LIC_COUNTY,
         "Code,Zoning,Municipality,Link",
-        where=f"Municipality in ({TOWN_SQL})",
         note="UnofficialCountyZoning: 'a combination of all municipal zoning layers', unofficial",
     ),
     Layer(
@@ -173,14 +220,14 @@ def record_source(key: str, entry: dict[str, Any]) -> None:
     common.record_source(PLACE, key, entry)
 
 
-def fetch_msft(out: Path, boundary: Path) -> int:
-    urls = pgh.msft_tile_urls(TOWNS_BBOX)
+def fetch_msft(out: Path, boundary: Path, bbox: tuple[float, float, float, float] = TOWNS_BBOX) -> int:
+    urls = pgh.msft_tile_urls(bbox)
     rows: list[dict[str, Any]] = []
     for url in urls:
         local = out.parent / pgh.msft_local_name(url)
         if not local.exists():
             common.download_file(url, local)
-        rows.extend(pgh.read_msft_lines(local, TOWNS_BBOX))
+        rows.extend(pgh.read_msft_lines(local, bbox))
     gdf = gpd.GeoDataFrame(rows, geometry="geometry", crs=LONLAT)
     towns = gpd.read_file(boundary).to_crs(LONLAT).union_all()
     gdf = gdf[gdf.intersects(towns)].reset_index(drop=True)
@@ -192,41 +239,56 @@ def fetch_msft(out: Path, boundary: Path) -> int:
     return len(gdf)
 
 
+def fetch_layer(layer: Layer, key: str, out: Path, where: str, bbox: Any, note: str) -> None:
+    flt = where + (f" and box {bbox}" if bbox else "")
+    print(f"get {key}", flush=True)
+    n = common.fetch_arcgis(layer.url, key, out, layer.fields, where, bbox, layer.page)
+    meta = common.arcgis_meta(common.session(), layer.url)
+    record_source(
+        key,
+        common.source_entry(layer.url, layer.license, n, out, note, flt, extra=meta | {"fields": layer.fields}),
+    )
+
+
 def download(only: list[str] | None = None) -> None:
+    """Each town's own layer files, and the box layers. Files already present are kept."""
     root = raw_dir(PLACE, create=True)
     wanted = set(only) if only else None
     for layer in LAYERS:
         if wanted and layer.key not in wanted:
             continue
-        out = root / f"{layer.key}.gpkg"
-        flt = layer.where + (f" and box {layer.bbox}" if layer.bbox else "")
-        if out.exists():
-            print(f"skip {layer.key} (have it)")
-            continue
-        print(f"get {layer.key}", flush=True)
-        n = common.fetch_arcgis(layer.url, layer.key, out, layer.fields, layer.where, layer.bbox, layer.page)
-        meta = common.arcgis_meta(common.session(), layer.url)
-        record_source(
-            layer.key,
-            common.source_entry(
-                layer.url, layer.license, n, out, layer.note, flt, extra=meta | {"fields": layer.fields}
-            ),
-        )
+        for t in TOWNS:
+            if layer.key in TOWN_KEYS:
+                where, bbox, note = town_where(layer.key, t), layer.bbox, f"{layer.note}. {t.name}"
+            elif t.bbox is not None:
+                where, bbox, note = layer.where, t.bbox, f"{layer.note}. Box of {t.name}"
+            elif t.slug:
+                continue  # inside TOWNS_BBOX: the first town's box files hold it
+            else:
+                where, bbox, note = layer.where, layer.bbox, layer.note
+            key = file_key(layer.key, t)
+            out = root / f"{key}.gpkg"
+            if out.exists():
+                print(f"skip {key} (have it)")
+                continue
+            fetch_layer(layer, key, out, where, bbox, note)
     if not wanted or "footprints_msft" in wanted:
-        out = root / "footprints_msft.gpkg"
-        if out.exists():
-            print("skip footprints_msft (have it)")
-        else:
-            print("get footprints_msft", flush=True)
-            n = fetch_msft(out, root / "town_boundaries.gpkg")
+        for t in TOWNS:
+            key = file_key("footprints_msft", t)
+            out = root / f"{key}.gpkg"
+            if out.exists():
+                print(f"skip {key} (have it)")
+                continue
+            print(f"get {key}", flush=True)
+            n = fetch_msft(out, root / f"{file_key('town_boundaries', t)}.gpkg", t.bbox or TOWNS_BBOX)
             record_source(
-                "footprints_msft",
+                key,
                 common.source_entry(
                     MSFT_INDEX,
                     LIC_MSFT,
                     n,
                     out,
-                    "Zoom 9 quadkey tiles clipped to the towns. Used only for outlines the county layer misses",
+                    f"Zoom 9 quadkey tiles clipped to {t.name}. Used only for outlines the county layer misses",
                 ),
             )
     record_source("imagery", IMAGERY)
@@ -246,16 +308,36 @@ def step(msg: str) -> None:
     print(f"[{time.time() - _T0:7.1f}s] {msg}", flush=True)
 
 
-def read_layer(key: str) -> gpd.GeoDataFrame:
-    return common.read_layer(PLACE, key, WORK_CRS)
+def layer_keys(key: str, towns: tuple[Town, ...]) -> list[str]:
+    """The files that hold a layer for these towns."""
+    if key in TOWN_KEYS:
+        return [file_key(key, t) for t in towns]
+    if key in BOX_KEYS:
+        return [key, *(file_key(key, t) for t in towns if t.slug and t.bbox is not None)]
+    return [key]
+
+
+def read_layer(key: str, towns: tuple[Town, ...] = TOWNS) -> gpd.GeoDataFrame:
+    keys = layer_keys(key, towns)
+    if key == "footprints_msft":
+        keys = [k for k in keys if (raw_dir(PLACE) / f"{k}.gpkg").exists()]
+        if not keys:
+            return gpd.GeoDataFrame({"height_m": []}, geometry=[], crs=WORK_CRS)
+    parts = [common.read_layer(PLACE, k, WORK_CRS) for k in keys]
+    if len(parts) == 1:
+        return parts[0]
+    out = gpd.GeoDataFrame(pd.concat(parts, ignore_index=True), geometry="geometry", crs=WORK_CRS)
+    if key in BOX_KEYS:  # a shape on two towns' box files comes once
+        out = out[~out.geometry.to_wkb().duplicated()].reset_index(drop=True)
+    return out
 
 
 def town_of(township: Any) -> Town | None:
     return next((t for t in TOWNS if t.township == township), None)
 
 
-def load_parcels() -> gpd.GeoDataFrame:
-    p = read_layer("parcels")
+def load_parcels(towns: tuple[Town, ...] = TOWNS) -> gpd.GeoDataFrame:
+    p = read_layer("parcels", towns)
     p = p[p["TAXIDNUM"].notna() & (p["TAXIDNUM"].astype(str).str.strip() != "")].copy()
     p["geometry"] = p.geometry.make_valid()
     p = p.dissolve(
@@ -266,9 +348,9 @@ def load_parcels() -> gpd.GeoDataFrame:
     p["pin"] = p["TAXIDNUM"].astype(str).str.strip()
     # Ids like "19-002C,005-,0000-": commas and trailing dashes kept as the county writes them.
     p["lot_id"] = COUNTY_FIPS + "-" + p["pin"]
-    towns = [town_of(t) for t in p["Township"]]
-    p["municipality"] = [t.name if t else None for t in towns]
-    p["rule_file"] = [t.rule_file if t else None for t in towns]
+    of = [town_of(t) for t in p["Township"]]
+    p["municipality"] = [t.name if t else None for t in of]
+    p["rule_file"] = [t.rule_file if t else None for t in of]
     la = pd.to_numeric(p["LivingArea"], errors="coerce")
     p["living_area"] = la.where(la > 0)
     p = p.rename(columns={"Type_": "land_use_class", "PARCEL_TYPE": "parcel_type"})
@@ -299,7 +381,7 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     parts = []
     for t in TOWNS:
         sub = out[out["rule_file"] == t.rule_file]
-        zt = zoning[zoning["Municipality"] == t.township]
+        zt = zoning[zoning["Municipality"] == t.zoning_name]
         if sub.empty or zt.empty:
             continue
         z = largest_overlap(sub, zt, "lot_id", ["Code", "Zoning"])
@@ -319,16 +401,12 @@ def join_lot_layers(lots: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     return gpd.GeoDataFrame(out, geometry="geometry", crs=lots.crs)
 
 
-def load_buildings(lots_all: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
-    towns = read_layer("town_boundaries")
-    cb = read_layer("buildings_county")
-    cb = common.touching(cb[["height", "geometry"]], towns).assign(source="county")
-    msft_path = raw_dir(PLACE) / "footprints_msft.gpkg"
-    msft = (
-        read_layer("footprints_msft")[["height_m", "geometry"]]
-        if msft_path.exists()
-        else gpd.GeoDataFrame({"height_m": []}, geometry=[], crs=WORK_CRS)
-    )
+def load_buildings(lots_all: gpd.GeoDataFrame, towns: tuple[Town, ...] = TOWNS) -> gpd.GeoDataFrame:
+    """County outlines touching the towns, plus the Microsoft outlines the county set misses, on the lots."""
+    bounds = read_layer("town_boundaries", towns)
+    cb = read_layer("buildings_county", towns)
+    cb = common.touching(cb[["height", "geometry"]], bounds).assign(source="county")
+    msft = read_layer("footprints_msft", towns)[["height_m", "geometry"]]
     cb["geometry"] = cb.geometry.make_valid()
     msft["geometry"] = msft.geometry.make_valid()
     step(f"buildings: {len(cb)} county, {len(msft)} msft before dedupe")
@@ -345,6 +423,29 @@ def load_buildings(lots_all: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     bldgs = assign_buildings(bldgs, lots_all)
     bldgs = bldgs[bldgs["lot_id"].notna()]
     return pgh.add_roles(bldgs)
+
+
+def town_lots(t: Town) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    """One town's parcels, buildings on them, and the parcels with a house type. Each town is read on its
+    own, so a town added later leaves the towns already built as they were: a building on two towns' lots
+    is cut to each, and ties between overlapping parcels break the same way."""
+    parcels = add_geometry_columns(load_parcels((t,)))
+    if t.drop_stacked:
+        stacked = parcels.geometry.normalize().to_wkb().duplicated(keep=False).to_numpy()
+        step(f"{t.name}: left out {int(stacked.sum())} parcels stacked on another parcel's outline (condominiums)")
+        parcels = parcels[~stacked].reset_index(drop=True)
+    bldgs = load_buildings(parcels, (t,))
+    return parcels, bldgs, add_housing(parcels, bldgs)
+
+
+def all_town_lots() -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    parts = [town_lots(t) for t in TOWNS]
+
+    def cat(i: int) -> gpd.GeoDataFrame:
+        frames = [p[i] for p in parts]
+        return gpd.GeoDataFrame(pd.concat(frames, ignore_index=True), geometry="geometry", crs=WORK_CRS)
+
+    return cat(0), cat(1), cat(2)
 
 
 def add_housing(lots: gpd.GeoDataFrame, bldgs: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
@@ -389,11 +490,8 @@ BUILDING_KEEP = chester.BUILDING_KEEP
 
 def build() -> None:
     out_dir = processed_dir(PLACE, create=True)
-    step("parcels")
-    parcels = add_geometry_columns(load_parcels())
-    step("buildings")
-    bldgs = load_buildings(parcels)
-    lots = add_housing(parcels, bldgs)
+    step("parcels and buildings, town by town")
+    parcels, bldgs, lots = all_town_lots()
     lots = lots[lots["housing_type"].isin(HOUSING_TYPES) & lots["rule_file"].notna()].reset_index(drop=True)
     step(f"{len(parcels)} parcels, {len(lots)} residential lots with a house")
     lots = join_lot_layers(lots)
@@ -408,9 +506,7 @@ def build() -> None:
 
 
 def check(n: int = 1000, seed: int = 2026) -> dict[str, Any]:
-    parcels = add_geometry_columns(load_parcels())
-    bldgs = load_buildings(parcels)
-    lots = add_housing(parcels, bldgs)
+    parcels, bldgs, lots = all_town_lots()
     res = lots[lots["housing_type"].isin(HOUSING_TYPES) & lots["rule_file"].notna()]
     sample = res.sample(n=min(n, len(res)), random_state=seed).reset_index(drop=True)
     sample = join_lot_layers(sample)

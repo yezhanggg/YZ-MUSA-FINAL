@@ -41,7 +41,7 @@ Philadelphia alleys come from OpenStreetMap service ways and the few city alley 
 The buildable ground starts as the lot. Each lot line is buffered by its setback (a round buffer, which is what "X ft from the lot line" means) and the buffers are cut away. The rear line uses the alley setback when the rear is on an alley or way.
 
 - **Party walls.** For twins, rows and multi-unit houses, a side line the house runs along for at least 12 ft (or half the line), within 1.5 ft, is shared with the neighbor and gets a 0 ft setback. A twin gets at most one. A detached house keeps both side yards.
-- **Separation from the house.** The main house is cut away with a buffer of `separation_ft` around it. No zoning text sets this in either city, so the 10 ft planning default from `default.json` is used and listed as assumed.
+- **Separation from the house.** The main house is cut away with a buffer of `separation_ft` around it. No zoning text sets this in either city, so the 10 ft planning default from `default.json` is used and listed as assumed. Where no detached form is allowed, the record has no separation from the rules (0 ft, "not checked"), but the unit drawn there for information still keeps the 10 ft planning separation, with a note in `quality.assumptions`. Before Nov 27 the fit used the 0 ft, so an uncapped unit was drawn against the house.
 - **Accessory buildings.** A new unit keeps 5 ft from garages, sheds and other accessory buildings (the building code distance under which a wall needs a fire rating, from `default.json`). Garages and other buildings are hard blocks. Sheds are soft blocks: the record keeps two versions of the buildable ground, `keep` (shed stays) and `clear` (shed goes).
 - **Front yard.** The ground between the front lot line and the front of the house is left out when there is room behind the house. If the only room is in front, the fit uses it and adds the note "only room is in front of the house: most codes do not allow that".
 
@@ -69,6 +69,8 @@ The size of the unit is the smallest of these bounds. The one that wins is the "
 The final box is trimmed to that size (long side first, then toward a square) and slid to the end of the big rectangle farthest from the house. Other limiting codes are `no_room` (nothing fits, or the largest rectangle is under the smallest unit), `not_allowed`, `type_not_allowed`, `min_lot_size`, `height`, `no_garage`, `garage_size`, `no_house` and `house_size`.
 
 The smallest unit is the larger of the rule's minimum size and 144 sq ft (12 by 12 ft).
+
+**How the largest is shown (2026-11-28).** Where no size cap binds the unit (no ADU size cap, and the town's accessory building cap is absent or not settled to bind the unit), the bound that wins is `yard_space`, and the largest footprint is the whole open yard: up to 821,703 sq ft on a Lower Paxton lot, a median of 148,239 sq ft in Honey Brook. That measures the yard, not a unit anyone would build. So a largest above 2,000 sq ft (`lots.largest_report_ceiling_sqft` in `shared/assumptions.json`, the same figure as the app's 2,000 sq ft fit ceiling) is shown as "more than 2,000 sq ft, with no size cap in the code" in the answer lines (`app/src/lib/lot/words.ts` `largestText`), and the stats median (`median_largest_sqft`) holds each lot to 2,000 sq ft, with the share over it in `largest_over_ceiling`. A real size cap above 2,000 sq ft (limiting `size_cap`) is shown as it is. The fit, the stored `largest_sqft`, `detached_sqft_*` in the index, the CSV export and the `fit_N` shares (N up to 1,000) are not changed. A town's accessory building cap is applied to the unit only where the rule file settles that it binds (`envelope.accessory_cap_binds_adu` true). Without that leaf the reason says "Not settled whether it binds the unit, so the unit's size is not held to it".
 
 ### 1.4 ADU types
 
@@ -134,7 +136,7 @@ The fit used before Nov 2026 was a raster box (20 by 30 ft) placed on U-Net land
 
 `pipeline/validation/` compares the product's answer with a person's answer from a half-foot aerial chip. The question is whether a 600 sq ft (and a 400 sq ft) unit fits in the yard, with sheds kept and with sheds cleared. A product answer within 15 percent of the size counts as borderline.
 
-The sample is stratified by lot type (detached, semi-detached, row) and lot shape (regular, corner, irregular), with a fixed seed (6950). It holds 250 lots, 125 per city. On 2026-11-11 0 lots were labeled. **Agreement with a person is not measured.** The fit has no measured accuracy against the ground. The sheets show the lot line only, so the labeler is not led by the product's answer. The last scoring run read lot indexes older than the current lot files, so the product answers in it must be read again once labels exist.
+The sample is stratified by lot type (detached, semi-detached, row) and lot shape (regular, corner, irregular), with a fixed seed (6950). It holds 250 lots, 125 per city. No person has labeled them yet. **Agreement with a person is not measured, so the fit test has no hand-measured accuracy.** On 2026-11-26 a vision model labeled all 250 from the aerial photo and the lot line, following the same protocol (`labels_claude/`, not hand labels). Against lot data 12, a 600 sq ft unit agrees on 84.2% of Pittsburgh lots and 84.7% of Philadelphia lots, 400 sq ft on 70.8% and 80.5%. `pipeline/validation/protocol_fit.py` scores the product with the protocol's own test (a box anywhere in the open yard, no setbacks): 86.5% at 600 sq ft. About 70% of the gaps are this difference in definitions. The sheets show the lot line only, so the labeler is not led by the product's answer. The last scoring run read lot indexes older than the current lot files, so the product answers in it must be read again once labels exist.
 
 ### 1.10 Ground slope (terrain)
 
@@ -142,8 +144,8 @@ The fit is a flat-ground test. Ground slope is read afterwards and reported next
 
 | Step | What is done |
 |---|---|
-| Source | USGS 3DEP 1 m bare-earth DEM, project PA_17County_D24, flown 2024-04-14 to 2025-04-02, public domain. Tiles and `SOURCES.json` in `raw/elevation/<city>/` |
-| Grid | Per block of lots (4,000 ft squares), the DEM is warped onto a 3 ft grid in EPSG:2272 (bilinear) and heights go from metres to US survey feet, so x, y and z share one unit |
+| Source | USGS 3DEP 1 m bare-earth DEM, public domain. Tiles and `SOURCES.json` in `raw/elevation/<place>/`. One lidar project per place (as of 2026-11-28): PA_17County_D24, flown 2024-04-14 to 2025-04-02, for Philadelphia, Pittsburgh, Chester, Montgomery, Delaware, Bucks, York, Dauphin and Cumberland (and Berks). PA_AllentownOrthoLidar_D24, flown 2024-11-25 to 2024-12-07, for Allentown. PA_Northcentral_2019_B19, flown 2019-03-20 to 2019-11-23, for Centre, Lancaster and Northampton. PA_WesternPA_2019_D20, flown 2019-11-18 to 2020-05-02, for Erie |
+| Grid | Per block of lots (4,000 ft squares), the DEM is warped onto a 3 ft grid in the place's own state plane CRS (EPSG:2272, or 2271 in Erie, bilinear) and heights go from metres to US survey feet, so x, y and z share one unit |
 | Slope | Horn's 3x3 method (as in GDAL and ArcGIS), percent = 100 x rise / run. The kernel spans 6 ft |
 | Per polygon | Cells whose centers fall inside (all touched cells for a polygon smaller than a cell). Mean, 90th percentile and max slope, share at 15 percent or more and at 25 percent or more. For the lot and the spot also the lowest and highest ground and the drop between them in ft |
 | Polygons | The lot, the buildable ground of each scenario (`buildable.<scenario>.keep`) and the saved best spot of the detached unit (`fit.<scenario>.detached_new.spot`) |
@@ -162,7 +164,7 @@ Results on the built lots (Nov 12, 2026; source: `lots/<city>/index.parquet` ter
 
 The headline answers are unchanged; these are the answers reported beside them. Slope under the spot barely moves between a 3, 6 and 9 ft grid (median 14.0, 13.8, 13.9 percent on 292 Pittsburgh spots), so the steep share is terrain, not lidar noise.
 
-Limits: the DEM is bare earth, so ground under houses is filled in and a retaining wall reads as a strip of very steep cells. The 2024 to 2025 lidar does not see grading done since. Slope under the spot is a planning signal, not a site survey or a geotechnical finding.
+Limits: the DEM is bare earth, so ground under houses is filled in and a retaining wall reads as a strip of very steep cells. The lidar (flown 2019 to 2025, by place) does not see grading done since. Slope under the spot is a planning signal, not a site survey or a geotechnical finding.
 
 ## 2. How rules are resolved
 
@@ -225,29 +227,30 @@ The product knows zoning at three levels:
 
 | Tier | Coverage | How it is used |
 |---|---|---|
-| 1. Lot-level rules | The six lot places: Philadelphia, Pittsburgh, Allentown, and 9 towns in Chester, Centre and Montgomery counties | Resolved for every lot and scenario and saved in the lot record |
-| 2. Town rule files | 221 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 198 verified, 25 drafted (as of Nov 26, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 10 towns in the lot places also have lot files |
+| 1. Lot-level rules | The 14 lot places in the app: Philadelphia, Pittsburgh, Allentown, and 97 towns in 11 counties (lot data 13, Nov 28, 2026) | Resolved for every lot and scenario and saved in the lot record |
+| 2. Town rule files | 223 towns, mostly the largest by 2020 population (towns whose code is only a PDF or sits behind a login were skipped). With the two cities: 201 verified, 24 drafted (as of Nov 27, 2026) | The assistant reads them with `get_rule_text`. `pipeline/rules.py` resolves them for a lot. The 98 towns in the lot places also have lot files |
 | 3. Statewide baseline | Every other town (`pa_statewide.json`) | The assistant answers with MPC paths, building code, sewage rules and the bills, and says it is not the town's own code |
 
-<!-- source: shared/rules/towns_index.json status field, shared/rules/pa_*.json adu.status.value, at commit 751cfaf (2026-11-16) -->
+<!-- source: shared/rules/towns_index.json status field (2026-11-27), shared/rules/pa_*.json adu.status.value, ~/musa-drive/lots/<place>/stats.json by_town (2026-11-28) -->
 
-Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 221 files was written from the code text in batches of two to six towns. Then a separate reader checked it a second time, value by value, against the code link. 114 passed and are "verified". 71 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`.
+Each town file has the same cited leaves as a city file, plus the code's own term for an ADU, a town-wide ADU status, conditions, district scope and "other ways" to add a unit (duplex, conversion). Each of the 223 files was written from the code text in batches of two to six towns. Then a separate reader checked it a second time, value by value, against the code link. As of Nov 27, 2026, 199 passed and are "verified". 24 stay "drafted" (first readings) because the review left at least one point open, such as a table that could not be read, a parking count that depends on a reading, a code copy that may be out of date, or a 2026 ordinance that could not be read. The open point is kept in `status_note` in `towns_index.json`. Lower Providence was verified and went back to drafted on Nov 27: it adopted a new zoning ordinance and map on Nov 5, 2026, and the file reads the old chapter.
 
-ADU status in the 221 town files:
+ADU status in the 223 town files (Nov 27, 2026):
 
 | ADU status | Towns |
 |---|---|
-| Not addressed (no ADU text in the code) | 92 |
-| Family only | 74 |
-| Allowed by right | 32 |
+| Not addressed (no ADU text in the code) | 93 |
+| Family only | 73 |
+| Allowed by right | 33 |
 | Special exception | 14 |
 | Conversion of an existing building only | 4 |
 | Conditional use | 4 |
+| Employee or caretaker quarters only | 1 |
 | Prohibited | 1 |
 
-<!-- source: shared/rules/pa_*.json adu.status.value for the 221 town files listed in towns_index.json, at commit d4db613 -->
+<!-- source: shared/rules/pa_*.json adu.status.value for the 223 town files listed in towns_index.json, read 2026-11-27 -->
 
-So 92 of the 221 towns have no ADU rule at all. A further 74 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF or sits behind a login were skipped for now. Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes, so they were skipped too. Several verified files rest on codes with 2026 amendments that were not read. Each of these carries a caution (`provenance.code_caution`), shown first with every answer.
+So 93 of the 223 towns have no ADU rule at all. A further 73 allow a unit only for family members. The table by town is in [RULES_TOWNS.md](RULES_TOWNS.md). Towns whose code is only a PDF or sits behind a login were skipped for now. Whitpain (Ord. 4-269, Sep 15, 2026) was read from the signed ordinance and is verified. Patton's Oct 28, 2026 ordinance could not be read, so Patton stays drafted. Several verified files rest on codes with 2026 amendments that were not read. Each of these carries a caution (`provenance.code_caution`), shown first with every answer.
 
 Rules engine passes 10 and 11 (Nov 14 and 15) added these readings. The fields are in `shared/rules/TOWNS.md`.
 
@@ -264,7 +267,7 @@ A machine-read pilot of ordinance text is described in [CORPUS.md](CORPUS.md). I
 
 Code: `pipeline/vision/`. Runs: `<data root>/models/<run>/`.
 
-The model labels each pixel of an aerial image as other, building, tree or open ground (a 5-class version adds hard surface). In the lot records land cover is context only. It gives the share of the lot in building, tree, open ground and hard surface, the impervious share, and, in all six lot places, the tree, open, building and hard surface area inside the suggested spot (the four town places since the Nov 15 rebuild). The fit does not steer around trees. Section 3.5 says which source each city uses. Allentown and the three county places use the model `r34_c5_s0` (section 3.5).
+The model labels each pixel of an aerial image as other, building, tree or open ground (a 5-class version adds hard surface). In the lot records land cover is context only. It gives the share of the lot in building, tree, open ground and hard surface, the impervious share, and the tree, open, building and hard surface area inside the suggested spot (the four town places since the Nov 15 rebuild). Only the lots of lot data 12 have a cover block; the lots added on Nov 27 and 28 have none yet. The fit does not steer around trees. Section 3.5 says which source each city uses. Allentown and the first 9 county-place towns (lot data 12) use the model `r34_c5_s0` (section 3.5).
 
 ### 3.1 Data
 
@@ -349,7 +352,7 @@ By area type (test mIoU):
 | Philadelphia, `ft_c5_philadelphia` fine-tuned | 12,000,000 | 0.5097 | 0.7386 | 0.2606 | 0.3226 | 0.717 | no water labeled |
 
 - **Pittsburgh.** The original model transfers well (about 0.70). The fine-tune did not help on clean pixels, and it lost the water class (IoU 0). Until Nov 18 the lot files used the zero-shot model `r34_c5_s0`. Since 2026-11-18 the Pittsburgh lots use the three-model ensemble from 2026-11-18 (DeepLabV3+, EfficientNet-B2 and a 512 px ResNet-34, 8 views each) (`COVER_FILES_BY_PLACE` in `pipeline/build_lots.py`). Its "other" class is split into water and hard surface by `r34_c5_s0`.
-- **Allentown and the three county places.** Lot cover comes from `r34_c5_s0` on NAIP 2022 (added Nov 14). Since the Nov 15 rebuild `spot_cover` comes from the same model's class maps. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery have no labels, so their cover is not validated. Each record says so in `quality.assumptions`. 36 Centre County lots have no cover.
+- **Allentown and the first towns of the county places.** Lot cover comes from `r34_c5_s0` on NAIP 2022 (added Nov 14) for the lots of lot data 12: Allentown and the first 9 county-place towns. The lots added on Nov 27 and 28 (the 8 new places and the new towns of Chester, Montgomery and Centre) have an empty cover block, no land cover yet (as of 2026-11-28). Since the Nov 15 rebuild `spot_cover` comes from the same model's class maps. Only Centre County is a Chesapeake test county (about 0.70 test mIoU). Allentown, Chester and Montgomery have no labels, so their cover is not validated. Each record says so in `quality.assumptions`. 36 Centre County lots have no cover.
 - **Philadelphia.** Tree and open ground are not reliable from NAIP 2022. The photos were flown 2022-04-30 to 2022-05-17, in early leaf, and rowhouse yards sit in deep shadow. No label bug was found. The fine-tune did not fix tree (0.2606). Philadelphia lot cover therefore uses the city's 2018 land cover raster (`landcover_2018`). A lot built in 2018 or later gets a flag that the raster may show the lot before the house.
 
 Per-lot agreement with a city raster:
@@ -556,11 +559,13 @@ Code: `app/src/lib/lot/lotTax.ts`, `app/src/lib/lot/parcel.ts`, `app/src/lib/lot
 
 Code: `agent/schema.ts` (tools and system prompt), `app/src/agent/` and `app/src/lib/lot/agentTools.ts` (tools that run in the browser), `api/agent.ts` (the server function), `agent/eval/` (the eval).
 
-The assistant runs on Claude Haiku 5.5 (`claude-haiku-5-5`, `DEFAULT_MODEL`, overridable with `AGENT_MODEL`). It answers only from tool results: lot facts, lot rules, a unit test on the lot, scenario comparison, lot money, the limiting reason, rule text from the rule files (`get_rule_text`, `list_rule_places`), the answer ladder for any Pennsylvania place (`get_place_answer`), quotes from public zoning text (`search_zoning_text`), area statistics, lot search, short checked passages on how towns regulate ADUs and how the tool works (`get_methods`, `app/src/agent/methods.ts`), and, for the lot on screen, its parcel record facts, documents and offices (`get_parcel_info`), its property tax (`get_property_tax`) and what to do next, bring and ask (`get_next_steps`, section 5.6). For a county, census tract or ZIP code picked on a boundary in Test Site, `get_boundary_answer` (`app/src/agent/boundaryAnswer.ts`) gives the same answer as the Details panel: the area summed over its towns by their share of homes (tract, ZIP code) or people (county), with each town's rule from the place table. The browser sends the picked area with each question (`context.area`), and a picked municipality goes to `get_place_answer`. `find_lot` finds any address in the six lot places from a static address index in the lot data bundle, so it works live only once the bundle is published. The system prompt forbids numbers or citations that no tool returned in the conversation, says that bills are not law, and falls back to the statewide baseline for a town with no rule file. `get_lot_facts` and, for a backyard cottage, `test_unit_on_lot` give the lot's land cover: tree, paving, open ground and building shares of the whole lot, the record's own accuracy note, and the trees and paving inside the suggested spot, or a line saying those are not available for the place. When the owner states a lot fact ("my old carriage house"), the assistant takes it as given. It keeps scanned zoning text word for word in quotes, misread words too, and says a piece it would fix in its own words outside the quotes. At most 6 tool rounds per question, and at most 4,096 output tokens per answer.
+The assistant runs on Claude Haiku 5.5 (`claude-haiku-5-5`, `DEFAULT_MODEL`, overridable with `AGENT_MODEL`). It answers only from tool results: lot facts, lot rules, a unit test on the lot, scenario comparison, lot money, the limiting reason, rule text from the rule files (`get_rule_text`, `list_rule_places`), the answer ladder for any Pennsylvania place (`get_place_answer`), quotes from public zoning text (`search_zoning_text`), area statistics, lot search, short checked passages on how towns regulate ADUs and how the tool works (`get_methods`, `app/src/agent/methods.ts`), and, for the lot on screen, its parcel record facts, documents and offices (`get_parcel_info`), its property tax (`get_property_tax`) and what to do next, bring and ask (`get_next_steps`, section 5.6). For a county, census tract or ZIP code picked on a boundary in Test Site, `get_boundary_answer` (`app/src/agent/boundaryAnswer.ts`) gives the same answer as the Details panel: the area summed over its towns by their share of homes (tract, ZIP code) or people (county), with each town's rule from the place table. The browser sends the picked area with each question (`context.area`), and a picked municipality goes to `get_place_answer`. `find_lot` finds any address in the lot places (Delaware County lots have none) from a static address index in the lot data bundle, so it works live only once the bundle is published. The system prompt forbids numbers or citations that no tool returned in the conversation, says that bills are not law, and falls back to the statewide baseline for a town with no rule file. `get_lot_facts` and, for a backyard cottage, `test_unit_on_lot` give the lot's land cover: tree, paving, open ground and building shares of the whole lot, the record's own accuracy note, and the trees and paving inside the suggested spot, or a line saying those are not available for the place. When the owner states a lot fact ("my old carriage house"), the assistant takes it as given. It keeps scanned zoning text word for word in quotes, misread words too, and says a piece it would fix in its own words outside the quotes. At most 6 tool rounds per question, and at most 4,096 output tokens per answer.
 
 ### 6.1 Eval
 
-119 fixed questions. `agent/eval/questions.json` has 65 in 7 groups: lot facts, fit, zoning, money and market (10 each), traps (10, for example a wrong premise or a request for an owner's name) and town rules (5). Added since: the answer ladder (25), public zoning text (10), Allentown (8), rule text (6) and features (5: the unit tested before a fit answer, slope lines as questions for the city, a misspelled street, the rule behind a barred type, and the trees inside the suggested spot). The Allentown tree question (alt-08) was rewritten on Nov 15 when Allentown records got the spot figures: it expects the lot's tree share, the note that Allentown's land cover is not validated, and the trees inside the suggested spot. A question is correct only when every expected fact is in the answer, the required tools were called, every cited section or link is in a rule file or a tool result, no forbidden pattern appears, and the right scenario was used. Targets: 90 percent correct and 0 made-up citations. Added Nov 18: 50 expert questions (`questions_expert.json`): what each approval path and status means for an owner, the bills against today, floodplain, top of bank, riparian and steep slope rules, size, footprint, parking and owner occupancy, confidence labels and open points, how the tool works, places with no rule file, questions whose honest answer is "not in my data", out-of-scope asks and follow-ups with earlier turns.
+As of 2026-11-27 the eval has 244 questions in 9 files: `questions.json` (65), expert (50), parcel (38), tool (36, about the tool itself), ladder (26), public zoning text (10), Allentown (8), rule text (6) and features (5). The offline dry run (`npm run eval:agent -- --dry-run`) passes 244 of 244 (Nov 27 and 28). It checks the questions, tools and scorer without the model. The last full live run was on Nov 18 (118 of 120, 119 rescored, CHANGELOG 2026-11-18). No live run has been made since, because no API key was at hand. The newest run reported in detail below is the Nov 16 one.
+
+The history: 119 fixed questions on Nov 16. `agent/eval/questions.json` has 65 in 7 groups: lot facts, fit, zoning, money and market (10 each), traps (10, for example a wrong premise or a request for an owner's name) and town rules (5). Added since: the answer ladder (25), public zoning text (10), Allentown (8), rule text (6) and features (5: the unit tested before a fit answer, slope lines as questions for the city, a misspelled street, the rule behind a barred type, and the trees inside the suggested spot). The Allentown tree question (alt-08) was rewritten on Nov 15 when Allentown records got the spot figures: it expects the lot's tree share, the note that Allentown's land cover is not validated, and the trees inside the suggested spot. A question is correct only when every expected fact is in the answer, the required tools were called, every cited section or link is in a rule file or a tool result, no forbidden pattern appears, and the right scenario was used. Targets: 90 percent correct and 0 made-up citations. Added Nov 18: 50 expert questions (`questions_expert.json`): what each approval path and status means for an owner, the bills against today, floodplain, top of bank, riparian and steep slope rules, size, footprint, parking and owner occupancy, confidence labels and open points, how the tool works, places with no rule file, questions whose honest answer is "not in my data", out-of-scope asks and follow-ups with earlier turns.
 
 <!-- source: ~/musa-drive/ops/agent-eval/2026-11-16T07-45-46-claude-haiku-5-5/report.md and transcripts/, 2026-11-15T08-27-03-claude-haiku-5-5/report.md, 2026-11-15T08-20-18-claude-haiku-5-5/report.md, 2026-11-15T08-31-22-claude-haiku-5-5/report.md -->
 
@@ -650,26 +655,126 @@ Today no Philadelphia lot can add a new detached unit by right: the code allows 
 
 ### Allentown and the county places
 
-<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-16 (Montgomery County 2026-11-18). allentown-20261116-b1e77f74ac, chester_county-20261116-aa5d870e34, centre_county-20261116-3f43ace3b4, montgomery_county-20261118-e05e33d1ea -->
+<!-- source: ~/musa-drive/lots/<place>/manifest.json counts and stats.json all.paths and by_town, read 2026-11-28 (lot data 13). allentown-20261127-9be163090f, montgomery_county-20261128-a60d9ea1ce, delaware_county-20261128-c88715b1cd, lancaster_county-20261128-b62011a32a, bucks_county-20261127-669c83737a, chester_county-20261127-61e3e7c924, york_county-20261127-170b781fee, dauphin_county-20261128-d423841a40, northampton_county-20261128-11547385f4, erie_county-20261128-89125fe9da, cumberland_county-20261127-0e017dd0c9, centre_county-20261127-ad60715d09. Berks (berks_county-20261127-e6dec1911f, 3,746 lots) is built but not in the app -->
 
-Each lot answers with its own town's rule file. Only towns with a verified rule file whose ADU districts the county zoning layer names were built. Since the evening of Nov 14 these places carry a land cover block from the model (section 3.5). Since the rebuild early on Nov 15 they also carry the trees and paving inside the suggested spot and the rules engine pass 10 wording. No share in the table moved. On Nov 16 the pass 13 and 14 wording reached their lot records, and the Narberth tract was rebuilt for the district-in-doubt reading: 9 Narberth lots in 5A and 5B turned from not allowed to by right (qualified), which moved the Narberth row and the Montgomery County detached-legal share. Later on Nov 16 the tracts of the 13 lots with no zoning district were rebuilt (4 in Allentown, 1 in Centre County, 6 in Chester County, 2 in Montgomery County): they turned from a variance to the path to ask, qualified, which moved the any-path share of Centre County, Chester County (Phoenixville, West Vincent) and Montgomery County by 0.001, and Upper Dublin detached legal and fits from 0.665 to 0.666.
+Each lot answers with its own town's rule file. A town joins when its rule file is verified, its code gives the ADU a path and a public zoning layer names its districts. Delaware and Montgomery County also keep their towns whose code has no ADU text: their lots read a use variance today and show what HB 2186 would allow. Who is left out of each place, and why, is in `STATS_CAVEATS` in `pipeline/build_lots.py` and in each `stats.json` ("caveats").
 
-On Nov 18 Montgomery County was rebuilt in full with the rules engine passes 18 to 28, which had been held for its three towns. No share in the table moved. In Narberth the 600 sq ft footprint cap (500-802B(4)) now binds the new detached unit. The unit still fits on the same 996 lots, but the largest unit is smaller on 767 of them: 764 drop to 600 sq ft, and 3 grow because a lot in 5A or 5B no longer takes the general default yards. The median largest unit fell from 800 to 600 sq ft and the mean from 697 to 557 sq ft. A garage conversion fits on 142 lots, down from 159: the 17 garages over 600 sq ft are now too big. A unit over a garage on a lot with no garage now takes the path of a new detached unit (today in Narberth and Upper Dublin, under HB 2186 in all three towns).
+Lot data 13 (Nov 27 and 28, 2026) grew the lot places from 6 to 14 in the app, and from 625,687 to 1,134,553 lots. New: Dauphin County (Harrisburg, Lower Paxton, Swatara), Erie County (Erie city, the first place in EPSG:2271), Lancaster County (11 towns), Cumberland County (3 towns), Northampton County (5 towns, Bethlehem's Northampton part only), Bucks County (8 towns), York County (7 towns) and Delaware County (19 towns). Grown: Chester County from 5 to 14 towns, Montgomery County from 3 to 24 towns, Centre County with State College. Berks County (Amity township) is built but held back for its data license. Every town place was rebuilt with the separation fix of section 1.2. No share moved with that fix, since state reform allows a detached unit everywhere. Philadelphia and Pittsburgh were not rebuilt (lot data 12).
 
-| Place and town | Lots | Any legal ADU path today | Detached unit legal today | Detached unit legal and fits today | Same under HB 2186 |
-|---|---|---|---|---|---|
-| Allentown | 29,158 | 0.883 | 0.285 | 0.215 | 0.713 |
-| Chester County, all | 14,847 | 0.689 | 0.544 | 0.287 | 0.642 |
-| West Chester | 3,070 | 0.898 | 0.898 | 0.438 | 0.458 |
-| Phoenixville | 5,375 | 0.941 | 0.941 | 0.495 | 0.556 |
-| West Vincent | 2,014 | 0.847 | 0.128 | 0.128 | 0.877 |
-| Malvern | 766 | 0.486 | 0.0 | 0.0 | 0.615 |
-| East Brandywine | 3,622 | 0.092 | 0.0 | 0.0 | 0.802 |
-| Centre County, College Township | 3,484 | 0.538 | 0.538 | 0.477 | 0.81 |
-| Montgomery County, all | 26,119 | 0.783 | 0.304 | 0.252 | 0.839 |
-| Narberth | 1,296 | 0.861 | 0.861 | 0.772 | 0.874 |
-| Upper Dublin | 8,562 | 0.796 | 0.796 | 0.65 | 0.717 |
-| Lower Merion | 16,261 | 0.769 | 0.0 | 0.0 | 0.9 |
+The "detached unit legal today" column of earlier versions is left out. It counts the approval path of the detached form alone, and it can be above the share with any legal path (Lancaster city 1.0 against 0.0, West Earl 0.983 against 0.0), so it does not read on its own. The "legal and fits" share counts only lots that also have a legal path.
+
+| Place and town | Lots | Any legal ADU path today | Detached unit legal and fits today | Same under HB 2186 |
+|---|---|---|---|---|
+| Allentown | 29,158 | 0.883 | 0.215 | 0.713 |
+| **Montgomery County, all** | 142,072 | 0.472 | 0.07 | 0.63 |
+| Ambler borough | 1,771 | 0.924 | 0.447 | 0.552 |
+| Cheltenham township | 9,242 | 0.0 | 0.0 | 0.709 |
+| Conshohocken borough | 2,710 | 0.0 | 0.0 | 0.271 |
+| Douglass township | 3,263 | 0.826 | 0.0 | 0.652 |
+| Franconia township | 3,887 | 0.61 | 0.0 | 0.456 |
+| Hatfield township | 4,416 | 0.734 | 0.0 | 0.708 |
+| Horsham township | 7,609 | 0.0 | 0.0 | 0.774 |
+| Lansdale borough | 4,420 | 0.429 | 0.0 | 0.638 |
+| Limerick township | 5,736 | 0.726 | 0.0 | 0.448 |
+| Lower Merion township | 16,261 | 0.769 | 0.0 | 0.9 |
+| Lower Pottsgrove township | 3,855 | 0.999 | 0.572 | 0.646 |
+| Montgomery township | 8,088 | 0.604 | 0.0 | 0.592 |
+| Narberth borough | 1,296 | 0.861 | 0.772 | 0.874 |
+| Norristown borough | 8,396 | 0.0 | 0.0 | 0.168 |
+| Plymouth township | 4,911 | 0.795 | 0.0 | 0.537 |
+| Skippack township | 3,661 | 0.0 | 0.0 | 0.572 |
+| Springfield township | 6,488 | 0.0 | 0.0 | 0.769 |
+| Upper Dublin township | 8,562 | 0.796 | 0.65 | 0.717 |
+| Upper Gwynedd township | 4,490 | 0.737 | 0.0 | 0.757 |
+| Upper Merion township | 8,291 | 0.0 | 0.0 | 0.679 |
+| Upper Providence township | 7,701 | 0.914 | 0.0 | 0.419 |
+| West Norriton township | 5,034 | 0.598 | 0.0 | 0.524 |
+| Whitemarsh township | 5,738 | 0.068 | 0.065 | 0.612 |
+| Whitpain township | 6,246 | 0.681 | 0.0 | 0.667 |
+| **Delaware County, all** | 104,738 | 0.269 | 0.045 | 0.631 |
+| Aston township | 5,330 | 0.513 | 0.0 | 0.594 |
+| Bethel township | 2,790 | 0.975 | 0.873 | 0.534 |
+| Chester city | 8,256 | 0.952 | 0.204 | 0.632 |
+| Clifton Heights borough | 1,684 | 0.0 | 0.0 | 0.224 |
+| Collingdale borough | 2,372 | 0.0 | 0.0 | 0.485 |
+| Concord township | 3,949 | 0.013 | 0.0 | 0.774 |
+| Darby township | 3,332 | 0.0 | 0.0 | 0.619 |
+| Glenolden borough | 1,638 | 0.0 | 0.0 | 0.649 |
+| Haverford township | 15,518 | 0.0 | 0.0 | 0.747 |
+| Media borough | 1,120 | 0.888 | 0.489 | 0.719 |
+| Nether Providence township | 4,457 | 0.0 | 0.0 | 0.741 |
+| Radnor township | 6,591 | 0.0 | 0.0 | 0.775 |
+| Ridley township | 9,303 | 0.0 | 0.0 | 0.5 |
+| Springfield township | 8,094 | 0.0 | 0.0 | 0.831 |
+| Swarthmore borough | 1,288 | 1.0 | 0.0 | 0.736 |
+| Thornbury township | 1,676 | 0.0 | 0.0 | 0.804 |
+| Upper Chichester township | 5,043 | 0.0 | 0.0 | 0.661 |
+| Upper Darby township | 19,203 | 0.652 | 0.0 | 0.462 |
+| Yeadon borough | 3,094 | 0.0 | 0.0 | 0.595 |
+| **Lancaster County, all** | 62,735 | 0.43 | 0.204 | 0.801 |
+| East Lampeter township | 3,960 | 0.831 | 0.809 | 0.916 |
+| Elizabethtown borough | 3,084 | 0.975 | 0.911 | 0.934 |
+| Lancaster city | 14,336 | 0.0 | 0.0 | 0.405 |
+| Lancaster township | 4,810 | 0.183 | 0.182 | 0.85 |
+| Manheim township | 12,427 | 0.563 | 0.0 | 0.956 |
+| Mount Joy township | 3,260 | 0.974 | 0.071 | 0.858 |
+| Penn township | 2,842 | 0.994 | 0.806 | 0.942 |
+| Warwick township | 6,226 | 0.043 | 0.041 | 0.928 |
+| West Earl township | 2,191 | 0.0 | 0.0 | 0.745 |
+| West Hempfield township | 5,290 | 0.6 | 0.588 | 0.99 |
+| West Lampeter township | 4,309 | 0.776 | 0.0 | 0.897 |
+| **Bucks County, all** | 48,764 | 0.76 | 0.05 | 0.589 |
+| Bristol township | 15,610 | 0.893 | 0.0 | 0.433 |
+| Doylestown borough | 1,840 | 0.947 | 0.192 | 0.373 |
+| Doylestown township | 4,547 | 0.878 | 0.0 | 0.924 |
+| Lower Southampton township | 5,811 | 0.559 | 0.0 | 0.653 |
+| New Britain township | 3,833 | 0.062 | 0.062 | 0.539 |
+| Plumstead township | 4,160 | 0.768 | 0.251 | 0.728 |
+| Warminster township | 8,142 | 0.898 | 0.096 | 0.767 |
+| Warwick township | 4,821 | 0.699 | 0.0 | 0.406 |
+| **Chester County, all** | 42,306 | 0.668 | 0.164 | 0.723 |
+| East Brandywine township | 3,622 | 0.092 | 0.0 | 0.802 |
+| East Coventry township | 2,232 | 0.794 | 0.0 | 0.638 |
+| East Goshen township | 5,222 | 0.957 | 0.0 | 0.587 |
+| East Nottingham township | 2,585 | 0.998 | 0.966 | 0.838 |
+| Honey Brook township | 1,702 | 0.219 | 0.017 | 0.881 |
+| Malvern borough | 766 | 0.486 | 0.0 | 0.615 |
+| North Coventry township | 2,569 | 0.01 | 0.01 | 0.798 |
+| Phoenixville borough | 5,375 | 0.941 | 0.495 | 0.556 |
+| Schuylkill township | 2,822 | 0.001 | 0.001 | 0.837 |
+| West Caln township | 146 | 0.973 | 0.836 | 0.877 |
+| West Chester borough | 3,070 | 0.898 | 0.438 | 0.458 |
+| West Goshen township | 6,839 | 0.809 | 0.0 | 0.823 |
+| West Vincent township | 2,014 | 0.847 | 0.128 | 0.877 |
+| Westtown township | 3,342 | 0.782 | 0.0 | 0.815 |
+| **York County, all** | 40,295 | 0.675 | 0.137 | 0.727 |
+| East Manchester township | 2,555 | 0.966 | 0.0 | 0.544 |
+| Hanover borough | 4,799 | 0.984 | 0.632 | 0.8 |
+| Lower Windsor township | 2,058 | 0.257 | 0.257 | 0.524 |
+| Newberry township | 4,568 | 0.455 | 0.43 | 0.616 |
+| Springettsbury township | 7,267 | 0.978 | 0.0 | 0.445 |
+| York city | 11,587 | 0.321 | 0.0 | 0.819 |
+| York township | 7,461 | 0.882 | 0.0 | 0.996 |
+| **Dauphin County, all** | 35,475 | 0.928 | 0.572 | 0.671 |
+| Harrisburg city | 12,446 | 0.988 | 0.551 | 0.627 |
+| Lower Paxton township | 15,365 | 0.963 | 0.555 | 0.577 |
+| Swatara township | 7,664 | 0.759 | 0.64 | 0.93 |
+| **Northampton County, all** | 33,695 | 0.668 | 0.333 | 0.683 |
+| Bethlehem city | 13,163 | 0.994 | 0.852 | 0.859 |
+| Bethlehem township | 7,963 | 0.474 | 0.0 | 0.536 |
+| Easton city | 6,601 | 0.0 | 0.0 | 0.765 |
+| Lower Saucon township | 3,482 | 0.953 | 0.0 | 0.394 |
+| Wilson borough | 2,486 | 0.939 | 0.0 | 0.416 |
+| **Erie County, Erie city** | 26,150 | 0.996 | 0.908 | 0.901 |
+| **Cumberland County, all** | 10,259 | 0.946 | 0.53 | 0.799 |
+| Camp Hill borough | 2,662 | 0.982 | 0.826 | 0.931 |
+| Lower Allen township | 3,830 | 0.982 | 0.0 | 0.575 |
+| Upper Allen township | 3,767 | 0.883 | 0.861 | 0.934 |
+| **Centre County, all** | 6,827 | 0.696 | 0.243 | 0.818 |
+| College township | 3,484 | 0.538 | 0.477 | 0.81 |
+| State College borough | 3,343 | 0.862 | 0.0 | 0.826 |
+
+The Nov 18 rebuild of Montgomery County with the rules engine passes 18 to 28 still holds for Narberth: the 600 sq ft footprint cap (500-802B(4)) binds the new detached unit, the median largest unit is 600 sq ft (stats.json, Nov 28), and a unit over a garage on a lot with no garage takes the path of a new detached unit.
 
 In Lower Merion, Malvern and East Brandywine the code allows no new detached unit, so the law is the limit. In Phoenixville many lots meet the share-of-house cap first. On Nov 26 (lot data 12) Phoenixville rose from 0.346 to 0.495: on 800 through lots the front moved to the street in the address (the house sits on it on 797 of the 830 lots that changed), so the yard behind the house is now the rear yard. Upper Dublin fell from 0.666 to 0.650 today and from 0.784 to 0.717 under HB 2186: its house heights now come from the DVRPC 2015 lidar landbase, so the "no taller than the house" test runs, and its MD rowhouse lots take their district yards.
 
@@ -682,8 +787,8 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **Not a survey or a permit.** Parcel lines come from city and county maps, not surveys. Building outlines come from aerial mapping of different years. A unit that "fits" here may not fit on the ground.
 - **Rule files lag the code.** Each value carries its "checked on" date. A rule changed after that date is not in the tool. Pittsburgh's online code did not yet show Ord. No. 31-2026 folded in when it was read.
 - **Many setbacks are not confirmed.** Where a district has no confirmed value, the builder fills a planning number and marks it assumed. See the unverified list in [RULES.md](RULES.md).
-- **Separation from the house is a planning default.** Neither city's zoning sets one. The 10 ft comes from the building code reading in `default.json`.
-- **Land cover is context, not part of the fit.** The record gives tree, open and hard surface shares. Records in all six places also give the trees and paving inside the suggested spot. The unit is not moved to save trees. Philadelphia cover is the 2018 raster, so changes since 2018 are not seen. Pittsburgh cover is a model, off by about 8 points of tree share per lot against the 2019 raster on a small check of 128 lots.
+- **Separation from the house is a planning default.** Neither city's zoning sets one. The 10 ft comes from the building code reading in `default.json`. Where a town allows a detached unit but its rule file gives no separation number, the separation reads "not checked" and the drawn unit can touch the house (Harrisburg 7,096 lots, Bethlehem 6,573, Allentown 5,200, York city and county 4,528, Delaware County 2,150, Warminster 942, and Lancaster city). Whether to use the 10 ft there is open.
+- **Land cover is context, not part of the fit.** The record gives tree, open and hard surface shares. The lots of lot data 12 also give the trees and paving inside the suggested spot. The lots added on Nov 27 and 28 have no land cover yet. The unit is not moved to save trees. Philadelphia cover is the 2018 raster, so changes since 2018 are not seen. Pittsburgh cover is a model, off by about 8 points of tree share per lot against the 2019 raster on a small check of 128 lots.
 - **No detections in the fit yet.** Garages and sheds come from building outlines, which miss most small sheds (Pittsburgh county outlines skip structures under about 400 sq ft).
 - **Garage guesses are guesses.** Size and position decide what counts as a garage. The OPA garage type helps only in Philadelphia.
 - **Attached additions are not modeled.** The internal fit stands in for them.
@@ -694,10 +799,11 @@ The Pittsburgh and Philadelphia rule files carry the steep slope rules (the "Ste
 - **Pending bills are not law.** The local and state reform scenarios show what the bills would do if passed. The state session ends Nov 30, 2026.
 - **Money numbers are estimates.** Build costs are vendor ranges, rents are a federal benchmark, not a market quote, and the added value is an income estimate. A backyard unit does not sell on its own.
 - **The detector scores are not true accuracy yet.** Test labels are unchecked.
-- **The fit has no measured accuracy.** The hand-label check has 250 lots drawn and 0 labeled.
-- **The assistant can be wrong.** It scored 114 of 119 on the newest eval run (Nov 16), and scores move by a few questions between runs.
-- **Most towns have no rule file.** 221 towns beyond the two cities have one (as of Nov 18, 2026). 77 of the 223 files stay first readings (drafted). Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read: Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes. Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
-- **House heights.** Montgomery County heights come from the DVRPC 2015 lidar landbase (Nov 26). Microsoft heights read about 6 ft low against it. A house built after 2015 has no height, and a house under 10 ft reads "not checked". The highest-hit height can pick up overhanging trees, which makes the height test more lenient on wooded lots.
+- **The fit has no hand-measured accuracy.** The hand-label check has 250 lots drawn and none labeled by a person. A vision-model reading of the same lots agrees on about 84% at 600 sq ft (section 1.9); that is not a true accuracy.
+- **The assistant can be wrong.** It scored 114 of 119 on the Nov 16 run and 118 of 120 on the last full live run (Nov 18). The eval has 244 questions since Nov 27, and no live run has been made on them yet. Scores move by a few questions between runs.
+- **Most towns have no rule file.** 223 towns beyond the two cities have one (as of Nov 27, 2026). 24 of the 225 files stay first readings (drafted). Towns whose code is only a PDF or sits behind a login were skipped. Some 2026 ordinances could not be read. Whitpain and Patton adopted new ADU ordinances in autumn 2026 that are not yet in their online codes: Whitpain was read from the signed ordinance and is verified, Patton stays drafted (as of Nov 27, 2026). Several verified files rest on codes with 2026 amendments that were not read, and each carries a caution. Every other town gets the answer ladder: an agency report, a text search or the statewide baseline.
+- **House heights.** Philadelphia and Pittsburgh heights come from the city building data, Montgomery, Chester, Bucks and Delaware County heights from the DVRPC 2015 lidar landbase, Centre County heights from the county's 3D buildings. Erie, Dauphin, Lancaster, York, Cumberland and Northampton have none, and Allentown has them only on Microsoft outlines, so their height tests read "not checked". In Montgomery (Nov 26) Microsoft heights read about 6 ft low against the lidar. A house built after 2015 has no height, and a house under 10 ft reads "not checked". The highest-hit height can pick up overhanging trees, which makes the height test more lenient on wooded lots.
+- **Missing parcel facts.** Delaware County has no assessor data (the county's service needs a token): no address, unit count or living area, and a twin or row in a multifamily area is assumed to be one unit. Montgomery, Chester, Dauphin, Lancaster, Bucks, Delaware and Allentown have no living area, so share-of-house caps are not checked there: the fit skips the cap and the lot record notes it (in Philadelphia and Pittsburgh the main house footprint stands in). Living area comes from the assessor in Philadelphia, Pittsburgh, Centre, Erie, Cumberland, Northampton and York (as of 2026-11-28).
 - **Pittsburgh's undermined-area overlay (UM-O)** comes from the city's Undermined Areas layer (PGHWebUndermined) since Nov 26. A lot is flagged when at least 25% of it is inside (`lots.flag.undermined_min_share`). The layer is coarse, so a flagged lot gets a condition to confirm, never a bar.
-- **Land cover in the new lot places is not validated.** Allentown, Chester and Montgomery have no labels to check the model against. Centre County lies in a test county (about 0.70 test mIoU). 36 Centre County lots have no cover. The tree figures inside the suggested spot come from the same model, so they are not validated either.
+- **Land cover in the new lot places is not validated.** Allentown, Chester and Montgomery have no labels to check the model against. The lots added on Nov 27 and 28 have no land cover yet. Centre County lies in a test county (about 0.70 test mIoU). 36 Centre County lots have no cover. The tree figures inside the suggested spot come from the same model, so they are not validated either.
 - **The detector is still on unchecked labels.** Garage AP50 0.469 against a target of 0.50 (final for the Nov 12 to 14 rounds).

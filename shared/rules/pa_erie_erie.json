@@ -39,7 +39,7 @@
       "Rental licensing: Ord. No. 40-2026 (7-1-2026) amends Article 330, Landlord and Rental, with new registration and inspection rules. An ADU rented to a tenant falls under it. Not zoning, not codified yet",
       "A dwelling unit holds one family. Family: relatives with up to two boarders, or not more than four unrelated persons (601)"
     ],
-    "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb. Second reading 2026-11-26 (G0): 204 permitted-use lists (ADU in R-1, R-1A, R-2 and the rest), the 204 lead-in (listed uses are principal uses unless clearly noted; one principal use per lot in any R district), 601 ADU definition and 205.9 (side or rear yard, 6 ft from a dwelling or alley, 3 ft from side and rear lines, 720 sq ft, 15 ft) read again in eCode360 and match the file. New Laws for Article 1303 still list only Ord. No. 45-2026 (historic designation, no ADU text). The two open points are disputes the code does not settle, held as secondary values: whether the ADU counts as a second family for lot area (205 table), and how the one-principal-use rule fits an ADU listed as a permitted use."
+    "notes": "Zoning office: Bureau of Planning and Zoning, City of Erie (page in source_urls). Pending changes: none found that affect ADUs. Census GEOID is the 2020 county subdivision code from TIGERweb. Second reading 2026-11-26 (G0): 204 permitted-use lists (ADU in R-1, R-1A, R-2 and the rest), the 204 lead-in (listed uses are principal uses unless clearly noted; one principal use per lot in any R district), 601 ADU definition and 205.9 (side or rear yard, 6 ft from a dwelling or alley, 3 ft from side and rear lines, 720 sq ft, 15 ft) read again in eCode360 and match the file. New Laws for Article 1303 still list only Ord. No. 45-2026 (historic designation, no ADU text). The two open points are disputes the code does not settle, held as secondary values: whether the ADU counts as a second family for lot area (205 table), and how the one-principal-use rule fits an ADU listed as a permitted use. 2026-11-28: envelope.accessory_cap_binds_adu set true from the file's 2026-11-26 reading of 205.9 and 601 (eCode360 refused a fresh read, HTTP 403, so the text was not read again)."
   },
   "adu": {
     "status": {
@@ -254,6 +254,14 @@
       "verified_on": "2026-11-11",
       "confidence": "secondary",
       "note": "no larger than 720 square feet in size. R districts only."
+    },
+    "accessory_cap_binds_adu": {
+      "value": true,
+      "section": "§ 205.9, § 601",
+      "url": "https://ecode360.com/44157094",
+      "verified_on": "2026-11-26",
+      "confidence": "secondary",
+      "note": "The file reads a detached ADU as a detached accessory building under 205.9 (checks: 3 ft side and rear, 6 ft from a dwelling or alley, 720 sq ft, 15 ft), and 601 defines a detached ADU as structurally separate from the house. The code has no ADU standards of its own and does not say so for ADUs, so this is a reading, kept secondary as the yards are."
     },
     "setback_front_ft": {
       "value": null,
